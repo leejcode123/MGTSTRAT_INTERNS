@@ -30,7 +30,7 @@ function changePackage() {
 
 }
 
-$(document).on("change keyup", ".engagement-program, .engagement-fee, .program-price, .ef-sessions, .working-days", function () {
+$(document).on("change input", ".engagement-program, .engagement-fee, .program-price, .ef-sessions, .working-days", function () {
     sum = 0;
     sesSions = document.getElementById('ef-sessions').value;
     let currency = Intl.NumberFormat('en-US');

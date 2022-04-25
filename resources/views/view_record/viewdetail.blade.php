@@ -64,16 +64,17 @@
                                             <div class="col-md-8">
                                                 <div class="form-group has-icon-left">
                                                     <div class="position-relative">
-                                                        <input type="text" class="form-control @error('fullName') is-invalid @enderror"
+                                                        <input type="text"
+                                                            class="form-control @error('fullName') is-invalid @enderror"
                                                             placeholder="Enter Comany Name" id="first-name-icon"
                                                             name="fullName" value="{{ $data[0]->full_name }}">
                                                         <div class="form-control-icon">
                                                             <i class="fa-solid fa-building"></i>
                                                         </div>
                                                         @error('fullName')
-                                                        <span class="invalid-feedback" role="alert">
-                                                            <strong>{{ $message }}</strong>
-                                                        </span>
+                                                            <span class="invalid-feedback" role="alert">
+                                                                <strong>{{ $message }}</strong>
+                                                            </span>
                                                         @enderror
                                                     </div>
                                                 </div>
@@ -88,14 +89,20 @@
                                                         <fieldset class="form-group">
                                                             <select class="form-select" name="engagement_type"
                                                                 id="engagementType">
-                                                                <option value="{{ $data[0]->engagement_type }}"
-                                                                    {{ $data[0]->engagement_type == $data[0]->engagement_type ? 'selected' : '' }}>
-                                                                    {{ $data[0]->engagement_type }}
+                                                                <option selected disabled>-- Select Engagement Type --
                                                                 </option>
-                                                                @foreach ($engagementType as $key => $value)
-                                                                    <option value="{{ $value->type }}">
-                                                                        {{ $value->type }}</option>
-                                                                @endforeach
+                                                                <option value="Strategy"
+                                                                    {{ $data[0]->engagement_type == 'Strategy' ? 'selected="selected"' : '' }}>
+                                                                    Strategy</option>
+                                                                <option value="Leadership"
+                                                                    {{ $data[0]->engagement_type == 'Leadership' ? 'selected="selected"' : '' }}>
+                                                                    Leadership</option>
+                                                                <option value="Teams"
+                                                                    {{ $data[0]->engagement_type == 'Teams' ? 'selected="selected"' : '' }}>
+                                                                    Teams</option>
+                                                                <option value="Capability"
+                                                                    {{ $data[0]->engagement_type == 'Capability' ? 'selected="selected"' : '' }}>
+                                                                    Capability</option>
                                                             </select>
                                                             <div class="form-control-icon">
                                                                 <svg xmlns="http://www.w3.org/2000/svg" width="16"
@@ -119,14 +126,32 @@
                                                         <fieldset class="form-group">
                                                             <select class="form-select" name="webinar_title"
                                                                 id="webinarTitle">
-                                                                <option value="{{ $data[0]->webinar_title }}"
-                                                                    {{ $data[0]->webinar_title == $data[0]->webinar_title ? 'selected' : '' }}>
-                                                                    {{ $data[0]->webinar_title }}
+                                                                <option selected disabled>-- Select Webinar Title --
                                                                 </option>
-                                                                @foreach ($webinarTitle as $key => $value)
-                                                                    <option value="{{ $value->title }}">
-                                                                        {{ $value->title }}</option>
-                                                                @endforeach
+                                                                <option value="Re:Think Mental Wellness"
+                                                                    {{ $data[0]->webinar_title == 'Re:Think Mental Wellness' ? 'selected="selected"' : '' }}>
+                                                                    Think Mental
+                                                                    Wellness
+                                                                </option>
+                                                                <option value="Making Emotional Intelligence Visible"
+                                                                    {{ $data[0]->webinar_title == 'Making Emotional Intelligence Visible' ? 'selected="selected"' : '' }}>
+                                                                    Making
+                                                                    Emotional Intelligence Visible</option>
+                                                                <option value="From Burnout to Balance"
+                                                                    {{ $data[0]->webinar_title == 'From Burnout to Balance' ? 'selected="selected"' : '' }}>
+                                                                    From Burnout to Balance</option>
+                                                                <option value="Power of Yet"
+                                                                    {{ $data[0]->webinar_title == 'Power of Yet' ? 'selected="selected"' : '' }}>
+                                                                    Power of Yet</option>
+                                                                <option value="Leading Virtual Teams"
+                                                                    {{ $data[0]->webinar_title == 'Leading Virtual Teams' ? 'selected="selected"' : '' }}>
+                                                                    Leading Virtual Teams</option>
+                                                                <option value="Secret Ingredient to High Performing Teams"
+                                                                    {{ $data[0]->webinar_title == 'Secret Ingredient to High Performing Teams' ? 'selected="selected"' : '' }}>
+                                                                    Secret Ingredient to High Performing Teams</option>
+                                                                <option value="Creating Digital Bonds"
+                                                                    {{ $data[0]->webinar_title == 'Creating Digital Bonds' ? 'selected="selected"' : '' }}>
+                                                                    Creating Digital Bonds</option>
                                                             </select>
                                                             <div class="form-control-icon">
                                                                 <svg xmlns="http://www.w3.org/2000/svg" width="16"
@@ -141,57 +166,59 @@
                                                 </div>
                                             </div>
 
-                                            <h6 class="text-center mt-3">Dates Covered by Engagement</h3>
-                                                <div class="col-md-4">
-                                                    <div class="form-group has-icon-left">
-                                                        <label>Number of Pax</label>
-                                                        <div class="position-relative">
-                                                            <input type="number" class="form-control"
-                                                                placeholder="Enter pax number" name="pax_number"
-                                                                value="{{ $data[0]->pax_number }}">
-                                                            <div class="form-control-icon">
-                                                                <i class="bi bi-people"></i>
+                                            <div class="row justify-content-center g-3 gx-5">
+                                                <h6 class="text-center mt-3 fst-italic">Dates Covered by Engagement</h3>
+                                                    <div class="col-md-2">
+                                                        <div class="form-group has-icon-left">
+                                                            <label>Number of Pax</label>
+                                                            <div class="position-relative">
+                                                                <input type="number" class="form-control"
+                                                                    placeholder="Enter pax number" name="pax_number"
+                                                                    value="{{ $data[0]->pax_number }}">
+                                                                <div class="form-control-icon">
+                                                                    <i class="bi bi-people"></i>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
 
-                                                <div class="col-md-4">
-                                                    <div class="form-group has-icon-left">
-                                                        <label>Date</label>
-                                                        <div class="position-relative">
-                                                            <input type="date" class="form-control"
-                                                                placeholder="Enter date" name="doe"
-                                                                value="{{ $data[0]->doe }}">
-                                                            <div class="form-control-icon">
-                                                                <i class="bi bi-calendar"></i>
+                                                    <div class="col-md-3">
+                                                        <div class="form-group has-icon-left">
+                                                            <label>Date</label>
+                                                            <div class="position-relative">
+                                                                <input type="date" class="form-control"
+                                                                    placeholder="Enter date" name="doe"
+                                                                    value="{{ $data[0]->doe }}">
+                                                                <div class="form-control-icon">
+                                                                    <i class="bi bi-calendar"></i>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
 
-                                                <div class="col-md-4">
-                                                    <div class="form-group has-icon-left">
-                                                        <label>Time</label>
-                                                        <div class="position-relative">
-                                                            <input type="time" class="form-control"
-                                                                placeholder="Enter time" name="dot"
-                                                                value="{{ $data[0]->dot }}">
-                                                            <div class="form-control-icon">
-                                                                <i class="bi bi-clock"></i>
+                                                    <div class="col-md-2">
+                                                        <div class="form-group has-icon-left">
+                                                            <label>Time</label>
+                                                            <div class="position-relative">
+                                                                <input type="time" class="form-control"
+                                                                    placeholder="Enter time" name="dot"
+                                                                    value="{{ $data[0]->dot }}">
+                                                                <div class="form-control-icon">
+                                                                    <i class="bi bi-clock"></i>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                            </div>
 
-                                                {{-- <div class="col-12 d-flex justify-content-end">
+                                            {{-- <div class="col-12 d-flex justify-content-end">
                                                     <button type="submit" class="btn btn-primary me-1 mb-1">Save</button>
                                                     <a href="{{ route('form/view/detail') }}"
                                                         class="btn btn-light-secondary me-1 mb-1">Back</a>
                                                 </div> --}}
                                         </div>
                                     </div>
-                                {{-- end of container --}}
+                                    {{-- end of container --}}
                                 </div>
                                 @include('view_record.viewfees')
                                 @include('view_record.viewcost')
