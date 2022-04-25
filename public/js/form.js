@@ -56,15 +56,18 @@ $(document).on("change keyup", ".engagement-program, .engagement-fee, .program-p
 
     totalPackage = document.getElementById('tot').value.replace(/,/g, '');
     total = document.getElementById('total').value.replace(/,/g, '');
-    profit = +totalPackage - total;
-    $("#profit").val(profit);
+    var profit = +totalPackage - total;
+    profit = Math.ceil(profit);
+    $("#profit").val(currency.format(profit));
     
-    lessPercent = document.getElementById('tot').value.replace(/,/g, '') * 0.35;
-    $("#less-percent").val(lessPercent);
+    var lessPercent = document.getElementById('tot').value.replace(/,/g, '') * 0.35;
+    lessPercent = Math.ceil(lessPercent);
+    $("#less-percent").val(currency.format(lessPercent));
 
     percent = document.getElementById('less-percent').value.replace(/,/g, '');
-    netProfit = +profit - percent;
-    $("#net-profit").val(netProfit);
+    var netProfit = +profit - percent;
+    netProfit = Math.ceil(netProfit);
+    $("#net-profit").val(currency.format(netProfit));
 
     var profitMargin = ((+netProfit / totalPackage) * 100);
     profitMargin = Math.ceil(profitMargin);
@@ -93,7 +96,7 @@ function isInputNumber(evt) {
 }
 
 $(document).on("change keyup click", ".engagement-cost, .custom-fee, .custom-hours, .creators-fees, .creator-hour, .program-lead, .lead-hour, .lead-nonovertime, .program-moderator, .moderator-hour, .moderator-nonovertime, .program-producer, .producer-hour, .producer-nonovertime",
-    function () {
+    function (cost) {
         let currency = Intl.NumberFormat('en-US');
         var engagementFee = document.getElementById('tot').value.replace(/,/g, '') / 100;
         customFee = document.getElementById('ec-customFee').value;
@@ -143,18 +146,21 @@ $(document).on("change keyup click", ".engagement-cost, .custom-fee, .custom-hou
             sum += (producerNonovertime * producer);
         });
 
-        $("#total").val(currency.format(sum));
+        
+        $("#total").val(currency.format(Math.ceil(sum)));
 
         totalPackage = document.getElementById('tot').value.replace(/,/g, '');
         total = document.getElementById('total').value.replace(/,/g, '');
-        profit = +totalPackage - total;
-        $("#profit").val(currency.format(profit));
+        var profit = +totalPackage - total;
+        $("#profit").val(currency.format(Math.ceil(profit)));
         
-        lessPercent = document.getElementById('tot').value.replace(/,/g, '') * 0.35;
+        var lessPercent = document.getElementById('tot').value.replace(/,/g, '') * 0.35;
+        lessPercent = Math.ceil(lessPercent);
         $("#less-percent").val(currency.format(lessPercent));
 
         percent = document.getElementById('less-percent').value.replace(/,/g, '');
-        netProfit = +profit - percent;
+        var netProfit = +profit - percent;
+        netProfit = Math.ceil(netProfit);
         $("#net-profit").val(currency.format(netProfit));
         
         var profitMargin = ((+netProfit / totalPackage) * 100);
