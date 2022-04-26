@@ -41,7 +41,7 @@
                                     <input type="hidden" name="id" value="{{ $data[0]->id }}">
                                     <div class="form-body">
                                         <div class="row">
-                                            <div class="col-md-4">
+                                            {{-- <div class="col-md-4">
                                                 <label>ID</label>
                                             </div>
                                             <div class="col-md-8">
@@ -56,7 +56,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </div> --}}
 
                                             <div class="col-md-4">
                                                 <label>Company Name</label>
@@ -231,11 +231,11 @@
         <footer>
             <div class="footer clearfix mb-0 text-muted ">
                 <div class="float-start">
-                    <p>2022 &copy; MGSTRAT</p>
+                    <p>2022 &copy; MGT-STRAT</p>
                 </div>
                 <div class="float-end">
                     <p>Crafted with <span class="text-danger"><i class="bi bi-heart"></i></span> by <a
-                            href="#">MGSTRAT</a></p>
+                            href="#">MGT-STRAT</a></p>
                 </div>
             </div>
         </footer>

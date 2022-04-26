@@ -40,8 +40,8 @@
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th>ID</th>
-                                    <th>Full Name</th>
+                                    <th>Status</th>
+                                    <th>Company Name</th>
                                     <th>Engagement Type</th>
                                     <th>Webinar Title</th>
                                     <th>Number of Pax</th>
@@ -55,7 +55,9 @@
                                 @foreach ($data as $key => $item)
                                     <tr>
                                         <td class="id">{{ ++$key }}</td>
-                                        <td class="name">{{ $item->deal_number }}</td>
+                                        <td class="status">
+                                            <span class="badge bg-success">Active</span>
+                                        </td>
                                         <td class="name">{{ $item->full_name }}</td>
                                         <td class="name">{{ $item->engagement_type }}</td>
                                         <td class="email">{{ $item->webinar_title }}</td>
@@ -85,11 +87,11 @@
         <footer>
             <div class="footer clearfix mb-0 text-muted ">
                 <div class="float-start">
-                    <p>2022 &copy; MGSTRAT</p>
+                    <p>2022 &copy; MGT-STRAT</p>
                 </div>
                 <div class="float-end">
                     <p>Crafted with <span class="text-danger"><i class="bi bi-heart"></i></span> by <a
-                            href="#">MGSTRAT</a></p>
+                            href="#">MGT-STRAT</a></p>
                 </div>
             </div>
         </footer>

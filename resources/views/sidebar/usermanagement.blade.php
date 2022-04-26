@@ -96,10 +96,10 @@
                             <a href="$">CUSTOMIZED ENGAGEMENT</a>
                         </li>
                         <li class="submenu-item">
-                            <a href="$">MGSTRAT-U WORKSHOPS</a>
+                            <a href="$">MGT-STRAT-U WORKSHOPS</a>
                         </li>
                         <li class="submenu-item">
-                            <a href="$">MGSTRAT-U WEBINARS</a>
+                            <a href="$">MGT-STRAT-U WEBINARS</a>
                         </li>
                         <li class="submenu-item">
                             <a href="$">COACHING</a>

@@ -129,8 +129,8 @@
             <div class="col-md-4">
                 <div class="form-group has-icon-left">
                     <div class="position-relative">
-                        <input type="date" class="form-control @error('doe') is-invalid @enderror"
-                            value="{{ old('doe') }}" placeholder="Enter Date" name="doe" id="doe">
+                        <input type="date" class="form-control datepicker @error('doe') is-invalid @enderror"
+                            value="{{ old('doe') }}" placeholder="Enter Date" name="doe" id="doe" min="2022-01-01">
                         <div class="form-control-icon">
                             <i class="bi bi-calendar"></i>
                         </div>

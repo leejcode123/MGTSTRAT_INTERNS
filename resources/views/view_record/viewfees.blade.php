@@ -4,7 +4,7 @@
 </div>
 <div class="form-body container">
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-2">
             <label class="fw-bold">Customization Fee</label>
             <div class="form-group position-relative has-icon-left">
                 <fieldset>
@@ -15,9 +15,6 @@
                         <option value="10000" {{ $data[0]->ef_customFee == '10000' ? 'selected="selected"' : '' }}
                             title="with minimal design customization, or platform customization outside of Zoom/Google Meets/MS Teams. Up to 2 hours of work">
                             &#8369;10,000</option>
-                        {{-- <option value="10000" {{ old('ef_customFee') == '10000' ? 'selected="selected"' : '' }}
-                            title="with minimal design customization, or platform customization outside of Zoom/Google Meets/MS Teams. Up to 2 hours of work">
-                            &#8369;10,000</option> --}}
                     </select>
                     <div class="form-control-icon">
                         <i class="fa-solid fa-wand-magic-sparkles"></i>
@@ -33,23 +30,23 @@
     </div>
 
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-3">
             <label class="fw-bold">Program</label>
             <div class="form-group position-relative has-icon-left">
                 <fieldset>
-                    <select class="form-select engagement-program @error('ef_program') is-invalid @enderror" name="ef_program"
-                        id="ef_program" onchange="changePackage()">
+                    <select class="form-select engagement-program @error('ef_program') is-invalid @enderror"
+                        name="ef_program" id="ef_program" onchange="changePackage()">
                         <option selected disabled value="0">-- Select Program Package --</option>
                         <option id="package1" value="Package, 51-100 pax (P54K, P60K)"
-                            {{$data[0]->ef_program == 'Package, 51-100 pax (P54K, P60K)' ? 'selected="selected"' : '' }}
+                            {{ $data[0]->ef_program == 'Package, 51-100 pax (P54K, P60K)' ? 'selected="selected"' : '' }}
                             title="with minimal design customization, or platform customization outside of Zoom/Google Meets/MS Teams. Up to 2 hours of work">
                             Package, 51-100 pax (P54K, P60K)</option>
                         <option id="package2" value="Package, 101-200 pax (P63K, P70K)"
-                            {{$data[0]->ef_program == 'Package, 101-200 pax (P63K, P70K)' ? 'selected="selected"' : '' }}
+                            {{ $data[0]->ef_program == 'Package, 101-200 pax (P63K, P70K)' ? 'selected="selected"' : '' }}
                             title="with minimal design customization, or platform customization outside of Zoom/Google Meets/MS Teams. Up to 2 hours of work">
                             Package, 101-200 pax (P63K, P70K)</option>
                         <option id="package3" value="Package, 201 pax and up (P72K, P80K)"
-                            {{$data[0]->ef_program == 'Package, 201 pax and up (P72K, P80K)' ? 'selected="selected"' : '' }}
+                            {{ $data[0]->ef_program == 'Package, 201 pax and up (P72K, P80K)' ? 'selected="selected"' : '' }}
                             title="with minimal design customization, or platform customization outside of Zoom/Google Meets/MS Teams. Up to 2 hours of work">
                             Package, 201 pax and up (P72K, P80K)</option>
                     </select>
@@ -65,41 +62,40 @@
             </div>
         </div>
 
-        <div class="col-md-3">
+        <div class="col-md-2">
             <div class="form-group has-icon-left">
                 <label class="fw-bold" id="titlePrice">Price</label>
                 <div class="position-relative">
                     <fieldset class="form-group" id="packagePrice123" style="display: block;">
-                        {{-- <select class="form-select program-price @error('ef_programCost') is-invalid @enderror select"
-                            name="ef_programCost" id="progcost123" 
-                            onchange="input_discount()">
-                            <option selected disabled>{{ $data[0]->ef_programCost }}</option>
-                        </select> --}}
 
                         @if ($data[0]->ef_programCost == 54000 || $data[0]->ef_programCost == 60000)
-                            <select class="form-select program-price @error('ef_programCost') is-invalid @enderror select"
-                            name="ef_programCost" id="progcost1" onclick="input_discount()">
+                            <select
+                                class="form-select program-price @error('ef_programCost') is-invalid @enderror select"
+                                name="ef_programCost" id="progcost1" onclick="input_discount()">
                                 <option value="0" selected disabled>-- Select Price --</option>
-                                <option value="54000" {{ $data[0]->ef_programCost == '54000' ? 'selected="selected"' : '' }}>
+                                <option value="54000"
+                                    {{ $data[0]->ef_programCost == '54000' ? 'selected="selected"' : '' }}>
                                     &#8369;54,000</option>
-                                <option value="60000" {{ $data[0]->ef_programCost == '60000' ? 'selected="selected"' : '' }}>
+                                <option value="60000"
+                                    {{ $data[0]->ef_programCost == '60000' ? 'selected="selected"' : '' }}>
                                     &#8369;60,000</option>
                             </select>
-
                         @elseif ($data[0]->ef_programCost == 63000 || $data[0]->ef_programCost == 70000)
-                            <select class="form-select program-price @error('ef_programCost') is-invalid @enderror select"
-                            name="ef_programCost" id="progcost2" onclick="input_discount()">
+                            <select
+                                class="form-select program-price @error('ef_programCost') is-invalid @enderror select"
+                                name="ef_programCost" id="progcost2" onclick="input_discount()">
                                 <option value="0" selected disabled>-- Select Price --</option>
-                                <option value="63000" {{ $data[0]->ef_programCost == '63000' ? 'selected="selected"' : '' }}>
+                                <option value="63000"
+                                    {{ $data[0]->ef_programCost == '63000' ? 'selected="selected"' : '' }}>
                                     &#8369;63,000</option>
                                 <option value="70000"
                                     {{ $data[0]->ef_programCost == '70000' ? 'selected="selected"' : '' }}>
                                     &#8369;70,000</option>
                             </select>
-
                         @elseif ($data[0]->ef_programCost == 72000 || 80000)
-                            <select class="form-select program-price @error('ef_programCost') is-invalid @enderror select"
-                            name="ef_programCost" id="progcost3" onclick="input_discount()">
+                            <select
+                                class="form-select program-price @error('ef_programCost') is-invalid @enderror select"
+                                name="ef_programCost" id="progcost3" onclick="input_discount()">
                                 <option value="0" selected disabled>-- Select Price --</option>
                                 <option value="72000"
                                     {{ $data[0]->ef_programCost == '72000' ? 'selected="selected"' : '' }}>
@@ -115,18 +111,127 @@
                         </div>
 
                         @error('ef_programCost')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </fieldset>
+
+                    <fieldset class="form-group" id="packagePrice" style="display: none">
+                        <select class="form-select program-price @error('ef_programCost') is-invalid @enderror select"
+                            name="ef_programCost" id="progcost1" onclick="input_discount()">
+                            <option value="0" selected disabled>-- Select Price --</option>
+                            <option value="54000"
+                                {{ old('ef_programCost') == '54000' ? 'selected="selected"' : '' }}>
+                                &#8369;54,000</option>
+                            <option value="60000"
+                                {{ old('ef_programCost') == '60000' ? 'selected="selected"' : '' }}>
+                                &#8369;60,000</option>
+                        </select>
+                        <div class="   form-control-icon">
+                            <i class="bi bi-cash"></i>
+                        </div>
+                        @error('ef_programCost')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </fieldset>
+
+                    <fieldset class="form-group" id="packagePrice2" style="display: none">
+                        <select class="form-select program-price @error('ef_programCost') is-invalid @enderror select"
+                            name="ef_programCost" id="progcost2" onclick="input_discount()">
+                            <option value="0" selected disabled>-- Select Price --</option>
+                            <option value="63000"
+                                {{ old('ef_programCost') == '63000' ? 'selected="selected"' : '' }}>
+                                &#8369;63,000</option>
+                            <option value="70000"
+                                {{ old('ef_programCost') == '70000' ? 'selected="selected"' : '' }}>
+                                &#8369;70,000</option>
+                        </select>
+                        <div class="form-control-icon">
+                            <i class="bi bi-cash"></i>
+                        </div>
+                        @error('ef_programCost')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </fieldset>
+
+                    <fieldset class="form-group" id="packagePrice3" style="display: none">
+                        <select class="form-select program-price @error('ef_programCost') is-invalid @enderror select"
+                            name="ef_programCost" id="progcost3" onclick="input_discount()">
+                            <option value="0" selected disabled>-- Select Price --</option>
+                            <option value="72000"
+                                {{ old('ef_programCost') == '72000' ? 'selected="selected"' : '' }}>
+                                &#8369;72,000</option>
+                            <option value="80000"
+                                {{ old('ef_programCost') == '80000' ? 'selected="selected"' : '' }}>
+                                &#8369;80,000</option>
+                        </select>
+                        <div class="form-control-icon">
+                            <i class="bi bi-cash"></i>
+                        </div>
+                        @error('ef_programCost')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </fieldset>
+
+                    @error('ef_programCost')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
-                        @enderror
-                    </fieldset>
+                    @enderror
                 </div>
             </div>
         </div>
 
-        <div class="col-md-3">
+        <div class="col-md-2">
             <div class="form-group has-icon-left">
                 <label class="fw-bold">Sessions</label>
+                <div class="position-relative">
+                    <input type="number" class="form-control ef-sessions @error('ef_sessions') is-invalid @enderror"
+                        value="{{ $data[0]->ef_sessions }}" onblur="input_discount()" onkeyup="input_discount()"
+                        placeholder="Number of sessions" id="ef-sessions" name="ef_sessions">
+                    <div class="form-control-icon">
+                        <i class="bi bi-calendar4-week"></i>
+                    </div>
+                    @error('ef_sessions')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-2">
+            <div class="form-group has-icon-left">
+                <label class="fw-bold" style="font-size: 0.8em; padding-bottom: 5px;">Night Shift, Weekends,
+                    Holidays</label>
+                <div class="position-relative">
+                    <input type="number" class="form-control working-days @error('ef_workingDays') is-invalid @enderror"
+                        value="{{ $data[0]->ef_workingDays }}" placeholder="---" id="ef-workingDays"
+                        name="ef_workingDays" onblur="input_discount()" onkeyup="input_discount()">
+                    <div class="form-control-icon">
+                        <i class="fa-solid fa-calendar-day"></i>
+                    </div>
+
+                    @error('ef_workingDays')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+            </div>
+        </div>
+
+        {{-- <div class="col-md-3">
+            <div class="form-group has-icon-left">
+                <label class="fw-bold">Notes</label>
                 <div class="position-relative">
                     <input type="number" class="form-control ef-sessions @error('ef_sessions') is-invalid @enderror"
                         value="{{ $data[0]->ef_sessions }}" onblur="input_discount()" onkeyup="input_discount()" placeholder="Number of sessions" id="ef-sessions"
@@ -141,10 +246,10 @@
                     @enderror
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
 
-    <div class="row">
+    {{-- <div class="row">
         <div class="col-md-4">
             <div class="form-group has-icon-left">
                 <label class="fw-bold">Night Shift, Weekends, Holidays</label>
@@ -164,7 +269,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
     <div class="form-group row">
         <div class="col-md-4">
@@ -208,7 +313,7 @@
                         <span class="bi bi-cash fa-lg"></span>
                     </div> --}}
                     <input type="text" id="totalStandard" name="ef_totalStandard"
-                    value="{{ $data[0]->ef_totalStandard }}"
+                        value="{{ $data[0]->ef_totalStandard }}"
                         class="form-control tot @error('ef_totalStandard') is-invalid @enderror" readonly>
                     <div class="form-control-icon">
                         <i class="bi bi-cash"></i>
