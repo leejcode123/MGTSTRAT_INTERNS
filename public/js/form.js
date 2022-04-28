@@ -37,6 +37,10 @@ $(document).on("change input", ".engagement-program, .engagement-fee, .program-p
 
     $(".engagement-fee").each(function () {
         sum += +$(this).val();
+        document.getElementById('ef-sessions').value = 0;
+        document.getElementById('ef-workingDays').value = 0;
+        // document.getElementById('packagePrice2').value = 1
+        // document.getElementById('packagePrice3').value = 1
     });
 
     $(".program-price").each(function () {
@@ -178,4 +182,42 @@ function input_expense() {
 
     var total = document.getElementById('total');
     total.value = standardPrice + sum;
+}
+
+document.getElementById("ec-creatorsFee").addEventListener("change", creatorsFee);
+function creatorsFee() {
+    var creatorHours = document.getElementById('creators-hours');
+    if (creatorHours.value == "") {
+    document.getElementById("creators-hours").value = 0;
+    }
+}
+
+document.getElementById("ec-lead").addEventListener("keyup", lead);
+function lead() {
+    var leadHours = document.getElementById('lead-hours');
+    var leadNonOvertime = document.getElementById('lead-nonovertime');
+    if (leadHours.value == "" && leadNonOvertime.value == "") {
+    document.getElementById("lead-hours").value = 0;
+    document.getElementById("lead-nonovertime").value = 0;
+    }
+}
+
+document.getElementById("ec_moderator").addEventListener("change", moderator);
+function moderator() {
+    var moderatorHour = document.getElementById('moderator-hour');
+    var moderatorNonOvertime = document.getElementById('moderator-nonovertime');
+    if(moderatorHour.value == "" && moderatorNonOvertime.value == "" ){
+        document.getElementById('moderator-hour').value = 0
+        document.getElementById("moderator-nonovertime").value = 0;
+    }
+}
+
+document.getElementById("ec-producer").addEventListener("keyup", producer);
+function producer() {
+    var producerHour = document.getElementById("producer-hour");
+    var producerNonOvertime = document.getElementById("producer-nonovertime");
+    if(producerHour.value == "" && producerNonOvertime.value == ""){
+    document.getElementById("producer-hour").value = 0;
+    document.getElementById("producer-nonovertime").value = 0;
+    }
 }

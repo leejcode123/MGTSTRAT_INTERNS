@@ -24,10 +24,10 @@
                                             {{-- <br> --}}
                                             <form method="POST" action="{{ route('login') }}">
                                                 @csrf
-                                                <div class="d-flex align-items-center mb-3 pb-1">
+                                                <div class="d-flex align-items-center mb-3">
                                                     {{-- <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
                                                     <span class="h1 fw-bold mb-0">Logo</span> --}}
-                                                    <img class="img-fluid" src="{{ asset('images/logo/main-logo.png') }}" alt="">
+                                                    <img class="img-fluid" src="{{ asset('assets/images/logo/main-logo.png') }}" alt="">
                                                 </div>
 
                                                 <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your

@@ -43,6 +43,11 @@
     padding: 0 0.6rem;
     }
 
+    .required:after {
+    content:" *";
+    color: red;
+    }
+
 </style>
 
 <body id="body" >

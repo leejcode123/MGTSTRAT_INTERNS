@@ -4,8 +4,8 @@
 </div>
 <div class="form-body container">
     <div class="row">
-        <div class="col-md-2">
-            <label class="fw-bold">Customization Fee</label>
+        <div class="col-md-3">
+            <label class="fw-bold required">Customization Fee</label>
             <div class="form-group position-relative has-icon-left">
                 <fieldset>
                     <select class="form-select engagement-fee @error('ef_customFee') is-invalid @enderror select"
@@ -31,7 +31,7 @@
 
     <div class="row">
         <div class="col-md-3">
-            <label class="fw-bold">Program</label>
+            <label class="fw-bold required">Program</label>
             <div class="form-group position-relative has-icon-left">
                 <fieldset>
                     <select class="form-select engagement-program @error('ef_program') is-invalid @enderror"
@@ -64,7 +64,7 @@
 
         <div class="col-md-2">
             <div class="form-group has-icon-left">
-                <label class="fw-bold" id="titlePrice">Price</label>
+                <label class="fw-bold required" id="titlePrice">Price</label>
                 <div class="position-relative">
                     <fieldset class="form-group" id="packagePrice123" style="display: block;">
 
@@ -189,9 +189,9 @@
             </div>
         </div>
 
-        <div class="col-md-2">
+        <div class="col-md-3">
             <div class="form-group has-icon-left">
-                <label class="fw-bold">Sessions</label>
+                <label class="fw-bold required">Sessions</label>
                 <div class="position-relative">
                     <input type="number" class="form-control ef-sessions @error('ef_sessions') is-invalid @enderror"
                         value="{{ $data[0]->ef_sessions }}" onblur="input_discount()" onkeyup="input_discount()"
@@ -208,7 +208,7 @@
             </div>
         </div>
 
-        <div class="col-md-2">
+        {{-- <div class="col-md-2">
             <div class="form-group has-icon-left">
                 <label class="fw-bold" style="font-size: 0.8em; padding-bottom: 5px;">Night Shift, Weekends,
                     Holidays</label>
@@ -227,7 +227,7 @@
                     @enderror
                 </div>
             </div>
-        </div>
+        </div> --}}
 
         {{-- <div class="col-md-3">
             <div class="form-group has-icon-left">
@@ -249,8 +249,8 @@
         </div> --}}
     </div>
 
-    {{-- <div class="row">
-        <div class="col-md-4">
+    <div class="row">
+        <div class="col-md-3">
             <div class="form-group has-icon-left">
                 <label class="fw-bold">Night Shift, Weekends, Holidays</label>
                 <div class="position-relative">
@@ -269,12 +269,12 @@
                 </div>
             </div>
         </div>
-    </div> --}}
+    </div>
 
     <div class="form-group row">
-        <div class="col-md-4">
+        <div class="col-md-3">
             <div class="form-group has-icon-left">
-                <label class="fw-bold">Producer</label>
+                <label class="fw-bold required">Producer</label>
                 <div class="position-relative">
                     {{-- <div class="input-group-text">
                         <span class="bi bi-person-video2"></span>

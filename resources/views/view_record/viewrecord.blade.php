@@ -42,10 +42,11 @@
                                     <th>No</th>
                                     <th>Status</th>
                                     <th>Company Name</th>
-                                    <th>Engagement Type</th>
-                                    <th>Webinar Title</th>
+                                    <th width="10%">Engagement Type</th>
+                                    <th width="20%">Webinar Title</th>
                                     <th>Number of Pax</th>
-                                    <th>Date</th>
+                                    <th>Engagament Fee</th>
+                                    <th>Start Date</th>
                                     <th>Time</th>
                                     {{-- <th>Salary</th> --}}
                                     <th class="text-center">Modify</th>
@@ -62,8 +63,9 @@
                                         <td class="name">{{ $item->engagement_type }}</td>
                                         <td class="email">{{ $item->webinar_title }}</td>
                                         <td class="phone_number">{{ $item->pax_number }}</td>
-                                        <td class="phone_number">{{ $item->doe }}</td>
-                                        <td class="phone_number">{{ $item->dot }}</td>
+                                        <td class="engagement-fee">&#8369;{{ $item->ef_total }}</td>
+                                        <td class="phone_number">{{ date('M d, Y',strtotime($item->doe)) }}</td>
+                                        <td class="phone_number">{{ date('h:i a',strtotime($item->dot)) }}</td>
                                         {{-- <td class="phone_number">{{ $item->salary }}</td> --}}
                                         <td class="text-center">
                                             <a href="{{ route('form/budget/new') }}">

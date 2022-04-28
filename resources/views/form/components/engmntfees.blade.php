@@ -4,8 +4,8 @@
 </div>
 <div class="form-body container">
     <div class="row">
-        <div class="col-md-4">
-            <label class="fw-bold">Customization Fee</label>
+        <div class="col-md-3">
+            <label class="fw-bold required">Customization Fee</label>
             <div class="form-group position-relative has-icon-left">
                 <fieldset>
                     <select class="form-select engagement-fee @error('ef_customFee') is-invalid @enderror select"
@@ -30,8 +30,8 @@
     </div>
 
     <div class="row">
-        <div class="col-md-4">
-            <label class="fw-bold">Program</label>
+        <div class="col-md-3">
+            <label class="fw-bold required">Program</label>
             <div class="form-group position-relative has-icon-left">
                 <fieldset>
                     <select class="form-select @error('ef_program') is-invalid @enderror" name="ef_program"
@@ -64,7 +64,7 @@
 
         <div class="col-md-3">
             <div class="form-group has-icon-left">
-                <label class="fw-bold" id="titlePrice">Price</label>
+                <label class="fw-bold required" id="titlePrice">Price</label>
                 <div class="position-relative">
                     <fieldset class="form-group" id="packagePrice123">
                         <select class="form-select program-price @error('ef_programCost') is-invalid @enderror select"
@@ -133,7 +133,7 @@
 
         <div class="col-md-3">
             <div class="form-group has-icon-left">
-                <label class="fw-bold">Sessions</label>
+                <label class="fw-bold required">Sessions</label>
                 <div class="position-relative">
                     <input type="number" class="form-control ef-sessions @error('ef_sessions') is-invalid @enderror"
                         value="{{ old('ef_sessions') }}" placeholder="Number of sessions" id="ef-sessions"
@@ -152,7 +152,7 @@
     </div>
 
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-3">
             <div class="form-group has-icon-left">
                 <label class="fw-bold">Night Shift, Weekends, Holidays</label>
                 <div class="position-relative">
@@ -174,9 +174,9 @@
     </div>
 
     <div class="form-group row">
-        <div class="col-md-4">
+        <div class="col-md-3">
             <div class="form-group has-icon-left">
-                <label class="fw-bold">Producer</label>
+                <label class="fw-bold required">Producer</label>
                 <div class="position-relative">
                     {{-- <div class="input-group-text">
                         <span class="bi bi-person-video2"></span>
@@ -185,8 +185,7 @@
                         <select class="form-select engagement-fee @error('ef_producer') is-invalid @enderror select"
                             name="ef_producer" id="producer" onclick="input_discount()"
                             onchange="producerFcn(this.value);">
-                            <option selected disabled>-- Select Producer Price--</option>
-                            <option value="0" {{ old('ef_producer') == '0' ? 'selected="selected"' : '' }}>
+                            <option value="0" {{ old('ef_producer') == '0' ? 'selected="selected"' : '' }} selected>
                                 &#8369;0</option>
                             <option value="4000" {{ old('ef_producer') == '4000' ? 'selected="selected"' : '' }}>
                                 &#8369;4,000</option>

@@ -244,7 +244,7 @@ class WebinarformController extends Controller
             'ec_moderator'              => 'required',
             'moderator_hour'            => 'required',
             'ec_producer'               => 'required|numeric',
-            'producer_hour'             => 'required|numeric',
+            // 'producer_hour'             => 'required|numeric',
             'ec_programExpense'         => 'required|numeric',
             // 'ec_total'                  => 'required|numeric',
         ],
@@ -273,7 +273,7 @@ class WebinarformController extends Controller
             'ec_moderator.required'              => 'Please select Moderator',
             'moderator_hour.required'            => 'Number Hours field is required',
             'ec_producer.required'               => 'Producer field is required',
-            'producer_hour.required'             => 'Number of Hours field is required',
+            // 'producer_hour.required'             => 'Number of Hours field is required',
             'ec_programExpense.required'         => 'Program expenses field is required',
             // 'ec_total.required'                  => '',
             ]

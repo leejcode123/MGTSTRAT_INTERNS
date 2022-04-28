@@ -6,7 +6,7 @@
     <h5 class="mt-5">Commision</h5>
     <div class="ml-2" style="margin-left: 1%">
         <div class="form-group row">
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <label class="fw-bold">Sales</label>
                 <div class="form-group position-relative has-icon-left">
                     <fieldset>
@@ -47,7 +47,7 @@
         </div>
 
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <label class="fw-bold">Referral</label>
                 <div class="form-group position-relative has-icon-left">
                     <fieldset>
@@ -75,7 +75,7 @@
         </div>
 
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <label class="fw-bold">Engagement Manager</label>
                 <div class="form-group position-relative has-icon-left">
                     <fieldset>
@@ -109,7 +109,7 @@
         </div>
 
         <div class="form-group row">
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <div class="form-group has-icon-left">
                     <label class="fw-bold">Customization Fee</label>
                     <div class="position-relative">
@@ -128,7 +128,7 @@
                 </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <div class="form-group has-icon-left">
                     <label class="fw-bold">Number of Hours</label>
                     <div class="form-group position-relative has-icon-left">
@@ -156,7 +156,7 @@
         </div>
 
         <div class="form-group row">
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <div class="form-group has-icon-left">
                     <label class="fw-bold">Creators Fees</label>
                     <div class="position-relative">
@@ -187,7 +187,7 @@
                 </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <div class="form-group has-icon-left">
                     <label class="fw-bold">Number of Hours</label>
                     <div class="form-group position-relative has-icon-left">
@@ -214,29 +214,25 @@
     <h5 class="mt-5">Program</h5>
     <div class="mb-3" style="margin-left:1%">
         <div class="form-group row">
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <div class="form-group has-icon-left">
                     <label class="fw-bold">Lead</label>
                     <div class="position-relative">
                         <input type="number"
-                            class="form-control program-lead @error('ec_lead') is-invalid @enderror select"
+                            class="form-control program-lead select"
                             value="{{ $data[0]->ec_lead }}" name="ec_lead" id="ec-lead">
                         <div class="form-control-icon">
                             <i class="fa-solid fa-users"></i>
                         </div>
-                        @error('ec_lead')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
+
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <div class="form-group has-icon-left">
                     <label class="fw-bold">Number of Hours</label>
-                    <div class="form-group position-relative has-icon-left">
+                    <div class="position-relative">
                         <input type="number" class="form-control lead-hour @error('lead_hours') is-invalid @enderror"
                             name="lead_hours" value="{{ $data[0]->lead_hours }}" id="lead-hours">
                         <div class="form-control-icon">
@@ -251,21 +247,16 @@
                 </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <div class="form-group has-icon-left">
                     <label class="fw-bold">Night shift / Weekends / Holidays</label>
-                    <div class="form-group position-relative has-icon-left">
+                    <div class="position-relative">
                         <input type="number"
                             class="form-control lead-nonovertime  @error('lead_nonovertime') is-invalid @enderror"
                             name="lead_nonovertime" value="{{ $data[0]->lead_nonovertime }}" id="lead-nonovertime">
                         <div class="form-control-icon">
                             <i class="fa-solid fa-calendar-day"></i>
                         </div>
-                        @error('lead_nonovertime')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
                     </div>
                 </div>
             </div>
@@ -273,13 +264,13 @@
         </div>
 
         <div class="form-group row">
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <div class="form-group has-icon-left">
                     <label class="fw-bold">Moderator</label>
                     <div class="position-relative">
                         <fieldset class="form-group">
                             <select
-                                class="form-select program-moderator @error('ec_moderator') is-invalid @enderror select"
+                                class="form-select program-moderator select"
                                 name="ec_moderator" id="ec_moderator" onclick="input_discount()">
                                 <option selected disabled>-- Select Moderator Price --</option>
                                 <option value="750"
@@ -295,114 +286,84 @@
                             <div class="form-control-icon">
                                 <i class="fa-solid fa-crown"></i>
                             </div>
-                            @error('ec_moderator')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
                         </fieldset>
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <div class="form-group has-icon-left">
                     <label class="fw-bold">Number of Hours</label>
-                    <div class="form-group position-relative has-icon-left">
+                    <div class="position-relative">
                         <input type="number"
                             class="form-control moderator-hour @error('moderator_hour') is-invalid @enderror"
                             name="moderator_hour" value="{{ $data[0]->moderator_hour }}" id="moderator-hour">
                         <div class="form-control-icon">
                             <i class="fa-solid fa-hourglass-start"></i>
                         </div>
-                        @error('moderator_hour')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <div class="form-group has-icon-left">
                     <label class="fw-bold">Night shift / Weekends / Holidays</label>
                     <div class="form-group position-relative has-icon-left">
                         <input type="number"
-                            class="form-control moderator-nonovertime  @error('moderator_nonovertime') is-invalid @enderror"
+                            class="form-control moderator-nonovertime"
                             name="moderator_nonovertime" value="{{ $data[0]->moderator_nonovertime }}"
                             id="moderator-nonovertime">
                         <div class="form-control-icon">
                             <i class="fa-solid fa-calendar-day"></i>
                         </div>
-                        @error('moderator_nonovertime')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="form-groum row">
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <div class="form-group has-icon-left">
                     <label class="fw-bold">Producer</label>
                     <div class="position-relative">
                         <input type="number"
-                            class="form-control program-producer @error('ec_producer') is-invalid @enderror"
+                            class="form-control program-producer"
                             value="{{ $data[0]->ec_producer }}" placeholder="" id="ec-producer" name="ec_producer">
                         <div class="form-control-icon">
                             <i class="fa-solid fa-person-chalkboard"></i>
                         </div>
-                        @error('ec_producer')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <div class="form-group has-icon-left">
                     <label class="fw-bold">Number of Hours</label>
                     <div class="form-group position-relative has-icon-left">
                         <fieldset>
                             <input type="text"
-                                class="form-control producer-hour @error('producer_hour') is-invalid @enderror"
+                                class="form-control producer-hour"
                                 name="producer_hour" value="{{ $data[0]->producer_hour }}" id="producer-hour">
                             <div class="form-control-icon">
                                 <i class="fa-solid fa-hourglass-start"></i>
                             </div>
-                            @error('producer_hour')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
                         </fieldset>
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <div class="form-group has-icon-left">
                     <label class="fw-bold">Night shift / Weekends / Holidays</label>
-                    <div class="form-group position-relative has-icon-left">
+                    <div class="position-relative">
                         <fieldset>
                             <input type="text"
-                                class="form-control producer-nonovertime  @error('producer_nonovertime') is-invalid @enderror"
+                                class="form-control producer-nonovertime "
                                 name="producer_nonovertime" value="{{ $data[0]->producer_nonovertime }}"
                                 id="producer-nonovertime">
                             <div class="form-control-icon">
                                 <i class="fa-solid fa-calendar-day"></i>
                             </div>
-                            @error('producer_nonovertime')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
                         </fieldset>
                     </div>
                 </div>

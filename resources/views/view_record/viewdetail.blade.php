@@ -59,7 +59,7 @@
                                             </div> --}}
 
                                             <div class="col-md-4">
-                                                <label>Company Name</label>
+                                                <label class="fw-bold required">Company Name</label>
                                             </div>
                                             <div class="col-md-8">
                                                 <div class="form-group has-icon-left">
@@ -81,7 +81,7 @@
                                             </div>
 
                                             <div class="col-md-4">
-                                                <label>Engagement Type</label>
+                                                <label class="fw-bold required">Engagement Type</label>
                                             </div>
                                             <div class="col-md-8">
                                                 <div class="form-group has-icon-left">
@@ -118,7 +118,7 @@
                                             </div>
 
                                             <div class="col-md-4">
-                                                <label>Webinar Title</label>
+                                                <label class="fw-bold required">Webinar Title</label>
                                             </div>
                                             <div class="col-md-8">
                                                 <div class="form-group has-icon-left">
@@ -170,7 +170,7 @@
                                                 <h6 class="text-center mt-3 fst-italic">Dates Covered by Engagement</h3>
                                                     <div class="col-md-2">
                                                         <div class="form-group has-icon-left">
-                                                            <label>Number of Pax</label>
+                                                            <label class="fw-bold required">Number of Pax</label>
                                                             <div class="position-relative">
                                                                 <input type="number" class="form-control"
                                                                     placeholder="Enter pax number" name="pax_number"
@@ -184,7 +184,7 @@
 
                                                     <div class="col-md-3">
                                                         <div class="form-group has-icon-left">
-                                                            <label>Date</label>
+                                                            <label class="fw-bold required">Date</label>
                                                             <div class="position-relative">
                                                                 <input type="date" class="form-control"
                                                                     placeholder="Enter date" name="doe"
@@ -198,7 +198,7 @@
 
                                                     <div class="col-md-2">
                                                         <div class="form-group has-icon-left">
-                                                            <label>Time</label>
+                                                            <label class="fw-bold required">Time</label>
                                                             <div class="position-relative">
                                                                 <input type="time" class="form-control"
                                                                     placeholder="Enter time" name="dot"
