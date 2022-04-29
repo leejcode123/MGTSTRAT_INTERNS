@@ -62,7 +62,7 @@
             </div>
         </div>
 
-        <div class="col-md-2">
+        <div class="col-md-3">
             <div class="form-group has-icon-left">
                 <label class="fw-bold required" id="titlePrice">Price</label>
                 <div class="position-relative">

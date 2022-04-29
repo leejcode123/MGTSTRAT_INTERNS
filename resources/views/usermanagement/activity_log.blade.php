@@ -67,7 +67,7 @@
                 </div>
                 <div class="float-end">
                     <p>Crafted with <span class="text-danger"><i class="bi bi-heart"></i></span> by <a
-                            href="http://soengsouy.com">MGT-STRAT</a></p>
+                            href="http://MGT-STRAT">MGT-STRAT</a></p>
                 </div>
             </div>
         </footer>

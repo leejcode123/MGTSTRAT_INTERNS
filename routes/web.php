@@ -82,6 +82,7 @@ Route::get('change/password', [App\Http\Controllers\UserManagementController::cl
 Route::post('change/password/db', [App\Http\Controllers\UserManagementController::class, 'changePasswordDB'])->name('change/password/db');
 
 // ----------------------------- form staff ------------------------------//
+Route::get('form/customizedEngagement/new', [App\Http\Controllers\WebinarformController::class, 'customized'])->middleware('auth')->name('form/customizedEngagement/new');
 Route::get('form/budget/new', [App\Http\Controllers\WebinarformController::class, 'index'])->middleware('auth')->name('form/budget/new');
 Route::post('form/save', [App\Http\Controllers\WebinarformController::class, 'saveRecord'])->name('form/save');
 Route::get('form/view/detail', [App\Http\Controllers\WebinarformController::class, 'viewRecord'])->middleware('auth')->name('form/view/detail');

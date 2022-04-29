@@ -87,7 +87,7 @@
                             <a href="#">NEW F2F ENGAGEMENTS</a>
                         </li>
                         <li class="submenu-item">
-                            <a href="#">CUSTOMIZED ENGAGEMENT</a>
+                            <a href="{{ route('form/customizedEngagement/new') }}">CUSTOMIZED ENGAGEMENT</a>
                         </li>
                         <li class="submenu-item">
                             <a href="#">MGT-STRAT-U WORKSHOPS</a>

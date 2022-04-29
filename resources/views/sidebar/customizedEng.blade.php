@@ -54,13 +54,13 @@
 
                 @if (Auth::user()->role_name == 'Admin')
                     <li class="sidebar-title">Page &amp; Controller</li>
-                    <li class="sidebar-item  has-sub active">
+                    <li class="sidebar-item  has-sub">
                         <a href="#" class='sidebar-link'>
                             <i class="bi bi-hexagon-fill"></i>
                             <span>Maintenance</span>
                         </a>
-                        <ul class="submenu active">
-                            <li class="submenu-item active">
+                        <ul class="submenu">
+                            <li class="submenu-item">
                                 <a href="{{ route('userManagement') }}">User Control</a>
                             </li>
                             <li class="submenu-item">
@@ -72,27 +72,21 @@
                         </ul>
                     </li>
                 @endif
-                <li class="sidebar-item">
-                    <a href="{{ route('change/password') }}" class='sidebar-link'>
-                        <i class="bi bi-shield-lock"></i>
-                        <span>Change Password</span>
-                    </a>
-                </li>
 
                 <li class="sidebar-title">Forms &amp; Tables</li>
-                <li class="sidebar-item  has-sub">
+                <li class="sidebar-item  has-sub active">
                     <a href="#" class='sidebar-link'>
                         <i class="bi bi-file-earmark-medical-fill"></i>
                         <span>Budget Form</span>
                     </a>
-                    <ul class="submenu">
+                    <ul class="submenu active">
                         <li class="submenu-item">
                             <a href="{{ route('form/budget/new') }}">Webinar Form</a>
                         </li>
                         <li class="submenu-item">
                             <a href="#">NEW F2F ENGAGEMENTS</a>
                         </li>
-                        <li class="submenu-item">
+                        <li class="submenu-item active">
                             <a href="{{ route('form/customizedEngagement/new') }}">CUSTOMIZED ENGAGEMENT</a>
                         </li>
                         <li class="submenu-item">
@@ -109,6 +103,7 @@
                         </li>
                     </ul>
                 </li>
+
                 <li class="sidebar-item  has-sub">
                     <a href="#" class='sidebar-link'>
                         <i class="bi bi-grid-1x2-fill"></i>
@@ -120,6 +115,7 @@
                         </li>
                     </ul>
                 </li>
+
             </ul>
             {{-- <li class="sidebar-item">
                     <a href="{{ route('logout') }}" class='sidebar-link'>
@@ -127,6 +123,7 @@
                         <span>Log Out</span>
                     </a>
                 </li> --}}
+
         </div>
         <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
     </div>

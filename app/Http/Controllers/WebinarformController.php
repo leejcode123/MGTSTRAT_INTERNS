@@ -19,6 +19,11 @@ class WebinarformController extends Controller
     {
         return view('form.form');
     }
+    // view customized engagement
+    public function customized()
+    {
+        return view('form.customized_engagement');
+    }
 
     // view record
     public function viewRecord()
@@ -67,12 +72,6 @@ class WebinarformController extends Controller
             'ec_hours'                  => 'required',
             'ec_creatorsFee'            => 'required',
             'creators_hours'            => 'required|numeric|min:1|max:24',
-            'ec_lead'                   => 'required|numeric',
-            'lead_hours'                => 'required|numeric',
-            'ec_moderator'              => 'required',
-            'moderator_hour'            => 'required',
-            'ec_producer'               => 'required|numeric',
-            'producer_hour'             => 'required|numeric',
             'ec_programExpense'         => 'required|numeric',
         ],
 
@@ -87,6 +86,7 @@ class WebinarformController extends Controller
             'ef_programCost.required'   => 'Please select Program Price',
             'ef_sessions.required'      => 'This field is required',
             'ef_producer.required'      => 'Please select Producer price',
+
             //engagement cost
             'ec_sales.required'                  => 'Please select Sales',
             'ec_refferal.required'               => 'Please select Referral',
@@ -95,26 +95,19 @@ class WebinarformController extends Controller
             'ec_hours.required'                  => 'Please select Number of Hours',
             'ec_creatorsFee.required'            => 'Please select Creators Fee',
             'creators_hours.required'            => 'Creator Hours field is required',
-            'ec_lead.required'                   => 'Lead field is required',
-            'lead_hours.required'                => 'Number of Hours field is required',
-            'ec_moderator.required'              => 'Please select Moderator',
-            'moderator_hour.required'            => 'Number Hours field is required',
-            'ec_producer.required'               => 'Producer field is required',
-            'producer_hour.required'             => 'Number of Hours field is required',
             'ec_programExpense.required'         => 'Program expenses field is required',
-            // 'ec_total.required'                  => '',
             ]
         );
         
         try{
-            $id                 = $request->id;
-            $deal_number        = $request->deal_number;
-            $fullName           = $request->fullName;
-            $engagement_type    = $request->engagement_type;
-            $webinar_title      = $request->webinar_title;
-            $pax_number         = $request->pax_number;
-            $doe                = $request->doe;
-            $dot                = $request->dot;
+            $id                         = $request->id;
+            $deal_number                = $request->deal_number;
+            $fullName                   = $request->fullName;
+            $engagement_type            = $request->engagement_type;
+            $webinar_title              = $request->webinar_title;
+            $pax_number                 = $request->pax_number;
+            $doe                        = $request->doe;
+            $dot                        = $request->dot;
 
             //engagement fees
             $ef_customFee               = $request->ef_customFee;
@@ -155,14 +148,14 @@ class WebinarformController extends Controller
 
             $update = [
 
-                'id'                => $id,
-                'deal_number'       => $deal_number,
-                'full_name'         => $fullName,
-                'engagement_type'   => $engagement_type,
-                'webinar_title'     => $webinar_title,
-                'pax_number'        => $pax_number,
-                'doe'               => $doe,
-                'dot'               => $dot,
+                'id'                         => $id,
+                'deal_number'                => $deal_number,
+                'full_name'                  => $fullName,
+                'engagement_type'            => $engagement_type,
+                'webinar_title'              => $webinar_title,
+                'pax_number'                 => $pax_number,
+                'doe'                        => $doe,
+                'dot'                        => $dot,
 
                 //engagement fees
                 'ef_customFee'               => $ef_customFee,
@@ -228,9 +221,7 @@ class WebinarformController extends Controller
             'ef_program'                => 'required',
             'ef_programCost'            => 'required',
             'ef_sessions'               => 'required',            
-            'ef_producer'               => 'required',            
-            // 'ef_totalStandard'          => 'required|numeric|max:255',
-            // 'ef_total'                  => 'required|numeric|max:255',
+            'ef_producer'               => 'required',
             //engagement cost information
             'ec_sales'                  => 'required',
             'ec_refferal'               => 'required',
@@ -239,14 +230,7 @@ class WebinarformController extends Controller
             'ec_hours'                  => 'required',
             'ec_creatorsFee'            => 'required',
             'creators_hours'            => 'required|numeric|min:1|max:24',
-            'ec_lead'                   => 'required|numeric',
-            'lead_hours'                => 'required|numeric',
-            'ec_moderator'              => 'required',
-            'moderator_hour'            => 'required',
-            'ec_producer'               => 'required|numeric',
-            // 'producer_hour'             => 'required|numeric',
             'ec_programExpense'         => 'required|numeric',
-            // 'ec_total'                  => 'required|numeric',
         ],
 
             ['fullName.required'        => 'You must input Company Name ',
@@ -268,14 +252,7 @@ class WebinarformController extends Controller
             'ec_hours.required'                  => 'Please select Number of Hours',
             'ec_creatorsFee.required'            => 'Please select Creators Fee',
             'creators_hours.required'            => 'Creator Hours field is required',
-            'ec_lead.required'                   => 'Lead field is required',
-            'lead_hours.required'                => 'Number of Hours field is required',
-            'ec_moderator.required'              => 'Please select Moderator',
-            'moderator_hour.required'            => 'Number Hours field is required',
-            'ec_producer.required'               => 'Producer field is required',
-            // 'producer_hour.required'             => 'Number of Hours field is required',
             'ec_programExpense.required'         => 'Program expenses field is required',
-            // 'ec_total.required'                  => '',
             ]
         );
 

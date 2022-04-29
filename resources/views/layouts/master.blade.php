@@ -48,6 +48,13 @@
     color: red;
     }
 
+    label {
+        overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display:block;
+    }
+
 </style>
 
 <body id="body" >

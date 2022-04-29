@@ -168,7 +168,7 @@
 
                                             <div class="row justify-content-center g-3 gx-5">
                                                 <h6 class="text-center mt-3 fst-italic">Dates Covered by Engagement</h3>
-                                                    <div class="col-md-2">
+                                                    <div class="col-md-3">
                                                         <div class="form-group has-icon-left">
                                                             <label class="fw-bold required">Number of Pax</label>
                                                             <div class="position-relative">
@@ -196,7 +196,7 @@
                                                         </div>
                                                     </div>
 
-                                                    <div class="col-md-2">
+                                                    <div class="col-md-3">
                                                         <div class="form-group has-icon-left">
                                                             <label class="fw-bold required">Time</label>
                                                             <div class="position-relative">
