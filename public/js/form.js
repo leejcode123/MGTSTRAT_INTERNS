@@ -37,8 +37,8 @@ $(document).on("change input", ".engagement-program, .engagement-fee, .program-p
 
     $(".engagement-fee").each(function () {
         sum += +$(this).val();
-        document.getElementById('ef-sessions').value = 0;
-        document.getElementById('ef-workingDays').value = 0;
+        // document.getElementById('ef-sessions').value = 0;
+        // document.getElementById('ef-workingDays').value = 0;
         // document.getElementById('packagePrice2').value = 1
         // document.getElementById('packagePrice3').value = 1
     });
@@ -221,3 +221,5 @@ function producer() {
     document.getElementById("producer-nonovertime").value = 0;
     }
 }
+
+

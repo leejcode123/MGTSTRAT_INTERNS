@@ -38,13 +38,22 @@
                         <form class="form form-horizontal" action="{{ route('form/save') }}" method="POST">
                             @csrf
                             {{-- information --}}
-                            @include('form.components.customized_engagement.information')
+                            @include(
+                                'form.components.customized_engagement.information'
+                            )
 
                             {{-- Engagement fees --}}
-                            {{-- @include('form.components.engmntfees') --}}
+                            @include(
+                                'form.components.customized_engagement.engagement_fees'
+                            )
 
                             {{-- Engagement Cost --}}
                             {{-- @include('form.components.engmntcost') --}}
+
+                            <div class="col-12 d-flex justify-content-center mt-3">
+                                <button type="submit" class="btn btn-primary me-1 mb-1">Save</button>
+                                <button type="reset" class="btn btn-light-secondary me-1 mb-1">Reset</button>
+                            </div>
                         </form>
 
                     </div>

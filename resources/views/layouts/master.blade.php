@@ -49,15 +49,105 @@
     }
 
     label {
-        overflow: hidden;
+    overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     display:block;
     }
 
+    .input-table {
+        border:0;
+        border-bottom: 2px solid #808080; 
+        border-radius:0px;
+    }
+
+    .title-th:nth-child(1),
+    .title-th:nth-child(6),
+    .title-th:nth-child(7)
+    {
+        border:3px solid black;
+    }
+
+    .title-middle:nth-child(2),
+    .title-middle:nth-child(3),
+    .title-middle:nth-child(4),
+    .title-middle:nth-child(5)
+    {
+        border:3px solid black;
+        border-right: none;
+        border-left: none; 
+    }
+
+    .title:nth-child(1)
+    {
+        border:3px solid black;
+        border-top:none;
+        border-bottom: none;
+    }
+
+    .total-td:nth-child(6),
+    .total-td:nth-child(7) 
+    {
+        border:3px solid black;
+        border-top:none;
+        border-bottom: none;
+    }
+
+    .overall-total-start:nth-child(1)
+    {
+        border:3px solid black;
+    }
+
+    .overall-total-middle:nth-child(2),
+    .overall-total-middle:nth-child(3),
+    .overall-total-middle:nth-child(4),
+    .overall-total-middle:nth-child(5)
+    {
+        border:3px solid black;
+        border-right:none;
+        border-left:none;
+    }
+
+    .overall-total-end:nth-child(6),
+    .overall-total-end:nth-child(7)
+    {
+        border:3px solid black;
+    }
+
+    /* @media only screen and (max-width:800px) {
+            #no-more-tables tbody,
+            #no-more-tables tr,
+            #no-more-tables td {
+                display: block;
+            }
+            #no-more-tables thead tr {
+                position: absolute;
+                top: -9999px;
+                left: -9999px;
+            }
+            #no-more-tables td {
+                position: relative;
+                padding-left: 50%;
+                border: none;
+                border-bottom: 1px solid #eee;
+            }
+            #no-more-tables td:before {
+                content: attr(data-title);
+                position: absolute;
+                left: 6px;
+                font-weight: bold;
+            }
+            #no-more-tables tr {
+                border-bottom: 1px solid #ccc;
+            }
+        } */
+
+
+    
+
 </style>
 
-<body id="body" >
+<body id="body">
     <div id="app">
         @yield('menu')
         {{-- content main page --}}
