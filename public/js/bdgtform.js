@@ -7,7 +7,7 @@ var __webpack_exports__ = {};
   \**********************************/
 
   //Customized Engagement form of Engagement Fees
-  $(document).on("change keyup", ".noc-b13, .hf-c13, .noh-d13, .nwh-e13, .noc-b14, .hf-c14, .noh-d14, .nwh-e14 .noc-b18, .hf-c18, .noh-d18, .nwh-e18, .noc-b21, .hf-c21, .noh-d21, .nwh-e21, .noc-b22, .hf-c22, .noh-d22, .nwh-e22, .noc-b23, .hf-c23, .noh-d23, .nwh-e23, .noc-b24, .hf-c24, .noh-d24, .nwh-e24, .noc-b28, .hf-c28, .noh-d28, .nwh-e28",
+  $(document).on("change keyup", ".noc-b13, .hf-c13, .noh-d13, .nwh-e13, .noc-b14, .hf-c14, .noh-d14, .nwh-e14 .noc-b18, .hf-c18, .noh-d18, .nwh-e18, .noc-b21, .hf-c21, .noh-d21, .nwh-e21, .noc-b22, .hf-c22, .noh-d22, .nwh-e22, .noc-b23, .hf-c23, .noh-d23, .nwh-e23, .noc-b24, .hf-c24, .noh-d24, .nwh-e24, .noc-b28, .hf-c28, .noh-d28, .nwh-e28, .tf-f34",
     function () {
       let currency = Intl.NumberFormat('en-US');
       //total package
@@ -28,7 +28,10 @@ var __webpack_exports__ = {};
 
       //other tools
       sum28 = 0;
-/*******************************************************CONSULTING**********************************************************************************************/
+
+      //discounts if given
+      sum32 = 0;
+      /*******************************************************CONSULTING**********************************************************************************************/
         //Lead consultant
         $(".hf-c13").each(function () {
             sum13 += ($(".noc-b13").val() * +$(this).val() * $(".noh-d13").val())
@@ -46,7 +49,7 @@ var __webpack_exports__ = {};
         //Subtotal
         $("#subtotal-consulting").html(currency.format(Math.ceil(sum)));
 
-/*******************************************************DESIGN************************************************************************************************/
+        /*******************************************************DESIGN************************************************************************************************/
         $(".hf-c18").each(function () {
           sum18 += ($(".noc-b18").val() * +$(this).val() * $(".noh-d18").val())
           + ($(".nwh-e18").val() * ($(".noc-b18").val() * +$(this).val() * $(".noh-d18").val() * 0.2));
@@ -54,7 +57,7 @@ var __webpack_exports__ = {};
         });
         $("#subtotal-design").html(currency.format(Math.ceil(sum18)));
 
-/*******************************************************PROGRAM************************************************************************************************/
+        /*******************************************************PROGRAM************************************************************************************************/
         //Lead Facilitator
         $(".hf-c21").each(function () {
           sum21 += ($(".noc-b21").val() * +$(this).val() * $(".noh-d21").val())
@@ -88,7 +91,7 @@ var __webpack_exports__ = {};
         $("#subtotal-producer").html(currency.format(Math.ceil(sum24)));
         $("#program-subtotal").html(currency.format(Math.ceil(sum21 + sum22 + sum23 + sum24)));
 
-/*******************************************************DOCUMENTOR************************************************************************************************/
+        /*******************************************************DOCUMENTOR************************************************************************************************/
         $(".hf-c28").each(function () {
             sum28 += ($(".noc-b28").val() * +$(this).val().replace(/,/g, '') * $(".noh-d28").val())
             + ($(".nwh-e28").val() * ($(".noc-b28").val() * +$(this).val().replace(/,/g, '') * $(".noh-d28").val() * 0.2));
@@ -96,9 +99,26 @@ var __webpack_exports__ = {};
         });
         $("#subtotal-documentor").html(currency.format(Math.ceil(sum28)));
 
-/*******************************************************TOTAL PACKAGE************************************************************************************************/
-        $("#total-package").html(currency.format(Math.ceil(sum)));
-    });
+        /*******************************************************TOTAL STANDARD FEES************************************************************************************************/
+        $("#total-standard").html(currency.format(Math.ceil(sum)));
+
+        /*******************************************************DISCOUNTS************************************************************************************************/
+        $(".tf-f34").each(function () {
+          sum32 += (1 - (+$(this).val() / sum)) * 100;
+          totalPackage = $("#input-totalPackage").val();
+
+          if (sum32 > 100) {
+            sumDiscount = sum32 - 100;
+            $("#input-discount").val('-'+sumDiscount+'%');
+          }else if(sum32 == isNaN(sum32) || isNaN(sum32) != 0) {
+            $("#input-discount").val(100+'%');
+          }else {
+            sumDiscount = Math.round(sum32);
+            $("#input-discount").val(sumDiscount+'%');
+          }
+        });
+
+        }); //end of engagement fees
 
   //design
   // $(document).on("change keyup", ".noc-b18, .hf-c18, .noh-d18, .nwh-e18",
@@ -328,7 +348,7 @@ var __webpack_exports__ = {};
 
       //Society
     } else if(clusterDropdown.value == "Parenting") {
-      
+
       document.getElementById("core-valueInput").value = "Society";
       document.getElementById("input-notListed").disabled = true;
       document.getElementById("core-valueInput").disabled = true;

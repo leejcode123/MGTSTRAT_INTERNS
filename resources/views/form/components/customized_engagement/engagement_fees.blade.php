@@ -379,7 +379,7 @@
                         <td class="overall-total-middle"></td>
                         <td class="overall-total-middle"></td>
                         <td class="overall-total-end" style="background-color: rgba(146, 146, 146, 0.727)">
-                            <h4 class="text-center fw-bold">-</h4>
+                            <h4 class="text-center fw-bold" id="total-standard">-</h4>
                         </td>
                         <td class="overall-total-end">
                             <input type="text" class="form-control input-table @error('') is-invalid @enderror"
@@ -395,9 +395,9 @@
                     <tr class="table-active">
                         <td class="fw-bold text-dark text-uppercase fst-italic overall-total-start">discount given (if any)</td>
                         <td class="overall-total-middle"></td>
-                        <td class="overall-total-middle">
-                            <input type="text" class="form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="">
+                        <td class="overall-total-middle table-warning">
+                            <input type="text" class="hf-c32 form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" name="" id="input-discount">
                         </td>
                         <td class="overall-total-middle"></td>
                         <td class="overall-total-middle"></td>
@@ -414,8 +414,9 @@
                         <td class="overall-total-middle"></td>
                         <td class="overall-total-middle"></td>
                         <td class="overall-total-middle"></td>
-                        <td class="overall-total-end" class="bg-secondary">
-                            <h4 class="text-center fw-bold text-danger" id="total-package">-</h4>
+                        <td class="overall-total-end bg-warning">
+                            <input type="number" class="tf-f34 form-control input-table @error('') is-invalid @enderror" 
+                            value="{{ old('') }}" name="" id="input-totalPackage">
                         </td>
                         <td class="overall-total-end">
                             <input type="text" class="form-control input-table @error('') is-invalid @enderror"
