@@ -509,12 +509,12 @@
                         <fieldset class="form-group">
                             <select class="form-select @error('') is-invalid @enderror" name=""
                                 id="core-valueInput" disabled>
-                                <option value="Cluster" selected>Cluster</option>
+                                <option value="Culture" selected>Culture</option>
                                 <option value="Capability">Capability</option>
-                                <option value="Teams">Teams</option>
                                 <option value="Leadership">Leadership</option>
+                                <option value="Social">Social</option>
                                 <option value="Strategy">Strategy</option>
-                                <option value="Culture">Culture</option>
+                                <option value="Teams">Teams</option>
                             </select>
                         </fieldset>
                         <div class="form-control-icon">
