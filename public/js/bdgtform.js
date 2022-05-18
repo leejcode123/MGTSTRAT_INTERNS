@@ -311,6 +311,7 @@ var __webpack_exports__ = {};
 
         document.getElementById("core-valueInput").value = "Capability";
         document.getElementById("input-notListed").disabled = true;
+        document.getElementById("div-notListed").style.visibility = "hidden";
         document.getElementById("core-valueInput").disabled = true;
 
       //Culture
@@ -322,6 +323,7 @@ var __webpack_exports__ = {};
 
         document.getElementById("core-valueInput").value = "Culture";
         document.getElementById("input-notListed").disabled = true;
+        document.getElementById("div-notListed").style.visibility = "hidden";
         document.getElementById("core-valueInput").disabled = true;
 
       //Leadership
@@ -338,6 +340,7 @@ var __webpack_exports__ = {};
 
       document.getElementById("core-valueInput").value = "Leadership";
       document.getElementById("input-notListed").disabled = true;
+      document.getElementById("div-notListed").style.visibility = "hidden";
       document.getElementById("core-valueInput").disabled = true;
 
       //Strategy
@@ -347,6 +350,7 @@ var __webpack_exports__ = {};
 
       document.getElementById("core-valueInput").value = "Strategy";
       document.getElementById("input-notListed").disabled = true;
+      document.getElementById("div-notListed").style.visibility = "hidden";
       document.getElementById("core-valueInput").disabled = true;
 
       //Teams
@@ -356,6 +360,7 @@ var __webpack_exports__ = {};
 
       document.getElementById("core-valueInput").value = "Teams";
       document.getElementById("input-notListed").disabled = true;
+      document.getElementById("input-notListed").style.visibility = "hidden";
       document.getElementById("core-valueInput").disabled = true;
 
       //Society
@@ -363,12 +368,14 @@ var __webpack_exports__ = {};
 
       document.getElementById("core-valueInput").value = "Society";
       document.getElementById("input-notListed").disabled = true;
+      document.getElementById("div-notListed").style.visibility = "hidden";
       document.getElementById("core-valueInput").disabled = true;
 
       //Not listed
     } else{
         document.getElementById("core-valueInput").value = "Cluster";
         document.getElementById("input-notListed").disabled = false;
+        document.getElementById("div-notListed").style.visibility = "";
         document.getElementById("core-valueInput").disabled = false;
     }
   }

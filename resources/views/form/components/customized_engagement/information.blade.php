@@ -87,7 +87,7 @@
         <div class="col-md-3">
             <label class="fw-bold required">Cluster </label>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-4">
             <div class="form-group has-icon-left">
                 <div class="position-relative">
                     <fieldset class="form-group">
@@ -481,7 +481,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-5">
+        <div class="col-md-4" id="div-notListed">
             <div class="form-group has-icon-left">
                 <div class="position-relative">
                     <input type="text" class="form-control @error('') is-invalid @enderror"
