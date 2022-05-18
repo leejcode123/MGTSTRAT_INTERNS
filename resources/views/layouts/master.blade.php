@@ -78,7 +78,9 @@
         border-left: none; 
     }
 
-    .title:nth-child(1)
+    .title:nth-child(1),
+    .title:nth-child(3),
+    .title:nth-child(4)
     {
         border:3px solid black;
         border-top:none;
@@ -114,7 +116,23 @@
         border:3px solid black;
     }
 
+    td.tbl-engmt-cost{
+        background-color: rgba(146, 146, 146, 0.727)
+    }
+    input.text-center {
+        text-align: center;
+    }
+
+    input.yellow-input[type="number"], textarea {
+
+    background-color : #FFFED0; 
+
+    }
+    
 </style>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
 
 <body id="body">
     <div id="app">
@@ -145,7 +163,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous">
     </script>
+    
+    {{-- budget forms --}}
     <script src="{{ url('js/bdgtform.js') }}"></script>
+
+    {{-- sweet alert popup message --}}
     @include('sweetalert::alert')
 
 

@@ -1,4 +1,4 @@
-@section('title', 'Webinar Form')
+@section('title', 'Customized Engagement Form')
 @extends('layouts.master')
 @section('menu')
     @extends('sidebar.customizedEng')
@@ -47,13 +47,18 @@
                                 'form.components.customized_engagement.engagement_fees'
                             )
 
+                            {{-- Engagement fees --}}
+                            @include(
+                                'form.components.customized_engagement.engagement_cost'
+                            )
+
                             {{-- Engagement Cost --}}
                             {{-- @include('form.components.engmntcost') --}}
 
-                            <div class="col-12 d-flex justify-content-center mt-3">
+                            {{-- <div class="col-12 d-flex justify-content-center mt-3">
                                 <button type="submit" class="btn btn-primary me-1 mb-1">Save</button>
                                 <button type="reset" class="btn btn-light-secondary me-1 mb-1">Reset</button>
-                            </div>
+                            </div> --}}
                         </form>
 
                     </div>

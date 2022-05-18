@@ -30,10 +30,10 @@
                         <th class="total-td"></th>
                     </tr>
                     <tr class="table-warning" id="lead-consultant">
-                        <td class="title">Lead Consultant (P7K, P9K)</td>
+                        <td class="title">Lead Consultant</td>
                         <td data-title="# OF CONSULTANTS">
                             <input type="number" class="noc-b13 form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="" max="100">
+                                value="{{ old('') }}" name="" id="" title="" max="100">
                         </td>
                         <td>
                             <fieldset>
@@ -130,7 +130,7 @@
                     </tr>
         
                     <tr class="table-warning">
-                        <td class="title">Designer (P48K / P64K)</td>
+                        <td class="title">Designer</td>
                         <td>
                             <input type="number" class="noc-b18 form-control input-table @error('') is-invalid @enderror" 
                                 value="{{ old('') }}" name="" id="" max="100">
@@ -184,7 +184,7 @@
                     </tr>
         
                     <tr class="table-warning">
-                        <td class="title">Lead Facilitator (P80K, P88K, 96K)</td>
+                        <td class="title">Lead Facilitator</td>
                         <td>
                             <input type="number" class="noc-b21 form-control input-table @error('') is-invalid @enderror" 
                                 value="{{ old('') }}" name="" id="" max="100">
@@ -234,7 +234,7 @@
                     </tr>
 
                     <tr class="table-warning">
-                        <td class="title">Co-Facilitator (P10K, P11K, P12K)</td>
+                        <td class="title">Co-facilitator / Resource Speaker</td>
                         <td>
                             <input type="number" class="noc-b22 form-control input-table @error('') is-invalid @enderror" 
                                 value="{{ old('') }}" name="" id="" max="100">
@@ -367,10 +367,6 @@
                                 value="{{ old('') }}" name="" id="">
                         </td>
                     </tr>
-                    {{-- break --}}
-                    {{-- <tr class="bg-secondary">
-                        <td></td>
-                    </tr> --}}
 
                     <tr class="table-active overall-total">
                         <td class="text-uppercase text-dark fst-italic fw-bold overall-total-start">TOTAL STANDARD FEES</td>
@@ -387,11 +383,6 @@
                                 name="" id="">
                         </td>
                     </tr>
-                    {{-- break --}}
-                    {{-- <tr class="bg-secondary">
-                        <td></td>
-                    </tr> --}}
-
                     <tr class="table-active">
                         <td class="fw-bold text-dark text-uppercase fst-italic overall-total-start">discount given (if any)</td>
                         <td class="overall-total-middle"></td>
@@ -415,8 +406,10 @@
                         <td class="overall-total-middle"></td>
                         <td class="overall-total-middle"></td>
                         <td class="overall-total-end bg-warning">
-                            <input type="number" class="tf-f34 form-control input-table @error('') is-invalid @enderror" 
-                            value="{{ old('') }}" name="" id="input-totalPackage">
+                            {{-- <input type="number" class="tf-f34 form-control input-table @error('') is-invalid @enderror" 
+                            value="{{ old('') }}" name="" id="input-totalPackage"> --}}
+                            <input type="text" class="tf-f34 form-control input-table @error('') is-invalid @enderror" 
+                            value="{{ old('') }}" name="" id="input-totalPackages">
                         </td>
                         <td class="overall-total-end">
                             <input type="text" class="form-control input-table @error('') is-invalid @enderror"

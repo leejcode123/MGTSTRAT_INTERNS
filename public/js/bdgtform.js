@@ -34,7 +34,7 @@ var __webpack_exports__ = {};
       /*******************************************************CONSULTING**********************************************************************************************/
         //Lead consultant
         $(".hf-c13").each(function () {
-            sum13 += ($(".noc-b13").val() * +$(this).val() * $(".noh-d13").val())
+            sum13 += ($(".noc-b13").val() * +$(this).val() * $(".noh-d13").val());
             + ($(".nwh-e13").val() * ($(".noc-b13").val() * +$(this).val() * $(".noh-d13").val() * 0.2));
             sum += +sum13;
         });
@@ -104,8 +104,7 @@ var __webpack_exports__ = {};
 
         /*******************************************************DISCOUNTS************************************************************************************************/
         $(".tf-f34").each(function () {
-          sum32 += (1 - (+$(this).val() / sum)) * 100;
-          totalPackage = $("#input-totalPackage").val();
+          sum32 += (1 - (+$(this).val().replace(/,/g, '') / sum))* 100 ;
 
           if (sum32 > 100) {
             sumDiscount = sum32 - 100;
@@ -252,8 +251,21 @@ var __webpack_exports__ = {};
           $(this).val(input_val);
       }
   });
-
+  
     $(".hf-c28").on({
+      keyup: function() {
+          let input_val = $(this).val();
+          input_val = numberToCurrency(input_val);
+          $(this).val(input_val);
+      },
+      blur: function() { 
+          let input_val = $(this).val();
+          input_val = numberToCurrency(input_val, true, true);
+          $(this).val(input_val);
+      }
+  });
+
+    $(".tf-f34").on({
       keyup: function() {
           let input_val = $(this).val();
           input_val = numberToCurrency(input_val);
@@ -355,17 +367,33 @@ var __webpack_exports__ = {};
 
       //Not listed
     } else{
-        document.getElementById("core-valueInput").value = "";
+        document.getElementById("core-valueInput").value = "Cluster";
         document.getElementById("input-notListed").disabled = false;
         document.getElementById("core-valueInput").disabled = false;
     }
   }
 
+  //To be announce
+  document.getElementById("dcbeCheck").addEventListener("click", myFunction);
+  function myFunction() {
+    var checkBox = document.getElementById("dcbeCheck");
+    var DatesCoveredByEngagement = document.getElementById("dcbe");
+    if (checkBox.checked == false){
+      DatesCoveredByEngagement.style.visibility = "";
+    } else {
+      DatesCoveredByEngagement.style.visibility = "hidden";
+    }
+  }
+
+  //datepicker
+  $( function() {
+    $( "#datepicker" ).datepicker();
+    $( "#datepicker" ).on( "change", function() {
+      $( "#datepicker" ).datepicker( "option", "dateFormat", "MM d, yy" );
+    });
+  } );
 
 
 
-  
 
-
-/******/ })()
-;
+/******/ })();

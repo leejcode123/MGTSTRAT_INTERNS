@@ -45,7 +45,7 @@
             <div class="form-group has-icon-left">
                 <div class="position-relative">
                     <input type="text" class="form-control @error('') is-invalid @enderror"
-                        value="{{ old('') }}" name="" id="">
+                        value="{{ old('') }}" name="" id="fourth" title="asdasdasd">
                     <div class="form-control-icon">
                         <i class="fa-solid fa-user"></i>
                     </div>
@@ -61,7 +61,7 @@
         <div class="col-md-3">
             <label class="fw-bold required">Engagement Title: </label>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-6">
             <div class="form-group has-icon-left">
                 <div class="position-relative">
                     <input type="text" class="form-control @error('') is-invalid @enderror"
@@ -75,6 +75,12 @@
                         </span>
                     @enderror
                 </div>
+            </div>
+        </div>
+        <div class="col-md-2 g-2">
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Pilot</label>
             </div>
         </div>
 
@@ -498,8 +504,19 @@
         <div class="col-md-8">
             <div class="form-group has-icon-left">
                 <div class="position-relative">
-                    <input type="text" class="form-control @error('') is-invalid @enderror"
-                        value="{{ old('') }}" name="" id="core-valueInput" disabled>
+                    {{-- <input type="text" class="form-control @error('') is-invalid @enderror"
+                        value="{{ old('') }}" name="" id="core-valueInput" disabled> --}}
+                        <fieldset class="form-group">
+                            <select class="form-select @error('') is-invalid @enderror" name=""
+                                id="core-valueInput" disabled>
+                                <option value="Cluster" selected>Cluster</option>
+                                <option value="Capability">Capability</option>
+                                <option value="Teams">Teams</option>
+                                <option value="Leadership">Leadership</option>
+                                <option value="Strategy">Strategy</option>
+                                <option value="Culture">Culture</option>
+                            </select>
+                        </fieldset>
                         <div class="form-control-icon">
                             <i class="fa-solid fa-circle-nodes"></i>
                         </div>
@@ -511,33 +528,50 @@
                 </div>
             </div>
         </div>
+        
+        <div class="col-md-3">
+            <label class="fw-bold required">Number of pax </label>
+        </div>
 
-        <div class="row justify-content-center g-3 gx-5">
-            <h6 class="text-center mt-3 fst-italic">Dates Covered by Engagement</h3>
-                <div class="col-md-3">
-                    <div class="form-group has-icon-left">
-                        <label class="fw-bold required">Number of Pax</label>
-                        <div class="position-relative">
-                            <input type="number" class="form-control @error('pax_number') is-invalid @enderror"
-                                value="{{ old('pax_number') }}" name="pax_number" id="pax_number">
-                            <div class="form-control-icon">
-                                <i class="fa-solid fa-users"></i>
-                            </div>
-                            @error('pax_number')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
+        <div class="col-md-3">
+            <div class="form-group has-icon-left">
+                <div class="position-relative">
+                    <input type="number" class="form-control @error('pax_number') is-invalid @enderror"
+                        value="{{ old('pax_number') }}" name="pax_number" id="pax_number">
+                    <div class="form-control-icon">
+                        <i class="fa-solid fa-users"></i>
                     </div>
+                    @error('pax_number')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                 </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3">
+                <label class="fw-bold required">Date Covered by Engagement </label>
+            </div>
+
+            <div class="col-md-3">
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" id="dcbeCheck">
+                    <label class="form-check-label" for="dcbeCheck">To Be Announced</label>
+                </div>
+            </div>                    
+        </div>
+        
+        <div class="row justify-content-center g-3 gx-5" id="dcbe">
+            <h6 class="text-center mt-3 fst-italic">Date</h3>
                 <div class="col-md-3">
                     <div class="form-group has-icon-left">
                         <label class="fw-bold required">Date</label>
                         <div class="position-relative">
-                            <input type="date" class="form-control datepicker @error('doe') is-invalid @enderror"
-                                value="{{ old('doe') }}" placeholder="Enter Date" name="doe" id="doe"
-                                min="2022-01-01">
+                            <input type="text" class="form-control datepicker @error('doe') is-invalid @enderror"
+                                value="{{ old('doe') }}" placeholder="Enter Date" name="doe" id="datepicker"
+                                min="2022-01-01" size="30">
                             <div class="form-control-icon">
                                 <i class="bi bi-calendar"></i>
                             </div>
@@ -551,12 +585,29 @@
                 </div>
                 <div class="col-md-3">
                     <div class="form-group has-icon-left">
-                        <label class="fw-bold required">Time</label>
+                        <label class="fw-bold required">Start Time</label>
                         <div class="position-relative">
                             <input type="time" class="form-control @error('dot') is-invalid @enderror"
                                 value="{{ old('dot') }}" placeholder="Enter Time" name="dot">
                             <div class="form-control-icon">
                                 <i class="bi bi-clock"></i>
+                            </div>
+                            @error('dot')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group has-icon-left">
+                        <label class="fw-bold required">End Time</label>
+                        <div class="position-relative">
+                            <input type="time" class="form-control @error('dot') is-invalid @enderror"
+                                value="{{ old('dot') }}" placeholder="Enter Time" name="dot">
+                            <div class="form-control-icon">
+                                <i class="fa-solid fa-hourglass-end"></i>
                             </div>
                             @error('dot')
                                 <span class="invalid-feedback" role="alert">
