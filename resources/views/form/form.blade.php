@@ -64,4 +64,6 @@
             </div>
         </footer>
     </div>
+
+    <script src="{{ url('js/form.js') }}"></script>
 @endsection

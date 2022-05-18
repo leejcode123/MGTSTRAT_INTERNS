@@ -158,14 +158,14 @@
         let dataTable = new simpleDatatables.DataTable(table1);
     </script>
 
-    <script src="{{ url('js/form.js') }}"></script>
+    {{-- <script src="{{ url('js/form.js') }}"></script> --}}
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous">
     </script>
     
     {{-- budget forms --}}
-    <script src="{{ url('js/bdgtform.js') }}"></script>
+    {{-- <script src="{{ url('js/bdgtform.js') }}"></script> --}}
 
     {{-- sweet alert popup message --}}
     @include('sweetalert::alert')

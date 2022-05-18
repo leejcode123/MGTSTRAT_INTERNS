@@ -78,4 +78,6 @@
             </div>
         </footer>
     </div>
+    {{-- budget forms --}}
+    <script src="{{ url('js/bdgtform.js') }}"></script>
 @endsection
