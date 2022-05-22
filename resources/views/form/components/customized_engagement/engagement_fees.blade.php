@@ -32,20 +32,36 @@
                     <tr class="table-warning" id="lead-consultant">
                         <td class="title">Lead Consultant</td>
                         <td data-title="# OF CONSULTANTS">
-                            <input type="number" class="noc-b13 form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="" title="" max="100">
+                            <input type="number" class="noc-b13 input js-mytooltip input-table form-control  @error('') is-invalid @enderror"
+                                value="{{ old('') }}" 
+                                name="" 
+                                id="" 
+                                title="" 
+                                max="100"
+                                data-mytooltip-content="<i>Includes in depth needs analysis (i.e. surveys, interviews, FGDs),
+                                special research (i.e. to study client materials or client -required materials, industry
+                                or function specific content), creation of client-specific learning aids/tools
+                                (i.e. assessments, c</i>"
+                                data-mytooltip-theme="dark"
+                                data-mytooltip-action="focus" 
+                                data-mytooltip-direction="bottom">
                         </td>
                         <td>
                             <fieldset>
-                                <select class="form-select hf-c13 @error('') is-invalid @enderror"
-                                    name="" id="" style="background-color:#ffcccc; color:red;">
-                                    <option value="7000" {{ old('') == '7000' ? 'selected="selected"' : '' }}
-                                        title="with minimal design customization, or platform customization outside of Zoom/Google Meets/MS Teams. Up to 2 hours of work">
+                                <select class="form-select hf-c13 input js-mytooltip @error('') is-invalid @enderror"
+                                    name="" 
+                                    id=""
+                                    data-mytooltip-content="<i> &#8369;7,000 - Consultants<br>
+                                    &#8369;9,000 - Senior Consultants </i>"
+                                    data-mytooltip-theme="dark"
+                                    data-mytooltip-action="focus" 
+                                    data-mytooltip-direction="right" 
+                                    style="background-color:#ffcccc; color:red;">
+                                    <option value="7000" {{ old('') == '7000' ? 'selected="selected"' : '' }}>
                                         &#8369;7,000
                                     </option>
-                                    <option value="10000" {{ old('') == '10000' ? 'selected="selected"' : '' }}
-                                        title="with minimal design customization, or platform customization outside of Zoom/Google Meets/MS Teams. Up to 2 hours of work">
-                                        &#8369;10,000
+                                    <option value="9000" {{ old('') == '9000' ? 'selected="selected"' : '' }}>
+                                        &#8369;9,000
                                     </option>
                                 </select>
                                 @error('')
@@ -56,8 +72,14 @@
                             </fieldset>
                         </td>
                         <td>
-                            <input type="number" class="noh-d13 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="">
+                            <input type="number" class="noh-d13 form-control input-table input js-mytooltip @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" 
+                                name="" 
+                                id=""
+                                data-mytooltip-content="<i>Number of Hours</i>"
+                                data-mytooltip-theme="dark"
+                                data-mytooltip-action="focus" 
+                                data-mytooltip-direction="bottom">
                         </td>
                         <td>
                             <input type="number" class="nwh-e13 form-control input-table @error('') is-invalid @enderror" 
@@ -75,16 +97,32 @@
                     <tr class="table-warning">
                         <td class="title">Analyst</td>
                         <td>
-                            <input type="number" class="noc-b14 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="" max="100">
+                            <input type="number" class="noc-b14 input js-mytooltip form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" 
+                                name="" 
+                                id="" 
+                                max="100"
+                                data-mytooltip-content="<i>Includes in depth needs analysis (i.e. surveys, interviews, FGDs),
+                                special research (i.e. to study client materials or client -required materials, industry
+                                or function specific content), creation of client-specific learning aids/tools
+                                (i.e. assessments, c</i>"
+                                data-mytooltip-theme="dark"
+                                data-mytooltip-action="focus" 
+                                data-mytooltip-direction="bottom">
                         </td>
                         <td>
                             <input type="text" class="hf-c14 form-control input-table @error('') is-invalid @enderror" 
                                 value="{{ old('') }}" name="" id="hf-c14">
                         </td>
                         <td>
-                            <input type="number" class="noh-d14 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="">
+                            <input type="number" class="noh-d14 input js-mytooltip form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" 
+                                name="" 
+                                id=""
+                                data-mytooltip-content="<i>Number of Hours</i>"
+                                data-mytooltip-theme="dark"
+                                data-mytooltip-action="focus" 
+                                data-mytooltip-direction="bottom">
                         </td>
                         <td>
                             <input type="number" class="nwh-e14 form-control input-table @error('') is-invalid @enderror" 
@@ -132,19 +170,34 @@
                     <tr class="table-warning">
                         <td class="title">Designer</td>
                         <td>
-                            <input type="number" class="noc-b18 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="" max="100">
+                            <input type="number" class="noc-b18 input js-mytooltip form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" 
+                                name="" 
+                                id="" 
+                                max="100"
+                                data-mytooltip-content="<i>Includes in depth needs analysis (i.e. surveys, interviews, FGDs),
+                                special research (i.e. to study client materials or client -required materials, industry
+                                or function specific content), creation of client-specific learning aids/tools
+                                (i.e. assessments, c</i>"
+                                data-mytooltip-theme="dark"
+                                data-mytooltip-action="focus" 
+                                data-mytooltip-direction="bottom">
                         </td>
                         <td>
                             <fieldset>
-                                <select class="hf-c18 form-select @error('') is-invalid @enderror select"
-                                    name="" id="" style="background-color:#ffcccc; color:red;">
-                                    <option value="6000" {{ old('') == '6000' ? 'selected="selected"' : '' }}
-                                        title="with minimal design customization, or platform customization outside of Zoom/Google Meets/MS Teams. Up to 2 hours of work">
+                                <select class="hf-c18 input js-mytooltip form-select @error('') is-invalid @enderror select"
+                                    name="" 
+                                    id=""
+                                    data-mytooltip-content="<i>Consulting - &#8369;6,000 - Consultants<br>
+                                    &#8369;8,000 - Senior Consultants</i>"
+                                    data-mytooltip-theme="dark"
+                                    data-mytooltip-action="focus" 
+                                    data-mytooltip-direction="right" 
+                                    style="background-color:#ffcccc; color:red;">
+                                    <option value="6000" {{ old('') == '6000' ? 'selected="selected"' : '' }}>
                                         &#8369;6,000
                                     </option>
-                                    <option value="8000" {{ old('') == '8000' ? 'selected="selected"' : '' }}
-                                        title="with minimal design customization, or platform customization outside of Zoom/Google Meets/MS Teams. Up to 2 hours of work">
+                                    <option value="8000" {{ old('') == '8000' ? 'selected="selected"' : '' }}>
                                         &#8369;8,000
                                     </option>
                                 </select>
@@ -156,8 +209,14 @@
                             </fieldset>
                         </td>
                         <td>
-                            <input type="number" class="noh-d18 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="">
+                            <input type="number" class="noh-d18 input js-mytooltip form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" 
+                                name="" 
+                                id=""
+                                data-mytooltip-content="<i>Number of Hours</i>"
+                                data-mytooltip-theme="dark"
+                                data-mytooltip-action="focus" 
+                                data-mytooltip-direction="bottom">
                         </td>
                         <td>
                             <input type="number" class="nwh-e18 form-control input-table @error('') is-invalid @enderror" 
@@ -191,18 +250,23 @@
                         </td>
                         <td>
                             <fieldset>
-                                <select class="hf-c21 form-select engagement-fee @error('') is-invalid @enderror select"
-                                    name="" id="" style="background-color:#ffcccc; color:red;">
-                                    <option value="10000" {{ old('') == '10000' ? 'selected="selected"' : '' }}
-                                        title="with minimal design customization, or platform customization outside of Zoom/Google Meets/MS Teams. Up to 2 hours of work">
+                                <select class="hf-c21 input js-mytooltip form-select engagement-fee @error('') is-invalid @enderror select"
+                                    name="" 
+                                    id=""
+                                    data-mytooltip-content="<i>&#8369;10,000 - For Key Accounts w/ 2021 contract <br>
+                                    &#8369;11,000 - For Key Accounts with minimum guaranteed 50 sessions w/in 6 months <br>
+                                    &#8369;12,000 - all else</i>"
+                                    data-mytooltip-theme="dark"
+                                    data-mytooltip-action="focus" 
+                                    data-mytooltip-direction="right" 
+                                    style="background-color:#ffcccc; color:red;">
+                                    <option value="10000" {{ old('') == '10000' ? 'selected="selected"' : '' }}>
                                         &#8369;10,000
                                     </option>
-                                    <option value="11000" {{ old('') == '11000' ? 'selected="selected"' : '' }}
-                                        title="with minimal design customization, or platform customization outside of Zoom/Google Meets/MS Teams. Up to 2 hours of work">
+                                    <option value="11000" {{ old('') == '11000' ? 'selected="selected"' : '' }}>
                                         &#8369;11,000
                                     </option>
-                                    <option value="12000" {{ old('') == '12000' ? 'selected="selected"' : '' }}
-                                        title="with minimal design customization, or platform customization outside of Zoom/Google Meets/MS Teams. Up to 2 hours of work">
+                                    <option value="12000" {{ old('') == '12000' ? 'selected="selected"' : '' }}>
                                         &#8369;12,000
                                     </option>
                                 </select>
@@ -214,17 +278,22 @@
                             </fieldset>
                         </td>
                         <td>
-                            <input type="number" class="noh-d21 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="">
+                            <input type="number" class="noh-d21 input js-mytooltip form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" 
+                                name="" 
+                                id=""
+                                data-mytooltip-content="<i>Number of Hours</i>"
+                                data-mytooltip-theme="dark"
+                                data-mytooltip-action="focus" 
+                                data-mytooltip-direction="bottom">
                         </td>
                         <td>
                             <input type="number" class="nwh-e21 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="">
+                                value="{{ old('') }}" 
+                                name="" 
+                                id="">
                         </td>
                         <td class="total-td">
-                            {{-- <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" 
-                                name="" id="" disabled> --}}
                                 <h4 class="text-center lead" id="subtotal-lead">-</h4>
                         </td>
                         <td class="total-td">
@@ -244,8 +313,14 @@
                                 value="{{ old('') }}" name="" id="hf-c22";>
                         </td>
                         <td>
-                            <input type="number" class="noh-d22 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="">
+                            <input type="number" class="noh-d22 input js-mytooltip form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" 
+                                name="" 
+                                id=""
+                                data-mytooltip-content="<i>Number of Hours</i>"
+                                data-mytooltip-theme="dark"
+                                data-mytooltip-action="focus" 
+                                data-mytooltip-direction="bottom">
                         </td>
                         <td>
                             <input type="number" class="nwh-e22 form-control input-table @error('') is-invalid @enderror" 
@@ -271,8 +346,14 @@
                                 value="{{ old('') }}" name="" id="hf-c23">
                         </td>
                         <td>
-                            <input type="number" class="noh-d23 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="">
+                            <input type="number" class="noh-d23 input js-mytooltip form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" 
+                                name="" 
+                                id=""
+                                data-mytooltip-content="<i>Number of Hours</i>"
+                                data-mytooltip-theme="dark"
+                                data-mytooltip-action="focus" 
+                                data-mytooltip-direction="bottom">
                         </td>
                         <td>
                             <input type="number" class="nwh-e23 form-control input-table @error('') is-invalid @enderror" 
@@ -298,8 +379,14 @@
                                 value="{{ old('') }}" name="" id="hf-c24">
                         </td>
                         <td>
-                            <input type="number" class="noh-d24 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="">
+                            <input type="number" class="noh-d24 input js-mytooltip form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" 
+                                name="" 
+                                id=""
+                                data-mytooltip-content="<i>Number of Hours</i>"
+                                data-mytooltip-theme="dark"
+                                data-mytooltip-action="focus" 
+                                data-mytooltip-direction="bottom">
                         </td>
                         <td>
                             <input type="number" class="nwh-e24 form-control input-table @error('') is-invalid @enderror" 
@@ -352,8 +439,14 @@
                                 value="{{ old('') }}" name="" id="hf-c28">
                         </td>
                         <td>
-                            <input type="number" class="noh-d28 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="">
+                            <input type="number" class="noh-d28 input js-mytooltip form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" 
+                                name="" 
+                                id=""
+                                data-mytooltip-content="<i>Number of Hours</i>"
+                                data-mytooltip-theme="dark"
+                                data-mytooltip-action="focus" 
+                                data-mytooltip-direction="bottom">
                         </td>
                         <td>
                             <input type="number" class="nwh-e28 form-control input-table @error('') is-invalid @enderror" 
@@ -423,3 +516,11 @@
         </div>
     </section>
 </div>
+
+<script>
+$('input[type="number"]').on('input', function () {
+    this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null
+});
+
+$('input[type="number"]').attr('min', '0');
+</script>

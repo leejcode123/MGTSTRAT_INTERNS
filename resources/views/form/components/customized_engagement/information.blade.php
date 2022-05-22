@@ -7,10 +7,10 @@
         <div class="col-md-3">
             <label class="fw-bold required">Customized Type: </label>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-6">
             <div class="form-group has-icon-left">
                 <div class="position-relative">
-                    <select class="form-select @error('') is-invalid @enderror" name="" id=""
+                    <select class="form-select customized-type @error('') is-invalid @enderror" name="" id=""
                         value="{{ old('') }}">
                         <option value="Hybrid" {{ old('') == 'Hybrid' ? 'selected="selected"' : '' }}>Hybrid
                         </option>
@@ -37,6 +37,30 @@
                 </div>
             </div>
         </div>
+        {{-- <div class="col-md-1">
+           <p class="text-muted">Applicable to G.A only</p> 
+        </div> --}}
+        <div class="col-md-2" id="dropdown-ga" style="visibility: hidden;">    
+            <select class="ga-only-dropdown form-select @error('') is-invalid @enderror"
+             name="" 
+             id="ga-only-dropdown"
+             value="{{ old('') }}">
+                <option value="0" {{ old('') == '0' ? 'selected="selected"' : '' }} selected>
+                    0%
+                </option>
+                <option value="10" {{ old('') == '10' ? 'selected="selected"' : '' }}>
+                    10%
+                </option>
+                <option value="15" {{ old('') == '15' ? 'selected="selected"' : '' }}>
+                    15%</option>
+                <option value="20" {{ old('') == '20' ? 'selected="selected"' : '' }}>
+                    20%
+                </option>
+                <option value="25" {{ old('') == '25' ? 'selected="selected"' : '' }}>
+                    25%
+                </option>
+            </select>                
+        </div>
 
         <div class="col-md-3">
             <label class="fw-bold required">Client: </label>
@@ -44,8 +68,8 @@
         <div class="col-md-8">
             <div class="form-group has-icon-left">
                 <div class="position-relative">
-                    <input type="text" class="form-control @error('') is-invalid @enderror"
-                        value="{{ old('') }}" name="" id="fourth" title="asdasdasd">
+                    <input type="text" class="form-control @error('') is-invalid @enderror" value="{{ old('') }}"
+                        name="" id="fourth" title="asdasdasd">
                     <div class="form-control-icon">
                         <i class="fa-solid fa-user"></i>
                     </div>
@@ -64,8 +88,8 @@
         <div class="col-md-6">
             <div class="form-group has-icon-left">
                 <div class="position-relative">
-                    <input type="text" class="form-control @error('') is-invalid @enderror"
-                        value="{{ old('') }}" name="" id="">
+                    <input type="text" class="form-control @error('') is-invalid @enderror" value="{{ old('') }}"
+                        name="" id="">
                     <div class="form-control-icon">
                         <i class="fa-solid fa-t"></i>
                     </div>
@@ -91,8 +115,7 @@
             <div class="form-group has-icon-left">
                 <div class="position-relative">
                     <fieldset class="form-group">
-                        <select class="form-select @error('') is-invalid @enderror" name=""
-                            id="cluster-dropdown">
+                        <select class="form-select @error('') is-invalid @enderror" name="" id="cluster-dropdown">
                             <option value="" selected>-- Not listed --</option>
                             <option id="capability" class="capability" value="Above The Line"
                                 {{ old('') == 'Above The Line' ? 'selected="selected"' : '' }}>
@@ -110,27 +133,33 @@
                                 {{ old('') == 'Anxiety 2 (Capability)' ? 'selected="selected"' : '' }}>
                                 Anxiety 2 (Capability)
                             </option>
-                            <option id="capability" class="capability" value="Art of Asking Questions 1 (Capability)"
+                            <option id="capability" class="capability"
+                                value="Art of Asking Questions 1 (Capability)"
                                 {{ old('') == 'Art of Asking Questions 2 (Capability)' ? 'selected="selected"' : '' }}>
                                 Art of Asking Questions 1 (Capability)
                             </option>
-                            <option id="leadership" class="leadership" value="Art of Asking Questions 2 (Leadership)"
+                            <option id="leadership" class="leadership"
+                                value="Art of Asking Questions 2 (Leadership)"
                                 {{ old('') == 'Art of Asking Questions 2 (Capability)' ? 'selected="selected"' : '' }}>
                                 Art of Asking Questions 2 (Leadership)
                             </option>
-                            <option id="capability" class="capability" value="Assertive Communication 1 (Capability)"
+                            <option id="capability" class="capability"
+                                value="Assertive Communication 1 (Capability)"
                                 {{ old('') == 'Assertive Communication 1 (Capability)' ? 'selected="selected"' : '' }}>
                                 Assertive Communication 1 (Capability)
                             </option>
-                            <option id="leadership" class="leadership" value="Assertive Communication 2 (Leadership)"
+                            <option id="leadership" class="leadership"
+                                value="Assertive Communication 2 (Leadership)"
                                 {{ old('') == 'Assertive Communication 2 (Leadership)' ? 'selected="selected"' : '' }}>
                                 Assertive Communication 2 (Leadership)
                             </option>
-                            <option id="capability" class="capability" value="Building Effective Relationships 1 (Capability)"
+                            <option id="capability" class="capability"
+                                value="Building Effective Relationships 1 (Capability)"
                                 {{ old('') == 'Building Effective Relationships 1 (Capability)' ? 'selected="selected"' : '' }}>
                                 Building Effective Relationships 1 (Capability)
                             </option>
-                            <option id="leadership" class="leadership" value="Building Effective Relationships 2 (Leadership)"
+                            <option id="leadership" class="leadership"
+                                value="Building Effective Relationships 2 (Leadership)"
                                 {{ old('') == 'Building Effective Relationships 2 (Leadership)' ? 'selected="selected"' : '' }}>
                                 Building Effective Relationships 2 (Leadership)
                             </option>
@@ -150,7 +179,8 @@
                                 {{ old('') == 'Business Transformation 1 (Culture)' ? 'selected="selected"' : '' }}>
                                 Business Transformation 1 (Culture)
                             </option>
-                            <option id="leadership" class="leadership" value="Business Transformation 2 (Leadership)"
+                            <option id="leadership" class="leadership"
+                                value="Business Transformation 2 (Leadership)"
                                 {{ old('') == 'Business Transformation 2 (Leadership)' ? 'selected="selected"' : '' }}>
                                 Business Transformation 2 (Leadership)
                             </option>
@@ -170,11 +200,13 @@
                                 {{ old('') == 'Choose to Flourish 2 (Leadership)' ? 'selected="selected"' : '' }}>
                                 Choose to Flourish 2 (Leadership)
                             </option>
-                            <option id="leadership" class="leadership" value="Collaborative Leadership 1 (Leadership)"
+                            <option id="leadership" class="leadership"
+                                value="Collaborative Leadership 1 (Leadership)"
                                 {{ old('') == 'Collaborative Leadership 1 (Leadership)' ? 'selected="selected"' : '' }}>
                                 Collaborative Leadership 1 (Leadership)
                             </option>
-                            <option id="capability" class="capability" value="Collaborative Leadership 2 (Capability)"
+                            <option id="capability" class="capability"
+                                value="Collaborative Leadership 2 (Capability)"
                                 {{ old('') == 'Collaborative Leadership 2 (Capability)' ? 'selected="selected"' : '' }}>
                                 Collaborative Leadership 2 (Capability)
                             </option>
@@ -338,15 +370,18 @@
                                 {{ old('') == 'Mission & Vision Review 1 (Strategy)' ? 'selected="selected"' : '' }}>
                                 Mission & Vision Review 1 (Strategy)
                             </option>
-                            <option id="leadership" class="leadership" value="Mission & Vision Review 2 (Leadership)"
+                            <option id="leadership" class="leadership"
+                                value="Mission & Vision Review 2 (Leadership)"
                                 {{ old('') == 'Mission & Vision Review 2 (Leadership)' ? 'selected="selected"' : '' }}>
                                 Mission & Vision Review 2 (Leadership)
                             </option>
-                            <option id="culture" class="culture" value="Organizational Development (OD) 1 (Culture)"
+                            <option id="culture" class="culture"
+                                value="Organizational Development (OD) 1 (Culture)"
                                 {{ old('') == 'Organizational Development (OD) 1 (Culture)' ? 'selected="selected"' : '' }}>
                                 Organizational Development (OD) 1 (Culture)
                             </option>
-                            <option id="strategy" class="strategy" value="Organizational Development (OD) 2 (Strategy)"
+                            <option id="strategy" class="strategy"
+                                value="Organizational Development (OD) 2 (Strategy)"
                                 {{ old('') == 'Organizational Development (OD) 2 (Strategy)' ? 'selected="selected"' : '' }}>
                                 Organizational Development (OD) 2 (Strategy)
                             </option>
@@ -506,29 +541,29 @@
                 <div class="position-relative">
                     {{-- <input type="text" class="form-control @error('') is-invalid @enderror"
                         value="{{ old('') }}" name="" id="core-valueInput" disabled> --}}
-                        <fieldset class="form-group">
-                            <select class="form-select @error('') is-invalid @enderror" name=""
-                                id="core-valueInput" disabled>
-                                <option value="Culture" selected>Culture</option>
-                                <option value="Capability">Capability</option>
-                                <option value="Leadership">Leadership</option>
-                                <option value="Social">Social</option>
-                                <option value="Strategy">Strategy</option>
-                                <option value="Teams">Teams</option>
-                            </select>
-                        </fieldset>
-                        <div class="form-control-icon">
-                            <i class="fa-solid fa-circle-nodes"></i>
-                        </div>
-                        @error('')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
+                    <fieldset class="form-group">
+                        <select class="form-select @error('') is-invalid @enderror" name="" id="core-valueInput"
+                            disabled>
+                            <option value="Culture" selected>Culture</option>
+                            <option value="Capability">Capability</option>
+                            <option value="Leadership">Leadership</option>
+                            <option value="Social">Social</option>
+                            <option value="Strategy">Strategy</option>
+                            <option value="Teams">Teams</option>
+                        </select>
+                    </fieldset>
+                    <div class="form-control-icon">
+                        <i class="fa-solid fa-circle-nodes"></i>
+                    </div>
+                    @error('')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                 </div>
             </div>
         </div>
-        
+
         <div class="col-md-3">
             <label class="fw-bold required">Number of pax </label>
         </div>
@@ -536,8 +571,13 @@
         <div class="col-md-3">
             <div class="form-group has-icon-left">
                 <div class="position-relative">
-                    <input type="number" class="form-control @error('pax_number') is-invalid @enderror"
-                        value="{{ old('pax_number') }}" name="pax_number" id="pax_number">
+                    <input type="number" 
+                    class="form-control @error('pax_number') is-invalid @enderror"
+                    value="{{ old('pax_number') }}" 
+                    name="pax_number" 
+                    id="pax_number"
+                    min="0" 
+                    oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null">
                     <div class="form-control-icon">
                         <i class="fa-solid fa-users"></i>
                     </div>
@@ -560,9 +600,9 @@
                     <input class="form-check-input" type="checkbox" role="switch" id="dcbeCheck">
                     <label class="form-check-label" for="dcbeCheck">To Be Announced</label>
                 </div>
-            </div>                    
+            </div>
         </div>
-        
+
         <div class="row justify-content-center g-3 gx-5" id="dcbe">
             <h6 class="text-center mt-3 fst-italic">Date</h3>
                 <div class="col-md-3">
@@ -624,3 +664,12 @@
             </div> --}}
     </div>
 </div>
+{{-- <input type="text" class="input js-mytooltip"
+    data-mytooltip-content="Includes in depth needs analysis (i.e. surveys, interviews, FGDs),
+    special research (i.e. to study client materials or client -required materials, industry
+    or function specific content), creation of client-specific learning aids/tools
+    (i.e. assessments, c"
+    data-mytooltip-theme="danger"
+    data-mytooltip-action="focus" 
+    data-mytooltip-direction="right"
+    placeholder="First name"> --}}

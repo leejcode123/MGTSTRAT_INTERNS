@@ -130,9 +130,16 @@
     }
     
 </style>
-<link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
-<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+
+    {{-- tooltip --}}
+    <link rel="stylesheet" href="{{ url('css/tooltip-css/jquery.mytooltip.css') }}">
+	<link rel="stylesheet" href="{{ url('css/tooltip-css/demo/style.css') }}">
+    <script src="{{ url('js/tooltipJs/jquery-1.11.3.min.js') }}"></script>
+    <script src="{{ url('js/tooltipJs/jquery.mytooltip.js') }}"></script>
+	<script src="{{ url('js/tooltipJs/demo/script.js') }}"></script>
 
 <body id="body">
     <div id="app">

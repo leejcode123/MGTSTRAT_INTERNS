@@ -7,7 +7,7 @@ var __webpack_exports__ = {};
   \**********************************/
 
   //Customized Engagement form of Engagement Fees
-  $(document).on("change keyup", ".noc-b13, .hf-c13, .noh-d13, .nwh-e13, .noc-b14, .hf-c14, .noh-d14, .nwh-e14 .noc-b18, .hf-c18, .noh-d18, .nwh-e18, .noc-b21, .hf-c21, .noh-d21, .nwh-e21, .noc-b22, .hf-c22, .noh-d22, .nwh-e22, .noc-b23, .hf-c23, .noh-d23, .nwh-e23, .noc-b24, .hf-c24, .noh-d24, .nwh-e24, .noc-b28, .hf-c28, .noh-d28, .nwh-e28, .tf-f34",
+  $(document).on("change keyup", ".customized-type, .ga-only-dropdown, .noc-b13, .hf-c13, .noh-d13, .nwh-e13, .noc-b14, .hf-c14, .noh-d14, .nwh-e14, .noc-b18, .hf-c18, .noh-d18, .nwh-e18, .noc-b21, .hf-c21, .noh-d21, .nwh-e21, .noc-b22, .hf-c22, .noh-d22, .nwh-e22, .noc-b23, .hf-c23, .noh-d23, .nwh-e23, .noc-b24, .hf-c24, .noh-d24, .nwh-e24, .noc-b28, .hf-c28, .noh-d28, .nwh-e28, .tf-f34",
     function () {
       let currency = Intl.NumberFormat('en-US');
       //total package
@@ -31,37 +31,72 @@ var __webpack_exports__ = {};
 
       //discounts if given
       sum32 = 0;
-      /*******************************************************CONSULTING**********************************************************************************************/
+
+      // engagment cost total
+      sumEngagemenCost = 0;
+      //lead consultant
+      sumLeadConsultant = 0;
+
+      //customized type
+      var gaPercentage = $(".customized-type");
+
+      /*******************************************************CONSULTING*********************************************************************/
         //Lead consultant
         $(".hf-c13").each(function () {
-            sum13 += ($(".noc-b13").val() * +$(this).val() * $(".noh-d13").val());
+            sum13 += ($(".noc-b13").val() * +$(this).val() * $(".noh-d13").val())
             + ($(".nwh-e13").val() * ($(".noc-b13").val() * +$(this).val() * $(".noh-d13").val() * 0.2));
+            
+            if(gaPercentage.val() == "G.A Hybrid" || gaPercentage.val() == "G.A Virtual" ){
+              sum13 += (sum13 * (document.getElementById("ga-only-dropdown").value / 100));
+            }
             sum += +sum13;
+
+            $(".noc-b46").val($(".noc-b13").val());
+            $(".noh-d46").val($(".noh-d13").val());
+            $(".nwh-e46").val($(".nwh-e13").val());
+
+            sumLeadConsultant +=  (($(".noc-b46").val() *  $(".hf-c46").val().replace(/,/g, '') *  $(".noh-d46").val())
+            + ($(".nwh-e46").val() * ($(".noc-b46").val() * $(".hf-c46").val().replace(/,/g, '') * $(".noh-d46").val() * 0.2)));
+            sumEngagemenCost += +sumLeadConsultant;
         });
         $("#leadTotal").html(currency.format(Math.ceil(sum13)));
+        $(".tf-f46").html(currency.format(Math.ceil(sumLeadConsultant)));
+
         //Analyst
         $(".hf-c14").each(function () {
           sum14 += ($(".noc-b14").val() * +$(this).val().replace(/,/g, '') * $(".noh-d14").val())
           + ($(".nwh-e14").val() * ($(".noc-b14").val() * +$(this).val().replace(/,/g, '') * $(".noh-d14").val() * 0.2));
+
+          if(gaPercentage.val() == "G.A Hybrid" || gaPercentage.val() == "G.A Virtual" ){
+            sum14 += (sum14 * (document.getElementById("ga-only-dropdown").value / 100));
+          }
           sum += +sum14;
         });
         $("#analyst-total").html(currency.format(Math.ceil(sum14)));
         //Subtotal
         $("#subtotal-consulting").html(currency.format(Math.ceil(sum)));
 
-        /*******************************************************DESIGN************************************************************************************************/
+        /*******************************************************DESIGN*********************************************************************/
         $(".hf-c18").each(function () {
           sum18 += ($(".noc-b18").val() * +$(this).val() * $(".noh-d18").val())
           + ($(".nwh-e18").val() * ($(".noc-b18").val() * +$(this).val() * $(".noh-d18").val() * 0.2));
+
+          if(gaPercentage.val() == "G.A Hybrid" || gaPercentage.val() == "G.A Virtual" ){
+            sum18 += (sum18 * (document.getElementById("ga-only-dropdown").value / 100));
+          }
           sum += +sum18;
         });
         $("#subtotal-design").html(currency.format(Math.ceil(sum18)));
 
-        /*******************************************************PROGRAM************************************************************************************************/
+        /*******************************************************PROGRAM*********************************************************************/
         //Lead Facilitator
         $(".hf-c21").each(function () {
           sum21 += ($(".noc-b21").val() * +$(this).val() * $(".noh-d21").val())
           + ($(".nwh-e21").val() * ($(".noc-b21").val() * +$(this).val() * $(".noh-d21").val() * 0.2));
+
+          if(gaPercentage.val() == "G.A Hybrid" || gaPercentage.val() == "G.A Virtual" ){
+            sum21 += (sum21 * (document.getElementById("ga-only-dropdown").value / 100));
+          }
           sum += +sum21;
         });
         $("#subtotal-lead").html(currency.format(Math.ceil(sum21)));
@@ -70,6 +105,10 @@ var __webpack_exports__ = {};
         $(".hf-c22").each(function () {
             sum22 += ($(".noc-b22").val() * +$(this).val().replace(/,/g, '') * $(".noh-d22").val())
             + ($(".nwh-e22").val() * ($(".noc-b22").val() * +$(this).val().replace(/,/g, '') * $(".noh-d22").val() * 0.2));
+
+            if(gaPercentage.val() == "G.A Hybrid" || gaPercentage.val() == "G.A Virtual" ){
+              sum22 += (sum22 * (document.getElementById("ga-only-dropdown").value / 100));
+            }
             sum += +sum22;
         });
         $("#subtotal-coFacilitator").html(currency.format(Math.ceil(sum22)));
@@ -78,6 +117,10 @@ var __webpack_exports__ = {};
         $(".hf-c23").each(function () {
             sum23 += ($(".noc-b23").val() * +$(this).val().replace(/,/g, '') * $(".noh-d23").val())
             + ($(".nwh-e23").val() * ($(".noc-b23").val() * +$(this).val().replace(/,/g, '') * $(".noh-d23").val() * 0.2));
+
+            if(gaPercentage.val() == "G.A Hybrid" || gaPercentage.val() == "G.A Virtual" ){
+              sum23 += (sum23 * (document.getElementById("ga-only-dropdown").value / 100));
+            }
             sum += +sum23;
         });
         $("#subtotal-moderator").html(currency.format(Math.ceil(sum23)));
@@ -86,23 +129,31 @@ var __webpack_exports__ = {};
         $(".hf-c24").each(function () {
             sum24 += ($(".noc-b24").val() * +$(this).val().replace(/,/g, '') * $(".noh-d24").val())
             + ($(".nwh-e24").val() * ($(".noc-b24").val() * +$(this).val().replace(/,/g, '') * $(".noh-d24").val() * 0.2));
+
+            if(gaPercentage.val() == "G.A Hybrid" || gaPercentage.val() == "G.A Virtual" ){
+              sum24 += (sum24 * (document.getElementById("ga-only-dropdown").value / 100));
+            }
             sum += +sum24;
         });
         $("#subtotal-producer").html(currency.format(Math.ceil(sum24)));
         $("#program-subtotal").html(currency.format(Math.ceil(sum21 + sum22 + sum23 + sum24)));
 
-        /*******************************************************DOCUMENTOR************************************************************************************************/
+        /*******************************************************DOCUMENTOR******************************************************************/
         $(".hf-c28").each(function () {
             sum28 += ($(".noc-b28").val() * +$(this).val().replace(/,/g, '') * $(".noh-d28").val())
             + ($(".nwh-e28").val() * ($(".noc-b28").val() * +$(this).val().replace(/,/g, '') * $(".noh-d28").val() * 0.2));
+
+            if(gaPercentage.val() == "G.A Hybrid" || gaPercentage.val() == "G.A Virtual" ){
+              sum28 += (sum28 * (document.getElementById("ga-only-dropdown").value / 100));
+            }
             sum += +sum28;
         });
         $("#subtotal-documentor").html(currency.format(Math.ceil(sum28)));
 
-        /*******************************************************TOTAL STANDARD FEES************************************************************************************************/
+        /*******************************************TOTAL STANDARD FEES**********************************************************************/
         $("#total-standard").html(currency.format(Math.ceil(sum)));
 
-        /*******************************************************DISCOUNTS************************************************************************************************/
+        /********************************************DISCOUNTS*******************************************************************************/
         $(".tf-f34").each(function () {
           sum32 += (1 - (+$(this).val().replace(/,/g, '') / sum))* 100 ;
 
@@ -114,6 +165,17 @@ var __webpack_exports__ = {};
           }else {
             sumDiscount = Math.round(sum32);
             $("#input-discount").val(sumDiscount+'%');
+          }
+        });
+
+        // var gaPercentage = $(".customized-type");
+        // document.getElementById("customized-type").addEventListener("change", customizedType);
+        $(".customized-type").each(function () {
+          var gaPercentage = $(".customized-type");
+          if(gaPercentage.val() == "G.A Hybrid" || gaPercentage.val() == "G.A Virtual" ){
+            document.getElementById("dropdown-ga").style.visibility="";
+          } else {
+            document.getElementById("dropdown-ga").style.visibility="hidden"
           }
         });
 
@@ -192,12 +254,16 @@ var __webpack_exports__ = {};
     //*************************************** CURRENCY FORMATTER ********************************************************//
 
     //currency formatter
+    
     let currency = Intl.NumberFormat('en-US');
     document.getElementById("hf-c14").defaultValue = currency.format(Math.ceil(5000));
     document.getElementById("hf-c22").defaultValue = currency.format(Math.ceil(5000));
     document.getElementById("hf-c23").defaultValue = currency.format(Math.ceil(3500));
     document.getElementById("hf-c24").defaultValue = currency.format(Math.ceil(2500));
     document.getElementById("hf-c28").defaultValue = currency.format(Math.ceil(2500));
+    // document.getElementsByClassName("hf-c56").defaultValue = currency.format(Math.ceil(5000));
+    $(".hf-c56").val(currency.format(Math.ceil(5000)));
+    $(".hf-c46").val(currency.format(Math.ceil(0.85 * $(".hf-c56").val().replace(/,/g, ''))));
 
     //currency formatter
     $(".hf-c14").on({
@@ -277,6 +343,20 @@ var __webpack_exports__ = {};
           $(this).val(input_val);
       }
   });
+
+  $(".hf-c46").on({
+    keyup: function() {
+        let input_val = $(this).val();
+        input_val = numberToCurrency(input_val);
+        $(this).val(input_val);
+    },
+    blur: function() { 
+        let input_val = $(this).val();
+        input_val = numberToCurrency(input_val, true, true);
+        $(this).val(input_val);
+    }
+});
+  
   //end currency formatter
 
 
