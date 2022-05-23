@@ -130,18 +130,6 @@
     }
     
 </style>
-    {{-- datepicker css --}}
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
-    {{-- tooltip css --}}
-    <link rel="stylesheet" href="{{ url('css/tooltip-css/jquery.mytooltip.min.css') }}">
-	{{-- <link rel="stylesheet" href="{{ url('css/tooltip-css/demo/style.css') }}"> --}}
-    {{-- datepicker js --}}
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
-    {{-- tooltip js --}}
-    {{-- <script src="{{ url('js/tooltipJs/jquery-1.11.3.min.js') }}"></script> --}}
-    <script src="{{ url('js/tooltipJs/jquery.mytooltip.js') }}"></script>
-	<script src="{{ url('js/tooltipJs/demo/script.js') }}"></script>
 
 <body id="body">
     <div id="app">
