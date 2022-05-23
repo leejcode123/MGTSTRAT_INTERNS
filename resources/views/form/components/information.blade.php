@@ -29,7 +29,7 @@
                 <div class="position-relative">
                     <input type="text" class="form-control @error('fullName') is-invalid @enderror"
                         value="{{ old('fullName') }}" placeholder="Enter Company Name" id="first-name-icon"
-                        name="fullName"></input>
+                        name="fullName">
                     <div class="form-control-icon">
                         <i class="fa-solid fa-building"></i>
                     </div>

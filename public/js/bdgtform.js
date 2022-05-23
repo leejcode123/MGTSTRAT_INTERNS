@@ -45,19 +45,21 @@ var __webpack_exports__ = {};
         $(".hf-c13").each(function () {
             sum13 += ($(".noc-b13").val() * +$(this).val() * $(".noh-d13").val())
             + ($(".nwh-e13").val() * ($(".noc-b13").val() * +$(this).val() * $(".noh-d13").val() * 0.2));
-            
-            if(gaPercentage.val() == "G.A Hybrid" || gaPercentage.val() == "G.A Virtual" ){
-              sum13 += (sum13 * (document.getElementById("ga-only-dropdown").value / 100));
-            }
-            sum += +sum13;
+              if(gaPercentage.val() == "G.A Hybrid" || gaPercentage.val() == "G.A Virtual" ){
+                sum13 += (sum13 * (document.getElementById("ga-only-dropdown").value / 100));
+              }
+              sum += +sum13;
 
             $(".noc-b46").val($(".noc-b13").val());
             $(".noh-d46").val($(".noh-d13").val());
             $(".nwh-e46").val($(".nwh-e13").val());
-
             sumLeadConsultant +=  (($(".noc-b46").val() *  $(".hf-c46").val().replace(/,/g, '') *  $(".noh-d46").val())
             + ($(".nwh-e46").val() * ($(".noc-b46").val() * $(".hf-c46").val().replace(/,/g, '') * $(".noh-d46").val() * 0.2)));
-            sumEngagemenCost += +sumLeadConsultant;
+
+              if(gaPercentage.val() == "G.A Hybrid" || gaPercentage.val() == "G.A Virtual" ){
+                sumLeadConsultant += (sumLeadConsultant * (document.getElementById("ga-only-dropdown").value / 100));
+              }
+              sumEngagemenCost += +sumLeadConsultant;
         });
         $("#leadTotal").html(currency.format(Math.ceil(sum13)));
         $(".tf-f46").html(currency.format(Math.ceil(sumLeadConsultant)));
@@ -476,9 +478,10 @@ var __webpack_exports__ = {};
   $( function() {
     $( "#datepicker" ).datepicker();
     $( "#datepicker" ).on( "change", function() {
-      $( "#datepicker" ).datepicker( "option", "dateFormat", "MM d, yy" );
+    $( "#datepicker" ).datepicker( "option", "dateFormat", "MM d, yy" );
     });
   } );
+
 
 
 

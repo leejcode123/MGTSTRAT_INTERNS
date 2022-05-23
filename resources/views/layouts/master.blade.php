@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MGT-STRAT | @yield('title')</title>
-    <link rel="shortcut icon" href="{{ URL::to('assets/images/favicon.png') }}">
+    {{-- <link rel="shortcut icon" href="{{ URL::to('assets/images/favicon.png') }}"> --}}
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ URL::to('assets/css/bootstrap.css') }}">
@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{{ URL::to('assets/vendors/perfect-scrollbar/perfect-scrollbar.css') }}">
     <link rel="stylesheet" href="{{ URL::to('assets/vendors/bootstrap-icons/bootstrap-icons.css') }}">
     <link rel="stylesheet" href="{{ URL::to('assets/css/app.css') }}">
-    <link rel="shortcut icon" href="{{ URL::to('assets/images/favicon.svg') }}" type="image/x-icon">
+    {{-- <link rel="shortcut icon" href="{{ URL::to('assets/images/favicon.svg') }}" type="image/x-icon"> --}}
     <link rel="stylesheet" href="{{ URL::to('assets/vendors/simple-datatables/style.css') }}">
 
     {{-- message toastr --}}
@@ -130,14 +130,16 @@
     }
     
 </style>
+    {{-- datepicker css --}}
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+    {{-- tooltip css --}}
+    <link rel="stylesheet" href="{{ url('css/tooltip-css/jquery.mytooltip.min.css') }}">
+	{{-- <link rel="stylesheet" href="{{ url('css/tooltip-css/demo/style.css') }}"> --}}
+    {{-- datepicker js --}}
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
-
-    {{-- tooltip --}}
-    <link rel="stylesheet" href="{{ url('css/tooltip-css/jquery.mytooltip.css') }}">
-	<link rel="stylesheet" href="{{ url('css/tooltip-css/demo/style.css') }}">
-    <script src="{{ url('js/tooltipJs/jquery-1.11.3.min.js') }}"></script>
+    {{-- tooltip js --}}
+    {{-- <script src="{{ url('js/tooltipJs/jquery-1.11.3.min.js') }}"></script> --}}
     <script src="{{ url('js/tooltipJs/jquery.mytooltip.js') }}"></script>
 	<script src="{{ url('js/tooltipJs/demo/script.js') }}"></script>
 

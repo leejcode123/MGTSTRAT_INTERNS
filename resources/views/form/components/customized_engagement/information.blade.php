@@ -40,11 +40,9 @@
         {{-- <div class="col-md-1">
            <p class="text-muted">Applicable to G.A only</p> 
         </div> --}}
-        <div class="col-md-2" id="dropdown-ga" style="visibility: hidden;">    
-            <select class="ga-only-dropdown form-select @error('') is-invalid @enderror"
-             name="" 
-             id="ga-only-dropdown"
-             value="{{ old('') }}">
+        <div class="col-md-2" id="dropdown-ga" style="visibility: hidden;">
+            <select class="ga-only-dropdown form-select @error('') is-invalid @enderror" name="" id="ga-only-dropdown"
+                value="{{ old('') }}">
                 <option value="0" {{ old('') == '0' ? 'selected="selected"' : '' }} selected>
                     0%
                 </option>
@@ -59,7 +57,7 @@
                 <option value="25" {{ old('') == '25' ? 'selected="selected"' : '' }}>
                     25%
                 </option>
-            </select>                
+            </select>
         </div>
 
         <div class="col-md-3">
@@ -571,13 +569,9 @@
         <div class="col-md-3">
             <div class="form-group has-icon-left">
                 <div class="position-relative">
-                    <input type="number" 
-                    class="form-control @error('pax_number') is-invalid @enderror"
-                    value="{{ old('pax_number') }}" 
-                    name="pax_number" 
-                    id="pax_number"
-                    min="0" 
-                    oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null">
+                    <input type="number" class="form-control @error('pax_number') is-invalid @enderror"
+                        value="{{ old('pax_number') }}" name="pax_number" id="pax_number" min="0"
+                        oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null">
                     <div class="form-control-icon">
                         <i class="fa-solid fa-users"></i>
                     </div>
@@ -611,7 +605,7 @@
                         <div class="position-relative">
                             <input type="text" class="form-control datepicker @error('doe') is-invalid @enderror"
                                 value="{{ old('doe') }}" placeholder="Enter Date" name="doe" id="datepicker"
-                                min="2022-01-01" size="30">
+                                size="30">
                             <div class="form-control-icon">
                                 <i class="bi bi-calendar"></i>
                             </div>
@@ -658,18 +652,5 @@
                     </div>
                 </div>
         </div>
-        {{-- <div class="col-12 d-flex justify-content-center mt-3">
-                <button type="submit" class="btn btn-primary me-1 mb-1">Save</button>
-                <button type="reset" class="btn btn-light-secondary me-1 mb-1">Reset</button>
-            </div> --}}
     </div>
 </div>
-{{-- <input type="text" class="input js-mytooltip"
-    data-mytooltip-content="Includes in depth needs analysis (i.e. surveys, interviews, FGDs),
-    special research (i.e. to study client materials or client -required materials, industry
-    or function specific content), creation of client-specific learning aids/tools
-    (i.e. assessments, c"
-    data-mytooltip-theme="danger"
-    data-mytooltip-action="focus" 
-    data-mytooltip-direction="right"
-    placeholder="First name"> --}}
