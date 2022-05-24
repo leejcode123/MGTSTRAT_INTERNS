@@ -79,5 +79,6 @@
         </footer>
     </div>
     {{-- budget forms --}}
-    <script src="{{ url('js/bdgtform.js') }}"></script>
+    {{-- <script src="{{ url('js/bdgtform.js') }}"></script> --}}
+    <script type="text/javascript" src="/js/ceform.js"></script>
 @endsection
