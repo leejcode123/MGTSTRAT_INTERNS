@@ -3,7 +3,6 @@ $(document).on(
     "change keyup",
     ".customized-type, .ga-only-dropdown, .noc-b13, .hf-c13, .noh-d13, .nwh-e13, .noc-b14, .hf-c14, .noh-d14, .nwh-e14, .noc-b18, .hf-c18, .noh-d18, .nwh-e18, .noc-b21, .hf-c21, .noh-d21, .nwh-e21, .noc-b22, .hf-c22, .noh-d22, .nwh-e22, .noc-b23, .hf-c23, .noh-d23, .nwh-e23, .noc-b24, .hf-c24, .noh-d24, .nwh-e24, .noc-b28, .hf-c28, .noh-d28, .nwh-e28, .tf-f34, #sales, #referral, #engagementManager, #ec_LeadconsultantHf, #ec_AnalystHf, #ec_DesignerHf, #ec_CreatorsNoc, #ec_CreatorsHf, #ec_CreatorsNoh, #ec_LeadfacilitatorHf, #ec_CofacilitatorHf, #ec_ModeratorHf, #ec_ProducerHf, #ec_DocumentorHf, #ec_ProgramNoc, #ec_ProgramHf, #ec_Programexpense, #input-totalPackages",
     function () {
-
         //customized type
         $(".customized-type").each(function () {
             var gaPercentage = $(".customized-type");
@@ -49,7 +48,7 @@ $(document).on(
         sum32 = 0;
 
         // engagment cost total
-        sumEngagemenCost = 0;
+        sumEngagementCost = 0;
         sumSales = 0;
         sumReferral = 0;
         sumEngagementManager = 0;
@@ -110,10 +109,12 @@ $(document).on(
                     sumecLeadconsultant *
                     (document.getElementById("ga-only-dropdown").value / 100);
             }
-            sumEngagemenCost += +sumecLeadconsultant;
+            sumEngagementCost += +sumecLeadconsultant;
         });
         $("#leadTotal").html(currency.format(Math.ceil(sum13)));
-        $("#ec_LeadconsultantTotal").html(currency.format(Math.ceil(sumecLeadconsultant)));
+        $("#ec_LeadconsultantTotal").html(
+            currency.format(Math.ceil(sumecLeadconsultant))
+        );
 
         //Analyst
         $(".hf-c14").each(function () {
@@ -170,7 +171,7 @@ $(document).on(
             }
 
             //adding the subtotal of analyst into sum the sum of engagement cost
-            sumEngagemenCost += +sumecAnalyst;
+            sumEngagementCost += +sumecAnalyst;
         });
 
         $("#analyst-total").html(currency.format(Math.ceil(sum14)));
@@ -230,7 +231,7 @@ $(document).on(
             }
 
             //adding the subtotal of analyst into sum the sum of engagement cost
-            sumEngagemenCost += +sumecDesigner;
+            sumEngagementCost += +sumecDesigner;
         });
         $("#subtotal-design").html(currency.format(Math.ceil(sum18)));
         $("#ec_DesignerTotal").html(currency.format(Math.ceil(sumecDesigner)));
@@ -284,10 +285,12 @@ $(document).on(
             }
 
             //adding the subtotal of analyst into sum the sum of engagement cost
-            sumEngagemenCost += +sumecLeadfacilitator;
+            sumEngagementCost += +sumecLeadfacilitator;
         });
         $("#subtotal-lead").html(currency.format(Math.ceil(sum21)));
-        $("#ec_LeadfacilitatorTotal").html(currency.format(Math.ceil(sumecLeadfacilitator)));
+        $("#ec_LeadfacilitatorTotal").html(
+            currency.format(Math.ceil(sumecLeadfacilitator))
+        );
 
         //Co-Facilitator
         $(".hf-c22").each(function () {
@@ -311,7 +314,7 @@ $(document).on(
             }
             sum += +sum22;
 
-                        // Getting the value of engagement fees of program to pass the value
+            // Getting the value of engagement fees of program to pass the value
             // into the engagement cost program
             $("#ec_CofacilitatorNoc").val($(".noc-b22").val());
             $("#ec_CofacilitatorNoh").val($(".noh-d22").val());
@@ -339,10 +342,12 @@ $(document).on(
             }
 
             //adding the subtotal of analyst into sum the sum of engagement cost
-            sumEngagemenCost += +sumecCofacilitator;
+            sumEngagementCost += +sumecCofacilitator;
         });
         $("#subtotal-coFacilitator").html(currency.format(Math.ceil(sum22)));
-        $("#ec_CofacilitatorTotal").html(currency.format(Math.ceil(sumecCofacilitator)));
+        $("#ec_CofacilitatorTotal").html(
+            currency.format(Math.ceil(sumecCofacilitator))
+        );
 
         //Moderator
         $(".hf-c23").each(function () {
@@ -394,10 +399,12 @@ $(document).on(
             }
 
             //adding the subtotal of analyst into sum the sum of engagement cost
-            sumEngagemenCost += +sumecModerator;
+            sumEngagementCost += +sumecModerator;
         });
         $("#subtotal-moderator").html(currency.format(Math.ceil(sum23)));
-        $("#ec_ModeratorTotal").html(currency.format(Math.ceil(sumecModerator)));
+        $("#ec_ModeratorTotal").html(
+            currency.format(Math.ceil(sumecModerator))
+        );
 
         //Producer
         $(".hf-c24").each(function () {
@@ -449,7 +456,7 @@ $(document).on(
             }
 
             //adding the subtotal of analyst into sum the sum of engagement cost
-            sumEngagemenCost += +sumecProducer;
+            sumEngagementCost += +sumecProducer;
         });
         $("#subtotal-producer").html(currency.format(Math.ceil(sum24)));
         $("#ec_ProducerTotal").html(currency.format(Math.ceil(sumecProducer)));
@@ -457,7 +464,14 @@ $(document).on(
             currency.format(Math.ceil(sum21 + sum22 + sum23 + sum24))
         );
         $("#ec_ProgramSubtotal").html(
-            currency.format(Math.ceil(sumecLeadfacilitator + sumecCofacilitator + sumecModerator + sumecProducer))
+            currency.format(
+                Math.ceil(
+                    sumecLeadfacilitator +
+                        sumecCofacilitator +
+                        sumecModerator +
+                        sumecProducer
+                )
+            )
         );
 
         /*******************************************************DOCUMENTOR******************************************************************/
@@ -510,42 +524,46 @@ $(document).on(
             }
 
             //adding the subtotal of analyst into sum the sum of engagement cost
-            sumEngagemenCost += +sumecDocumentor;
+            sumEngagementCost += +sumecDocumentor;
         });
         $("#subtotal-documentor").html(currency.format(Math.ceil(sum28)));
-        $("#ec_DocumentorTotal").html(currency.format(Math.ceil(sumecDocumentor)));
+        $("#ec_DocumentorTotal").html(
+            currency.format(Math.ceil(sumecDocumentor))
+        );
 
         /*******************************************************Off Program fee******************************************************************/
         $("#ec_ProgramHf").each(function () {
             sumecOffprogram +=
-                $("#ec_ProgramNoc").val() * $("#ec_ProgramHf").val().replace(/,/g, "");
+                $("#ec_ProgramNoc").val() *
+                $("#ec_ProgramHf").val().replace(/,/g, "");
 
             if (
                 gaPercentage.val() == "G.A Hybrid" ||
                 gaPercentage.val() == "G.A Virtual"
             ) {
                 sumecOffprogram +=
-                sumecOffprogram *
+                    sumecOffprogram *
                     (document.getElementById("ga-only-dropdown").value / 100);
             }
-            sumEngagemenCost += +sumecOffprogram;
+            sumEngagementCost += +sumecOffprogram;
         });
         $("#ec_ProgramTotal").html(currency.format(Math.ceil(sumecOffprogram)));
 
         /*******************************************************Program Expense******************************************************************/
         $("#ec_Programexpense").each(function () {
             sumecProgramexpense +=
-                ($(this).val().replace(/%/g, "") * $("#input-totalPackages").val().replace(/,/g, "")) / 100;
+                ($(this).val().replace(/%/g, "") *
+                    $("#input-totalPackages").val().replace(/,/g, "")) /
+                100;
 
-            sumEngagemenCost += +sumecProgramexpense;
+            sumEngagementCost += +sumecProgramexpense;
         });
-        $("#ec_ProgramexpenseTotal").html(currency.format(Math.ceil(sumecProgramexpense)));
+        $("#ec_ProgramexpenseTotal").html(
+            currency.format(Math.ceil(sumecProgramexpense))
+        );
 
         /*******************************************TOTAL STANDARD FEES**********************************************************************/
         $("#total-standard").html(currency.format(Math.ceil(sum)));
-
-        /*******************************************ENGAGEMENT COST TOTAL FEES**********************************************************************/
-        $("#ec_Total").html(currency.format(Math.ceil(sumEngagemenCost)));
 
         /********************************************DISCOUNTS*******************************************************************************/
         $(".tf-f34").each(function () {
@@ -569,7 +587,7 @@ $(document).on(
         $("#sales").each(function () {
             sumSales +=
                 ($(".tf-f34").val().replace(/,/g, "") / 100) * $(this).val();
-            sumEngagemenCost += +sumSales;
+            sumEngagementCost += +sumSales;
         });
         $("#salesTotal").html(currency.format(Math.ceil(sumSales)));
 
@@ -577,7 +595,7 @@ $(document).on(
         $("#referral").each(function () {
             sumReferral +=
                 ($(".tf-f34").val().replace(/,/g, "") / 100) * $(this).val();
-            sumEngagemenCost += +sumReferral;
+            sumEngagementCost += +sumReferral;
         });
         $("#referralTotal").html(currency.format(Math.ceil(sumReferral)));
 
@@ -585,7 +603,7 @@ $(document).on(
         $("#engagementManager").each(function () {
             sumEngagementManager +=
                 ($(".tf-f34").val().replace(/,/g, "") / 100) * $(this).val();
-            sumEngagemenCost += +sumEngagementManager;
+            sumEngagementCost += +sumEngagementManager;
         });
         $("#engagementManagerTotal").html(
             currency.format(Math.ceil(sumEngagementManager))
@@ -594,15 +612,18 @@ $(document).on(
         //Engagement cost Creators
         $("#ec_CreatorsHf").each(function () {
             sumecCreators +=
-                ($(this).val() * $("#ec_CreatorsNoh").val() * $("#ec_CreatorsNoc").val());
-            sumEngagemenCost += +sumecCreators;
+                $(this).val() *
+                $("#ec_CreatorsNoh").val() *
+                $("#ec_CreatorsNoc").val();
+            sumEngagementCost += +sumecCreators;
         });
-        $("#ec_CreatorsTotal").html(
-            currency.format(Math.ceil(sumecCreators))
-        );
+        $("#ec_CreatorsTotal").html(currency.format(Math.ceil(sumecCreators)));
         $("#ec_DesignSubtotal").html(
             currency.format(Math.ceil(sumecDesigner + sumecCreators))
         );
+
+        /*******************************************ENGAGEMENT COST TOTAL FEES**********************************************************************/
+        $("#ec_Total").html(currency.format(Math.ceil(sumEngagementCost)));
     }
 ); //end of engagement fees
 
@@ -695,10 +716,16 @@ document.getElementById("hf-c28").defaultValue = currency.format(
 document.getElementById("ec_AnalystHf").defaultValue = currency.format(
     Math.ceil(1700)
 );
-$("#ec_LeadfacilitatorHf").val(currency.format(Math.ceil(3000)));
-$("#ec_LeadconsultantHf").val(
-    currency.format(Math.ceil(0.85 * $("#ec_LeadfacilitatorHf").val().replace(/,/g, "")))
+document.getElementById("ec_LeadfacilitatorHf").defaultValue = currency.format(
+    Math.ceil(3000)
 );
+document.getElementById("ec_LeadconsultantHf").defaultValue = currency.format(
+    Math.ceil(0.85 * $("#ec_LeadfacilitatorHf").val().replace(/,/g, ""))
+);
+// $("#ec_LeadfacilitatorHf").val(currency.format(Math.ceil(3000)));
+// $("#ec_LeadconsultantHf").val(
+//     currency.format(Math.ceil(0.85 * $("#ec_LeadfacilitatorHf").val().replace(/,/g, "")))
+// );
 document.getElementById("ec_DesignerHf").defaultValue = currency.format(
     Math.ceil(2250)
 );
@@ -714,7 +741,7 @@ document.getElementById("ec_DocumentorHf").defaultValue = currency.format(
 document.getElementById("ec_ProgramHf").defaultValue = currency.format(
     Math.ceil(1000)
 );
-document.getElementById("ec_Programexpense").defaultValue = 2+"%";
+document.getElementById("ec_Programexpense").defaultValue = 2 + "%";
 
 //currency formatter
 $(".hf-c14").on({

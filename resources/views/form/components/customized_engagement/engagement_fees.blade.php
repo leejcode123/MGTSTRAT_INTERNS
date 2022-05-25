@@ -266,7 +266,7 @@
                                     <option value="11000" {{ old('') == '11000' ? 'selected="selected"' : '' }}>
                                         &#8369;11,000
                                     </option>
-                                    <option value="12000" {{ old('') == '12000' ? 'selected="selected"' : '' }}>
+                                    <option value="12000" {{ old('') == '12000' ? 'selected="selected"' : '' }} selected>
                                         &#8369;12,000
                                     </option>
                                 </select>
