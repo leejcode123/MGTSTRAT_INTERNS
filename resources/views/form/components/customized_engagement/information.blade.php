@@ -23,8 +23,14 @@
         <div class="col-md-6">
             <div class="form-group has-icon-left">
                 <div class="position-relative">
-                    <select class="form-select customized-type @error('') is-invalid @enderror" name="" id=""
-                        value="{{ old('') }}">
+                    <select class="input js-mytooltip form-select customized-type @error('') is-invalid @enderror"
+                        name="" id="" value="{{ old('') }}"
+                        data-mytooltip-content="<i>
+                            Please Choose
+                            </i>"
+                        data-mytooltip-theme="dark"
+                        data-mytooltip-action="focus" 
+                        data-mytooltip-direction="right">
                         <option value="Hybrid" {{ old('') == 'Hybrid' ? 'selected="selected"' : '' }}>Hybrid
                         </option>
                         <option value="Virtual" {{ old('') == 'Virtual' ? 'selected="selected"' : '' }} selected>
@@ -54,8 +60,14 @@
            <p class="text-muted">Applicable to G.A only</p> 
         </div> --}}
         <div class="col-md-2" id="dropdown-ga" style="visibility: hidden;">
-            <select class="ga-only-dropdown form-select @error('') is-invalid @enderror" name="" id="ga-only-dropdown"
-                value="{{ old('') }}">
+            <select class="input js-mytooltip ga-only-dropdown form-select @error('') is-invalid @enderror" name="" id="ga-only-dropdown"
+                value="{{ old('') }}"
+                data-mytooltip-content="<i>
+                    Please Choose 0% if not G.A
+                    </i>"
+                data-mytooltip-theme="dark"
+                data-mytooltip-action="focus" 
+                data-mytooltip-direction="right">
                 <option value="0" {{ old('') == '0' ? 'selected="selected"' : '' }} selected>
                     0%
                 </option>
@@ -126,7 +138,13 @@
             <div class="form-group has-icon-left">
                 <div class="position-relative">
                     <fieldset class="form-group">
-                        <select class="form-select @error('') is-invalid @enderror" name="" id="cluster-dropdown">
+                        <select class="input js-mytooltip form-select @error('') is-invalid @enderror" name="" id="cluster-dropdown"
+                        data-mytooltip-content="<i>
+                            If not on the list, choose suggested cluster title at Core Area.
+                            </i>"
+                        data-mytooltip-theme="dark"
+                        data-mytooltip-action="focus" 
+                        data-mytooltip-direction="right">
                             <option value="" selected>-- Not listed --</option>
                             <option id="capability" class="capability" value="Above The Line"
                                 {{ old('') == 'Above The Line' ? 'selected="selected"' : '' }}>
