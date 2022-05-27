@@ -192,7 +192,7 @@
 
                     {{-- Consulting --}}
                     <tr class="">
-                        <th class="px-4 title">1. CONSULTING</th>
+                        <th class="px-4 title text-dark">1. CONSULTING</th>
                         <th></th>
                         <th></th>
                         <th></th>
@@ -283,7 +283,7 @@
 
                     {{-- Design --}}
                     <tr class="">
-                        <th class="title px-4">2. DESIGN</th>
+                        <th class="title px-4 text-dark">2. DESIGN</th>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -394,7 +394,7 @@
 
                     {{-- Program --}}
                     <tr class="">
-                        <th class="title px-4">3. PROGRAM</th>
+                        <th class="title px-4 text-dark">3. PROGRAM</th>
                         <td></td>
                         <td></td>
                         <td></td>

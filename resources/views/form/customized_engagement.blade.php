@@ -10,7 +10,6 @@
             <div class="row">
                 <div class="col-12 col-md-6 order-md-1 order-last">
                     <h3>Customized Engagement</h3>
-                    {{-- <p class="text-subtitle text-muted">budget form information</p> --}}
                 </div>
                 <div class="col-12 col-md-6 order-md-2 order-first">
                     <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
@@ -37,23 +36,23 @@
 
                         <form class="form form-horizontal" action="{{ route('form/save') }}" method="POST">
                             @csrf
-                            {{-- information --}}
+                            {{-- INFORMATION --}}
                             @include(
                                 'form.components.customized_engagement.information'
                             )
 
-                            {{-- Engagement fees --}}
+                            {{-- ENGAGEMENT FEES --}}
                             @include(
                                 'form.components.customized_engagement.engagement_fees'
                             )
 
-                            {{-- Engagement fees --}}
+                            {{-- ENGAGEMENT COST --}}
                             @include(
                                 'form.components.customized_engagement.engagement_cost'
                             )
 
-                            {{-- Engagement Cost --}}
-                            {{-- @include('form.components.engmntcost') --}}
+                            {{-- PROFIT FORECAST --}}
+                            @include('form.components.customized_engagement.ce_profit_forecast')
 
                             {{-- <div class="col-12 d-flex justify-content-center mt-3">
                                 <button type="submit" class="btn btn-primary me-1 mb-1">Save</button>
@@ -78,7 +77,7 @@
             </div>
         </footer>
     </div>
-    {{-- budget forms --}}
+    {{-- CUSTOMIZED ENGAGEMENT SCRIPT --}}
     {{-- <script src="{{ url('js/bdgtform.js') }}"></script> --}}
     <script type="text/javascript" src="/js/ceform.js"></script>
 @endsection

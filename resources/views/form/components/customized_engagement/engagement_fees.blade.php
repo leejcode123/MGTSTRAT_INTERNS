@@ -21,7 +21,7 @@
                 <tbody>
                     {{-- Consulting --}}
                     <tr class="">
-                        <th class="px-4 title">1. CONSULTING</th>
+                        <th class="px-4 title text-dark">1. CONSULTING</th>
                         <th></th>
                         <th></th>
                         <th></th>
@@ -158,7 +158,7 @@
         
                     {{-- Design --}}
                     <tr class="">
-                        <th class="title px-4">2. DESIGN</th>
+                        <th class="title px-4 text-dark">2. DESIGN</th>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -233,7 +233,7 @@
         
                     {{-- Program --}}
                     <tr class="">
-                        <th class="title px-4">3. PROGRAM</th>
+                        <th class="title px-4 text-dark">3. PROGRAM</th>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -419,7 +419,7 @@
 
                     {{-- Program --}}
                     <tr class="">
-                        <th class="title px-4">4. OTHER TOOLS</th>
+                        <th class="title px-4 text-dark">4. OTHER TOOLS</th>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -480,8 +480,8 @@
                         <td class="fw-bold text-dark text-uppercase fst-italic overall-total-start">discount given (if any)</td>
                         <td class="overall-total-middle"></td>
                         <td class="overall-total-middle table-warning">
-                            <input type="text" class="hf-c32 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="input-discount">
+                            <input type="text" class="hf-c32 form-control input-table text-center @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" name="" id="input-discount" readonly>
                         </td>
                         <td class="overall-total-middle"></td>
                         <td class="overall-total-middle"></td>
@@ -498,9 +498,9 @@
                         <td class="overall-total-middle"></td>
                         <td class="overall-total-middle"></td>
                         <td class="overall-total-middle"></td>
-                        <td class="overall-total-end bg-warning">
-                            <input type="text" class="tf-f34 form-control input-table @error('') is-invalid @enderror" 
-                            value="{{ old('') }}" name="" id="input-totalPackages">
+                        <td class="overall-total-end table-warning">
+                            <input type="text" class="tf-f34 form-control text-center text-danger fw-bolder input-table @error('') is-invalid @enderror" 
+                            value="{{ old('') }}" name="" id="input-totalPackages" style="font-size: 20px;">
                         </td>
                         <td class="overall-total-end">
                             <input type="text" class="form-control input-table @error('') is-invalid @enderror"

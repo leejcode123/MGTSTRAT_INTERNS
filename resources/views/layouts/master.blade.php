@@ -116,6 +116,29 @@
         border:3px solid black;
     }
 
+    .profit-forecast-start:nth-child(1)
+    {
+        border:3px solid black;
+        border-right: none;
+    }
+
+    .profit-forecast-middle:nth-child(2),
+    .profit-forecast-middle:nth-child(3),
+    .profit-forecast-middle:nth-child(4),
+    .profit-forecast-middle:nth-child(5),
+    .profit-forecast-middle:nth-child(6)
+    {
+        border:3px solid black;
+        border-right: none;
+        border-left: none;
+    }
+
+    .profit-forecast-end:nth-child(7)
+    {
+        border:3px solid black;
+        border-left: none;
+    }
+
     td.tbl-engmt-cost{
         background-color: rgba(146, 146, 146, 0.727)
     }

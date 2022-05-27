@@ -1,7 +1,148 @@
+//*************************************** CURRENCY FORMATTER ********************************************************//
+let currency = Intl.NumberFormat("en-US");
+document.getElementById("hf-c14").defaultValue = currency.format(
+    Math.ceil(5000)
+);
+document.getElementById("hf-c22").defaultValue = currency.format(
+    Math.ceil(5000)
+);
+document.getElementById("hf-c23").defaultValue = currency.format(
+    Math.ceil(3500)
+);
+document.getElementById("hf-c24").defaultValue = currency.format(
+    Math.ceil(2500)
+);
+document.getElementById("hf-c28").defaultValue = currency.format(
+    Math.ceil(2500)
+);
+document.getElementById("ec_AnalystHf").defaultValue = currency.format(
+    Math.ceil(1700)
+);
+document.getElementById("ec_LeadfacilitatorHf").defaultValue = currency.format(
+    Math.ceil(3000)
+);
+document.getElementById("ec_LeadconsultantHf").defaultValue = currency.format(
+    Math.ceil(0.85 * $("#ec_LeadfacilitatorHf").val().replace(/,/g, ""))
+);
+document.getElementById("ec_DesignerHf").defaultValue = currency.format(
+    Math.ceil(2250)
+);
+document.getElementById("ec_CofacilitatorHf").defaultValue = currency.format(
+    Math.ceil(1800)
+);
+document.getElementById("ec_ProducerHf").defaultValue = currency.format(
+    Math.ceil(550)
+);
+document.getElementById("ec_DocumentorHf").defaultValue = currency.format(
+    Math.ceil(700)
+);
+document.getElementById("ec_ProgramHf").defaultValue = currency.format(
+    Math.ceil(1000)
+);
+
+//percentage string of program expense
+var percentageProgram = document.getElementById('ec_Programexpense');
+
+percentageProgram.addEventListener('blur', function () { // as soon as the percentageProgram element loses focus, "%" is appended
+  percentageProgram.value += '%';
+});
+
+//currency formatter
+$(".hf-c14").on({
+    keyup: function () {
+        let input_val = $(this).val();
+        input_val = numberToCurrency(input_val);
+        $(this).val(input_val);
+    },
+    blur: function () {
+        let input_val = $(this).val();
+        input_val = numberToCurrency(input_val, true, true);
+        $(this).val(input_val);
+    },
+});
+
+$(".hf-c22").on({
+    keyup: function () {
+        let input_val = $(this).val();
+        input_val = numberToCurrency(input_val);
+        $(this).val(input_val);
+    },
+    blur: function () {
+        let input_val = $(this).val();
+        input_val = numberToCurrency(input_val, true, true);
+        $(this).val(input_val);
+    },
+});
+
+$(".hf-c23").on({
+    keyup: function () {
+        let input_val = $(this).val();
+        input_val = numberToCurrency(input_val);
+        $(this).val(input_val);
+    },
+    blur: function () {
+        let input_val = $(this).val();
+        input_val = numberToCurrency(input_val, true, true);
+        $(this).val(input_val);
+    },
+});
+
+$(".hf-c24").on({
+    keyup: function () {
+        let input_val = $(this).val();
+        input_val = numberToCurrency(input_val);
+        $(this).val(input_val);
+    },
+    blur: function () {
+        let input_val = $(this).val();
+        input_val = numberToCurrency(input_val, true, true);
+        $(this).val(input_val);
+    },
+});
+
+$(".hf-c28").on({
+    keyup: function () {
+        let input_val = $(this).val();
+        input_val = numberToCurrency(input_val);
+        $(this).val(input_val);
+    },
+    blur: function () {
+        let input_val = $(this).val();
+        input_val = numberToCurrency(input_val, true, true);
+        $(this).val(input_val);
+    },
+});
+
+$(".tf-f34").on({
+    keyup: function () {
+        let input_val = $(this).val();
+        input_val = numberToCurrency(input_val);
+        $(this).val(input_val);
+    },
+    blur: function () {
+        let input_val = $(this).val();
+        input_val = numberToCurrency(input_val, true, true);
+        $(this).val(input_val);
+    },
+});
+
+$(".hf-c46").on({
+    keyup: function () {
+        let input_val = $(this).val();
+        input_val = numberToCurrency(input_val);
+        $(this).val(input_val);
+    },
+    blur: function () {
+        let input_val = $(this).val();
+        input_val = numberToCurrency(input_val, true, true);
+        $(this).val(input_val);
+    },
+});
+
 //Customized Engagement form of Engagement Fees
 $(document).on(
     "change keyup",
-    ".customized-type, .ga-only-dropdown, .noc-b13, .hf-c13, .noh-d13, .nwh-e13, .noc-b14, .hf-c14, .noh-d14, .nwh-e14, .noc-b18, .hf-c18, .noh-d18, .nwh-e18, .noc-b21, .hf-c21, .noh-d21, .nwh-e21, .noc-b22, .hf-c22, .noh-d22, .nwh-e22, .noc-b23, .hf-c23, .noh-d23, .nwh-e23, .noc-b24, .hf-c24, .noh-d24, .nwh-e24, .noc-b28, .hf-c28, .noh-d28, .nwh-e28, .tf-f34, #sales, #referral, #engagementManager, #ec_LeadconsultantHf, #ec_AnalystHf, #ec_DesignerHf, #ec_CreatorsNoc, #ec_CreatorsHf, #ec_CreatorsNoh, #ec_LeadfacilitatorHf, #ec_CofacilitatorHf, #ec_ModeratorHf, #ec_ProducerHf, #ec_DocumentorHf, #ec_ProgramNoc, #ec_ProgramHf, #ec_Programexpense, #input-totalPackages",
+    ".customized-type, .ga-only-dropdown, .noc-b13, .hf-c13, .noh-d13, .nwh-e13, .noc-b14, .hf-c14, .noh-d14, .nwh-e14, .noc-b18, .hf-c18, .noh-d18, .nwh-e18, .noc-b21, .hf-c21, .noh-d21, .nwh-e21, .noc-b22, .hf-c22, .noh-d22, .nwh-e22, .noc-b23, .hf-c23, .noh-d23, .nwh-e23, .noc-b24, .hf-c24, .noh-d24, .nwh-e24, .noc-b28, .hf-c28, .noh-d28, .nwh-e28, .tf-f34, #sales, #referral, #engagementManager, #ec_LeadconsultantHf, #ec_AnalystHf, #ec_DesignerHf, #ec_CreatorsNoc, #ec_CreatorsHf, #ec_CreatorsNoh, #ec_LeadfacilitatorHf, #ec_CofacilitatorHf, #ec_ModeratorHf, #ec_ProducerHf, #ec_DocumentorHf, #ec_ProgramNoc, #ec_ProgramHf, #ec_Programexpense, #input-totalPackages, #LessCTO_NOC",
     function () {
         //customized type
         $(".customized-type").each(function () {
@@ -63,6 +204,7 @@ $(document).on(
         sumecDocumentor = 0;
         sumecOffprogram = 0;
         sumecProgramexpense = 0;
+
 
         //customized type
         var gaPercentage = $(".customized-type");
@@ -622,220 +764,27 @@ $(document).on(
             currency.format(Math.ceil(sumecDesigner + sumecCreators))
         );
 
-        /*******************************************ENGAGEMENT COST TOTAL FEES**********************************************************************/
+        /***********************ENGAGEMENT COST TOTAL FEES***********************/
         $("#ec_Total").html(currency.format(Math.ceil(sumEngagementCost)));
+
+        /***********************PROFIT FORECAST***********************/     
+        sumProfit = currency.format(Math.ceil( $("#input-totalPackages").val().replace(/,/g, "") - sumEngagementCost ));
+        $("#Profit").html(sumProfit);
+
+        sumCto = 0;
+        $("#LessCTO_NOC").each(function () {
+            sumCto +=
+                ($("#input-totalPackages").val().replace(/,/g, "") * $("#LessCTO_NOC").val() / 100);
+        });
+        $("#LessContributionToOverhead").html(currency.format(Math.ceil(sumCto)));     
+        
+        sumNetprofit = currency.format(Math.ceil( sumProfit.replace(/,/g, "") - sumCto ));
+        $("#NetProfit").html(sumNetprofit); 
+
+        sumProfitmargin = sumNetprofit / $("#input-totalPackages").val().replace(/,/g, "") * 100;
+        $("#ProfitMargin").html(sumProfitmargin + "%"); 
     }
 ); //end of engagement fees
-
-//design
-// $(document).on("change keyup", ".noc-b18, .hf-c18, .noh-d18, .nwh-e18",
-//   function () {
-//     let currency = Intl.NumberFormat('en-US');
-//     sum18 = 0;
-
-//       //Designer
-//       $(".hf-c18").each(function () {
-//           sum18 += ($(".noc-b18").val() * +$(this).val() * $(".noh-d18").val())
-//           + ($(".nwh-e18").val() * ($(".noc-b18").val() * +$(this).val() * $(".noh-d18").val() * 0.2));
-//           sum += +sum18;
-//       });
-//       subtotal = sum18;
-//       $("#subtotal-design").html(currency.format(Math.ceil(subtotal)));
-//       // $("#total-package").html(currency.format(Math.ceil(sum)));
-
-//   });
-
-// //Program
-// $(document).on("change keyup", ".noc-b21, .hf-c21, .noh-d21, .nwh-e21, .noc-b22, .hf-c22, .noh-d22, .nwh-e22, .noc-b23, .hf-c23, .noh-d23, .nwh-e23, .noc-b24, .hf-c24, .noh-d24, .nwh-e24, .noc-b28, .hf-c28, .noh-d28, .nwh-e28",
-//   function () {
-//     let currency = Intl.NumberFormat('en-US');
-//     sum21 = 0;
-//     sum22 = 0;
-//     sum23 = 0;
-//     sum24 = 0;
-//     sum28 = 0;
-
-//       //Lead Facilitator
-//       $(".hf-c21").each(function () {
-//           sum21 += ($(".noc-b21").val() * +$(this).val() * $(".noh-d21").val())
-//           + ($(".nwh-e21").val() * ($(".noc-b21").val() * +$(this).val() * $(".noh-d21").val() * 0.2));
-//       });
-//       $("#subtotal-lead").html(currency.format(Math.ceil(sum21)));
-
-//       //Co-Facilitator
-//       $(".hf-c22").each(function () {
-//           sum22 += ($(".noc-b22").val() * +$(this).val().replace(/,/g, '') * $(".noh-d22").val())
-//           + ($(".nwh-e22").val() * ($(".noc-b22").val() * +$(this).val().replace(/,/g, '') * $(".noh-d22").val() * 0.2));
-//       });
-//       $("#subtotal-coFacilitator").html(currency.format(Math.ceil(sum22)));
-
-//       //Moderator
-//       $(".hf-c23").each(function () {
-//           sum23 += ($(".noc-b23").val() * +$(this).val().replace(/,/g, '') * $(".noh-d23").val())
-//           + ($(".nwh-e23").val() * ($(".noc-b23").val() * +$(this).val().replace(/,/g, '') * $(".noh-d23").val() * 0.2));
-//       });
-//       $("#subtotal-moderator").html(currency.format(Math.ceil(sum23)));
-
-//       //Producer
-//       $(".hf-c24").each(function () {
-//           sum24 += ($(".noc-b24").val() * +$(this).val().replace(/,/g, '') * $(".noh-d24").val())
-//           + ($(".nwh-e24").val() * ($(".noc-b24").val() * +$(this).val().replace(/,/g, '') * $(".noh-d24").val() * 0.2));
-//       });
-//       $("#subtotal-producer").html(currency.format(Math.ceil(sum24)));
-//       $("#program-subtotal").html(currency.format(Math.ceil(sum21 + sum22 + sum23 + sum24)));
-
-//       //Documentor
-//       $(".hf-c28").each(function () {
-//           sum28 += ($(".noc-b28").val() * +$(this).val().replace(/,/g, '') * $(".noh-d28").val())
-//           + ($(".nwh-e28").val() * ($(".noc-b28").val() * +$(this).val().replace(/,/g, '') * $(".noh-d28").val() * 0.2));
-//       });
-//       $("#subtotal-documentor").html(currency.format(Math.ceil(sum28)));
-
-//   });
-
-//*************************************** CURRENCY FORMATTER ********************************************************//
-
-//currency formatter
-
-let currency = Intl.NumberFormat("en-US");
-document.getElementById("hf-c14").defaultValue = currency.format(
-    Math.ceil(5000)
-);
-document.getElementById("hf-c22").defaultValue = currency.format(
-    Math.ceil(5000)
-);
-document.getElementById("hf-c23").defaultValue = currency.format(
-    Math.ceil(3500)
-);
-document.getElementById("hf-c24").defaultValue = currency.format(
-    Math.ceil(2500)
-);
-document.getElementById("hf-c28").defaultValue = currency.format(
-    Math.ceil(2500)
-);
-document.getElementById("ec_AnalystHf").defaultValue = currency.format(
-    Math.ceil(1700)
-);
-document.getElementById("ec_LeadfacilitatorHf").defaultValue = currency.format(
-    Math.ceil(3000)
-);
-document.getElementById("ec_LeadconsultantHf").defaultValue = currency.format(
-    Math.ceil(0.85 * $("#ec_LeadfacilitatorHf").val().replace(/,/g, ""))
-);
-// $("#ec_LeadfacilitatorHf").val(currency.format(Math.ceil(3000)));
-// $("#ec_LeadconsultantHf").val(
-//     currency.format(Math.ceil(0.85 * $("#ec_LeadfacilitatorHf").val().replace(/,/g, "")))
-// );
-document.getElementById("ec_DesignerHf").defaultValue = currency.format(
-    Math.ceil(2250)
-);
-document.getElementById("ec_CofacilitatorHf").defaultValue = currency.format(
-    Math.ceil(1800)
-);
-document.getElementById("ec_ProducerHf").defaultValue = currency.format(
-    Math.ceil(550)
-);
-document.getElementById("ec_DocumentorHf").defaultValue = currency.format(
-    Math.ceil(700)
-);
-document.getElementById("ec_ProgramHf").defaultValue = currency.format(
-    Math.ceil(1000)
-);
-document.getElementById("ec_Programexpense").defaultValue = 2 + "%";
-
-//currency formatter
-$(".hf-c14").on({
-    keyup: function () {
-        let input_val = $(this).val();
-        input_val = numberToCurrency(input_val);
-        $(this).val(input_val);
-    },
-    blur: function () {
-        let input_val = $(this).val();
-        input_val = numberToCurrency(input_val, true, true);
-        $(this).val(input_val);
-    },
-});
-
-$(".hf-c22").on({
-    keyup: function () {
-        let input_val = $(this).val();
-        input_val = numberToCurrency(input_val);
-        $(this).val(input_val);
-    },
-    blur: function () {
-        let input_val = $(this).val();
-        input_val = numberToCurrency(input_val, true, true);
-        $(this).val(input_val);
-    },
-});
-
-$(".hf-c23").on({
-    keyup: function () {
-        let input_val = $(this).val();
-        input_val = numberToCurrency(input_val);
-        $(this).val(input_val);
-    },
-    blur: function () {
-        let input_val = $(this).val();
-        input_val = numberToCurrency(input_val, true, true);
-        $(this).val(input_val);
-    },
-});
-
-$(".hf-c24").on({
-    keyup: function () {
-        let input_val = $(this).val();
-        input_val = numberToCurrency(input_val);
-        $(this).val(input_val);
-    },
-    blur: function () {
-        let input_val = $(this).val();
-        input_val = numberToCurrency(input_val, true, true);
-        $(this).val(input_val);
-    },
-});
-
-$(".hf-c28").on({
-    keyup: function () {
-        let input_val = $(this).val();
-        input_val = numberToCurrency(input_val);
-        $(this).val(input_val);
-    },
-    blur: function () {
-        let input_val = $(this).val();
-        input_val = numberToCurrency(input_val, true, true);
-        $(this).val(input_val);
-    },
-});
-
-$(".tf-f34").on({
-    keyup: function () {
-        let input_val = $(this).val();
-        input_val = numberToCurrency(input_val);
-        $(this).val(input_val);
-    },
-    blur: function () {
-        let input_val = $(this).val();
-        input_val = numberToCurrency(input_val, true, true);
-        $(this).val(input_val);
-    },
-});
-
-$(".hf-c46").on({
-    keyup: function () {
-        let input_val = $(this).val();
-        input_val = numberToCurrency(input_val);
-        $(this).val(input_val);
-    },
-    blur: function () {
-        let input_val = $(this).val();
-        input_val = numberToCurrency(input_val, true, true);
-        $(this).val(input_val);
-    },
-});
-
-//end currency formatter
 
 //cluster reference
 document.getElementById("cluster-dropdown").addEventListener("change", cluster);
