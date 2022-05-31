@@ -10,8 +10,9 @@
                     <tr class="text-center">
                         <th class="title-th" scope="col" width=20%></th>
                         <th class="title-middle" scope="col" style="font-size: 0.9rem;">NUMBER OF CONSULTANTS</th>
-                        <th class="title-middle px-4" width=15% scope="col">HOURLY FEES</th>
-                        <th class="title-middle" scope="col" style="font-size: 0.9rem;">NUMBER OF HOURS</th>
+                        <th class="title-middle px-4" width=15% scope="col">PER DAY FEES</th>
+                        <th class="title-middle" scope="col" style="font-size: 0.9rem;">NUMBER OF DAYS</th>
+                        <th class="title-middle" scope="col" style="font-size: 0.9rem;">ADDITIONAL TRAVEL DAYS</th>
                         <th class="title-middle" scope="col" style="font-size: 0.9rem;" width=10%>NIGHT SHIFT, WEEKENDS HOLIDAYS *</th>
                         <th class="title-th" scope="col" width=15%>TOTAL FEE</th>
                         <th class="title-th" scope="col" width=15%>NOTES</th>
@@ -81,6 +82,17 @@
                                 data-mytooltip-action="focus" 
                                 data-mytooltip-direction="bottom">
                         </td>
+                        <td>
+                            <input type="number" class=" form-control input-table input js-mytooltip @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" 
+                                name="" 
+                                id="ef_LeadconsultantNoh"
+                                data-mytooltip-content="<i>Number of Hours</i>"
+                                data-mytooltip-theme="dark"
+                                data-mytooltip-action="focus" 
+                                data-mytooltip-direction="bottom">
+                        </td>
+
                         <td>
                             <input type="number" class=" form-control input-table @error('') is-invalid @enderror" 
                                 value="{{ old('') }}" name="" id="ef_LeadconsultantNwh">

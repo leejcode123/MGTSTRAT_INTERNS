@@ -27,7 +27,7 @@ $(document).on(
         sumEf = 0;
 
         //consulting
-        sum123 = 0;
+        sumLc = 0;
 
         //customized type
         var gaPercentage = $(".customized-type");
@@ -35,7 +35,7 @@ $(document).on(
         /*******************************************************CONSULTING*********************************************************************/
         //Lead consultant
         $("#ef_LeadconsultantHf").each(function () {
-            sum123 +=
+            sumLc +=
                 $("#ef_LeadconsultantNoc").val() *
                     +$(this).val() *
                     $("#ef_LeadconsultantNoh").val() +
@@ -48,11 +48,11 @@ $(document).on(
                 gaPercentage.val() == "G.A Hybrid" ||
                 gaPercentage.val() == "G.A Virtual"
             ) {
-                sum123 +=
-                    sum123 *
+                sumLc +=
+                    sumLc *
                     (document.getElementById("ga-only-dropdown").value / 100);
             }
-            sumEf += +sum123;
+            sumEf += +sumLc;
         });
         $("#leadTotal").html(currency.format(Math.ceil(sumEf)));
     }
