@@ -1,6 +1,24 @@
 //*************************************** CURRENCY FORMATTER ********************************************************//
 let currency = Intl.NumberFormat("en-US");
+
+//currency formatter
+$("#efAnalyst").on({
+    keyup: function () {
+        let input_val = $(this).val();
+        input_val = numberToCurrency(input_val);
+        $(this).val(input_val);
+    },
+    blur: function () {
+        let input_val = $(this).val();
+        input_val = numberToCurrency(input_val, true, true);
+        $(this).val(input_val);
+    },
+});
+
+//default value of input types
 document.getElementById("efAnalyst").defaultValue = currency.format(40000);
+
+
 //Customized Engagement form of Engagement Fees
 $(document).on(
     "change keyup",
