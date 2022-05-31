@@ -88,7 +88,8 @@
     }
 
     .total-td:nth-child(6),
-    .total-td:nth-child(7) 
+    .total-td:nth-child(7), 
+    .total-td:nth-child(8) 
     {
         border:3px solid black;
         border-top:none;
