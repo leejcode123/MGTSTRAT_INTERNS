@@ -32,10 +32,10 @@
                     <tr class="table-warning" id="lead-consultant">
                         <td class="title">Lead Consultant</td>
                         <td data-title="# OF CONSULTANTS">
-                            <input type="number" class="noc-b13 input js-mytooltip input-table form-control  @error('') is-invalid @enderror"
+                            <input type="number" class=" input js-mytooltip input-table form-control  @error('') is-invalid @enderror"
                                 value="{{ old('') }}" 
                                 name="" 
-                                id="" 
+                                id="ef_LeadconsultantNoc" 
                                 title="" 
                                 max="100"
                                 data-mytooltip-content="<i>Includes in depth needs analysis (i.e. surveys, interviews, FGDs),
