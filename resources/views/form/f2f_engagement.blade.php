@@ -21,7 +21,55 @@
                 </div>
             </div>
         </div>
+<!-- Tabs navs -->
+<ul class="nav nav-tabs nav-fill mb-3" id="ex1" role="tablist">
+  <li class="nav-item" role="presentation">
+    <a
+      class="nav-link active"
+      id="ex2-tab-1"
+      data-mdb-toggle="tab"
+      href="#ex2-tabs-1"
+      role="tab"
+      aria-controls="ex2-tabs-1"
+      aria-selected="true"
+      >Information</a
+    >
+  </li>
+  <li class="nav-item" role="presentation">
+    <a
+      class="nav-link"
+      id="ex2-tab-2"
+      data-mdb-toggle="tab"
+      href="#ex2-tabs-2"
+      role="tab"
+      aria-controls="ex2-tabs-2"
+      aria-selected="false"
+      >Engagement Fees</a
+    >
+  </li>
+  <li class="nav-item" role="presentation">
+    <a
+      class="nav-link"
+      id="ex2-tab-3"
+      data-mdb-toggle="tab"
+      href="#ex2-tabs-3"
+      role="tab"
+      aria-controls="ex2-tabs-3"
+      aria-selected="false"
+      >Engagement Cost</a
+    >
+  </li>
+</ul>
+<!-- Tabs navs -->
 
+<!-- Tabs content -->
+<div class="tab-content" id="ex2-content">
+  <div
+    class="tab-pane fade show active"
+    id="ex2-tabs-1"
+    role="tabpanel"
+    aria-labelledby="ex2-tab-1"
+  >
         {{-- message --}}
         {!! Toastr::message() !!}
 
@@ -40,16 +88,43 @@
                             @include(
                                 'form.components.f2f_engagement.f2f_information'
                             )
+                            {{-- <div class="col-12 d-flex justify-content-center mt-3">
+                                <button type="submit" class="btn btn-primary me-1 mb-1">Save</button>
+                                <button type="reset" class="btn btn-light-secondary me-1 mb-1">Reset</button>
+                            </div> --}}
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+  </div>
+  <div
+    class="tab-pane fade"
+    id="ex2-tabs-2"
+    role="tabpanel"
+    aria-labelledby="ex2-tab-2"
+  >
+        {{-- message --}}
+        {!! Toastr::message() !!}
+
+        {{-- card body --}}
+        <div class="col-12">
+            {{-- card --}}
+            <div class="card">
+                {{-- card content --}}
+                <div class="card-content">
+                    {{-- card body --}}
+                    <div class="card-body">
+
+                        <form class="form form-horizontal" action="{{ route('form/save') }}" method="POST">
+                            @csrf
 
                             {{-- ENGAGEMENT FEES --}}
                             @include(
                                 'form.components.f2f_engagement.f2f_engagementFees'
                             )
 
-                            {{-- ENGAGEMENT COST --}}
-                            @include(
-                                'form.components.f2f_engagement.f2f_profit_forecast'
-                            )
 
                             {{-- <div class="col-12 d-flex justify-content-center mt-3">
                                 <button type="submit" class="btn btn-primary me-1 mb-1">Save</button>
@@ -61,6 +136,50 @@
                 </div>
             </div>
         </div>
+  </div>
+  <div
+    class="tab-pane fade"
+    id="ex2-tabs-3"
+    role="tabpanel"
+    aria-labelledby="ex2-tab-3"
+  >
+         {{-- message --}}
+         {!! Toastr::message() !!}
+
+         {{-- card body --}}
+         <div class="col-12">
+             {{-- card --}}
+             <div class="card">
+                 {{-- card content --}}
+                 <div class="card-content">
+                     {{-- card body --}}
+                     <div class="card-body">
+ 
+                         <form class="form form-horizontal" action="{{ route('form/save') }}" method="POST">
+                             @csrf
+                             {{-- INFORMATION --}}
+ 
+                             {{-- ENGAGEMENT COST --}}
+                             @include(
+                                 'form.components.f2f_engagement.f2f_profit_forecast'
+                             )
+ 
+                             {{-- <div class="col-12 d-flex justify-content-center mt-3">
+                                 <button type="submit" class="btn btn-primary me-1 mb-1">Save</button>
+                                 <button type="reset" class="btn btn-light-secondary me-1 mb-1">Reset</button>
+                             </div> --}}
+                         </form>
+ 
+                     </div>
+                 </div>
+             </div>
+         </div>
+  </div>
+</div>
+<!-- Tabs content -->
+        {{-- message --}}
+        {!! Toastr::message() !!}
+
 
         <footer>
             <div class="footer clearfix mb-0 text-muted">
