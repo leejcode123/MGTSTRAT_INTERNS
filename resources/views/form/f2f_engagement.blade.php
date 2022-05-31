@@ -1,3 +1,4 @@
+
 @section('title', 'F2F Engagement Form')
 @extends('layouts.master')
 @section('menu')
@@ -15,61 +16,25 @@
                     <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{{ route('home') }}">Dashboard</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Customized Engagement</li>
+                            <li class="breadcrumb-item active" aria-current="page">F2F Engagement</li>
                         </ol>
                     </nav>
                 </div>
             </div>
         </div>
-<!-- Tabs navs -->
-<ul class="nav nav-tabs nav-fill mb-3" id="ex1" role="tablist">
-  <li class="nav-item" role="presentation">
-    <a
-      class="nav-link active"
-      id="ex2-tab-1"
-      data-mdb-toggle="tab"
-      href="#ex2-tabs-1"
-      role="tab"
-      aria-controls="ex2-tabs-1"
-      aria-selected="true"
-      >Information</a
-    >
-  </li>
-  <li class="nav-item" role="presentation">
-    <a
-      class="nav-link"
-      id="ex2-tab-2"
-      data-mdb-toggle="tab"
-      href="#ex2-tabs-2"
-      role="tab"
-      aria-controls="ex2-tabs-2"
-      aria-selected="false"
-      >Engagement Fees</a
-    >
-  </li>
-  <li class="nav-item" role="presentation">
-    <a
-      class="nav-link"
-      id="ex2-tab-3"
-      data-mdb-toggle="tab"
-      href="#ex2-tabs-3"
-      role="tab"
-      aria-controls="ex2-tabs-3"
-      aria-selected="false"
-      >Engagement Cost</a
-    >
-  </li>
-</ul>
-<!-- Tabs navs -->
-
-<!-- Tabs content -->
-<div class="tab-content" id="ex2-content">
-  <div
-    class="tab-pane fade show active"
-    id="ex2-tabs-1"
-    role="tabpanel"
-    aria-labelledby="ex2-tab-1"
-  >
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Information</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Engagement Fees</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Engagement Cost</button>
+            </li>
+          </ul>
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
         {{-- message --}}
         {!! Toastr::message() !!}
 
@@ -98,13 +63,8 @@
                 </div>
             </div>
         </div>
-  </div>
-  <div
-    class="tab-pane fade"
-    id="ex2-tabs-2"
-    role="tabpanel"
-    aria-labelledby="ex2-tab-2"
-  >
+            </div>
+            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
         {{-- message --}}
         {!! Toastr::message() !!}
 
@@ -136,46 +96,43 @@
                 </div>
             </div>
         </div>
-  </div>
-  <div
-    class="tab-pane fade"
-    id="ex2-tabs-3"
-    role="tabpanel"
-    aria-labelledby="ex2-tab-3"
-  >
-         {{-- message --}}
-         {!! Toastr::message() !!}
+            </div>
+            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+        {{-- message --}}
+        {!! Toastr::message() !!}
 
-         {{-- card body --}}
-         <div class="col-12">
-             {{-- card --}}
-             <div class="card">
-                 {{-- card content --}}
-                 <div class="card-content">
-                     {{-- card body --}}
-                     <div class="card-body">
- 
-                         <form class="form form-horizontal" action="{{ route('form/save') }}" method="POST">
-                             @csrf
-                             {{-- INFORMATION --}}
- 
-                             {{-- ENGAGEMENT COST --}}
-                             @include(
-                                 'form.components.f2f_engagement.f2f_profit_forecast'
-                             )
- 
-                             {{-- <div class="col-12 d-flex justify-content-center mt-3">
-                                 <button type="submit" class="btn btn-primary me-1 mb-1">Save</button>
-                                 <button type="reset" class="btn btn-light-secondary me-1 mb-1">Reset</button>
-                             </div> --}}
-                         </form>
- 
-                     </div>
-                 </div>
-             </div>
-         </div>
-  </div>
-</div>
+        {{-- card body --}}
+        <div class="col-12">
+            {{-- card --}}
+            <div class="card">
+                {{-- card content --}}
+                <div class="card-content">
+                    {{-- card body --}}
+                    <div class="card-body">
+
+                        <form class="form form-horizontal" action="{{ route('form/save') }}" method="POST">
+                            @csrf
+
+                            {{-- ENGAGEMENT FEES --}}
+                            @include(
+                                'form.components.f2f_engagement.f2f_engagementCost'
+                            )
+
+
+                            {{-- <div class="col-12 d-flex justify-content-center mt-3">
+                                <button type="submit" class="btn btn-primary me-1 mb-1">Save</button>
+                                <button type="reset" class="btn btn-light-secondary me-1 mb-1">Reset</button>
+                            </div> --}}
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+            </div>
+          </div>
+
+
 <!-- Tabs content -->
         {{-- message --}}
         {!! Toastr::message() !!}
