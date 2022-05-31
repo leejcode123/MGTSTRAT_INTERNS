@@ -58,11 +58,17 @@
                                     data-mytooltip-action="focus" 
                                     data-mytooltip-direction="right" 
                                     style="background-color:#ffcccc; color:red;">
-                                    <option value="7000" {{ old('') == '7000' ? 'selected="selected"' : '' }}>
-                                        &#8369;7,000
+                                    <option value="50,400" {{ old('') == '50,400' ? 'selected="selected"' : '' }}>
+                                        &#8369;50,400
                                     </option>
-                                    <option value="9000" {{ old('') == '9000' ? 'selected="selected"' : '' }}>
-                                        &#8369;9,000
+                                    <option value="56,000" {{ old('') == '56,000' ? 'selected="selected"' : '' }} selected>
+                                        &#8369;56,000
+                                    </option>
+                                    <option value="64,800" {{ old('') == '64,800' ? 'selected="selected"' : '' }}>
+                                        &#8369;64,800
+                                    </option>
+                                    <option value="72,000" {{ old('') == '72,000' ? 'selected="selected"' : '' }}>
+                                        &#8369;72,000
                                     </option>
                                 </select>
                                 @error('')
@@ -127,10 +133,10 @@
                                 value="{{ old('') }}" name="" id="hf-c14">
                         </td>
                         <td>
-                            <input type="number" class="noh-d14 input js-mytooltip form-control input-table @error('') is-invalid @enderror" 
+                            <input type="number" class=" input js-mytooltip form-control input-table @error('') is-invalid @enderror" 
                                 value="{{ old('') }}" 
                                 name="" 
-                                id=""
+                                id="efAnalyst"
                                 data-mytooltip-content="<i>Number of Hours</i>"
                                 data-mytooltip-theme="dark"
                                 data-mytooltip-action="focus" 
