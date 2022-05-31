@@ -129,14 +129,14 @@
                                 data-mytooltip-direction="bottom">
                         </td>
                         <td>
-                            <input type="text" class="hf-c14 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="hf-c14">
+                            <input type="text" class="form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" name="" id="efAnalyst">
                         </td>
                         <td>
                             <input type="number" class=" input js-mytooltip form-control input-table @error('') is-invalid @enderror" 
                                 value="{{ old('') }}" 
                                 name="" 
-                                id="efAnalyst"
+                                id=""
                                 data-mytooltip-content="<i>Number of Hours</i>"
                                 data-mytooltip-theme="dark"
                                 data-mytooltip-action="focus" 

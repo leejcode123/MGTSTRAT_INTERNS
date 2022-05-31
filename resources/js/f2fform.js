@@ -1,7 +1,6 @@
 //*************************************** CURRENCY FORMATTER ********************************************************//
-// let currency1 = Intl.NumberFormat("en-US");
-// document.getElementById("efAnalyst").defaultValue = Math.ceil(40000);
-document.getElementById("efAnalyst").defaultValue = Math.ceil(40000);
+let currency = Intl.NumberFormat("en-US");
+document.getElementById("efAnalyst").defaultValue = currency.format(40000);
 //Customized Engagement form of Engagement Fees
 $(document).on(
     "change keyup",
