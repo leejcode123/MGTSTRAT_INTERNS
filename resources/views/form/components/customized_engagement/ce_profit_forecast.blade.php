@@ -50,7 +50,7 @@
                                     <option value="35" {{ old('') == '35' ? 'selected="selected"' : '' }} >
                                         35%
                                     </option>
-                                    <option value="15" {{ old('') == '15' ? 'selected="selected"' : '' }}>
+                                    <option value="15" {{ old('') == '15' ? 'selected="selected"' : '' }} selected>
                                         15%
                                     </option>
                                 </select>

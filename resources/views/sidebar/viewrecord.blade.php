@@ -80,26 +80,11 @@
                     </a>
                     <ul class="submenu">
                         <li class="submenu-item">
-                            <a href="{{ route('form/budget/new') }}">MGT-STRAT-U WEBINARS</a>
-                        </li>
-                        {{-- <li class="submenu-item">
-                            <a href="#">NEW F2F ENGAGEMENTS</a>
-                        </li> --}}
-                        <li class="submenu-item">
                             <a href="{{ route('form/customizedEngagement/new') }}">CUSTOMIZED ENGAGEMENT</a>
                         </li>
-                        {{-- <li class="submenu-item">
-                            <a href="#">MGT-STRAT-U WORKSHOPS</a>
-                        </li>
                         <li class="submenu-item">
-                            <a href="#">MGT-STRAT-U WEBINARS</a>
+                            <a href="{{ route('form/f2f_engagement/new') }}">F2F ENGAGEMENT</a>
                         </li>
-                        <li class="submenu-item">
-                            <a href="#">COACHING</a>
-                        </li>
-                        <li class="submenu-item">
-                            <a href="#">SUBCONTRACTED WORK</a>
-                        </li> --}}
                     </ul>
                 </li>
                 

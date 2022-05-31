@@ -39,13 +39,18 @@ document.getElementById("ec_DocumentorHf").defaultValue = currency.format(
 document.getElementById("ec_ProgramHf").defaultValue = currency.format(
     Math.ceil(1000)
 );
+document.getElementById("ec_Programexpense").defaultValue = 2+"%";
 
 //percentage string of program expense
-var percentageProgram = document.getElementById('ec_Programexpense');
+// var percentageProgram = document.getElementById('ec_Programexpense');
 
-percentageProgram.addEventListener('blur', function () { // as soon as the percentageProgram element loses focus, "%" is appended
-  percentageProgram.value += '%';
-});
+// percentageProgram.addEventListener('blur', function () { // as soon as the percentageProgram element loses focus, "%" is appended
+//   percentageProgram.value += '%';
+// });
+$("#ec_Programexpense").on('input', function() {
+    $(this).val(function(i, v) {
+        return v.replace('%','') + '%';  });
+    });
 
 //currency formatter
 $(".hf-c14").on({
@@ -720,9 +725,6 @@ $(document).on(
                 sumDiscount = Math.round(sum32);
                 $("#input-discount").val(sumDiscount + "%");
             }
-            // else if(sum32 == isNaN(sum32) || isNaN(sum32) != 0) {
-            //   $("#input-discount").val(100+'%');
-            // }
         });
 
         //Sales
@@ -767,22 +769,27 @@ $(document).on(
         /***********************ENGAGEMENT COST TOTAL FEES***********************/
         $("#ec_Total").html(currency.format(Math.ceil(sumEngagementCost)));
 
-        /***********************PROFIT FORECAST***********************/     
-        sumProfit = currency.format(Math.ceil( $("#input-totalPackages").val().replace(/,/g, "") - sumEngagementCost ));
-        $("#Profit").html(sumProfit);
+        /***********************PROFIT FORECAST***********************/
+        //profit    
+        sumProfit = $("#input-totalPackages").val().replace(/,/g, "") - sumEngagementCost;
+        $("#Profit").html(currency.format(Math.ceil(sumProfit)));
 
+        //Less: Contribution to Overhead
         sumCto = 0;
         $("#LessCTO_NOC").each(function () {
             sumCto +=
-                ($("#input-totalPackages").val().replace(/,/g, "") * $("#LessCTO_NOC").val() / 100);
+                $("#input-totalPackages").val().replace(/,/g, "") * $(this).val() / 100;
         });
         $("#LessContributionToOverhead").html(currency.format(Math.ceil(sumCto)));     
         
-        sumNetprofit = currency.format(Math.ceil( sumProfit.replace(/,/g, "") - sumCto ));
-        $("#NetProfit").html(sumNetprofit); 
+        //Net profit
+        sumNetprofit = sumProfit - sumCto;
+        $("#NetProfit").html(currency.format(Math.ceil(sumNetprofit))); 
 
-        sumProfitmargin = sumNetprofit / $("#input-totalPackages").val().replace(/,/g, "") * 100;
-        $("#ProfitMargin").html(sumProfitmargin + "%"); 
+        //Profit margin
+        sumProfitmargin = (sumNetprofit / $("#input-totalPackages").val().replace(/,/g, "") * 100);
+        $("#ProfitMargin").html(Math.floor(sumProfitmargin) + "%"); 
+        // console.log(Math.ceil(sumProfitmargin));
     }
 ); //end of engagement fees
 

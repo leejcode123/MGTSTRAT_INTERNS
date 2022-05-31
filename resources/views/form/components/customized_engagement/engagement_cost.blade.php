@@ -685,7 +685,9 @@
                         <td>
                             <input type="text"
                                 class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ec_Programexpense">
+                                value="{{ old('') }}" name="" id="ec_Programexpense"
+                                {{-- oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" --}}
+                                maxlength="4">
                         </td>
                         <td></td>
                         <td></td>
@@ -705,38 +707,6 @@
                         <td class="title" colspan=""></td>
                         <td class="title" colspan=""></td>
                     </tr>
-
-                    {{-- <tr class="table-active overall-total">
-                        <td class="text-uppercase text-dark fst-italic fw-bold overall-total-start">TOTAL STANDARD FEES</td>
-                        <td class="overall-total-middle"></td>
-                        <td class="overall-total-middle"></td>
-                        <td class="overall-total-middle"></td>
-                        <td class="overall-total-middle"></td>
-                        <td class="overall-total-end" style="background-color: rgba(146, 146, 146, 0.727)">
-                            <h4 class="text-center fw-bold" id="total-standard">-</h4>
-                        </td>
-                        <td class="overall-total-end">
-                            <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" 
-                                name="" id="">
-                        </td>
-                    </tr>
-
-                    <tr class="table-active">
-                        <td class="fw-bold text-dark text-uppercase fst-italic overall-total-start">discount given (if any)</td>
-                        <td class="overall-total-middle"></td>
-                        <td class="overall-total-middle table-warning">
-                            <input type="text" class="hf-c32 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="input-discount">
-                        </td>
-                        <td class="overall-total-middle"></td>
-                        <td class="overall-total-middle"></td>
-                        <td class="overall-total-end"></td>
-                        <td class="overall-total-end">
-                            <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}"  name="" id="">
-                        </td>
-                    </tr> --}}
 
                     <tr class="table-active">
                         <td class="fw-bold text-uppercase text-dark fst-italic overall-total-start">TOTAL</td>
