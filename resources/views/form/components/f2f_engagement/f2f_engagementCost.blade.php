@@ -157,7 +157,7 @@
                                     data-mytooltip-content="<i>
                                         Engagement Manager - 4% - all Key Accounts and large engagements <br>
                                         <br>
-                                        Large engagments: large scale consulting, or a series of at least 8 virtual sessions under 1 contract involving a roster of at least 2 people
+                                        Large engagements: large scale consulting, or a series of at least 8 virtual sessions under 1 contract involving a roster of at least 2 people
                                         </i>"
                                     data-mytooltip-theme="dark"
                                     data-mytooltip-action="focus" 
@@ -194,11 +194,15 @@
                         <td>
                             <fieldset>
                                 <select class="input js-mytooltip form-select @error('') is-invalid @enderror" name=""
-                                    id="engagementManager" style="background-color:#ffcccc; color:red;"
+                                    id="offsitePC" style="background-color:#ffcccc; color:red;"
                                     data-mytooltip-content="<i>
-                                        Engagement Manager - 4% - all Key Accounts and large engagements <br>
-                                        <br>
-                                        Large engagments: large scale consulting, or a series of at least 8 virtual sessions under 1 contract involving a roster of at least 2 people
+                                       0% - Key Accounts, handled by full time office PC <br>
+                                        3% - simple indoor programs<br>
+                                        4% - large engagements with EM<br>
+                                        5% - small engagements<br><br>
+
+                                        Computation is based on total package LESS consulting + per diem
+                                        
                                         </i>"
                                     data-mytooltip-theme="dark"
                                     data-mytooltip-action="focus" 
