@@ -207,7 +207,13 @@
                                         0%
                                     </option>
                                     <option value="4" {{ old('') == '4' ? 'selected="selected"' : '' }} title="">
+                                        3%
+                                    </option>
+                                    <option value="4" {{ old('') == '4' ? 'selected="selected"' : '' }} title="">
                                         4%
+                                    </option>
+                                    <option value="4" {{ old('') == '4' ? 'selected="selected"' : '' }} title="">
+                                        5%
                                     </option>
                                 </select>
                                 @error('')
