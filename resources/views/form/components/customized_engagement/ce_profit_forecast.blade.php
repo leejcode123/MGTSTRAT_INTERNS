@@ -47,10 +47,10 @@
                                     data-mytooltip-action="focus" 
                                     data-mytooltip-direction="right"
                                     style="background-color:#ffcccc; color:red;">
-                                    <option value="35" {{ old('') == '35' ? 'selected="selected"' : '' }} >
+                                    <option value="35" {{ old('') == '35' ? 'selected="selected"' : '' }} selected>
                                         35%
                                     </option>
-                                    <option value="15" {{ old('') == '15' ? 'selected="selected"' : '' }} selected>
+                                    <option value="15" {{ old('') == '15' ? 'selected="selected"' : '' }}>
                                         15%
                                     </option>
                                 </select>

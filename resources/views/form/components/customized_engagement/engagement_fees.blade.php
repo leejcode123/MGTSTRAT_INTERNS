@@ -1,4 +1,5 @@
 <hr>
+{{-- <link rel="stylesheet" href="{{ URL::asset('css/app.css') }}"> --}}
 <div class="card-header">
     <h4 class="card-title">Engagement Fees</h4>
 </div>
@@ -32,7 +33,7 @@
                     <tr class="table-warning" id="lead-consultant">
                         <td class="title">Lead Consultant</td>
                         <td data-title="# OF CONSULTANTS">
-                            <input type="number" class=" input js-mytooltip input-table form-control  @error('') is-invalid @enderror"
+                            <input type="number" class="input js-mytooltip input-table form-control  @error('') is-invalid @enderror"
                                 value="{{ old('') }}" 
                                 name="" 
                                 id="ef_LeadconsultantNoc" 
@@ -48,9 +49,9 @@
                         </td>
                         <td>
                             <fieldset>
-                                <select class="form-select hf-c13 input js-mytooltip @error('') is-invalid @enderror"
+                                <select class="form-select input js-mytooltip @error('') is-invalid @enderror"
                                     name="" 
-                                    id=""
+                                    id="ef_LeadconsultantHf"
                                     data-mytooltip-content="<i> &#8369;7,000 - Consultants<br>
                                     &#8369;9,000 - Senior Consultants </i>"
                                     data-mytooltip-theme="dark"
@@ -72,18 +73,18 @@
                             </fieldset>
                         </td>
                         <td>
-                            <input type="number" class="noh-d13 form-control input-table input js-mytooltip @error('') is-invalid @enderror" 
+                            <input type="number" class="form-control input-table input js-mytooltip @error('') is-invalid @enderror" 
                                 value="{{ old('') }}" 
                                 name="" 
-                                id=""
+                                id="ef_LeadconsultantNoh"
                                 data-mytooltip-content="<i>Number of Hours</i>"
                                 data-mytooltip-theme="dark"
                                 data-mytooltip-action="focus" 
                                 data-mytooltip-direction="bottom">
                         </td>
                         <td>
-                            <input type="number" class="nwh-e13 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="">
+                            <input type="number" class="form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" name="" id="ef_LeadconsultantNwh">
                         </td>
                         <td class="total-td">
                                 <h4 class="text-center lead" id="leadTotal">-</h4>
@@ -97,10 +98,10 @@
                     <tr class="table-warning">
                         <td class="title">Analyst</td>
                         <td>
-                            <input type="number" class="noc-b14 input js-mytooltip form-control input-table @error('') is-invalid @enderror" 
+                            <input type="number" class="input js-mytooltip form-control input-table @error('') is-invalid @enderror" 
                                 value="{{ old('') }}" 
                                 name="" 
-                                id="" 
+                                id="ef_AnalystNoc" 
                                 max="100"
                                 data-mytooltip-content="<i>Includes in depth needs analysis (i.e. surveys, interviews, FGDs),
                                 special research (i.e. to study client materials or client -required materials, industry
@@ -111,22 +112,22 @@
                                 data-mytooltip-direction="bottom">
                         </td>
                         <td>
-                            <input type="text" class="hf-c14 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="hf-c14">
+                            <input type="text" class="form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" name="" id="ef_AnalystHf">
                         </td>
                         <td>
-                            <input type="number" class="noh-d14 input js-mytooltip form-control input-table @error('') is-invalid @enderror" 
+                            <input type="number" class="input js-mytooltip form-control input-table @error('') is-invalid @enderror" 
                                 value="{{ old('') }}" 
                                 name="" 
-                                id=""
+                                id="ef_AnalystNoh"
                                 data-mytooltip-content="<i>Number of Hours</i>"
                                 data-mytooltip-theme="dark"
                                 data-mytooltip-action="focus" 
                                 data-mytooltip-direction="bottom">
                         </td>
                         <td>
-                            <input type="number" class="nwh-e14 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="">
+                            <input type="number" class="form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" name="" id="ef_AnalystNwh">
                         </td>
                         <td class="total-td">
                             {{-- <input type="text" class="form-control input-table @error('') is-invalid @enderror"
@@ -170,10 +171,10 @@
                     <tr class="table-warning">
                         <td class="title">Designer</td>
                         <td>
-                            <input type="number" class="noc-b18 input js-mytooltip form-control input-table @error('') is-invalid @enderror" 
+                            <input type="number" class="input js-mytooltip form-control input-table @error('') is-invalid @enderror" 
                                 value="{{ old('') }}" 
                                 name="" 
-                                id="" 
+                                id="ef_DesignerNoc" 
                                 max="100"
                                 data-mytooltip-content="<i>Includes in depth needs analysis (i.e. surveys, interviews, FGDs),
                                 special research (i.e. to study client materials or client -required materials, industry
@@ -185,9 +186,9 @@
                         </td>
                         <td>
                             <fieldset>
-                                <select class="hf-c18 input js-mytooltip form-select @error('') is-invalid @enderror select"
+                                <select class="input js-mytooltip form-select @error('') is-invalid @enderror select"
                                     name="" 
-                                    id=""
+                                    id="ef_DesignerHf"
                                     data-mytooltip-content="<i>Consulting - &#8369;6,000 - Consultants<br>
                                     &#8369;8,000 - Senior Consultants</i>"
                                     data-mytooltip-theme="dark"
@@ -209,18 +210,18 @@
                             </fieldset>
                         </td>
                         <td>
-                            <input type="number" class="noh-d18 input js-mytooltip form-control input-table @error('') is-invalid @enderror" 
+                            <input type="number" class="input js-mytooltip form-control input-table @error('') is-invalid @enderror" 
                                 value="{{ old('') }}" 
                                 name="" 
-                                id=""
+                                id="ef_DesignerNoh"
                                 data-mytooltip-content="<i>Number of Hours</i>"
                                 data-mytooltip-theme="dark"
                                 data-mytooltip-action="focus" 
                                 data-mytooltip-direction="bottom">
                         </td>
                         <td>
-                            <input type="number" class="nwh-e18 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="">
+                            <input type="number" class="form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" name="" id="ef_DesignerNwh">
                         </td>
                         <td class="total-td" style="background-color: rgba(146, 146, 146, 0.727)">
                                 <h4 class="text-center" id="subtotal-design">-</h4>
@@ -245,14 +246,14 @@
                     <tr class="table-warning">
                         <td class="title">Lead Facilitator</td>
                         <td>
-                            <input type="number" class="noc-b21 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="" max="100">
+                            <input type="number" class="form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" name="" id="ef_LeadfacilitatorNoc" max="100">
                         </td>
                         <td>
                             <fieldset>
-                                <select class="hf-c21 input js-mytooltip form-select engagement-fee @error('') is-invalid @enderror select"
+                                <select class="input js-mytooltip form-select engagement-fee @error('') is-invalid @enderror select"
                                     name="" 
-                                    id=""
+                                    id="ef_LeadfacilitatorHf"
                                     data-mytooltip-content="<i>&#8369;10,000 - For Key Accounts w/ 2021 contract <br>
                                     &#8369;11,000 - For Key Accounts with minimum guaranteed 50 sessions w/in 6 months <br>
                                     &#8369;12,000 - all else</i>"
@@ -278,20 +279,20 @@
                             </fieldset>
                         </td>
                         <td>
-                            <input type="number" class="noh-d21 input js-mytooltip form-control input-table @error('') is-invalid @enderror" 
+                            <input type="number" class="input js-mytooltip form-control input-table @error('') is-invalid @enderror" 
                                 value="{{ old('') }}" 
                                 name="" 
-                                id=""
+                                id="ef_LeadfacilitatorNoh"
                                 data-mytooltip-content="<i>Number of Hours</i>"
                                 data-mytooltip-theme="dark"
                                 data-mytooltip-action="focus" 
                                 data-mytooltip-direction="bottom">
                         </td>
                         <td>
-                            <input type="number" class="nwh-e21 form-control input-table @error('') is-invalid @enderror" 
+                            <input type="number" class="form-control input-table @error('') is-invalid @enderror" 
                                 value="{{ old('') }}" 
                                 name="" 
-                                id="">
+                                id="ef_LeadfacilitatorNwh">
                         </td>
                         <td class="total-td">
                                 <h4 class="text-center lead" id="subtotal-lead">-</h4>
