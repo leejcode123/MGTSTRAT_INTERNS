@@ -14,7 +14,7 @@ $("#ef_AnalystPdf").on({
         $(this).val(input_val);
     },
 });
-$("#ec_AnalystHf").on({
+$("#ef_LeadconsultantHf").on({
     keyup: function () {
         let input_val = $(this).val();
         input_val = numberToCurrency(input_val);
@@ -26,74 +26,11 @@ $("#ec_AnalystHf").on({
         $(this).val(input_val);
     },
 });
-$("#ec_DesignerHf").on({
-    keyup: function () {
-        let input_val = $(this).val();
-        input_val = numberToCurrency(input_val);
-        $(this).val(input_val);
-    },
-    blur: function () {
-        let input_val = $(this).val();
-        input_val = numberToCurrency(input_val, true, true);
-        $(this).val(input_val);
-    },
-});
-$("#coFacilitator").on({
-    keyup: function () {
-        let input_val = $(this).val();
-        input_val = numberToCurrency(input_val);
-        $(this).val(input_val);
-    },
-    blur: function () {
-        let input_val = $(this).val();
-        input_val = numberToCurrency(input_val, true, true);
-        $(this).val(input_val);
-    },
-});
-$("#aModerator").on({
-    keyup: function () {
-        let input_val = $(this).val();
-        input_val = numberToCurrency(input_val);
-        $(this).val(input_val);
-    },
-    blur: function () {
-        let input_val = $(this).val();
-        input_val = numberToCurrency(input_val, true, true);
-        $(this).val(input_val);
-    },
-});
-$("#aProducer").on({
-    keyup: function () {
-        let input_val = $(this).val();
-        input_val = numberToCurrency(input_val);
-        $(this).val(input_val);
-    },
-    blur: function () {
-        let input_val = $(this).val();
-        input_val = numberToCurrency(input_val, true, true);
-        $(this).val(input_val);
-    },
-});
-$("#aDocumentor").on({
-    keyup: function () {
-        let input_val = $(this).val();
-        input_val = numberToCurrency(input_val);
-        $(this).val(input_val);
-    },
-    blur: function () {
-        let input_val = $(this).val();
-        input_val = numberToCurrency(input_val, true, true);
-        $(this).val(input_val);
-    },
-});
+
 //default value of input types
 document.getElementById("ef_AnalystPdf").defaultValue = currency.format(40000);
-document.getElementById("ec_AnalystHf").defaultValue = currency.format(13600);
-document.getElementById("ec_DesignerHf").defaultValue = currency.format(18000);
-document.getElementById("coFacilitator").defaultValue = currency.format(40000);
-document.getElementById("aModerator").defaultValue = currency.format(40000);
-document.getElementById("aProducer").defaultValue = currency.format(30000);
-document.getElementById("aDocumentor").defaultValue = currency.format(20000);
+document.getElementById("ef_LeadconsultantHf").defaultValue = currency.format(13600);
+
 //Customized Engagement form of Engagement Fees
 $(document).on(
     "change keyup",
@@ -132,8 +69,8 @@ $(document).on(
         $("#ef_LeadconsultantHf").each(function () {
             sumLc +=
                 $("#ef_LeadconsultantNoc").val() *
-                    +$(this).val().replace(/,/g, "") *
-                    $("#ef_LeadconsultantNoh").val() +
+                +$(this).val().replace(/,/g, "") *
+                $("#ef_LeadconsultantNoh").val() +
                 $("#ef_LeadconsultantAtd").val() *
                     ($("#ef_LeadconsultantNoc").val() *
                         +$(this).val().replace(/,/g, "") *
@@ -152,28 +89,31 @@ $(document).on(
             }
             sumEf += +sumLc;
         });
-        $("#leadTotal").html(currency.format(Math.ceil(sumLc)));
 
+        $("#lead-total").html(currency.format(Math.ceil(sumLc)));
+        $("#subtotal-consulting").html(
+            currency.format(Math.ceil(sumLc + sumAnlst))
+        );
         // Analyst
         $("#ef_AnalystPdf").each(function () {
             sumAnlst +=
                 $("#ef_AnalystNoc").val() *
-                    +$(this).val().replace(/,/g, "") *
-                    $("#ef_AnalystNod").val() +
+                +$(this).val().replace(/,/g, "") *
+                $("#ef_AnalystNod").val() +
                 $("#ef_AnalystAtd").val() *
-                    ($("#ef_AnalystNoc").val() *
-                        +$(this).val().replace(/,/g, "") *
-                        0.2) +
+                ($("#ef_AnalystNoc").val() *
+                    +$(this).val().replace(/,/g, "") *
+                    0.2) +
                 $("#ef_AnalystNsw").val() *
-                    ($("#ef_AnalystNoc").val() *
-                        +$(this).val().replace(/,/g, "") *
-                        0.2);
+                ($("#ef_AnalystNoc").val() *
+                    +$(this).val().replace(/,/g, "") *
+                    0.2);
             if (
                 gaPercentage.val() == "G.A Hybrid" ||
                 gaPercentage.val() == "G.A Virtual"
             ) {
                 sumAnlst +=
-                sumAnlst *
+                    sumAnlst *
                     (document.getElementById("ga-only-dropdown").value / 100);
             }
             sumEf += +sumAnlst;
@@ -203,7 +143,7 @@ function cluster() {
         clusterDropdown.value == "Art of Asking Questions 1 (Capability)" ||
         clusterDropdown.value == "Assertive Communication 1 (Capability)" ||
         clusterDropdown.value ==
-            "Building Effective Relationships 1 (Capability)" ||
+        "Building Effective Relationships 1 (Capability)" ||
         clusterDropdown.value == "Business Analytics 1 (Capability)" ||
         clusterDropdown.value == "Business Storytelling" ||
         clusterDropdown.value == "Change Management 2 (Capability)" ||
@@ -259,7 +199,7 @@ function cluster() {
         clusterDropdown.value == "Find Your Why 2 (Culture)" ||
         clusterDropdown.value == "Habit Formation" ||
         clusterDropdown.value ==
-            "Organizational Development (OD) 1 (Culture)" ||
+        "Organizational Development (OD) 1 (Culture)" ||
         clusterDropdown.value == "Psychological Safety 1 (Culture)" ||
         clusterDropdown.value == "Well-being"
     ) {
@@ -273,7 +213,7 @@ function cluster() {
         clusterDropdown.value == "Art of Asking Questions 2 (Leadership)" ||
         clusterDropdown.value == "Assertive Communication 2 (Leadership)" ||
         clusterDropdown.value ==
-            "Building Effective Relationships 2 (Leadership)" ||
+        "Building Effective Relationships 2 (Leadership)" ||
         clusterDropdown.value == "Business Transformation 2 (Leadership)" ||
         clusterDropdown.value == "Change Management 1 (Leadership)" ||
         clusterDropdown.value == "Choose to Flourish 2 (Leadership)" ||
@@ -305,7 +245,7 @@ function cluster() {
         clusterDropdown.value == "Goal Setting" ||
         clusterDropdown.value == "Mission & Vision Review 1 (Strategy)" ||
         clusterDropdown.value ==
-            "Organizational Development (OD) 2 (Capability)" ||
+        "Organizational Development (OD) 2 (Capability)" ||
         clusterDropdown.value == "Visioning" ||
         clusterDropdown.value == "World Cafe"
     ) {

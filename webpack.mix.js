@@ -20,4 +20,4 @@ mix.js('resources/js/app.js', 'public/js')
 
 //Disable the notification of laravel mix
 // mix.disableNotifications();
-mix.disableSuccessNotifications();
+// mix.disableSuccessNotifications();

@@ -93,7 +93,7 @@
                             <input type="number" class=" form-control input-table input js-mytooltip @error('') is-invalid @enderror" 
                                 value="{{ old('') }}" 
                                 name="" 
-                                id="ef_LeadconsultantAtd"
+                                id="ef_LeadconsultantNoh"
                                 data-mytooltip-content="<i>Number of Hours</i>"
                                 data-mytooltip-theme="dark"
                                 data-mytooltip-action="focus" 
@@ -105,11 +105,11 @@
                                 value="{{ old('') }}" name="" id="ef_LeadconsultantNwh">
                         </td>
                         <td class="total-td">
-                                <h4 class="text-center lead" id="leadTotal">-</h4>
+                                <h4 class="text-center lead" id="lead-total">-</h4>
                         </td>
                         <td class="total-td">
                             <input type="text" class="form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}"name="" id="ef_LeadconsultantTotal">
+                                value="{{ old('') }}"name="" id="">
                         </td>
                     </tr>
         {{-- Analyst --}}
@@ -220,11 +220,11 @@
                                     data-mytooltip-action="focus" 
                                     data-mytooltip-direction="right" 
                                     style="background-color:#ffcccc; color:red;">
-                                    <option value="6000" {{ old('') == '6000' ? 'selected="selected"' : '' }}>
-                                        &#8369;6,000
+                                    <option value="48000" {{ old('') == '48000' ? 'selected="selected"' : '' }}>
+                                        &#8369;48,000
                                     </option>
-                                    <option value="8000" {{ old('') == '8000' ? 'selected="selected"' : '' }}>
-                                        &#8369;8,000
+                                    <option value="64000" {{ old('') == '8000' ? 'selected="selected"' : '' }}>
+                                        &#8369;64,000
                                     </option>
                                 </select>
                                 @error('')
