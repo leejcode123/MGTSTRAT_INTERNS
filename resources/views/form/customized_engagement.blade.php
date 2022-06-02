@@ -1,5 +1,4 @@
 @section('title', 'Customized Engagement Form')
-{{-- <link rel="stylesheet" href="{{ URL::to('assets/css/custom.css') }}"> --}}
 <link rel="stylesheet" href="{{ URL::asset('css/custom.css') }}">
 @extends('layouts.master')
 @section('menu')
