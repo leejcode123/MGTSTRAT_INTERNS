@@ -1,0 +1,120 @@
+.form-group[class*=has-icon-].has-icon-left .form-select {
+    padding-left: 2.5rem;
+}
+
+.form-group[class*=has-icon-] .form-control-icon {
+position: absolute;
+top: 5%;
+transform: translateY(35%);
+padding: 0 0.6rem;
+}
+
+.required:after {
+content:" *";
+color: red;
+}
+
+label {
+overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+display:block;
+}
+
+.input-table {
+    border:0;
+    border-bottom: 2px solid #808080; 
+    border-radius:0px;
+}
+
+.title-th:nth-child(1),
+.title-th:nth-child(6),
+.title-th:nth-child(7)
+{
+    border:3px solid black;
+}
+
+.title-middle:nth-child(2),
+.title-middle:nth-child(3),
+.title-middle:nth-child(4),
+.title-middle:nth-child(5)
+{
+    border:3px solid black;
+    border-right: none;
+    border-left: none; 
+}
+
+.title:nth-child(1),
+.title:nth-child(3),
+.title:nth-child(4)
+{
+    border:3px solid black;
+    border-top:none;
+    border-bottom: none;
+}
+
+.total-td:nth-child(6),
+.total-td:nth-child(7), 
+.total-td:nth-child(8) 
+{
+    border:3px solid black;
+    border-top:none;
+    border-bottom: none;
+}
+
+.overall-total-start:nth-child(1)
+{
+    border:3px solid black;
+}
+
+.overall-total-middle:nth-child(2),
+.overall-total-middle:nth-child(3),
+.overall-total-middle:nth-child(4),
+.overall-total-middle:nth-child(5)
+{
+    border:3px solid black;
+    border-right:none;
+    border-left:none;
+}
+
+.overall-total-end:nth-child(6),
+.overall-total-end:nth-child(7)
+{
+    border:3px solid black;
+}
+
+.profit-forecast-start:nth-child(1)
+{
+    border:3px solid black;
+    border-right: none;
+}
+
+.profit-forecast-middle:nth-child(2),
+.profit-forecast-middle:nth-child(3),
+.profit-forecast-middle:nth-child(4),
+.profit-forecast-middle:nth-child(5),
+.profit-forecast-middle:nth-child(6)
+{
+    border:3px solid black;
+    border-right: none;
+    border-left: none;
+}
+
+.profit-forecast-end:nth-child(7)
+{
+    border:3px solid black;
+    border-left: none;
+}
+
+td.tbl-engmt-cost{
+    background-color: rgba(146, 146, 146, 0.727)
+}
+input.text-center {
+    text-align: center;
+}
+
+input.yellow-input[type="number"], textarea {
+
+background-color : #FFFED0; 
+
+}
