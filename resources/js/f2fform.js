@@ -134,16 +134,14 @@ $(document).on(
                 $("#ef_LeadconsultantNoc").val() *
                     +$(this).val().replace(/,/g, "") *
                     $("#ef_LeadconsultantNoh").val() +
+                $("#ef_LeadconsultantAtd").val() *
+                    ($("#ef_LeadconsultantNoc").val() *
+                        +$(this).val().replace(/,/g, "") *
+                        0.2) +
                 $("#ef_LeadconsultantNwh").val() *
                     ($("#ef_LeadconsultantNoc").val() *
                         +$(this).val().replace(/,/g, "") *
-                        $("#ef_LeadconsultantNoh").val() *
-                        0.2) +
-                $("#ef_LeadconsultantNoh").val() *
-                    ($("#ef_LeadconsultantNoc").val() *
-                        +$(this).val().replace(/,/g, "") *
-                        $("#ef_LeadconsultantNoh").val() *
-                        0.2);
+                        0.2) ;
             if (
                 gaPercentage.val() == "G.A Hybrid" ||
                 gaPercentage.val() == "G.A Virtual"
@@ -162,15 +160,13 @@ $(document).on(
                 $("#ef_AnalystNoc").val() *
                     +$(this).val().replace(/,/g, "") *
                     $("#ef_AnalystNod").val() +
-                $("#ef_AnalystNsw").val() *
-                    ($("#ef_AnalystNoc").val() *
-                        +$(this).val().replace(/,/g, "") *
-                        $("#ef_AnalystNod").val() *
-                        0.2) +
                 $("#ef_AnalystAtd").val() *
                     ($("#ef_AnalystNoc").val() *
                         +$(this).val().replace(/,/g, "") *
-                        $("#ef_AnalystNod").val() *
+                        0.2) +
+                $("#ef_AnalystNsw").val() *
+                    ($("#ef_AnalystNoc").val() *
+                        +$(this).val().replace(/,/g, "") *
                         0.2);
             if (
                 gaPercentage.val() == "G.A Hybrid" ||
