@@ -2,7 +2,7 @@
 let currency = Intl.NumberFormat("en-US");
 
 //currency formatter
-$("#efAnalyst").on({
+$("#ef_AnalystPdf").on({
     keyup: function () {
         let input_val = $(this).val();
         input_val = numberToCurrency(input_val);
@@ -14,15 +14,90 @@ $("#efAnalyst").on({
         $(this).val(input_val);
     },
 });
-
+$("#ec_AnalystHf").on({
+    keyup: function () {
+        let input_val = $(this).val();
+        input_val = numberToCurrency(input_val);
+        $(this).val(input_val);
+    },
+    blur: function () {
+        let input_val = $(this).val();
+        input_val = numberToCurrency(input_val, true, true);
+        $(this).val(input_val);
+    },
+});
+$("#ec_DesignerHf").on({
+    keyup: function () {
+        let input_val = $(this).val();
+        input_val = numberToCurrency(input_val);
+        $(this).val(input_val);
+    },
+    blur: function () {
+        let input_val = $(this).val();
+        input_val = numberToCurrency(input_val, true, true);
+        $(this).val(input_val);
+    },
+});
+$("#coFacilitator").on({
+    keyup: function () {
+        let input_val = $(this).val();
+        input_val = numberToCurrency(input_val);
+        $(this).val(input_val);
+    },
+    blur: function () {
+        let input_val = $(this).val();
+        input_val = numberToCurrency(input_val, true, true);
+        $(this).val(input_val);
+    },
+});
+$("#aModerator").on({
+    keyup: function () {
+        let input_val = $(this).val();
+        input_val = numberToCurrency(input_val);
+        $(this).val(input_val);
+    },
+    blur: function () {
+        let input_val = $(this).val();
+        input_val = numberToCurrency(input_val, true, true);
+        $(this).val(input_val);
+    },
+});
+$("#aProducer").on({
+    keyup: function () {
+        let input_val = $(this).val();
+        input_val = numberToCurrency(input_val);
+        $(this).val(input_val);
+    },
+    blur: function () {
+        let input_val = $(this).val();
+        input_val = numberToCurrency(input_val, true, true);
+        $(this).val(input_val);
+    },
+});
+$("#aDocumentor").on({
+    keyup: function () {
+        let input_val = $(this).val();
+        input_val = numberToCurrency(input_val);
+        $(this).val(input_val);
+    },
+    blur: function () {
+        let input_val = $(this).val();
+        input_val = numberToCurrency(input_val, true, true);
+        $(this).val(input_val);
+    },
+});
 //default value of input types
-document.getElementById("efAnalyst").defaultValue = currency.format(40000);
-
-
+document.getElementById("ef_AnalystPdf").defaultValue = currency.format(40000);
+document.getElementById("ec_AnalystHf").defaultValue = currency.format(13600);
+document.getElementById("ec_DesignerHf").defaultValue = currency.format(18000);
+document.getElementById("coFacilitator").defaultValue = currency.format(40000);
+document.getElementById("aModerator").defaultValue = currency.format(40000);
+document.getElementById("aProducer").defaultValue = currency.format(30000);
+document.getElementById("aDocumentor").defaultValue = currency.format(20000);
 //Customized Engagement form of Engagement Fees
 $(document).on(
     "change keyup",
-    ".f2f-customized-type, .f2f-ga-only-dropdown, #ef_LeadconsultantNoc, #ef_LeadconsultantHf, #ef_LeadconsultantNoh, #ef_LeadconsultantNwh",
+    ".f2f-customized-type, .f2f-ga-only-dropdown, #ef_LeadconsultantNoc, #ef_LeadconsultantHf, #ef_LeadconsultantNoh, #ef_LeadconsultantNwh, #ef_AnalystNoc, #ef_AnalystPdf, #ef_AnalystNod, #ef_AnalystAtd, #ef_AnalystNsw",
     function () {
         //customized type
         $(".f2f-customized-type").each(function () {
@@ -46,6 +121,8 @@ $(document).on(
 
         //consulting
         sumLc = 0;
+        //Analyst
+        sumAnlst = 0;
 
         //customized type
         var gaPercentage = $(".customized-type");
@@ -55,11 +132,16 @@ $(document).on(
         $("#ef_LeadconsultantHf").each(function () {
             sumLc +=
                 $("#ef_LeadconsultantNoc").val() *
-                    +$(this).val() *
+                    +$(this).val().replace(/,/g, "") *
                     $("#ef_LeadconsultantNoh").val() +
                 $("#ef_LeadconsultantNwh").val() *
                     ($("#ef_LeadconsultantNoc").val() *
-                        +$(this).val() *
+                        +$(this).val().replace(/,/g, "") *
+                        $("#ef_LeadconsultantNoh").val() *
+                        0.2) +
+                $("#ef_LeadconsultantNoh").val() *
+                    ($("#ef_LeadconsultantNoc").val() *
+                        +$(this).val().replace(/,/g, "") *
                         $("#ef_LeadconsultantNoh").val() *
                         0.2);
             if (
@@ -72,7 +154,40 @@ $(document).on(
             }
             sumEf += +sumLc;
         });
-        $("#leadTotal").html(currency.format(Math.ceil(sumEf)));
+        $("#leadTotal").html(currency.format(Math.ceil(sumLc)));
+
+        // Analyst
+        $("#ef_AnalystPdf").each(function () {
+            sumAnlst +=
+                $("#ef_AnalystNoc").val() *
+                    +$(this).val().replace(/,/g, "") *
+                    $("#ef_AnalystNod").val() +
+                $("#ef_AnalystNsw").val() *
+                    ($("#ef_AnalystNoc").val() *
+                        +$(this).val().replace(/,/g, "") *
+                        $("#ef_AnalystNod").val() *
+                        0.2) +
+                $("#ef_AnalystAtd").val() *
+                    ($("#ef_AnalystNoc").val() *
+                        +$(this).val().replace(/,/g, "") *
+                        $("#ef_AnalystNod").val() *
+                        0.2);
+            if (
+                gaPercentage.val() == "G.A Hybrid" ||
+                gaPercentage.val() == "G.A Virtual"
+            ) {
+                sumAnlst +=
+                sumAnlst *
+                    (document.getElementById("ga-only-dropdown").value / 100);
+            }
+            sumEf += +sumAnlst;
+        });
+        $("#analyst-total").html(currency.format(Math.ceil(sumAnlst)));
+        console.log(sumAnlst);
+        $("#subtotal-consulting").html(
+            currency.format(Math.ceil(sumLc + sumAnlst))
+        );
+
     }
 ); //end of engagement fees
 
