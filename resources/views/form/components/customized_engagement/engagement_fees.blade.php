@@ -5,7 +5,7 @@
 </div>
 <div class="form-body container">
     <section>
-        <div class="table-responsive-md" id="no-more-tables">
+        <div class="table-responsive" id="no-more-tables">
             <table class="table table-bordered table-hover">
                 <thead class="table-dark">
                     <tr class="text-center">
@@ -306,26 +306,26 @@
                     <tr class="table-warning">
                         <td class="title">Co-facilitator / Resource Speaker</td>
                         <td>
-                            <input type="number" class="noc-b22 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="" max="100">
+                            <input type="number" class="form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" name="" id="ef_CofaciNoc" max="100">
                         </td>
                         <td>
-                            <input type="text" class="hf-c22 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="hf-c22";>
+                            <input type="text" class="form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" name="" id="ef_CofaciHf";>
                         </td>
                         <td>
-                            <input type="number" class="noh-d22 input js-mytooltip form-control input-table @error('') is-invalid @enderror" 
+                            <input type="number" class="input js-mytooltip form-control input-table @error('') is-invalid @enderror" 
                                 value="{{ old('') }}" 
                                 name="" 
-                                id=""
+                                id="ef_CofaciNoh"
                                 data-mytooltip-content="<i>Number of Hours</i>"
                                 data-mytooltip-theme="dark"
                                 data-mytooltip-action="focus" 
                                 data-mytooltip-direction="bottom">
                         </td>
                         <td>
-                            <input type="number" class="nwh-e22 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="">
+                            <input type="number" class="form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" name="" id="ef_CofaciNwh">
                         </td>
                         <td class="total-td">
                                 <h4 class="text-center lead" id="subtotal-coFacilitator">-</h4>
@@ -339,26 +339,26 @@
                     <tr class="table-warning">
                         <td class="title">Moderator</td>
                         <td>
-                            <input type="number" class="noc-b23 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="" max="100">
+                            <input type="number" class="form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" name="" id="ef_ModeratorNoc" max="100">
                         </td>
                         <td>
-                            <input type="text" class="hf-c23 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="hf-c23">
+                            <input type="text" class="form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" name="" id="ef_ModeratorHf">
                         </td>
                         <td>
-                            <input type="number" class="noh-d23 input js-mytooltip form-control input-table @error('') is-invalid @enderror" 
+                            <input type="number" class="input js-mytooltip form-control input-table @error('') is-invalid @enderror" 
                                 value="{{ old('') }}" 
                                 name="" 
-                                id=""
+                                id="ef_ModeratorNoh"
                                 data-mytooltip-content="<i>Number of Hours</i>"
                                 data-mytooltip-theme="dark"
                                 data-mytooltip-action="focus" 
                                 data-mytooltip-direction="bottom">
                         </td>
                         <td>
-                            <input type="number" class="nwh-e23 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="">
+                            <input type="number" class="form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" name="" id="ef_ModeratorNwh">
                         </td>
                         <td class="total-td">
                                 <h4 class="text-center lead" id="subtotal-moderator">-</h4>
@@ -372,26 +372,26 @@
                     <tr class="table-warning">
                         <td class="title">Producer</td>
                         <td>
-                            <input type="number" class="noc-b24 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="" max="100">
+                            <input type="number" class="form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" name="" id="ef_ProducerNoc" max="100">
                         </td>
                         <td>
-                            <input type="text" class="hf-c24 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="hf-c24">
+                            <input type="text" class="form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" name="" id="ef_ProducerHf">
                         </td>
                         <td>
-                            <input type="number" class="noh-d24 input js-mytooltip form-control input-table @error('') is-invalid @enderror" 
+                            <input type="number" class="input js-mytooltip form-control input-table @error('') is-invalid @enderror" 
                                 value="{{ old('') }}" 
                                 name="" 
-                                id=""
+                                id="ef_ProducerNoh"
                                 data-mytooltip-content="<i>Number of Hours</i>"
                                 data-mytooltip-theme="dark"
                                 data-mytooltip-action="focus" 
                                 data-mytooltip-direction="bottom">
                         </td>
                         <td>
-                            <input type="number" class="nwh-e24 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="">
+                            <input type="number" class="form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" name="" id="ef_ProducerNwh">
                         </td>
                         <td class="total-td">
                                 <h4 class="text-center lead" id="subtotal-producer">-</h4>
@@ -432,26 +432,26 @@
                     <tr class="table-warning">
                         <td class="title">Documentor</td>
                         <td>
-                            <input type="number" class="noc-b28 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="" max="100">
+                            <input type="number" class="form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" name="" id="ef_DocumentorNoc" max="100">
                         </td>
                         <td>
-                            <input type="text" class="hf-c28 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="hf-c28">
+                            <input type="text" class="form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" name="" id="ef_DocumentorHf">
                         </td>
                         <td>
-                            <input type="number" class="noh-d28 input js-mytooltip form-control input-table @error('') is-invalid @enderror" 
+                            <input type="number" class="input js-mytooltip form-control input-table @error('') is-invalid @enderror" 
                                 value="{{ old('') }}" 
                                 name="" 
-                                id=""
+                                id="ef_DocumentorNoh"
                                 data-mytooltip-content="<i>Number of Hours</i>"
                                 data-mytooltip-theme="dark"
                                 data-mytooltip-action="focus" 
                                 data-mytooltip-direction="bottom">
                         </td>
                         <td>
-                            <input type="number" class="nwh-e28 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="">
+                            <input type="number" class="form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" name="" id="ef_DocumentorNwh">
                         </td>
                         <td class="total-td" style="background-color: rgba(146, 146, 146, 0.727">
                                 <h4 class="text-center" id="subtotal-documentor">-</h4>
@@ -501,7 +501,7 @@
                         <td class="overall-total-middle"></td>
                         <td class="overall-total-end table-warning">
                             <input type="text" class="tf-f34 form-control text-center text-danger fw-bolder input-table @error('') is-invalid @enderror" 
-                            value="{{ old('') }}" name="" id="input-totalPackages" style="font-size: 20px;">
+                            value="{{ old('') }}" name="" id="ef_Totalpackage" style="font-size: 20px;">
                         </td>
                         <td class="overall-total-end">
                             <input type="text" class="form-control input-table @error('') is-invalid @enderror"
