@@ -116,5 +116,8 @@ input.text-center {
 input.yellow-input[type="number"], textarea {
 
 background-color : #FFFED0; 
+}
 
+.nav-link {
+    border-style: none;
 }

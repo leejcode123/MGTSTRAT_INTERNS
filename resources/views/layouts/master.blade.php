@@ -27,9 +27,6 @@
     {{-- Select2 CDN --}}
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-
-
-
 </head>
 
 <body id="body">
@@ -39,6 +36,14 @@
         @yield('content')
 
     </div>
+
+    {{-- <footer>
+        <div class="footer clearfix mb-0 text-muted fixed-bottom p-3 bg-light">
+            <div class="text-center text-dark">
+                <p><script>document.write(new Date().getFullYear());</script> Copyright &copy; MGT-STRAT</p>
+            </div>
+        </div>
+    </footer> --}}
 
     <script src="{{ URL::to('assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
     <script src="{{ URL::to('assets/js/bootstrap.bundle.min.js') }}"></script>
