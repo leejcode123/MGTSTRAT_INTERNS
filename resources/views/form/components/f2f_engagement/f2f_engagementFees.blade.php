@@ -524,7 +524,7 @@
                         <td class="title">Documentor</td>
                         <td>
                             <input type="number" class="noc-b28 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="" max="100">
+                                value="{{ old('') }}" name="" id="ef_DocumentorNoc" max="100">
                         </td>
                         <td>
                             <input type="text" class="hf-c22 form-control input-table @error('') is-invalid @enderror" 
@@ -534,29 +534,58 @@
                             <input type="number" class="noh-d28 input js-mytooltip form-control input-table @error('') is-invalid @enderror" 
                                 value="{{ old('') }}" 
                                 name="" 
-                                id=""
-                                data-mytooltip-content="<i>Number of Hours</i>"
+                                id="ef_DocumentorNod"
+                                data-mytooltip-content="<i>½ Day = 0.70</i>"
                                 data-mytooltip-theme="dark"
                                 data-mytooltip-action="focus" 
                                 data-mytooltip-direction="bottom">
                         </td>
                         <td>
                             <input type="number" class="nwh-e28 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="">
+                                value="{{ old('') }}" name="" id="ef_DocumentorAtd">
                         </td>
                         <td>
                             <input type="number" class="nwh-e28 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="">
+                                value="{{ old('') }}" name="" id="ef_DocumentorNsw">
                         </td>
                         <td class="total-td" style="background-color: rgba(146, 146, 146, 0.727">
-                                <h4 class="text-center" id="subtotal-documentor">-</h4>
+                                <h4 class="text-center" id="subtotal-Documentor">-</h4>
                         </td>
                         <td class="total-td">
                             <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                 value="{{ old('') }}" name="" id="">
                         </td>
                     </tr>
-
+                    <tr class="">
+                        <th class="title px-4 text-dark">5. PER DIEM</th>
+                        <td>
+                            {{-- <input type="number" class="noc-b28 form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" name="" id="ef_PDNoc" max="100"> --}}
+                        </td>
+                        <td>
+                            <input type="text" class="hf-c22 form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" name="" id="ef_PDPdf";>
+                        </td>
+                        <td>
+                            <input type="number" class="noh-d28 input  form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" name="" id="ef_PDNod">
+                        </td>
+                        <td>
+                            {{-- <input type="number" class="nwh-e28 form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" name="" id="ef_PDAtd"> --}}
+                        </td>
+                        <td>
+                            {{-- <input type="number" class="nwh-e28 form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" name="" id="ef_PDNsw"> --}}
+                        </td>
+                        <td class="total-td" style="background-color: rgba(146, 146, 146, 0.727">
+                                <h4 class="text-center" id="subtotal-PD">-</h4>
+                        </td>
+                        <td class="total-td">
+                            <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="">
+                        </td>
+                    </tr>
                     <tr class="table-active overall-total">
                         <td class="text-uppercase text-dark fst-italic fw-bold overall-total-start">TOTAL STANDARD FEES</td>
                         <td class="overall-total-middle"></td>
