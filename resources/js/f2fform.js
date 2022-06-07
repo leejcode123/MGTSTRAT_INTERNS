@@ -397,6 +397,8 @@ $(document).on(
             sumEf += +sumPD;
         });
         $("#subtotal-PD").html(currency.format(Math.ceil(sumPD)));;
+
+
         // Onsite PC
         $("#ef_OnsitePdf").each(function () {
             sumOnsite +=
@@ -425,6 +427,7 @@ $(document).on(
         $("#subtotal-Onsite").html(currency.format(Math.ceil(sumOnsite)));
         $("#program-Subtotal").html(
             currency.format(Math.ceil(sumLeadFaci + sumCoFaci + sumActionLearn + sumMarshal +  sumOnsite)))
+        $("#standard_total").html(currency.format(Math.ceil(sumEf)));
 
     }
 ); 

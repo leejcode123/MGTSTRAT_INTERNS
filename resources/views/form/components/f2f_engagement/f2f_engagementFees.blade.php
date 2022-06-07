@@ -594,7 +594,7 @@
                         <td class="overall-total-middle"></td>
                         <td class="overall-total-middle"></td>
                         <td class="overall-total-end" style="background-color: rgba(146, 146, 146, 0.727)">
-                            <h4 class="text-center fw-bold" id="total-standard">-</h4>
+                            <h4 class="text-center fw-bold" id="standard_total">-</h4>
                         </td>
                         <td class="overall-total-end">
                             <input type="text" class="form-control input-table @error('') is-invalid @enderror"
@@ -607,7 +607,7 @@
                         <td class="overall-total-middle"></td>
                         <td class="overall-total-middle table-warning">
                             <input type="text" class="hf-c32 form-control input-table text-center @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="input-discount" readonly>
+                                value="{{ old('') }}" name="" id="inpt_dsct" readonly>
                         </td>
                         <td class="overall-total-middle"></td>
                         <td class="overall-total-middle"></td>
@@ -615,7 +615,7 @@
                         <td class="overall-total-end"></td>
                         <td class="overall-total-end">
                             <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}"  name="" id="">
+                                value="{{ old('') }}"  name="" id="total_dsct">
                         </td>
                     </tr>
 
