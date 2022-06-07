@@ -161,7 +161,7 @@ $(document).on(
         sumDocumentor = 0;
 
         //Per Diem
-        sumPD = 1;
+        sumPD = 0;
         //customized type
         var gaPercentage = $(".customized-type");
 
@@ -353,7 +353,7 @@ $(document).on(
             }
             sumEf += +sumMarshal;
         });
-        $("#subtotal-ActionLearn").html(currency.format(Math.ceil(sumActionLearn)));
+        $("#subtotal-marshal").html(currency.format(Math.ceil(sumActionLearn)));
         // Documentor
         $("#ef_DocumentorPdf").each(function () {
             sumDocumentor +=
@@ -382,20 +382,21 @@ $(document).on(
         $("#subtotal-Documentor").html(currency.format(Math.ceil(sumDocumentor)));
         // Per Diem
         $("#ef_PDPdf").each(function () {
-            sumPD *=
-                $("#ef_PDNod").val();
+            sumPD +=
+                $("#ef_PDNod").val() *
+                $("#ef_PDPdf").val().replace(/,/g, "");
+
             if (
                 gaPercentage.val() == "G.A Hybrid" ||
                 gaPercentage.val() == "G.A Virtual"
             ) {
-                sumPD *=
-                sumPD *
+                sumPD +=
+                    sumPD *
                     (document.getElementById("ga-only-dropdown").value / 100);
             }
-            sumEf *= +sumPD;
+            sumEf += +sumPD;
         });
-
-        $("#subtotal-PD").html(currency.format(Math.ceil(sumPD)));
+        $("#subtotal-PD").html(currency.format(Math.ceil(sumPD)));;
         // Onsite PC
         $("#ef_OnsitePdf").each(function () {
             sumOnsite +=
