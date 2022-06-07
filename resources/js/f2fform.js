@@ -14,6 +14,7 @@ $("#ef_AnalystPdf").on({
         $(this).val(input_val);
     },
 });
+
 $("#ef_LeadconsultantHf").on({
     keyup: function () {
         let input_val = $(this).val();
@@ -26,10 +27,74 @@ $("#ef_LeadconsultantHf").on({
         $(this).val(input_val);
     },
 });
-
+$("#ef_LeadFaciPdf").on({
+    keyup: function () {
+        let input_val = $(this).val();
+        input_val = numberToCurrency(input_val);
+        $(this).val(input_val);
+    },
+    blur: function () {
+        let input_val = $(this).val();
+        input_val = numberToCurrency(input_val, true, true);
+        $(this).val(input_val);
+    },
+});
+$("#ef_CoFaciPdf").on({
+    keyup: function () {
+        let input_val = $(this).val();
+        input_val = numberToCurrency(input_val);
+        $(this).val(input_val);
+    },
+    blur: function () {
+        let input_val = $(this).val();
+        input_val = numberToCurrency(input_val, true, true);
+        $(this).val(input_val);
+    },
+});
+$("#ef_ActionLearnPdf").on({
+    keyup: function () {
+        let input_val = $(this).val();
+        input_val = numberToCurrency(input_val);
+        $(this).val(input_val);
+    },
+    blur: function () {
+        let input_val = $(this).val();
+        input_val = numberToCurrency(input_val, true, true);
+        $(this).val(input_val);
+    },
+});
+$("#ef_MarshalPdf").on({
+    keyup: function () {
+        let input_val = $(this).val();
+        input_val = numberToCurrency(input_val);
+        $(this).val(input_val);
+    },
+    blur: function () {
+        let input_val = $(this).val();
+        input_val = numberToCurrency(input_val, true, true);
+        $(this).val(input_val);
+    },
+});
+$("#ef_DocumentorPdf").on({
+    keyup: function () {
+        let input_val = $(this).val();
+        input_val = numberToCurrency(input_val);
+        $(this).val(input_val);
+    },
+    blur: function () {
+        let input_val = $(this).val();
+        input_val = numberToCurrency(input_val, true, true);
+        $(this).val(input_val);
+    },
+});
 //default value of input types
 document.getElementById("ef_AnalystPdf").defaultValue = currency.format(40000);
 document.getElementById("ef_LeadconsultantHf").defaultValue = currency.format(13600);
+document.getElementById("ef_LeadFaciPdf").defaultValue = currency.format(96000);
+document.getElementById("ef_CoFaciPdf").defaultValue = currency.format(40000);
+document.getElementById("ef_ActionLearnPdf").defaultValue = currency.format(40000);
+document.getElementById("ef_MarshalPdf").defaultValue = currency.format(30000);
+document.getElementById("ef_DocumentorPdf").defaultValue = currency.format(20000);
 
 //Customized Engagement form of Engagement Fees
 $(document).on(

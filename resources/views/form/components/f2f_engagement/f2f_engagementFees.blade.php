@@ -53,8 +53,11 @@
                                 <select class="form-select hf-c13 input js-mytooltip @error('') is-invalid @enderror"
                                     name="" 
                                     id="ef_LeadconsultantHf"
-                                    data-mytooltip-content="<i> &#8369;7,000 - Consultants<br>
-                                    &#8369;9,000 - Senior Consultants </i>"
+                                    data-mytooltip-content="<i>P56,000 - Consultants<br>
+                                        P72,000 - Senior Consultants<br>
+                                        Key Accounts<br>
+                                        P50,400 - Consultants, min guaranteed 10 consulting days<br>
+                                        P45,000 - Seniuor Consultants, min. guaranteed 10 consulting days</i>"
                                     data-mytooltip-theme="dark"
                                     data-mytooltip-action="focus" 
                                     data-mytooltip-direction="right" 
@@ -84,20 +87,15 @@
                                 value="{{ old('') }}" 
                                 name="" 
                                 id="ef_LeadconsultantNoh"
-                                data-mytooltip-content="<i>Number of Hours</i>"
+                                data-mytooltip-content="<i>½ Day = 0.50<br>
+                                    ¼ Day = 0.25 </i>"
                                 data-mytooltip-theme="dark"
                                 data-mytooltip-action="focus" 
                                 data-mytooltip-direction="bottom">
                         </td>
                         <td>
-                            <input type="number" class=" form-control input-table input js-mytooltip @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" 
-                                name="" 
-                                id="ef_LeadconsultantNoh"
-                                data-mytooltip-content="<i>Number of Hours</i>"
-                                data-mytooltip-theme="dark"
-                                data-mytooltip-action="focus" 
-                                data-mytooltip-direction="bottom">
+                            <input type="number" class=" form-control input-table input @error('') is-invalid @enderror" 
+                                value="{{ old('') }}">
                         </td>
 
                         <td>
@@ -139,7 +137,8 @@
                                 value="{{ old('') }}" 
                                 name="" 
                                 id="ef_AnalystNod"
-                                data-mytooltip-content="<i>Number of Hours</i>"
+                                data-mytooltip-content="<i>½ Day = 0.50<br>
+                                                           ¼ Day = 0.25 Number of Hours</i>"
                                 data-mytooltip-theme="dark"
                                 data-mytooltip-action="focus" 
                                 data-mytooltip-direction="bottom">
@@ -214,8 +213,8 @@
                                 <select class="hf-c18 input js-mytooltip form-select @error('') is-invalid @enderror select"
                                     name="" 
                                     id=""
-                                    data-mytooltip-content="<i>Consulting - &#8369;6,000 - Consultants<br>
-                                    &#8369;8,000 - Senior Consultants</i>"
+                                    data-mytooltip-content="<i>P48,000 - Consultants<br>
+                                        P64,000 - Senior Consultants</i>"
                                     data-mytooltip-theme="dark"
                                     data-mytooltip-action="focus" 
                                     data-mytooltip-direction="right" 
@@ -239,7 +238,8 @@
                                 value="{{ old('') }}" 
                                 name="" 
                                 id=""
-                                data-mytooltip-content="<i>Number of Hours</i>"
+                                data-mytooltip-content="<i>½ Day = 0.50<br>
+                                    ¼ Day = 0.25 <br>Number of Hours</i>"
                                 data-mytooltip-theme="dark"
                                 data-mytooltip-action="focus" 
                                 data-mytooltip-direction="bottom">
@@ -280,40 +280,21 @@
                                 value="{{ old('') }}" name="" id="" max="100">
                         </td>
                         <td>
-                            <fieldset>
-                                <select class="hf-c21 input js-mytooltip form-select engagement-fee @error('') is-invalid @enderror select"
-                                    name="" 
-                                    id=""
-                                    data-mytooltip-content="<i>&#8369;10,000 - For Key Accounts w/ 2021 contract <br>
-                                    &#8369;11,000 - For Key Accounts with minimum guaranteed 50 sessions w/in 6 months <br>
-                                    &#8369;12,000 - all else</i>"
-                                    data-mytooltip-theme="dark"
-                                    data-mytooltip-action="focus" 
-                                    data-mytooltip-direction="right" 
-                                    style="background-color:#ffcccc; color:red;">
-                                    <option value="80,000" {{ old('') == '80,000' ? 'selected="selected"' : '' }}>
-                                        &#8369;80,000
-                                    </option>
-                                    <option value="88,000" {{ old('') == '88,000' ? 'selected="selected"' : '' }}>
-                                        &#8369;88,000
-                                    </option>
-                                    <option value="96,000" {{ old('') == '96,000' ? 'selected="selected"' : '' }} selected>
-                                        &#8369;96,000
-                                    </option>
-                                </select>
-                                @error('ef_customFee')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </fieldset>
+                            <input type="text" class="form-control js-mytooltip input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" name="" id="ef_LeadFaciPdf"
+                                data-mytooltip-content="<i>P80,000 - Key Accounts with min guaranteed 30 full day programs<br>
+                                    P88,000 - Non-key accounts signed on or before Apr 30, 2022<br>
+                                    P96,000 - Effective May 1, 2022</i>"
+                                data-mytooltip-theme="dark"
+                                data-mytooltip-action="focus" 
+                                data-mytooltip-direction="bottom">
                         </td>
                         <td>
                             <input type="number" class="noh-d21 input js-mytooltip form-control input-table @error('') is-invalid @enderror" 
                                 value="{{ old('') }}" 
                                 name="" 
                                 id=""
-                                data-mytooltip-content="<i>Number of Hours</i>"
+                                data-mytooltip-content="<i>½ Day = 0.70</i>"
                                 data-mytooltip-theme="dark"
                                 data-mytooltip-action="focus" 
                                 data-mytooltip-direction="bottom">
@@ -347,14 +328,18 @@
                         </td>
                         <td>
                             <input type="text" class="hf-c22 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="coFacilitator";>
+                                value="{{ old('') }}" name="" id="ef_CoFaciPdf";
+                                data-mytooltip-content="<i>½ Day = 0.70</i>"
+                                data-mytooltip-theme="dark"
+                                data-mytooltip-action="focus" 
+                                data-mytooltip-direction="bottom">
                         </td>
                         <td>
                             <input type="number" class="noh-d22 input js-mytooltip form-control input-table @error('') is-invalid @enderror" 
                                 value="{{ old('') }}" 
                                 name="" 
                                 id=""
-                                data-mytooltip-content="<i>Number of Hours</i>"
+                                data-mytooltip-content="<i>½ Day = 0.70</i>"
                                 data-mytooltip-theme="dark"
                                 data-mytooltip-action="focus" 
                                 data-mytooltip-direction="bottom">
@@ -377,21 +362,21 @@
                     </tr>
 
                     <tr class="table-warning">
-                        <td class="title">Moderator</td>
+                        <td class="title">Action Learning Coach</td>
                         <td>
                             <input type="number" class="noc-b23 form-control input-table @error('') is-invalid @enderror" 
                                 value="{{ old('') }}" name="" id="" max="100">
                         </td>
                         <td>
-                            <input type="text" class="hf-c23 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="aModerator">
+                            <input type="text" class="hf-c22 form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" name="" id="ef_ActionLearnPdf";>
                         </td>
                         <td>
                             <input type="number" class="noh-d23 input js-mytooltip form-control input-table @error('') is-invalid @enderror" 
                                 value="{{ old('') }}" 
                                 name="" 
                                 id=""
-                                data-mytooltip-content="<i>Number of Hours</i>"
+                                data-mytooltip-content="<i>½ Day = 0.70</i>"
                                 data-mytooltip-theme="dark"
                                 data-mytooltip-action="focus" 
                                 data-mytooltip-direction="bottom">
@@ -412,37 +397,97 @@
                                 value="{{ old('') }}" name="" id="">
                         </td>
                     </tr>
-
                     <tr class="table-warning">
-                        <td class="title">Producer</td>
+                        <td class="title">Marshal</td>
                         <td>
-                            <input type="number" class="noc-b24 form-control input-table @error('') is-invalid @enderror" 
+                            <input type="number" class="noc-b23 form-control input-table @error('') is-invalid @enderror" 
                                 value="{{ old('') }}" name="" id="" max="100">
                         </td>
                         <td>
-                            <input type="text" class="hf-c24 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="aProducer">
+                            <input type="text" class="hf-c22 form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" name="" id="ef_MarshalPdf";>
                         </td>
                         <td>
-                            <input type="number" class="noh-d24 input js-mytooltip form-control input-table @error('') is-invalid @enderror" 
+                            <input type="number" class="noh-d23 input js-mytooltip form-control input-table @error('') is-invalid @enderror" 
                                 value="{{ old('') }}" 
                                 name="" 
                                 id=""
-                                data-mytooltip-content="<i>Number of Hours</i>"
+                                data-mytooltip-content="<i>½ Day = 0.70</i>"
                                 data-mytooltip-theme="dark"
                                 data-mytooltip-action="focus" 
                                 data-mytooltip-direction="bottom">
                         </td>
                         <td>
-                            <input type="number" class="nwh-e24 form-control input-table @error('') is-invalid @enderror" 
+                            <input type="number" class="nwh-e23 form-control input-table @error('') is-invalid @enderror" 
                                 value="{{ old('') }}" name="" id="">
                         </td>
                         <td>
-                            <input type="number" class="nwh-e24 form-control input-table @error('') is-invalid @enderror" 
+                            <input type="number" class="nwh-e23 form-control input-table @error('') is-invalid @enderror" 
                                 value="{{ old('') }}" name="" id="">
                         </td>
                         <td class="total-td">
-                                <h4 class="text-center lead" id="subtotal-producer">-</h4>
+                                <h4 class="text-center lead" id="subtotal-moderator">-</h4>
+                        </td>
+                        <td class="total-td">
+                            <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="">
+                        </td>
+                    </tr>
+                    <tr class="table-warning">
+                        <td class="title">On-site PC (P20K / P25K / P30K)</td>
+                        <td>
+                            <input type="number" class="noc-b23 form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" name="" id="" max="100">
+                        </td>
+                        <td>
+                            <fieldset>
+                                <select class="form-select hf-c13 input js-mytooltip @error('') is-invalid @enderror"
+                                    name="" 
+                                    id="ef_LeadconsultantHf"
+                                    data-mytooltip-content="<i>P20,000 - simple indoor programs<br>
+                                        P25,000 - roster with 6-10 members<br>
+                                        P30,000 - roster with 11 members and up</i>"
+                                    data-mytooltip-theme="dark"
+                                    data-mytooltip-action="focus" 
+                                    data-mytooltip-direction="right" 
+                                    style="background-color:#ffcccc; color:red;">
+                                    <option value="20,000" {{ old('') == '20,000' ? 'selected="selected"' : '' }} selected>
+                                        &#8369;20,000
+                                    </option>
+                                    <option value="25,000" {{ old('') == '56,000' ? 'selected="selected"' : '' }} >
+                                        &#8369;25,000
+                                    </option>
+                                    <option value="30,000" {{ old('') == '30,000' ? 'selected="selected"' : '' }}>
+                                        &#8369;30,800
+                                    </option>
+                                </select>
+                                @error('')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </fieldset>
+                        </td>
+                        <td>
+                            <input type="number" class="noh-d23 input js-mytooltip form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" 
+                                name="" 
+                                id=""
+                                data-mytooltip-content="<i>½ Day = 0.70</i>"
+                                data-mytooltip-theme="dark"
+                                data-mytooltip-action="focus" 
+                                data-mytooltip-direction="bottom">
+                        </td>
+                        <td>
+                            <input type="number" class="nwh-e23 form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" name="" id="">
+                        </td>
+                        <td>
+                            <input type="number" class="nwh-e23 form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" name="" id="">
+                        </td>
+                        <td class="total-td">
+                                <h4 class="text-center lead" id="subtotal-moderator">-</h4>
                         </td>
                         <td class="total-td">
                             <input type="text" class="form-control input-table @error('') is-invalid @enderror"
@@ -469,7 +514,7 @@
 
                     {{-- Program --}}
                     <tr class="">
-                        <th class="title px-4 text-dark">4. OTHER TOOLS</th>
+                        <th class="title px-4 text-dark">4. OTHER ROLES</th>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -486,8 +531,8 @@
                                 value="{{ old('') }}" name="" id="" max="100">
                         </td>
                         <td>
-                            <input type="text" class="hf-c28 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="aDocumentor">
+                            <input type="text" class="hf-c22 form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" name="" id="ef_DocumentorPdf";>
                         </td>
                         <td>
                             <input type="number" class="noh-d28 input js-mytooltip form-control input-table @error('') is-invalid @enderror" 
@@ -569,6 +614,7 @@
                     
                 </tbody>
             </table>
+            <p> * TRAVEL DAYS/NIGHT SHIFT/WEEKENDS/HOLIDAYS - no double charging for the same day I.e. Saturday night travel is only charged one 20% surcharge</p>
         </div>
     </section>
 </div>
