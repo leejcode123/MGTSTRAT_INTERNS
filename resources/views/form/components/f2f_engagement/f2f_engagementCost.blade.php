@@ -231,7 +231,7 @@
                         <td></td>
                         <td></td>
                         <td class="total-td tbl-engmt-cost">
-                            <h4 class="text-center" id="engagementManagerTotal">-</h4>
+                            <h4 class="text-center" id="offsitePcTotal">-</h4>
                         </td>
                         <td class="total-td">
                             <input type="text" class="form-control input-table @error('') is-invalid @enderror"
@@ -556,42 +556,16 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="title">Action Learning Coach (&#8369;800, &#8369;1,100, &#8369;1,350)</td>
+                        <td class="title">Action Learning Coach</td>
                         <td>
                             <input type="number"
                                 class="text-dark text-center form-control input-table @error('') is-invalid @enderror"
                                 value="{{ old('') }}" name="" id="ec_ActionlearningcoachNoc" max="100" readonly>
                         </td>
                         <td>
-                            <fieldset>
-                                <select class="input js-mytooltip text-center form-select @error('') is-invalid @enderror select" name=""
-                                    id="ec_ActionlearningcoachPd" style="background-color:#ffcccc; color:red;"
-                                    data-mytooltip-content="<i>
-                                        <b>Moderator</b><br/>
-                                        P800  - Associates<br/>
-                                        P1,100 - Consultants<br/>
-                                        P1,350 - Senior Consultant</i>"
-                                    data-mytooltip-theme="dark"
-                                    data-mytooltip-action="focus" 
-                                    data-mytooltip-direction="right">
-                                    <option value="800" {{ old('') == '800' ? 'selected="selected"' : '' }} title="">
-                                        &#8369;800
-                                    </option>
-                                    <option value="1100" {{ old('') == '1100' ? 'selected="selected"' : '' }}
-                                        title="">
-                                        &#8369;1,100
-                                    </option>
-                                    <option value="1350" {{ old('') == '1350' ? 'selected="selected"' : '' }}
-                                        title="">
-                                        &#8369;1,350
-                                    </option>
-                                </select>
-                                @error('ef_customFee')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </fieldset>
+                            <input type="text"
+                                class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ec_ActionlearningcoachPd">
                         </td>
                         <td>
                             <input type="number"
@@ -606,7 +580,7 @@
                         <td>
                             <input type="number"
                                 class="text-dark text-center form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ec_ModeratorNwh" readonly>
+                                value="{{ old('') }}" name="" id="ec_ActionlearningcoachNwh" readonly>
                         </td>
                         <td class="total-td">
                             <h4 class="text-center lead" id="ec_ActionlearningcoachTotal">-</h4>
