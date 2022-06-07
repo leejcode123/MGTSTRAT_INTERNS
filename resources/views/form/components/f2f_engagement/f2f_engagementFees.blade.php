@@ -277,7 +277,7 @@
                         <td class="title">Lead Facilitator</td>
                         <td>
                             <input type="number" class="noc-b21 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="" max="100">
+                                value="{{ old('') }}" name="" id="ef_LeadFaciNoc" max="100">
                         </td>
                         <td>
                             <input type="text" class="form-control js-mytooltip input-table @error('') is-invalid @enderror" 
@@ -293,7 +293,7 @@
                             <input type="number" class="noh-d21 input js-mytooltip form-control input-table @error('') is-invalid @enderror" 
                                 value="{{ old('') }}" 
                                 name="" 
-                                id=""
+                                id="ef_LeadFaciNod"
                                 data-mytooltip-content="<i>½ Day = 0.70</i>"
                                 data-mytooltip-theme="dark"
                                 data-mytooltip-action="focus" 
@@ -301,18 +301,14 @@
                         </td>
                         <td>
                             <input type="number" class="nwh-e21 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" 
-                                name="" 
-                                id="">
+                                value="{{ old('') }}" name="" id="ef_LeadFaciAtd">
                         </td>
                         <td>
                             <input type="number" class="nwh-e21 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" 
-                                name="" 
-                                id="">
+                                value="{{ old('') }}" name="" id="ef_LeadFaciNsw">
                         </td>
                         <td class="total-td">
-                                <h4 class="text-center lead" id="subtotal-lead">-</h4>
+                                <h4 class="text-center lead" id="subtotal-LeadFaci">-</h4>
                         </td>
                         <td class="total-td">
                             <input type="text" class="form-control input-table @error('') is-invalid @enderror"
