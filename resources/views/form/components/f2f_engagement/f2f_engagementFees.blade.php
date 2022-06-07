@@ -320,7 +320,7 @@
                         <td class="title">Co-facilitator / Resource Speaker</td>
                         <td>
                             <input type="number" class="noc-b22 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="" max="100">
+                                value="{{ old('') }}" name="" id="ef_CoFaciNoc" max="100">
                         </td>
                         <td>
                             <input type="text" class="hf-c22 form-control input-table @error('') is-invalid @enderror" 
@@ -334,7 +334,7 @@
                             <input type="number" class="noh-d22 input js-mytooltip form-control input-table @error('') is-invalid @enderror" 
                                 value="{{ old('') }}" 
                                 name="" 
-                                id=""
+                                id="ef_CoFaciNod"
                                 data-mytooltip-content="<i>½ Day = 0.70</i>"
                                 data-mytooltip-theme="dark"
                                 data-mytooltip-action="focus" 
@@ -342,11 +342,11 @@
                         </td>
                         <td>
                             <input type="number" class="nwh-e22 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="">
+                                value="{{ old('') }}" name="" id="ef_CoFaciAtd">
                         </td>
                         <td>
                             <input type="number" class="nwh-e22 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="">
+                                value="{{ old('') }}" name="" id="ef_CoFaciNsw">
                         </td>
                         <td class="total-td">
                                 <h4 class="text-center lead" id="subtotal-coFacilitator">-</h4>
@@ -361,7 +361,7 @@
                         <td class="title">Action Learning Coach</td>
                         <td>
                             <input type="number" class="noc-b23 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="" max="100">
+                                value="{{ old('') }}" name="" id="ef_ActionLearnNoc" max="100">
                         </td>
                         <td>
                             <input type="text" class="hf-c22 form-control input-table @error('') is-invalid @enderror" 
@@ -371,7 +371,7 @@
                             <input type="number" class="noh-d23 input js-mytooltip form-control input-table @error('') is-invalid @enderror" 
                                 value="{{ old('') }}" 
                                 name="" 
-                                id=""
+                                id="ef_ActionLearnNod"
                                 data-mytooltip-content="<i>½ Day = 0.70</i>"
                                 data-mytooltip-theme="dark"
                                 data-mytooltip-action="focus" 
@@ -379,14 +379,14 @@
                         </td>
                         <td>
                             <input type="number" class="nwh-e23 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="">
+                                value="{{ old('') }}" name="" id="ef_ActionLearnAtd">
                         </td>
                         <td>
                             <input type="number" class="nwh-e23 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="">
+                                value="{{ old('') }}" name="" id="ef_ActionLearnNsw">
                         </td>
                         <td class="total-td">
-                                <h4 class="text-center lead" id="subtotal-moderator">-</h4>
+                                <h4 class="text-center lead" id="subtotal-ActionLearn">-</h4>
                         </td>
                         <td class="total-td">
                             <input type="text" class="form-control input-table @error('') is-invalid @enderror"
@@ -397,7 +397,7 @@
                         <td class="title">Marshal</td>
                         <td>
                             <input type="number" class="noc-b23 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="" max="100">
+                                value="{{ old('') }}" name="" id="ef_MarshalNoc" max="100">
                         </td>
                         <td>
                             <input type="text" class="hf-c22 form-control input-table @error('') is-invalid @enderror" 
@@ -407,7 +407,7 @@
                             <input type="number" class="noh-d23 input js-mytooltip form-control input-table @error('') is-invalid @enderror" 
                                 value="{{ old('') }}" 
                                 name="" 
-                                id=""
+                                id="ef_MarshalNod"
                                 data-mytooltip-content="<i>½ Day = 0.70</i>"
                                 data-mytooltip-theme="dark"
                                 data-mytooltip-action="focus" 
@@ -415,14 +415,14 @@
                         </td>
                         <td>
                             <input type="number" class="nwh-e23 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="">
+                                value="{{ old('') }}" name="" id="ef_MarshalAtd">
                         </td>
                         <td>
                             <input type="number" class="nwh-e23 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="">
+                                value="{{ old('') }}" name="" id="ef_MarshalNsw">
                         </td>
                         <td class="total-td">
-                                <h4 class="text-center lead" id="subtotal-moderator">-</h4>
+                                <h4 class="text-center lead" id="subtotal-marshal">-</h4>
                         </td>
                         <td class="total-td">
                             <input type="text" class="form-control input-table @error('') is-invalid @enderror"
@@ -433,13 +433,13 @@
                         <td class="title">On-site PC (P20K / P25K / P30K)</td>
                         <td>
                             <input type="number" class="noc-b23 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="" max="100">
+                                value="{{ old('') }}" name="" id="ef_OnsiteNoc" max="100">
                         </td>
                         <td>
                             <fieldset>
                                 <select class="form-select hf-c13 input js-mytooltip @error('') is-invalid @enderror"
                                     name="" 
-                                    id="ef_LeadconsultantHf"
+                                    id="ef_OnsitePdf"
                                     data-mytooltip-content="<i>P20,000 - simple indoor programs<br>
                                         P25,000 - roster with 6-10 members<br>
                                         P30,000 - roster with 11 members and up</i>"
@@ -468,7 +468,7 @@
                             <input type="number" class="noh-d23 input js-mytooltip form-control input-table @error('') is-invalid @enderror" 
                                 value="{{ old('') }}" 
                                 name="" 
-                                id=""
+                                id="ef_OnsiteNod"
                                 data-mytooltip-content="<i>½ Day = 0.70</i>"
                                 data-mytooltip-theme="dark"
                                 data-mytooltip-action="focus" 
@@ -476,14 +476,14 @@
                         </td>
                         <td>
                             <input type="number" class="nwh-e23 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="">
+                                value="{{ old('') }}" name="" id="ef_OnsiteAtd">
                         </td>
                         <td>
                             <input type="number" class="nwh-e23 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="">
+                                value="{{ old('') }}" name="" id="ef_OnsiteNsw">
                         </td>
                         <td class="total-td">
-                                <h4 class="text-center lead" id="subtotal-moderator">-</h4>
+                                <h4 class="text-center lead" id="subtotal-Onsite">-</h4>
                         </td>
                         <td class="total-td">
                             <input type="text" class="form-control input-table @error('') is-invalid @enderror"
@@ -499,7 +499,7 @@
                         <td></td>
                         <td></td>
                         <td class="total-td" style="background-color: rgba(146, 146, 146, 0.727)">
-                            <h4 class="text-center" id="program-subtotal">-</h4>
+                            <h4 class="text-center" id="program-Subtotal">-</h4>
                         </td>
                         <td class="total-td">
                             <input type="text" class="form-control input-table @error('') is-invalid @enderror"
