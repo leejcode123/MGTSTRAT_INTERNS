@@ -353,7 +353,7 @@ $(document).on(
             }
             sumEf += +sumMarshal;
         });
-        $("#subtotal-marshal").html(currency.format(Math.ceil(sumActionLearn)));
+        $("#subtotal-marshal").html(currency.format(Math.ceil(sumMarshal)));
         // Documentor
         $("#ef_DocumentorPdf").each(function () {
             sumDocumentor +=

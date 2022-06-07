@@ -586,7 +586,7 @@
                                 value="{{ old('') }}" name="" id="">
                         </td>
                     </tr>
-                    <tr class="table-active overall-total">
+                    <tr class="table-active overall-total" style="border:3px solid black">
                         <td class="text-uppercase text-dark fst-italic fw-bold overall-total-start">TOTAL STANDARD FEES</td>
                         <td class="overall-total-middle"></td>
                         <td class="overall-total-middle"></td>
@@ -602,7 +602,7 @@
                                 name="" id="">
                         </td>
                     </tr>
-                    <tr class="table-active">
+                    <tr class="table-active" style="border:3px solid black">
                         <td class="fw-bold text-dark text-uppercase fst-italic overall-total-start">discount given (if any)</td>
                         <td class="overall-total-middle"></td>
                         <td class="overall-total-middle table-warning">
@@ -619,7 +619,7 @@
                         </td>
                     </tr>
 
-                    <tr class="table-active">
+                    <tr class="table-active" style="border:3px solid black">
                         <td class="fw-bold text-uppercase text-dark fst-italic overall-total-start">total package</td>
                         <td class="overall-total-middle"></td>
                         <td class="overall-total-middle"></td>
