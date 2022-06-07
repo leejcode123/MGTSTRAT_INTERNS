@@ -95,7 +95,7 @@
                         </td>
                         <td>
                             <input type="number" class=" form-control input-table input @error('') is-invalid @enderror" 
-                                value="{{ old('') }}">
+                                value="{{ old('') }}" id="ef_LeadconsultantAtd">
                         </td>
 
                         <td>
