@@ -198,7 +198,7 @@
                             <input type="number" class="noc-b18 input js-mytooltip form-control input-table @error('') is-invalid @enderror" 
                                 value="{{ old('') }}" 
                                 name="" 
-                                id="" 
+                                id="ef_DesignerNoc" 
                                 max="100"
                                 data-mytooltip-content="<i>Includes in depth needs analysis (i.e. surveys, interviews, FGDs),
                                 special research (i.e. to study client materials or client -required materials, industry
@@ -212,7 +212,7 @@
                             <fieldset>
                                 <select class="hf-c18 input js-mytooltip form-select @error('') is-invalid @enderror select"
                                     name="" 
-                                    id=""
+                                    id="ef_DesignerPdf"
                                     data-mytooltip-content="<i>P48,000 - Consultants<br>
                                         P64,000 - Senior Consultants</i>"
                                     data-mytooltip-theme="dark"
@@ -237,7 +237,7 @@
                             <input type="number" class="noh-d18 input js-mytooltip form-control input-table @error('') is-invalid @enderror" 
                                 value="{{ old('') }}" 
                                 name="" 
-                                id=""
+                                id="ef_DesignerNod"
                                 data-mytooltip-content="<i>½ Day = 0.50<br>
                                     ¼ Day = 0.25 <br>Number of Hours</i>"
                                 data-mytooltip-theme="dark"
@@ -246,11 +246,11 @@
                         </td>
                         <td>
                             <input type="number" class="nwh-e18 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="">
+                                value="{{ old('') }}" name="" id="ef_DesignerAtd">
                         </td>
                         <td>
                             <input type="number" class="nwh-e18 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="">
+                                value="{{ old('') }}" name="" id="ef_DesignerNsw">
                         </td>
                         <td class="total-td" style="background-color: rgba(146, 146, 146, 0.727)">
                                 <h4 class="text-center" id="subtotal-design">-</h4>

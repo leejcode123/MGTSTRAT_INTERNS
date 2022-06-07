@@ -99,7 +99,7 @@ document.getElementById("ef_DocumentorPdf").defaultValue = currency.format(20000
 //Customized Engagement form of Engagement Fees
 $(document).on(
     "change keyup",
-    ".f2f-customized-type, .f2f-ga-only-dropdown, #ef_LeadconsultantAtd, #ef_LeadconsultantNoc, #ef_LeadconsultantHf, #ef_LeadconsultantNoh, #ef_LeadconsultantNwh, #ef_AnalystNoc, #ef_AnalystPdf, #ef_AnalystNod, #ef_AnalystAtd, #ef_AnalystNsw",
+    ".f2f-customized-type, .f2f-ga-only-dropdown, #ef_LeadconsultantAtd, #ef_LeadconsultantNoc, #ef_LeadconsultantHf, #ef_LeadconsultantNoh, #ef_LeadconsultantNwh, #ef_AnalystNoc, #ef_AnalystPdf, #ef_AnalystNod, #ef_AnalystAtd, #ef_AnalystNsw, #ef_DesignerNoc, #ef_DesignerPdf, #ef_DesignerNod, #ef_DesignerAtd, #ef_DesignerNsw",
     function () {
         //customized type
         $(".f2f-customized-type").each(function () {
@@ -126,6 +126,8 @@ $(document).on(
         //Analyst
         sumAnlst = 0;
 
+        //Designer
+        sumDesigner=0;
         //customized type
         var gaPercentage = $(".customized-type");
 
@@ -188,9 +190,36 @@ $(document).on(
         $("#subtotal-consulting").html(
             currency.format(Math.ceil(sumLc + sumAnlst))
         );
+        // Designer
+        $("#ef_DesignerPdf").each(function () {
+            sumDesigner +=
+                $("#ef_DesignerNoc").val() *
+                +$(this).val().replace(/,/g, "") *
+                $("#ef_DesignerNod").val() +
+                $("#ef_DesignerAtd").val() *
+                ($("#ef_DesignerNoc").val() *
+                    +$(this).val().replace(/,/g, "") *
+                    0.2) +
+                $("#ef_DesignerNsw").val() *
+                ($("#ef_DesignerNoc").val() *
+                    +$(this).val().replace(/,/g, "") *
+                    0.2);
+            if (
+                gaPercentage.val() == "G.A Hybrid" ||
+                gaPercentage.val() == "G.A Virtual"
+            ) {
+                sumDesigner +=
+                sumDesigner *
+                    (document.getElementById("ga-only-dropdown").value / 100);
+            }
+            sumEf += +sumDesigner;
+        });
 
+        $("#subtotal-design").html(currency.format(Math.ceil(sumDesigner)));
     }
-); //end of engagement fees
+); 
+
+//end of engagement fees
 
 //cluster reference
 document.getElementById("cluster-dropdown").addEventListener("change", cluster);
