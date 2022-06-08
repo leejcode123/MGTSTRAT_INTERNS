@@ -110,37 +110,37 @@ document.getElementById("ef_DocumentorPdf").defaultValue = currency.format(20000
 document.getElementById("ef_PDPdf").defaultValue = currency.format(2000);
 //Engagement Cost
 document.getElementById("ec_LeadfacilitatorPd").defaultValue = currency.format(
-    Math.ceil(3000)
+    Math.ceil(24000)
 );
 document.getElementById("ec_LeadconsultantPd").defaultValue = currency.format(
     Math.ceil(0.85 * $("#ec_LeadfacilitatorPd").val().replace(/,/g, ""))
 );
 document.getElementById("ec_AnalystPd").defaultValue = currency.format(
-    Math.ceil(1700)
+    Math.ceil(13600)
 );
 document.getElementById("ec_DesignerPd").defaultValue = currency.format(
-    Math.ceil(2250)
+    Math.ceil(0.75 * $("#ec_LeadfacilitatorPd").val().replace(/,/g, ""))
 );
 document.getElementById("ec_CreatorsPd").defaultValue = currency.format(
-    Math.ceil(2250)
+    Math.ceil(500)
 );
 document.getElementById("ec_CofacilitatorPd").defaultValue = currency.format(
-    Math.ceil(1800)
+    Math.ceil(0.6 * $("#ec_LeadfacilitatorPd").val().replace(/,/g, ""))
 );
 document.getElementById("ec_ActionlearningcoachPd").defaultValue = currency.format(
-    Math.ceil(550)
+    Math.ceil(16000)
 );
 document.getElementById("ec_MarshalPd").defaultValue = currency.format(
-    Math.ceil(700)
+    Math.ceil(8000)
 );
 document.getElementById("ec_OnsitepcPd").defaultValue = currency.format(
     Math.ceil(1000)
 );
 document.getElementById("ec_DocumentorPd").defaultValue = currency.format(
-    Math.ceil(1000)
+    Math.ceil(5600)
 );
 document.getElementById("ec_PerdiemPd").defaultValue = currency.format(
-    Math.ceil(1000)
+    Math.ceil(200)
 );
 document.getElementById("ec_OffprogramPd").defaultValue = currency.format(
     Math.ceil(1000)
