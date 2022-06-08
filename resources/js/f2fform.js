@@ -200,6 +200,10 @@ $(document).on(
 
         //Per Diem
         sumPD = 0;
+
+        //Discount
+        sumA = 0;
+        sum50 = 0;
         //customized type
         var gaPercentage = $(".customized-type");
 
@@ -467,7 +471,6 @@ $(document).on(
             currency.format(Math.ceil(sumLeadFaci + sumCoFaci + sumActionLearn + sumMarshal +  sumOnsite)))
         $("#standard_total").html(currency.format(Math.ceil(sumEf)));
 
-<<<<<<< HEAD
 // Discountsss-------------------------------------------------------------------
 $("#input_totalPackages").each(function () {
     sum50 += (1 - +$(this).val().replace(/,/g, "") / sumEf) * 100;
@@ -489,8 +492,6 @@ $("#sales1").each(function () {
     sumEf += +sumSales1;
 });
 $("#salesTotal1").html(currency.format(Math.ceil(sumSales1)));
-=======
->>>>>>> 1b1fb562c5f7d0e266b7d5c5a10ac90fe71534ab
     }
 ); 
 
