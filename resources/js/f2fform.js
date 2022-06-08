@@ -162,6 +162,11 @@ $(document).on(
 
         //Per Diem
         sumPD = 0;
+
+        // Discount 
+        sum50 = 0;
+        sumSales1 = 0;
+        sumA = 0;
         //customized type
         var gaPercentage = $(".customized-type");
 
@@ -429,6 +434,27 @@ $(document).on(
             currency.format(Math.ceil(sumLeadFaci + sumCoFaci + sumActionLearn + sumMarshal +  sumOnsite)))
         $("#standard_total").html(currency.format(Math.ceil(sumEf)));
 
+// Discountsss-------------------------------------------------------------------
+$("#input_totalPackages").each(function () {
+    sum50 += (1 - +$(this).val().replace(/,/g, "") / sumA) * 100;
+
+    if (sum50 > 100) {
+        sumDiscount2 = sum50 - 100;
+        $("#inpt_dsct").val("-" + sumDiscount2 + "%");
+    } else if (isNaN(sum50) != 0) {
+        $("#inpt_dsct").val(100 + "%");
+    } else {
+        sumDiscount2 = Math.round(sum50);
+        $("#inpt_dsct").val(sumDiscount2 + "%");
+    }
+});
+//Lead Consultant
+$("#sales1").each(function () {
+    sumSales1 +=
+        ($("#inpt_dsct").val().replace(/,/g, "") / 100) * $(this).val();
+    sumEf += +sumSales1;
+});
+$("#salesTotal1").html(currency.format(Math.ceil(sumSales1)));
     }
 ); 
 
