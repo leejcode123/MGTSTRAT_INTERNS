@@ -628,7 +628,7 @@
                         <td class="overall-total-middle"></td>
                         <td class="overall-total-end table-warning">
                             <input type="text" class="tf-f34 form-control text-center text-danger fw-bolder input-table @error('') is-invalid @enderror" 
-                            value="{{ old('') }}" name="" id="input_totalPackages" style="font-size: 20px;">
+                            value="{{ old('') }}" name="" id="input-totalPackages" style="font-size: 20px;">
                         </td>
                         <td class="overall-total-end">
                             <input type="text" class="form-control input-table @error('') is-invalid @enderror"
