@@ -108,6 +108,44 @@ document.getElementById("ef_ActionLearnPdf").defaultValue = currency.format(4000
 document.getElementById("ef_MarshalPdf").defaultValue = currency.format(30000);
 document.getElementById("ef_DocumentorPdf").defaultValue = currency.format(20000);
 document.getElementById("ef_PDPdf").defaultValue = currency.format(2000);
+//Engagement Cost
+document.getElementById("ec_LeadfacilitatorPd").defaultValue = currency.format(
+    Math.ceil(3000)
+);
+document.getElementById("ec_LeadconsultantPd").defaultValue = currency.format(
+    Math.ceil(0.85 * $("#ec_LeadfacilitatorPd").val().replace(/,/g, ""))
+);
+document.getElementById("ec_AnalystPd").defaultValue = currency.format(
+    Math.ceil(1700)
+);
+document.getElementById("ec_DesignerPd").defaultValue = currency.format(
+    Math.ceil(2250)
+);
+document.getElementById("ec_CreatorsPd").defaultValue = currency.format(
+    Math.ceil(2250)
+);
+document.getElementById("ec_CofacilitatorPd").defaultValue = currency.format(
+    Math.ceil(1800)
+);
+document.getElementById("ec_ActionlearningcoachPd").defaultValue = currency.format(
+    Math.ceil(550)
+);
+document.getElementById("ec_MarshalPd").defaultValue = currency.format(
+    Math.ceil(700)
+);
+document.getElementById("ec_OnsitepcPd").defaultValue = currency.format(
+    Math.ceil(1000)
+);
+document.getElementById("ec_DocumentorPd").defaultValue = currency.format(
+    Math.ceil(1000)
+);
+document.getElementById("ec_PerdiemPd").defaultValue = currency.format(
+    Math.ceil(1000)
+);
+document.getElementById("ec_OffprogramPd").defaultValue = currency.format(
+    Math.ceil(1000)
+);
+document.getElementById("ec_Programexpense").defaultValue = 2 + "%";
 
 //Customized Engagement form of Engagement Fees
 $(document).on(
