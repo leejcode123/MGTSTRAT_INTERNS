@@ -1,11 +1,10 @@
-<hr>
 <div class="card-header">
     <h4 class="card-title">Engagement Cost</h4>
 </div>
 <div class="form-body container">
     <section>
         <div class="table-responsive" id="no-more-tables">
-            <table class="table table-bordered table-hover">
+            <table class="table table-bordered table-hover" id="">
                 <thead class="table-dark">
                     <tr class="text-center">
                         <th class="title-th" scope="col" width=20%></th>
@@ -16,6 +15,7 @@
                             WEEKENDS HOLIDAYS *</th>
                         <th class="title-th" scope="col" width=15%>TOTAL FEE</th>
                         <th class="title-th" scope="col" width=15%>ROSTER</th>
+                        <th> </th>
                     </tr>
                 </thead>
 
@@ -30,14 +30,17 @@
                         <th></th>
                         <th class="total-td"></th>
                         <th class="total-td"></th>
+                        <th> </th>
                     </tr>
-                    <tr class="" id="lead-consultant">
+
+                    <tbody id="tableEngagementcost">
+                    <tr>
                         <td class="title">Sales (4% / 5% / 6% / 7%)</td>
                         <td></td>
                         <td>
                             <fieldset>
-                                <select class="input js-mytooltip form-select @error('') is-invalid @enderror" name="" id="sales"
-                                    data-mytooltip-content="<i>
+                                <select class="input js-mytooltip form-select @error('') is-invalid @enderror" name=""
+                                    id="sales" data-mytooltip-content="<i>
                                         <b>Sales</b><br>
                                         For large engagements, with EMs: <br>
                                         4% - discounted <br>
@@ -49,10 +52,8 @@
                                         <br>
                                         For Key Accounts, with EMs:<br>
                                         4% - discounted<br>
-                                        5% - packaged rate</i>"
-                                    data-mytooltip-theme="dark"
-                                    data-mytooltip-action="focus" 
-                                    data-mytooltip-direction="right"
+                                        5% - packaged rate</i>" data-mytooltip-theme="dark"
+                                    data-mytooltip-action="focus" data-mytooltip-direction="right"
                                     style="background-color:#ffcccc; color:red;">
                                     <option value="0" {{ old('') == '0' ? 'selected="selected"' : '' }}
                                         title="with minimal design customization, or platform customization outside of Zoom/Google Meets/MS Teams. Up to 2 hours of work">
@@ -91,24 +92,25 @@
                             <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                 value="{{ old('') }}" name="" id="">
                         </td>
-                    </tr>
+                        <td><a href="javascript:void(0)" class="text-success font-18" title="Add" id="addBtn"><i
+                                    class="fa fa-plus"></i></a></td>
+                    </tr>                        
+                    </tbody>
+
                     <tr class="">
                         <td class="title">Referral (2% / 3%)</td>
                         <td></td>
                         <td>
                             <fieldset>
-                                <select class="input js-mytooltip form-select @error('') is-invalid @enderror" name="" id="referral"
-                                    data-mytooltip-content="<i>
+                                <select class="input js-mytooltip form-select @error('') is-invalid @enderror" name=""
+                                    id="referral" data-mytooltip-content="<i>
                                         Referral - 2% - repeat contracts from the same client<br>
                                         3% - 1st contract with a new client, or with a 2-year dormant client<br>
                                         <br>
                                         When in doubt, check with Joi on who referror is.
                                         
-                                        </i>"
-                                    data-mytooltip-theme="dark"
-                                    data-mytooltip-action="focus" 
-                                    data-mytooltip-direction="right"
-                                    style="background-color:#ffcccc; color:red;">
+                                        </i>" data-mytooltip-theme="dark" data-mytooltip-action="focus"
+                                    data-mytooltip-direction="right" style="background-color:#ffcccc; color:red;">
                                     <option value="0" {{ old('') == '0' ? 'selected="selected"' : '' }} title="">
                                         0%
                                     </option>
@@ -153,9 +155,7 @@
                                         Engagement Manager - 4% - all Key Accounts and large engagements <br>
                                         <br>
                                         Large engagments: large scale consulting, or a series of at least 8 virtual sessions under 1 contract involving a roster of at least 2 people
-                                        </i>"
-                                    data-mytooltip-theme="dark"
-                                    data-mytooltip-action="focus" 
+                                        </i>" data-mytooltip-theme="dark" data-mytooltip-action="focus"
                                     data-mytooltip-direction="right">
                                     <option value="0" {{ old('') == '0' ? 'selected="selected"' : '' }} title="">
                                         0%
@@ -326,20 +326,18 @@
                         <td>
                             <input type="number"
                                 class="text-center yellow-input form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ec_CreatorsNoc" max="100"
-                                >
+                                value="{{ old('') }}" name="" id="ec_CreatorsNoc" max="100">
                         </td>
                         <td>
                             <fieldset>
-                                <select class="input js-mytooltip form-select @error('') is-invalid @enderror" name="" id="ec_CreatorsHf"
+                                <select class="input js-mytooltip form-select @error('') is-invalid @enderror" name=""
+                                    id="ec_CreatorsHf"
                                     data-mytooltip-content="<i>
                                         Creators Fee - 0 - no creators fee<br><br>
                                         500 - Creators Fee is the creator is the lead, for the 2nd session onwards<br><br>
                                         1,000 - Creators Fee if creator is NOT the lead, for the 2nd session onwards</i>"
-                                    data-mytooltip-theme="dark"
-                                    data-mytooltip-action="focus" 
-                                    data-mytooltip-direction="right"
-                                    style="background-color:#ffcccc; color:red;">
+                                    data-mytooltip-theme="dark" data-mytooltip-action="focus"
+                                    data-mytooltip-direction="right" style="background-color:#ffcccc; color:red;">
                                     <option value="500" {{ old('') == '500' ? 'selected="selected"' : '' }} title="">
                                         &#8369;500
                                     </option>
@@ -471,16 +469,15 @@
                         </td>
                         <td>
                             <fieldset>
-                                <select class="input js-mytooltip text-center form-select @error('') is-invalid @enderror select" name=""
-                                    id="ec_ModeratorHf" style="background-color:#ffcccc; color:red;"
+                                <select
+                                    class="input js-mytooltip text-center form-select @error('') is-invalid @enderror select"
+                                    name="" id="ec_ModeratorHf" style="background-color:#ffcccc; color:red;"
                                     data-mytooltip-content="<i>
                                         <b>Moderator</b><br/>
                                         P800  - Associates<br/>
                                         P1,100 - Consultants<br/>
-                                        P1,350 - Senior Consultant</i>"
-                                    data-mytooltip-theme="dark"
-                                    data-mytooltip-action="focus" 
-                                    data-mytooltip-direction="right">
+                                        P1,350 - Senior Consultant</i>" data-mytooltip-theme="dark"
+                                    data-mytooltip-action="focus" data-mytooltip-direction="right">
                                     <option value="800" {{ old('') == '800' ? 'selected="selected"' : '' }} title="">
                                         &#8369;800
                                     </option>
@@ -640,9 +637,7 @@
                                     - For single or series of programs<br>
                                     - One time only<br>
                                     - Per person<br>
-                                    </i>"
-                                data-mytooltip-theme="dark"
-                                data-mytooltip-action="focus" 
+                                    </i>" data-mytooltip-theme="dark" data-mytooltip-action="focus"
                                 data-mytooltip-direction="right">
                         </td>
                         <td>
@@ -685,8 +680,7 @@
                         <td>
                             <input type="text"
                                 class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ec_Programexpense"
-                                {{-- oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" --}}
+                                value="{{ old('') }}" name="" id="ec_Programexpense" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
                                 maxlength="4">
                         </td>
                         <td></td>
@@ -729,3 +723,142 @@
         </div>
     </section>
 </div>
+
+<script>
+    // var rowIdx = 1;
+    // var sales = 1;
+    // var salesTotal = 1;
+    // $("#addBtn").on("click", function() {
+    //     // Adding a row inside the tbody.
+    //     $("#tableEngagementcost").append(`
+    //         <tr id="sales${++rowIdx}">
+    //             <td class="title">Sales (4% / 5% / 6% / 7%)</td>
+    //                 <td></td>
+    //                 <td>
+    //                     <fieldset>
+    //                         <select class="input js-mytooltip form-select @error('') is-invalid @enderror" name=""
+    //                             id="sales${++sales}" data-mytooltip-content="<i>
+    //                                 <b>Sales</b><br>
+    //                                 For large engagements, with EMs: <br>
+    //                                 4% - discounted <br>
+    //                                 6% - standard rates<br>
+    //                                 <br>
+    //                                 For regular engagements:<br>
+    //                                 5% - discounted<br>
+    //                                 7% - standard rates<br>
+    //                                 <br>
+    //                                 For Key Accounts, with EMs:<br>
+    //                                 4% - discounted<br>
+    //                                 5% - packaged rate</i>" data-mytooltip-theme="dark"
+    //                             data-mytooltip-action="focus" data-mytooltip-direction="right"
+    //                             style="background-color:#ffcccc; color:red;">
+    //                             <option value="0" {{ old('') == '0' ? 'selected="selected"' : '' }}
+    //                                 title="with minimal design customization, or platform customization outside of Zoom/Google Meets/MS Teams. Up to 2 hours of work">
+    //                                 0%
+    //                             </option>
+    //                             <option value="4" {{ old('') == '4' ? 'selected="selected"' : '' }}
+    //                                 title="with minimal design customization, or platform customization outside of Zoom/Google Meets/MS Teams. Up to 2 hours of work">
+    //                                 4%
+    //                             </option>
+    //                             <option value="5" {{ old('') == '5' ? 'selected="selected"' : '' }}
+    //                                 title="with minimal design customization, or platform customization outside of Zoom/Google Meets/MS Teams. Up to 2 hours of work">
+    //                                 5%
+    //                             </option>
+    //                             <option value="6" {{ old('') == '6' ? 'selected="selected"' : '' }}
+    //                                 title="with minimal design customization, or platform customization outside of Zoom/Google Meets/MS Teams. Up to 2 hours of work">
+    //                                 6%
+    //                             </option>
+    //                             <option value="7" {{ old('') == '7' ? 'selected="selected"' : '' }}
+    //                                 title="with minimal design customization, or platform customization outside of Zoom/Google Meets/MS Teams. Up to 2 hours of work">
+    //                                 7%
+    //                             </option>
+    //                         </select>
+    //                         @error('')
+    //                             <span class="invalid-feedback" role="alert">
+    //                                 <strong>{{ $message }}</strong>
+    //                             </span>
+    //                         @enderror
+    //                     </fieldset>
+    //                 </td>
+    //                 <td></td>
+    //                 <td></td>
+    //                 <td class="total-td tbl-engmt-cost">
+    //                     <h4 class="text-center" id="salesTotal${++salesTotal}">-</h4>
+    //                 </td>
+    //                 <td class="total-td">
+    //                     <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+    //                         value="{{ old('') }}" name="" id="">
+    //                 </td>
+    //                 <td><a href="javascript:void(0)" class="text-danger font-18 remove" title="Remove"><i class="fa fa-trash-o"></i></a></td>
+    //         </tr>`);
+    // });
+
+    // $("#tableEngagementcost").on("click", ".remove", function ()
+    //         {
+    //             // Getting all the rows next to the row
+    //             // containing the clicked button
+    //             var child = $(this).closest("tr").nextAll();
+    //             // Iterating across all the rows
+    //             // obtained to change the index
+    //             child.each(function () {
+    //             // Getting <tr> id.
+    //             var id = $(this).attr("id");
+
+    //             // Getting the <p> inside the .row-index class.
+    //             var idx = $(this).children(".row-index").children("p");
+
+    //             // Gets the row number from <tr> id.
+    //             var dig = parseInt(id.substring(1));
+
+    //             // Modifying row index.
+    //             idx.html(`${dig - 1}`);
+
+    //             // Modifying row id.
+    //             $(this).attr("id", `R${dig - 1}`);
+    //         });
+    
+    //             // Removing the current row.
+    //             $(this).closest("tr").remove();
+    
+    //             // Decreasing total number of rows by 1.
+    //             rowIdx--;
+    //         });
+
+    //         $("#tableEngagementcost").on("input", ".unit_price", function () {
+    //             var unit_price = parseFloat($(this).val());
+    //             var qty = parseFloat($(this).closest("tr").find(".qty").val());
+    //             var total = $(this).closest("tr").find(".total");
+    //             total.val(unit_price * qty);
+
+    //             calc_total();
+    //         });
+
+    //         $("#tableEngagementcost").on("input", ".qty", function () {
+    //             var qty = parseFloat($(this).val());
+    //             var unit_price = parseFloat($(this).closest("tr").find(".unit_price").val());
+    //             var total = $(this).closest("tr").find(".total");
+    //             total.val(unit_price * qty);
+    //             calc_total();
+    //         });
+
+    //         function calc_total() {
+    //             var sum = 0;
+    //             $(".total").each(function () {
+    //             sum += parseFloat($(this).val());
+    //             });
+    //             $(".subtotal").text(sum);
+                
+    //             var amounts = sum;
+    //             var tax     = 100;
+    //             $(document).on("change keyup blur", "#qty", function() 
+    //             {
+    //                 var qty = $("#qty").val();
+    //                 var discount = $(".discount").val();
+    //                 $(".total").val(amounts * qty);
+    //                 $("#sum_total").val(amounts * qty);
+    //                 $("#tax_1").val((amounts * qty)/tax);
+    //                 $("#grand_total").val((parseInt(amounts)) - (parseInt(discount)));
+    //             }); 
+    //         }
+</script>
+

@@ -13,7 +13,8 @@
                         <select class="form-select engagement-cost @error('ec_sales') is-invalid @enderror"
                             name="ec_sales" id="ec-sales" title="Search title or description...">
                             <optgroup>
-                                <option value="0" {{ old('ec_sales') == '0' ? 'selected="selected"' : '' }} selected>0%
+                                <option value="0" {{ old('ec_sales') == '0' ? 'selected="selected"' : '' }} selected>
+                                    0%
                                 </option>
                             </optgroup>
 
@@ -53,7 +54,7 @@
                         <select class="form-select engagement-cost @error('ec_refferal') is-invalid @enderror"
                             name="ec_refferal" id="ec-refferal">
                             <option value="0" {{ old('ec_refferal') == '0' ? 'selected="selected"' : '' }} selected>
-                               0%</option>
+                                0%</option>
                             <option value="2" {{ old('ec_refferal') == '2' ? 'selected="selected"' : '' }}>
                                 2%</option>
                             <option value="3" {{ old('ec_refferal') == '3' ? 'selected="selected"' : '' }}>
@@ -81,7 +82,8 @@
                     <fieldset>
                         <select class="form-select engagement-cost @error('ec_engagementManager') is-invalid @enderror"
                             name="ec_engagementManager" id="ec-engagementManager">
-                            <option value="0" {{ old('ec_engagementManager') == '0' ? 'selected="selected"' : '' }} selected>
+                            <option value="0" {{ old('ec_engagementManager') == '0' ? 'selected="selected"' : '' }}
+                                selected>
                                 0%</option>
                             <option value="2" {{ old('ec_engagementManager') == '2' ? 'selected="selected"' : '' }}>
                                 2%</option>
@@ -210,9 +212,8 @@
                 <div class="form-group has-icon-left">
                     <label class="fw-bold">Lead</label>
                     <div class="position-relative">
-                        <input type="number"
-                            class="form-control program-lead select"
-                            value="{{ old('ec_lead') }}" name="ec_lead" id="ec-lead">
+                        <input type="number" class="form-control program-lead select" value="{{ old('ec_lead') }}"
+                            name="ec_lead" id="ec-lead">
                         <div class="form-control-icon">
                             <i class="fa-solid fa-users"></i>
                         </div>
@@ -224,8 +225,8 @@
                 <div class="form-group has-icon-left">
                     <label class="fw-bold">Number of Hours</label>
                     <div class="form-group position-relative has-icon-left">
-                        <input type="number" class="form-control lead-hour"
-                            name="lead_hours" value="{{ old('lead_hours') }}" id="lead-hours">
+                        <input type="number" class="form-control lead-hour" name="lead_hours"
+                            value="{{ old('lead_hours') }}" id="lead-hours">
                         <div class="form-control-icon">
                             <i class="fa-solid fa-hourglass-start"></i>
                         </div>
@@ -254,9 +255,8 @@
                     <label class="fw-bold">Moderator</label>
                     <div class="position-relative">
                         <fieldset class="form-group">
-                            <select
-                                class="form-select program-moderator select"
-                                name="ec_moderator" id="ec_moderator" onclick="input_discount()">
+                            <select class="form-select program-moderator select" name="ec_moderator" id="ec_moderator"
+                                onclick="input_discount()">
                                 <option selected disabled>-- Select Moderator Price --</option>
                                 <option value="750" {{ old('ec_moderator') == '750' ? 'selected="selected"' : '' }}>
                                     &#8369;750</option>
@@ -279,9 +279,8 @@
                 <div class="form-group has-icon-left">
                     <label class="fw-bold">Number of Hours</label>
                     <div class="form-group position-relative has-icon-left">
-                        <input type="number"
-                            class="form-control moderator-hour"
-                            name="moderator_hour" value="{{ old('moderator_hour') }}" id="moderator-hour">
+                        <input type="number" class="form-control moderator-hour" name="moderator_hour"
+                            value="{{ old('moderator_hour') }}" id="moderator-hour">
                         <div class="form-control-icon">
                             <i class="fa-solid fa-hourglass-start"></i>
                         </div>
@@ -293,10 +292,8 @@
                 <div class="form-group has-icon-left">
                     <label class="fw-bold">Night shift / Weekends / Holidays</label>
                     <div class="form-group position-relative has-icon-left">
-                        <input type="number"
-                            class="form-control moderator-nonovertime"
-                            name="moderator_nonovertime" value="{{ old('moderator_nonovertime') }}"
-                            id="moderator-nonovertime">
+                        <input type="number" class="form-control moderator-nonovertime" name="moderator_nonovertime"
+                            value="{{ old('moderator_nonovertime') }}" id="moderator-nonovertime">
                         <div class="form-control-icon">
                             <i class="fa-solid fa-calendar-day"></i>
                         </div>
@@ -310,9 +307,8 @@
                 <div class="form-group has-icon-left">
                     <label class="fw-bold">Producer</label>
                     <div class="position-relative">
-                        <input type="number"
-                            class="form-control program-producer"
-                            value="{{ old('ec_producer') }}" placeholder="" id="ec-producer" name="ec_producer">
+                        <input type="number" class="form-control program-producer" value="{{ old('ec_producer') }}"
+                            placeholder="" id="ec-producer" name="ec_producer">
                         <div class="form-control-icon">
                             <i class="fa-solid fa-person-chalkboard"></i>
                         </div>
@@ -325,9 +321,8 @@
                     <label class="fw-bold">Number of Hours</label>
                     <div class="form-group position-relative has-icon-left">
                         <fieldset>
-                            <input type="number"
-                                class="form-control producer-hour"
-                                name="producer_hour" value="{{ old('producer_hour') }}" id="producer-hour">
+                            <input type="number" class="form-control producer-hour" name="producer_hour"
+                                value="{{ old('producer_hour') }}" id="producer-hour">
                             <div class="form-control-icon">
                                 <i class="fa-solid fa-hourglass-start"></i>
                             </div>

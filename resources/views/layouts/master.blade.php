@@ -59,7 +59,8 @@
 
     {{-- sweet alert popup message --}}
     @include('sweetalert::alert')
-
+    {{-- script --}}
+    @yield('script')
 
 
 </body>

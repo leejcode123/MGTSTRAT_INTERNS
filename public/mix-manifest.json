@@ -2,6 +2,7 @@
     "/js/app.js": "/js/app.js",
     "/js/ceform.js": "/js/ceform.js",
     "/js/f2fform.js": "/js/f2fform.js",
+    "/js/MultiStep.js": "/js/MultiStep.js",
     "/css/app.css": "/css/app.css",
     "/css/custom.css": "/css/custom.css"
 }

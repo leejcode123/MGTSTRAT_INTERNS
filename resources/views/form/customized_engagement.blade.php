@@ -25,7 +25,23 @@
 
         {{-- message --}}
         {!! Toastr::message() !!}
-
+        <!--progress bar-->
+        <div class="multisteps-form">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-8 ml-auto mr-auto mb-4">
+                    <div class="multisteps-form__progress">
+                        <button class="multisteps-form__progress-btn js-active" type="button"
+                            title="User Info">Information</button>
+                        <button class="multisteps-form__progress-btn" type="button" title="Engagement Fees">Engagement
+                            Fees</button>
+                        <button class="multisteps-form__progress-btn" type="button" title="Engagement Cost">Engagement
+                            Cost</button>
+                        <button class="multisteps-form__progress-btn" type="button" title="Profit Forecast">Profit Forecast
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
         {{-- card body --}}
         <div class="col-12">
             {{-- card --}}
@@ -35,30 +51,49 @@
                     {{-- card body --}}
                     <div class="card-body">
 
-                        <form class="form form-horizontal" action="{{ route('form/save') }}" method="POST">
+                        {{-- Budget form --}}
+                        <form class="form form-horizontal multisteps-form__form" action="{{ route('form/customizedEngagement/save') }}"
+                            method="POST">
                             @csrf
+
                             {{-- INFORMATION --}}
-                            @include(
-                                'form.components.customized_engagement.information'
-                            )
+                            <div class="multisteps-form__panel js-active" data-animation="slideHorz">
+                                @include('form.components.customized_engagement.information')
+                                {{-- next button --}}
+                                <div class="col-12 d-flex justify-content-center mt-3">
+                                    <button class="btn btn-primary ml-auto js-btn-next" type="button" title="Next">Next</button>
+                                </div>
+                            </div>
 
                             {{-- ENGAGEMENT FEES --}}
-                            @include(
-                                'form.components.customized_engagement.engagement_fees'
-                            )
+                            <div class="multisteps-form__panel" data-animation="slideHorz">
+                                @include('form.components.customized_engagement.engagement_fees')
+                                {{-- next and prev button --}}
+                                <div class="button-row d-flex justify-content-center mt-3">
+                                    <button class="btn btn-secondary mx-2 js-btn-prev" type="button" title="Prev">Prev</button>
+                                    <button class="btn btn-primary mx-2 js-btn-next" type="button" title="Next">Next</button>
+                                </div>
+                            </div>
 
                             {{-- ENGAGEMENT COST --}}
-                            @include(
-                                'form.components.customized_engagement.engagement_cost'
-                            )
+                            <div class="multisteps-form__panel" data-animation="slideHorz">
+                                @include('form.components.customized_engagement.engagement_cost')
+                                {{-- next and prev button --}}
+                                <div class="col-12 d-flex justify-content-center mt-3">
+                                    <button class="btn btn-secondary mx-2 js-btn-prev" type="button" title="Prev">Prev</button>
+                                    <button class="btn btn-primary mx-2 js-btn-next" type="button" title="Next">Next</button>
+                                </div>
+                            </div>
 
                             {{-- PROFIT FORECAST --}}
-                            @include('form.components.customized_engagement.ce_profit_forecast')
-
-                            {{-- <div class="col-12 d-flex justify-content-center mt-3">
-                                <button type="submit" class="btn btn-primary me-1 mb-1">Save</button>
-                                <button type="reset" class="btn btn-light-secondary me-1 mb-1">Reset</button>
-                            </div> --}}
+                            <div class="multisteps-form__panel" data-animation="slideHorz">
+                                @include('form.components.customized_engagement.ce_profit_forecast')
+                                {{-- next and prev button --}}
+                                <div class="col-12 d-flex justify-content-center mt-3">
+                                    <button class="btn btn-secondary mx-2 js-btn-prev" type="button" title="Prev">Prev</button>
+                                    <button class="btn btn-success mx-2 js-btn-next" type="submit" title="Submit">Submit</button>
+                                </div>
+                            </div>
                         </form>
 
                     </div>
@@ -68,17 +103,18 @@
 
         <footer>
             <div class="footer clearfix mb-0 text-muted">
-                <div class="float-start">
-                    <p>2022 &copy; MGT-STRAT</p>
-                </div>
                 <div class="float-end">
+                    <p><script>document.write(new Date().getFullYear());</script> Copyright &copy MGT-STRAT</p>
+                </div>
+                {{-- <div class="float-end">
                     <p>Crafted with <span class="text-danger"><i class="bi bi-heart"></i></span> by <a
                             href="#">MGT-STRAT</a></p>
-                </div>
+                </div> --}}
             </div>
         </footer>
     </div>
+    
     {{-- CUSTOMIZED ENGAGEMENT SCRIPT --}}
-    {{-- <script src="{{ url('js/bdgtform.js') }}"></script> --}}
     <script type="text/javascript" src="/js/ceform.js"></script>
+    <script type="text/javascript" src="/js/MultiStep.js"></script>
 @endsection

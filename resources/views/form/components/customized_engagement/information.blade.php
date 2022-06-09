@@ -24,7 +24,7 @@
             <div class="form-group has-icon-left">
                 <div class="position-relative">
                     <select class="input js-mytooltip form-select customized-type @error('') is-invalid @enderror"
-                        name="" id="" value="{{ old('') }}" data-mytooltip-content="<i>
+                        name="customized_type" id="" value="{{ old('customized_type') }}" data-mytooltip-content="<i>
                             Please Choose
                             </i>" data-mytooltip-theme="dark" data-mytooltip-action="focus"
                         data-mytooltip-direction="right">
@@ -57,8 +57,8 @@
            <p class="text-muted">Applicable to G.A only</p> 
         </div> --}}
         <div class="col-md-2" id="dropdown-ga" style="visibility: hidden;">
-            <select class="input js-mytooltip ga-only-dropdown form-select @error('') is-invalid @enderror" name=""
-                id="ga-only-dropdown" value="{{ old('') }}" data-mytooltip-content="<i>
+            <select class="input js-mytooltip ga-only-dropdown form-select @error('') is-invalid @enderror"
+                name="dropdown_ga" id="ga-only-dropdown" value="{{ old('') }}" data-mytooltip-content="<i>
                     Please Choose 0% if not G.A
                     </i>" data-mytooltip-theme="dark" data-mytooltip-action="focus" data-mytooltip-direction="right">
                 <option value="0" {{ old('') == '0' ? 'selected="selected"' : '' }} selected>
@@ -85,7 +85,7 @@
             <div class="form-group has-icon-left">
                 <div class="position-relative">
                     <input type="text" class="form-control @error('') is-invalid @enderror" value="{{ old('') }}"
-                        name="" id="fourth" title="asdasdasd">
+                        name="client" id="fourth" title="asdasdasd">
                     <div class="form-control-icon">
                         <i class="fa-solid fa-user"></i>
                     </div>

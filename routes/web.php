@@ -83,6 +83,7 @@ Route::post('change/password/db', [App\Http\Controllers\UserManagementController
 
 // ----------------------------- Customized engagement form ------------------------------//
 Route::get('form/customizedEngagement/new', [App\Http\Controllers\CustomizedEngagementController::class, 'index'])->middleware('auth')->name('form/customizedEngagement/new');
+Route::post('form/customizedEngagement/save', [App\Http\Controllers\CustomizedEngagementController::class, 'store'])->name('form/customizedEngagement/save');
 // ----------------------------- F2F engagement form ------------------------------//
 Route::get('form/f2f_engagement/new', [App\Http\Controllers\F2fEngagementController::class, 'index'])->middleware('auth')->name('form/f2f_engagement/new');
 // Route::get('view/detail/{id}', [App\Http\Controllers\UserManagementController::class, 'viewDetail'])->middleware('auth');

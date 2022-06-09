@@ -61,10 +61,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                    {{-- message --}}
-                    {!! Toastr::message() !!}
 
+                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                     {{-- card body --}}
                     <div class="col-12">
                         {{-- card --}}
@@ -82,10 +80,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-                    {{-- message --}}
-                    {!! Toastr::message() !!}
 
+                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
                     {{-- card body --}}
                     <div class="col-12">
                         {{-- card --}}
@@ -111,11 +107,6 @@
                 </div>
             </div>
         </form>
-
-
-        <!-- Tabs content -->
-        {{-- message --}}
-        {!! Toastr::message() !!}
 
         <footer>
             <div class="footer clearfix mb-0 text-muted">
