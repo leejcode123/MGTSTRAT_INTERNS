@@ -99,6 +99,18 @@ $("#ef_PDPdf").on({
         $(this).val(input_val);
     },
 });
+$("#ec_LeadfacilitatorPd").on({
+    keyup: function () {
+        let input_val = $(this).val();
+        input_val = numberToCurrency(input_val);
+        $(this).val(input_val);
+    },
+    blur: function () {
+        let input_val = $(this).val();
+        input_val = numberToCurrency(input_val, true, true);
+        $(this).val(input_val);
+    },
+});
 //default value of input types
 document.getElementById("ef_AnalystPdf").defaultValue = currency.format(40000);
 document.getElementById("ef_LeadconsultantHf").defaultValue = currency.format(13600);
@@ -150,7 +162,7 @@ document.getElementById("ec_Programexpense").defaultValue = 2 + "%";
 //Customized Engagement form of Engagement Fees
 $(document).on(
     "change keyup",
-    ".f2f-customized-type, .f2f-ga-only-dropdown, #ef_LeadconsultantAtd, #ef_LeadconsultantNoc, #ef_LeadconsultantHf, #ef_LeadconsultantNoh, #ef_LeadconsultantNwh, #ef_AnalystNoc, #ef_AnalystPdf, #ef_AnalystNod, #ef_AnalystAtd, #ef_AnalystNsw, #ef_DesignerNoc, #ef_DesignerPdf, #ef_DesignerNod, #ef_DesignerAtd, #ef_DesignerNsw, #ef_LeadFaciNoc, #ef_LeadFaciPdf, #ef_LeadFaciNod, #ef_LeadFaciAtd, #ef_LeadFaciNsw, #ef_CoFaciNoc, #ef_CoFaciPdf, #ef_CoFaciNod, #ef_CoFaciAtd, #ef_CoFaciNsw, #ef_ActionLearnNoc, #ef_ActionLearnPdf, #ef_ActionLearnNod, #ef_ActionLearnAtd, #ef_ActionLearnNsw, #ef_MarshalNoc, #ef_MarshalPdf, #ef_MarshalNod, #ef_MarshalAtd, #ef_MarshalNsw, #ef_OnsiteNoc, #ef_OnsitePdf, #ef_OnsiteNod, #ef_OnsiteAtd, #ef_OnsiteNsw, #ef_DocumentorNoc, #ef_DocumentorPdf, #ef_DocumentorNod, #ef_DocumentorAtd, #ef_DocumentorNsw,  #ef_PDNoc, #ef_PDPdf, #ef_PDNod, #ef_PDAtd, #ef_PDNsw, #input_totalPackages",
+    ".f2f-customized-type, .f2f-ga-only-dropdown, #ef_LeadconsultantAtd, #ef_LeadconsultantNoc, #ef_LeadconsultantHf, #ef_LeadconsultantNoh, #ef_LeadconsultantNwh, #ef_AnalystNoc, #ef_AnalystPdf, #ef_AnalystNod, #ef_AnalystAtd, #ef_AnalystNsw, #ef_DesignerNoc, #ef_DesignerPdf, #ef_DesignerNod, #ef_DesignerAtd, #ef_DesignerNsw, #ef_LeadFaciNoc, #ef_LeadFaciPdf, #ef_LeadFaciNod, #ef_LeadFaciAtd, #ef_LeadFaciNsw, #ef_CoFaciNoc, #ef_CoFaciPdf, #ef_CoFaciNod, #ef_CoFaciAtd, #ef_CoFaciNsw, #ef_ActionLearnNoc, #ef_ActionLearnPdf, #ef_ActionLearnNod, #ef_ActionLearnAtd, #ef_ActionLearnNsw, #ef_MarshalNoc, #ef_MarshalPdf, #ef_MarshalNod, #ef_MarshalAtd, #ef_MarshalNsw, #ef_OnsiteNoc, #ef_OnsitePdf, #ef_OnsiteNod, #ef_OnsiteAtd, #ef_OnsiteNsw, #ef_DocumentorNoc, #ef_DocumentorPdf, #ef_DocumentorNod, #ef_DocumentorAtd, #ef_DocumentorNsw,  #ef_PDNoc, #ef_PDPdf, #ef_PDNod, #ef_PDAtd, #ef_PDNsw, #input_totalPackages, #sales, #referral, #engagementManager, #offsitePC, #ec_LeadconsultantPd, #ec_AnalystPd, #ec_DesignerPd, #ec_CreatorsNoc, #ec_CreatorsPd, #ec_CreatorsNod, #ec_LeadfacilitatorPd, #ec_CofacilitatorPd, #ec_ActionlearningcoachPd, #ec_MarshalPd, #ec_OnsitepcPD, #ec_DocumentorPd, #ec_PerdiemPd #ec_OffprogramPd, #ec_Programexpense",
     function () {
         //customized type
         $(".f2f-customized-type").each(function () {
@@ -165,6 +177,13 @@ $(document).on(
                     "hidden";
             }
         });
+
+        $("#ec_Programexpense").on("input", function () {
+            $(this).val(function (i, v) {
+                return v.replace("%", "") + "%";
+            });
+        });
+        
 
         /********************************************************AUTO SUM***************************************************************************/
         let currency = Intl.NumberFormat("en-US");
@@ -204,6 +223,26 @@ $(document).on(
         //Discount
         sumA = 0;
         sum50 = 0;
+
+        // engagement cost total
+        sumEngagementCost = 0;
+        sumSales = 0;
+        sumReferral = 0;
+        sumEngagementManager = 0;
+        sumOffsitepc = 0;
+        sumecLeadconsultant = 0;
+        sumecAnalyst = 0;
+        sumecDesigner = 0;
+        sumecCreators = 0;
+        sumecLeadfacilitator = 0;
+        sumecCofacilitator = 0;
+        sumecActionlearningcoach = 0;
+        sumecOnsitepc = 0;
+        sumecDocumentor = 0;
+        sumecPerdiem = 0;
+        sumecOffprogram = 0;
+        sumecProgramexpense = 0;
+
         //customized type
         var gaPercentage = $(".customized-type");
 
@@ -231,7 +270,6 @@ $(document).on(
                     (document.getElementById("ga-only-dropdown").value / 100);
             }
             sumEf += +sumLc;
-        });
 
         $("#lead-total").html(currency.format(Math.ceil(sumLc)));
         $("#subtotal-consulting").html(
@@ -496,6 +534,66 @@ $("#salesTotal1").html(currency.format(Math.ceil(sumSales1)));
 ); 
 
 //end of engagement fees
+
+//start of engagement cost
+
+//Lead Consultant
+$("#ec_LeadconsultantNoc").val($("#ef_LeadconsultantNoc").val());
+$("#ec_LeadconsultantNod").val($("#ef_LeadconsultantNod").val());
+$("#ec_LeadconsultantNwh").val($("#ef_LeadconsultantNwh").val());
+
+sumecLeadconsultant +=
+    $("#ec_LeadconsultantNoc").val() *
+        $("#ec_LeadconsultantPd").val().replace(/,/g, "") *
+        $("#ec_LeadconsultantNod").val() +
+    $("#ec_LeadconsultantNwh").val() *
+        ($("#ec_LeadconsultantNoc").val() *
+            $("#ec_LeadconsultantPd").val().replace(/,/g, "") *
+            $("#ec_LeadconsultantNod").val() *
+            0.2);
+
+            if (
+                gaPercentage.val() == "G.A Hybrid" ||
+                gaPercentage.val() == "G.A Virtual"
+            ) {
+                sumecLeadconsultant +=
+                    sumecLeadconsultant *
+                    (document.getElementById("ga-only-dropdown").value / 100);
+            }
+            sumEngagementCost += +sumecLeadconsultant;
+            });
+            
+            $("#ec_LeadconsultantTotal").html(
+                currency.format(Math.ceil(sumecLeadconsultant))
+            );
+            $("#ec_SubtotalConsulting").html(
+                currency.format(Math.ceil(sumecLeadconsultant + sumecAnalyst))
+            );
+            
+            //Analyst
+            $("#ec_AnalystNoc").val($("#ef_AnalystNoc").val());
+            $("#ec_AnalystNod").val($("#ef_AnalystNod").val());
+            $("#ec_AnalystNwh").val($("#ef_AnalystNwh").val());
+
+sumecAnalyst +=
+                $("#ec_AnalystNoc").val() *
+                    $("#ec_AnalystPd").val().replace(/,/g, "") *
+                    $("#ec_AnalystNod").val() +
+                $("#ec_AnalystNwh").val() *
+                    ($("#ec_AnalystNoc").val() *
+                        $("#ec_AnalystPd").val().replace(/,/g, "") *
+                        $("#ec_AnalystNod").val() *
+                        0.2);
+
+                        if (
+                            gaPercentage.val() == "G.A Hybrid" ||
+                            gaPercentage.val() == "G.A Virtual"
+                        ) {
+                            sumecAnalyst +=
+                                sumecAnalyst *
+                                (document.getElementById("ga-only-dropdown").value / 100);
+                        }
+                        
 
 //cluster reference
 document.getElementById("cluster-dropdown").addEventListener("change", cluster);

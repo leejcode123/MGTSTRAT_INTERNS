@@ -259,7 +259,7 @@
                         <th class="total-td"></th>
                     </tr>
                     <tr class="" id="lead-consultant">
-                        <td class="title">Lead Consultant (P7K, P9K)</td>
+                        <td class="title">Lead Consultant</td>
                         <td class="">
                             <input type="number"
                                 class="text-center form-control input-table @error('') is-invalid @enderror"
