@@ -38,7 +38,7 @@
                         <td></td>
                         <td>
                             <fieldset>
-                                <select class="input js-mytooltip form-select @error('') is-invalid @enderror" name="" id="sales"
+                                <select class="input js-mytooltip  text-center form-select @error('') is-invalid @enderror" name="" id="sales"
                                     data-mytooltip-content="<i>
                                         <b>Sales</b><br>
                                         For large engagements, with EMs: <br>
@@ -100,7 +100,7 @@
                         <td></td>
                         <td>
                             <fieldset>
-                                <select class="input js-mytooltip form-select @error('') is-invalid @enderror" name="" id="referral"
+                                <select class="input js-mytooltip text-center  form-select @error('') is-invalid @enderror" name="" id="referral"
                                     data-mytooltip-content="<i>
                                         Referral - 2% - repeat contracts from the same client<br>
                                         3% - 1st contract with a new client, or with a 2-year dormant client<br>
@@ -152,7 +152,7 @@
                         <td></td>
                         <td>
                             <fieldset>
-                                <select class="input js-mytooltip form-select @error('') is-invalid @enderror" name=""
+                                <select class="input js-mytooltip text-center  form-select @error('') is-invalid @enderror" name=""
                                     id="engagementManager" style="background-color:#ffcccc; color:red;"
                                     data-mytooltip-content="<i>
                                         Engagement Manager - 4% - all Key Accounts and large engagements <br>
@@ -193,7 +193,7 @@
                         <td></td>
                         <td>
                             <fieldset>
-                                <select class="input js-mytooltip form-select @error('') is-invalid @enderror" name=""
+                                <select class="input js-mytooltip  text-center form-select @error('') is-invalid @enderror" name=""
                                     id="offsitePc" style="background-color:#ffcccc; color:red;"
                                     data-mytooltip-content="<i>
                                        0% - Key Accounts, handled by full time office PC <br>
@@ -406,7 +406,7 @@
                         </td>
                         <td>
                             <fieldset>
-                                <select class="input js-mytooltip form-select @error('') is-invalid @enderror" name="" id="ec_CreatorsPd"
+                                <select class="input js-mytooltip  text-center form-select @error('') is-invalid @enderror" name="" id="ec_CreatorsPd"
                                     data-mytooltip-content="<i>
                                         Creators Fee - 0 - no creators fee<br><br>
                                         500 - Creators Fee is the creator is the lead, for the 2nd session onwards<br><br>
@@ -436,11 +436,7 @@
                                 value="{{ old('') }}" name="" id="ec_CreatorsNod" max="100"
                                 >
                         </td>
-                        <td>
-                            <input type="number"
-                                class="text-center yellow-input form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ec_CreatorsAtd">
-                        </td>
+                        <td class=""></td>
                         <td class=""></td>
                         <td class="total-td">
                             <h4 class="text-center lead" id="ec_CreatorsTotal">-</h4>
