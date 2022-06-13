@@ -19,7 +19,6 @@
                     </tr>
                 </thead>
 
-                <tbody>
                     {{-- Consulting --}}
                     <tr class="">
                         <th class="px-4 title text-dark">1. CONSULTING</th>
@@ -91,46 +90,46 @@
                 </tbody>
 
                 <tbody id="tableAnalyst">
-                <tr class="table-warning">
-                    <td class="title">Analyst</td>
-                    <td>
-                        <input type="number"
-                            class="input js-mytooltip form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ef_AnalystNoc" max="100" data-mytooltip-content="<i>Includes in depth needs analysis (i.e. surveys, interviews, FGDs),
+                    <tr class="table-warning">
+                        <td class="title">Analyst</td>
+                        <td>
+                            <input type="number"
+                                class="input js-mytooltip form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ef_AnalystNoc" max="100" data-mytooltip-content="<i>Includes in depth needs analysis (i.e. surveys, interviews, FGDs),
                                 special research (i.e. to study client materials or client -required materials, industry
                                 or function specific content), creation of client-specific learning aids/tools
                                 (i.e. assessments, c</i>" data-mytooltip-theme="dark" data-mytooltip-action="focus"
-                            data-mytooltip-direction="bottom">
-                    </td>
-                    <td>
-                        <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ef_AnalystHf">
-                    </td>
-                    <td>
-                        <input type="number"
-                            class="input js-mytooltip form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ef_AnalystNoh"
-                            data-mytooltip-content="<i>Number of Hours</i>" data-mytooltip-theme="dark"
-                            data-mytooltip-action="focus" data-mytooltip-direction="bottom">
-                    </td>
-                    <td>
-                        <input type="number" class="form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ef_AnalystNwh">
-                    </td>
-                    <td class="total-td">
-                        {{-- <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                                data-mytooltip-direction="bottom">
+                        </td>
+                        <td>
+                            <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ef_AnalystHf" data-type="currency">
+                        </td>
+                        <td>
+                            <input type="number"
+                                class="input js-mytooltip form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ef_AnalystNoh"
+                                data-mytooltip-content="<i>Number of Hours</i>" data-mytooltip-theme="dark"
+                                data-mytooltip-action="focus" data-mytooltip-direction="bottom">
+                        </td>
+                        <td>
+                            <input type="number" class="form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ef_AnalystNwh">
+                        </td>
+                        <td class="total-td">
+                            {{-- <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                 value="{{ old('') }}" 
                                 name="" id="" disabled> --}}
-                        <h4 class="text-center lead" id="analyst-total">-</h4>
-                    </td>
-                    <td class="total-td">
-                        <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="">
-                    </td>
-                    <td style="background-color: #FFFFFF;" class="border border-white"><a href="javascript:void(0)"
-                        class="text-success font-18" title="Add" id="addBtn2"><i class="fa fa-plus"></i></a>
-                </td>
-                </tr>
+                            <h4 class="text-center lead" id="analyst-total">-</h4>
+                        </td>
+                        <td class="total-td">
+                            <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="">
+                        </td>
+                        <td style="background-color: #FFFFFF;" class="border border-white"><a href="javascript:void(0)"
+                                class="text-success font-18" title="Add" id="addBtn2"><i class="fa fa-plus"></i></a>
+                        </td>
+                    </tr>
                 </tbody>
 
                 <tr class="">
@@ -159,57 +158,62 @@
                     <td class="total-td"></td>
                 </tr>
 
-                <tr class="table-warning">
-                    <td class="title">Designer</td>
-                    <td>
-                        <input type="number"
-                            class="input js-mytooltip form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ef_DesignerNoc" max="100" data-mytooltip-content="<i>Includes in depth needs analysis (i.e. surveys, interviews, FGDs),
-                                special research (i.e. to study client materials or client -required materials, industry
-                                or function specific content), creation of client-specific learning aids/tools
-                                (i.e. assessments, c</i>" data-mytooltip-theme="dark" data-mytooltip-action="focus"
-                            data-mytooltip-direction="bottom">
-                    </td>
-                    <td>
-                        <fieldset>
-                            <select class="input js-mytooltip form-select @error('') is-invalid @enderror select"
-                                name="" id="ef_DesignerHf" data-mytooltip-content="<i>Consulting - &#8369;6,000 - Consultants<br>
-                                    &#8369;8,000 - Senior Consultants</i>" data-mytooltip-theme="dark"
-                                data-mytooltip-action="focus" data-mytooltip-direction="right"
-                                style="background-color:#ffcccc; color:red;">
-                                <option value="6000" {{ old('') == '6000' ? 'selected="selected"' : '' }}>
-                                    &#8369;6,000
-                                </option>
-                                <option value="8000" {{ old('') == '8000' ? 'selected="selected"' : '' }}>
-                                    &#8369;8,000
-                                </option>
-                            </select>
-                            @error('')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </fieldset>
-                    </td>
-                    <td>
-                        <input type="number"
-                            class="input js-mytooltip form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ef_DesignerNoh"
-                            data-mytooltip-content="<i>Number of Hours</i>" data-mytooltip-theme="dark"
-                            data-mytooltip-action="focus" data-mytooltip-direction="bottom">
-                    </td>
-                    <td>
-                        <input type="number" class="form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ef_DesignerNwh">
-                    </td>
-                    <td class="total-td" style="background-color: rgba(146, 146, 146, 0.727)">
-                        <h4 class="text-center" id="subtotal-design">-</h4>
-                    </td>
-                    <td class="total-td">
-                        <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="">
-                    </td>
-                </tr>
+                <tbody id="tableDesigner">
+                    <tr class="table-warning">
+                        <td class="title">Designer</td>
+                        <td>
+                            <input type="number"
+                                class="input js-mytooltip form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ef_DesignerNoc" max="100" data-mytooltip-content="<i>Includes in depth needs analysis (i.e. surveys, interviews, FGDs),
+                                    special research (i.e. to study client materials or client -required materials, industry
+                                    or function specific content), creation of client-specific learning aids/tools
+                                    (i.e. assessments, c</i>" data-mytooltip-theme="dark" data-mytooltip-action="focus"
+                                data-mytooltip-direction="bottom">
+                        </td>
+                        <td>
+                            <fieldset>
+                                <select class="input js-mytooltip form-select @error('') is-invalid @enderror select"
+                                    name="" id="ef_DesignerHf" data-mytooltip-content="<i>Consulting - &#8369;6,000 - Consultants<br>
+                                        &#8369;8,000 - Senior Consultants</i>" data-mytooltip-theme="dark"
+                                    data-mytooltip-action="focus" data-mytooltip-direction="right"
+                                    style="background-color:#ffcccc; color:red;">
+                                    <option value="6000" {{ old('') == '6000' ? 'selected="selected"' : '' }}>
+                                        &#8369;6,000
+                                    </option>
+                                    <option value="8000" {{ old('') == '8000' ? 'selected="selected"' : '' }}>
+                                        &#8369;8,000
+                                    </option>
+                                </select>
+                                @error('')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </fieldset>
+                        </td>
+                        <td>
+                            <input type="number"
+                                class="input js-mytooltip form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ef_DesignerNoh"
+                                data-mytooltip-content="<i>Number of Hours</i>" data-mytooltip-theme="dark"
+                                data-mytooltip-action="focus" data-mytooltip-direction="bottom">
+                        </td>
+                        <td>
+                            <input type="number" class="form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ef_DesignerNwh">
+                        </td>
+                        <td class="total-td" style="background-color: rgba(146, 146, 146, 0.727)">
+                            <h4 class="text-center" id="subtotal-design">-</h4>
+                        </td>
+                        <td class="total-td">
+                            <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="">
+                        </td>
+                        <td style="background-color: #FFFFFF;" class="border border-white"><a href="javascript:void(0)"
+                            class="text-success font-18" title="Add" id="addBtn3"><i class="fa fa-plus"></i></a>
+                        </td>
+                    </tr>
+                </tbody>
 
                 {{-- Program --}}
                 <tr class="">
@@ -222,147 +226,167 @@
                     <td class="total-td"></td>
                 </tr>
 
-                <tr class="table-warning">
-                    <td class="title">Lead Facilitator</td>
-                    <td>
-                        <input type="number" class="form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ef_LeadfacilitatorNoc" max="100">
-                    </td>
-                    <td>
-                        <fieldset>
-                            <select
-                                class="input js-mytooltip form-select engagement-fee @error('') is-invalid @enderror select"
-                                name="" id="ef_LeadfacilitatorHf" data-mytooltip-content="<i>&#8369;10,000 - For Key Accounts w/ 2021 contract <br>
-                                    &#8369;11,000 - For Key Accounts with minimum guaranteed 50 sessions w/in 6 months <br>
-                                    &#8369;12,000 - all else</i>" data-mytooltip-theme="dark"
-                                data-mytooltip-action="focus" data-mytooltip-direction="right"
-                                style="background-color:#ffcccc; color:red;">
-                                <option value="10000" {{ old('') == '10000' ? 'selected="selected"' : '' }}>
-                                    &#8369;10,000
-                                </option>
-                                <option value="11000" {{ old('') == '11000' ? 'selected="selected"' : '' }}>
-                                    &#8369;11,000
-                                </option>
-                                <option value="12000" {{ old('') == '12000' ? 'selected="selected"' : '' }} selected>
-                                    &#8369;12,000
-                                </option>
-                            </select>
-                            @error('ef_customFee')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </fieldset>
-                    </td>
-                    <td>
-                        <input type="number"
-                            class="input js-mytooltip form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ef_LeadfacilitatorNoh"
-                            data-mytooltip-content="<i>Number of Hours</i>" data-mytooltip-theme="dark"
-                            data-mytooltip-action="focus" data-mytooltip-direction="bottom">
-                    </td>
-                    <td>
-                        <input type="number" class="form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ef_LeadfacilitatorNwh">
-                    </td>
-                    <td class="total-td">
-                        <h4 class="text-center lead" id="subtotal-lead">-</h4>
-                    </td>
-                    <td class="total-td">
-                        <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="">
-                    </td>
-                </tr>
+                <tbody id="tableLeadfaci">
+                    <tr class="table-warning">
+                        <td class="title">Lead Facilitator</td>
+                        <td>
+                            <input type="number" class="form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ef_LeadfacilitatorNoc" max="100">
+                        </td>
+                        <td>
+                            <fieldset>
+                                <select
+                                    class="input js-mytooltip form-select engagement-fee @error('') is-invalid @enderror select"
+                                    name="" id="ef_LeadfacilitatorHf" data-mytooltip-content="<i>&#8369;10,000 - For Key Accounts w/ 2021 contract <br>
+                                        &#8369;11,000 - For Key Accounts with minimum guaranteed 50 sessions w/in 6 months <br>
+                                        &#8369;12,000 - all else</i>" data-mytooltip-theme="dark"
+                                    data-mytooltip-action="focus" data-mytooltip-direction="right"
+                                    style="background-color:#ffcccc; color:red;">
+                                    <option value="10000" {{ old('') == '10000' ? 'selected="selected"' : '' }}>
+                                        &#8369;10,000
+                                    </option>
+                                    <option value="11000" {{ old('') == '11000' ? 'selected="selected"' : '' }}>
+                                        &#8369;11,000
+                                    </option>
+                                    <option value="12000" {{ old('') == '12000' ? 'selected="selected"' : '' }} selected>
+                                        &#8369;12,000
+                                    </option>
+                                </select>
+                                @error('ef_customFee')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </fieldset>
+                        </td>
+                        <td>
+                            <input type="number"
+                                class="input js-mytooltip form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ef_LeadfacilitatorNoh"
+                                data-mytooltip-content="<i>Number of Hours</i>" data-mytooltip-theme="dark"
+                                data-mytooltip-action="focus" data-mytooltip-direction="bottom">
+                        </td>
+                        <td>
+                            <input type="number" class="form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ef_LeadfacilitatorNwh">
+                        </td>
+                        <td class="total-td">
+                            <h4 class="text-center lead" id="subtotal-lead">-</h4>
+                        </td>
+                        <td class="total-td">
+                            <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="">
+                        </td>
+                        <td style="background-color: #FFFFFF;" class="border border-white"><a href="javascript:void(0)"
+                            class="text-success font-18" title="Add" id="addBtn4"><i class="fa fa-plus"></i></a>
+                        </td>
+                    </tr>
+                </tbody>
 
-                <tr class="table-warning">
-                    <td class="title">Co-facilitator / Resource Speaker</td>
-                    <td>
-                        <input type="number" class="form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ef_CofaciNoc" max="100">
-                    </td>
-                    <td>
-                        <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ef_CofaciHf" ;>
-                    </td>
-                    <td>
-                        <input type="number"
-                            class="input js-mytooltip form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ef_CofaciNoh"
-                            data-mytooltip-content="<i>Number of Hours</i>" data-mytooltip-theme="dark"
-                            data-mytooltip-action="focus" data-mytooltip-direction="bottom">
-                    </td>
-                    <td>
-                        <input type="number" class="form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ef_CofaciNwh">
-                    </td>
-                    <td class="total-td">
-                        <h4 class="text-center lead" id="subtotal-coFacilitator">-</h4>
-                    </td>
-                    <td class="total-td">
-                        <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="">
-                    </td>
-                </tr>
+                <tbody id="tableCofaci">
+                    <tr class="table-warning">
+                        <td class="title">Co-facilitator / Resource Speaker</td>
+                        <td>
+                            <input type="number" class="form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ef_CofaciNoc" max="100">
+                        </td>
+                        <td>
+                            <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ef_CofaciHf" data-type="currency">
+                        </td>
+                        <td>
+                            <input type="number"
+                                class="input js-mytooltip form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ef_CofaciNoh"
+                                data-mytooltip-content="<i>Number of Hours</i>" data-mytooltip-theme="dark"
+                                data-mytooltip-action="focus" data-mytooltip-direction="bottom">
+                        </td>
+                        <td>
+                            <input type="number" class="form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ef_CofaciNwh">
+                        </td>
+                        <td class="total-td">
+                            <h4 class="text-center lead" id="subtotal-coFacilitator">-</h4>
+                        </td>
+                        <td class="total-td">
+                            <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="">
+                        </td>
+                        <td style="background-color: #FFFFFF;" class="border border-white"><a href="javascript:void(0)"
+                            class="text-success font-18" title="Add" id="addBtn5"><i class="fa fa-plus"></i></a>
+                        </td>
+                    </tr>
+                </tbody>
 
-                <tr class="table-warning">
-                    <td class="title">Moderator</td>
-                    <td>
-                        <input type="number" class="form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ef_ModeratorNoc" max="100">
-                    </td>
-                    <td>
-                        <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ef_ModeratorHf">
-                    </td>
-                    <td>
-                        <input type="number"
-                            class="input js-mytooltip form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ef_ModeratorNoh"
-                            data-mytooltip-content="<i>Number of Hours</i>" data-mytooltip-theme="dark"
-                            data-mytooltip-action="focus" data-mytooltip-direction="bottom">
-                    </td>
-                    <td>
-                        <input type="number" class="form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ef_ModeratorNwh">
-                    </td>
-                    <td class="total-td">
-                        <h4 class="text-center lead" id="subtotal-moderator">-</h4>
-                    </td>
-                    <td class="total-td">
-                        <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="">
-                    </td>
-                </tr>
+                <tbody id="tableModerator">
+                    <tr class="table-warning">
+                        <td class="title">Moderator</td>
+                        <td>
+                            <input type="number" class="form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ef_ModeratorNoc" max="100">
+                        </td>
+                        <td>
+                            <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ef_ModeratorHf" data-type="currency">
+                        </td>
+                        <td>
+                            <input type="number"
+                                class="input js-mytooltip form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ef_ModeratorNoh"
+                                data-mytooltip-content="<i>Number of Hours</i>" data-mytooltip-theme="dark"
+                                data-mytooltip-action="focus" data-mytooltip-direction="bottom">
+                        </td>
+                        <td>
+                            <input type="number" class="form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ef_ModeratorNwh">
+                        </td>
+                        <td class="total-td">
+                            <h4 class="text-center lead" id="subtotal-moderator">-</h4>
+                        </td>
+                        <td class="total-td">
+                            <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="">
+                        </td>
+                        <td style="background-color: #FFFFFF;" class="border border-white"><a href="javascript:void(0)"
+                            class="text-success font-18" title="Add" id="addBtn6"><i class="fa fa-plus"></i></a>
+                        </td>
+                    </tr>
+                </tbody>
 
-                <tr class="table-warning">
-                    <td class="title">Producer</td>
-                    <td>
-                        <input type="number" class="form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ef_ProducerNoc" max="100">
-                    </td>
-                    <td>
-                        <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ef_ProducerHf">
-                    </td>
-                    <td>
-                        <input type="number"
-                            class="input js-mytooltip form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ef_ProducerNoh"
-                            data-mytooltip-content="<i>Number of Hours</i>" data-mytooltip-theme="dark"
-                            data-mytooltip-action="focus" data-mytooltip-direction="bottom">
-                    </td>
-                    <td>
-                        <input type="number" class="form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ef_ProducerNwh">
-                    </td>
-                    <td class="total-td">
-                        <h4 class="text-center lead" id="subtotal-producer">-</h4>
-                    </td>
-                    <td class="total-td">
-                        <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="">
-                    </td>
-                </tr>
+                <tbody id="tableProducer">
+                    <tr class="table-warning">
+                        <td class="title">Producer</td>
+                        <td>
+                            <input type="number" class="form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ef_ProducerNoc" max="100">
+                        </td>
+                        <td>
+                            <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ef_ProducerHf" data-type="currency">
+                        </td>
+                        <td>
+                            <input type="number"
+                                class="input js-mytooltip form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ef_ProducerNoh"
+                                data-mytooltip-content="<i>Number of Hours</i>" data-mytooltip-theme="dark"
+                                data-mytooltip-action="focus" data-mytooltip-direction="bottom">
+                        </td>
+                        <td>
+                            <input type="number" class="form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ef_ProducerNwh">
+                        </td>
+                        <td class="total-td">
+                            <h4 class="text-center lead" id="subtotal-producer">-</h4>
+                        </td>
+                        <td class="total-td">
+                            <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="">
+                        </td>
+                        <td style="background-color: #FFFFFF;" class="border border-white"><a href="javascript:void(0)"
+                            class="text-success font-18" title="Add" id="addBtn7"><i class="fa fa-plus"></i></a>
+                        </td>
+                    </tr>
+                </tbody>
 
                 <tr class="">
                     <td class="title fw-bold text-dark fst-italic">Subtotal</td>
@@ -389,36 +413,41 @@
                     <td class="total-td"></td>
                     <td class="total-td"></td>
                 </tr>
-
-                <tr class="table-warning">
-                    <td class="title">Documentor</td>
-                    <td>
-                        <input type="number" class="form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ef_DocumentorNoc" max="100">
-                    </td>
-                    <td>
-                        <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ef_DocumentorHf">
-                    </td>
-                    <td>
-                        <input type="number"
-                            class="input js-mytooltip form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ef_DocumentorNoh"
-                            data-mytooltip-content="<i>Number of Hours</i>" data-mytooltip-theme="dark"
-                            data-mytooltip-action="focus" data-mytooltip-direction="bottom">
-                    </td>
-                    <td>
-                        <input type="number" class="form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ef_DocumentorNwh">
-                    </td>
-                    <td class="total-td" style="background-color: rgba(146, 146, 146, 0.727">
-                        <h4 class="text-center" id="subtotal-documentor">-</h4>
-                    </td>
-                    <td class="total-td">
-                        <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="">
-                    </td>
-                </tr>
+                
+                <tbody id="tableDocumentor">
+                    <tr class="table-warning">
+                        <td class="title">Documentor</td>
+                        <td>
+                            <input type="number" class="form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ef_DocumentorNoc" max="100">
+                        </td>
+                        <td>
+                            <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ef_DocumentorHf" data-type="currency">
+                        </td>
+                        <td>
+                            <input type="number"
+                                class="input js-mytooltip form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ef_DocumentorNoh"
+                                data-mytooltip-content="<i>Number of Hours</i>" data-mytooltip-theme="dark"
+                                data-mytooltip-action="focus" data-mytooltip-direction="bottom">
+                        </td>
+                        <td>
+                            <input type="number" class="form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ef_DocumentorNwh">
+                        </td>
+                        <td class="total-td" style="background-color: rgba(146, 146, 146, 0.727">
+                            <h4 class="text-center" id="subtotal-documentor">-</h4>
+                        </td>
+                        <td class="total-td">
+                            <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="">
+                        </td>
+                        <td style="background-color: #FFFFFF;" class="border border-white"><a href="javascript:void(0)"
+                            class="text-success font-18" title="Add" id="addBtn8"><i class="fa fa-plus"></i></a>
+                        </td>
+                    </tr>
+                </tbody>
 
                 <tr class="table-active overall-total">
                     <td class="text-uppercase text-dark fst-italic fw-bold overall-total-start">TOTAL STANDARD FEES
@@ -428,7 +457,7 @@
                     <td class="overall-total-middle"></td>
                     <td class="overall-total-middle"></td>
                     <td class="overall-total-end" style="background-color: rgba(146, 146, 146, 0.727)">
-                        <h4 class="text-center fw-bold" id="total-standard">-</h4>
+                        <h4 class="text-center fw-bold text-danger" id="total-standard">-</h4>
                     </td>
                     <td class="overall-total-end">
                         <input type="text" class="form-control input-table @error('') is-invalid @enderror"
@@ -462,7 +491,7 @@
                     <td class="overall-total-end table-warning">
                         <input type="text"
                             class="tf-f34 form-control text-center text-danger fw-bolder input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ef_Totalpackage" style="font-size: 20px;">
+                            value="{{ old('') }}" name="" id="ef_Totalpackage"  style="font-size: 20px;">
                     </td>
                     <td class="overall-total-end">
                         <input type="text" class="form-control input-table @error('') is-invalid @enderror"
@@ -481,12 +510,6 @@
 </div>
 
 <script>
-    // $('input[type="number"]').on('input', function() {
-    //     this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null
-    // });
-    // $('input[type="number"]').attr('min', '0');
-
-    //adding table row
     var rowIdx = 1;
     $("#addBtn").on("click", function() {
         // Adding a row inside the tbody.
@@ -545,21 +568,17 @@
                         <td class="border border-white" style="background-color: #FFFFFF;"><a href="javascript:void(0)" class="text-danger font-18 remove" title="Remove"><i class="fa fa-trash-o"></i></a></td>
                     </tr>`);
     });
+    // oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
     var efAnalyst = 1;
     $("#addBtn2").on("click", function() {
-        let currency = Intl.NumberFormat("en-US");
-        // const efAnalyst = document.querySelectorAll("#ef_AnalystHf");
-        // for (let i = 0; i < efAnalyst.length; i++) {
-        //     efAnalyst[i].value = currency.format(Math.ceil(5000));
-        // }
         // Adding a row inside the tbody.
         $("#tableAnalyst").append(`
-        <tr class="table-warning" id="Analyst${++rowIdx}">
+        <tr class="table-warning" id="Analyst${++efAnalyst}">
                     <td class="title">Analyst</td>
                     <td>
                         <input type="number"
                             class="input js-mytooltip form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ef_AnalystNoc" max="100" data-mytooltip-content="<i>Includes in depth needs analysis (i.e. surveys, interviews, FGDs),
+                            value="{{ old('') }}" name="" id="ef_AnalystNoc" max="100" data-mytooltip-content="<i>Includes in depth needs analysis (i.e. surveys,   interviews, FGDs),
                                 special research (i.e. to study client materials or client -required materials, industry
                                 or function specific content), creation of client-specific learning aids/tools
                                 (i.e. assessments, c</i>" data-mytooltip-theme="dark" data-mytooltip-action="focus"
@@ -567,7 +586,7 @@
                     </td>
                     <td>
                         <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ef_AnalystHf">
+                            value="{{ old('') }}" name="" id="ef_AnalystHf" data-type="currency">
                     </td>
                     <td>
                         <input type="number"
@@ -593,5 +612,274 @@
                     <td class="border border-white" style="background-color: #FFFFFF;"><a href="javascript:void(0)" class="text-danger font-18 remove" title="Remove"><i class="fa fa-trash-o"></i></a></td>
                 </td>
                 </tr>`);
+    });
+
+    var efDesigner = 1;
+    $("#addBtn3").on("click", function() {
+        // Adding a row inside the tbody.
+        $("#tableDesigner").append(`
+        <tr id="efDesigner${++efDesigner}" class="table-warning">
+                    <td class="title">Designer</td>
+                    <td>
+                        <input type="number"
+                            class="input js-mytooltip form-control input-table @error('') is-invalid @enderror"
+                            value="{{ old('') }}" name="" id="ef_DesignerNoc" max="100" data-mytooltip-content="<i>Includes in depth needs analysis (i.e. surveys, interviews, FGDs),
+                                special research (i.e. to study client materials or client -required materials, industry
+                                or function specific content), creation of client-specific learning aids/tools
+                                (i.e. assessments, c</i>" data-mytooltip-theme="dark" data-mytooltip-action="focus"
+                            data-mytooltip-direction="bottom">
+                    </td>
+                    <td>
+                        <fieldset>
+                            <select class="input js-mytooltip form-select @error('') is-invalid @enderror select"
+                                name="" id="ef_DesignerHf" data-mytooltip-content="<i>Consulting - &#8369;6,000 - Consultants<br>
+                                    &#8369;8,000 - Senior Consultants</i>" data-mytooltip-theme="dark"
+                                data-mytooltip-action="focus" data-mytooltip-direction="right"
+                                style="background-color:#ffcccc; color:red;">
+                                <option value="6000" {{ old('') == '6000' ? 'selected="selected"' : '' }}>
+                                    &#8369;6,000
+                                </option>
+                                <option value="8000" {{ old('') == '8000' ? 'selected="selected"' : '' }}>
+                                    &#8369;8,000
+                                </option>
+                            </select>
+                            @error('')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </fieldset>
+                    </td>
+                    <td>
+                        <input type="number"
+                            class="input js-mytooltip form-control input-table @error('') is-invalid @enderror"
+                            value="{{ old('') }}" name="" id="ef_DesignerNoh"
+                            data-mytooltip-content="<i>Number of Hours</i>" data-mytooltip-theme="dark"
+                            data-mytooltip-action="focus" data-mytooltip-direction="bottom">
+                    </td>
+                    <td>
+                        <input type="number" class="form-control input-table @error('') is-invalid @enderror"
+                            value="{{ old('') }}" name="" id="ef_DesignerNwh">
+                    </td>
+                    <td class="total-td" style="background-color: rgba(146, 146, 146, 0.727)">
+                        <h4 class="text-center" id="subtotal-design">-</h4>
+                    </td>
+                    <td class="total-td">
+                        <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                            value="{{ old('') }}" name="" id="">
+                    </td>
+                    <td class="border border-white" style="background-color: #FFFFFF;"><a href="javascript:void(0)" class="text-danger font-18 remove" title="Remove"><i class="fa fa-trash-o"></i></a></td>
+                </tr>`);
+    });
+
+    var efLeadfaci = 1;
+    $("#addBtn4").on("click", function() {
+        // Adding a row inside the tbody.
+        $("#tableLeadfaci").append(`
+        <tr id="efLeadfaci${++efLeadfaci}" class="table-warning">
+            <td class="title">Lead Facilitator</td>
+                    <td>
+                        <input type="number" class="form-control input-table @error('') is-invalid @enderror"
+                            value="{{ old('') }}" name="" id="ef_LeadfacilitatorNoc" max="100">
+                    </td>
+                    <td>
+                        <fieldset>
+                            <select
+                                class="input js-mytooltip form-select engagement-fee @error('') is-invalid @enderror select"
+                                name="" id="ef_LeadfacilitatorHf" data-mytooltip-content="<i>&#8369;10,000 - For Key Accounts w/ 2021 contract <br>
+                                    &#8369;11,000 - For Key Accounts with minimum guaranteed 50 sessions w/in 6 months <br>
+                                    &#8369;12,000 - all else</i>" data-mytooltip-theme="dark"
+                                data-mytooltip-action="focus" data-mytooltip-direction="right" style="background-color:#ffcccc; color:red;">
+                                <option value="10000" {{ old('') == '10000' ? 'selected="selected"' : '' }}>
+                                    &#8369;10,000
+                                </option>
+                                <option value="11000" {{ old('') == '11000' ? 'selected="selected"' : '' }}>
+                                    &#8369;11,000
+                                </option>
+                                <option value="12000" {{ old('') == '12000' ? 'selected="selected"' : '' }} selected>
+                                    &#8369;12,000
+                                </option>
+                            </select>
+                            @error('ef_customFee')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </fieldset>
+                    </td>
+                    <td>
+                        <input type="number"
+                            class="input js-mytooltip form-control input-table @error('') is-invalid @enderror"
+                            value="{{ old('') }}" name="" id="ef_LeadfacilitatorNoh"
+                            data-mytooltip-content="<i>Number of Hours</i>" data-mytooltip-theme="dark"
+                            data-mytooltip-action="focus" data-mytooltip-direction="bottom">
+                        </td>
+                    <td>
+                        <input type="number" class="form-control input-table @error('') is-invalid @enderror"
+                            value="{{ old('') }}" name="" id="ef_LeadfacilitatorNwh">
+                    </td>
+                    <td class="total-td">
+                        <h4 class="text-center lead" id="subtotal-lead">-</h4>
+                    </td>
+                    <td class="total-td">
+                        <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                            value="{{ old('') }}" name="" id="">
+                    </td>
+                    <td class="border border-white" style="background-color: #FFFFFF;"><a href="javascript:void(0)" class="text-danger font-18 remove" title="Remove"><i class="fa fa-trash-o"></i></a></td>
+        </tr>`
+    );});
+
+    var efCofaci = 1;
+    $("#addBtn5").on("click", function() {
+        // Adding a row inside the tbody.
+        $("#tableCofaci").append(`
+        <tr id="efCofaci${++efCofaci}" class="table-warning">
+            <td class="title">Co-facilitator / Resource Speaker</td>
+                <td>
+                    <input type="number" class="form-control input-table @error('') is-invalid @enderror" value="{{ old('') }}" 
+                        name="" id="ef_CofaciNoc"max="100">
+                </td>
+                <td>
+                    <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                        value="{{ old('') }}" name="" id="ef_CofaciHf" data-type="currency">
+                </td>
+                <td>
+                    <input type="number" class="input js-mytooltip form-control input-table @error('') is-invalid @enderror"
+                        value="{{ old('') }}" name="" id="ef_CofaciNoh"
+                        data-mytooltip-content="<i>Number of Hours</i>" data-mytooltip-theme="dark"
+                        data-mytooltip-action="focus" data-mytooltip-direction="bottom">
+                </td>
+                <td>
+                    <input type="number" class="form-control input-table @error('') is-invalid @enderror"
+                        value="{{ old('') }}" name="" id="ef_CofaciNwh">
+                </td>
+                <td class="total-td">
+                    <h4 class="text-center lead" id="subtotal-coFacilitator">-</h4>
+                </td>
+                <td class="total-td">
+                    <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                        value="{{ old('') }}" name="" id="">
+                </td>
+                <td class="border border-white" style="background-color: #FFFFFF;">
+                    <a href="javascript:void(0)" class="text-danger font-18 remove" title="Remove"><i class="fa fa-trash-o"></i></a>
+                </td>
+        </tr>`
+    );});
+
+    var efModerator = 1;
+    $("#addBtn6").on("click", function() {
+        // Adding a row inside the tbody.
+        $("#tableModerator").append(`
+            <tr id="efModerator${++efModerator}" class="table-warning">
+                <td class="title">Moderator</td>
+                <td>
+                    <input type="number" class="form-control input-table @error('') is-invalid @enderror"
+                        value="{{ old('') }}" name="" id="ef_ModeratorNoc" max="100">
+                </td>
+                <td>
+                    <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                        value="{{ old('') }}" name="" id="ef_ModeratorHf" data-type="currency">
+                </td>
+                <td>
+                    <input type="number"
+                        class="input js-mytooltip form-control input-table @error('') is-invalid @enderror"
+                        value="{{ old('') }}" name="" id="ef_ModeratorNoh"
+                        data-mytooltip-content="<i>Number of Hours</i>" data-mytooltip-theme="dark"
+                        data-mytooltip-action="focus" data-mytooltip-direction="bottom">
+                </td>
+                <td>
+                    <input type="number" class="form-control input-table @error('') is-invalid @enderror"
+                        value="{{ old('') }}" name="" id="ef_ModeratorNwh">
+                </td>
+                <td class="total-td">
+                    <h4 class="text-center lead" id="subtotal-moderator">-</h4>
+                </td>
+                <td class="total-td">
+                    <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                        value="{{ old('') }}" name="" id="">
+                </td>
+                <td class="border border-white" style="background-color: #FFFFFF;">
+                    <a href="javascript:void(0)" class="text-danger font-18 remove" title="Remove"><i class="fa fa-trash-o"></i></a>
+                </td>
+            </tr>`
+        );
+    });
+
+    var efProducer = 1;
+    $("#addBtn7").on("click", function() {
+        // Adding a row inside the tbody.
+        $("#tableProducer").append(`
+            <tr id="efProducer${++efProducer}" class="table-warning">
+                <td class="title">Producer</td>
+                <td>
+                    <input type="number" class="form-control input-table @error('') is-invalid @enderror"
+                        value="{{ old('') }}" name="" id="ef_ProducerNoc" max="100">
+                </td>
+                <td>
+                    <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                        value="{{ old('') }}" name="" id="ef_ProducerHf" data-type="currency">
+                </td>
+                <td>
+                    <input type="number"
+                        class="input js-mytooltip form-control input-table @error('') is-invalid @enderror"
+                        value="{{ old('') }}" name="" id="ef_ProducerNoh"
+                        data-mytooltip-content="<i>Number of Hours</i>" data-mytooltip-theme="dark"
+                        data-mytooltip-action="focus" data-mytooltip-direction="bottom">
+                </td>
+                <td>
+                    <input type="number" class="form-control input-table @error('') is-invalid @enderror"
+                        value="{{ old('') }}" name="" id="ef_ProducerNwh">
+                </td>
+                <td class="total-td">
+                    <h4 class="text-center lead" id="subtotal-producer">-</h4>
+                </td>
+                <td class="total-td">
+                    <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                        value="{{ old('') }}" name="" id="">
+                </td>
+                <td class="border border-white" style="background-color: #FFFFFF;">
+                    <a href="javascript:void(0)" class="text-danger font-18 remove" title="Remove"><i class="fa fa-trash-o"></i></a>
+                </td>
+            </tr>`
+        );
+    });
+
+    var efDocumentor = 1;
+    $("#addBtn8").on("click", function() {
+        // Adding a row inside the tbody.
+        $("#tableDocumentor").append(`
+            <tr id="efDocumentor${++efDocumentor}" class="table-warning">
+                <td class="title">Documentor</td>
+                <td>
+                    <input type="number" class="form-control input-table @error('') is-invalid @enderror"
+                        value="{{ old('') }}" name="" id="ef_DocumentorNoc" max="100">
+                </td>
+                <td>
+                    <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                        value="{{ old('') }}" name="" id="ef_DocumentorHf" data-type="currency">
+                </td>
+                <td>
+                    <input type="number"
+                        class="input js-mytooltip form-control input-table @error('') is-invalid @enderror"
+                        value="{{ old('') }}" name="" id="ef_DocumentorNoh"
+                        data-mytooltip-content="<i>Number of Hours</i>" data-mytooltip-theme="dark"
+                        data-mytooltip-action="focus" data-mytooltip-direction="bottom">
+                </td>
+                <td>
+                    <input type="number" class="form-control input-table @error('') is-invalid @enderror"
+                        value="{{ old('') }}" name="" id="ef_DocumentorNwh">
+                </td>
+                <td class="total-td" style="background-color: rgba(146, 146, 146, 0.727">
+                    <h4 class="text-center" id="subtotal-documentor">-</h4>
+                </td>
+                <td class="total-td">
+                    <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                        value="{{ old('') }}" name="" id="">
+                </td>
+                <td class="border border-white" style="background-color: #FFFFFF;">
+                    <a href="javascript:void(0)" class="text-danger font-18 remove" title="Remove"><i class="fa fa-trash-o"></i></a>
+                </td>
+            </tr>`
+        );
     });
 </script>

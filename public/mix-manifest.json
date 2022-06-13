@@ -3,6 +3,7 @@
     "/js/ceform.js": "/js/ceform.js",
     "/js/f2fform.js": "/js/f2fform.js",
     "/js/MultiStep.js": "/js/MultiStep.js",
+    "/js/currencyFormat.js": "/js/currencyFormat.js",
     "/css/app.css": "/css/app.css",
     "/css/custom.css": "/css/custom.css"
 }
