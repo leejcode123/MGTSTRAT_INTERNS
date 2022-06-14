@@ -120,11 +120,11 @@ $(document).on(
             //lead consultant engagement cost sum
             sumecLeadconsultant +=
                 $("#ec_LeadconsultantNoc").val() *
-                    $("#ec_LeadconsultantHf").val().replace(/,/g, "") *
+                    $("#ec_LeadconsultantHf").val().replace(/\₱|,/g, "") *
                     $("#ec_LeadconsultantNoh").val() +
                 $("#ec_LeadconsultantNwh").val() *
                     ($("#ec_LeadconsultantNoc").val() *
-                        $("#ec_LeadconsultantHf").val().replace(/,/g, "") *
+                        $("#ec_LeadconsultantHf").val().replace(/\₱|,/g, "") *
                         $("#ec_LeadconsultantNoh").val() *
                         0.2);
 
