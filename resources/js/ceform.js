@@ -193,11 +193,11 @@ $(document).on(
             //analyst engagement cost auto sum
             sumecAnalyst +=
                 $("#ec_AnalystNoc").val() *
-                    $("#ec_AnalystHf").val().replace(/,/g, "") *
+                    $("#ec_AnalystHf").val().replace(/\₱|,/g, "") *
                     $("#ec_AnalystNoh").val() +
                 $("#ec_AnalystNwh").val() *
                     ($("#ec_AnalystNoc").val() *
-                        $("#ec_AnalystHf").val().replace(/,/g, "") *
+                        $("#ec_AnalystHf").val().replace(/\₱|,/g, "") *
                         $("#ec_AnalystNoh").val() *
                         0.2);
 
@@ -266,11 +266,11 @@ $(document).on(
             //designer engagement cost auto sum
             sumecDesigner +=
                 $("#ec_DesignerNoc").val() *
-                    $("#ec_DesignerHf").val().replace(/,/g, "") *
+                    $("#ec_DesignerHf").val().replace(/\₱|,/g, "") *
                     $("#ec_DesignerNoh").val() +
                 $("#ec_DesignerNwh").val() *
                     ($("#ec_DesignerNoc").val() *
-                        $("#ec_DesignerHf").val().replace(/,/g, "") *
+                        $("#ec_DesignerHf").val().replace(/\₱|,/g, "") *
                         $("#ec_DesignerNoh").val() *
                         0.2);
 
@@ -334,11 +334,11 @@ $(document).on(
             //program engagement cost auto sum
             sumecLeadfacilitator +=
                 $("#ec_LeadfacilitatorNoc").val() *
-                    $("#ec_LeadfacilitatorHf").val().replace(/,/g, "") *
+                    $("#ec_LeadfacilitatorHf").val().replace(/\₱|,/g, "") *
                     $("#ec_LeadfacilitatorNoh").val() +
                 $("#ec_LeadfacilitatorNwh").val() *
                     ($("#ec_LeadfacilitatorNoc").val() *
-                        $("#ec_LeadfacilitatorHf").val().replace(/,/g, "") *
+                        $("#ec_LeadfacilitatorHf").val().replace(/\₱|,/g, "") *
                         $("#ec_LeadfacilitatorNoh").val() *
                         0.2);
 
@@ -403,11 +403,11 @@ $(document).on(
             //program engagement cost auto sum
             sumecCofacilitator +=
                 $("#ec_CofacilitatorNoc").val() *
-                    $("#ec_CofacilitatorHf").val().replace(/,/g, "") *
+                    $("#ec_CofacilitatorHf").val().replace(/\₱|,/g, "") *
                     $("#ec_CofacilitatorNoh").val() +
                 $("#ec_CofacilitatorNwh").val() *
                     ($("#ec_CofacilitatorNoc").val() *
-                        $("#ec_CofacilitatorHf").val().replace(/,/g, "") *
+                        $("#ec_CofacilitatorHf").val().replace(/\₱|,/g, "") *
                         $("#ec_CofacilitatorNoh").val() *
                         0.2);
 
@@ -472,11 +472,11 @@ $(document).on(
             //Moderator engagement cost auto sum
             sumecModerator +=
                 $("#ec_ModeratorNoc").val() *
-                    $("#ec_ModeratorHf").val().replace(/,/g, "") *
+                    $("#ec_ModeratorHf").val().replace(/\₱|,/g, "") *
                     $("#ec_ModeratorNoh").val() +
                 $("#ec_ModeratorNwh").val() *
                     ($("#ec_ModeratorNoc").val() *
-                        $("#ec_ModeratorHf").val().replace(/,/g, "") *
+                        $("#ec_ModeratorHf").val().replace(/\₱|,/g, "") *
                         $("#ec_ModeratorNoh").val() *
                         0.2);
 
@@ -542,11 +542,11 @@ $(document).on(
             //Producer engagement cost auto sum
             sumecProducer +=
                 $("#ec_ProducerNoc").val() *
-                    $("#ec_ProducerHf").val().replace(/,/g, "") *
+                    $("#ec_ProducerHf").val().replace(/\₱|,/g, "") *
                     $("#ec_ProducerNoh").val() +
                 $("#ec_ProducerNwh").val() *
                     ($("#ec_ProducerNoc").val() *
-                        $("#ec_ProducerHf").val().replace(/,/g, "") *
+                        $("#ec_ProducerHf").val().replace(/\₱|,/g, "") *
                         $("#ec_ProducerNoh").val() *
                         0.2);
 
@@ -623,11 +623,11 @@ $(document).on(
             //Documentor engagement cost auto sum
             sumecDocumentor +=
                 $("#ec_DocumentorNoc").val() *
-                    $("#ec_DocumentorHf").val().replace(/,/g, "") *
+                    $("#ec_DocumentorHf").val().replace(/\₱|,/g, "") *
                     $("#ec_DocumentorNoh").val() +
                 $("#ec_DocumentorNwh").val() *
                     ($("#ec_DocumentorNoc").val() *
-                        $("#ec_DocumentorHf").val().replace(/,/g, "") *
+                        $("#ec_DocumentorHf").val().replace(/\₱|,/g, "") *
                         $("#ec_DocumentorNoh").val() *
                         0.2);
 
@@ -653,7 +653,7 @@ $(document).on(
         $("#ec_ProgramHf").each(function () {
             sumecOffprogram +=
                 $("#ec_ProgramNoc").val() *
-                $("#ec_ProgramHf").val().replace(/,/g, "");
+                $("#ec_ProgramHf").val().replace(/\₱|,/g, "");
 
             if (
                 gaPercentage.val() == "G.A Hybrid" ||
@@ -671,7 +671,7 @@ $(document).on(
         $("#ec_Programexpense").each(function () {
             sumecProgramexpense +=
                 ($(this).val().replace(/%/g, "") *
-                    $("#ef_Totalpackage").val().replace(/,/g, "")) /
+                    $("#ef_Totalpackage").val().replace(/\₱|,/g, "")) /
                 100;
 
             sumEngagementCost += +sumecProgramexpense;
@@ -701,7 +701,7 @@ $(document).on(
         //Sales
         $("#sales").each(function () {
             sumSales +=
-                ($("#ef_Totalpackage").val().replace(/,/g, "") / 100) *
+                ($("#ef_Totalpackage").val().replace(/\₱|,/g, "") / 100) *
                 $(this).val();
             sumEngagementCost += +sumSales;
         });
@@ -710,7 +710,7 @@ $(document).on(
         //Referral
         $("#referral").each(function () {
             sumReferral +=
-                ($("#ef_Totalpackage").val().replace(/,/g, "") / 100) *
+                ($("#ef_Totalpackage").val().replace(/\₱|,/g, "") / 100) *
                 $(this).val();
             sumEngagementCost += +sumReferral;
         });
@@ -719,7 +719,7 @@ $(document).on(
         //Engagement Manager
         $("#engagementManager").each(function () {
             sumEngagementManager +=
-                ($("#ef_Totalpackage").val().replace(/,/g, "") / 100) *
+                ($("#ef_Totalpackage").val().replace(/\₱|,/g, "") / 100) *
                 $(this).val();
             sumEngagementCost += +sumEngagementManager;
         });
@@ -746,14 +746,14 @@ $(document).on(
         /***********************PROFIT FORECAST***********************/
         //profit
         sumProfit =
-            $("#ef_Totalpackage").val().replace(/,/g, "") - sumEngagementCost;
+            $("#ef_Totalpackage").val().replace(/\₱|,/g, "") - sumEngagementCost;
         $("#Profit").html(currency.format(Math.ceil(sumProfit)));
 
         //Less: Contribution to Overhead
         sumCto = 0;
         $("#LessCTO_NOC").each(function () {
             sumCto +=
-                ($("#ef_Totalpackage").val().replace(/,/g, "") *
+                ($("#ef_Totalpackage").val().replace(/\₱|,/g, "") *
                     $(this).val()) /
                 100;
         });
@@ -767,7 +767,7 @@ $(document).on(
 
         //Profit margin
         sumProfitmargin =
-            (sumNetprofit / $("#ef_Totalpackage").val().replace(/,/g, "")) *
+            (sumNetprofit / $("#ef_Totalpackage").val().replace(/\₱|,/g, "")) *
             100;
         $("#ProfitMargin").html(Math.floor(sumProfitmargin) + "%");
     }
