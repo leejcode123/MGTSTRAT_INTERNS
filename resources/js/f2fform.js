@@ -737,11 +737,15 @@ sumofecLeadconsultant +=
     $("#ec_LeadconsultantsNoc").val() *
         $("#ec_LeadconsultantsPd").val().replace(/,/g, "") *
         $("#ec_LeadconsultantsNod").val() +
-    $("#ec_LeadconsultantsNwh").val() *
+    $("#ec_LeadconsultantsAtd").val() *
         ($("#ec_LeadconsultantsNoc").val() *
             $("#ec_LeadconsultantsPd").val().replace(/,/g, "") *
             $("#ec_LeadconsultantsNod").val() *
-            0.2);
+            0.2) + $("#ec_LeadconsultantsNwh").val() *
+            ($("#ec_LeadconsultantsNoc").val() *
+                $("#ec_LeadconsultantsPd").val().replace(/,/g, "") *
+                $("#ec_LeadconsultantsNod").val() *
+                0.2);
 
             sumofEngagementCost += +sumofecLeadconsultant;
             });
@@ -760,16 +764,19 @@ $("#ec_AnalystsNwh").val($("#ef_AnalystNsw").val());
 $("#ec_AnalystsAtd").val($("#ef_AnalystAtd").val());
 
 sumofecAnalyst +=
-                $("#ec_AnalystsNoc").val() *
-                    $("#ec_AnalystsPd").val().replace(/,/g, "") *
-                    $("#ec_AnalystsNod").val() +
-                $("#ec_AnalystsNwh").val() *
-                    ($("#ec_AnalystsNoc").val() *
-                        $("#ec_AnalystsPd").val().replace(/,/g, "") *
-                        $("#ec_AnalystsNod").val() *
-                        0.2);
+        $("#ec_AnalystsNoc").val() *
+        $("#ec_AnalystsPd").val().replace(/,/g, "") *
+        $("#ec_AnalystsNod").val() +
+        $("#ec_AnalystsAtd").val() *
+        ($("#ec_AnalystsNoc").val() *
+            $("#ec_AnalystsPd").val().replace(/,/g, "") *
+            $("#ec_AnalystsNod").val() *
+            0.2) + $("#ec_AnalystsNwh").val() *
+            ($("#ec_AnalystsNoc").val() *
+                $("#ec_AnalystsPd").val().replace(/,/g, "") *
+                $("#ec_AnalystsNod").val() *
+                0.2);
 
-            
             
             sumofEngagementCost += +sumofecAnalyst;
 
@@ -785,15 +792,18 @@ $("#ec_DesignersNwh").val($("#ef_DesignerNsw").val());
 $("#ec_DesignersAtd").val($("#ef_DesignerAtd").val());
 
             sumofecDesigner +=
-                $("#ec_DesignersNoc").val() *
+            $("#ec_DesignersNoc").val() *
+            $("#ec_DesignersPd").val().replace(/,/g, "") *
+            $("#ec_DesignersNod").val() +
+            $("#ec_DesignersAtd").val() *
+            ($("#ec_DesignersNoc").val() *
+                $("#ec_DesignersPd").val().replace(/,/g, "") *
+                $("#ec_DesignersNod").val() *
+                0.2) + $("#ec_DesignersNwh").val() *
+                ($("#ec_DesignersNoc").val() *
                     $("#ec_DesignersPd").val().replace(/,/g, "") *
-                    $("#ec_DesignersNod").val() +
-                $("#ec_DesignersNwh").val() *
-                    ($("#ec_DesignersNoc").val() *
-                        $("#ec_DesignersPd").val().replace(/,/g, "") *
-                        $("#ec_DesignersNod").val() *
-                        0.2);
-
+                    $("#ec_DesignersNod").val() *
+                    0.2);
             
             sumofEngagementCost += +sumofecDesigner;
 
@@ -805,6 +815,7 @@ $("#ec_DesignersAtd").val($("#ef_DesignerAtd").val());
                 $(this).val() *
                 $("#ec_CreatorNod").val() *
                 $("#ec_CreatorNoc").val();
+
             sumofEngagementCost += +sumofecCreators;
         });
         $("#ec_CreatorTotal").html(currency.format(Math.ceil(sumofecCreators)));
@@ -819,15 +830,18 @@ $("#ec_LeadfacilitatorsNwh").val($("#ef_LeadfaciNsw").val());
 $("#ec_LeadfacilitatorsAtd").val($("#ef_LeadfaciAtd").val());
 
             sumofecLeadfacilitator +=
-                $("#ec_LeadfacilitatorsNoc").val() *
+            $("#ec_LeadfacilitatorsNoc").val() *
+            $("#ec_LeadfacilitatorsPd").val().replace(/,/g, "") *
+            $("#ec_LeadfacilitatorsNod").val() +
+            $("#ec_LeadfacilitatorsAtd").val() *
+            ($("#ec_LeadfacilitatorsNoc").val() *
+                $("#ec_LeadfacilitatorsPd").val().replace(/,/g, "") *
+                $("#ec_LeadfacilitatorsNod").val() *
+                0.2) + $("#ec_LeadfacilitatorsNwh").val() *
+                ($("#ec_LeadfacilitatorsNoc").val() *
                     $("#ec_LeadfacilitatorsPd").val().replace(/,/g, "") *
-                    $("#ec_LeadfacilitatorsNod").val() +
-                $("#ec_LeadfacilitatorsNwh").val() *
-                    ($("#ec_LeadfacilitatorsNoc").val() *
-                        $("#ec_LeadfacilitatorsPd").val().replace(/,/g, "") *
-                        $("#ec_LeadfacilitatorsNod").val() *
-                        0.2);
-
+                    $("#ec_LeadfacilitatorsNod").val() *
+                    0.2);
             
             sumofEngagementCost += +sumofecLeadfacilitator;
             
@@ -842,14 +856,18 @@ $("#ec_CofacilitatorsNwh").val($("#ef_CofaciNsw").val());
 $("#ec_CofacilitatorsAtd").val($("#ef_CofaciAtd").val());
 
         sumofecCofacilitator +=
-            $("#ec_CofacilitatorsNoc").val() *
+        $("#ec_CofacilitatorsNoc").val() *
+        $("#ec_CofacilitatorsPd").val().replace(/,/g, "") *
+        $("#ec_CofacilitatorsNod").val() +
+        $("#ec_CofacilitatorsAtd").val() *
+        ($("#ec_CofacilitatorsNoc").val() *
+            $("#ec_CofacilitatorsPd").val().replace(/,/g, "") *
+            $("#ec_CofacilitatorsNod").val() *
+            0.2) + $("#ec_CofacilitatorsNwh").val() *
+            ($("#ec_CofacilitatorsNoc").val() *
                 $("#ec_CofacilitatorsPd").val().replace(/,/g, "") *
-                $("#ec_CofacilitatorsNod").val() +
-            $("#ec_CofacilitatorsNwh").val() *
-                ($("#ec_CofacilitatorsNoc").val() *
-                    $("#ec_CofacilitatorsPd").val().replace(/,/g, "") *
-                    $("#ec_CofacilitatorsNod").val() *
-                    0.2);
+                $("#ec_CofacilitatorsNod").val() *
+                0.2);
 
         sumofEngagementCost += +sumofecCofacilitator;
 
@@ -864,14 +882,18 @@ $("#ec_ActionlearningcoachNwh").val($("#ef_ActionLearnNsw").val());
 $("#ec_ActionlearningcoachAtd").val($("#ef_ActionLearnAtd").val());
 
         sumofecActionlearningcoach +=
-            $("#ec_ActionlearningcoachNoc").val() *
+        $("#ec_ActionlearningcoachNoc").val() *
+        $("#ec_ActionlearningcoachPd").val().replace(/,/g, "") *
+        $("#ec_ActionlearningcoachNod").val() +
+        $("#ec_ActionlearningcoachAtd").val() *
+        ($("#ec_ActionlearningcoachNoc").val() *
+            $("#ec_ActionlearningcoachPd").val().replace(/,/g, "") *
+            $("#ec_ActionlearningcoachNod").val() *
+            0.2) + $("#ec_ActionlearningcoachNwh").val() *
+            ($("#ec_ActionlearningcoachNoc").val() *
                 $("#ec_ActionlearningcoachPd").val().replace(/,/g, "") *
-                $("#ec_ActionlearningcoachNod").val() +
-            $("#ec_ActionlearningcoachNwh").val() *
-                ($("#ec_ActionlearningcoachNoc").val() *
-                    $("#ec_ActionlearningcoachPd").val().replace(/,/g, "") *
-                    $("#ec_ActionlearningcoachNod").val() *
-                    0.2);
+                $("#ec_ActionlearningcoachNod").val() *
+                0.2);
 
         sumofEngagementCost += +sumofecActionlearningcoach;
 
@@ -885,14 +907,18 @@ $("#ec_MarshalNwh").val($("#ef_MarshalNsw").val());
 $("#ec_MarshalAtd").val($("#ef_MarshalAtd").val());
 
         sumofecMarshal +=
-            $("#ec_MarshalNoc").val() *
+        $("#ec_MarshalNoc").val() *
+        $("#ec_MarshalPd").val().replace(/,/g, "") *
+        $("#ec_MarshalNod").val() +
+        $("#ec_MarshalAtd").val() *
+        ($("#ec_MarshalNoc").val() *
+            $("#ec_MarshalPd").val().replace(/,/g, "") *
+            $("#ec_MarshalNod").val() *
+            0.2) + $("#ec_MarshalNwh").val() *
+            ($("#ec_MarshalNoc").val() *
                 $("#ec_MarshalPd").val().replace(/,/g, "") *
-                $("#ec_MarshalNod").val() +
-            $("#ec_MarshalNwh").val() *
-                ($("#ec_MarshalNoc").val() *
-                    $("#ec_MarshalPd").val().replace(/,/g, "") *
-                    $("#ec_MarshalNod").val() *
-                    0.2);
+                $("#ec_MarshalNod").val() *
+                0.2);
 
        
         sumofEngagementCost += +sumofecMarshal;
@@ -908,14 +934,19 @@ $("#ec_OnsitepcNwh").val($("#ef_OnsiteNsw").val());
 $("#ec_OnsitepcAtd").val($("#ef_OnsiteAtd").val());
 
         sumofecOnsitepc +=
-            $("#ec_OnsitepcNoc").val() *
+        $("#ec_OnsitepcNoc").val() *
+        $("#ec_OnsitepcPd").val().replace(/,/g, "") *
+        $("#ec_OnsitepcNod").val() +
+        $("#ec_OnsitepcAtd").val() *
+        ($("#ec_OnsitepcNoc").val() *
+            $("#ec_OnsitepcPd").val().replace(/,/g, "") *
+            $("#ec_OnsitepcNod").val() *
+            0.2) + $("#ec_OnsitepcNwh").val() *
+            ($("#ec_OnsitepcNoc").val() *
                 $("#ec_OnsitepcPd").val().replace(/,/g, "") *
-                $("#ec_OnsitepcNod").val() +
-            $("#ec_OnsitepcNwh").val() *
-                ($("#ec_OnsitepcNoc").val() *
-                    $("#ec_OnsitepcPd").val().replace(/,/g, "") *
-                    $("#ec_OnsitepcNod").val() *
-                    0.2);
+                $("#ec_OnsitepcNod").val() *
+                0.2);
+
 
         sumofEngagementCost += +sumofecOnsitepc;
 
@@ -941,14 +972,18 @@ $("#ec_DocumentorsNwh").val($("#ef_DocumentorNsw").val());
 $("#ec_DocumentorsAtd").val($("#ef_DocumentorAtd").val());
 
         sumofecDocumentor +=
-            $("#ec_DocumentorsNoc").val() *
+        $("#ec_DocumentorsNoc").val() *
+        $("#ec_DocumentorsPd").val().replace(/,/g, "") *
+        $("#ec_DocumentorsNod").val() +
+        $("#ec_DocumentorsAtd").val() *
+        ($("#ec_DocumentorsNoc").val() *
+            $("#ec_DocumentorsPd").val().replace(/,/g, "") *
+            $("#ec_DocumentorsNod").val() *
+            0.2) + $("#ec_DocumentorsNwh").val() *
+            ($("#ec_DocumentorsNoc").val() *
                 $("#ec_DocumentorsPd").val().replace(/,/g, "") *
-                $("#ec_DocumentorsNod").val() +
-            $("#ec_DocumentorsNwh").val() *
-                ($("#ec_DocumentorsNoc").val() *
-                    $("#ec_DocumentorsPd").val().replace(/,/g, "") *
-                    $("#ec_DocumentorsNod").val() *
-                    0.2);
+                $("#ec_DocumentorsNod").val() *
+                0.2);
 
     
         sumofEngagementCost += +sumofecDocumentor;
@@ -961,14 +996,9 @@ $("#ec_DocumentorsAtd").val($("#ef_DocumentorAtd").val());
 $("#ec_PerdiemNod").val($("#ef_PDNod").val());
 
         sumecPerdiem +=
-            $("#ec_PerdiemNoc").val() *
-                $("#ec_PerdiemPd").val().replace(/,/g, "") *
-                $("#ec_PerdiemNod").val() +
-            $("#ec_PerdiemNwh").val() *
-                ($("#ec_PerdiemNoc").val() *
-                    $("#ec_PerdiemPd").val().replace(/,/g, "") *
-                    $("#ec_PerdiemNod").val() *
-                    0.2);
+            $(this).val() *
+                $("#ec_PerdiemNod").val() *
+                $("#ec_PerdiemNoc").val();
 
       
         sumEngagementCost += +sumofecPerdiem;
@@ -980,14 +1010,8 @@ $("#ec_PerdiemNod").val($("#ef_PDNod").val());
 //Off-program Fee
 
         sumecOffprogram +=
-        $("#ec_OffprogramsNoc").val() *
-            $("#ec_OffprogramsPd").val().replace(/,/g, "") *
-            $("#ec_OffprogramsNod").val() +
-        $("#ec_OffprogramsNwh").val() *
-            ($("#ec_OffprogramsNoc").val() *
-                $("#ec_OffprogramsPd").val().replace(/,/g, "") *
-                $("#ec_OffprogramsNod").val() *
-                0.2);
+        $(this).val() *
+                $("#ec_OffprogramsNoc").val();
 
 
         sumEngagementCost += +sumofecOffprogram;
@@ -997,7 +1021,16 @@ $("#ec_PerdiemNod").val($("#ef_PDNod").val());
         );
 
 //Program Expenses
+    sumofecProgramexpense +=
+        $(this).val() *
+                $("#input_totalPackages").val();
 
+
+        sumEngagementCost += +sumofecProgramexpense;
+
+        $("#ec_ProgramexpensesTotal").html(
+        currency.format(Math.ceil(sumofecProgramexpense))
+        );
 
 
 //cluster reference
