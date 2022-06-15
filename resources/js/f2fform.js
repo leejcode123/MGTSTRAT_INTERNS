@@ -102,7 +102,7 @@ $("#ef_PDPdf").on({
 
 //Engagement Cost
 //ENGAGEMENT COST
-$("#ec_LeadconsultantPd").on({
+$("#ec_LeadconsultantsPd").on({
     keyup: function () {
         let input_val = $(this).val();
         input_val = numberToCurrency(input_val);
@@ -114,7 +114,7 @@ $("#ec_LeadconsultantPd").on({
         $(this).val(input_val);
     },
 });
-$("#ec_AnalystPd").on({
+$("#ec_AnalystsPd").on({
     keyup: function () {
         let input_val = $(this).val();
         input_val = numberToCurrency(input_val);
@@ -126,7 +126,7 @@ $("#ec_AnalystPd").on({
         $(this).val(input_val);
     },
 });
-$("#ec_DesignerPd").on({
+$("#ec_DesignersPd").on({
     keyup: function () {
         let input_val = $(this).val();
         input_val = numberToCurrency(input_val);
@@ -150,7 +150,7 @@ $("#ec_CreatorPd").on({
         $(this).val(input_val);
     },
 });
-$("#ec_LeadfacilitatorPd").on({
+$("#ec_LeadfacilitatorsPd").on({
     keyup: function () {
         let input_val = $(this).val();
         input_val = numberToCurrency(input_val);
@@ -162,7 +162,7 @@ $("#ec_LeadfacilitatorPd").on({
         $(this).val(input_val);
     },
 });
-$("#ec_CofacilitatorPd").on({
+$("#ec_CofacilitatorsPd").on({
     keyup: function () {
         let input_val = $(this).val();
         input_val = numberToCurrency(input_val);
@@ -210,7 +210,7 @@ $("#ec_OnsitePd").on({
         $(this).val(input_val);
     },
 });
-$("#ec_DocumentorPd").on({
+$("#ec_DocumentorsPd").on({
     keyup: function () {
         let input_val = $(this).val();
         input_val = numberToCurrency(input_val);
@@ -234,7 +234,7 @@ $("#ec_PerdiemPd").on({
         $(this).val(input_val);
     },
 });
-$("#ec_OffprogramPd").on({
+$("#ec_OffprogramsPd").on({
     keyup: function () {
         let input_val = $(this).val();
         input_val = numberToCurrency(input_val);
@@ -246,7 +246,7 @@ $("#ec_OffprogramPd").on({
         $(this).val(input_val);
     },
 });
-$("#ec_Programexpense").on({
+$("#ec_Programexpenses").on({
     keyup: function () {
         let input_val = $(this).val();
         input_val = numberToCurrency(input_val);
@@ -269,23 +269,23 @@ document.getElementById("ef_MarshalPdf").defaultValue = currency.format(30000);
 document.getElementById("ef_DocumentorPdf").defaultValue = currency.format(20000);
 document.getElementById("ef_PDPdf").defaultValue = currency.format(2000);
 //Engagement Cost
-document.getElementById("ec_LeadfacilitatorPd").defaultValue = currency.format(
+document.getElementById("ec_LeadfacilitatorsPd").defaultValue = currency.format(
     Math.ceil(24000)
 );
-document.getElementById("ec_LeadconsultantPd").defaultValue = currency.format(
-    Math.ceil(0.85 * $("#ec_LeadfacilitatorPd").val().replace(/,/g, ""))
+document.getElementById("ec_LeadconsultantsPd").defaultValue = currency.format(
+    Math.ceil(0.85 * $("#ec_LeadfacilitatorsPd").val().replace(/,/g, ""))
 );
-document.getElementById("ec_AnalystPd").defaultValue = currency.format(
+document.getElementById("ec_AnalystsPd").defaultValue = currency.format(
     Math.ceil(13600)
 );
-document.getElementById("ec_DesignerPd").defaultValue = currency.format(
-    Math.ceil(0.75 * $("#ec_LeadfacilitatorPd").val().replace(/,/g, ""))
+document.getElementById("ec_DesignersPd").defaultValue = currency.format(
+    Math.ceil(0.75 * $("#ec_LeadfacilitatorsPd").val().replace(/,/g, ""))
 );
-document.getElementById("ec_CreatorsPd").defaultValue = currency.format(
+document.getElementById("ec_CreatorPd").defaultValue = currency.format(
     Math.ceil(500)
 );
-document.getElementById("ec_CofacilitatorPd").defaultValue = currency.format(
-    Math.ceil(0.6 * $("#ec_LeadfacilitatorPd").val().replace(/,/g, ""))
+document.getElementById("ec_CofacilitatorsPd").defaultValue = currency.format(
+    Math.ceil(0.6 * $("#ec_LeadfacilitatorsPd").val().replace(/,/g, ""))
 );
 document.getElementById("ec_ActionlearningcoachPd").defaultValue = currency.format(
     Math.ceil(16000)
@@ -296,21 +296,21 @@ document.getElementById("ec_MarshalPd").defaultValue = currency.format(
 document.getElementById("ec_OnsitepcPd").defaultValue = currency.format(
     Math.ceil(1000)
 );
-document.getElementById("ec_DocumentorPd").defaultValue = currency.format(
+document.getElementById("ec_DocumentorsPd").defaultValue = currency.format(
     Math.ceil(5600)
 );
 document.getElementById("ec_PerdiemPd").defaultValue = currency.format(
     Math.ceil(200)
 );
-document.getElementById("ec_OffprogramPd").defaultValue = currency.format(
+document.getElementById("ec_OffprogramsPd").defaultValue = currency.format(
     Math.ceil(1000)
 );
-document.getElementById("ec_Programexpense").defaultValue = 2 + "%";
+document.getElementById("ec_Programexpenses").defaultValue = 2 + "%";
 
 //Customized Engagement form of Engagement Fees
 $(document).on(
     "change keyup",
-    ".f2f-customized-type, .f2f-ga-only-dropdown, #ef_LeadconsultantAtd, #ef_LeadconsultantNoc, #ef_LeadconsultantHf, #ef_LeadconsultantNoh, #ef_LeadconsultantNwh, #ef_AnalystNoc, #ef_AnalystPdf, #ef_AnalystNod, #ef_AnalystAtd, #ef_AnalystNsw, #ef_DesignerNoc, #ef_DesignerPdf, #ef_DesignerNod, #ef_DesignerAtd, #ef_DesignerNsw, #ef_LeadFaciNoc, #ef_LeadFaciPdf, #ef_LeadFaciNod, #ef_LeadFaciAtd, #ef_LeadFaciNsw, #ef_CoFaciNoc, #ef_CoFaciPdf, #ef_CoFaciNod, #ef_CoFaciAtd, #ef_CoFaciNsw, #ef_ActionLearnNoc, #ef_ActionLearnPdf, #ef_ActionLearnNod, #ef_ActionLearnAtd, #ef_ActionLearnNsw, #ef_MarshalNoc, #ef_MarshalPdf, #ef_MarshalNod, #ef_MarshalAtd, #ef_MarshalNsw, #ef_OnsiteNoc, #ef_OnsitePdf, #ef_OnsiteNod, #ef_OnsiteAtd, #ef_OnsiteNsw, #ef_DocumentorNoc, #ef_DocumentorPdf, #ef_DocumentorNod, #ef_DocumentorAtd, #ef_DocumentorNsw,  #ef_PDNoc, #ef_PDPdf, #ef_PDNod, #ef_PDAtd, #ef_PDNsw, #input_totalPackages, #sales, #referral, #engagementManager, #offsitePC, #ec_LeadconsultantPd, #ec_AnalystPd, #ec_DesignerPd, #ec_CreatorsNoc, #ec_CreatorsPd, #ec_CreatorsNod, #ec_LeadfacilitatorPd, #ec_CofacilitatorPd, #ec_ActionlearningcoachPd, #ec_MarshalPd, #ec_OnsitepcPD, #ec_DocumentorPd, #ec_PerdiemPd #ec_OffprogramPd, #ec_Programexpense",
+    ".f2f-customized-type, .f2f-ga-only-dropdown, #ef_LeadconsultantAtd, #ef_LeadconsultantNoc, #ef_LeadconsultantHf, #ef_LeadconsultantNoh, #ef_LeadconsultantNwh, #ef_AnalystNoc, #ef_AnalystPdf, #ef_AnalystNod, #ef_AnalystAtd, #ef_AnalystNsw, #ef_DesignerNoc, #ef_DesignerPdf, #ef_DesignerNod, #ef_DesignerAtd, #ef_DesignerNsw, #ef_LeadFaciNoc, #ef_LeadFaciPdf, #ef_LeadFaciNod, #ef_LeadFaciAtd, #ef_LeadFaciNsw, #ef_CoFaciNoc, #ef_CoFaciPdf, #ef_CoFaciNod, #ef_CoFaciAtd, #ef_CoFaciNsw, #ef_ActionLearnNoc, #ef_ActionLearnPdf, #ef_ActionLearnNod, #ef_ActionLearnAtd, #ef_ActionLearnNsw, #ef_MarshalNoc, #ef_MarshalPdf, #ef_MarshalNod, #ef_MarshalAtd, #ef_MarshalNsw, #ef_OnsiteNoc, #ef_OnsitePdf, #ef_OnsiteNod, #ef_OnsiteAtd, #ef_OnsiteNsw, #ef_DocumentorNoc, #ef_DocumentorPdf, #ef_DocumentorNod, #ef_DocumentorAtd, #ef_DocumentorNsw,  #ef_PDNoc, #ef_PDPdf, #ef_PDNod, #ef_PDAtd, #ef_PDNsw, #input_totalPackages, #sale, #referrals, #ecengagementManager, #offsitePC, #ec_LeadconsultantsPd, #ec_AnalystsPd, #ec_DesignersPd, #ec_CreatorNoc, #ec_CreatorPd, #ec_CreatorNod, #ec_LeadfacilitatorsPd, #ec_CofacilitatorsPd, #ec_ActionlearningcoachPd, #ec_MarshalPd, #ec_OnsitepcPD, #ec_DocumentorsPd, #ec_PerdiemPd, #ec_PerdiemNoc, #ec_OffprogramsPd, #ec_OffprogramsNoc, #ec_Programexpenses",
     function () {
         //customized type
         $(".f2f-customized-type").each(function () {
@@ -326,7 +326,7 @@ $(document).on(
             }
         });
 
-        $("#ec_Programexpense").on("input", function () {
+        $("#ec_Programexpenses").on("input", function () {
             $(this).val(function (i, v) {
                 return v.replace("%", "") + "%";
             });
@@ -373,23 +373,23 @@ $(document).on(
         sum50 = 0;
 
         // engagement cost total
-        sumEngagementCost = 0;
-        sumSales = 0;
-        sumReferral = 0;
-        sumEngagementManager = 0;
-        sumOffsitepc = 0;
-        sumecLeadconsultant = 0;
-        sumecAnalyst = 0;
-        sumecDesigner = 0;
-        sumecCreators = 0;
-        sumecLeadfacilitator = 0;
-        sumecCofacilitator = 0;
-        sumecActionlearningcoach = 0;
-        sumecOnsitepc = 0;
-        sumecDocumentor = 0;
-        sumecPerdiem = 0;
-        sumecOffprogram = 0;
-        sumecProgramexpense = 0;
+        sumofEngagementCost = 0;
+        sumofSales = 0;
+        sumofReferral = 0;
+        sumofEngagementManager = 0;
+        sumofOffsitepc = 0;
+        sumofecLeadconsultant = 0;
+        sumofecAnalyst = 0;
+        sumofecDesigner = 0;
+        sumofecCreators = 0;
+        sumofecLeadfacilitator = 0;
+        sumofecCofacilitator = 0;
+        sumofecActionlearningcoach = 0;
+        sumofecOnsitepc = 0;
+        sumofecDocumentor = 0;
+        sumofecPerdiem = 0;
+        sumofecOffprogram = 0;
+        sumofecProgramexpense = 0;
 
         //customized type
         var gaPercentage = $(".customized-type");
@@ -685,213 +685,185 @@ $("#salesTotal1").html(currency.format(Math.ceil(sumSales1)));
 
 //start of engagement cost
 
-//Lead Consultant
-$("#ec_LeadconsultantNoc").val($("#ef_LeadconsultantNoc").val());
-$("#ec_LeadconsultantNod").val($("#ef_LeadconsultantNod").val());
-$("#ec_LeadconsultantNwh").val($("#ef_LeadconsultantNwh").val());
+ //Sales
+        $("#sale").each(function () {
+            sumofSales +=
+                ($("#input_totalPackages").val().replace(/,/g, "") / 100) *
+                $(this).val();
+            sumofEngagementCost += +sumofSales;
+        });
+        $("#saleTotal").html(currency.format(Math.ceil(sumofSales)));
 
-sumecLeadconsultant +=
-    $("#ec_LeadconsultantNoc").val() *
-        $("#ec_LeadconsultantPd").val().replace(/,/g, "") *
-        $("#ec_LeadconsultantNod").val() +
-    $("#ec_LeadconsultantNwh").val() *
-        ($("#ec_LeadconsultantNoc").val() *
-            $("#ec_LeadconsultantPd").val().replace(/,/g, "") *
-            $("#ec_LeadconsultantNod").val() *
+//Referral
+        $("#referrals").each(function () {
+            sumofReferral +=
+                ($("#input_totalPackages").val().replace(/,/g, "") / 100) *
+                $(this).val();
+            sumofEngagementCost += +sumofReferral;
+        });
+        $("#referralsTotal").html(currency.format(Math.ceil(sumofReferral)));
+
+//Engagement Manager
+        $("#ecengagementManager").each(function () {
+            sumofEngagementManager +=
+                ($("#input_totalPackages").val().replace(/,/g, "") / 100) *
+                $(this).val();
+            sumofEngagementCost += +sumofEngagementManager;
+        });
+        $("#ecengagementManagerTotal").html(
+            currency.format(Math.ceil(sumofEngagementManager))
+        );
+
+//Offsite PC
+        $("#ecoffsitePc").each(function () {
+            sumofOffsitepc +=
+                ($("#input_totalPackages").val().replace(/,/g, "") / 100) -
+                $("#subtotal-consulting").val() -  $("#subtotal-PD").val() *
+                $(this).val();
+            sumofOffsitepc += +sumofOffsitepc;
+        });
+        $("#ecoffsitePcTotal").html(
+            currency.format(Math.ceil(sumofOffsitepc))
+        );
+
+//Lead Consultant
+$("#ec_LeadconsultantsNoc").val($("#ef_LeadconsultantNoc").val());
+$("#ec_LeadconsultantsNod").val($("#ef_LeadconsultantNod").val());
+$("#ec_LeadconsultantsNwh").val($("#ef_LeadconsultantNwh").val());
+$("#ec_LeadconsultantsAtd").val($("#ef_LeadconsultantAtd").val());
+
+
+sumofecLeadconsultant +=
+    $("#ec_LeadconsultantsNoc").val() *
+        $("#ec_LeadconsultantsPd").val().replace(/,/g, "") *
+        $("#ec_LeadconsultantsNod").val() +
+    $("#ec_LeadconsultantsNwh").val() *
+        ($("#ec_LeadconsultantsNoc").val() *
+            $("#ec_LeadconsultantsPd").val().replace(/,/g, "") *
+            $("#ec_LeadconsultantsNod").val() *
             0.2);
 
-            if (
-                gaPercentage.val() == "G.A Hybrid" ||
-                gaPercentage.val() == "G.A Virtual"
-            ) {
-                sumecLeadconsultant +=
-                    sumecLeadconsultant *
-                    (document.getElementById("ga-only-dropdown").value / 100);
-            }
-            sumEngagementCost += +sumecLeadconsultant;
+            sumofEngagementCost += +sumofecLeadconsultant;
             });
             
-            $("#ec_LeadconsultantTotal").html(
-                currency.format(Math.ceil(sumecLeadconsultant))
+            $("#ec_LeadconsultantsTotal").html(
+                currency.format(Math.ceil(sumofecLeadconsultant))
             );
-            $("#ec_SubtotalConsulting").html(
-                currency.format(Math.ceil(sumecLeadconsultant + sumecAnalyst))
+            $("#ec_SubtotalsConsulting").html(
+                currency.format(Math.ceil(sumofecLeadconsultant + sumofecAnalyst))
             );
             
 //Analyst
-$("#ec_AnalystNoc").val($("#ef_AnalystNoc").val());
-$("#ec_AnalystNod").val($("#ef_AnalystNod").val());
-$("#ec_AnalystNwh").val($("#ef_AnalystNwh").val());
+$("#ec_AnalystsNoc").val($("#ef_AnalystNoc").val());
+$("#ec_AnalystsNod").val($("#ef_AnalystNod").val());
+$("#ec_AnalystsNwh").val($("#ef_AnalystNsw").val());
+$("#ec_AnalystsAtd").val($("#ef_AnalystAtd").val());
 
-sumecAnalyst +=
-                $("#ec_AnalystNoc").val() *
-                    $("#ec_AnalystPd").val().replace(/,/g, "") *
-                    $("#ec_AnalystNod").val() +
-                $("#ec_AnalystNwh").val() *
-                    ($("#ec_AnalystNoc").val() *
-                        $("#ec_AnalystPd").val().replace(/,/g, "") *
-                        $("#ec_AnalystNod").val() *
+sumofecAnalyst +=
+                $("#ec_AnalystsNoc").val() *
+                    $("#ec_AnalystsPd").val().replace(/,/g, "") *
+                    $("#ec_AnalystsNod").val() +
+                $("#ec_AnalystsNwh").val() *
+                    ($("#ec_AnalystsNoc").val() *
+                        $("#ec_AnalystsPd").val().replace(/,/g, "") *
+                        $("#ec_AnalystsNod").val() *
                         0.2);
 
-                        if (
-                            gaPercentage.val() == "G.A Hybrid" ||
-                            gaPercentage.val() == "G.A Virtual"
-                        ) {
-                            sumecAnalyst +=
-                                sumecAnalyst *
-                                (document.getElementById("ga-only-dropdown").value / 100);
-                        }
-                        //if the customized type value is G.A
-            if (
-                gaPercentage.val() == "G.A Hybrid" ||
-                gaPercentage.val() == "G.A Virtual"
-            ) {
-                sumecAnalyst +=
-                    sumecAnalyst *
-                    (document.getElementById("ga-only-dropdown").value / 100);
-            }
             
-            sumEngagementCost += +sumecAnalyst;
+            
+            sumofEngagementCost += +sumofecAnalyst;
 
-        //subtotal engagement cost
-        $("#ec_AnalystTotal").html(currency.format(Math.ceil(sumecAnalyst)));
-        $("#ec_SubtotalConsulting").html(
-            currency.format(Math.ceil(sumecLeadconsultant + sumecAnalyst))
+        $("#ec_AnalystsTotal").html(currency.format(Math.ceil(sumofecAnalyst)));
+        $("#ec_SubtotalsConsulting").html(
+            currency.format(Math.ceil(sumofecLeadconsultant + sumofecAnalyst))
         );
 
 //Designer
-$("#ec_DesignerNoc").val($("#ef_DesignerNoc").val());
-$("#ec_DesignerNod").val($("#ef_DesignerNod").val());
-$("#ec_DesignerNwh").val($("#ef_DesignerNwh").val());
+$("#ec_DesignersNoc").val($("#ef_DesignerNoc").val());
+$("#ec_DesignersNod").val($("#ef_DesignerNod").val());
+$("#ec_DesignersNwh").val($("#ef_DesignerNsw").val());
+$("#ec_DesignersAtd").val($("#ef_DesignerAtd").val());
 
-            sumecDesigner +=
-                $("#ec_DesignerNoc").val() *
-                    $("#ec_DesignerPd").val().replace(/,/g, "") *
-                    $("#ec_DesignerNod").val() +
-                $("#ec_DesignerNwh").val() *
-                    ($("#ec_DesignerNoc").val() *
-                        $("#ec_DesignerPd").val().replace(/,/g, "") *
-                        $("#ec_DesignerNod").val() *
+            sumofecDesigner +=
+                $("#ec_DesignersNoc").val() *
+                    $("#ec_DesignersPd").val().replace(/,/g, "") *
+                    $("#ec_DesignersNod").val() +
+                $("#ec_DesignersNwh").val() *
+                    ($("#ec_DesignersNoc").val() *
+                        $("#ec_DesignersPd").val().replace(/,/g, "") *
+                        $("#ec_DesignersNod").val() *
                         0.2);
 
-            //if the customized type value is G.A
-            if (
-                gaPercentage.val() == "G.A Hybrid" ||
-                gaPercentage.val() == "G.A Virtual"
-            ) {
-                sumecDesigner +=
-                    sumecDesigner *
-                    (document.getElementById("ga-only-dropdown").value / 100);
-            }
-
             
-            sumEngagementCost += +sumecDesigner;
+            sumofEngagementCost += +sumofecDesigner;
 
-            $("#ec_DesignerTotal").html(currency.format(Math.ceil(sumecDesigner)));
+            $("#ec_DesignerTotal").html(currency.format(Math.ceil(sumofecDesigner)));
 
 //Creators Fee
-
-            sumecCreators +=
-            $("#ec_CreatorsNoc").val() *
-                $("#ec_CreatorsPd").val().replace(/,/g, "") *
-                $("#ec_CreatorsNod").val() +
-            $("#ec_CreatorsNwh").val() *
-                ($("#ec_CreatorsNoc").val() *
-                    $("#ec_CreatorsPd").val().replace(/,/g, "") *
-                    $("#ec_CreatorsNod").val() *
-                    0.2);
-
-            //if the customized type value is G.A
-            if (
-            gaPercentage.val() == "G.A Hybrid" ||
-            gaPercentage.val() == "G.A Virtual"
-            ) {
-            sumecCreators +=
-                sumecCreators *
-                (document.getElementById("ga-only-dropdown").value / 100);
-            }
-
-
-            sumEngagementCost += +sumecCreators;
-
-            $("#ec_CreatorsTotal").html(
-            currency.format(Math.ceil(sumecCreators))
-            );
-            $("#ec_DesignSubtotal").html(
-                currency.format(Math.ceil(sumecLeadconsultant + sumecAnalyst))
-            );
-
+        $("#ec_CreatorPd").each(function () {
+            sumofecCreators +=
+                $(this).val() *
+                $("#ec_CreatorNod").val() *
+                $("#ec_CreatorNoc").val();
+            sumofEngagementCost += +sumofecCreators;
+        });
+        $("#ec_CreatorTotal").html(currency.format(Math.ceil(sumofecCreators)));
+        $("#ec_DesignsSubtotal").html(
+            currency.format(Math.ceil(sumofecDesigner + sumofecCreators))
+        );
 
 //Lead Facilitator
-$("#ec_LeadfacilitatorNoc").val($("#ef_LeadfacilitatorNoc").val());
-$("#ec_LeadfacilitatorNod").val($("#ef_LeadfacilitatorNod").val());
-$("#ec_LeadfacilitatorNwh").val($("#ef_LeadfacilitatorNwh").val());
+$("#ec_LeadfacilitatorsNoc").val($("#ef_LeadfaciNoc").val());
+$("#ec_LeadfacilitatorsNod").val($("#ef_LeadfaciNod").val());
+$("#ec_LeadfacilitatorsNwh").val($("#ef_LeadfaciNsw").val());
+$("#ec_LeadfacilitatorsAtd").val($("#ef_LeadfaciAtd").val());
 
-            sumecLeadfacilitator +=
-                $("#ec_LeadfacilitatorNoc").val() *
-                    $("#ec_LeadfacilitatorPd").val().replace(/,/g, "") *
-                    $("#ec_LeadfacilitatorNod").val() +
-                $("#ec_LeadfacilitatorNwh").val() *
-                    ($("#ec_LeadfacilitatorNoc").val() *
-                        $("#ec_LeadfacilitatorPd").val().replace(/,/g, "") *
-                        $("#ec_LeadfacilitatorNod").val() *
+            sumofecLeadfacilitator +=
+                $("#ec_LeadfacilitatorsNoc").val() *
+                    $("#ec_LeadfacilitatorsPd").val().replace(/,/g, "") *
+                    $("#ec_LeadfacilitatorsNod").val() +
+                $("#ec_LeadfacilitatorsNwh").val() *
+                    ($("#ec_LeadfacilitatorsNoc").val() *
+                        $("#ec_LeadfacilitatorsPd").val().replace(/,/g, "") *
+                        $("#ec_LeadfacilitatorsNod").val() *
                         0.2);
 
-            //if the customized type value is G.A
-            if (
-                gaPercentage.val() == "G.A Hybrid" ||
-                gaPercentage.val() == "G.A Virtual"
-            ) {
-                sumecLeadfacilitator +=
-                    sumecLeadfacilitator *
-                    (document.getElementById("ga-only-dropdown").value / 100);
-            }
-
             
-            sumEngagementCost += +sumecLeadfacilitator;
+            sumofEngagementCost += +sumofecLeadfacilitator;
             
-            $("#ec_LeadfacilitatorTotal").html(
-                currency.format(Math.ceil(sumecLeadfacilitator))
+            $("#ec_LeadfacilitatorsTotal").html(
+                currency.format(Math.ceil(sumofecLeadfacilitator))
             );
 
 //Co-facilitator
-$("#ec_CofacilitatorNoc").val($("#ef_CofaciNoc").val());
-$("#ec_CofacilitatorNod").val($("#ef_CofaciNod").val());
-$("#ec_CofacilitatorNwh").val($("#ef_CofaciNwh").val());
+$("#ec_CofacilitatorsNoc").val($("#ef_CofaciNoc").val());
+$("#ec_CofacilitatorsNod").val($("#ef_CofaciNod").val());
+$("#ec_CofacilitatorsNwh").val($("#ef_CofaciNsw").val());
+$("#ec_CofacilitatorsAtd").val($("#ef_CofaciAtd").val());
 
-        sumecCofacilitator +=
-            $("#ec_CofacilitatorNoc").val() *
-                $("#ec_CofacilitatorPd").val().replace(/,/g, "") *
-                $("#ec_CofacilitatorNod").val() +
-            $("#ec_CofacilitatorNwh").val() *
-                ($("#ec_CofacilitatorNoc").val() *
-                    $("#ec_CofacilitatorPd").val().replace(/,/g, "") *
-                    $("#ec_CofacilitatorNod").val() *
+        sumofecCofacilitator +=
+            $("#ec_CofacilitatorsNoc").val() *
+                $("#ec_CofacilitatorsPd").val().replace(/,/g, "") *
+                $("#ec_CofacilitatorsNod").val() +
+            $("#ec_CofacilitatorsNwh").val() *
+                ($("#ec_CofacilitatorsNoc").val() *
+                    $("#ec_CofacilitatorsPd").val().replace(/,/g, "") *
+                    $("#ec_CofacilitatorsNod").val() *
                     0.2);
 
-        //if the customized type value is G.A
-        if (
-            gaPercentage.val() == "G.A Hybrid" ||
-            gaPercentage.val() == "G.A Virtual"
-        ) {
-            sumecCofacilitator +=
-                sumecCofacilitator *
-                (document.getElementById("ga-only-dropdown").value / 100);
-        }
+        sumofEngagementCost += +sumofecCofacilitator;
 
-    
-        sumEngagementCost += +sumecCofacilitator;
-
-        $("#ec_CofacilitatorTotal").html(
-            currency.format(Math.ceil(sumecCofacilitator))
+        $("#ec_CofacilitatorsTotal").html(
+            currency.format(Math.ceil(sumofecCofacilitator))
         );
 
 //Action Learning Coach
 $("#ec_ActionlearningcoachNoc").val($("#ef_ActionLearnNoc").val());
 $("#ec_ActionlearningcoachNod").val($("#ef_ActionLearnNod").val());
-$("#ec_ActionlearningcoachNwh").val($("#ef_ActionLearnNwh").val());
+$("#ec_ActionlearningcoachNwh").val($("#ef_ActionLearnNsw").val());
+$("#ec_ActionlearningcoachAtd").val($("#ef_ActionLearnAtd").val());
 
-        sumecActionlearningcoach +=
+        sumofecActionlearningcoach +=
             $("#ec_ActionlearningcoachNoc").val() *
                 $("#ec_ActionlearningcoachPd").val().replace(/,/g, "") *
                 $("#ec_ActionlearningcoachNod").val() +
@@ -901,28 +873,18 @@ $("#ec_ActionlearningcoachNwh").val($("#ef_ActionLearnNwh").val());
                     $("#ec_ActionlearningcoachNod").val() *
                     0.2);
 
-        //if the customized type value is G.A
-        if (
-            gaPercentage.val() == "G.A Hybrid" ||
-            gaPercentage.val() == "G.A Virtual"
-        ) {
-            sumecActionlearningcoach +=
-                sumecActionlearningcoach *
-                (document.getElementById("ga-only-dropdown").value / 100);
-        }
-
-    
-        sumEngagementCost += +sumecActionlearningcoach;
+        sumofEngagementCost += +sumofecActionlearningcoach;
 
         $("#ec_ActionlearningcoachTotal").html(
-            currency.format(Math.ceil(sumecActionlearningcoach))
+            currency.format(Math.ceil(sumofecActionlearningcoach))
         );
 //Marshal
 $("#ec_MarshalNoc").val($("#ef_MarshalNoc").val());
 $("#ec_MarshalNod").val($("#ef_MarshalNod").val());
-$("#ec_MarshalNwh").val($("#ef_MarshalNwh").val());
+$("#ec_MarshalNwh").val($("#ef_MarshalNsw").val());
+$("#ec_MarshalAtd").val($("#ef_MarshalAtd").val());
 
-        sumecMarshal +=
+        sumofecMarshal +=
             $("#ec_MarshalNoc").val() *
                 $("#ec_MarshalPd").val().replace(/,/g, "") *
                 $("#ec_MarshalNod").val() +
@@ -932,29 +894,20 @@ $("#ec_MarshalNwh").val($("#ef_MarshalNwh").val());
                     $("#ec_MarshalNod").val() *
                     0.2);
 
-        //if the customized type value is G.A
-        if (
-            gaPercentage.val() == "G.A Hybrid" ||
-            gaPercentage.val() == "G.A Virtual"
-        ) {
-            sumecMarshal +=
-                sumecMarshal *
-                (document.getElementById("ga-only-dropdown").value / 100);
-        }
-
-    
-        sumEngagementCost += +sumecMarshal;
+       
+        sumofEngagementCost += +sumofecMarshal;
 
         $("#ec_MarshalTotal").html(
-            currency.format(Math.ceil(sumecMarshal))
+            currency.format(Math.ceil(sumofecMarshal))
         );
 
 //On-site PC
-$("#ec_OnsitepcNoc").val($("#ef_OnsitepcNoc").val());
-$("#ec_OnsitepcNod").val($("#ef_OnsitepcNod").val());
-$("#ec_OnsitepcNwh").val($("#ef_OnsitepcNwh").val());
+$("#ec_OnsitepcNoc").val($("#ef_OnsiteNoc").val());
+$("#ec_OnsitepcNod").val($("#ef_OnsiteNod").val());
+$("#ec_OnsitepcNwh").val($("#ef_OnsiteNsw").val());
+$("#ec_OnsitepcAtd").val($("#ef_OnsiteAtd").val());
 
-        sumecOnsitepc +=
+        sumofecOnsitepc +=
             $("#ec_OnsitepcNoc").val() *
                 $("#ec_OnsitepcPd").val().replace(/,/g, "") *
                 $("#ec_OnsitepcNod").val() +
@@ -964,67 +917,48 @@ $("#ec_OnsitepcNwh").val($("#ef_OnsitepcNwh").val());
                     $("#ec_OnsitepcNod").val() *
                     0.2);
 
-        //if the customized type value is G.A
-        if (
-            gaPercentage.val() == "G.A Hybrid" ||
-            gaPercentage.val() == "G.A Virtual"
-        ) {
-            sumecOnsitepc +=
-                sumecOnsitepc *
-                (document.getElementById("ga-only-dropdown").value / 100);
-        }
-
-    
-        sumEngagementCost += +sumecOnsitepc;
+        sumofEngagementCost += +sumofecOnsitepc;
 
         $("#ec_OnsitepcTotal").html(
-            currency.format(Math.ceil(sumecOnsitepc))
+            currency.format(Math.ceil(sumofecOnsitepc))
         );
-        $("#ec_ProgramSubtotal").html(
+        $("#ec_ProgramsSubtotal").html(
             currency.format(
                 Math.ceil(
-                    sumecLeadfacilitator +
-                        sumecCofacilitator +
-                        sumecActionlearningcoach +
-                        sumecMarshal +
-                        sumecOnsitepc
+                    sumofecLeadfacilitator +
+                        sumofecCofacilitator +
+                        sumofecActionlearningcoach +
+                        sumofecMarshal +
+                        sumofecOnsitepc
                 )
             )
         );
 
 //Documentor
-$("#ec_DocumentorNoc").val($("#ef_DocumentorNoc").val());
-$("#ec_DocumentorNod").val($("#ef_DocumentorNod").val());
-$("#ec_DocumentorNwh").val($("#ef_DocumentorNwh").val());
+$("#ec_DocumentorsNoc").val($("#ef_DocumentorNoc").val());
+$("#ec_DocumentorsNod").val($("#ef_DocumentorNod").val());
+$("#ec_DocumentorsNwh").val($("#ef_DocumentorNsw").val());
+$("#ec_DocumentorsAtd").val($("#ef_DocumentorAtd").val());
 
-        sumecDocumentor +=
-            $("#ec_DocumentorNoc").val() *
-                $("#ec_DocumentorPd").val().replace(/,/g, "") *
-                $("#ec_DocumentorNod").val() +
-            $("#ec_DocumentorNwh").val() *
-                ($("#ec_DocumentorNoc").val() *
-                    $("#ec_DocumentorPd").val().replace(/,/g, "") *
-                    $("#ec_DocumentorNod").val() *
+        sumofecDocumentor +=
+            $("#ec_DocumentorsNoc").val() *
+                $("#ec_DocumentorsPd").val().replace(/,/g, "") *
+                $("#ec_DocumentorsNod").val() +
+            $("#ec_DocumentorsNwh").val() *
+                ($("#ec_DocumentorsNoc").val() *
+                    $("#ec_DocumentorsPd").val().replace(/,/g, "") *
+                    $("#ec_DocumentorsNod").val() *
                     0.2);
 
-        //if the customized type value is G.A
-        if (
-            gaPercentage.val() == "G.A Hybrid" ||
-            gaPercentage.val() == "G.A Virtual"
-        ) {
-            sumecDocumentor +=
-                sumecDocumentor *
-                (document.getElementById("ga-only-dropdown").value / 100);
-        }
-
     
-        sumEngagementCost += +sumecDocumentor;
+        sumofEngagementCost += +sumofecDocumentor;
 
-        $("#ec_DocumentorTotal").html(
-            currency.format(Math.ceil(sumecDocumentor))
+        $("#ec_DocumentorsTotal").html(
+            currency.format(Math.ceil(sumofecDocumentor))
         );
 
 //Per Diem
+$("#ec_PerdiemNod").val($("#ef_PDNod").val());
 
         sumecPerdiem +=
             $("#ec_PerdiemNoc").val() *
@@ -1036,53 +970,34 @@ $("#ec_DocumentorNwh").val($("#ef_DocumentorNwh").val());
                     $("#ec_PerdiemNod").val() *
                     0.2);
 
-        //if the customized type value is G.A
-        if (
-            gaPercentage.val() == "G.A Hybrid" ||
-            gaPercentage.val() == "G.A Virtual"
-        ) {
-            sumecPerdiem +=
-                sumecPerdiem *
-                (document.getElementById("ga-only-dropdown").value / 100);
-        }
-
-    
-        sumEngagementCost += +sumecPerdiem;
+      
+        sumEngagementCost += +sumofecPerdiem;
 
         $("#ec_PerdiemTotal").html(
-            currency.format(Math.ceil(sumecPerdiem))
+            currency.format(Math.ceil(sumofecPerdiem))
         );
 
 //Off-program Fee
 
         sumecOffprogram +=
-        $("#ec_OffprogramNoc").val() *
-            $("#ec_OffprogramPd").val().replace(/,/g, "") *
-            $("#ec_OffprogramNod").val() +
-        $("#ec_OffprogramNwh").val() *
-            ($("#ec_OffprogramNoc").val() *
-                $("#ec_OffprogramPd").val().replace(/,/g, "") *
-                $("#ec_OffprogramNod").val() *
+        $("#ec_OffprogramsNoc").val() *
+            $("#ec_OffprogramsPd").val().replace(/,/g, "") *
+            $("#ec_OffprogramsNod").val() +
+        $("#ec_OffprogramsNwh").val() *
+            ($("#ec_OffprogramsNoc").val() *
+                $("#ec_OffprogramsPd").val().replace(/,/g, "") *
+                $("#ec_OffprogramsNod").val() *
                 0.2);
 
-        //if the customized type value is G.A
-        if (
-        gaPercentage.val() == "G.A Hybrid" ||
-        gaPercentage.val() == "G.A Virtual"
-        ) {
-        sumecOffprogram +=
-            sumecOffprogram *
-            (document.getElementById("ga-only-dropdown").value / 100);
-        }
 
+        sumEngagementCost += +sumofecOffprogram;
 
-        sumEngagementCost += +sumecOffprogram;
-
-        $("#ec_OffprogramTotal").html(
-        currency.format(Math.ceil(sumecOffprogram))
+        $("#ec_OffprogramsTotal").html(
+        currency.format(Math.ceil(sumofecOffprogram))
         );
 
 //Program Expenses
+
 
 
 //cluster reference
