@@ -415,6 +415,9 @@
                                     data-mytooltip-action="focus" 
                                     data-mytooltip-direction="right"
                                     style="background-color:#ffcccc; color:red;">
+                                    <option value="0" {{ old('') == '0' ? 'selected="selected"' : '' }} title="">
+                                        &#8369;0
+                                    </option>
                                     <option value="500" {{ old('') == '500' ? 'selected="selected"' : '' }} title="">
                                         &#8369;500
                                     </option>
