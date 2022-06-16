@@ -412,6 +412,7 @@ $(document).on(
                     ($("#ef_LeadconsultantNoc").val() *
                         +$(this).val().replace(/,/g, "") *
                         0.2) ;
+     
             if (
                 gaPercentage.val() == "G.A Hybrid" ||
                 gaPercentage.val() == "G.A Virtual"
@@ -420,6 +421,18 @@ $(document).on(
                     sumLc *
                     (document.getElementById("ga-only-dropdown").value / 100);
             }
+            //lead consultant engagement fees sum
+            $(this)
+                .find("#lead-total")
+                .html(currency.format(Math.ceil(sumLc)));
+                
+            $("#tableLeadconsultant1 > tr").on("click", ".removed", function () {
+                // Removing the current row.
+                $(this).closest("tr").remove();
+
+                // Decreasing total number of rows by 1.
+                rowIndx--;
+            });
             sumEf += +sumLc;
 
             $("#ec_LeadconsultantsNoc").val($("#ef_LeadconsultantNoc").val());
