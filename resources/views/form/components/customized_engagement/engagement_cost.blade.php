@@ -19,8 +19,6 @@
                     </tr>
                 </thead>
 
-                <tbody>
-
                     {{-- Consulting --}}
                     <tr class="">
                         <th class="px-4 title text-dark fw-bolder">COMMISSION</th>
@@ -33,12 +31,21 @@
                         <th> </th>
                     </tr>
 
-                    <tbody id="tableEngagementcost">
-                    <tr>
+                    <tbody id="tableSales">
+                    <tr id="salesRow">
                         <td class="title">Sales (4% / 5% / 6% / 7%)</td>
                         <td></td>
                         <td>
-                            <fieldset>
+                            {{-- <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                            value="{{ old('') }}" name="" id="inputSales" style="display: none;" disabled> --}}
+                            <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                            value="{{ old('') }}" name="" id="inputSales" 
+                            style="display: none;"
+                            onblur="this.value = this.value.replace('%', '') + '%';"
+                            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+                            maxlength="5" disabled>
+                            
+                            <fieldset id="dropdownSales">
                                 <select class="input js-mytooltip form-select @error('') is-invalid @enderror" name=""
                                     id="sales" data-mytooltip-content="<i>
                                         <b>Sales</b><br>
@@ -92,7 +99,7 @@
                             <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                 value="{{ old('') }}" name="" id="">
                         </td>
-                        <td><a href="javascript:void(0)" class="text-success font-18" title="Add" id="addBtn"><i
+                        <td><a href="javascript:void(0)" class="text-success font-18" title="Add" id="addBtn9"><i
                                     class="fa fa-plus"></i></a></td>
                     </tr>                        
                     </tbody>
@@ -680,8 +687,9 @@
                         <td>
                             <input type="text"
                                 class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ec_Programexpense" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
-                                maxlength="4">
+                                value="{{ old('') }}" name="" id="ec_Programexpense" 
+                                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+                                maxlength="5">
                         </td>
                         <td></td>
                         <td></td>
@@ -716,149 +724,76 @@
                                 value="{{ old('') }}" name="" id="">
                         </td>
                     </tr>
-
-
-                </tbody>
             </table>
         </div>
     </section>
 </div>
 
 <script>
-    // var rowIdx = 1;
-    // var sales = 1;
-    // var salesTotal = 1;
-    // $("#addBtn").on("click", function() {
-    //     // Adding a row inside the tbody.
-    //     $("#tableEngagementcost").append(`
-    //         <tr id="sales${++rowIdx}">
-    //             <td class="title">Sales (4% / 5% / 6% / 7%)</td>
-    //                 <td></td>
-    //                 <td>
-    //                     <fieldset>
-    //                         <select class="input js-mytooltip form-select @error('') is-invalid @enderror" name=""
-    //                             id="sales${++sales}" data-mytooltip-content="<i>
-    //                                 <b>Sales</b><br>
-    //                                 For large engagements, with EMs: <br>
-    //                                 4% - discounted <br>
-    //                                 6% - standard rates<br>
-    //                                 <br>
-    //                                 For regular engagements:<br>
-    //                                 5% - discounted<br>
-    //                                 7% - standard rates<br>
-    //                                 <br>
-    //                                 For Key Accounts, with EMs:<br>
-    //                                 4% - discounted<br>
-    //                                 5% - packaged rate</i>" data-mytooltip-theme="dark"
-    //                             data-mytooltip-action="focus" data-mytooltip-direction="right"
-    //                             style="background-color:#ffcccc; color:red;">
-    //                             <option value="0" {{ old('') == '0' ? 'selected="selected"' : '' }}
-    //                                 title="with minimal design customization, or platform customization outside of Zoom/Google Meets/MS Teams. Up to 2 hours of work">
-    //                                 0%
-    //                             </option>
-    //                             <option value="4" {{ old('') == '4' ? 'selected="selected"' : '' }}
-    //                                 title="with minimal design customization, or platform customization outside of Zoom/Google Meets/MS Teams. Up to 2 hours of work">
-    //                                 4%
-    //                             </option>
-    //                             <option value="5" {{ old('') == '5' ? 'selected="selected"' : '' }}
-    //                                 title="with minimal design customization, or platform customization outside of Zoom/Google Meets/MS Teams. Up to 2 hours of work">
-    //                                 5%
-    //                             </option>
-    //                             <option value="6" {{ old('') == '6' ? 'selected="selected"' : '' }}
-    //                                 title="with minimal design customization, or platform customization outside of Zoom/Google Meets/MS Teams. Up to 2 hours of work">
-    //                                 6%
-    //                             </option>
-    //                             <option value="7" {{ old('') == '7' ? 'selected="selected"' : '' }}
-    //                                 title="with minimal design customization, or platform customization outside of Zoom/Google Meets/MS Teams. Up to 2 hours of work">
-    //                                 7%
-    //                             </option>
-    //                         </select>
-    //                         @error('')
-    //                             <span class="invalid-feedback" role="alert">
-    //                                 <strong>{{ $message }}</strong>
-    //                             </span>
-    //                         @enderror
-    //                     </fieldset>
-    //                 </td>
-    //                 <td></td>
-    //                 <td></td>
-    //                 <td class="total-td tbl-engmt-cost">
-    //                     <h4 class="text-center" id="salesTotal${++salesTotal}">-</h4>
-    //                 </td>
-    //                 <td class="total-td">
-    //                     <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-    //                         value="{{ old('') }}" name="" id="">
-    //                 </td>
-    //                 <td><a href="javascript:void(0)" class="text-danger font-18 remove" title="Remove"><i class="fa fa-trash-o"></i></a></td>
-    //         </tr>`);
-    // });
+    var sales = 1;
+    $(document).ready(function() 
+    {
+        $("#addBtn9").on("click", function() 
+        {
+            // Adding a row inside the tbody.
+            $("#tableSales").append(
+                `<tr id="salesRow${++sales}">
+                    <td class="title">Sales (4% / 5% / 6% / 7%)</td>
+                        <td></td>
+                        <td>
+                            <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                            value="{{ old('') }}" name="" id="inputSales" onblur="this.value = this.value.replace('%', '') + '%';"
+                            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\......*)\./g, '$1');">
+                            
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td class="total-td tbl-engmt-cost">
+                            <h4 class="text-center" id="salesTotal">-</h4>
+                        </td>
+                        <td class="total-td">
+                            <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="">
+                        </td>
+                        <td><a href="javascript:void(0)" class="text-danger font-18 remove" title="Remove"><i class="fa fa-trash-o"></i></a></td>
+                </tr>`);
 
-    // $("#tableEngagementcost").on("click", ".remove", function ()
-    //         {
-    //             // Getting all the rows next to the row
-    //             // containing the clicked button
-    //             var child = $(this).closest("tr").nextAll();
-    //             // Iterating across all the rows
-    //             // obtained to change the index
-    //             child.each(function () {
-    //             // Getting <tr> id.
-    //             var id = $(this).attr("id");
+                //Setting the default value of
+                //sales into 0% when adding row
+                const salesId = document.querySelectorAll("#sales");
+                for (let i = 0; i < salesId.length; i++) {
+                salesId[i].value = "0";
+                }
 
-    //             // Getting the <p> inside the .row-index class.
-    //             var idx = $(this).children(".row-index").children("p");
+                //if you add row the 
+                //if statement will execute
+                if (sales > 1){
+                    document.getElementById("dropdownSales").style.display = "none"; //the dropdown will display none
+                    document.getElementById("inputSales").style.display = "";   //the input field will remove the style of "display = none;"
+                    document.getElementById("inputSales").disabled = false;     //remove the disabled attribute in input field
+                    // document.getElementById("inputSales").value = "";   //to remove the last inputed value
+                } 
+            });
 
-    //             // Gets the row number from <tr> id.
-    //             var dig = parseInt(id.substring(1));
+            // Remove row   
+            $("#tableSales").on("click", ".remove", function () {
+                // Getting all the rows next to the row
+                // containing the clicked button
+                var child = $(this).closest("tr").nextAll();
+        
+                // Removing the current row.
+                $(this).closest("tr").remove();
+            
+                // Decreasing total number of rows by 1.
+                sales--;
+                if (sales == 1) {
+                document.getElementById("inputSales").style.display = "none"; 
+                document.getElementById("sales").value = "0";
+                document.getElementById("dropdownSales").style.display = "";
+                document.getElementById("inputSales").value = "";   //to remove the last inputed value
+            }
 
-    //             // Modifying row index.
-    //             idx.html(`${dig - 1}`);
-
-    //             // Modifying row id.
-    //             $(this).attr("id", `R${dig - 1}`);
-    //         });
-    
-    //             // Removing the current row.
-    //             $(this).closest("tr").remove();
-    
-    //             // Decreasing total number of rows by 1.
-    //             rowIdx--;
-    //         });
-
-    //         $("#tableEngagementcost").on("input", ".unit_price", function () {
-    //             var unit_price = parseFloat($(this).val());
-    //             var qty = parseFloat($(this).closest("tr").find(".qty").val());
-    //             var total = $(this).closest("tr").find(".total");
-    //             total.val(unit_price * qty);
-
-    //             calc_total();
-    //         });
-
-    //         $("#tableEngagementcost").on("input", ".qty", function () {
-    //             var qty = parseFloat($(this).val());
-    //             var unit_price = parseFloat($(this).closest("tr").find(".unit_price").val());
-    //             var total = $(this).closest("tr").find(".total");
-    //             total.val(unit_price * qty);
-    //             calc_total();
-    //         });
-
-    //         function calc_total() {
-    //             var sum = 0;
-    //             $(".total").each(function () {
-    //             sum += parseFloat($(this).val());
-    //             });
-    //             $(".subtotal").text(sum);
-                
-    //             var amounts = sum;
-    //             var tax     = 100;
-    //             $(document).on("change keyup blur", "#qty", function() 
-    //             {
-    //                 var qty = $("#qty").val();
-    //                 var discount = $(".discount").val();
-    //                 $(".total").val(amounts * qty);
-    //                 $("#sum_total").val(amounts * qty);
-    //                 $("#tax_1").val((amounts * qty)/tax);
-    //                 $("#grand_total").val((parseInt(amounts)) - (parseInt(discount)));
-    //             }); 
-    //         }
+        });
+    });
 </script>
 

@@ -3,7 +3,7 @@ require('./components/currencyFormat');
 //*************************************** CUSTOMIZED ENGAGEMENT BUDGET FORM COMPUTATION ********************************************************//
 $(document).on(
     "change keyup click",
-    ".customized-type, .ga-only-dropdown, .remove, #tableLeadconsultant, #ef_LeadconsultantNoc, #ef_LeadconsultantHf, #ef_LeadconsultantNoh, #ef_LeadconsultantNwh, #ef_AnalystNoc, #ef_AnalystHf, #ef_AnalystNoh, #ef_AnalystNwh, #ef_DesignerNoc, #ef_DesignerHf, #ef_DesignerNoh, #ef_DesignerNwh, #ef_LeadfacilitatorNoc, #ef_LeadfacilitatorHf, #ef_LeadfacilitatorNoh, #ef_LeadfacilitatorNwh, #ef_CofaciNoc, #ef_CofaciHf, #ef_CofaciNoh, #ef_CofaciNwh, #ef_ModeratorNoc, #ef_ModeratorHf, #ef_ModeratorNoh, #ef_ModeratorNwh, #ef_ProducerNoc, #ef_ProducerHf, #ef_ProducerNoh, #ef_ProducerNwh, #ef_DocumentorNoc, #ef_DocumentorHf, #ef_DocumentorNoh, #ef_DocumentorNwh, #ef_Totalpackage, #sales, #referral, #engagementManager, #ec_LeadconsultantHf, #ec_AnalystHf, #ec_DesignerHf, #ec_CreatorsNoc, #ec_CreatorsHf, #ec_CreatorsNoh, #ec_LeadfacilitatorHf, #ec_CofacilitatorHf, #ec_ModeratorHf, #ec_ProducerHf, #ec_DocumentorHf, #ec_ProgramNoc, #ec_ProgramHf, #ec_Programexpense, #ef_Totalpackage, #LessCTO_NOC, #addBtn, #addBtn2",
+    ".customized-type, .ga-only-dropdown, .remove, #tableLeadconsultant, #ef_LeadconsultantNoc, #ef_LeadconsultantHf, #ef_LeadconsultantNoh, #ef_LeadconsultantNwh, #ef_AnalystNoc, #ef_AnalystHf, #ef_AnalystNoh, #ef_AnalystNwh, #ef_DesignerNoc, #ef_DesignerHf, #ef_DesignerNoh, #ef_DesignerNwh, #ef_LeadfacilitatorNoc, #ef_LeadfacilitatorHf, #ef_LeadfacilitatorNoh, #ef_LeadfacilitatorNwh, #ef_CofaciNoc, #ef_CofaciHf, #ef_CofaciNoh, #ef_CofaciNwh, #ef_ModeratorNoc, #ef_ModeratorHf, #ef_ModeratorNoh, #ef_ModeratorNwh, #ef_ProducerNoc, #ef_ProducerHf, #ef_ProducerNoh, #ef_ProducerNwh, #ef_DocumentorNoc, #ef_DocumentorHf, #ef_DocumentorNoh, #ef_DocumentorNwh, #ef_Totalpackage, #sales, #inputSales, #referral, #engagementManager, #ec_LeadconsultantHf, #ec_AnalystHf, #ec_DesignerHf, #ec_CreatorsNoc, #ec_CreatorsHf, #ec_CreatorsNoh, #ec_LeadfacilitatorHf, #ec_CofacilitatorHf, #ec_ModeratorHf, #ec_ProducerHf, #ec_DocumentorHf, #ec_ProgramNoc, #ec_ProgramHf, #ec_Programexpense, #ef_Totalpackage, #LessCTO_NOC, #addBtn, #addBtn2, #addBtn3, #addBtn4, #addBtn5, #addBtn6, #addBtn7, #addBtn8, #addBtn9",
     function () {
 
         //customized type
@@ -699,13 +699,19 @@ $(document).on(
         });
 
         //Sales
-        $("#sales").each(function () {
-            sumSales +=
+        $("#tableSales > tr").each(function () {
+            sumSales =
                 ($("#ef_Totalpackage").val().replace(/\₱|,/g, "") / 100) *
-                $(this).val();
+                $(this).find("#sales").val() || ($("#ef_Totalpackage").val().replace(/\₱|,/g, "") / 100) *
+                $(this).find("#inputSales").val().replace(/%/g, "");
+
+            //Producer engagement fees sum
+            $(this).find("#salesTotal").html
+            ("₱" + currency.format(Math.ceil(sumSales)));
+
             sumEngagementCost += +sumSales;
         });
-        $("#salesTotal").html(currency.format(Math.ceil(sumSales)));
+        // $("#salesTotal").html(currency.format(Math.ceil(sumSales)));
 
         //Referral
         $("#referral").each(function () {
