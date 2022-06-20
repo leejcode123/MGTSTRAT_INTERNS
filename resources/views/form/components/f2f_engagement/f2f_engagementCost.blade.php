@@ -38,7 +38,7 @@
                         <td></td>
                         <td>
                             <fieldset>
-                                <select class="input js-mytooltip  text-center form-select @error('') is-invalid @enderror" name="" id="sale"
+                                <select class="input js-mytooltip  text-center form-select @error('') is-invalid @enderror" name="" id="ec_sale"
                                     data-mytooltip-content="<i>
                                         <b>Sales</b><br>
                                         For large engagements, with EMs: <br>
@@ -88,7 +88,7 @@
                         <td></td>
                         <td></td>
                         <td class="total-td tbl-engmt-cost">
-                            <h4 class="text-center" id="saleTotal">-</h4>
+                            <h4 class="text-center" id="ec_saleTotal">-</h4>
                         </td>
                         <td class="total-td">
                             <input type="text" class="form-control input-table @error('') is-invalid @enderror"
@@ -194,7 +194,7 @@
                         <td>
                             <fieldset>
                                 <select class="input js-mytooltip  text-center form-select @error('') is-invalid @enderror" name=""
-                                    id="ecoffsitePc" style="background-color:#ffcccc; color:red;"
+                                    id="ec_offsitePc" style="background-color:#ffcccc; color:red;"
                                     data-mytooltip-content="<i>
                                        0% - Key Accounts, handled by full time office PC <br>
                                         3% - simple indoor programs<br>
@@ -210,13 +210,13 @@
                                     <option value="0" {{ old('') == '0' ? 'selected="selected"' : '' }} title="">
                                         0%
                                     </option>
-                                    <option value="4" {{ old('') == '4' ? 'selected="selected"' : '' }} title="">
+                                    <option value="3" {{ old('') == '3' ? 'selected="selected"' : '' }} title="">
                                         3%
                                     </option>
                                     <option value="4" {{ old('') == '4' ? 'selected="selected"' : '' }} title="">
                                         4%
                                     </option>
-                                    <option value="4" {{ old('') == '4' ? 'selected="selected"' : '' }} title="">
+                                    <option value="5" {{ old('') == '5' ? 'selected="selected"' : '' }} title="">
                                         5%
                                     </option>
                                 </select>
@@ -231,7 +231,7 @@
                         <td></td>
                         <td></td>
                         <td class="total-td tbl-engmt-cost">
-                            <h4 class="text-center" id="ecoffsitePcTotal">-</h4>
+                            <h4 class="text-center" id="ec_offsitePcTotal">-</h4>
                         </td>
                         <td class="total-td">
                             <input type="text" class="form-control input-table @error('') is-invalid @enderror"
