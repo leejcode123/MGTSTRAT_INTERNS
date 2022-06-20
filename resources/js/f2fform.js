@@ -439,7 +439,7 @@ $(document).on(
             //lead consultant engagement fees sum
             $(this).find("#leadTotal").html(currency.format(Math.ceil(sumLc)));
 
-            $("#tableLeadconsultant > tr ").on("click", ".remove", function () {
+            $("#tableLeadconsultant > tr ").on("click", ".removed", function () {
                 // Removing he current row.
                 $(this).closest("tr").remove();
 
@@ -471,12 +471,12 @@ $(document).on(
             sumofEngagementCost += +sumofecLeadconsultant;
             
         });
-        
+
             $("#ec_LeadconsultantsTotal").html(currency.format(Math.ceil(sumofecLeadconsultant)));
             // $("#lead-total").html(currency.format(Math.ceil(sumLc)));
-            // $("#subtotal-consulting").html(
-            //     currency.format(Math.ceil(sumLc + sumAnlst))
-            // );
+            $("#subtotal-consulting").html(
+                currency.format(Math.ceil(sumLc + sumAnlst))
+            );
 
             // Analyst
             $("#ef_AnalystPdf").each(function () {

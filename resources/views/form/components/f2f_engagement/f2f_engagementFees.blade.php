@@ -63,16 +63,16 @@
                                     data-mytooltip-action="focus" 
                                     data-mytooltip-direction="right" 
                                     style="background-color:#ffcccc; color:red;">
-                                    <option value="50,400" {{ old('') == '50,400' ? 'selected="selected"' : '' }}>
+                                    <option value="50400" {{ old('') == '50400' ? 'selected="selected"' : '' }}>
                                         &#8369;50,400
                                     </option>
-                                    <option value="56,000" {{ old('') == '56,000' ? 'selected="selected"' : '' }} selected>
+                                    <option value="56000" {{ old('') == '56000' ? 'selected="selected"' : '' }} selected>
                                         &#8369;56,000
                                     </option>
-                                    <option value="64,800" {{ old('') == '64,800' ? 'selected="selected"' : '' }}>
+                                    <option value="64800" {{ old('') == '64800' ? 'selected="selected"' : '' }}>
                                         &#8369;64,800
                                     </option>
-                                    <option value="72,000" {{ old('') == '72,000' ? 'selected="selected"' : '' }}>
+                                    <option value="72000" {{ old('') == '72000' ? 'selected="selected"' : '' }}>
                                         &#8369;72,000
                                     </option>
                                 </select>
@@ -742,7 +742,7 @@ var rowIndx = 1;
                                     value="{{ old('') }}"name="" id="">
                             </td>
                             <td class="border border-white" style="background-color: #FFFFFF;">
-                            <a href="javascript:void(0)" class="text-danger font-18 remove" title="Remove"><i class="fa fa-trash-o"></i></a>
+                            <a href="javascript:void(0)" class="text-danger font-18 removed" title="Remove"><i class="fa fa-trash-o"></i></a>
                             </td>
             </tr>`
         );
