@@ -17,6 +17,7 @@
                             WEEKENDS HOLIDAYS *</th>
                         <th class="title-th" scope="col" width=15%>TOTAL FEE</th>
                         <th class="title-th" scope="col" width=15%>ROSTER</th>
+                        <th class="add-row border border-white"> </th>
                     </tr>
                 </thead>
 
@@ -32,69 +33,76 @@
                         <th></th>
                         <th class="total-td"></th>
                         <th class="total-td"></th>
+                        <th class="border border-white"> </th>
                     </tr>
-                    <tr class="" id="sale">
-                        <td class="title">Sales (4% / 5% / 6% / 7%)</td>
-                        <td></td>
-                        <td>
-                            <fieldset>
-                                <select class="input js-mytooltip  text-center form-select @error('') is-invalid @enderror" name="" id="ec_sale"
-                                    data-mytooltip-content="<i>
-                                        <b>Sales</b><br>
-                                        For large engagements, with EMs: <br>
-                                        4% - discounted <br>
-                                        6% - standard rates<br>
-                                        <br>
-                                        For regular engagements:<br>
-                                        5% - discounted<br>
-                                        7% - standard rates<br>
-                                        <br>
-                                        For Key Accounts, with EMs:<br>
-                                        4% - discounted<br>
-                                        5% - packaged rate</i>"
-                                    data-mytooltip-theme="dark"
-                                    data-mytooltip-action="focus" 
-                                    data-mytooltip-direction="right"
-                                    style="background-color:#ffcccc; color:red;">
-                                    <option value="0" {{ old('') == '0' ? 'selected="selected"' : '' }}
-                                        title="with minimal design customization, or platform customization outside of Zoom/Google Meets/MS Teams. Up to 2 hours of work">
-                                        0%
-                                    </option>
-                                    <option value="4" {{ old('') == '4' ? 'selected="selected"' : '' }}
-                                        title="with minimal design customization, or platform customization outside of Zoom/Google Meets/MS Teams. Up to 2 hours of work">
-                                        4%
-                                    </option>
-                                    <option value="5" {{ old('') == '5' ? 'selected="selected"' : '' }}
-                                        title="with minimal design customization, or platform customization outside of Zoom/Google Meets/MS Teams. Up to 2 hours of work">
-                                        5%
-                                    </option>
-                                    <option value="6" {{ old('') == '6' ? 'selected="selected"' : '' }}
-                                        title="with minimal design customization, or platform customization outside of Zoom/Google Meets/MS Teams. Up to 2 hours of work">
-                                        6%
-                                    </option>
-                                    <option value="7" {{ old('') == '7' ? 'selected="selected"' : '' }}
-                                        title="with minimal design customization, or platform customization outside of Zoom/Google Meets/MS Teams. Up to 2 hours of work">
-                                        7%
-                                    </option>
-                                </select>
-                                @error('')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </fieldset>
+                    <tbody id="tableofSale">
+                        <tr class="" id="rowofSale">
+                            <td class="title">Sales (4% / 5% / 6% / 7%)</td>
+                            <td></td>
+                            <td>
+                                <fieldset>
+                                    <select class="input js-mytooltip  text-center form-select @error('') is-invalid @enderror" name="" id="ec_sale"
+                                        data-mytooltip-content="<i>
+                                            <b>Sales</b><br>
+                                            For large engagements, with EMs: <br>
+                                            4% - discounted <br>
+                                            6% - standard rates<br>
+                                            <br>
+                                            For regular engagements:<br>
+                                            5% - discounted<br>
+                                            7% - standard rates<br>
+                                            <br>
+                                            For Key Accounts, with EMs:<br>
+                                            4% - discounted<br>
+                                            5% - packaged rate</i>"
+                                        data-mytooltip-theme="dark"
+                                        data-mytooltip-action="focus" 
+                                        data-mytooltip-direction="right"
+                                        style="background-color:#ffcccc; color:red;">
+                                        <option value="0" {{ old('') == '0' ? 'selected="selected"' : '' }}
+                                            title="with minimal design customization, or platform customization outside of Zoom/Google Meets/MS Teams. Up to 2 hours of work">
+                                            0%
+                                        </option>
+                                        <option value="4" {{ old('') == '4' ? 'selected="selected"' : '' }}
+                                            title="with minimal design customization, or platform customization outside of Zoom/Google Meets/MS Teams. Up to 2 hours of work">
+                                            4%
+                                        </option>
+                                        <option value="5" {{ old('') == '5' ? 'selected="selected"' : '' }}
+                                            title="with minimal design customization, or platform customization outside of Zoom/Google Meets/MS Teams. Up to 2 hours of work">
+                                            5%
+                                        </option>
+                                        <option value="6" {{ old('') == '6' ? 'selected="selected"' : '' }}
+                                            title="with minimal design customization, or platform customization outside of Zoom/Google Meets/MS Teams. Up to 2 hours of work">
+                                            6%
+                                        </option>
+                                        <option value="7" {{ old('') == '7' ? 'selected="selected"' : '' }}
+                                            title="with minimal design customization, or platform customization outside of Zoom/Google Meets/MS Teams. Up to 2 hours of work">
+                                            7%
+                                        </option>
+                                    </select>
+                                    @error('')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </fieldset>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td class="total-td tbl-engmt-cost">
+                                <h4 class="text-center" id="ec_saleTotal">-</h4>
+                            </td>
+                            <td class="total-td">
+                                <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                                    value="{{ old('') }}" name="" id="">
+                            </td>
+                            <td style="background-color: #FFFFFF;" class="border border-white"><a href="javascript:void(0)"
+                                class="text-success font-18" title="Add" id="addButton"><i
+                                    class="fa fa-plus"></i></a>
                         </td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td class="total-td tbl-engmt-cost">
-                            <h4 class="text-center" id="ec_saleTotal">-</h4>
-                        </td>
-                        <td class="total-td">
-                            <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="">
-                        </td>
-                    </tr>
+                        </tr>
+                    </tbody>
                     <tr class="">
                         <td class="title">Referral (2% / 3%)</td>
                         <td></td>
