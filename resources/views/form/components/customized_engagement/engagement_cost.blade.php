@@ -19,7 +19,7 @@
                     </tr>
                 </thead>
 
-                {{-- Consulting --}}
+                {{-- COMMISSION --}}
                 <tr class="">
                     <th class="px-4 title text-dark fw-bolder">COMMISSION</th>
                     <th></th>
@@ -236,37 +236,45 @@
                     <th class="total-td"></th>
                     <th class="total-td"></th>
                 </tr>
-                <tr class="" id="lead-consultant">
-                    <td class="title">Lead Consultant (P7K, P9K)</td>
-                    <td class="">
-                        <input type="number"
-                            class="text-center form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ec_LeadconsultantNoc" max="100"
-                            readonly>
-                    </td>
-                    <td class="">
-                        <input type="text"
-                            class="text-center fw-bold text-dark form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ec_LeadconsultantHf">
-                    </td>
-                    <td class="">
-                        <input type="number"
-                            class="text-center form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ec_LeadconsultantNoh" readonly>
-                    </td>
-                    <td class="">
-                        <input type="number"
-                            class="text-center form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ec_LeadconsultantNwh" readonly>
-                    </td>
-                    <td class="total-td">
-                        <h4 class="text-center lead" id="ec_LeadconsultantTotal">-</h4>
-                    </td>
-                    <td class="total-td">
-                        <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="">
-                    </td>
-                </tr>
+
+                <tbody id="ec_tableLeadConsultant">
+                    <tr class="" id="ec_LeadConsultant">
+                        <td class="title">Lead Consultant (P7K, P9K)</td>
+                        <td class="">
+                            <input type="number"
+                                class="text-center form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ec_LeadconsultantNoc" max="100"
+                                readonly>
+                        </td>
+                        <td class="">
+                            <input type="text"
+                                class="text-center fw-bold text-dark form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ec_LeadconsultantHf">
+                        </td>
+                        <td class="">
+                            <input type="number"
+                                class="text-center form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ec_LeadconsultantNoh" readonly>
+                        </td>
+                        <td class="">
+                            <input type="number"
+                                class="text-center form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ec_LeadconsultantNwh" readonly>
+                        </td>
+                        <td class="total-td">
+                            <h4 class="text-center lead" id="ec_LeadconsultantTotal">-</h4>
+                        </td>
+                        <td class="total-td">
+                            <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="">
+                        </td>
+                        <td><a href="javascript:void(0)" class="text-success font-18" title="Add"
+                            id="addBtn12"><i class="fa fa-plus"></i></a>
+                        </td>
+                    </tr>
+                </tbody>
+
+                
                 <tr class="">
                     <td class="title">Analyst</td>
                     <td class="">

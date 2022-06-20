@@ -197,4 +197,45 @@
 
         });
     });
+
+    var leadConsultant = 1;
+    $(document).ready(function () {
+        $("#addBtn").on("click", function() {
+            // Adding a row inside the tbody.
+            $("#ec_tableLeadConsultant").append(`
+                <tr id="ec_LeadConsultant${++leadConsultant}">
+                    <td class="title">Lead Consultant (P7K, P9K)</td>
+                    <td class="">
+                        <input type="number"
+                            class="text-center form-control input-table @error('') is-invalid @enderror"
+                            value="{{ old('') }}" name="" id="ec_LeadconsultantNoc" max="100"
+                            readonly>
+                    </td>
+                    <td class="">
+                        <input type="text"
+                            class="text-center fw-bold text-dark form-control input-table @error('') is-invalid @enderror"
+                            value="{{ old('') }}" name="" id="ec_LeadconsultantHf">
+                            </td>
+                    <td class="">
+                        <input type="number"
+                            class="text-center form-control input-table @error('') is-invalid @enderror"
+                            value="{{ old('') }}" name="" id="ec_LeadconsultantNoh" readonly>
+                    </td>
+                    <td class="">
+                        <input type="number"
+                            class="text-center form-control input-table @error('') is-invalid @enderror"
+                            value="{{ old('') }}" name="" id="ec_LeadconsultantNwh" readonly>
+                    </td>
+                    <td class="total-td">
+                        <h4 class="text-center lead" id="ec_LeadconsultantTotal">-</h4>
+                    </td>
+                    <td class="total-td">
+                        <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                            value="{{ old('') }}" name="" id="">
+                    </td>
+                </tr>
+            `);
+        });        
+    });
+
 </script>

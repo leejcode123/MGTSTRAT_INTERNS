@@ -843,13 +843,13 @@ $(document).on(
             //start of engagement cost
 
             //Sales
-            $("#sale").each(function () {
+            $("#tableofSale > tr").each(function () {
                 sumofSales +=
                     ($("#input_totalPackages").val().replace(/,/g, "") / 100) *
-                    $(this).val();
+                    $(this).find("#ec_sale").val();
                 sumofEngagementCost += +sumofSales;
             });
-            $("#saleTotal").html(currency.format(Math.ceil(sumofSales)));
+            $(this).find("#ec_saleTotal").html(currency.format(Math.ceil(sumofSales)));
 
             //Referral
             $("#referrals").each(function () {
@@ -872,14 +872,14 @@ $(document).on(
             );
 
             //Offsite PC
-            $("#ecoffsitePc").each(function () {
+            $("#ec_offsitePc").each(function () {
                 sumofOffsitepc +=
                     ($("#input_totalPackages").val().replace(/,/g, "") / 100) -
                     $("#subtotal-consulting").val() - $("#subtotal-PD").val() *
                     $(this).val();
                 sumofOffsitepc += +sumofOffsitepc;
             });
-            $("#ecoffsitePcTotal").html(
+            $("#ec_offsitePcTotal").html(
                 currency.format(Math.ceil(sumofOffsitepc))
             );
 
@@ -1041,8 +1041,8 @@ $(document).on(
             //Off-program Fee
 
             sumofecOffprogram +=
-                $(this).val() *
-                $("#ec_OffprogramsNoc").val();
+                $("#ec_OffprogramsNoc").val() *
+                $("#ec_OffprogramsPd").val().replace(/,/g, "");
 
 
             sumofEngagementCost += +sumofecOffprogram;
@@ -1053,8 +1053,8 @@ $(document).on(
 
             //Program Expenses
             sumofecProgramexpense +=
-                $(this).val() *
-                $("#input_totalPackages").val();
+                ($("#ec_Programexpenses").val().replace(/%/g, "") *
+                $("#input_totalPackages").val().replace(/,/g, "")) /100;
 
 
             sumofEngagementCost += +sumofecProgramexpense;
