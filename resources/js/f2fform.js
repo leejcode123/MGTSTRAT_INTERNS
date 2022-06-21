@@ -323,7 +323,7 @@ document.getElementById("ec_Programexpenses").defaultValue = 2 + "%";
 //Customized Engagement form of Engagement Fees
 $(document).on(
     "change keyup click",
-    ".f2f-customized-type, .f2f-ga-only-dropdown, #ef_LeadconsultantAtd, #ef_LeadconsultantNoc, #ef_LeadconsultantHf, #ef_LeadconsultantNoh, #ef_LeadconsultantNwh, #ef_AnalystNoc, #ef_AnalystPdf, #ef_AnalystNod, #ef_AnalystAtd, #ef_AnalystNsw, #ef_DesignerNoc, #ef_DesignerPdf, #ef_DesignerNod, #ef_DesignerAtd, #ef_DesignerNsw, #ef_LeadFaciNoc, #ef_LeadFaciPdf, #ef_LeadFaciNod, #ef_LeadFaciAtd, #ef_LeadFaciNsw, #ef_CoFaciNoc, #ef_CoFaciPdf, #ef_CoFaciNod, #ef_CoFaciAtd, #ef_CoFaciNsw, #ef_ActionLearnNoc, #ef_ActionLearnPdf, #ef_ActionLearnNod, #ef_ActionLearnAtd, #ef_ActionLearnNsw, #ef_MarshalNoc, #ef_MarshalPdf, #ef_MarshalNod, #ef_MarshalAtd, #ef_MarshalNsw, #ef_OnsiteNoc, #ef_OnsitePdf, #ef_OnsiteNod, #ef_OnsiteAtd, #ef_OnsiteNsw, #ef_DocumentorNoc, #ef_DocumentorPdf, #ef_DocumentorNod, #ef_DocumentorAtd, #ef_DocumentorNsw,  #ef_PDNoc, #ef_PDPdf, #ef_PDNod, #ef_PDAtd, #ef_PDNsw, #input_totalPackages, #sale, #referrals, #ecengagementManager, #offsitePC, #ec_LeadconsultantsPd, #ec_AnalystsPd, #ec_DesignersPd, #ec_CreatorNoc, #ec_CreatorPd, #ec_CreatorNod, #ec_LeadfacilitatorsPd, #ec_CofacilitatorsPd, #ec_ActionlearningcoachPd, #ec_MarshalPd, #ec_OnsitepcPD, #ec_DocumentorsPd, #ec_PerdiemPd, #ec_PerdiemNoc, #ec_OffprogramsPd, #ec_OffprogramsNoc, #ec_Programexpenses, #tableLeadconsultant",
+    ".f2f-customized-type, .f2f-ga-only-dropdown, #ef_LeadconsultantAtd, #ef_LeadconsultantNoc, #ef_LeadconsultantHf, #ef_LeadconsultantNoh, #ef_LeadconsultantNwh, #ef_AnalystNoc, #ef_AnalystPdf, #ef_AnalystNod, #ef_AnalystAtd, #ef_AnalystNsw, #ef_DesignerNoc, #ef_DesignerPdf, #ef_DesignerNod, #ef_DesignerAtd, #ef_DesignerNsw, #ef_LeadFaciNoc, #ef_LeadFaciPdf, #ef_LeadFaciNod, #ef_LeadFaciAtd, #ef_LeadFaciNsw, #ef_CoFaciNoc, #ef_CoFaciPdf, #ef_CoFaciNod, #ef_CoFaciAtd, #ef_CoFaciNsw, #ef_ActionLearnNoc, #ef_ActionLearnPdf, #ef_ActionLearnNod, #ef_ActionLearnAtd, #ef_ActionLearnNsw, #ef_MarshalNoc, #ef_MarshalPdf, #ef_MarshalNod, #ef_MarshalAtd, #ef_MarshalNsw, #ef_OnsiteNoc, #ef_OnsitePdf, #ef_OnsiteNod, #ef_OnsiteAtd, #ef_OnsiteNsw, #ef_DocumentorNoc, #ef_DocumentorPdf, #ef_DocumentorNod, #ef_DocumentorAtd, #ef_DocumentorNsw,  #ef_PDNoc, #ef_PDPdf, #ef_PDNod, #ef_PDAtd, #ef_PDNsw, #input_totalPackages, #ec_sale, #inputforSale, #referrals, #inputforReferrals, #ecengagementManager, #inputforEngagementManager, #ec_offsitePc, #ec_LeadconsultantsPd, #ec_AnalystsPd, #ec_DesignersPd, #ec_CreatorNoc, #ec_CreatorPd, #ec_CreatorNod, #ec_LeadfacilitatorsPd, #ec_CofacilitatorsPd, #ec_ActionlearningcoachPd, #ec_MarshalPd, #ec_OnsitepcPD, #ec_DocumentorsPd, #ec_PerdiemPd, #ec_PerdiemNoc, #ec_OffprogramsPd, #ec_OffprogramsNoc, #ec_Programexpenses, #tableLeadconsultant, #ecaddButton",
     function () {
         //customized type
         $(".f2f-customized-type").each(function () {
@@ -844,32 +844,42 @@ $(document).on(
 
             //Sales
             $("#tableofSale > tr").each(function () {
-                sumofSales +=
-                    ($("#input_totalPackages").val().replace(/,/g, "") / 100) *
-                    $(this).find("#ec_sale").val();
+                sumofSales =
+                    ($("#input_totalPackages").val().replace(/\₱|,/g, "") / 100) *
+                    $(this).find("#ec_sale").val() ||
+                    ($("#input_totalPackages").val().replace(/\₱|,/g, "") / 100) *
+                    $(this).find("#inputforSale").val().replace(/%/g, "");
+
+                    $(this).find("#ec_saleTotal").html(currency.format(Math.ceil(sumofSales)));
+
                 sumofEngagementCost += +sumofSales;
             });
-            $(this).find("#ec_saleTotal").html(currency.format(Math.ceil(sumofSales)));
 
             //Referral
-            $("#referrals").each(function () {
-                sumofReferral +=
-                    ($("#input_totalPackages").val().replace(/,/g, "") / 100) *
-                    $(this).val();
+            $("#tableofReferrals > tr").each(function () {
+                sumofReferral =
+                    ($("#input_totalPackages").val().replace(/\₱|,/g, "") / 100) *
+                    $(this).find("#referrals").val() ||
+                    ($("#input_totalPackages").val().replace(/\₱|,/g, "") / 100) *
+                    $(this).find("#inputforReferrals").val().replace(/%/g, "");
+
+                    $(this).find("#referralsTotal").html(currency.format(Math.ceil(sumofReferral)));                
+                    
                 sumofEngagementCost += +sumofReferral;
             });
-            $("#referralsTotal").html(currency.format(Math.ceil(sumofReferral)));
 
             //Engagement Manager
-            $("#ecengagementManager").each(function () {
-                sumofEngagementManager +=
-                    ($("#input_totalPackages").val().replace(/,/g, "") / 100) *
-                    $(this).val();
+            $("#tableofEngagementManager > tr").each(function () {
+                sumofEngagementManager =
+                    ($("#input_totalPackages").val().replace(/\₱|,/g, "") / 100) *
+                    $(this).find("#ecengagementManager").val() ||
+                    ($("#input_totalPackages").val().replace(/\₱|,/g, "") / 100) *
+                    $(this).find("#inputforEngagementManager").val().replace(/%/g, "");
+
+                    $(this).find("#ecengagementManagerTotal").html(currency.format(Math.ceil(sumofEngagementManager)));
+
                 sumofEngagementCost += +sumofEngagementManager;
             });
-            $("#ecengagementManagerTotal").html(
-                currency.format(Math.ceil(sumofEngagementManager))
-            );
 
             //Offsite PC
             $("#ec_offsitePc").each(function () {
@@ -877,7 +887,8 @@ $(document).on(
                     ($("#input_totalPackages").val().replace(/,/g, "") / 100) -
                     $("#subtotal-consulting").val() - $("#subtotal-PD").val() *
                     $(this).val();
-                sumofOffsitepc += +sumofOffsitepc;
+
+                sumofEngagementCost += +sumofOffsitepc;
             });
             $("#ec_offsitePcTotal").html(
                 currency.format(Math.ceil(sumofOffsitepc))
