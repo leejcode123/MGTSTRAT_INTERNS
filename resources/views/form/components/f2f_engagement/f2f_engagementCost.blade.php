@@ -23,7 +23,6 @@
 
                 <tbody>
 
-                    {{-- Consulting --}}
                     <tr class="">
                         <th class="px-4 title text-dark fw-bolder">COMMISSION</th>
                         <th></th>
@@ -119,7 +118,7 @@
                                 oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
                                 maxlength="5" disabled>
 
-                                <fieldset>
+                                <fieldset id="dropdownforReferrals">
                                     <select class="input js-mytooltip text-center  form-select @error('') is-invalid @enderror" name="" id="referrals"
                                         data-mytooltip-content="<i>
                                             Referral - 2% - repeat contracts from the same client<br>
@@ -182,7 +181,7 @@
                                 oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
                                 maxlength="5" disabled>
 
-                                <fieldset>
+                                <fieldset id="dropdownforEngagementManager">
                                     <select class="input js-mytooltip text-center  form-select @error('') is-invalid @enderror" name=""
                                         id="ecengagementManager" style="background-color:#ffcccc; color:red;"
                                         data-mytooltip-content="<i>
@@ -222,11 +221,18 @@
                             </td>
                         </tr>
                     </tbody>
-                        <tr class="">
+                    <tbody id="tableofOffsite">
+                        <tr class="" id="rowofOffsite">
                             <td class="title fw-bold text-dark">OFFSITE PC(3%/4%/5%)</td>
                             <td></td>
                             <td>
-                                <fieldset>
+                                <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="inputforOffsite" style="display: none;"
+                                onblur="this.value = this.value.replace('%', '') + '%';"
+                                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+                                maxlength="5" disabled>
+
+                                <fieldset id="dropdownforOffsite">
                                     <select class="input js-mytooltip  text-center form-select @error('') is-invalid @enderror" name=""
                                         id="ec_offsitePc" style="background-color:#ffcccc; color:red;"
                                         data-mytooltip-content="<i>
@@ -275,7 +281,7 @@
                                 class="fa fa-plus"></i></a>
                             </td>
                         </tr>
-
+                    </tbody>
                     {{-- break --}}
                     <tr>
                         <td class="title" colspan=""></td>
