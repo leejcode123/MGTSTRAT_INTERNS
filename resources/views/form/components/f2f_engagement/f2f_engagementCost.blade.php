@@ -17,12 +17,12 @@
                             WEEKENDS HOLIDAYS *</th>
                         <th class="title-th" scope="col" width=15%>TOTAL FEE</th>
                         <th class="title-th" scope="col" width=15%>ROSTER</th>
+                        <th class="title-th"> </th>
                     </tr>
                 </thead>
 
                 <tbody>
 
-                    {{-- Consulting --}}
                     <tr class="">
                         <th class="px-4 title text-dark fw-bolder">COMMISSION</th>
                         <th></th>
@@ -32,213 +32,256 @@
                         <th></th>
                         <th class="total-td"></th>
                         <th class="total-td"></th>
+                        <th> </th>
                     </tr>
-                    <tr class="" id="sale">
-                        <td class="title">Sales (4% / 5% / 6% / 7%)</td>
-                        <td></td>
-                        <td>
-                            <fieldset>
-                                <select class="input js-mytooltip  text-center form-select @error('') is-invalid @enderror" name="" id="sale"
-                                    data-mytooltip-content="<i>
-                                        <b>Sales</b><br>
-                                        For large engagements, with EMs: <br>
-                                        4% - discounted <br>
-                                        6% - standard rates<br>
-                                        <br>
-                                        For regular engagements:<br>
-                                        5% - discounted<br>
-                                        7% - standard rates<br>
-                                        <br>
-                                        For Key Accounts, with EMs:<br>
-                                        4% - discounted<br>
-                                        5% - packaged rate</i>"
-                                    data-mytooltip-theme="dark"
-                                    data-mytooltip-action="focus" 
-                                    data-mytooltip-direction="right"
-                                    style="background-color:#ffcccc; color:red;">
-                                    <option value="0" {{ old('') == '0' ? 'selected="selected"' : '' }}
-                                        title="with minimal design customization, or platform customization outside of Zoom/Google Meets/MS Teams. Up to 2 hours of work">
-                                        0%
-                                    </option>
-                                    <option value="4" {{ old('') == '4' ? 'selected="selected"' : '' }}
-                                        title="with minimal design customization, or platform customization outside of Zoom/Google Meets/MS Teams. Up to 2 hours of work">
-                                        4%
-                                    </option>
-                                    <option value="5" {{ old('') == '5' ? 'selected="selected"' : '' }}
-                                        title="with minimal design customization, or platform customization outside of Zoom/Google Meets/MS Teams. Up to 2 hours of work">
-                                        5%
-                                    </option>
-                                    <option value="6" {{ old('') == '6' ? 'selected="selected"' : '' }}
-                                        title="with minimal design customization, or platform customization outside of Zoom/Google Meets/MS Teams. Up to 2 hours of work">
-                                        6%
-                                    </option>
-                                    <option value="7" {{ old('') == '7' ? 'selected="selected"' : '' }}
-                                        title="with minimal design customization, or platform customization outside of Zoom/Google Meets/MS Teams. Up to 2 hours of work">
-                                        7%
-                                    </option>
-                                </select>
-                                @error('')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </fieldset>
-                        </td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td class="total-td tbl-engmt-cost">
-                            <h4 class="text-center" id="saleTotal">-</h4>
-                        </td>
-                        <td class="total-td">
-                            <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="">
-                        </td>
-                    </tr>
-                    <tr class="">
-                        <td class="title">Referral (2% / 3%)</td>
-                        <td></td>
-                        <td>
-                            <fieldset>
-                                <select class="input js-mytooltip text-center  form-select @error('') is-invalid @enderror" name="" id="referrals"
-                                    data-mytooltip-content="<i>
-                                        Referral - 2% - repeat contracts from the same client<br>
-                                        3% - 1st contract with a new client, or with a 2-year dormant client<br>
-                                        <br>
-                                        When in doubt, check with Joi on who referror is.
-                                        
-                                        </i>"
-                                    data-mytooltip-theme="dark"
-                                    data-mytooltip-action="focus" 
-                                    data-mytooltip-direction="right"
-                                    style="background-color:#ffcccc; color:red;">
-                                    <option value="0" {{ old('') == '0' ? 'selected="selected"' : '' }} title="">
-                                        0%
-                                    </option>
-                                    <option value="2" {{ old('') == '2' ? 'selected="selected"' : '' }} title="">
-                                        2%
-                                    </option>
-                                    <option value="3" {{ old('') == '3' ? 'selected="selected"' : '' }} title="">
-                                        3%
-                                    </option>
-                                </select>
-                            
-                                @error('')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </fieldset>
-                        </td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td class="total-td tbl-engmt-cost">
-                            <h4 class="text-center" id="referralsTotal">-</h4>
-                        </td>
-                        <td class="total-td">
-                            <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="">
-                        </td>
-                    </tr>
+                    <tbody id="tableofSale">
+                        <tr class="" id="rowofSale">
+                            <td class="title">Sales (4% / 5% / 6% / 7%)</td>
+                            <td></td>
+                            <td>
+                                <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="inputforSale" style="display: none;"
+                                onblur="this.value = this.value.replace('%', '') + '%';"
+                                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+                                maxlength="5" disabled>
+
+                                <fieldset id="dropdownforSale">
+                                    <select class="input js-mytooltip  text-center form-select @error('') is-invalid @enderror" name="" id="ec_sale"
+                                        data-mytooltip-content="<i>
+                                            <b>Sales</b><br>
+                                            For large engagements, with EMs: <br>
+                                            4% - discounted <br>
+                                            6% - standard rates<br>
+                                            <br>
+                                            For regular engagements:<br>
+                                            5% - discounted<br>
+                                            7% - standard rates<br>
+                                            <br>
+                                            For Key Accounts, with EMs:<br>
+                                            4% - discounted<br>
+                                            5% - packaged rate</i>"
+                                        data-mytooltip-theme="dark"
+                                        data-mytooltip-action="focus" 
+                                        data-mytooltip-direction="right"
+                                        style="background-color:#ffcccc; color:red;">
+                                        <option value="0" {{ old('') == '0' ? 'selected="selected"' : '' }}
+                                            title="with minimal design customization, or platform customization outside of Zoom/Google Meets/MS Teams. Up to 2 hours of work">
+                                            0%
+                                        </option>
+                                        <option value="4" {{ old('') == '4' ? 'selected="selected"' : '' }}
+                                            title="with minimal design customization, or platform customization outside of Zoom/Google Meets/MS Teams. Up to 2 hours of work">
+                                            4%
+                                        </option>
+                                        <option value="5" {{ old('') == '5' ? 'selected="selected"' : '' }}
+                                            title="with minimal design customization, or platform customization outside of Zoom/Google Meets/MS Teams. Up to 2 hours of work">
+                                            5%
+                                        </option>
+                                        <option value="6" {{ old('') == '6' ? 'selected="selected"' : '' }}
+                                            title="with minimal design customization, or platform customization outside of Zoom/Google Meets/MS Teams. Up to 2 hours of work">
+                                            6%
+                                        </option>
+                                        <option value="7" {{ old('') == '7' ? 'selected="selected"' : '' }}
+                                            title="with minimal design customization, or platform customization outside of Zoom/Google Meets/MS Teams. Up to 2 hours of work">
+                                            7%
+                                        </option>
+                                    </select>
+                                    @error('')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </fieldset>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td class="total-td tbl-engmt-cost">
+                                <h4 class="text-center" id="ec_saleTotal">-</h4>
+                            </td>
+                            <td class="total-td">
+                                <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                                    value="{{ old('') }}" name="" id="">
+                            </td>
+                            <td><a href="javascript:void(0)" class="text-success font-18" title="Add" id="ecaddButton"><i
+                                class="fa fa-plus"></i></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tbody id="tableofReferrals">
+                        <tr class="" id="rowofReferrals">
+                            <td class="title">Referral (2% / 3%)</td>
+                            <td></td>
+                            <td>
+                                <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="inputforReferrals" style="display: none;"
+                                onblur="this.value = this.value.replace('%', '') + '%';"
+                                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+                                maxlength="5" disabled>
+
+                                <fieldset id="dropdownforReferrals">
+                                    <select class="input js-mytooltip text-center  form-select @error('') is-invalid @enderror" name="" id="referrals"
+                                        data-mytooltip-content="<i>
+                                            Referral - 2% - repeat contracts from the same client<br>
+                                            3% - 1st contract with a new client, or with a 2-year dormant client<br>
+                                            <br>
+                                            When in doubt, check with Joi on who referror is.
+                                            
+                                            </i>"
+                                        data-mytooltip-theme="dark"
+                                        data-mytooltip-action="focus" 
+                                        data-mytooltip-direction="right"
+                                        style="background-color:#ffcccc; color:red;">
+                                        <option value="0" {{ old('') == '0' ? 'selected="selected"' : '' }} title="">
+                                            0%
+                                        </option>
+                                        <option value="2" {{ old('') == '2' ? 'selected="selected"' : '' }} title="">
+                                            2%
+                                        </option>
+                                        <option value="3" {{ old('') == '3' ? 'selected="selected"' : '' }} title="">
+                                            3%
+                                        </option>
+                                    </select>
+                                
+                                    @error('')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </fieldset>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td class="total-td tbl-engmt-cost">
+                                <h4 class="text-center" id="referralsTotal">-</h4>
+                            </td>
+                            <td class="total-td">
+                                <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                                    value="{{ old('') }}" name="" id="">
+                            </td>
+                            <td><a href="javascript:void(0)" class="text-success font-18" title="Add" id="ecaddButton2"><i
+                                class="fa fa-plus"></i></a>
+                            </td>
+                        </tr>
+                    </tbody>
                     <tr>
                         <td class="title" colspan=""></td>
                         <td class="" colspan="5"></td>
                         <td class="title" colspan=""></td>
                         <td class="title" colspan=""></td>
                     </tr>
-                    <tr class="">
-                        <td class="title fw-bold text-dark">ENGAGEMENT MANAGER(4%)</td>
-                        <td></td>
-                        <td>
-                            <fieldset>
-                                <select class="input js-mytooltip text-center  form-select @error('') is-invalid @enderror" name=""
-                                    id="ecengagementManager" style="background-color:#ffcccc; color:red;"
-                                    data-mytooltip-content="<i>
-                                        Engagement Manager - 4% - all Key Accounts and large engagements <br>
-                                        <br>
-                                        Large engagements: large scale consulting, or a series of at least 8 virtual sessions under 1 contract involving a roster of at least 2 people
-                                        </i>"
-                                    data-mytooltip-theme="dark"
-                                    data-mytooltip-action="focus" 
-                                    data-mytooltip-direction="right">
-                                    <option value="0" {{ old('') == '0' ? 'selected="selected"' : '' }} title="">
-                                        0%
-                                    </option>
-                                    <option value="4" {{ old('') == '4' ? 'selected="selected"' : '' }} title="">
-                                        4%
-                                    </option>
-                                </select>
-                                @error('')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </fieldset>
-                        </td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td class="total-td tbl-engmt-cost">
-                            <h4 class="text-center" id="ecengagementManagerTotal">-</h4>
-                        </td>
-                        <td class="total-td">
-                            <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="">
-                        </td>
-                    </tr>
+                    <tbody id="tableofEngagementManager">
+                        <tr class="" id="rowofEngagementManager">
+                            <td class="title fw-bold text-dark">ENGAGEMENT MANAGER(4%)</td>
+                            <td></td>
+                            <td>
+                                <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="inputforEngagementManager" style="display: none;"
+                                onblur="this.value = this.value.replace('%', '') + '%';"
+                                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+                                maxlength="5" disabled>
 
-                    <tr class="">
-                        <td class="title fw-bold text-dark">OFFSITE PC(3%/4%/5%)</td>
-                        <td></td>
-                        <td>
-                            <fieldset>
-                                <select class="input js-mytooltip  text-center form-select @error('') is-invalid @enderror" name=""
-                                    id="ecoffsitePc" style="background-color:#ffcccc; color:red;"
-                                    data-mytooltip-content="<i>
-                                       0% - Key Accounts, handled by full time office PC <br>
-                                        3% - simple indoor programs<br>
-                                        4% - large engagements with EM<br>
-                                        5% - small engagements<br><br>
+                                <fieldset id="dropdownforEngagementManager">
+                                    <select class="input js-mytooltip text-center  form-select @error('') is-invalid @enderror" name=""
+                                        id="ecengagementManager" style="background-color:#ffcccc; color:red;"
+                                        data-mytooltip-content="<i>
+                                            Engagement Manager - 4% - all Key Accounts and large engagements <br>
+                                            <br>
+                                            Large engagements: large scale consulting, or a series of at least 8 virtual sessions under 1 contract involving a roster of at least 2 people
+                                            </i>"
+                                        data-mytooltip-theme="dark"
+                                        data-mytooltip-action="focus" 
+                                        data-mytooltip-direction="right">
+                                        <option value="0" {{ old('') == '0' ? 'selected="selected"' : '' }} title="">
+                                            0%
+                                        </option>
+                                        <option value="4" {{ old('') == '4' ? 'selected="selected"' : '' }} title="">
+                                            4%
+                                        </option>
+                                    </select>
+                                    @error('')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </fieldset>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td class="total-td tbl-engmt-cost">
+                                <h4 class="text-center" id="ecengagementManagerTotal">-</h4>
+                            </td>
+                            <td class="total-td">
+                                <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                                    value="{{ old('') }}" name="" id="">
+                            </td>
+                            <td><a href="javascript:void(0)" class="text-success font-18" title="Add" id="ecaddButton3"><i
+                                class="fa fa-plus"></i></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tbody id="tableofOffsite">
+                        <tr class="" id="rowofOffsite">
+                            <td class="title fw-bold text-dark">OFFSITE PC(3%/4%/5%)</td>
+                            <td></td>
+                            <td>
+                                <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="inputforOffsite" style="display: none;"
+                                onblur="this.value = this.value.replace('%', '') + '%';"
+                                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+                                maxlength="5" disabled>
 
-                                        Computation is based on total package LESS consulting + per diem
-                                        
-                                        </i>"
-                                    data-mytooltip-theme="dark"
-                                    data-mytooltip-action="focus" 
-                                    data-mytooltip-direction="right">
-                                    <option value="0" {{ old('') == '0' ? 'selected="selected"' : '' }} title="">
-                                        0%
-                                    </option>
-                                    <option value="4" {{ old('') == '4' ? 'selected="selected"' : '' }} title="">
-                                        3%
-                                    </option>
-                                    <option value="4" {{ old('') == '4' ? 'selected="selected"' : '' }} title="">
-                                        4%
-                                    </option>
-                                    <option value="4" {{ old('') == '4' ? 'selected="selected"' : '' }} title="">
-                                        5%
-                                    </option>
-                                </select>
-                                @error('')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </fieldset>
-                        </td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td class="total-td tbl-engmt-cost">
-                            <h4 class="text-center" id="ecoffsitePcTotal">-</h4>
-                        </td>
-                        <td class="total-td">
-                            <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="">
-                        </td>
-                    </tr>
+                                <fieldset id="dropdownforOffsite">
+                                    <select class="input js-mytooltip  text-center form-select @error('') is-invalid @enderror" name=""
+                                        id="ec_offsitePc" style="background-color:#ffcccc; color:red;"
+                                        data-mytooltip-content="<i>
+                                        0% - Key Accounts, handled by full time office PC <br>
+                                            3% - simple indoor programs<br>
+                                            4% - large engagements with EM<br>
+                                            5% - small engagements<br><br>
 
+                                            Computation is based on total package LESS consulting + per diem
+                                            
+                                            </i>"
+                                        data-mytooltip-theme="dark"
+                                        data-mytooltip-action="focus" 
+                                        data-mytooltip-direction="right">
+                                        <option value="0" {{ old('') == '0' ? 'selected="selected"' : '' }} title="">
+                                            0%
+                                        </option>
+                                        <option value="3" {{ old('') == '3' ? 'selected="selected"' : '' }} title="">
+                                            3%
+                                        </option>
+                                        <option value="4" {{ old('') == '4' ? 'selected="selected"' : '' }} title="">
+                                            4%
+                                        </option>
+                                        <option value="5" {{ old('') == '5' ? 'selected="selected"' : '' }} title="">
+                                            5%
+                                        </option>
+                                    </select>
+                                    @error('')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </fieldset>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td class="total-td tbl-engmt-cost">
+                                <h4 class="text-center" id="ec_offsitePcTotal">-</h4>
+                            </td>
+                            <td class="total-td">
+                                <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                                    value="{{ old('') }}" name="" id="">
+                            </td>
+                            <td><a href="javascript:void(0)" class="text-success font-18" title="Add" id="ecaddButton4"><i
+                                class="fa fa-plus"></i></a>
+                            </td>
+                        </tr>
+                    </tbody>
                     {{-- break --}}
                     <tr>
                         <td class="title" colspan=""></td>
@@ -917,3 +960,4 @@
     </section>
 </div>
 
+@include('form.components.f2f_engagement.f2f_script.f2f_engagement_cost')
