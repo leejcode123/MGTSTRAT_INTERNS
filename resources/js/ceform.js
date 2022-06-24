@@ -68,7 +68,6 @@ $(document).on(
 
         //customized type
         var gaPercentage = $(".customized-type");
-        rowIdx = 1;
 
         /*******************************************************CONSULTING*********************************************************************/
         //Lead consultant
@@ -94,12 +93,12 @@ $(document).on(
                     sum13 *
                     (document.getElementById("ga-only-dropdown").value / 100);
             }
-            
+
             //lead consultant engagement fees sum
             $(this)
                 .find("#leadTotal")
                 .html(currency.format(Math.ceil(sum13)));
-            
+
             $("#tableLeadconsultant > tr").on("click", ".remove", function () {
                 // Removing the current row.
                 $(this).closest("tr").remove();

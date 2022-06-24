@@ -135,7 +135,7 @@
                         
                         <td>
                             <input type="text" class="form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="ef_AnalystPdf">
+                                value="{{ old('') }}" name="" id="ef_AnalystPdf" data-type="currency">
                         </td>
                         <td>
                             <input type="number" class=" input js-mytooltip form-control input-table @error('') is-invalid @enderror" 
@@ -176,7 +176,7 @@
                         <td></td>
                         <td></td>
                         <td class="total-td" style="background-color: rgba(146, 146, 146, 0.727)">
-                            <h4 class="text-center" id="subtotal-consulting">-</h4>
+                            <h4 class="text-center" id="subtotalConsulting">-</h4>
                         </td>
                         <td class="total-td">
                             <input type="text" class="form-control input-table @error('') is-invalid @enderror"

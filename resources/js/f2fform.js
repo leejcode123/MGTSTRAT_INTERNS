@@ -472,7 +472,8 @@ $(document).on(
             
         });
 
-            $("#ec_LeadconsultantsTotal").html(currency.format(Math.ceil(sumofecLeadconsultant)));
+            // $("#ec_LeadconsultantsTotal").html(currency.format(Math.ceil(sumEf)));
+            $("#subtotalConsulting").html("₱" + currency.format(Math.ceil(sumLc + sumAnlst)));
             // $("#lead-total").html(currency.format(Math.ceil(sumLc)));
             $("#subtotal-consulting").html(
                 currency.format(Math.ceil(sumLc + sumAnlst))
@@ -528,8 +529,8 @@ $(document).on(
                 $("#ec_SubtotalsConsulting").html("₱" + currency.format(Math.ceil(sumofecLeadconsultant + sumofecAnalyst)));
             });
             $("#analyst-total").html(currency.format(Math.ceil(sumAnlst)));
-            $("#subtotal-consulting").html(
-                currency.format(Math.ceil(sumLc + sumAnlst))
+            $("#subtotalConsulting").html(
+               "₱" +  currency.format(Math.ceil(sumLc + sumAnlst))
             );
 
             // Designer
@@ -580,7 +581,7 @@ $(document).on(
                 $("#ec_DesignersTotal").html(currency.format(Math.ceil(sumofecDesigner)));
             });
 
-            $("#subtotal-design").html(currency.format(Math.ceil(sumDesigner)));
+            $("#subtotal-design").html("₱" +currency.format(Math.ceil(sumDesigner)));
             // Lead Facilitator
             $("#ef_LeadFaciPdf").each(function () {
                 sumLeadFaci +=
@@ -760,7 +761,7 @@ $(document).on(
                 sumEf += +sumDocumentor;
             });
 
-            $("#subtotal-Documentor").html(currency.format(Math.ceil(sumDocumentor)));
+            $("#subtotal-Documentor").html("₱" + currency.format(Math.ceil(sumDocumentor)));
             
             // Per Diem
             $("#ef_PDPdf").each(function () {
@@ -778,7 +779,7 @@ $(document).on(
                 }
                 sumEf += +sumPD;
             });
-            $("#subtotal-PD").html(currency.format(Math.ceil(sumPD)));;
+            $("#subtotal-PD").html("₱" + currency.format(Math.ceil(sumPD)));;
 
 
             // Onsite PC
@@ -808,8 +809,8 @@ $(document).on(
 
             $("#subtotal-Onsite").html(currency.format(Math.ceil(sumOnsite)));
             $("#program-Subtotal").html(
-                currency.format(Math.ceil(sumLeadFaci + sumCoFaci + sumActionLearn + sumMarshal + sumOnsite)))
-            $("#standard_total").html(currency.format(Math.ceil(sumEf)));
+               "₱" + currency.format(Math.ceil(sumLeadFaci + sumCoFaci + sumActionLearn + sumMarshal + sumOnsite)))
+            $("#standard_total").html("₱" + currency.format(Math.ceil(sumEf)));
 
             // Discountsss-------------------------------------------------------------------
             $("#input_totalPackages").each(function () {
