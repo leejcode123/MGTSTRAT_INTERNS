@@ -4,7 +4,7 @@
 <div class="form-body container">
     <section>
         <div class="table-responsive" id="no-more-tables">
-            <table class="table table-bordered table-hover" id="">
+            <table class="table table-bordered table-hover" id="tableEngagementCost">
                 <thead class="table-dark">
                     <tr class="text-center">
                         <th class="title-th" scope="col" width=20%></th>
@@ -238,12 +238,12 @@
                 </tr>
 
                 <tbody id="ec_tableLeadConsultant">
-                    <tr class="" id="ec_LeadConsultant">
+                    <tr id="ec_LeadConsultant">
                         <td class="title">Lead Consultant (P7K, P9K)</td>
                         <td class="">
                             <input type="number"
                                 class="text-center form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ec_LeadconsultantNoc" max="100"
+                                value="{{ old('') }}" name="" id="ec_LeadconsultantNoc1" max="100"
                                 readonly>
                         </td>
                         <td class="">
@@ -254,12 +254,12 @@
                         <td class="">
                             <input type="number"
                                 class="text-center form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ec_LeadconsultantNoh" readonly>
+                                value="{{ old('') }}" name="" id="ec_LeadconsultantNoh1" readonly>
                         </td>
                         <td class="">
                             <input type="number"
                                 class="text-center form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ec_LeadconsultantNwh" readonly>
+                                value="{{ old('') }}" name="" id="ec_LeadconsultantNwh1" readonly>
                         </td>
                         <td class="total-td">
                             <h4 class="text-center lead" id="ec_LeadconsultantTotal">-</h4>
@@ -267,9 +267,6 @@
                         <td class="total-td">
                             <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                 value="{{ old('') }}" name="" id="">
-                        </td>
-                        <td><a href="javascript:void(0)" class="text-success font-18" title="Add"
-                            id="addBtn12"><i class="fa fa-plus"></i></a>
                         </td>
                     </tr>
                 </tbody>

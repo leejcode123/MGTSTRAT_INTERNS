@@ -6,15 +6,17 @@
             $("#tableLeadconsultant").append(`
                 <tr id="leadConsultant${++rowIdx}" class="table-warning">
                     <td class="title">Lead Consultant</td>
-                    <td data-title="# OF CONSULTANTS">
+                    <td data-title="# OF CONSULTANTS" class="noc">
                         <input type="number"
                             class="input js-mytooltip input-table form-control  @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="ef_Leadconsultant[]" id="ef_LeadconsultantNoc" title="" max="100"
+                            value="{{ old('') }}" name="ef_Leadconsultant[]" id="ef_LeadconsultantNoc${rowIdx}" title="" max="100"
                             data-mytooltip-content="<i>Includes in depth needs analysis (i.e. surveys, interviews, FGDs),
                             special research (i.e. to study client materials or client -required materials, industry
                             or function specific content), creation of client-specific learning aids/tools
-                            (i.e. assessments, c</i>" data-mytooltip-theme="dark" data-mytooltip-action="focus"
-                            data-mytooltip-direction="bottom">
+                            (i.e. assessments, c</i>" 
+                            data-mytooltip-theme="dark" data-mytooltip-action="focus" 
+                            data-mytooltip-direction="bottom"
+                            oninput="document.getElementById('ec_LeadconsultantNoc${rowIdx}').value = document.getElementById('ef_LeadconsultantNoc${rowIdx}').value;">
                     </td>
                     <td>
                         <fieldset>
@@ -41,16 +43,18 @@
 
                         </fieldset>
                     </td>
-                    <td>
+                    <td class="noh">
                         <input type="number"
                             class="form-control input-table input js-mytooltip @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="ef_Leadconsultant[]" id="ef_LeadconsultantNoh"
+                            value="{{ old('') }}" name="ef_Leadconsultant[]" id="ef_LeadconsultantNoh${rowIdx}"
                             data-mytooltip-content="<i>Number of Hours</i>" data-mytooltip-theme="dark"
-                            data-mytooltip-action="focus" data-mytooltip-direction="bottom">
+                            data-mytooltip-action="focus" data-mytooltip-direction="bottom"
+                            oninput="document.getElementById('ec_LeadconsultantNoh${rowIdx}').value = document.getElementById('ef_LeadconsultantNoh${rowIdx}').value;">
                     </td>
-                    <td>
+                    <td class="nwh">
                         <input type="number" class="form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="ef_Leadconsultant[]" id="ef_LeadconsultantNwh">
+                            value="{{ old('') }}" name="ef_Leadconsultant[]" id="ef_LeadconsultantNwh${rowIdx}"
+                            oninput="document.getElementById('ec_LeadconsultantNwh${rowIdx}').value = document.getElementById('ef_LeadconsultantNwh${rowIdx}').value;">
                     </td>
                     <td class="total-td">
                         <h4 class="text-center lead" id="leadTotal">-</h4>
@@ -59,10 +63,51 @@
                         <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                             value="{{ old('') }}" name="" id="">
                     </td>
-                    <td class="border border-white" style="background-color: #FFFFFF;"><a href="javascript:void(0)" class="text-danger font-18 remove" title="Remove"><i class="fa fa-trash-o"></i></a></td>
+                    <td class="border border-white" style="background-color: #FFFFFF;">
+                        <a href="javascript:void(0)" class="text-danger font-18 remove" title="Remove" onclick="$('#ecButton${rowIdx}').trigger('click');">
+                            <i class="fa fa-trash-o"></i>
+                        </a>
+                    </td>
                 </tr>
             `);
         });
+        
+        $("#tableLeadconsultant").on("click", ".remove", function () {
+
+                // Getting all the rows next to the row
+                // containing the clicked button
+                var child = $(this).closest("tr").nextAll();
+
+                // Iterating across all the rows
+                // obtained to change the index
+                child.each(function () {
+                    // Getting <tr> id.
+                    var id = $(this).attr("id");
+
+                    // Getting the <input> inside the .noc, .noh, .nwh class.
+                    var noc = $(this).children(".noc").children("input");
+                    var noh = $(this).children(".noh").children("input");
+                    var nwh = $(this).children(".nwh").children("input");
+
+                    // Gets the row number from <tr> id.
+                    var dig = parseInt(id.substring(14));
+
+                    // Modifying row id.
+                    $(this).attr("id", `leadConsultant${dig - 1}`);
+
+                    // Modifying row index.
+                    noc.attr("id", `ef_LeadconsultantNoc${dig - 1}`);
+                    noh.attr("id", `ef_LeadconsultantNoh${dig - 1}`);
+                    nwh.attr("id", `ef_LeadconsultantNwh${dig - 1}`);
+                });
+
+                // Removing the current row.
+                $(this).closest("tr").remove();
+
+                // Decreasing total number of rows by 1.
+                rowIdx--;
+                // $(`#ecButton${rowIdx}`).trigger('click');
+            });
 
         var efAnalyst = 1;
         $("#addBtn2").on("click", function() {

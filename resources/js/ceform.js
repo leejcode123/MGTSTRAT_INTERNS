@@ -1,6 +1,8 @@
 require("./components/clusterReference");
 require("./components/currencyFormat");
 //*************************************** CUSTOMIZED ENGAGEMENT BUDGET FORM COMPUTATION ********************************************************//
+leadConsultant = 0;
+leadConsultant++;
 $(document).on(
     "change keyup click",
     ".customized-type, .ga-only-dropdown, .remove, #tableLeadconsultant, #ef_LeadconsultantNoc, #ef_LeadconsultantHf, #ef_LeadconsultantNoh, #ef_LeadconsultantNwh, #ef_AnalystNoc, #ef_AnalystHf, #ef_AnalystNoh, #ef_AnalystNwh, #ef_DesignerNoc, #ef_DesignerHf, #ef_DesignerNoh, #ef_DesignerNwh, #ef_LeadfacilitatorNoc, #ef_LeadfacilitatorHf, #ef_LeadfacilitatorNoh, #ef_LeadfacilitatorNwh, #ef_CofaciNoc, #ef_CofaciHf, #ef_CofaciNoh, #ef_CofaciNwh, #ef_ModeratorNoc, #ef_ModeratorHf, #ef_ModeratorNoh, #ef_ModeratorNwh, #ef_ProducerNoc, #ef_ProducerHf, #ef_ProducerNoh, #ef_ProducerNwh, #ef_DocumentorNoc, #ef_DocumentorHf, #ef_DocumentorNoh, #ef_DocumentorNwh, #ef_Totalpackage, #sales, #inputSales, #referral, #engagementManager, #ec_LeadconsultantHf, #ec_AnalystHf, #ec_DesignerHf, #ec_CreatorsNoc, #ec_CreatorsHf, #ec_CreatorsNoh, #ec_LeadfacilitatorHf, #ec_CofacilitatorHf, #ec_ModeratorHf, #ec_ProducerHf, #ec_DocumentorHf, #ec_ProgramNoc, #ec_ProgramHf, #ec_Programexpense, #ef_Totalpackage, #LessCTO_NOC, #inputReferral, #inputManager, #addBtn, #addBtn2, #addBtn3, #addBtn4, #addBtn5, #addBtn6, #addBtn7, #addBtn8, #addBtn9, #addBtn10, #addBtn11 ",
@@ -68,20 +70,24 @@ $(document).on(
 
         //customized type
         var gaPercentage = $(".customized-type");
-        rowIdx = 1;
+        rowIdx = 0;
+        leadConsultant = 0;
 
         /*******************************************************CONSULTING*********************************************************************/
         //Lead consultant
         $("#tableLeadconsultant > tr").each(function () {
-            //lead consultant engagement fees auto sum
+
+            rowIdx++;
+            // leadConsultant++;
+
             sum13 =
-                $(this).find("#ef_LeadconsultantNoc").val() *
+                $(this).find(`#ef_LeadconsultantNoc${rowIdx}`).val() *
                     +$(this).find("#ef_LeadconsultantHf").val() *
-                    $(this).find("#ef_LeadconsultantNoh").val() +
-                $(this).find("#ef_LeadconsultantNwh").val() *
-                    ($(this).find("#ef_LeadconsultantNoc").val() *
+                    $(this).find(`#ef_LeadconsultantNoh${rowIdx}`).val() +
+                $(this).find(`#ef_LeadconsultantNwh${rowIdx}`).val() *
+                    ($(this).find(`#ef_LeadconsultantNoc${rowIdx}`).val() *
                         +$(this).find("#ef_LeadconsultantHf").val() *
-                        $(this).find("#ef_LeadconsultantNoh").val() *
+                        $(this).find(`#ef_LeadconsultantNoh${rowIdx}`).val() *
                         0.2);
 
             // if the customized type is G.A Hybrid or G.A Virtual is
@@ -94,39 +100,123 @@ $(document).on(
                     sum13 *
                     (document.getElementById("ga-only-dropdown").value / 100);
             }
-            
+
             //lead consultant engagement fees sum
             $(this)
                 .find("#leadTotal")
                 .html(currency.format(Math.ceil(sum13)));
-            
-            $("#tableLeadconsultant > tr").on("click", ".remove", function () {
-                // Removing the current row.
-                $(this).closest("tr").remove();
-
-                // Decreasing total number of rows by 1.
-                rowIdx--;
-            });
 
             //Assign the value of lead consultant to the sum of engagement fees
             sum += +sum13;
 
             //Assign the values of lead consultant engagement fees to
             //lead consultant engagement cost
-            $("#ec_LeadconsultantNoc").val($("#ef_LeadconsultantNoc").val());
-            $("#ec_LeadconsultantNoh").val($("#ef_LeadconsultantNoh").val());
-            $("#ec_LeadconsultantNwh").val($("#ef_LeadconsultantNwh").val());
 
+            // $("#ec_LeadconsultantNoc1").val($("#ef_LeadconsultantNoc1").val());
+            // $("#ec_LeadconsultantNoh1").val($("#ef_LeadconsultantNoh1").val());
+            // $("#ec_LeadconsultantNwh1").val($("#ef_LeadconsultantNwh1").val());
+
+            // $("#ec_tableLeadConsultant > tr").each(function () {
+            //     //lead consultant engagement cost sum
+            //     sumecLeadconsultant =
+            //         $(this)
+            //             .find("#ec_LeadconsultantNoc1")
+            //             .val() *
+            //             $(this)
+            //                 .find("#ec_LeadconsultantHf")
+            //                 .val()
+            //                 .replace(/\₱|,/g, "") *
+            //             $(this)
+            //                 .find("#ec_LeadconsultantNoh1")
+            //                 .val() +
+            //             $(this)
+            //                 .find("#ec_LeadconsultantNwh1")
+            //                 .val() *
+            //                 ($(this)
+            //                     .find("#ec_LeadconsultantNoc1")
+            //                     .val() *
+            //                     $(this)
+            //                         .find("#ec_LeadconsultantHf")
+            //                         .val()
+            //                         .replace(/\₱|,/g, "") *
+            //                     $(this)
+            //                         .find("#ec_LeadconsultantNoh1")
+            //                         .val() *
+            //                     0.2) ||
+            //         $(this)
+            //             .find(`#ec_LeadconsultantNoc${rowIdx}`)
+            //             .val() *
+            //             +$(this)
+            //                 .find("#ec_LeadconsultantHf")
+            //                 .val()
+            //                 .replace(/\₱|,/g, "") *
+            //             $(this)
+            //                 .find(`#ec_LeadconsultantNoh${rowIdx}`)
+            //                 .val() +
+            //             $(this)
+            //                 .find(`#ec_LeadconsultantNwh${rowIdx}`)
+            //                 .val() *
+            //                 ($(this)
+            //                     .find(`#ec_LeadconsultantNoc${rowIdx}`)
+            //                     .val() *
+            //                     +$(this)
+            //                         .find("#ec_LeadconsultantHf")
+            //                         .val()
+            //                         .replace(/\₱|,/g, "") *
+            //                     $(this)
+            //                         .find(`#ec_LeadconsultantNoh${rowIdx}`)
+            //                         .val() *
+            //                     0.2);
+
+            //     // if the customized type is G.A Hybrid or G.A Virtual is
+            //     // selected it will add 10 percent to lead consultant engagement fees
+            //     if (
+            //         gaPercentage.val() == "G.A Hybrid" ||
+            //         gaPercentage.val() == "G.A Virtual"
+            //     ) {
+            //         sumecLeadconsultant += sumecLeadconsultant * (10 / 100);
+            //     }
+
+            //     $(this)
+            //         .find("#ec_LeadconsultantTotal")
+            //         .html(currency.format(Math.ceil(sumecLeadconsultant)));
+
+            //     //Assign the value of lead consultant to the sum of engagement cost
+            //     sumEngagementCost += +sumecLeadconsultant;
+            // });
+        });
+
+        $("#ec_tableLeadConsultant > tr").each(function () {
+            leadConsultant++;
+            $("#ec_LeadconsultantNoc1").val($("#ef_LeadconsultantNoc1").val());
+            $("#ec_LeadconsultantNoh1").val($("#ef_LeadconsultantNoh1").val());
+            $("#ec_LeadconsultantNwh1").val($("#ef_LeadconsultantNwh1").val());
             //lead consultant engagement cost sum
-            sumecLeadconsultant +=
-                $("#ec_LeadconsultantNoc").val() *
-                    $("#ec_LeadconsultantHf").val().replace(/\₱|,/g, "") *
-                    $("#ec_LeadconsultantNoh").val() +
-                $("#ec_LeadconsultantNwh").val() *
-                    ($("#ec_LeadconsultantNoc").val() *
-                        $("#ec_LeadconsultantHf").val().replace(/\₱|,/g, "") *
-                        $("#ec_LeadconsultantNoh").val() *
-                        0.2);
+            sumecLeadconsultant =
+                $(this)
+                    .find(`#ec_LeadconsultantNoc${leadConsultant}`)
+                    .val() *
+                    +$(this)
+                        .find("#ec_LeadconsultantHf")
+                        .val()
+                        .replace(/\₱|,/g, "") *
+                    $(this)
+                        .find(`#ec_LeadconsultantNoh${leadConsultant}`)
+                        .val() +
+                    $(this)
+                        .find(`#ec_LeadconsultantNwh${leadConsultant}`)
+                        .val() *
+                        ($(this)
+                            .find(`#ec_LeadconsultantNoc${leadConsultant}`)
+                            .val() *
+                            +$(this)
+                                .find("#ec_LeadconsultantHf")
+                                .val()
+                                .replace(/\₱|,/g, "") *
+                            $(this)
+                                .find(`#ec_LeadconsultantNoh${leadConsultant}`)
+                                .val() *
+                            0.2);
 
             // if the customized type is G.A Hybrid or G.A Virtual is
             // selected it will add 10 percent to lead consultant engagement fees
@@ -137,12 +227,14 @@ $(document).on(
                 sumecLeadconsultant += sumecLeadconsultant * (10 / 100);
             }
 
+            $(this)
+                .find("#ec_LeadconsultantTotal")
+                .html(currency.format(Math.ceil(sumecLeadconsultant)));
+
             //Assign the value of lead consultant to the sum of engagement cost
+            // sumecLeadconsultant += sumecLeadconsultant;
             sumEngagementCost += +sumecLeadconsultant;
         });
-        $("#ec_LeadconsultantTotal").html(
-            currency.format(Math.ceil(sumecLeadconsultant))
-        );
 
         //Analyst
         $("#tableAnalyst > tr").each(function () {
@@ -222,7 +314,7 @@ $(document).on(
         //subtotal engagement cost
         $("#ec_AnalystTotal").html(currency.format(Math.ceil(sumecAnalyst)));
         $("#ec_SubtotalConsulting").html(
-            currency.format(Math.ceil(sumecLeadconsultant + sumecAnalyst))
+            currency.format(Math.ceil(sumEngagementCost))
         );
 
         /*******************************************************DESIGN*********************************************************************/
@@ -393,7 +485,7 @@ $(document).on(
                 .find("#subtotal-coFacilitator")
                 .html(currency.format(Math.ceil(sum22)));
 
-            $("#tableLeadfaci > tr").on("click", ".remove", function () {
+            $("#tableCofaci > tr").on("click", ".remove", function () {
                 // Removing the current row.
                 $(this).closest("tr").remove();
                 // Decreasing total number of rows by 1.
@@ -737,7 +829,6 @@ $(document).on(
             sumEngagementCost += +sumSales;
         });
 
-
         //Referral
         $("#tableReferral > tr").each(function () {
             sumReferral =
@@ -765,7 +856,6 @@ $(document).on(
                 .html(currency.format(Math.ceil(sumEngagementManager)));
             sumEngagementCost += +sumEngagementManager;
         });
-
 
         //Engagement cost Creators
         $("#ec_CreatorsHf").each(function () {
@@ -811,8 +901,8 @@ $(document).on(
             (sumNetprofit / $("#ef_Totalpackage").val().replace(/\₱|,/g, "")) *
             100;
         $("#ProfitMargin").html(Math.floor(sumProfitmargin) + "%");
-    }
-); //end of engagement fees
+    
+}); //end of engagement fees
 
 //*************************************** APPEND NUMBER FORMAT ********************************************************//
 $(document).on(

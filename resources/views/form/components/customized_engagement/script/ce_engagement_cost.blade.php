@@ -205,10 +205,10 @@
             $("#ec_tableLeadConsultant").append(`
                 <tr id="ec_LeadConsultant${++leadConsultant}">
                     <td class="title">Lead Consultant (P7K, P9K)</td>
-                    <td class="">
+                    <td class="noc">
                         <input type="number"
                             class="text-center form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ec_LeadconsultantNoc" max="100"
+                            value="{{ old('') }}" name="" id="ec_LeadconsultantNoc${leadConsultant}" max="100"
                             readonly>
                     </td>
                     <td class="">
@@ -216,15 +216,15 @@
                             class="text-center fw-bold text-dark form-control input-table @error('') is-invalid @enderror"
                             value="{{ old('') }}" name="" id="ec_LeadconsultantHf">
                             </td>
-                    <td class="">
+                    <td class="noh">
                         <input type="number"
                             class="text-center form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ec_LeadconsultantNoh" readonly>
+                            value="{{ old('') }}" name="" id="ec_LeadconsultantNoh${leadConsultant}" readonly>
                     </td>
-                    <td class="">
+                    <td class="nwh">
                         <input type="number"
                             class="text-center form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ec_LeadconsultantNwh" readonly>
+                            value="{{ old('') }}" name="" id="ec_LeadconsultantNwh${leadConsultant}" readonly>
                     </td>
                     <td class="total-td">
                         <h4 class="text-center lead" id="ec_LeadconsultantTotal">-</h4>
@@ -233,9 +233,52 @@
                         <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                             value="{{ old('') }}" name="" id="">
                     </td>
+                    <td class="border border-white" style="background-color: #FFFFFF;">
+                        <a href="javascript:void(0)" class="text-danger font-18 remove" id="ecButton${leadConsultant}" title="Remove" style="visibility: hidden;">
+                            <i class="fa fa-trash-o"></i>
+                        </a>
+                    </td>
                 </tr>
             `);
-        });        
+        }); 
+ 
+        $("#ec_tableLeadConsultant").on("click", ".remove", function () {
+            
+            // Getting all the rows next to the row
+            // containing the clicked button
+            var child = $(this).closest("tr").nextAll();
+            
+            // Iterating across all the rows
+            // obtained to change the index
+            child.each(function () {
+                // Getting <tr> id.
+                var id = $(this).attr("id");
+
+                // Getting the <input> inside the .noc, .noh, .nwh class.
+                var noc = $(this).children(".noc").children("input");
+                var noh = $(this).children(".noh").children("input");
+                var nwh = $(this).children(".nwh").children("input");
+
+                // Gets the row number from <tr> id.
+                var dig = parseInt(id.substring(17));
+
+                // Modifying row id.
+                $(this).attr("id", `ec_LeadConsultant${dig - 1}`);
+
+                // Modifying row index.
+                noc.attr("id", `ec_LeadconsultantNoc${dig - 1}`);
+                noh.attr("id", `ec_LeadconsultantNoh${dig - 1}`);
+                nwh.attr("id", `ec_LeadconsultantNwh${dig - 1}`);
+            });
+
+            // Removing the current row.
+            $(this).closest("tr").remove();
+            // Decreasing total number of rows by 1.
+            leadConsultant--;
+        });    
+
     });
+
+    
 
 </script>

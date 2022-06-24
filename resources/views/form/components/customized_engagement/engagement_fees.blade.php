@@ -37,7 +37,7 @@
                         <td data-title="# OF CONSULTANTS">
                             <input type="number"
                                 class="input js-mytooltip input-table form-control  @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="ef_Leadconsultant[]" id="ef_LeadconsultantNoc"
+                                value="{{ old('') }}" name="ef_Leadconsultant[]" id="ef_LeadconsultantNoc1"
                                 title="" max="100"
                                 data-mytooltip-content="<i>Includes in depth needs analysis (i.e. surveys, interviews, FGDs),
                                 special research (i.e. to study client materials or client -required materials, industry
@@ -71,13 +71,13 @@
                         <td>
                             <input type="number"
                                 class="form-control input-table input js-mytooltip @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="ef_Leadconsultant[]" id="ef_LeadconsultantNoh"
+                                value="{{ old('') }}" name="ef_Leadconsultant[]" id="ef_LeadconsultantNoh1"
                                 data-mytooltip-content="<i>Number of Hours</i>" data-mytooltip-theme="dark"
                                 data-mytooltip-action="focus" data-mytooltip-direction="bottom">
                         </td>
                         <td>
                             <input type="number" class="form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="ef_Leadconsultant[]" id="ef_LeadconsultantNwh">
+                                value="{{ old('') }}" name="ef_Leadconsultant[]" id="ef_LeadconsultantNwh1">
                         </td>
                         <td class="total-td">
                             <h4 class="text-center lead" id="leadTotal">-</h4>
