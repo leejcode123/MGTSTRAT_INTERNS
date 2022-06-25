@@ -38,7 +38,7 @@
                             <input type="number" class="input js-mytooltip input-table form-control  @error('') is-invalid @enderror"
                                 value="{{ old('') }}" 
                                 name="ef_Leadconsultant1[]" 
-                                id="ef_LeadconsultantNoc" 
+                                id="ef_LeadconsultantNoc1" 
                                 title="" 
                                 max="100"
                                 data-mytooltip-content="<i>Includes in depth needs analysis (i.e. surveys, interviews, FGDs),
@@ -87,7 +87,7 @@
                             <input type="number" class=" form-control input-table input js-mytooltip @error('') is-invalid @enderror" 
                                 value="{{ old('') }}" 
                                 name="ef_Leadconsultant1[]" 
-                                id="ef_LeadconsultantNoh"
+                                id="ef_LeadconsultantNoh1"
                                 data-mytooltip-content="<i>½ Day = 0.50<br>
                                     ¼ Day = 0.25 </i>"
                                 data-mytooltip-theme="dark"
@@ -96,12 +96,12 @@
                         </td>
                         <td>
                             <input type="number" class=" form-control input-table input @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" id="ef_LeadconsultantAtd" name="ef_Leadconsultant1[]">
+                                value="{{ old('') }}" id="ef_LeadconsultantAtd1" name="ef_Leadconsultant1[]">
                         </td>
 
                         <td>
                             <input type="number" class=" form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="ef_Leadconsultant1[]" id="ef_LeadconsultantNwh">
+                                value="{{ old('') }}" name="ef_Leadconsultant1[]" id="ef_LeadconsultantNwh1">
                         </td>
                         <td class="total-td">
                                 <h4 class="text-center lead" id="leadTotal">-</h4>
@@ -116,7 +116,8 @@
                     </tr>
                     </tbody>
         {{-- Analyst --}}
-                    <tr class="table-warning">
+        <tbody id="ef_TableAnalyst">
+                    <tr class="table-warning" id="ef_RowAnalyst">
                         <td class="title">Analyst</td>
                         <td>
                             <input type="number" class=" input js-mytooltip form-control input-table @error('') is-invalid @enderror" 
@@ -166,8 +167,11 @@
                             <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                 value="{{ old('') }}" name="" id="ef_AnalystNotes">
                         </td>
+                        <td style="background-color: #FFFFFF;" class="border border-white"><a href="javascript:void(0)"
+                            class="text-success font-18" title="Add" id="addBtn2"><i class="fa fa-plus"></i></a>
+                        </td>
                     </tr>
-        
+        </tbody>
                     <tr class="">
                         <td class="title fw-bold text-dark fst-italic">Subtotal</td>
                         <td></td>
@@ -196,7 +200,7 @@
                         <td class="total-td"></td>
                         <td class="total-td"></td>
                     </tr>
-        
+        <tbody id="ef_">
                     <tr class="table-warning">
                         <td class="title">Designer</td>
                         <td>
@@ -264,8 +268,11 @@
                             <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                 value="{{ old('') }}" name="" id="">
                         </td>
+                        <td style="background-color: #FFFFFF;" class="border border-white"><a href="javascript:void(0)"
+                            class="text-success font-18" title="Add" id="addBtn3"><i class="fa fa-plus"></i></a>
+                        </td>
                     </tr>
-        
+        </tbody>
                     {{-- Program --}}
                     <tr class="">
                         <th class="title px-4 text-dark">3. PROGRAM</th>
@@ -665,82 +672,244 @@ var rowIndx = 1;
         (`
             <tr id="leadConsultant${++rowIndx}" class="table-warning">
                 <td class="title">Lead Consultant</td>
-                            <td data-title="# OF CONSULTANTS">
-                                <input type="number" class="input js-mytooltip input-table form-control  @error('') is-invalid @enderror"
-                                    value="{{ old('') }}" 
+                        <td data-title="# OF CONSULTANTS" class="noc">
+                            <input type="number" class="input js-mytooltip input-table form-control  @error('') is-invalid @enderror"
+                                value="{{ old('') }}" 
+                                name="ef_Leadconsultant1[]" 
+                                id="ef_LeadconsultantNoc${rowIndx}" 
+                                title="" 
+                                max="100"
+                                data-mytooltip-content="<i>Includes in depth needs analysis (i.e. surveys, interviews, FGDs),
+                                special research (i.e. to study client materials or client -required materials, industry
+                                or function specific content), creation of client-specific learning aids/tools
+                                (i.e. assessments, c</i>"
+                                data-mytooltip-theme="dark"
+                                data-mytooltip-action="focus" 
+                                data-mytooltip-direction="bottom">
+                        </td>
+                        <td>
+                            <fieldset>
+                                <select class="form-select hf-c13 input js-mytooltip @error('') is-invalid @enderror"
                                     name="ef_Leadconsultant1[]" 
-                                    id="ef_LeadconsultantNoc" 
-                                    title="" 
-                                    max="100"
-                                    data-mytooltip-content="<i>Includes in depth needs analysis (i.e. surveys, interviews, FGDs),
-                                    special research (i.e. to study client materials or client -required materials, industry
-                                    or function specific content), creation of client-specific learning aids/tools
-                                    (i.e. assessments, c</i>"
+                                    id="ef_LeadconsultantHf"
+                                    data-mytooltip-content="<i>P56,000 - Consultants<br>
+                                        P72,000 - Senior Consultants<br>
+                                        Key Accounts<br>
+                                        P50,400 - Consultants, min guaranteed 10 consulting days<br>
+                                        P45,000 - Seniuor Consultants, min. guaranteed 10 consulting days</i>"
                                     data-mytooltip-theme="dark"
                                     data-mytooltip-action="focus" 
-                                    data-mytooltip-direction="bottom">
-                            </td>
-                            <td>
-                                <fieldset>
-                                    <select class="form-select hf-c13 input js-mytooltip @error('') is-invalid @enderror"
-                                        name="ef_Leadconsultant1[]" 
-                                        id="ef_LeadconsultantHf"
-                                        data-mytooltip-content="<i>P56,000 - Consultants<br>
-                                            P72,000 - Senior Consultants<br>
-                                            Key Accounts<br>
-                                            P50,400 - Consultants, min guaranteed 10 consulting days<br>
-                                            P45,000 - Seniuor Consultants, min. guaranteed 10 consulting days</i>"
-                                        data-mytooltip-theme="dark"
-                                        data-mytooltip-action="focus" 
-                                        data-mytooltip-direction="right" 
-                                        style="background-color:#ffcccc; color:red;">
-                                        <option value="50,400" {{ old('') == '50,400' ? 'selected="selected"' : '' }}>
-                                            &#8369;50,400
-                                        </option>
-                                        <option value="56,000" {{ old('') == '56,000' ? 'selected="selected"' : '' }} selected>
-                                            &#8369;56,000
-                                        </option>
-                                        <option value="64,800" {{ old('') == '64,800' ? 'selected="selected"' : '' }}>
-                                            &#8369;64,800
-                                        </option>
-                                        <option value="72,000" {{ old('') == '72,000' ? 'selected="selected"' : '' }}>
-                                            &#8369;72,000
-                                        </option>
-                                    </select>
-                                    @error('')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </fieldset>
-                            </td>
-                            <td>
-                                <input type="number" class=" form-control input-table input js-mytooltip @error('') is-invalid @enderror" 
-                                    value="{{ old('') }}" 
-                                    name="ef_Leadconsultant1[]" 
-                                    id="ef_LeadconsultantNoh"
-                                    data-mytooltip-content="<i>½ Day = 0.50<br>
-                                        ¼ Day = 0.25 </i>"
-                                    data-mytooltip-theme="dark"
-                                    data-mytooltip-action="focus" 
-                                    data-mytooltip-direction="bottom">
-                            </td>
-                            <td>
-                                <input type="number" class=" form-control input-table input @error('') is-invalid @enderror" 
-                                    value="{{ old('') }}" id="ef_LeadconsultantAtd" name="ef_Leadconsultant1[]">
-                            </td>
+                                    data-mytooltip-direction="right" 
+                                    style="background-color:#ffcccc; color:red;">
+                                    <option value="50400" {{ old('') == '50400' ? 'selected="selected"' : '' }}>
+                                        &#8369;50,400
+                                    </option>
+                                    <option value="56000" {{ old('') == '56000' ? 'selected="selected"' : '' }} selected>
+                                        &#8369;56,000
+                                    </option>
+                                    <option value="64800" {{ old('') == '64800' ? 'selected="selected"' : '' }}>
+                                        &#8369;64,800
+                                    </option>
+                                    <option value="72000" {{ old('') == '72000' ? 'selected="selected"' : '' }}>
+                                        &#8369;72,000
+                                    </option>
+                                </select>
+                                @error('')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </fieldset>
+                        </td>
+                        <td class="noh">
+                            <input type="number" class=" form-control input-table input js-mytooltip @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" 
+                                name="ef_Leadconsultant1[]" 
+                                id="ef_LeadconsultantNoh${rowIndx}"
+                                data-mytooltip-content="<i>½ Day = 0.50<br>
+                                    ¼ Day = 0.25 </i>"
+                                data-mytooltip-theme="dark"
+                                data-mytooltip-action="focus" 
+                                data-mytooltip-direction="bottom">
+                        </td>
+                        <td class="atd">
+                            <input type="number" class=" form-control input-table input @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" id="ef_LeadconsultantAtd${rowIndx}" name="ef_Leadconsultant1[]">
+                        </td>
 
-                            <td>
-                                <input type="number" class=" form-control input-table @error('') is-invalid @enderror" 
-                                    value="{{ old('') }}" name="ef_Leadconsultant1[]" id="ef_LeadconsultantNwh">
+                        <td class="nwh">
+                            <input type="number" class=" form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" name="ef_Leadconsultant1[]" id="ef_LeadconsultantNwh${rowIndx}">
+                        </td>
+                        <td class="total-td">
+                                <h4 class="text-center lead" id="leadTotal">-</h4>
+                        </td>
+                        <td class="total-td">
+                            <input type="text" class="form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}"name="" id="">
+                        </td>
+                            <td class="border border-white" style="background-color: #FFFFFF;">
+                            <a href="javascript:void(0)" class="text-danger font-18 removed" title="Remove"><i class="fa fa-trash-o"></i></a>
                             </td>
-                            <td class="total-td">
-                                    <h4 class="text-center lead" id="leadTotal">-</h4>
+            </tr>`
+        );
+    });
+
+        $("#tableLeadconsultant").on("click", ".removed", function () {
+
+                // Getting all the rows next to the row
+                // containing the clicked button
+                var child = $(this).closest("tr").nextAll();
+
+                // Iterating across all the rows
+                // obtained to change the index
+                child.each(function () {
+                    // Getting <tr> id.
+                    var id = $(this).attr("id");
+
+                    // Getting the <input> inside the .noc, .noh, .nwh class.
+                    var noc = $(this).children(".noc").children("input");
+                    var noh = $(this).children(".noh").children("input");
+                    var nwh = $(this).children(".nwh").children("input");
+                    var atd = $(this).children(".atd").children("input");
+
+                    // Gets the row number from <tr> id.
+                    var dig = parseInt(id.substring(14));
+
+                    // Modifying row id.
+                    $(this).attr("id", `leadConsultant${dig - 1}`);
+
+                    // Modifying row index.
+                    noc.attr("id", `ef_LeadconsultantNoc${dig - 1}`);
+                    noh.attr("id", `ef_LeadconsultantNoh${dig - 1}`);
+                    atd.attr("id", `ef_LeadconsultantAtd${dig - 1}`);
+                    nwh.attr("id", `ef_LeadconsultantNwh${dig - 1}`);
+                });
+
+                // Removing the current row.
+                $(this).closest("tr").remove();
+
+                // Decreasing total number of rows by 1.
+                rowIndx--;
+                // $(`#ecButton${rowIdx}`).trigger('click');
+        });
+
+var rowAnalyst = 1;
+    $("#addBtn2").on("click", function() {
+        // Adding a row inside the tbody.
+        $("#ef_TableAnalyst").append
+        (`
+            <tr id="ef_RowAnalyst${++rowAnalyst}" class="table-warning">
+                <td class="title">Analyst</td>
+                        <td>
+                            <input type="number" class=" input js-mytooltip form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" 
+                                name="" 
+                                id="ef_AnalystNoc" 
+                                max="100"
+                                data-mytooltip-content="<i>Includes in depth needs analysis (i.e. surveys, interviews, FGDs),
+                                special research (i.e. to study client materials or client -required materials, industry
+                                or function specific content), creation of client-specific learning aids/tools
+                                (i.e. assessments, c</i>"
+                                data-mytooltip-theme="dark"
+                                data-mytooltip-action="focus" 
+                                data-mytooltip-direction="bottom">
+                        </td>
+                        
+                        <td>
+                            <input type="text" class="form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" name="" id="ef_AnalystPdf" data-type="currency">
+                        </td>
+                        <td>
+                            <input type="number" class=" input js-mytooltip form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" 
+                                name="" 
+                                id="ef_AnalystNod"
+                                data-mytooltip-content="<i>½ Day = 0.50<br>
+                                                           ¼ Day = 0.25 Number of Hours</i>"
+                                data-mytooltip-theme="dark"
+                                data-mytooltip-action="focus" 
+                                data-mytooltip-direction="bottom">
+                        </td>
+                        <td>
+                            <input type="number" class="nwh-e14 form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" name="" id="ef_AnalystAtd">
+                        </td>
+                        <td>
+                            <input type="number" class="nwh-e14 form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" name="" id="ef_AnalystNsw">
+                        </td>
+                        <td class="total-td">
+                            {{-- <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" 
+                                name="" id="" disabled> --}}
+                                <h4 class="text-center lead" id="analyst-total">-</h4>
+                        </td>
+                        <td class="total-td">
+                            <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ef_AnalystNotes">
+                        </td>
+                            <td class="border border-white" style="background-color: #FFFFFF;">
+                            <a href="javascript:void(0)" class="text-danger font-18 removed" title="Remove"><i class="fa fa-trash-o"></i></a>
                             </td>
-                            <td class="total-td">
-                                <input type="text" class="form-control input-table @error('') is-invalid @enderror" 
-                                    value="{{ old('') }}"name="" id="">
-                            </td>
+            </tr>`
+        );
+    });
+var rowDesigner = 1;
+    $("#addBtn2").on("click", function() {
+        // Adding a row inside the tbody.
+        $("#ef_TableAnalyst").append
+        (`
+            <tr id="ef_RowAnalyst${++rowDesigner}" class="table-warning">
+                <td class="title">Analyst</td>
+                        <td>
+                            <input type="number" class=" input js-mytooltip form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" 
+                                name="" 
+                                id="ef_AnalystNoc" 
+                                max="100"
+                                data-mytooltip-content="<i>Includes in depth needs analysis (i.e. surveys, interviews, FGDs),
+                                special research (i.e. to study client materials or client -required materials, industry
+                                or function specific content), creation of client-specific learning aids/tools
+                                (i.e. assessments, c</i>"
+                                data-mytooltip-theme="dark"
+                                data-mytooltip-action="focus" 
+                                data-mytooltip-direction="bottom">
+                        </td>
+                        
+                        <td>
+                            <input type="text" class="form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" name="" id="ef_AnalystPdf" data-type="currency">
+                        </td>
+                        <td>
+                            <input type="number" class=" input js-mytooltip form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" 
+                                name="" 
+                                id="ef_AnalystNod"
+                                data-mytooltip-content="<i>½ Day = 0.50<br>
+                                                           ¼ Day = 0.25 Number of Hours</i>"
+                                data-mytooltip-theme="dark"
+                                data-mytooltip-action="focus" 
+                                data-mytooltip-direction="bottom">
+                        </td>
+                        <td>
+                            <input type="number" class="nwh-e14 form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" name="" id="ef_AnalystAtd">
+                        </td>
+                        <td>
+                            <input type="number" class="nwh-e14 form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" name="" id="ef_AnalystNsw">
+                        </td>
+                        <td class="total-td">
+                            {{-- <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" 
+                                name="" id="" disabled> --}}
+                                <h4 class="text-center lead" id="analyst-total">-</h4>
+                        </td>
+                        <td class="total-td">
+                            <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ef_AnalystNotes">
+                        </td>
                             <td class="border border-white" style="background-color: #FFFFFF;">
                             <a href="javascript:void(0)" class="text-danger font-18 removed" title="Remove"><i class="fa fa-trash-o"></i></a>
                             </td>

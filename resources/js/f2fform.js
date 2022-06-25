@@ -323,7 +323,7 @@ document.getElementById("ec_Programexpenses").defaultValue = 2 + "%";
 //Customized Engagement form of Engagement Fees
 $(document).on(
     "change keyup click",
-    ".f2f-customized-type, .f2f-ga-only-dropdown, .remove, #ef_LeadconsultantAtd, #ef_LeadconsultantNoc, #ef_LeadconsultantHf, #ef_LeadconsultantNoh, #ef_LeadconsultantNwh, #ef_AnalystNoc, #ef_AnalystPdf, #ef_AnalystNod, #ef_AnalystAtd, #ef_AnalystNsw, #ef_DesignerNoc, #ef_DesignerPdf, #ef_DesignerNod, #ef_DesignerAtd, #ef_DesignerNsw, #ef_LeadFaciNoc, #ef_LeadFaciPdf, #ef_LeadFaciNod, #ef_LeadFaciAtd, #ef_LeadFaciNsw, #ef_CoFaciNoc, #ef_CoFaciPdf, #ef_CoFaciNod, #ef_CoFaciAtd, #ef_CoFaciNsw, #ef_ActionLearnNoc, #ef_ActionLearnPdf, #ef_ActionLearnNod, #ef_ActionLearnAtd, #ef_ActionLearnNsw, #ef_MarshalNoc, #ef_MarshalPdf, #ef_MarshalNod, #ef_MarshalAtd, #ef_MarshalNsw, #ef_OnsiteNoc, #ef_OnsitePdf, #ef_OnsiteNod, #ef_OnsiteAtd, #ef_OnsiteNsw, #ef_DocumentorNoc, #ef_DocumentorPdf, #ef_DocumentorNod, #ef_DocumentorAtd, #ef_DocumentorNsw,  #ef_PDNoc, #ef_PDPdf, #ef_PDNod, #ef_PDAtd, #ef_PDNsw, #input_totalPackages, #ec_sale, #inputforSale, #referrals, #inputforReferrals, #ecengagementManager, #inputforEngagementManager, #ec_offsitePc, #inputforOffsite, #ec_LeadconsultantsPd, #ec_AnalystsPd, #ec_DesignersPd, #ec_CreatorNoc, #ec_CreatorPd, #ec_CreatorNod, #ec_LeadfacilitatorsPd, #ec_CofacilitatorsPd, #ec_ActionlearningcoachPd, #ec_MarshalPd, #ec_OnsitepcPD, #ec_DocumentorsPd, #ec_PerdiemPd, #ec_PerdiemNoc, #ec_OffprogramsPd, #ec_OffprogramsNoc, #ec_Programexpenses, #tableLeadconsultant, #ecaddButton, #ecaddButton2, #ecaddButton3, #ecaddButton4",
+    ".f2f-customized-type, .f2f-ga-only-dropdown, .removed, #tableLeadconsultant, #ef_LeadconsultantAtd, #ef_LeadconsultantNoc, #ef_LeadconsultantHf, #ef_LeadconsultantNoh, #ef_LeadconsultantNwh, #ef_AnalystNoc, #ef_AnalystPdf, #ef_AnalystNod, #ef_AnalystAtd, #ef_AnalystNsw, #ef_DesignerNoc, #ef_DesignerPdf, #ef_DesignerNod, #ef_DesignerAtd, #ef_DesignerNsw, #ef_LeadFaciNoc, #ef_LeadFaciPdf, #ef_LeadFaciNod, #ef_LeadFaciAtd, #ef_LeadFaciNsw, #ef_CoFaciNoc, #ef_CoFaciPdf, #ef_CoFaciNod, #ef_CoFaciAtd, #ef_CoFaciNsw, #ef_ActionLearnNoc, #ef_ActionLearnPdf, #ef_ActionLearnNod, #ef_ActionLearnAtd, #ef_ActionLearnNsw, #ef_MarshalNoc, #ef_MarshalPdf, #ef_MarshalNod, #ef_MarshalAtd, #ef_MarshalNsw, #ef_OnsiteNoc, #ef_OnsitePdf, #ef_OnsiteNod, #ef_OnsiteAtd, #ef_OnsiteNsw, #ef_DocumentorNoc, #ef_DocumentorPdf, #ef_DocumentorNod, #ef_DocumentorAtd, #ef_DocumentorNsw,  #ef_PDNoc, #ef_PDPdf, #ef_PDNod, #ef_PDAtd, #ef_PDNsw, #input_totalPackages, #ec_sale, #inputforSale, #referrals, #inputforReferrals, #ecengagementManager, #inputforEngagementManager, #ec_offsitePc, #inputforOffsite, #ec_LeadconsultantsPd, #ec_AnalystsPd, #ec_DesignersPd, #ec_CreatorNoc, #ec_CreatorPd, #ec_CreatorNod, #ec_LeadfacilitatorsPd, #ec_CofacilitatorsPd, #ec_ActionlearningcoachPd, #ec_MarshalPd, #ec_OnsitepcPD, #ec_DocumentorsPd, #ec_PerdiemPd, #ec_PerdiemNoc, #ec_OffprogramsPd, #ec_OffprogramsNoc, #ec_Programexpenses, #tableLeadconsultant, #ecaddButton, #ecaddButton2, #ecaddButton3, #ecaddButton4",
     function () {
         //customized type
         $(".f2f-customized-type").each(function () {
@@ -407,22 +407,24 @@ $(document).on(
         sumofecOffprogram = 0;
         sumofecProgramexpense = 0;
 
+        rowIndx = 0;
         //customized type
         var gaPercentage = $(".customized-type");
 
         /*******************************************************CONSULTING*********************************************************************/
         //Lead consultant
         $("#tableLeadconsultant > tr").each(function () {
+            rowIndx++;
             sumLc =
-                $(this).find("#ef_LeadconsultantNoc").val() *
+                $(this).find(`#ef_LeadconsultantNoc${rowIndx}`).val() *
                 +$(this).find("#ef_LeadconsultantHf").val().replace(/,/g, "") *
-                $(this).find("#ef_LeadconsultantNoh").val() +
-                $(this).find("#ef_LeadconsultantAtd").val() *
-                ($(this).find("#ef_LeadconsultantNoc").val() *
+                $(this).find(`#ef_LeadconsultantNoh${rowIndx}`).val() +
+                $(this).find(`#ef_LeadconsultantAtd${rowIndx}`).val() *
+                ($(this).find(`#ef_LeadconsultantNoc${rowIndx}`).val() *
                     +$(this).find("#ef_LeadconsultantHf").val().replace(/,/g, "") *
                     0.2) +
-                $(this).find("#ef_LeadconsultantNwh").val() *
-                ($(this).find("#ef_LeadconsultantNoc").val() *
+                $(this).find(`#ef_LeadconsultantNwh${rowIndx}`).val() *
+                ($(this).find(`#ef_LeadconsultantNoc${rowIndx}`).val() *
                     +$(this).find("#ef_LeadconsultantHf").val().replace(/,/g, "") *
                     0.2);
 
@@ -438,13 +440,13 @@ $(document).on(
             //lead consultant engagement fees sum
             $(this).find("#leadTotal").html(currency.format(Math.ceil(sumLc)));
 
-            $("#tableLeadconsultant").on("click", ".removed", function () {
-                // Removing he current row.
-                $(this).closest("tr").remove();
+            // $("#tableLeadconsultant").on("click", ".removed", function () {
+            //     // Removing he current row.
+            //     $(this).closest("tr").remove();
 
-                // Decreasing total number of rows by 1.
-                rowIndx--;
-            });
+            //     // Decreasing total number of rows by 1.
+            //     rowIndx--;
+            // });
 
             sumEf += +sumLc;
 
@@ -479,18 +481,18 @@ $(document).on(
             // );
 
             // Analyst
-            $("#ef_AnalystPdf").each(function () {
-                sumAnlst +=
-                    $("#ef_AnalystNoc").val() *
-                    +$(this).val().replace(/,/g, "") *
-                    $("#ef_AnalystNod").val() +
-                    $("#ef_AnalystAtd").val() *
-                    ($("#ef_AnalystNoc").val() *
-                        +$(this).val().replace(/,/g, "") *
+            $("#ef_TableAnalyst > tr").each(function () {
+                sumAnlst =
+                    $(this).find("#ef_AnalystNoc").val() *
+                    +$(this).find("#ef_AnalystPdf").val().replace(/\₱|,/g, "") *
+                    $(this).find("#ef_AnalystNod").val() +
+                    $(this).find("#ef_AnalystAtd").val() *
+                    ($(this).find("#ef_AnalystNoc").val() *
+                        +$(this).find("#ef_AnalystPdf").val().replace(/\₱|,/g, "") *
                         0.2) +
-                    $("#ef_AnalystNsw").val() *
-                    ($("#ef_AnalystNoc").val() *
-                        +$(this).val().replace(/,/g, "") *
+                    $(this).find("#ef_AnalystNsw").val() *
+                    ($(this).find("#ef_AnalystNoc").val() *
+                        +$(this).find("#ef_AnalystPdf").val().replace(/\₱|,/g, "") *
                         0.2);
                 if (
                     gaPercentage.val() == "G.A Hybrid" ||
@@ -502,6 +504,15 @@ $(document).on(
                 }
                 sumEf += +sumAnlst;
 
+                $(this).find("#analyst-total").html(currency.format(Math.ceil(sumAnlst)));
+
+                $("#ef_TableAnalyst").on("click", ".removed", function () {
+                    // Removing he current row.
+                    $(this).closest("tr").remove();
+
+                    // Decreasing total number of rows by 1.
+                    rowAnalyst--;
+                });
                 $("#ec_AnalystsNoc").val($("#ef_AnalystNoc").val());
                 $("#ec_AnalystsNod").val($("#ef_AnalystNod").val());
                 $("#ec_AnalystsNwh").val($("#ef_AnalystNsw").val());
@@ -527,7 +538,7 @@ $(document).on(
                 $("#ec_AnalystsTotal").html(currency.format(Math.ceil(sumofecAnalyst)));
                 $("#ec_SubtotalsConsulting").html("₱" + currency.format(Math.ceil(sumofecLeadconsultant + sumofecAnalyst)));
             });
-            $("#analyst-total").html(currency.format(Math.ceil(sumAnlst)));
+            // $("#analyst-total").html(currency.format(Math.ceil(sumAnlst)));
             $("#subtotalConsulting").html(
                "₱" +  currency.format(Math.ceil(sumEf))
             );
@@ -1074,6 +1085,88 @@ $(document).on(
             );
 
     });
+
+//*************************************** APPEND NUMBER FORMAT ********************************************************//
+$(document).on(
+    "change keyup click",
+    "#ef_AnalystPdf, #ef_CofaciHf, #ef_ModeratorHf, #ef_ProducerHf, #ef_DocumentorHf",
+    function () {
+        // Jquery Dependency
+
+        $("input[data-type='currency']").on({
+            keyup: function () {
+                formatCurrency($(this));
+            },
+            blur: function () {
+                formatCurrency($(this), "blur");
+            },
+        });
+
+        function formatNumber(n) {
+            // format number 1000000 to 1,234,567
+            return n.replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
+
+        function formatCurrency(input, blur) {
+            // appends $ to value, validates decimal side
+            // and puts cursor back in right position.
+
+            // get input value
+            var input_val = input.val();
+
+            // don't validate empty input
+            if (input_val === "") {
+                return;
+            }
+
+            // original length
+            var original_len = input_val.length;
+
+            // initial caret position
+            var caret_pos = input.prop("selectionStart");
+
+            // check for decimal
+            if (input_val.indexOf(".") >= 0) {
+                // get position of first decimal
+                // this prevents multiple decimals from
+                // being entered
+                var decimal_pos = input_val.indexOf(".");
+
+                // split number by decimal point
+                var left_side = input_val.substring(0, decimal_pos);
+                var right_side = input_val.substring(decimal_pos);
+
+                // add commas to left side of number
+                left_side = formatNumber(left_side);
+
+                // validate right side
+                right_side = formatNumber(right_side);
+
+                // On blur make sure 2 numbers after decimal
+                if (blur === "blur") {
+                    right_side += "00";
+                }
+
+                // join number by .
+                input_val = "₱" + left_side + "." + right_side;
+            } else {
+                // no decimal entered
+                // add commas to number
+                // remove all non-digits
+                input_val = formatNumber(input_val);
+                input_val = "₱" + input_val;
+            }
+
+            // send updated string to input
+            input.val(input_val);
+
+            // put caret back in the right position
+            var updated_len = input_val.length;
+            caret_pos = updated_len - original_len + caret_pos;
+            input[0].setSelectionRange(caret_pos, caret_pos);
+        }
+    }
+);
 //cluster reference
 document.getElementById("cluster-dropdown").addEventListener("change", cluster);
 document.getElementById("input-notListed").disabled = false;
