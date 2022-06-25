@@ -307,7 +307,7 @@
                             <td class="">
                                 <input type="number"
                                     class="text-center form-control input-table @error('') is-invalid @enderror"
-                                    value="{{ old('') }}" name="" id="ec_LeadconsultantsNoc" max="100" readonly>
+                                    value="{{ old('') }}" name="" id="ec_LeadconsultantsNoc1" max="100" readonly>
                             </td>
                             <td class="">
                                 <input type="text"
@@ -317,17 +317,17 @@
                             <td class="">
                                 <input type="number"
                                     class="text-center form-control input-table @error('') is-invalid @enderror"
-                                    value="{{ old('') }}" name="" id="ec_LeadconsultantsNod" readonly>
+                                    value="{{ old('') }}" name="" id="ec_LeadconsultantsNod1" readonly>
                             </td>
                             <td class="">
                                 <input type="number"
                                     class="text-center form-control input-table @error('') is-invalid @enderror"
-                                    value="{{ old('') }}" name="" id="ec_LeadconsultantsAtd" readonly>
+                                    value="{{ old('') }}" name="" id="ec_LeadconsultantsAtd1" readonly>
                             </td>
                             <td class="">
                                 <input type="number"
                                     class="text-center form-control input-table @error('') is-invalid @enderror"
-                                    value="{{ old('') }}" name="" id="ec_LeadconsultantsNwh" readonly>
+                                    value="{{ old('') }}" name="" id="ec_LeadconsultantsNwh1" readonly>
                             </td>
                             <td class="total-td">
                                 <h4 class="text-center lead" id="ec_LeadconsultantsTotal">-</h4>

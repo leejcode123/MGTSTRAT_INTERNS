@@ -418,7 +418,7 @@ $(document).on(
         //Lead consultant
         $("#tableLeadconsultant > tr").each(function () {
             rowIndx++;
-            ecleadConsultant++;
+    
             sumLc =
                 $(this).find(`#ef_LeadconsultantNoc${rowIndx}`).val() *
                 +$(this).find("#ef_LeadconsultantHf").val().replace(/,/g, "") *
@@ -444,47 +444,36 @@ $(document).on(
             //lead consultant engagement fees sum
             $(this).find("#leadTotal").html(currency.format(Math.ceil(sumLc)));
 
-            // $("#tableLeadconsultant").on("click", ".removed", function () {
-            //     // Removing he current row.
-            //     $(this).closest("tr").remove();
-
-            //     // Decreasing total number of rows by 1.
-            //     rowIndx--;
-            // });
-
             sumEf += +sumLc;
+        });
+        
+        $("#tableofLeadConsultant > tr").each(function () { 
+            ecleadConsultant++;
 
-            $("#ec_LeadconsultantsNoc").val($("#ef_LeadconsultantNoc1").val());
-            $("#ec_LeadconsultantsNod").val($("#ef_LeadconsultantNoh1").val());
-            $("#ec_LeadconsultantsNwh").val($("#ef_LeadconsultantNwh1").val());
-            $("#ec_LeadconsultantsAtd").val($("#ef_LeadconsultantAtd1").val());
+            $("#ec_LeadconsultantsNoc1").val($("#ef_LeadconsultantNoc1").val());
+            $("#ec_LeadconsultantsNod1").val($("#ef_LeadconsultantNoh1").val());
+            $("#ec_LeadconsultantsNwh1").val($("#ef_LeadconsultantNwh1").val());
+            $("#ec_LeadconsultantsAtd1").val($("#ef_LeadconsultantAtd1").val());
 
             sumofecLeadconsultant =
-                $("#tableofLeadConsultant > tr").find(`#ec_LeadconsultantsNoc${ecleadConsultant}`).val() *
-                $("#tableofLeadConsultant > tr").find(`#ec_LeadconsultantsPd`).val().replace(/,/g, "") *
-                $("#tableofLeadConsultant > tr").find(`#ec_LeadconsultantsNod${ecleadConsultant}`).val() +
-                $("#tableofLeadConsultant > tr").find(`#ec_LeadconsultantsAtd${ecleadConsultant}`).val() *
-                ($("#tableofLeadConsultant > tr").find(`#ec_LeadconsultantsNoc${ecleadConsultant}`).val() *
-                    $("#tableofLeadConsultant > tr").find(`#ec_LeadconsultantsPd`).val().replace(/,/g, "") *
-                    $("#tableofLeadConsultant > tr").find(`#ec_LeadconsultantsNod${ecleadConsultant}`).val() *
-                    0.2) + $("#tableofLeadConsultant > tr").find(`#ec_LeadconsultantsNwh${ecleadConsultant}`).val() *
-                ($("#tableofLeadConsultant > tr").find(`#ec_LeadconsultantsNoc${ecleadConsultant}`).val() *
-                    $("#tableofLeadConsultant > tr").find(`#ec_LeadconsultantsPd`).val().replace(/,/g, "") *
-                    $("#tableofLeadConsultant > tr").find(`#ec_LeadconsultantsNod${ecleadConsultant}`).val() *
+                $(this).find(`#ec_LeadconsultantsNoc${ecleadConsultant}`).val() *
+                $(this).find("#ec_LeadconsultantsPd").val().replace(/,/g, "") *
+                $(this).find(`#ec_LeadconsultantsNod${ecleadConsultant}`).val() +
+                $(this).find(`#ec_LeadconsultantsAtd${ecleadConsultant}`).val() *
+                ($(this).find(`#ec_LeadconsultantsNoc${ecleadConsultant}`).val() *
+                    $(this).find("#ec_LeadconsultantsPd").val().replace(/,/g, "") *
+                    $(this).find(`#ec_LeadconsultantsNod${ecleadConsultant}`).val() *
+                    0.2) + $(this).find(`#ec_LeadconsultantsNwh${ecleadConsultant}`).val() *
+                ($(this).find(`#ec_LeadconsultantsNoc${ecleadConsultant}`).val() *
+                    $(this).find("#ec_LeadconsultantsPd").val().replace(/,/g, "") *
+                    $(this).find(`#ec_LeadconsultantsNod${ecleadConsultant}`).val() *
                     0.2);
 
-                    $("#tableofLeadConsultant > tr").find("#ec_LeadconsultantsTotal").html(currency.format(Math.ceil(sumofecLeadconsultant)));
+            $(this).find("#ec_LeadconsultantsTotal").html(currency.format(Math.ceil(sumofecLeadconsultant)));
 
             sumofEngagementCost += +sumofecLeadconsultant;
-
         });
-            //$("#ec_LeadconsultantsTotal").html("₱" + currency.format(Math.ceil(sumofecLeadconsultant)));
-            // $("#ec_LeadconsultantsTotal").html(currency.format(Math.ceil(sumEf)));
-            $("#subtotalConsulting").html("₱" + currency.format(Math.ceil(sumEf)));
-            // $("#lead-total").html(currency.format(Math.ceil(sumLc)));
-            // $("#subtotal-consulting").html(
-            //     currency.format(Math.ceil(sumLc + sumAnlst))
-            // );
+        // $("#subtotalConsulting").html("₱" + currency.format(Math.ceil(sumEf)));
 
             // Analyst
             $("#ef_TableAnalyst > tr").each(function () {
@@ -547,6 +536,9 @@ $(document).on(
             // $("#analyst-total").html(currency.format(Math.ceil(sumAnlst)));
             $("#subtotalConsulting").html(
                "₱" +  currency.format(Math.ceil(sumEf))
+            );
+            $("#ec_SubtotalsConsulting").html(
+               "₱" +  currency.format(Math.ceil(sumofEngagementCost))
             );
 
             // Designer
