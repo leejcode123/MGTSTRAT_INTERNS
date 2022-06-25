@@ -1,11 +1,11 @@
 require("./components/clusterReference");
 require("./components/currencyFormat");
 //*************************************** CUSTOMIZED ENGAGEMENT BUDGET FORM COMPUTATION ********************************************************//
-leadConsultant = 0;
-leadConsultant++;
+// leadConsultant = 0;
+// leadConsultant++;
 $(document).on(
     "change keyup click",
-    ".customized-type, .ga-only-dropdown, .remove, #tableLeadconsultant, #ef_LeadconsultantNoc, #ef_LeadconsultantHf, #ef_LeadconsultantNoh, #ef_LeadconsultantNwh, #ef_AnalystNoc, #ef_AnalystHf, #ef_AnalystNoh, #ef_AnalystNwh, #ef_DesignerNoc, #ef_DesignerHf, #ef_DesignerNoh, #ef_DesignerNwh, #ef_LeadfacilitatorNoc, #ef_LeadfacilitatorHf, #ef_LeadfacilitatorNoh, #ef_LeadfacilitatorNwh, #ef_CofaciNoc, #ef_CofaciHf, #ef_CofaciNoh, #ef_CofaciNwh, #ef_ModeratorNoc, #ef_ModeratorHf, #ef_ModeratorNoh, #ef_ModeratorNwh, #ef_ProducerNoc, #ef_ProducerHf, #ef_ProducerNoh, #ef_ProducerNwh, #ef_DocumentorNoc, #ef_DocumentorHf, #ef_DocumentorNoh, #ef_DocumentorNwh, #ef_Totalpackage, #sales, #inputSales, #referral, #engagementManager, #ec_LeadconsultantHf, #ec_AnalystHf, #ec_DesignerHf, #ec_CreatorsNoc, #ec_CreatorsHf, #ec_CreatorsNoh, #ec_LeadfacilitatorHf, #ec_CofacilitatorHf, #ec_ModeratorHf, #ec_ProducerHf, #ec_DocumentorHf, #ec_ProgramNoc, #ec_ProgramHf, #ec_Programexpense, #ef_Totalpackage, #LessCTO_NOC, #inputReferral, #inputManager, #addBtn, #addBtn2, #addBtn3, #addBtn4, #addBtn5, #addBtn6, #addBtn7, #addBtn8, #addBtn9, #addBtn10, #addBtn11 ",
+    ".customized-type, .ga-only-dropdown, .remove, #tableLeadconsultant, #tableAnalyst, #ec_tableAnalyst, #ef_LeadconsultantNoc, #ef_LeadconsultantHf, #ef_LeadconsultantNoh, #ef_LeadconsultantNwh, #ef_AnalystNoc1, #ef_AnalystHf, #ef_AnalystNoh1, #ef_AnalystNwh1, #ef_DesignerNoc, #ef_DesignerHf, #ef_DesignerNoh, #ef_DesignerNwh, #ef_LeadfacilitatorNoc, #ef_LeadfacilitatorHf, #ef_LeadfacilitatorNoh, #ef_LeadfacilitatorNwh, #ef_CofaciNoc, #ef_CofaciHf, #ef_CofaciNoh, #ef_CofaciNwh, #ef_ModeratorNoc, #ef_ModeratorHf, #ef_ModeratorNoh, #ef_ModeratorNwh, #ef_ProducerNoc, #ef_ProducerHf, #ef_ProducerNoh, #ef_ProducerNwh, #ef_DocumentorNoc, #ef_DocumentorHf, #ef_DocumentorNoh, #ef_DocumentorNwh, #ef_Totalpackage, #sales, #inputSales, #referral, #engagementManager, #ec_LeadconsultantHf, #ec_AnalystHf, #ec_DesignerHf, #ec_CreatorsNoc, #ec_CreatorsHf, #ec_CreatorsNoh, #ec_LeadfacilitatorHf, #ec_CofacilitatorHf, #ec_ModeratorHf, #ec_ProducerHf, #ec_DocumentorHf, #ec_ProgramNoc, #ec_ProgramHf, #ec_Programexpense, #ef_Totalpackage, #LessCTO_NOC, #inputReferral, #inputManager, #addBtn, #addBtn2, #addBtn3, #addBtn4, #addBtn5, #addBtn6, #addBtn7, #addBtn8, #addBtn9, #addBtn10, #addBtn11",
     function () {
         //customized type
         $(".customized-type").each(function () {
@@ -72,6 +72,8 @@ $(document).on(
         var gaPercentage = $(".customized-type");
         rowIdx = 0;
         leadConsultant = 0;
+        efAnalyst = 0;
+        ecAnalyst = 0;
 
         /*******************************************************CONSULTING*********************************************************************/
         //Lead consultant
@@ -162,18 +164,19 @@ $(document).on(
 
         //Analyst
         $("#tableAnalyst > tr").each(function () {
+            efAnalyst++;
             //analyst engagement fees auto sum
             sum14 =
-                $(this).find("#ef_AnalystNoc").val() *
+                $(this).find(`#ef_AnalystNoc${efAnalyst}`).val() *
                     +$(this).find("#ef_AnalystHf").val().replace(/\₱|,/g, "") *
-                    $(this).find("#ef_AnalystNoh").val() +
-                $(this).find("#ef_AnalystNwh").val() *
-                    ($(this).find("#ef_AnalystNoc").val() *
+                    $(this).find(`#ef_AnalystNoh${efAnalyst}`).val() +
+                $(this).find(`#ef_AnalystNwh${efAnalyst}`).val() *
+                    ($(this).find(`#ef_AnalystNoc${efAnalyst}`).val() *
                         +$(this)
                             .find("#ef_AnalystHf")
                             .val()
                             .replace(/\₱|,/g, "") *
-                        $(this).find("#ef_AnalystNoh").val() *
+                        $(this).find(`#ef_AnalystNoh${efAnalyst}`).val() *
                         0.2);
 
             //if the customized type value is G.A then it will add percentage
@@ -192,32 +195,27 @@ $(document).on(
                 .find("#analyst-total")
                 .html(currency.format(Math.ceil(sum14)));
 
-            $("#tableAnalyst > tr").on("click", ".remove", function () {
-                // Removing the current row.
-                $(this).closest("tr").remove();
-
-                // Decreasing total number of rows by 1.
-                efAnalyst--;
-            });
-
             //adding the subtotal of analyst into sum the sum of engagement fees
             sum += +sum14;
+        });
 
+        $("#ec_tableAnalyst > tr").each(function () { 
+            ecAnalyst++;
             // Getting the value of engagement fees of analyst to pass the value
             // into the engagement cost analyst
-            $("#ec_AnalystNoc").val($("#ef_AnalystNoc").val());
-            $("#ec_AnalystNoh").val($("#ef_AnalystNoh").val());
-            $("#ec_AnalystNwh").val($("#ef_AnalystNwh").val());
+            $("#ec_AnalystNoc1").val($("#ef_AnalystNoc1").val());
+            $("#ec_AnalystNoh1").val($("#ef_AnalystNoh1").val());
+            $("#ec_AnalystNwh1").val($("#ef_AnalystNwh1").val());
 
             //analyst engagement cost auto sum
-            sumecAnalyst +=
-                $("#ec_AnalystNoc").val() *
-                    $("#ec_AnalystHf").val().replace(/\₱|,/g, "") *
-                    $("#ec_AnalystNoh").val() +
-                $("#ec_AnalystNwh").val() *
-                    ($("#ec_AnalystNoc").val() *
-                        $("#ec_AnalystHf").val().replace(/\₱|,/g, "") *
-                        $("#ec_AnalystNoh").val() *
+            sumecAnalyst =
+                $(`#ec_AnalystNoc${ecAnalyst}`).val() *
+                    $(`#ec_AnalystHf${ecAnalyst}`).val().replace(/\₱|,/g, "") *
+                    $(`#ec_AnalystNoh${ecAnalyst}`).val() +
+                $(`#ec_AnalystNwh${ecAnalyst}`).val() *
+                    ($(`#ec_AnalystNoc${ecAnalyst}`).val() *
+                        $(`#ec_AnalystHf${ecAnalyst}`).val().replace(/\₱|,/g, "") *
+                        $(`#ec_AnalystNoh${ecAnalyst}`).val() *
                         0.2);
 
             //if the customized type value is G.A
@@ -230,13 +228,19 @@ $(document).on(
                     (document.getElementById("ga-only-dropdown").value / 100);
             }
 
+            //lead consultant engagement fees sum
+            $(this)
+            .find("#ec_AnalystTotal")
+            .html(currency.format(Math.ceil(sumecAnalyst)));
+
             //adding the subtotal of analyst into sum the sum of engagement cost
             sumEngagementCost += +sumecAnalyst;
         });
+
         //Subtotal
         $("#subtotal-consulting").html("₱" + currency.format(Math.ceil(sum)));
-        //subtotal engagement cost
-        $("#ec_AnalystTotal").html(currency.format(Math.ceil(sumecAnalyst)));
+        // //subtotal engagement cost
+        // $("#ec_AnalystTotal").html(currency.format(Math.ceil(sumecAnalyst)));
         $("#ec_SubtotalConsulting").html(
             currency.format(Math.ceil(sumEngagementCost))
         );
@@ -954,7 +958,7 @@ document.getElementById("ef_ProducerHf").defaultValue =
 document.getElementById("ef_DocumentorHf").defaultValue =
     "₱" + currency.format(Math.ceil(2500));
 
-document.getElementById("ec_AnalystHf").defaultValue = currency.format(
+document.getElementById("ec_AnalystHf1").defaultValue = currency.format(
     Math.ceil(1700)
 );
 document.getElementById("ec_LeadfacilitatorHf").defaultValue = currency.format(
@@ -1002,7 +1006,7 @@ $("#ec_LeadconsultantHf").on({
         $(this).val(input_val);
     },
 });
-$("#ec_AnalystHf").on({
+$("#ec_AnalystHf1").on({
     keyup: function () {
         let input_val = $(this).val();
         input_val = numberToCurrency(input_val);

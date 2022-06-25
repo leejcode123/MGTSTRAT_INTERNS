@@ -271,37 +271,38 @@
                     </tr>
                 </tbody>
 
-                
-                <tr class="">
-                    <td class="title">Analyst</td>
-                    <td class="">
-                        <input type="number"
-                            class="text-center form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ec_AnalystNoc" max="100" readonly>
-                    </td>
-                    <td class="">
-                        <input type="text"
-                            class="text-center fw-bold text-dark form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ec_AnalystHf">
-                    </td>
-                    <td class="">
-                        <input type="number"
-                            class="text-center form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ec_AnalystNoh" readonly>
-                    </td>
-                    <td class="">
-                        <input type="number"
-                            class="text-center form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ec_AnalystNwh" readonly>
-                    </td>
-                    <td class="total-td">
-                        <h4 class="text-center lead" id="ec_AnalystTotal">-</h4>
-                    </td>
-                    <td class="total-td">
-                        <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="">
-                    </td>
-                </tr>
+                <tbody id="ec_tableAnalyst">
+                    <tr id="ec_Analyst1">
+                        <td class="title">Analyst</td>
+                        <td>
+                            <input type="number"
+                                class="text-center form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ec_AnalystNoc1" max="100" readonly>
+                        </td>
+                        <td>
+                            <input type="text"
+                                class="text-center fw-bold text-dark form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ec_AnalystHf1">
+                        </td>
+                        <td>
+                            <input type="number"
+                                class="text-center form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ec_AnalystNoh1" readonly>
+                        </td>
+                        <td>
+                            <input type="number"
+                                class="text-center form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ec_AnalystNwh1" readonly>
+                        </td>
+                        <td class="total-td">
+                            <h4 class="text-center lead" id="ec_AnalystTotal">-</h4>
+                        </td>
+                        <td class="total-td">
+                            <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="">
+                        </td>
+                    </tr>
+                </tbody>
                 <tr class="table-secondary">
                     <td class="title fw-bold text-dark fst-italic">Subtotal</td>
                     <td></td>
@@ -322,6 +323,7 @@
                     <td class="title" colspan=""></td>
                     <td class="title" colspan=""></td>
                 </tr>
+                
 
                 {{-- Design --}}
                 <tr class="">

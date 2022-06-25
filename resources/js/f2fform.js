@@ -472,7 +472,7 @@ $(document).on(
         });
 
             // $("#ec_LeadconsultantsTotal").html(currency.format(Math.ceil(sumEf)));
-            $("#subtotalConsulting").html("₱" + currency.format(Math.ceil(sumLc + sumAnlst)));
+            $("#subtotalConsulting").html("₱" + currency.format(Math.ceil(sumEf)));
             // $("#lead-total").html(currency.format(Math.ceil(sumLc)));
             // $("#subtotal-consulting").html(
             //     currency.format(Math.ceil(sumLc + sumAnlst))
@@ -529,7 +529,7 @@ $(document).on(
             });
             $("#analyst-total").html(currency.format(Math.ceil(sumAnlst)));
             $("#subtotalConsulting").html(
-               "₱" +  currency.format(Math.ceil(sumLc + sumAnlst))
+               "₱" +  currency.format(Math.ceil(sumEf))
             );
 
             // Designer

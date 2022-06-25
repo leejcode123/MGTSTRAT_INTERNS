@@ -107,7 +107,7 @@
                 // Decreasing total number of rows by 1.
                 rowIdx--;
                 // $(`#ecButton${rowIdx}`).trigger('click');
-            });
+        });
 
         var efAnalyst = 1;
         $("#addBtn2").on("click", function() {
@@ -115,29 +115,31 @@
             $("#tableAnalyst").append(`
                 <tr class="table-warning" id="Analyst${++efAnalyst}">
                     <td class="title">Analyst</td>
-                        <td>
+                        <td class="noc">
                             <input type="number"
                                 class="input js-mytooltip form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ef_AnalystNoc" max="100" data-mytooltip-content="<i>Includes in depth needs analysis (i.e. surveys,   interviews, FGDs),
+                                value="{{ old('') }}" name="" id="ef_AnalystNoc${efAnalyst}" max="100" data-mytooltip-content="<i>Includes in depth needs analysis (i.e. surveys,   interviews, FGDs),
                                     special research (i.e. to study client materials or client -required materials, industry
                                     or function specific content), creation of client-specific learning aids/tools
                                     (i.e. assessments, c</i>" data-mytooltip-theme="dark" data-mytooltip-action="focus"
-                                data-mytooltip-direction="bottom">
+                                data-mytooltip-direction="bottom" oninput="document.getElementById('ec_AnalystNoc${efAnalyst}').value = document.getElementById('ef_AnalystNoc${efAnalyst}').value;">
                         </td>
                         <td>
                             <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                 value="{{ old('') }}" name="" id="ef_AnalystHf" data-type="currency">
                         </td>
-                        <td>
+                        <td class="noh">
                             <input type="number"
                                 class="input js-mytooltip form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ef_AnalystNoh"
+                                value="{{ old('') }}" name="" id="ef_AnalystNoh${efAnalyst}"
                                 data-mytooltip-content="<i>Number of Hours</i>" data-mytooltip-theme="dark"
-                                data-mytooltip-action="focus" data-mytooltip-direction="bottom">
+                                data-mytooltip-action="focus" data-mytooltip-direction="bottom"
+                                oninput="document.getElementById('ec_AnalystNoh${efAnalyst}').value = document.getElementById('ef_AnalystNoh${efAnalyst}').value;">
                         </td>
-                        <td>
+                        <td class="nwh">
                             <input type="number" class="form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ef_AnalystNwh">
+                                value="{{ old('') }}" name="" id="ef_AnalystNwh${efAnalyst}"
+                                oninput="document.getElementById('ec_AnalystNwh${efAnalyst}').value = document.getElementById('ef_AnalystNwh${efAnalyst}').value;">
                         </td>
                         <td class="total-td">
                             {{-- <input type="text" class="form-control input-table @error('') is-invalid @enderror"
@@ -149,11 +151,51 @@
                             <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                 value="{{ old('') }}" name="" id="">
                         </td>
-                        <td class="border border-white" style="background-color: #FFFFFF;"><a href="javascript:void(0)" class="text-danger font-18 remove" title="Remove"><i class="fa fa-trash-o"></i></a></td>
-                    </td>
+                        <td class="border border-white" style="background-color: #FFFFFF;">
+                            <a href="javascript:void(0)" class="text-danger font-18 remove" title="Remove" onclick="$('#ecAnalystRemove${efAnalyst}').trigger('click');">
+                                <i class="fa fa-trash-o"></i>
+                            </a>
+                        </td>
                 </tr>
             `);
         });
+
+        $("#tableAnalyst").on("click", ".remove", function () {
+                // Getting all the rows next to the row
+                // containing the clicked button
+                var child = $(this).closest("tr").nextAll();
+
+                // Iterating across all the rows
+                // obtained to change the index
+                child.each(function () {
+                    // Getting <tr> id.
+                    var id = $(this).attr("id");
+
+                    // Getting the <input> inside the .noc, .noh, .nwh class.
+                    var noc = $(this).children(".noc").children("input");
+                    var noh = $(this).children(".noh").children("input");
+                    var nwh = $(this).children(".nwh").children("input");
+
+                    // Gets the row number from <tr> id.
+                    var dig = parseInt(id.substring(7));
+
+                    // Modifying row id.
+                    $(this).attr("id", `Analyst${dig - 1}`);
+
+                    // Modifying row index.
+                    noc.attr("id", `ef_AnalystNoc${dig - 1}`);
+                    noh.attr("id", `ef_AnalystNoh${dig - 1}`);
+                    nwh.attr("id", `ef_AnalystNwh${dig - 1}`);
+                });
+
+                // Removing the current row.
+                $(this).closest("tr").remove();
+
+                // Decreasing total number of rows by 1.
+                rowIdx--;
+                // $(`#ecButton${rowIdx}`).trigger('click');
+        });
+        
 
         var efDesigner = 1;
         $("#addBtn3").on("click", function() {
