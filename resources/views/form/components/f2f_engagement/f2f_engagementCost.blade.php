@@ -301,41 +301,43 @@
                         <th class="total-td"></th>
                         <th class="total-td"></th>
                     </tr>
-                    <tr class="" id="lead-consultant">
-                        <td class="title">Lead Consultant</td>
-                        <td class="">
-                            <input type="number"
-                                class="text-center form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ec_LeadconsultantsNoc" max="100" readonly>
-                        </td>
-                        <td class="">
-                            <input type="text"
-                                class="text-center fw-bold text-dark form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ec_LeadconsultantsPd">
-                        </td>
-                        <td class="">
-                            <input type="number"
-                                class="text-center form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ec_LeadconsultantsNod" readonly>
-                        </td>
-                        <td class="">
-                            <input type="number"
-                                class="text-center form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ec_LeadconsultantsAtd" readonly>
-                        </td>
-                        <td class="">
-                            <input type="number"
-                                class="text-center form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ec_LeadconsultantsNwh" readonly>
-                        </td>
-                        <td class="total-td">
-                            <h4 class="text-center lead" id="ec_LeadconsultantsTotal">-</h4>
-                        </td>
-                        <td class="total-td">
-                            <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="">
-                        </td>
-                    </tr>
+                    <tbody id="tableofLeadConsultant">
+                        <tr class="" id="rowofLeadConsultant">
+                            <td class="title">Lead Consultant</td>
+                            <td class="">
+                                <input type="number"
+                                    class="text-center form-control input-table @error('') is-invalid @enderror"
+                                    value="{{ old('') }}" name="" id="ec_LeadconsultantsNoc" max="100" readonly>
+                            </td>
+                            <td class="">
+                                <input type="text"
+                                    class="text-center fw-bold text-dark form-control input-table @error('') is-invalid @enderror"
+                                    value="{{ old('') }}" name="" id="ec_LeadconsultantsPd">
+                            </td>
+                            <td class="">
+                                <input type="number"
+                                    class="text-center form-control input-table @error('') is-invalid @enderror"
+                                    value="{{ old('') }}" name="" id="ec_LeadconsultantsNod" readonly>
+                            </td>
+                            <td class="">
+                                <input type="number"
+                                    class="text-center form-control input-table @error('') is-invalid @enderror"
+                                    value="{{ old('') }}" name="" id="ec_LeadconsultantsAtd" readonly>
+                            </td>
+                            <td class="">
+                                <input type="number"
+                                    class="text-center form-control input-table @error('') is-invalid @enderror"
+                                    value="{{ old('') }}" name="" id="ec_LeadconsultantsNwh" readonly>
+                            </td>
+                            <td class="total-td">
+                                <h4 class="text-center lead" id="ec_LeadconsultantsTotal">-</h4>
+                            </td>
+                            <td class="total-td">
+                                <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                                    value="{{ old('') }}" name="" id="">
+                            </td>
+                        </tr>
+                    </tbody>
                     <tr class="">
                         <td class="title">Analyst</td>
                         <td class="">
