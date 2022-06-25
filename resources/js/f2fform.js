@@ -884,10 +884,10 @@ $(document).on(
             $("#tableofOffsite > tr").each(function () {
                 sumofOffsitepc +=
                     ($("#input_totalPackages").val().replace(/\₱|,/g, "") / 100) -
-                    $("#subtotal-consulting").val() - $("#subtotal-PD").val() *
+                    $("#subtotalConsulting").val() - $("#subtotal-PD").val() *
                     $(this).find("#ec_offsitePc").val() || 
                     ($("#input_totalPackages").val().replace(/\₱|,/g, "") / 100) -
-                    $("#subtotal-consulting").val() - $("#subtotal-PD").val() *
+                    $("#subtotalConsulting").val() - $("#subtotal-PD").val() *
                     $(this).find("#inputforOffsite").val();
 
                     $(this).find("#ec_offsitePcTotal").html("₱" + currency.format(Math.ceil(sumofOffsitepc)));
