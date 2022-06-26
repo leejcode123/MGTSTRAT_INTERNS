@@ -689,7 +689,7 @@ var rowIndx = 1;
                                 (i.e. assessments, c</i>"
                                 data-mytooltip-theme="dark"
                                 data-mytooltip-action="focus" 
-                                data-mytooltip-direction="bottom">
+                                data-mytooltip-direction="bottom" oninput="document.getElementById('ec_LeadconsultantsNoc${rowIndx}').value = document.getElementById('ef_LeadconsultantNoc${rowIndx}').value;">
                         </td>
                         <td>
                             <fieldset>
@@ -734,16 +734,18 @@ var rowIndx = 1;
                                     ¼ Day = 0.25 </i>"
                                 data-mytooltip-theme="dark"
                                 data-mytooltip-action="focus" 
-                                data-mytooltip-direction="bottom">
+                                data-mytooltip-direction="bottom" oninput="document.getElementById('ec_LeadconsultantsNod${rowIndx}').value = document.getElementById('ef_LeadconsultantNoh${rowIndx}').value;">
                         </td>
                         <td class="atd">
                             <input type="number" class=" form-control input-table input @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" id="ef_LeadconsultantAtd${rowIndx}" name="ef_Leadconsultant1[]">
+                                value="{{ old('') }}" id="ef_LeadconsultantAtd${rowIndx}" name="ef_Leadconsultant1[]"
+                                oninput="document.getElementById('ec_LeadconsultantsAtd${rowIndx}').value = document.getElementById('ef_LeadconsultantAtd${rowIndx}').value;">
                         </td>
 
                         <td class="nwh">
                             <input type="number" class=" form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="ef_Leadconsultant1[]" id="ef_LeadconsultantNwh${rowIndx}">
+                                value="{{ old('') }}" name="ef_Leadconsultant1[]" id="ef_LeadconsultantNwh${rowIndx}"
+                                oninput="document.getElementById('ec_LeadconsultantsNwh${rowIndx}').value = document.getElementById('ef_LeadconsultantNwh${rowIndx}').value;">
                         </td>
                         <td class="total-td">
                                 <h4 class="text-center lead" id="leadTotal">-</h4>
@@ -753,7 +755,7 @@ var rowIndx = 1;
                                 value="{{ old('') }}"name="" id="">
                         </td>
                             <td class="border border-white" style="background-color: #FFFFFF;">
-                            <a href="javascript:void(0)" class="text-danger font-18 removed" title="Remove"><i class="fa fa-trash-o"></i></a>
+                            <a href="javascript:void(0)" class="text-danger font-18 removed" title="Remove" onclick="$('#ecRemoveLC${rowIndx}').trigger('click');"> <i class="fa fa-trash-o"></i></a>
                             </td>
             </tr>`
         );

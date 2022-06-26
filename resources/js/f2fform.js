@@ -323,7 +323,11 @@ document.getElementById("ec_Programexpenses").defaultValue = 2 + "%";
 //Customized Engagement form of Engagement Fees
 $(document).on(
     "change keyup click",
+<<<<<<< HEAD
     ".f2f-customized-type, .f2f-ga-only-dropdown, .removed, #tableLeadconsultant, #ef_TableAnalyst, #ef_TableDesigner, #ef_LeadconsultantAtd, #ef_LeadconsultantNoc, #ef_LeadconsultantHf, #ef_LeadconsultantNoh, #ef_LeadconsultantNwh, #ef_AnalystNoc, #ef_AnalystPdf, #ef_AnalystNod, #ef_AnalystAtd, #ef_AnalystNsw, #ef_DesignerNoc, #ef_DesignerPdf, #ef_DesignerNod, #ef_DesignerAtd, #ef_DesignerNsw, #ef_LeadFaciNoc, #ef_LeadFaciPdf, #ef_LeadFaciNod, #ef_LeadFaciAtd, #ef_LeadFaciNsw, #ef_CoFaciNoc, #ef_CoFaciPdf, #ef_CoFaciNod, #ef_CoFaciAtd, #ef_CoFaciNsw, #ef_ActionLearnNoc, #ef_ActionLearnPdf, #ef_ActionLearnNod, #ef_ActionLearnAtd, #ef_ActionLearnNsw, #ef_MarshalNoc, #ef_MarshalPdf, #ef_MarshalNod, #ef_MarshalAtd, #ef_MarshalNsw, #ef_OnsiteNoc, #ef_OnsitePdf, #ef_OnsiteNod, #ef_OnsiteAtd, #ef_OnsiteNsw, #ef_DocumentorNoc, #ef_DocumentorPdf, #ef_DocumentorNod, #ef_DocumentorAtd, #ef_DocumentorNsw,  #ef_PDNoc, #ef_PDPdf, #ef_PDNod, #ef_PDAtd, #ef_PDNsw, #input_totalPackages, #ec_sale, #inputforSale, #referrals, #inputforReferrals, #ecengagementManager, #inputforEngagementManager, #ec_offsitePc, #inputforOffsite, #ec_LeadconsultantsPd, #ec_AnalystsPd, #ec_DesignersPd, #ec_CreatorNoc, #ec_CreatorPd, #ec_CreatorNod, #ec_LeadfacilitatorsPd, #ec_CofacilitatorsPd, #ec_ActionlearningcoachPd, #ec_MarshalPd, #ec_OnsitepcPD, #ec_DocumentorsPd, #ec_PerdiemPd, #ec_PerdiemNoc, #ec_OffprogramsPd, #ec_OffprogramsNoc, #ec_Programexpenses, #tableLeadconsultant, #ecaddButton, #ecaddButton2, #ecaddButton3, #ecaddButton4",
+=======
+    ".f2f-customized-type, .f2f-ga-only-dropdown, .removed, #tableLeadconsultant, #tableofLeadConsultant, #ef_LeadconsultantAtd, #ef_LeadconsultantNoc, #ef_LeadconsultantHf, #ef_LeadconsultantNoh, #ef_LeadconsultantNwh, #ef_AnalystNoc, #ef_AnalystPdf, #ef_AnalystNod, #ef_AnalystAtd, #ef_AnalystNsw, #ef_DesignerNoc, #ef_DesignerPdf, #ef_DesignerNod, #ef_DesignerAtd, #ef_DesignerNsw, #ef_LeadFaciNoc, #ef_LeadFaciPdf, #ef_LeadFaciNod, #ef_LeadFaciAtd, #ef_LeadFaciNsw, #ef_CoFaciNoc, #ef_CoFaciPdf, #ef_CoFaciNod, #ef_CoFaciAtd, #ef_CoFaciNsw, #ef_ActionLearnNoc, #ef_ActionLearnPdf, #ef_ActionLearnNod, #ef_ActionLearnAtd, #ef_ActionLearnNsw, #ef_MarshalNoc, #ef_MarshalPdf, #ef_MarshalNod, #ef_MarshalAtd, #ef_MarshalNsw, #ef_OnsiteNoc, #ef_OnsitePdf, #ef_OnsiteNod, #ef_OnsiteAtd, #ef_OnsiteNsw, #ef_DocumentorNoc, #ef_DocumentorPdf, #ef_DocumentorNod, #ef_DocumentorAtd, #ef_DocumentorNsw,  #ef_PDNoc, #ef_PDPdf, #ef_PDNod, #ef_PDAtd, #ef_PDNsw, #input_totalPackages, #ec_sale, #inputforSale, #referrals, #inputforReferrals, #ecengagementManager, #inputforEngagementManager, #ec_offsitePc, #inputforOffsite, #ec_LeadconsultantsPd, #ec_AnalystsPd, #ec_DesignersPd, #ec_CreatorNoc, #ec_CreatorPd, #ec_CreatorNod, #ec_LeadfacilitatorsPd, #ec_CofacilitatorsPd, #ec_ActionlearningcoachPd, #ec_MarshalPd, #ec_OnsitepcPD, #ec_DocumentorsPd, #ec_PerdiemPd, #ec_PerdiemNoc, #ec_OffprogramsPd, #ec_OffprogramsNoc, #ec_Programexpenses, #tableLeadconsultant, #ecaddButton, #ecaddButton2, #ecaddButton3, #ecaddButton4",
+>>>>>>> 587be94e7420994787559d40233386590b544cae
     function () {
         //customized type
         $(".f2f-customized-type").each(function () {
@@ -407,9 +411,15 @@ $(document).on(
         sumofecOffprogram = 0;
         sumofecProgramexpense = 0;
 
+
         rowIndx = 0;
+<<<<<<< HEAD
         rowAnalyst = 0;
         rowDesigner = 0;
+=======
+        ecleadConsultant = 0;
+
+>>>>>>> 587be94e7420994787559d40233386590b544cae
         //customized type
         var gaPercentage = $(".customized-type");
 
@@ -417,6 +427,7 @@ $(document).on(
         //Lead consultant
         $("#tableLeadconsultant > tr").each(function () {
             rowIndx++;
+    
             sumLc =
                 $(this).find(`#ef_LeadconsultantNoc${rowIndx}`).val() *
                 +$(this).find("#ef_LeadconsultantHf").val().replace(/,/g, "") *
@@ -442,45 +453,36 @@ $(document).on(
             //lead consultant engagement fees sum
             $(this).find("#leadTotal").html(currency.format(Math.ceil(sumLc)));
 
-            // $("#tableLeadconsultant").on("click", ".removed", function () {
-            //     // Removing he current row.
-            //     $(this).closest("tr").remove();
-
-            //     // Decreasing total number of rows by 1.
-            //     rowIndx--;
-            // });
-
             sumEf += +sumLc;
+        });
+        
+        $("#tableofLeadConsultant > tr").each(function () { 
+            ecleadConsultant++;
 
-            $("#ec_LeadconsultantsNoc").val($("#ef_LeadconsultantNoc").val());
-            $("#ec_LeadconsultantsNod").val($("#ef_LeadconsultantNoh").val());
-            $("#ec_LeadconsultantsNwh").val($("#ef_LeadconsultantNwh").val());
-            $("#ec_LeadconsultantsAtd").val($("#ef_LeadconsultantAtd").val());
+            $("#ec_LeadconsultantsNoc1").val($("#ef_LeadconsultantNoc1").val());
+            $("#ec_LeadconsultantsNod1").val($("#ef_LeadconsultantNoh1").val());
+            $("#ec_LeadconsultantsNwh1").val($("#ef_LeadconsultantNwh1").val());
+            $("#ec_LeadconsultantsAtd1").val($("#ef_LeadconsultantAtd1").val());
 
-            sumofecLeadconsultant +=
-                $("#ec_LeadconsultantsNoc").val() *
-                $("#ec_LeadconsultantsPd").val().replace(/,/g, "") *
-                $("#ec_LeadconsultantsNod").val() +
-                $("#ec_LeadconsultantsAtd").val() *
-                ($("#ec_LeadconsultantsNoc").val() *
-                    $("#ec_LeadconsultantsPd").val().replace(/,/g, "") *
-                    $("#ec_LeadconsultantsNod").val() *
-                    0.2) + $("#ec_LeadconsultantsNwh").val() *
-                ($("#ec_LeadconsultantsNoc").val() *
-                    $("#ec_LeadconsultantsPd").val().replace(/,/g, "") *
-                    $("#ec_LeadconsultantsNod").val() *
+            sumofecLeadconsultant =
+                $(this).find(`#ec_LeadconsultantsNoc${ecleadConsultant}`).val() *
+                $(this).find("#ec_LeadconsultantsPd").val().replace(/,/g, "") *
+                $(this).find(`#ec_LeadconsultantsNod${ecleadConsultant}`).val() +
+                $(this).find(`#ec_LeadconsultantsAtd${ecleadConsultant}`).val() *
+                ($(this).find(`#ec_LeadconsultantsNoc${ecleadConsultant}`).val() *
+                    $(this).find("#ec_LeadconsultantsPd").val().replace(/,/g, "") *
+                    $(this).find(`#ec_LeadconsultantsNod${ecleadConsultant}`).val() *
+                    0.2) + $(this).find(`#ec_LeadconsultantsNwh${ecleadConsultant}`).val() *
+                ($(this).find(`#ec_LeadconsultantsNoc${ecleadConsultant}`).val() *
+                    $(this).find("#ec_LeadconsultantsPd").val().replace(/,/g, "") *
+                    $(this).find(`#ec_LeadconsultantsNod${ecleadConsultant}`).val() *
                     0.2);
 
-            sumofEngagementCost += +sumofecLeadconsultant;
-            
-        });
+            $(this).find("#ec_LeadconsultantsTotal").html(currency.format(Math.ceil(sumofecLeadconsultant)));
 
-            // $("#ec_LeadconsultantsTotal").html(currency.format(Math.ceil(sumEf)));
-            $("#subtotalConsulting").html("₱" + currency.format(Math.ceil(sumEf)));
-            // $("#lead-total").html(currency.format(Math.ceil(sumLc)));
-            // $("#subtotal-consulting").html(
-            //     currency.format(Math.ceil(sumLc + sumAnlst))
-            // );
+            sumofEngagementCost += +sumofecLeadconsultant;
+        });
+        // $("#subtotalConsulting").html("₱" + currency.format(Math.ceil(sumEf)));
 
             // Analyst
             $("#ef_TableAnalyst > tr").each(function () {
@@ -544,6 +546,9 @@ $(document).on(
             // $("#analyst-total").html(currency.format(Math.ceil(sumAnlst)));
             $("#subtotalConsulting").html(
                "₱" +  currency.format(Math.ceil(sumEf))
+            );
+            $("#ec_SubtotalsConsulting").html(
+               "₱" +  currency.format(Math.ceil(sumofEngagementCost))
             );
 
             // Designer

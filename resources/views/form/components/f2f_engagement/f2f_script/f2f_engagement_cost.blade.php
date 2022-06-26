@@ -235,4 +235,93 @@
 
     });
 
+    var ecleadConsultant = 1;
+    $(document).ready(function () {
+        $("#addBtn1").on("click", function() {
+            // Adding a row inside the tbody.
+            $("#tableofLeadConsultant").append(`
+                <tr id="rowofLeadConsultant${++ecleadConsultant}">
+                    <td class="title">Lead Consultant</td>
+                    <td class="noc">
+                        <input type="number"
+                            class="text-center form-control input-table @error('') is-invalid @enderror"
+                            value="{{ old('') }}" name="" id="ec_LeadconsultantsNoc${ecleadConsultant}" max="100"
+                            readonly>
+                    </td>
+                    <td class="pd">
+                        <input type="text"
+                            class="text-center fw-bold text-dark form-control input-table @error('') is-invalid @enderror"
+                            value="{{ old('') }}" name="" id="ec_LeadconsultantsPd">
+                            </td>
+                    <td class="nod">
+                        <input type="number"
+                            class="text-center form-control input-table @error('') is-invalid @enderror"
+                            value="{{ old('') }}" name="" id="ec_LeadconsultantsNod${ecleadConsultant}" readonly>
+                    </td>
+                    <td class="atd">
+                                <input type="number"
+                                    class="text-center form-control input-table @error('') is-invalid @enderror"
+                                    value="{{ old('') }}" name="" id="ec_LeadconsultantsAtd${ecleadConsultant}" readonly>
+                            </td>
+                    <td class="nwh">
+                        <input type="number"
+                            class="text-center form-control input-table @error('') is-invalid @enderror"
+                            value="{{ old('') }}" name="" id="ec_LeadconsultantsNwh${ecleadConsultant}" readonly>
+                    </td>
+                    <td class="total-td">
+                        <h4 class="text-center lead" id="ec_LeadconsultantsTotal">-</h4>
+                    </td>
+                    <td class="total-td">
+                        <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                            value="{{ old('') }}" name="" id="">
+                    </td>
+                    <td class="border border-white" style="background-color: #FFFFFF;">
+                        <a href="javascript:void(0)" class="text-danger font-18 remove" id="ecRemoveLC${ecleadConsultant}" title="Remove" style="visibility: hidden;">
+                            <i class="fa fa-trash-o"></i>
+                        </a>
+                    </td>
+                </tr>
+            `);
+        }); 
+ 
+        $("#tableofLeadConsultant").on("click", ".remove", function () {
+            
+            // Getting all the rows next to the row
+            // containing the clicked button
+            var child = $(this).closest("tr").nextAll();
+            
+            // Iterating across all the rows
+            // obtained to change the index
+            child.each(function () {
+                // Getting <tr> id.
+                var id = $(this).attr("id");
+
+                // Getting the <input> inside the .noc, .noh, .nwh class.
+                var noc = $(this).children(".noc").children("input");
+                var nod = $(this).children(".nod").children("input");
+                var nwh = $(this).children(".nwh").children("input");
+                var atd = $(this).children(".atd").children("input");
+
+                // Gets the row number from <tr> id.
+                var dig = parseInt(id.substring(11));
+
+                // Modifying row id.
+                $(this).attr("id", `ec_LeadConsultants${dig - 1}`);
+
+                // Modifying row index.
+                noc.attr("id", `ec_LeadconsultantsNoc${dig - 1}`);
+                nod.attr("id", `ec_LeadconsultantsNod${dig - 1}`);
+                atd.attr("id", `ec_LeadconsultantsAtd${dig - 1}`);
+                nwh.attr("id", `ec_LeadconsultantsNwh${dig - 1}`);
+            });
+
+            // Removing the current row.
+            $(this).closest("tr").remove();
+            // Decreasing total number of rows by 1.
+            ecleadConsultant--;
+        });    
+
+    });
+
+
 </script>
