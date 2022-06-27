@@ -921,7 +921,7 @@ var rowDesigner = 1;
                                 (i.e. assessments, c</i>"
                                 data-mytooltip-theme="dark"
                                 data-mytooltip-action="focus" 
-                                data-mytooltip-direction="bottom">
+                                data-mytooltip-direction="bottom" oninput="document.getElementById('ec_DesignersNoc${rowDesigner}').value = document.getElementById('ef_DesignerNoc${rowDesigner}').value;">
                         </td>
                         <td>
                             <fieldset>
@@ -957,15 +957,15 @@ var rowDesigner = 1;
                                     ¼ Day = 0.25 <br>Number of Hours</i>"
                                 data-mytooltip-theme="dark"
                                 data-mytooltip-action="focus" 
-                                data-mytooltip-direction="bottom">
+                                data-mytooltip-direction="bottom" oninput="document.getElementById('ec_DesignersNod${rowDesigner}').value = document.getElementById('ef_DesignerNod${rowDesigner}').value;">
                         </td>
                         <td class="atd">
                             <input type="number" class="nwh-e18 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="ef_DesignerAtd${rowDesigner}">
+                                value="{{ old('') }}" name="" id="ef_DesignerAtd${rowDesigner}" oninput="document.getElementById('ec_DesignersAtd${rowDesigner}').value = document.getElementById('ef_DesignerAtd${rowDesigner}').value;">
                         </td>
                         <td class="nsw">
                             <input type="number" class="nwh-e18 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="ef_DesignerNsw${rowDesigner}">
+                                value="{{ old('') }}" name="" id="ef_DesignerNsw${rowDesigner}" oninput="document.getElementById('ec_DesignersNwh${rowDesigner}').value = document.getElementById('ef_DesignerNsw${rowDesigner}').value;">
                         </td>
                         <td class="total-td" style="background-color: rgba(146, 146, 146, 0.727)">
                                 <h4 class="text-center" id="subtotal-design">-</h4>
@@ -975,7 +975,7 @@ var rowDesigner = 1;
                                 value="{{ old('') }}" name="" id="">
                         </td>
                             <td class="border border-white" style="background-color: #FFFFFF;">
-                            <a href="javascript:void(0)" class="text-danger font-18 removed" title="Remove"><i class="fa fa-trash-o"></i></a>
+                            <a href="javascript:void(0)" class="text-danger font-18 removed" title="Remove" onclick="$('#ecRemoveD${rowDesigner}').trigger('click');"><i class="fa fa-trash-o"></i></a>
                             </td>
             </tr>`
         );
