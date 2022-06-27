@@ -290,7 +290,7 @@
                         <td class="title">Lead Facilitator</td>
                         <td>
                             <input type="number" class="noc-b21 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="ef_LeadFaciNoc" max="100">
+                                value="{{ old('') }}" name="" id="ef_LeadFaciNoc1" max="100">
                         </td>
                         <td>
                             <input type="text" class="form-control js-mytooltip input-table @error('') is-invalid @enderror" 
@@ -306,7 +306,7 @@
                             <input type="number" class="noh-d21 input js-mytooltip form-control input-table @error('') is-invalid @enderror" 
                                 value="{{ old('') }}" 
                                 name="" 
-                                id="ef_LeadFaciNod"
+                                id="ef_LeadFaciNod1"
                                 data-mytooltip-content="<i>½ Day = 0.70</i>"
                                 data-mytooltip-theme="dark"
                                 data-mytooltip-action="focus" 
@@ -314,11 +314,11 @@
                         </td>
                         <td>
                             <input type="number" class="nwh-e21 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="ef_LeadFaciAtd">
+                                value="{{ old('') }}" name="" id="ef_LeadFaciAtd1">
                         </td>
                         <td>
                             <input type="number" class="nwh-e21 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="ef_LeadFaciNsw">
+                                value="{{ old('') }}" name="" id="ef_LeadFaciNsw1">
                         </td>
                         <td class="total-td">
                                 <h4 class="text-center lead" id="subtotal-LeadFaci">-</h4>
@@ -1018,6 +1018,98 @@ var rowDesigner = 1;
 
                 // Decreasing total number of rows by 1.
                 rowDesigner--;
+                // $(`#ecButton${rowIdx}`).trigger('click');
+        });
+var rowLeadFaci = 1;
+    $("#addBtn4").on("click", function() {
+        // Adding a row inside the tbody.
+        $("#ef_TableLeadFaci").append
+        (`
+            <tr id="ef_RowLeadFaci${++rowLeadFaci}" class="table-warning">
+                <td class="title">Lead Facilitator</td>
+                        <td class="noc">
+                            <input type="number" class="noc-b21 form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" name="" id="ef_LeadFaciNoc${rowLeadFaci}" max="100">
+                        </td>
+                        <td>
+                            <input type="text" class="form-control js-mytooltip input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" name="" id="ef_LeadFaciPdf"
+                                data-mytooltip-content="<i>P80,000 - Key Accounts with min guaranteed 30 full day programs<br>
+                                    P88,000 - Non-key accounts signed on or before Apr 30, 2022<br>
+                                    P96,000 - Effective May 1, 2022</i>"
+                                data-mytooltip-theme="dark"
+                                data-mytooltip-action="focus" 
+                                data-mytooltip-direction="bottom">
+                        </td>
+                        <td class="nod">
+                            <input type="number" class="noh-d21 input js-mytooltip form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" 
+                                name="" 
+                                id="ef_LeadFaciNod${rowLeadFaci}"
+                                data-mytooltip-content="<i>½ Day = 0.70</i>"
+                                data-mytooltip-theme="dark"
+                                data-mytooltip-action="focus" 
+                                data-mytooltip-direction="bottom">
+                        </td>
+                        <td class="atd">
+                            <input type="number" class="nwh-e21 form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" name="" id="ef_LeadFaciAtd${rowLeadFaci}">
+                        </td>
+                        <td class="nsw">
+                            <input type="number" class="nwh-e21 form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" name="" id="ef_LeadFaciNsw${rowLeadFaci}">
+                        </td>
+                        <td class="total-td">
+                                <h4 class="text-center lead" id="subtotal-LeadFaci">-</h4>
+                        </td>
+                        <td class="total-td">
+                            <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="">
+                        </td>
+                            <td class="border border-white" style="background-color: #FFFFFF;">
+                            <a href="javascript:void(0)" class="text-danger font-18 removed" title="Remove"><i class="fa fa-trash-o"></i></a>
+                            </td>
+            </tr>`
+        );
+    });
+        $("#ef_TableLeadFaci").on("click", ".removed", function () {
+
+                // Getting all the rows next to the row
+                // containing the clicked button
+                var child = $(this).closest("tr").nextAll();
+
+                // Iterating across all the rows
+                // obtained to change the index
+                child.each(function () {
+                    // Getting <tr> id.
+                    var id = $(this).attr("id");
+
+                    // Getting the <input> inside the .noc, .noh, .nwh class.
+                    var noc = $(this).children(".noc").children("input");
+                    // var pdf = $(this).children(".pdf").children("input");
+                    var nod = $(this).children(".nod").children("input");
+                    var atd = $(this).children(".atd").children("input");
+                    var nsw = $(this).children(".nsw").children("input");
+
+                    // Gets the row number from <tr> id.
+                    var dig = parseInt(id.substring(14));
+
+                    // Modifying row id.
+                    $(this).attr("id", `ef_RowLeadFaci${dig - 1}`);
+
+                    // Modifying row index.
+                    noc.attr("id", `ef_LeadFaciNoc${dig - 1}`);
+                    // pdf.attr("id", `ef_LeadFaciPdf${dig - 1}`);
+                    nod.attr("id", `ef_LeadFaciNod${dig - 1}`);
+                    atd.attr("id", `ef_LeadFaciAtd${dig - 1}`);
+                    nsw.attr("id", `ef_LeadFaciNsw${dig - 1}`);
+                });
+
+                // Removing the current row.
+                $(this).closest("tr").remove();
+
+                // Decreasing total number of rows by 1.
+                rowLeadFaci--;
                 // $(`#ecButton${rowIdx}`).trigger('click');
         });
 </script>

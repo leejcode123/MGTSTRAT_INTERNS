@@ -323,11 +323,7 @@ document.getElementById("ec_Programexpenses").defaultValue = 2 + "%";
 //Customized Engagement form of Engagement Fees
 $(document).on(
     "change keyup click",
-<<<<<<< HEAD
-    ".f2f-customized-type, .f2f-ga-only-dropdown, .removed, #tableLeadconsultant, #ef_TableAnalyst, #ef_TableDesigner, #ef_LeadconsultantAtd, #ef_LeadconsultantNoc, #ef_LeadconsultantHf, #ef_LeadconsultantNoh, #ef_LeadconsultantNwh, #ef_AnalystNoc, #ef_AnalystPdf, #ef_AnalystNod, #ef_AnalystAtd, #ef_AnalystNsw, #ef_DesignerNoc, #ef_DesignerPdf, #ef_DesignerNod, #ef_DesignerAtd, #ef_DesignerNsw, #ef_LeadFaciNoc, #ef_LeadFaciPdf, #ef_LeadFaciNod, #ef_LeadFaciAtd, #ef_LeadFaciNsw, #ef_CoFaciNoc, #ef_CoFaciPdf, #ef_CoFaciNod, #ef_CoFaciAtd, #ef_CoFaciNsw, #ef_ActionLearnNoc, #ef_ActionLearnPdf, #ef_ActionLearnNod, #ef_ActionLearnAtd, #ef_ActionLearnNsw, #ef_MarshalNoc, #ef_MarshalPdf, #ef_MarshalNod, #ef_MarshalAtd, #ef_MarshalNsw, #ef_OnsiteNoc, #ef_OnsitePdf, #ef_OnsiteNod, #ef_OnsiteAtd, #ef_OnsiteNsw, #ef_DocumentorNoc, #ef_DocumentorPdf, #ef_DocumentorNod, #ef_DocumentorAtd, #ef_DocumentorNsw,  #ef_PDNoc, #ef_PDPdf, #ef_PDNod, #ef_PDAtd, #ef_PDNsw, #input_totalPackages, #ec_sale, #inputforSale, #referrals, #inputforReferrals, #ecengagementManager, #inputforEngagementManager, #ec_offsitePc, #inputforOffsite, #ec_LeadconsultantsPd, #ec_AnalystsPd, #ec_DesignersPd, #ec_CreatorNoc, #ec_CreatorPd, #ec_CreatorNod, #ec_LeadfacilitatorsPd, #ec_CofacilitatorsPd, #ec_ActionlearningcoachPd, #ec_MarshalPd, #ec_OnsitepcPD, #ec_DocumentorsPd, #ec_PerdiemPd, #ec_PerdiemNoc, #ec_OffprogramsPd, #ec_OffprogramsNoc, #ec_Programexpenses, #tableLeadconsultant, #ecaddButton, #ecaddButton2, #ecaddButton3, #ecaddButton4",
-=======
-    ".f2f-customized-type, .f2f-ga-only-dropdown, .removed, #tableLeadconsultant, #tableofLeadConsultant, #ef_LeadconsultantAtd, #ef_LeadconsultantNoc, #ef_LeadconsultantHf, #ef_LeadconsultantNoh, #ef_LeadconsultantNwh, #ef_AnalystNoc, #ef_AnalystPdf, #ef_AnalystNod, #ef_AnalystAtd, #ef_AnalystNsw, #ef_DesignerNoc, #ef_DesignerPdf, #ef_DesignerNod, #ef_DesignerAtd, #ef_DesignerNsw, #ef_LeadFaciNoc, #ef_LeadFaciPdf, #ef_LeadFaciNod, #ef_LeadFaciAtd, #ef_LeadFaciNsw, #ef_CoFaciNoc, #ef_CoFaciPdf, #ef_CoFaciNod, #ef_CoFaciAtd, #ef_CoFaciNsw, #ef_ActionLearnNoc, #ef_ActionLearnPdf, #ef_ActionLearnNod, #ef_ActionLearnAtd, #ef_ActionLearnNsw, #ef_MarshalNoc, #ef_MarshalPdf, #ef_MarshalNod, #ef_MarshalAtd, #ef_MarshalNsw, #ef_OnsiteNoc, #ef_OnsitePdf, #ef_OnsiteNod, #ef_OnsiteAtd, #ef_OnsiteNsw, #ef_DocumentorNoc, #ef_DocumentorPdf, #ef_DocumentorNod, #ef_DocumentorAtd, #ef_DocumentorNsw,  #ef_PDNoc, #ef_PDPdf, #ef_PDNod, #ef_PDAtd, #ef_PDNsw, #input_totalPackages, #ec_sale, #inputforSale, #referrals, #inputforReferrals, #ecengagementManager, #inputforEngagementManager, #ec_offsitePc, #inputforOffsite, #ec_LeadconsultantsPd, #ec_AnalystsPd, #ec_DesignersPd, #ec_CreatorNoc, #ec_CreatorPd, #ec_CreatorNod, #ec_LeadfacilitatorsPd, #ec_CofacilitatorsPd, #ec_ActionlearningcoachPd, #ec_MarshalPd, #ec_OnsitepcPD, #ec_DocumentorsPd, #ec_PerdiemPd, #ec_PerdiemNoc, #ec_OffprogramsPd, #ec_OffprogramsNoc, #ec_Programexpenses, #tableLeadconsultant, #ecaddButton, #ecaddButton2, #ecaddButton3, #ecaddButton4",
->>>>>>> 587be94e7420994787559d40233386590b544cae
+    ".f2f-customized-type, .f2f-ga-only-dropdown, .removed, #tableLeadconsultant, #ef_TableAnalyst, #ef_TableDesigner, #ef_TableLeadFaci,  #ef_LeadconsultantAtd, #ef_LeadconsultantNoc, #ef_LeadconsultantHf, #ef_LeadconsultantNoh, #ef_LeadconsultantNwh, #ef_AnalystNoc, #ef_AnalystPdf, #ef_AnalystNod, #ef_AnalystAtd, #ef_AnalystNsw, #ef_DesignerNoc, #ef_DesignerPdf, #ef_DesignerNod, #ef_DesignerAtd, #ef_DesignerNsw, #ef_LeadFaciNoc, #ef_LeadFaciPdf, #ef_LeadFaciNod, #ef_LeadFaciAtd, #ef_LeadFaciNsw, #ef_CoFaciNoc, #ef_CoFaciPdf, #ef_CoFaciNod, #ef_CoFaciAtd, #ef_CoFaciNsw, #ef_ActionLearnNoc, #ef_ActionLearnPdf, #ef_ActionLearnNod, #ef_ActionLearnAtd, #ef_ActionLearnNsw, #ef_MarshalNoc, #ef_MarshalPdf, #ef_MarshalNod, #ef_MarshalAtd, #ef_MarshalNsw, #ef_OnsiteNoc, #ef_OnsitePdf, #ef_OnsiteNod, #ef_OnsiteAtd, #ef_OnsiteNsw, #ef_DocumentorNoc, #ef_DocumentorPdf, #ef_DocumentorNod, #ef_DocumentorAtd, #ef_DocumentorNsw,  #ef_PDNoc, #ef_PDPdf, #ef_PDNod, #ef_PDAtd, #ef_PDNsw, #input_totalPackages, #ec_sale, #inputforSale, #referrals, #inputforReferrals, #ecengagementManager, #inputforEngagementManager, #ec_offsitePc, #inputforOffsite, #ec_LeadconsultantsPd, #ec_AnalystsPd, #ec_DesignersPd, #ec_CreatorNoc, #ec_CreatorPd, #ec_CreatorNod, #ec_LeadfacilitatorsPd, #ec_CofacilitatorsPd, #ec_ActionlearningcoachPd, #ec_MarshalPd, #ec_OnsitepcPD, #ec_DocumentorsPd, #ec_PerdiemPd, #ec_PerdiemNoc, #ec_OffprogramsPd, #ec_OffprogramsNoc, #ec_Programexpenses, #tableLeadconsultant, #ecaddButton, #ecaddButton2, #ecaddButton3, #ecaddButton4",
     function () {
         //customized type
         $(".f2f-customized-type").each(function () {
@@ -413,13 +409,9 @@ $(document).on(
 
 
         rowIndx = 0;
-<<<<<<< HEAD
         rowAnalyst = 0;
         rowDesigner = 0;
-=======
-        ecleadConsultant = 0;
-
->>>>>>> 587be94e7420994787559d40233386590b544cae
+        rowLeadFaci = 0;
         //customized type
         var gaPercentage = $(".customized-type");
 
@@ -611,19 +603,21 @@ $(document).on(
 
 
             // Lead Facilitator
-            $("#ef_LeadFaciPdf").each(function () {
-                sumLeadFaci +=
-                    $("#ef_LeadFaciNoc").val() *
-                    +$(this).val().replace(/,/g, "") *
-                    $("#ef_LeadFaciNod").val() +
-                    $("#ef_LeadFaciAtd").val() *
-                    ($("#ef_LeadFaciNoc").val() *
-                        +$(this).val().replace(/,/g, "") *
-                        0.2) +
-                    $("#ef_LeadFaciNsw").val() *
-                    ($("#ef_LeadFaciNoc").val() *
-                        +$(this).val().replace(/,/g, "") *
-                        0.2);
+            $("#ef_TableLeadFaci > tr").each(function () {
+                
+                rowLeadFaci++;
+                sumLeadFaci =
+                    $(this).find(`#ef_LeadFaciNoc${rowLeadFaci}`).val() *
+                    +$(this).find("#ef_LeadFaciPdf").val().replace(/\₱|,/g, "") *
+                    $(this).find(`#ef_LeadFaciNod${rowLeadFaci}`).val() +
+                    $(this).find(`#ef_LeadFaciAtd${rowLeadFaci}`).val() *
+                    ($(this).find(`#ef_LeadFaciNoc${rowLeadFaci}`).val() *
+                    +$(this).find("#ef_LeadFaciPdf").val().replace(/\₱|,/g, "") *
+                    0.2) +
+                    $(this).find(`#ef_LeadFaciNsw${rowLeadFaci}`).val() *
+                    ($(this).find(`#ef_LeadFaciNoc${rowLeadFaci}`).val() *
+                    +$(this).find("#ef_LeadFaciPdf").val().replace(/\₱|,/g, "") *
+                    0.2);
                 if (
                     gaPercentage.val() == "G.A Hybrid" ||
                     gaPercentage.val() == "G.A Virtual"
@@ -634,6 +628,15 @@ $(document).on(
                 }
                 sumEf += +sumLeadFaci;
 
+                $(this).find("#subtotal-LeadFaci").html(currency.format(Math.ceil(sumLeadFaci)));
+
+                // $("#ef_TableLeadFaci").on("click", ".removed", function () {
+                //     // Removing he current row.
+                //     $(this).closest("tr").remove();
+
+                //     // Decreasing total number of rows by 1.
+                //     rowLeadFaci--;
+                // });
                 $("#ec_LeadfacilitatorsNoc").val($("#ef_LeadFaciNoc").val());
                 $("#ec_LeadfacilitatorsNod").val($("#ef_LeadFaciNod").val());
                 $("#ec_LeadfacilitatorsNwh").val($("#ef_LeadFaciNsw").val());
@@ -658,8 +661,9 @@ $(document).on(
                 $("#ec_LeadfacilitatorsTotal").html(
                     currency.format(Math.ceil(sumofecLeadfacilitator))
                 );
-                $("#subtotal-LeadFaci").html(currency.format(Math.ceil(sumLeadFaci)));
+                // $("#subtotal-LeadFaci").html(currency.format(Math.ceil(sumEf)));
             });
+            
             // Co Facilitator
             $("#ef_CoFaciPdf").each(function () {
                 sumCoFaci +=
@@ -1107,7 +1111,7 @@ $(document).on(
 //*************************************** APPEND NUMBER FORMAT ********************************************************//
 $(document).on(
     "change keyup click",
-    "#ef_AnalystPdf, #ef_CofaciHf, #ef_ModeratorHf, #ef_ProducerHf, #ef_DocumentorHf",
+    "#ef_AnalystPdf, #ef_LeadFaciPdf, #ef_ModeratorHf, #ef_ProducerHf, #ef_DocumentorHf",
     function () {
         // Jquery Dependency
 
