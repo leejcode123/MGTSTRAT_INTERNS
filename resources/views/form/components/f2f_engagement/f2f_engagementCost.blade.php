@@ -411,7 +411,7 @@
                     </tr>
                     <tbody id="tableofDesigner">
                         <tr id="rowofDesigner">
-                            <td class="title">Designer (P48K / P64K)</td>
+                            <td class="title">Designer</td>
                             <td class="">
                                 <input type="number"
                                     class="text-center form-control input-table @error('') is-invalid @enderror"
