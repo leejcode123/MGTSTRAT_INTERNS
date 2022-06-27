@@ -819,7 +819,7 @@ var rowAnalyst = 1;
                                 (i.e. assessments, c</i>"
                                 data-mytooltip-theme="dark"
                                 data-mytooltip-action="focus" 
-                                data-mytooltip-direction="bottom">
+                                data-mytooltip-direction="bottom" oninput="document.getElementById('ec_AnalystsNoc${rowAnalyst}').value = document.getElementById('ef_AnalystNoc${rowAnalyst}').value;">
                         </td>
                         
                         <td>
@@ -835,15 +835,15 @@ var rowAnalyst = 1;
                                                            ¼ Day = 0.25 Number of Hours</i>"
                                 data-mytooltip-theme="dark"
                                 data-mytooltip-action="focus" 
-                                data-mytooltip-direction="bottom">
+                                data-mytooltip-direction="bottom" oninput="document.getElementById('ec_AnalystsNod${rowAnalyst}').value = document.getElementById('ef_AnalystNod${rowAnalyst}').value;">
                         </td>
                         <td class = "atd">
                             <input type="number" class="nwh-e14 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="ef_AnalystAtd${rowAnalyst}">
+                                value="{{ old('') }}" name="" id="ef_AnalystAtd${rowAnalyst}" oninput="document.getElementById('ec_AnalystsAtd${rowAnalyst}').value = document.getElementById('ef_AnalystAtd${rowAnalyst}').value;">
                         </td>
                         <td class ="nsw">
                             <input type="number" class="nwh-e14 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="ef_AnalystNsw${rowAnalyst}">
+                                value="{{ old('') }}" name="" id="ef_AnalystNsw${rowAnalyst}" oninput="document.getElementById('ec_AnalystsNwh${rowAnalyst}').value = document.getElementById('ef_AnalystNsw${rowAnalyst}').value;">
                         </td>
                         <td class="total-td">
                             {{-- <input type="text" class="form-control input-table @error('') is-invalid @enderror"
@@ -856,7 +856,7 @@ var rowAnalyst = 1;
                                 value="{{ old('') }}" name="" id="ef_AnalystNotes">
                         </td>
                             <td class="border border-white" style="background-color: #FFFFFF;">
-                            <a href="javascript:void(0)" class="text-danger font-18 removed" title="Remove"><i class="fa fa-trash-o"></i></a>
+                            <a href="javascript:void(0)" class="text-danger font-18 removed" title="Remove" onclick="$('#ecRemoveA${rowAnalyst}').trigger('click');"><i class="fa fa-trash-o"></i></a>
                             </td>
             </tr>`
         );
