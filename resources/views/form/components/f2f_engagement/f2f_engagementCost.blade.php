@@ -446,13 +446,13 @@
                             </td>
                         </tr>
                     </tbody>
-                    <tbody id="tableofCreator">
+                    
                         <tr id="rowofCreator">
                             <td class="title">Creators Fees (500, 1K)</td>
                             <td>
                                 <input type="number"
                                     class="text-center yellow-input form-control input-table @error('') is-invalid @enderror"
-                                    value="{{ old('') }}" name="" id="ec_CreatorNoc1" max="100"
+                                    value="{{ old('') }}" name="" id="ec_CreatorNoc" max="100"
                                     >
                             </td>
                             <td>
@@ -487,7 +487,7 @@
                             <td>
                                 <input type="number"
                                     class="text-center yellow-input form-control input-table @error('') is-invalid @enderror"
-                                    value="{{ old('') }}" name="" id="ec_CreatorNod1" max="100"
+                                    value="{{ old('') }}" name="" id="ec_CreatorNod" max="100"
                                     >
                             </td>
                             <td class=""></td>
@@ -500,7 +500,6 @@
                                     value="{{ old('') }}" name="" id="">
                             </td>
                         </tr>
-                    </tbody>
                     <tr class="table-secondary">
                         <td class="title fw-bold text-dark fst-italic">Subtotal</td>
                         <td></td>
@@ -829,13 +828,12 @@
                     </tr>
 
                     {{-- Per Diem --}}
-                    <tbody id="tableofPerDiem">
                         <tr class="" id="rowofPerDiem">
                             <th class="title px-4 text-dark">5. PER DIEM</th>
                             <td>
                                 <input type="number"
                                     class="text-center yellow-input form-control input-table @error('') is-invalid @enderror"
-                                    value="{{ old('') }}" name="" id="ec_PerdiemNoc1" max="100"
+                                    value="{{ old('') }}" name="" id="ec_PerdiemNoc" max="100"
                                     >
                             </td>
                             <td>
@@ -846,7 +844,7 @@
                             <td>
                                 <input type="number"
                                     class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
-                                    value="{{ old('') }}" name="" id="ec_PerdiemNod1" readonly>
+                                    value="{{ old('') }}" name="" id="ec_PerdiemNod" readonly>
                             </td>
                             <td></td>
                             <td></td>
@@ -858,7 +856,6 @@
                                     value="{{ old('') }}" name="" id="">
                             </td>
                         </tr>
-                    </tbody>
                     {{-- break --}}
                     <tr>
                         <td class="title" colspan=""></td>
@@ -878,13 +875,12 @@
                         <td class="total-td"></td>
                         <td class="total-td"></td>
                     </tr>
-                    <tbody id="tableofOffProgram">
                         <tr id="rowofOffProgram">
                             <td class="title">Off-Program fee</td>
                             <td>
                                 <input type="number"
                                     class="input js-mytooltip yellow-input text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
-                                    value="{{ old('') }}" name="" id="ec_OffprogramsNoc1" max="100"
+                                    value="{{ old('') }}" name="" id="ec_OffprogramsNoc" max="100"
                                     data-mytooltip-content="<i>
                                         - For single or series of programs<br>
                                         - One time only<br>
