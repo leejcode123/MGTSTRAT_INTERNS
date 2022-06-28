@@ -323,7 +323,7 @@ document.getElementById("ec_Programexpenses").defaultValue = 2 + "%";
 //Customized Engagement form of Engagement Fees
 $(document).on(
     "change keyup click",
-    ".f2f-customized-type, .f2f-ga-only-dropdown, .removed, #tableLeadconsultant, #tableofLeadConsultant, #ef_TableAnalyst, #tableofAnalyst, #ef_TableDesigner, #tableofDesigner, #ef_TableLeadFaci,  #ef_LeadconsultantAtd, #ef_LeadconsultantNoc, #ef_LeadconsultantHf, #ef_LeadconsultantNoh, #ef_LeadconsultantNwh, #ef_AnalystNoc, #ef_AnalystPdf, #ef_AnalystNod, #ef_AnalystAtd, #ef_AnalystNsw, #ef_DesignerNoc, #ef_DesignerPdf, #ef_DesignerNod, #ef_DesignerAtd, #ef_DesignerNsw, #ef_LeadFaciNoc, #ef_LeadFaciPdf, #ef_LeadFaciNod, #ef_LeadFaciAtd, #ef_LeadFaciNsw, #ef_CoFaciNoc, #ef_CoFaciPdf, #ef_CoFaciNod, #ef_CoFaciAtd, #ef_CoFaciNsw, #ef_ActionLearnNoc, #ef_ActionLearnPdf, #ef_ActionLearnNod, #ef_ActionLearnAtd, #ef_ActionLearnNsw, #ef_MarshalNoc, #ef_MarshalPdf, #ef_MarshalNod, #ef_MarshalAtd, #ef_MarshalNsw, #ef_OnsiteNoc, #ef_OnsitePdf, #ef_OnsiteNod, #ef_OnsiteAtd, #ef_OnsiteNsw, #ef_DocumentorNoc, #ef_DocumentorPdf, #ef_DocumentorNod, #ef_DocumentorAtd, #ef_DocumentorNsw,  #ef_PDNoc, #ef_PDPdf, #ef_PDNod, #ef_PDAtd, #ef_PDNsw, #input_totalPackages, #ec_sale, #inputforSale, #referrals, #inputforReferrals, #ecengagementManager, #inputforEngagementManager, #ec_offsitePc, #inputforOffsite, #ec_LeadconsultantsPd, #ec_AnalystsPd, #ec_DesignersPd, #ec_CreatorNoc, #ec_CreatorPd, #ec_CreatorNod, #ec_LeadfacilitatorsPd, #ec_CofacilitatorsPd, #ec_ActionlearningcoachPd, #ec_MarshalPd, #ec_OnsitepcPD, #ec_DocumentorsPd, #ec_PerdiemPd, #ec_PerdiemNoc, #ec_OffprogramsPd, #ec_OffprogramsNoc, #ec_Programexpenses, #ecaddButton, #ecaddButton2, #ecaddButton3, #ecaddButton4",
+    ".f2f-customized-type, .f2f-ga-only-dropdown, .removed, #tableLeadconsultant, #tableofLeadConsultant, #ef_TableAnalyst, #tableofAnalyst, #ef_TableDesigner, #tableofDesigner, #ef_TableLeadFaci, #tableofLeadFacilitator, #ef_LeadconsultantAtd, #ef_LeadconsultantNoc, #ef_LeadconsultantHf, #ef_LeadconsultantNoh, #ef_LeadconsultantNwh, #ef_AnalystNoc, #ef_AnalystPdf, #ef_AnalystNod, #ef_AnalystAtd, #ef_AnalystNsw, #ef_DesignerNoc, #ef_DesignerPdf, #ef_DesignerNod, #ef_DesignerAtd, #ef_DesignerNsw, #ef_LeadFaciNoc, #ef_LeadFaciPdf, #ef_LeadFaciNod, #ef_LeadFaciAtd, #ef_LeadFaciNsw, #ef_CoFaciNoc, #ef_CoFaciPdf, #ef_CoFaciNod, #ef_CoFaciAtd, #ef_CoFaciNsw, #ef_ActionLearnNoc, #ef_ActionLearnPdf, #ef_ActionLearnNod, #ef_ActionLearnAtd, #ef_ActionLearnNsw, #ef_MarshalNoc, #ef_MarshalPdf, #ef_MarshalNod, #ef_MarshalAtd, #ef_MarshalNsw, #ef_OnsiteNoc, #ef_OnsitePdf, #ef_OnsiteNod, #ef_OnsiteAtd, #ef_OnsiteNsw, #ef_DocumentorNoc, #ef_DocumentorPdf, #ef_DocumentorNod, #ef_DocumentorAtd, #ef_DocumentorNsw,  #ef_PDNoc, #ef_PDPdf, #ef_PDNod, #ef_PDAtd, #ef_PDNsw, #input_totalPackages, #ec_sale, #inputforSale, #referrals, #inputforReferrals, #ecengagementManager, #inputforEngagementManager, #ec_offsitePc, #inputforOffsite, #ec_LeadconsultantsPd, #ec_AnalystsPd, #ec_DesignersPd, #ec_CreatorNoc, #ec_CreatorPd, #ec_CreatorNod, #ec_LeadfacilitatorsPd, #ec_CofacilitatorsPd, #ec_ActionlearningcoachPd, #ec_MarshalPd, #ec_OnsitepcPD, #ec_DocumentorsPd, #ec_PerdiemPd, #ec_PerdiemNoc, #ec_OffprogramsPd, #ec_OffprogramsNoc, #ec_Programexpenses, #ecaddButton, #ecaddButton2, #ecaddButton3, #ecaddButton4",
     function () {
         //customized type
         $(".f2f-customized-type").each(function () {
@@ -415,6 +415,7 @@ $(document).on(
         ecleadConsultant = 0;
         ecAnalyst = 0;
         ecDesigner = 0;
+        ecLeadFacilitator = 0;
 
         //customized type
         var gaPercentage = $(".customized-type");
@@ -642,6 +643,7 @@ $(document).on(
                 sumEf += +sumLeadFaci;
 
                 $(this).find("#subtotal-LeadFaci").html(currency.format(Math.ceil(sumLeadFaci)));
+            });
 
                 // $("#ef_TableLeadFaci").on("click", ".removed", function () {
                 //     // Removing he current row.
@@ -650,30 +652,34 @@ $(document).on(
                 //     // Decreasing total number of rows by 1.
                 //     rowLeadFaci--;
                 // });
-                $("#ec_LeadfacilitatorsNoc").val($("#ef_LeadFaciNoc").val());
-                $("#ec_LeadfacilitatorsNod").val($("#ef_LeadFaciNod").val());
-                $("#ec_LeadfacilitatorsNwh").val($("#ef_LeadFaciNsw").val());
-                $("#ec_LeadfacilitatorsAtd").val($("#ef_LeadFaciAtd").val());
 
-                sumofecLeadfacilitator +=
-                    $("#ec_LeadfacilitatorsNoc").val() *
-                    $("#ec_LeadfacilitatorsPd").val().replace(/,/g, "") *
-                    $("#ec_LeadfacilitatorsNod").val() +
-                    $("#ec_LeadfacilitatorsAtd").val() *
-                    ($("#ec_LeadfacilitatorsNoc").val() *
-                        $("#ec_LeadfacilitatorsPd").val().replace(/,/g, "") *
-                        $("#ec_LeadfacilitatorsNod").val() *
-                        0.2) + $("#ec_LeadfacilitatorsNwh").val() *
-                    ($("#ec_LeadfacilitatorsNoc").val() *
-                        $("#ec_LeadfacilitatorsPd").val().replace(/,/g, "") *
-                        $("#ec_LeadfacilitatorsNod").val() *
+            $("#tableofLeadFacilitator > tr").each(function () {
+                ecLeadFacilitator++;
+
+                $("#ec_LeadfacilitatorsNoc1").val($("#ef_LeadFaciNoc1").val());
+                $("#ec_LeadfacilitatorsNod1").val($("#ef_LeadFaciNod1").val());
+                $("#ec_LeadfacilitatorsNwh1").val($("#ef_LeadFaciNsw1").val());
+                $("#ec_LeadfacilitatorsAtd1").val($("#ef_LeadFaciAtd1").val());
+
+                sumofecLeadfacilitator =
+                    $(this).find(`#ec_LeadfacilitatorsNoc${ecLeadFacilitator}`).val() *
+                    $(this).find("#ec_LeadfacilitatorsPd").val().replace(/,/g, "") *
+                    $(this).find(`#ec_LeadfacilitatorsNod${ecLeadFacilitator}`).val() +
+                    $(this).find(`#ec_LeadfacilitatorsAtd${ecLeadFacilitator}`).val() *
+                    ($(this).find(`#ec_LeadfacilitatorsNoc${ecLeadFacilitator}`).val() *
+                        $(this).find("#ec_LeadfacilitatorsPd").val().replace(/,/g, "") *
+                        $(this).find(`#ec_LeadfacilitatorsNod${ecLeadFacilitator}`).val() *
+                        0.2) + $(this).find(`#ec_LeadfacilitatorsNwh${ecLeadFacilitator}`).val() *
+                    ($(this).find(`#ec_LeadfacilitatorsNoc${ecLeadFacilitator}`).val() *
+                        $(this).find("#ec_LeadfacilitatorsPd").val().replace(/,/g, "") *
+                        $(this).find(`#ec_LeadfacilitatorsNod${ecLeadFacilitator}`).val() *
                         0.2);
+
+                    $(this).find("#ec_LeadfacilitatorsTotal").html(currency.format(Math.ceil(sumofecLeadfacilitator)));
 
                 sumofEngagementCost += +sumofecLeadfacilitator;
 
-                $("#ec_LeadfacilitatorsTotal").html(
-                    currency.format(Math.ceil(sumofecLeadfacilitator))
-                );
+               
                 // $("#subtotal-LeadFaci").html(currency.format(Math.ceil(sumEf)));
             });
             
@@ -854,7 +860,7 @@ $(document).on(
 
             $("#subtotal-Onsite").html(currency.format(Math.ceil(sumOnsite)));
             $("#program-Subtotal").html(
-               "₱" + currency.format(Math.ceil(sumLeadFaci + sumCoFaci + sumActionLearn + sumMarshal + sumOnsite)))
+               "₱" + currency.format(Math.ceil(sumEf)))
             $("#standard_total").html("₱" + currency.format(Math.ceil(sumEf)));
 
             // Discountsss-------------------------------------------------------------------
@@ -1044,11 +1050,7 @@ $(document).on(
             $("#ec_ProgramsSubtotal").html(
                 "₱" + currency.format(
                     Math.ceil(
-                        sumofecLeadfacilitator +
-                        sumofecCofacilitator +
-                        sumofecActionlearningcoach +
-                        sumofecMarshal +
-                        sumofecOnsitepc
+                        sumofEngagementCost
                     )
                 )
             );
