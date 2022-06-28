@@ -651,27 +651,27 @@
                             <td class="title">Marshal</td>
                             <td>
                                 <input type="number"
-                                    class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
+                                    class="text-center form-control input-table @error('') is-invalid @enderror"
                                     value="{{ old('') }}" name="" id="ec_MarshalNoc1" readonly>
                             </td>
                             <td>
                                 <input type="text"
-                                    class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
+                                    class="text-center form-control input-table @error('') is-invalid @enderror"
                                     value="{{ old('') }}" name="" id="ec_MarshalPd">
                             </td>
                             <td>
                                 <input type="number"
-                                    class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
+                                    class="text-center  form-control input-table @error('') is-invalid @enderror"
                                     value="{{ old('') }}" name="" id="ec_MarshalNod1" readonly>
                             </td>
                             <td>
                                 <input type="number"
-                                    class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
+                                    class="text-center form-control input-table @error('') is-invalid @enderror"
                                     value="{{ old('') }}" name="" id="ec_MarshalAtd1" readonly>
                             </td>
                             <td>
                                 <input type="number"
-                                    class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
+                                    class="text-center  form-control input-table @error('') is-invalid @enderror"
                                     value="{{ old('') }}" name="" id="ec_MarshalNwh1" readonly>
                             </td>
                             <td class="total-td">
@@ -688,7 +688,7 @@
                             <td class="title">On-site PC (P4400/P6600/P8500)</td>
                             <td>
                                 <input type="number"
-                                    class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
+                                    class="text-center form-control input-table @error('') is-invalid @enderror"
                                     value="{{ old('') }}" name="" id="ec_OnsitepcNoc1" readonly>
                             </td>
                             <td>
@@ -724,17 +724,17 @@
                             </td>
                             <td>
                                 <input type="number"
-                                    class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
+                                    class="text-center  form-control input-table @error('') is-invalid @enderror"
                                     value="{{ old('') }}" name="" id="ec_OnsitepcNod1" readonly>
                             </td>
                             <td>
                                 <input type="number"
-                                    class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
+                                    class="text-center form-control input-table @error('') is-invalid @enderror"
                                     value="{{ old('') }}" name="" id="ec_OnsitepcAtd1" readonly>
                             </td>
                             <td>
                                 <input type="number"
-                                    class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
+                                    class="text-center form-control input-table @error('') is-invalid @enderror"
                                     value="{{ old('') }}" name="" id="ec_OnsitepcNwh1" readonly>
                             </td>
                             <td class="total-td">

@@ -851,6 +851,120 @@
 
     });
 
+    var ecOnsite = 1;
+    $(document).ready(function () {
+        $("#addBtn8").on("click", function() {
+            // Adding a row inside the tbody.
+            $("#tableofOnsitePC").append(`
+            <tr id="rowofOnsitePC${++ecOnsite}">
+                            <td class="title">On-site PC (P4400/P6600/P8500)</td>
+                            <td class="noc">
+                                <input type="number"
+                                    class="text-center form-control input-table @error('') is-invalid @enderror"
+                                    value="{{ old('') }}" name="" id="ec_OnsitepcNoc${ecOnsite}" readonly>
+                            </td>
+                            <td class="pd">
+                                <fieldset>
+                                    <select class="input js-mytooltip text-center form-select @error('') is-invalid @enderror select" name=""
+                                        id="ec_OnsitepcPd" style="background-color:#ffcccc; color:red;"
+                                        data-mytooltip-content="<i>
+                                            <b>On-site PC</b><br/>
+                                            P4,400<br/>
+                                            P6,600<br/>
+                                            P8,500</i>"
+                                        data-mytooltip-theme="dark"
+                                        data-mytooltip-action="focus" 
+                                        data-mytooltip-direction="right">
+                                        <option value="4400" {{ old('') == '4400' ? 'selected="selected"' : '' }} title="">
+                                            &#8369;4,400
+                                        </option>
+                                        <option value="6600" {{ old('') == '6600' ? 'selected="selected"' : '' }}
+                                            title="">
+                                            &#8369;6,600
+                                        </option>
+                                        <option value="8500" {{ old('') == '8500' ? 'selected="selected"' : '' }}
+                                            title="">
+                                            &#8369;8,500
+                                        </option>
+                                    </select>
+                                    @error('ef_customFee')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </fieldset>
+                            </td>
+                            <td class="nod">
+                                <input type="number"
+                                    class="text-center form-control input-table @error('') is-invalid @enderror"
+                                    value="{{ old('') }}" name="" id="ec_OnsitepcNod${ecOnsite}" readonly>
+                            </td>
+                            <td class="atd">
+                                <input type="number"
+                                    class="text-center  form-control input-table @error('') is-invalid @enderror"
+                                    value="{{ old('') }}" name="" id="ec_OnsitepcAtd${ecOnsite}" readonly>
+                            </td>
+                            <td class="nwh">
+                                <input type="number"
+                                    class="text-center  form-control input-table @error('') is-invalid @enderror"
+                                    value="{{ old('') }}" name="" id="ec_OnsitepcNwh${ecOnsite}" readonly>
+                            </td>
+                            <td class="total-td">
+                                <h4 class="text-center lead" id="ec_OnsitepcTotal">-</h4>
+                            </td>
+                            <td class="total-td">
+                                <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                                    value="{{ old('') }}" name="" id="">
+                            </td>
+                            <td class="border border-white" style="background-color: #FFFFFF;">
+                                <a href="javascript:void(0)" class="text-danger font-18 remove" id="ecRemoveOP${ecOnsite}" title="Remove" style="visibility: hidden;">
+                                    <i class="fa fa-trash-o"></i>
+                                </a>
+                          </td>
+                        </tr>
+                    `);
+               });
+            
+            $("#tableofOnsitePC").on("click", ".remove", function () {
+            
+
+            // Getting all the rows next to the row
+            // containing the clicked button
+            var child = $(this).closest("tr").nextAll();
+            
+            // Iterating across all the rows
+            // obtained to change the index
+            child.each(function () {
+                // Getting <tr> id.
+                var id = $(this).attr("id");
+
+                // Getting the <input> inside the .noc, .noh, .nwh class.
+                var noc = $(this).children(".noc").children("input");
+                var nod = $(this).children(".nod").children("input");
+                var nwh = $(this).children(".nwh").children("input");
+                var atd = $(this).children(".atd").children("input");
+
+                // Gets the row number from <tr> id.
+                var dig = parseInt(id.substring(11));
+
+                // Modifying row id.
+                $(this).attr("id", `ec_Onsitepc${dig - 1}`);
+
+                // Modifying row index.
+                noc.attr("id", `ec_OnsitepcNoc${dig - 1}`);
+                nod.attr("id", `ec_OnsitepcNod${dig - 1}`);
+                atd.attr("id", `ec_OnsitepcAtd${dig - 1}`);
+                nwh.attr("id", `ec_OnsitepcNwh${dig - 1}`);
+            });
+
+            // Removing the current row.
+            $(this).closest("tr").remove();
+            // Decreasing total number of rows by 1.
+            ecOnsite--;
+        });    
+
+    });
+
     var ecDocumentor = 1;
     $(document).ready(function () {
         $("#addBtn9").on("click", function() {
@@ -892,7 +1006,7 @@
                             value="{{ old('') }}" name="" id="">
                     </td>
                     <td class="border border-white" style="background-color: #FFFFFF;">
-                        <a href="javascript:void(0)" class="text-danger font-18 remove" id="ecRemoveM${ecDocumentor}" title="Remove" style="visibility: hidden;">
+                        <a href="javascript:void(0)" class="text-danger font-18 remove" id="ecRemoveD${ecDocumentor}" title="Remove" style="visibility: hidden;">
                             <i class="fa fa-trash-o"></i>
                         </a>
                     </td>

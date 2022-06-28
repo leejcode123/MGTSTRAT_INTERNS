@@ -1143,7 +1143,7 @@ var rowCoFaci = 1;
                 <td class="title">Co-facilitator / Resource Speaker</td>
                         <td class ="noc">
                             <input type="number" class="noc-b22 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="ef_CoFaciNoc${rowCoFaci}" max="100">
+                                value="{{ old('') }}" name="" id="ef_CoFaciNoc${rowCoFaci}" max="100" oninput="document.getElementById('ec_CofacilitatorsNoc${rowCoFaci}').value = document.getElementById('ef_CoFaciNoc${rowCoFaci}').value;">
                         </td>
                         <td>
                             <input type="text" class="hf-c22 form-control input-table @error('') is-invalid @enderror" 
@@ -1161,15 +1161,15 @@ var rowCoFaci = 1;
                                 data-mytooltip-content="<i>½ Day = 0.70</i>"
                                 data-mytooltip-theme="dark"
                                 data-mytooltip-action="focus" 
-                                data-mytooltip-direction="bottom">
+                                data-mytooltip-direction="bottom" oninput="document.getElementById('ec_CofacilitatorsNod${rowCoFaci}').value = document.getElementById('ef_CoFaciNod${rowCoFaci}').value;">
                         </td>
                         <td class = "atd">
                             <input type="number" class="nwh-e22 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="ef_CoFaciAtd${rowCoFaci}">
+                                value="{{ old('') }}" name="" id="ef_CoFaciAtd${rowCoFaci}" oninput="document.getElementById('ec_CofacilitatorsAtd${rowCoFaci}').value = document.getElementById('ef_CoFaciAtd${rowCoFaci}').value;">
                         </td>
                         <td class ="nsw">
                             <input type="number" class="nwh-e22 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="ef_CoFaciNsw${rowCoFaci}">
+                                value="{{ old('') }}" name="" id="ef_CoFaciNsw${rowCoFaci}" oninput="document.getElementById('ec_CofacilitatorsNwh${rowCoFaci}').value = document.getElementById('ef_CoFaciNsw${rowCoFaci}').value;">
                         </td>
                         <td class="total-td">
                                 <h4 class="text-center lead" id="subtotal-coFacilitator">-</h4>
@@ -1179,7 +1179,7 @@ var rowCoFaci = 1;
                                 value="{{ old('') }}" name="" id="">
                         </td>
                             <td class="border border-white" style="background-color: #FFFFFF;">
-                            <a href="javascript:void(0)" class="text-danger font-18 removed" title="Remove"><i class="fa fa-trash-o"></i></a>
+                            <a href="javascript:void(0)" class="text-danger font-18 removed" title="Remove" onclick="$('#ecRemoveCF${rowCoFaci}').trigger('click');"><i class="fa fa-trash-o"></i></a>
                             </td>
             </tr>`
         );
@@ -1233,7 +1233,7 @@ var rowActionLearn = 1;
                 <td class="title">Action Learning Coach</td>
                         <td class ="noc">
                             <input type="number" class="noc-b23 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="ef_ActionLearnNoc${rowActionLearn}" max="100">
+                                value="{{ old('') }}" name="" id="ef_ActionLearnNoc${rowActionLearn}" max="100" oninput="document.getElementById('ec_ActionlearningcoachNoc${rowActionLearn}').value = document.getElementById('ef_ActionLearnNoc${rowActionLearn}').value;">
                         </td>
                         <td>
                             <input type="text" class="hf-c22 form-control input-table @error('') is-invalid @enderror" 
@@ -1247,15 +1247,15 @@ var rowActionLearn = 1;
                                 data-mytooltip-content="<i>½ Day = 0.70</i>"
                                 data-mytooltip-theme="dark"
                                 data-mytooltip-action="focus" 
-                                data-mytooltip-direction="bottom">
+                                data-mytooltip-direction="bottom" oninput="document.getElementById('ec_ActionlearningcoachNod${rowActionLearn}').value = document.getElementById('ef_ActionLearnNod${rowActionLearn}').value;">
                         </td>
                         <td class="atd">
                             <input type="number" class="nwh-e23 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="ef_ActionLearnAtd${rowActionLearn}">
+                                value="{{ old('') }}" name="" id="ef_ActionLearnAtd${rowActionLearn}" oninput="document.getElementById('ec_ActionlearningcoachAtd${rowActionLearn}').value = document.getElementById('ef_ActionLearnAtd${rowActionLearn}').value;">
                         </td>
                         <td class="nsw">
                             <input type="number" class="nwh-e23 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="ef_ActionLearnNsw${rowActionLearn}">
+                                value="{{ old('') }}" name="" id="ef_ActionLearnNsw${rowActionLearn}" oninput="document.getElementById('ec_ActionlearningcoachNwh${rowActionLearn}').value = document.getElementById('ef_ActionLearnNsw${rowActionLearn}').value;">
                         </td>
                         <td class="total-td">
                                 <h4 class="text-center lead" id="subtotal-ActionLearn">-</h4>
@@ -1266,7 +1266,7 @@ var rowActionLearn = 1;
                         </td> value="{{ old('') }}" name="" id="">
                         </td>
                             <td class="border border-white" style="background-color: #FFFFFF;">
-                            <a href="javascript:void(0)" class="text-danger font-18 removed" title="Remove"><i class="fa fa-trash-o"></i></a>
+                            <a href="javascript:void(0)" class="text-danger font-18 removed" title="Remove" onclick="$('#ecRemoveALC${rowActionLearn}').trigger('click');"><i class="fa fa-trash-o"></i></a>
                             </td>
             </tr>`
         );
@@ -1320,7 +1320,7 @@ var rowMarshal = 1;
                 <td class="title">Marshal</td>
                         <td class="noc">
                             <input type="number" class="noc-b23 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="ef_MarshalNoc${rowMarshal}" max="100">
+                                value="{{ old('') }}" name="" id="ef_MarshalNoc${rowMarshal}" max="100" oninput="document.getElementById('ec_MarshalNoc${rowMarshal}').value = document.getElementById('ef_MarshalNoc${rowMarshal}').value;">
                         </td>
                         <td>
                             <input type="text" class="hf-c22 form-control input-table @error('') is-invalid @enderror" 
@@ -1334,15 +1334,15 @@ var rowMarshal = 1;
                                 data-mytooltip-content="<i>½ Day = 0.70</i>"
                                 data-mytooltip-theme="dark"
                                 data-mytooltip-action="focus" 
-                                data-mytooltip-direction="bottom">
+                                data-mytooltip-direction="bottom" oninput="document.getElementById('ec_MarshalNod${rowMarshal}').value = document.getElementById('ef_MarshalNod${rowMarshal}').value;">
                         </td>
                         <td class="atd">
                             <input type="number" class="nwh-e23 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="ef_MarshalAtd${rowMarshal}">
+                                value="{{ old('') }}" name="" id="ef_MarshalAtd${rowMarshal}" oninput="document.getElementById('ec_MarshalAtd${rowMarshal}').value = document.getElementById('ef_MarshalAtd${rowMarshal}').value;">
                         </td>
                         <td class="nsw">
                             <input type="number" class="nwh-e23 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="ef_MarshalNsw${rowMarshal}">
+                                value="{{ old('') }}" name="" id="ef_MarshalNsw${rowMarshal}" oninput="document.getElementById('ec_MarshalNwh${rowMarshal}').value = document.getElementById('ef_MarshalNsw${rowMarshal}').value;">
                         </td>
                         <td class="total-td">
                                 <h4 class="text-center lead" id="subtotal-marshal">-</h4>
@@ -1352,7 +1352,7 @@ var rowMarshal = 1;
                                 value="{{ old('') }}" name="" id="">
                         </td>
                             <td class="border border-white" style="background-color: #FFFFFF;">
-                            <a href="javascript:void(0)" class="text-danger font-18 removed" title="Remove"><i class="fa fa-trash-o"></i></a>
+                            <a href="javascript:void(0)" class="text-danger font-18 removed" title="Remove" onclick="$('#ecRemoveM${rowMarshal}').trigger('click');"><i class="fa fa-trash-o"></i></a>
                             </td>
             </tr>`
         );
@@ -1406,7 +1406,7 @@ var rowOnsite = 1;
                 <td class="title">On-site PC (P20K / P25K / P30K)</td>
                         <td>
                             <input type="number" class="noc-b23 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="ef_OnsiteNoc${rowOnsite}" max="100">
+                                value="{{ old('') }}" name="" id="ef_OnsiteNoc${rowOnsite}" max="100" oninput="document.getElementById('ec_OnsitepcNoc${rowOnsite}').value = document.getElementById('ef_OnsiteNoc${rowOnsite}').value;">
                         </td>
                         <td>
                             <fieldset>
@@ -1445,15 +1445,15 @@ var rowOnsite = 1;
                                 data-mytooltip-content="<i>½ Day = 0.70</i>"
                                 data-mytooltip-theme="dark"
                                 data-mytooltip-action="focus" 
-                                data-mytooltip-direction="bottom">
+                                data-mytooltip-direction="bottom" oninput="document.getElementById('ec_OnsitepcNod${rowOnsite}').value = document.getElementById('ef_OnsiteNod${rowOnsite}').value;">
                         </td>
                         <td>
                             <input type="number" class="nwh-e23 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="ef_OnsiteAtd${rowOnsite}">
+                                value="{{ old('') }}" name="" id="ef_OnsiteAtd${rowOnsite}" oninput="document.getElementById('ec_OnsitepcAtd${rowOnsite}').value = document.getElementById('ef_OnsiteAtd${rowOnsite}').value;">
                         </td>
                         <td>
                             <input type="number" class="nwh-e23 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="ef_OnsiteNsw${rowOnsite}">
+                                value="{{ old('') }}" name="" id="ef_OnsiteNsw${rowOnsite}" oninput="document.getElementById('ec_OnsitepcNwh${rowOnsite}').value = document.getElementById('ef_OnsiteNsw${rowOnsite}').value;">
                         </td>
                         <td class="total-td">
                                 <h4 class="text-center lead" id="subtotal-Onsite">-</h4>
@@ -1463,7 +1463,7 @@ var rowOnsite = 1;
                                 value="{{ old('') }}" name="" id="">
                         </td>>
                             <td class="border border-white" style="background-color: #FFFFFF;">
-                            <a href="javascript:void(0)" class="text-danger font-18 removed" title="Remove"><i class="fa fa-trash-o"></i></a>
+                            <a href="javascript:void(0)" class="text-danger font-18 removed" title="Remove" onclick="$('#ecRemoveOP${rowOnsite}').trigger('click');"><i class="fa fa-trash-o"></i></a>
                             </td>
             </tr>`
         );
@@ -1517,7 +1517,7 @@ var rowDocumentor = 1;
                 <td class="title">Documentor</td>
                         <td class="noc">
                             <input type="number" class="noc-b28 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="ef_DocumentorNoc${rowDocumentor}" max="100">
+                                value="{{ old('') }}" name="" id="ef_DocumentorNoc${rowDocumentor}" max="100" oninput="document.getElementById('ec_DocumentorsNoc${rowDocumentor}').value = document.getElementById('ef_DocumentorNoc${rowDocumentor}').value;">
                         </td>
                         <td>
                             <input type="text" class="hf-c22 form-control input-table @error('') is-invalid @enderror" 
@@ -1531,15 +1531,15 @@ var rowDocumentor = 1;
                                 data-mytooltip-content="<i>½ Day = 0.70</i>"
                                 data-mytooltip-theme="dark"
                                 data-mytooltip-action="focus" 
-                                data-mytooltip-direction="bottom">
+                                data-mytooltip-direction="bottom" oninput="document.getElementById('ec_DocumentorsNod${rowDocumentor}').value = document.getElementById('ef_DocumentorNod${rowDocumentor}').value;">
                         </td>
                         <td class="atd">
                             <input type="number" class="nwh-e28 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="ef_DocumentorAtd${rowDocumentor}">
+                                value="{{ old('') }}" name="" id="ef_DocumentorAtd${rowDocumentor}" oninput="document.getElementById('ec_DocumentorsAtd${rowDocumentor}').value = document.getElementById('ef_DocumentorAtd${rowDocumentor}').value;">
                         </td>
                         <td class="nsw">
                             <input type="number" class="nwh-e28 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="ef_DocumentorNsw${rowDocumentor}">
+                                value="{{ old('') }}" name="" id="ef_DocumentorNsw${rowDocumentor}" oninput="document.getElementById('ec_DocumentorsNwh${rowDocumentor}').value = document.getElementById('ef_DocumentorNsw${rowDocumentor}').value;">
                         </td>
                         <td class="total-td" style="background-color: rgba(146, 146, 146, 0.727">
                                 <h4 class="text-center" id="subtotal-Documentor">-</h4>
@@ -1549,7 +1549,7 @@ var rowDocumentor = 1;
                                 value="{{ old('') }}" name="" id="">
                         </td>
                             <td class="border border-white" style="background-color: #FFFFFF;">
-                            <a href="javascript:void(0)" class="text-danger font-18 removed" title="Remove"><i class="fa fa-trash-o"></i></a>
+                            <a href="javascript:void(0)" class="text-danger font-18 removed" title="Remove" onclick="$('#ecRemoveD${rowDocumentor}').trigger('click');"><i class="fa fa-trash-o"></i></a>
                             </td>
             </tr>`
         );
