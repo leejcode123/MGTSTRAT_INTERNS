@@ -332,11 +332,12 @@
                         </td>
                     </tr>
         </tbody>
-                    <tr class="table-warning">
+        <tbody id="ef_TableCoFaci">
+                    <tr class="table-warning" id="ef_RowCoFaci">
                         <td class="title">Co-facilitator / Resource Speaker</td>
                         <td>
                             <input type="number" class="noc-b22 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="ef_CoFaciNoc" max="100">
+                                value="{{ old('') }}" name="" id="ef_CoFaciNoc1" max="100">
                         </td>
                         <td>
                             <input type="text" class="hf-c22 form-control input-table @error('') is-invalid @enderror" 
@@ -350,7 +351,7 @@
                             <input type="number" class="noh-d22 input js-mytooltip form-control input-table @error('') is-invalid @enderror" 
                                 value="{{ old('') }}" 
                                 name="" 
-                                id="ef_CoFaciNod"
+                                id="ef_CoFaciNod1"
                                 data-mytooltip-content="<i>½ Day = 0.70</i>"
                                 data-mytooltip-theme="dark"
                                 data-mytooltip-action="focus" 
@@ -358,11 +359,11 @@
                         </td>
                         <td>
                             <input type="number" class="nwh-e22 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="ef_CoFaciAtd">
+                                value="{{ old('') }}" name="" id="ef_CoFaciAtd1">
                         </td>
                         <td>
                             <input type="number" class="nwh-e22 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="ef_CoFaciNsw">
+                                value="{{ old('') }}" name="" id="ef_CoFaciNsw1">
                         </td>
                         <td class="total-td">
                                 <h4 class="text-center lead" id="subtotal-coFacilitator">-</h4>
@@ -371,13 +372,17 @@
                             <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                 value="{{ old('') }}" name="" id="">
                         </td>
+                        <td style="background-color: #FFFFFF;" class="border border-white"><a href="javascript:void(0)"
+                            class="text-success font-18" title="Add" id="addBtn5"><i class="fa fa-plus"></i></a>
+                        </td>
                     </tr>
-
-                    <tr class="table-warning">
+        </tbody>
+        <tbody id="ef_TableActionLearn">
+                    <tr class="table-warning" id="ef_RowActionLearn">
                         <td class="title">Action Learning Coach</td>
                         <td>
                             <input type="number" class="noc-b23 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="ef_ActionLearnNoc" max="100">
+                                value="{{ old('') }}" name="" id="ef_ActionLearnNoc1" max="100">
                         </td>
                         <td>
                             <input type="text" class="hf-c22 form-control input-table @error('') is-invalid @enderror" 
@@ -387,7 +392,7 @@
                             <input type="number" class="noh-d23 input js-mytooltip form-control input-table @error('') is-invalid @enderror" 
                                 value="{{ old('') }}" 
                                 name="" 
-                                id="ef_ActionLearnNod"
+                                id="ef_ActionLearnNod1"
                                 data-mytooltip-content="<i>½ Day = 0.70</i>"
                                 data-mytooltip-theme="dark"
                                 data-mytooltip-action="focus" 
@@ -395,11 +400,11 @@
                         </td>
                         <td>
                             <input type="number" class="nwh-e23 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="ef_ActionLearnAtd">
+                                value="{{ old('') }}" name="" id="ef_ActionLearnAtd1">
                         </td>
                         <td>
                             <input type="number" class="nwh-e23 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="ef_ActionLearnNsw">
+                                value="{{ old('') }}" name="" id="ef_ActionLearnNsw1">
                         </td>
                         <td class="total-td">
                                 <h4 class="text-center lead" id="subtotal-ActionLearn">-</h4>
@@ -408,12 +413,17 @@
                             <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                 value="{{ old('') }}" name="" id="">
                         </td>
+                        <td style="background-color: #FFFFFF;" class="border border-white"><a href="javascript:void(0)"
+                            class="text-success font-18" title="Add" id="addBtn6"><i class="fa fa-plus"></i></a>
+                        </td>
                     </tr>
-                    <tr class="table-warning">
+        </tbody>
+        <tbody id="ef_TableMarshal">
+                    <tr class="table-warning" id="ef_RowMarshal">
                         <td class="title">Marshal</td>
                         <td>
                             <input type="number" class="noc-b23 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="ef_MarshalNoc" max="100">
+                                value="{{ old('') }}" name="" id="ef_MarshalNoc1" max="100">
                         </td>
                         <td>
                             <input type="text" class="hf-c22 form-control input-table @error('') is-invalid @enderror" 
@@ -423,7 +433,7 @@
                             <input type="number" class="noh-d23 input js-mytooltip form-control input-table @error('') is-invalid @enderror" 
                                 value="{{ old('') }}" 
                                 name="" 
-                                id="ef_MarshalNod"
+                                id="ef_MarshalNod1"
                                 data-mytooltip-content="<i>½ Day = 0.70</i>"
                                 data-mytooltip-theme="dark"
                                 data-mytooltip-action="focus" 
@@ -431,11 +441,11 @@
                         </td>
                         <td>
                             <input type="number" class="nwh-e23 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="ef_MarshalAtd">
+                                value="{{ old('') }}" name="" id="ef_MarshalAtd1">
                         </td>
                         <td>
                             <input type="number" class="nwh-e23 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="ef_MarshalNsw">
+                                value="{{ old('') }}" name="" id="ef_MarshalNsw1">
                         </td>
                         <td class="total-td">
                                 <h4 class="text-center lead" id="subtotal-marshal">-</h4>
@@ -444,12 +454,17 @@
                             <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                 value="{{ old('') }}" name="" id="">
                         </td>
+                        <td style="background-color: #FFFFFF;" class="border border-white"><a href="javascript:void(0)"
+                            class="text-success font-18" title="Add" id="addBtn7"><i class="fa fa-plus"></i></a>
+                        </td>
                     </tr>
-                    <tr class="table-warning">
+        </tbody>
+        <tbody id="ef_TableOnsite">
+                    <tr class="table-warning" id="ef_RowOnsite">
                         <td class="title">On-site PC (P20K / P25K / P30K)</td>
                         <td>
                             <input type="number" class="noc-b23 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="ef_OnsiteNoc" max="100">
+                                value="{{ old('') }}" name="" id="ef_OnsiteNoc1" max="100">
                         </td>
                         <td>
                             <fieldset>
@@ -484,7 +499,7 @@
                             <input type="number" class="noh-d23 input js-mytooltip form-control input-table @error('') is-invalid @enderror" 
                                 value="{{ old('') }}" 
                                 name="" 
-                                id="ef_OnsiteNod"
+                                id="ef_OnsiteNod1"
                                 data-mytooltip-content="<i>½ Day = 0.70</i>"
                                 data-mytooltip-theme="dark"
                                 data-mytooltip-action="focus" 
@@ -492,11 +507,11 @@
                         </td>
                         <td>
                             <input type="number" class="nwh-e23 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="ef_OnsiteAtd">
+                                value="{{ old('') }}" name="" id="ef_OnsiteAtd1">
                         </td>
                         <td>
                             <input type="number" class="nwh-e23 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="ef_OnsiteNsw">
+                                value="{{ old('') }}" name="" id="ef_OnsiteNsw1">
                         </td>
                         <td class="total-td">
                                 <h4 class="text-center lead" id="subtotal-Onsite">-</h4>
@@ -505,8 +520,11 @@
                             <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                 value="{{ old('') }}" name="" id="">
                         </td>
+                        <td style="background-color: #FFFFFF;" class="border border-white"><a href="javascript:void(0)"
+                            class="text-success font-18" title="Add" id="addBtn8"><i class="fa fa-plus"></i></a>
+                        </td>
                     </tr>
-
+        </tbody>
                     <tr class="">
                         <td class="title fw-bold text-dark fst-italic">Subtotal</td>
                         <td></td>
@@ -535,12 +553,12 @@
                         <td class="total-td"></td>
                         <td class="total-td"></td>
                     </tr>
-
-                    <tr class="table-warning">
+            <tbody id="ef_TableDocumentor">
+                    <tr class="table-warning" id="ef_RowDocumentor">
                         <td class="title">Documentor</td>
                         <td>
                             <input type="number" class="noc-b28 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="ef_DocumentorNoc" max="100">
+                                value="{{ old('') }}" name="" id="ef_DocumentorNoc1" max="100">
                         </td>
                         <td>
                             <input type="text" class="hf-c22 form-control input-table @error('') is-invalid @enderror" 
@@ -550,7 +568,7 @@
                             <input type="number" class="noh-d28 input js-mytooltip form-control input-table @error('') is-invalid @enderror" 
                                 value="{{ old('') }}" 
                                 name="" 
-                                id="ef_DocumentorNod"
+                                id="ef_DocumentorNod1"
                                 data-mytooltip-content="<i>½ Day = 0.70</i>"
                                 data-mytooltip-theme="dark"
                                 data-mytooltip-action="focus" 
@@ -558,11 +576,11 @@
                         </td>
                         <td>
                             <input type="number" class="nwh-e28 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="ef_DocumentorAtd">
+                                value="{{ old('') }}" name="" id="ef_DocumentorAtd1">
                         </td>
                         <td>
                             <input type="number" class="nwh-e28 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="ef_DocumentorNsw">
+                                value="{{ old('') }}" name="" id="ef_DocumentorNsw1">
                         </td>
                         <td class="total-td" style="background-color: rgba(146, 146, 146, 0.727">
                                 <h4 class="text-center" id="subtotal-Documentor">-</h4>
@@ -571,7 +589,11 @@
                             <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                 value="{{ old('') }}" name="" id="">
                         </td>
+                        <td style="background-color: #FFFFFF;" class="border border-white"><a href="javascript:void(0)"
+                            class="text-success font-18" title="Add" id="addBtn9"><i class="fa fa-plus"></i></a>
+                        </td>
                     </tr>
+            </tbody>
                     <tr class="">
                         <th class="title px-4 text-dark">5. PER DIEM</th>
                         <td>
@@ -1110,6 +1132,466 @@ var rowLeadFaci = 1;
 
                 // Decreasing total number of rows by 1.
                 rowLeadFaci--;
+                // $(`#ecButton${rowIdx}`).trigger('click');
+        });
+var rowCoFaci = 1;
+    $("#addBtn5").on("click", function() {
+        // Adding a row inside the tbody.
+        $("#ef_TableCoFaci").append
+        (`
+            <tr id="ef_RowCoFaci${++rowCoFaci}" class="table-warning">
+                <td class="title">Co-facilitator / Resource Speaker</td>
+                        <td class ="noc">
+                            <input type="number" class="noc-b22 form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" name="" id="ef_CoFaciNoc${rowCoFaci}" max="100">
+                        </td>
+                        <td>
+                            <input type="text" class="hf-c22 form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" name="" id="ef_CoFaciPdf";
+                                data-mytooltip-content="<i>½ Day = 0.70</i>"
+                                data-mytooltip-theme="dark"
+                                data-mytooltip-action="focus" 
+                                data-mytooltip-direction="bottom">
+                        </td>
+                        <td class ="nod">
+                            <input type="number" class="noh-d22 input js-mytooltip form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" 
+                                name="" 
+                                id="ef_CoFaciNod${rowCoFaci}"
+                                data-mytooltip-content="<i>½ Day = 0.70</i>"
+                                data-mytooltip-theme="dark"
+                                data-mytooltip-action="focus" 
+                                data-mytooltip-direction="bottom">
+                        </td>
+                        <td class = "atd">
+                            <input type="number" class="nwh-e22 form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" name="" id="ef_CoFaciAtd${rowCoFaci}">
+                        </td>
+                        <td class ="nsw">
+                            <input type="number" class="nwh-e22 form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" name="" id="ef_CoFaciNsw${rowCoFaci}">
+                        </td>
+                        <td class="total-td">
+                                <h4 class="text-center lead" id="subtotal-coFacilitator">-</h4>
+                        </td>
+                        <td class="total-td">
+                            <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="">
+                        </td>
+                            <td class="border border-white" style="background-color: #FFFFFF;">
+                            <a href="javascript:void(0)" class="text-danger font-18 removed" title="Remove"><i class="fa fa-trash-o"></i></a>
+                            </td>
+            </tr>`
+        );
+    });
+        $("#ef_TableCoFaci").on("click", ".removed", function () {
+
+                // Getting all the rows next to the row
+                // containing the clicked button
+                var child = $(this).closest("tr").nextAll();
+
+                // Iterating across all the rows
+                // obtained to change the index
+                child.each(function () {
+                    // Getting <tr> id.
+                    var id = $(this).attr("id");
+
+                    // Getting the <input> inside the .noc, .noh, .nwh class.
+                    var noc = $(this).children(".noc").children("input");
+                    // var pdf = $(this).children(".pdf").children("input");
+                    var nod = $(this).children(".nod").children("input");
+                    var atd = $(this).children(".atd").children("input");
+                    var nsw = $(this).children(".nsw").children("input");
+
+                    // Gets the row number from <tr> id.
+                    var dig = parseInt(id.substring(12));
+
+                    // Modifying row id.
+                    $(this).attr("id", `ef_RowCoFaci${dig - 1}`);
+
+                    // Modifying row index.
+                    noc.attr("id", `ef_CoFaciNoc${dig - 1}`);
+                    // pdf.attr("id", `ef_CoFaciPdf${dig - 1}`);
+                    nod.attr("id", `ef_CoFaciNod${dig - 1}`);
+                    atd.attr("id", `ef_CoFaciAtd${dig - 1}`);
+                    nsw.attr("id", `ef_CoFaciNsw${dig - 1}`);
+                });
+
+                // Removing the current row.
+                $(this).closest("tr").remove();
+
+                // Decreasing total number of rows by 1.
+                rowCoFaci--;
+                // $(`#ecButton${rowIdx}`).trigger('click');
+        });
+var rowActionLearn = 1;
+    $("#addBtn6").on("click", function() {
+        // Adding a row inside the tbody.
+        $("#ef_TableActionLearn").append
+        (`
+            <tr id="ef_RowActionLearn${++rowActionLearn}" class="table-warning">
+                <td class="title">Action Learning Coach</td>
+                        <td class ="noc">
+                            <input type="number" class="noc-b23 form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" name="" id="ef_ActionLearnNoc${rowActionLearn}" max="100">
+                        </td>
+                        <td>
+                            <input type="text" class="hf-c22 form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" name="" id="ef_ActionLearnPdf";>
+                        </td>
+                        <td class="nod">
+                            <input type="number" class="noh-d23 input js-mytooltip form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" 
+                                name="" 
+                                id="ef_ActionLearnNod${rowActionLearn}"
+                                data-mytooltip-content="<i>½ Day = 0.70</i>"
+                                data-mytooltip-theme="dark"
+                                data-mytooltip-action="focus" 
+                                data-mytooltip-direction="bottom">
+                        </td>
+                        <td class="atd">
+                            <input type="number" class="nwh-e23 form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" name="" id="ef_ActionLearnAtd${rowActionLearn}">
+                        </td>
+                        <td class="nsw">
+                            <input type="number" class="nwh-e23 form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" name="" id="ef_ActionLearnNsw${rowActionLearn}">
+                        </td>
+                        <td class="total-td">
+                                <h4 class="text-center lead" id="subtotal-ActionLearn">-</h4>
+                        </td>
+                        <td class="total-td">
+                            <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="">
+                        </td> value="{{ old('') }}" name="" id="">
+                        </td>
+                            <td class="border border-white" style="background-color: #FFFFFF;">
+                            <a href="javascript:void(0)" class="text-danger font-18 removed" title="Remove"><i class="fa fa-trash-o"></i></a>
+                            </td>
+            </tr>`
+        );
+    });
+        $("#ef_TableActionLearn").on("click", ".removed", function () {
+
+                // Getting all the rows next to the row
+                // containing the clicked button
+                var child = $(this).closest("tr").nextAll();
+
+                // Iterating across all the rows
+                // obtained to change the index
+                child.each(function () {
+                    // Getting <tr> id.
+                    var id = $(this).attr("id");
+
+                    // Getting the <input> inside the .noc, .noh, .nwh class.
+                    var noc = $(this).children(".noc").children("input");
+                    // var pdf = $(this).children(".pdf").children("input");
+                    var nod = $(this).children(".nod").children("input");
+                    var atd = $(this).children(".atd").children("input");
+                    var nsw = $(this).children(".nsw").children("input");
+
+                    // Gets the row number from <tr> id.
+                    var dig = parseInt(id.substring(17));
+
+                    // Modifying row id.
+                    $(this).attr("id", `ef_RowActionLearn${dig - 1}`);
+
+                    // Modifying row index.
+                    noc.attr("id", `ef_ActionLearnNoc${dig - 1}`);
+                    // pdf.attr("id", `ef_ActionLearnPdf${dig - 1}`);
+                    nod.attr("id", `ef_ActionLearnNod${dig - 1}`);
+                    atd.attr("id", `ef_ActionLearnAtd${dig - 1}`);
+                    nsw.attr("id", `ef_ActionLearnNsw${dig - 1}`);
+                });
+
+                // Removing the current row.
+                $(this).closest("tr").remove();
+
+                // Decreasing total number of rows by 1.
+                rowActionLearn--;
+                // $(`#ecButton${rowIdx}`).trigger('click');
+        });
+var rowMarshal = 1;
+    $("#addBtn7").on("click", function() {
+        // Adding a row inside the tbody.
+        $("#ef_TableMarshal").append
+        (`
+            <tr id="ef_RowMarshal${++rowMarshal}" class="table-warning">
+                <td class="title">Marshal</td>
+                        <td class="noc">
+                            <input type="number" class="noc-b23 form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" name="" id="ef_MarshalNoc${rowMarshal}" max="100">
+                        </td>
+                        <td>
+                            <input type="text" class="hf-c22 form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" name="" id="ef_MarshalPdf";>
+                        </td>
+                        <td class="nod">
+                            <input type="number" class="noh-d23 input js-mytooltip form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" 
+                                name="" 
+                                id="ef_MarshalNod${rowMarshal}"
+                                data-mytooltip-content="<i>½ Day = 0.70</i>"
+                                data-mytooltip-theme="dark"
+                                data-mytooltip-action="focus" 
+                                data-mytooltip-direction="bottom">
+                        </td>
+                        <td class="atd">
+                            <input type="number" class="nwh-e23 form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" name="" id="ef_MarshalAtd${rowMarshal}">
+                        </td>
+                        <td class="nsw">
+                            <input type="number" class="nwh-e23 form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" name="" id="ef_MarshalNsw${rowMarshal}">
+                        </td>
+                        <td class="total-td">
+                                <h4 class="text-center lead" id="subtotal-marshal">-</h4>
+                        </td>
+                        <td class="total-td">
+                            <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="">
+                        </td>
+                            <td class="border border-white" style="background-color: #FFFFFF;">
+                            <a href="javascript:void(0)" class="text-danger font-18 removed" title="Remove"><i class="fa fa-trash-o"></i></a>
+                            </td>
+            </tr>`
+        );
+    });
+        $("#ef_TableMarshal").on("click", ".removed", function () {
+
+                // Getting all the rows next to the row
+                // containing the clicked button
+                var child = $(this).closest("tr").nextAll();
+
+                // Iterating across all the rows
+                // obtained to change the index
+                child.each(function () {
+                    // Getting <tr> id.
+                    var id = $(this).attr("id");
+
+                    // Getting the <input> inside the .noc, .noh, .nwh class.
+                    var noc = $(this).children(".noc").children("input");
+                    // var pdf = $(this).children(".pdf").children("input");
+                    var nod = $(this).children(".nod").children("input");
+                    var atd = $(this).children(".atd").children("input");
+                    var nsw = $(this).children(".nsw").children("input");
+
+                    // Gets the row number from <tr> id.
+                    var dig = parseInt(id.substring(13));
+
+                    // Modifying row id.
+                    $(this).attr("id", `ef_RowMarshal${dig - 1}`);
+
+                    // Modifying row index.
+                    noc.attr("id", `ef_MarshalNoc${dig - 1}`);
+                    // pdf.attr("id", `ef_MarshalPdf${dig - 1}`);
+                    nod.attr("id", `ef_MarshalNod${dig - 1}`);
+                    atd.attr("id", `ef_MarshalAtd${dig - 1}`);
+                    nsw.attr("id", `ef_MarshalNsw${dig - 1}`);
+                });
+
+                // Removing the current row.
+                $(this).closest("tr").remove();
+
+                // Decreasing total number of rows by 1.
+                rowMarshal--;
+                // $(`#ecButton${rowIdx}`).trigger('click');
+        });
+var rowOnsite = 1;
+    $("#addBtn8").on("click", function() {
+        // Adding a row inside the tbody.
+        $("#ef_TableOnsite").append
+        (`
+            <tr id="ef_RowOnsite${++rowOnsite}" class="table-warning">
+                <td class="title">On-site PC (P20K / P25K / P30K)</td>
+                        <td>
+                            <input type="number" class="noc-b23 form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" name="" id="ef_OnsiteNoc${rowOnsite}" max="100">
+                        </td>
+                        <td>
+                            <fieldset>
+                                <select class="form-select hf-c13 input js-mytooltip @error('') is-invalid @enderror"
+                                    name="" 
+                                    id="ef_OnsitePdf"
+                                    data-mytooltip-content="<i>P20,000 - simple indoor programs<br>
+                                        P25,000 - roster with 6-10 members<br>
+                                        P30,000 - roster with 11 members and up</i>"
+                                    data-mytooltip-theme="dark"
+                                    data-mytooltip-action="focus" 
+                                    data-mytooltip-direction="right" 
+                                    style="background-color:#ffcccc; color:red;">
+                                    <option value="20,000" {{ old('') == '20,000' ? 'selected="selected"' : '' }} selected>
+                                        &#8369;20,000
+                                    </option>
+                                    <option value="25,000" {{ old('') == '56,000' ? 'selected="selected"' : '' }} >
+                                        &#8369;25,000
+                                    </option>
+                                    <option value="30,000" {{ old('') == '30,000' ? 'selected="selected"' : '' }}>
+                                        &#8369;30,800
+                                    </option>
+                                </select>
+                                @error('')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </fieldset>
+                        </td>
+                        <td>
+                            <input type="number" class="noh-d23 input js-mytooltip form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" 
+                                name="" 
+                                id="ef_OnsiteNod${rowOnsite}"
+                                data-mytooltip-content="<i>½ Day = 0.70</i>"
+                                data-mytooltip-theme="dark"
+                                data-mytooltip-action="focus" 
+                                data-mytooltip-direction="bottom">
+                        </td>
+                        <td>
+                            <input type="number" class="nwh-e23 form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" name="" id="ef_OnsiteAtd${rowOnsite}">
+                        </td>
+                        <td>
+                            <input type="number" class="nwh-e23 form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" name="" id="ef_OnsiteNsw${rowOnsite}">
+                        </td>
+                        <td class="total-td">
+                                <h4 class="text-center lead" id="subtotal-Onsite">-</h4>
+                        </td>
+                        <td class="total-td">
+                            <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="">
+                        </td>>
+                            <td class="border border-white" style="background-color: #FFFFFF;">
+                            <a href="javascript:void(0)" class="text-danger font-18 removed" title="Remove"><i class="fa fa-trash-o"></i></a>
+                            </td>
+            </tr>`
+        );
+    });
+        $("#ef_TableOnsite").on("click", ".removed", function () {
+
+                // Getting all the rows next to the row
+                // containing the clicked button
+                var child = $(this).closest("tr").nextAll();
+
+                // Iterating across all the rows
+                // obtained to change the index
+                child.each(function () {
+                    // Getting <tr> id.
+                    var id = $(this).attr("id");
+
+                    // Getting the <input> inside the .noc, .noh, .nwh class.
+                    var noc = $(this).children(".noc").children("input");
+                    // var pdf = $(this).children(".pdf").children("input");
+                    var nod = $(this).children(".nod").children("input");
+                    var atd = $(this).children(".atd").children("input");
+                    var nsw = $(this).children(".nsw").children("input");
+
+                    // Gets the row number from <tr> id.
+                    var dig = parseInt(id.substring(12));
+
+                    // Modifying row id.
+                    $(this).attr("id", `ef_RowOnsite${dig - 1}`);
+
+                    // Modifying row index.
+                    noc.attr("id", `ef_OnsiteNoc${dig - 1}`);
+                    // pdf.attr("id", `ef_OnsitePdf${dig - 1}`);
+                    nod.attr("id", `ef_OnsiteNod${dig - 1}`);
+                    atd.attr("id", `ef_OnsiteAtd${dig - 1}`);
+                    nsw.attr("id", `ef_OnsiteNsw${dig - 1}`);
+                });
+
+                // Removing the current row.
+                $(this).closest("tr").remove();
+
+                // Decreasing total number of rows by 1.
+                rowOnsite--;
+                // $(`#ecButton${rowIdx}`).trigger('click');
+        });
+var rowDocumentor = 1;
+    $("#addBtn9").on("click", function() {
+        // Adding a row inside the tbody.
+        $("#ef_TableDocumentor").append
+        (`
+            <tr id="ef_RowDocumentor${++rowDocumentor}" class="table-warning">
+                <td class="title">Documentor</td>
+                        <td class="noc">
+                            <input type="number" class="noc-b28 form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" name="" id="ef_DocumentorNoc${rowDocumentor}" max="100">
+                        </td>
+                        <td>
+                            <input type="text" class="hf-c22 form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" name="" id="ef_DocumentorPdf";>
+                        </td>
+                        <td class="nod">
+                            <input type="number" class="noh-d28 input js-mytooltip form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" 
+                                name="" 
+                                id="ef_DocumentorNod${rowDocumentor}"
+                                data-mytooltip-content="<i>½ Day = 0.70</i>"
+                                data-mytooltip-theme="dark"
+                                data-mytooltip-action="focus" 
+                                data-mytooltip-direction="bottom">
+                        </td>
+                        <td class="atd">
+                            <input type="number" class="nwh-e28 form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" name="" id="ef_DocumentorAtd${rowDocumentor}">
+                        </td>
+                        <td class="nsw">
+                            <input type="number" class="nwh-e28 form-control input-table @error('') is-invalid @enderror" 
+                                value="{{ old('') }}" name="" id="ef_DocumentorNsw${rowDocumentor}">
+                        </td>
+                        <td class="total-td" style="background-color: rgba(146, 146, 146, 0.727">
+                                <h4 class="text-center" id="subtotal-Documentor">-</h4>
+                        </td>
+                        <td class="total-td">
+                            <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="">
+                        </td>
+                            <td class="border border-white" style="background-color: #FFFFFF;">
+                            <a href="javascript:void(0)" class="text-danger font-18 removed" title="Remove"><i class="fa fa-trash-o"></i></a>
+                            </td>
+            </tr>`
+        );
+    });
+        $("#ef_TableDocumentor").on("click", ".removed", function () {
+
+                // Getting all the rows next to the row
+                // containing the clicked button
+                var child = $(this).closest("tr").nextAll();
+
+                // Iterating across all the rows
+                // obtained to change the index
+                child.each(function () {
+                    // Getting <tr> id.
+                    var id = $(this).attr("id");
+
+                    // Getting the <input> inside the .noc, .noh, .nwh class.
+                    var noc = $(this).children(".noc").children("input");
+                    // var pdf = $(this).children(".pdf").children("input");
+                    var nod = $(this).children(".nod").children("input");
+                    var atd = $(this).children(".atd").children("input");
+                    var nsw = $(this).children(".nsw").children("input");
+
+                    // Gets the row number from <tr> id.
+                    var dig = parseInt(id.substring(16));
+
+                    // Modifying row id.
+                    $(this).attr("id", `ef_RowDocumentor${dig - 1}`);
+
+                    // Modifying row index.
+                    noc.attr("id", `ef_DocumentorNoc${dig - 1}`);
+                    // pdf.attr("id", `ef_DocumentorPdf${dig - 1}`);
+                    nod.attr("id", `ef_DocumentorNod${dig - 1}`);
+                    atd.attr("id", `ef_DocumentorAtd${dig - 1}`);
+                    nsw.attr("id", `ef_DocumentorNsw${dig - 1}`);
+                });
+
+                // Removing the current row.
+                $(this).closest("tr").remove();
+
+                // Decreasing total number of rows by 1.
+                rowDocumentor--;
                 // $(`#ecButton${rowIdx}`).trigger('click');
         });
 </script>
