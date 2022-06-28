@@ -358,5 +358,83 @@
         }); 
     });
     
+    var ecDesigner = 1;
+    $(document).ready(function (){ 
+        $("#addBtn3").on("click", function() {
+            // Adding a row inside the tbody.
+            $("#ec_TableDesigner").append(`
+                <tr id="ec_DesignerRow${++ecDesigner}">
+                    <td class="title">Designer (P48K / P64K)</td>
+                    <td class="noh">
+                        <input type="number"
+                            class="text-center form-control input-table @error('') is-invalid @enderror"
+                            value="{{ old('') }}" name="" id="ec_DesignerNoc${ecDesigner}" max="100" readonly>
+                    </td>
+                    <td>
+                        <input type="text"
+                            class="text-center fw-bold text-dark text-center form-control input-table @error('') is-invalid @enderror"
+                            value="{{ old('') }}" name="" id="ec_DesignerHf" max="100">
+                    </td>
+                    <td class="noh">
+                        <input type="number"
+                            class="text-center form-control input-table @error('') is-invalid @enderror"
+                            value="{{ old('') }}" name="" id="ec_DesignerNoh${ecDesigner}" readonly>
+                    </td>
+                    <td class="nwh">
+                        <input type="number"
+                            class="text-center form-control input-table @error('') is-invalid @enderror"
+                            value="{{ old('') }}" name="" id="ec_DesignerNwh${ecDesigner}" readonly>
+                    </td>
+                    <td class="total-td">
+                        <h4 class="text-center lead" id="ec_DesignerTotal">-</h4>
+                    </td>
+                    <td class="total-td">
+                        <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                            value="{{ old('') }}" name="" id="">
+                    </td>
+                    <td class="border border-white" style="background-color: #FFFFFF;">
+                        <a href="javascript:void(0)" class="text-danger font-18 remove" id="ecDesignerRemove${ecDesigner}" title="Remove" style="visibility: hidden;">
+                            <i class="fa fa-trash-o"></i>
+                        </a>
+                    </td>
+                </tr>
+            `);
+        }); 
+
+        $("#ec_TableDesigner").on("click", ".remove", function () {
+            
+            // Getting all the rows next to the row
+            // containing the clicked button
+            var child = $(this).closest("tr").nextAll();
+            
+            // Iterating across all the rows
+            // obtained to change the index
+            child.each(function () {
+                // Getting <tr> id.
+                var id = $(this).attr("id");
+
+                // Getting the <input> inside the .noc, .noh, .nwh class.
+                var noc = $(this).children(".noc").children("input");
+                var noh = $(this).children(".noh").children("input");
+                var nwh = $(this).children(".nwh").children("input");
+
+                // Gets the row number from <tr> id.
+                var dig = parseInt(id.substring(10));
+
+                // Modifying row id.
+                $(this).attr("id", `ec_Analyst${dig - 1}`);
+
+                // Modifying row index.
+                noc.attr("id", `ec_DesignerNoc${dig - 1}`);
+                noh.attr("id", `ec_DesignerNoh${dig - 1}`);
+                nwh.attr("id", `ec_DesignerNwh${dig - 1}`);
+            });
+
+            // Removing the current row.
+            $(this).closest("tr").remove();
+            // Decreasing total number of rows by 1.
+            ecDesigner--;
+        }); 
+    });
 
 </script>

@@ -15,7 +15,7 @@
                             WEEKENDS HOLIDAYS *</th>
                         <th class="title-th" scope="col" width=15%>TOTAL FEE</th>
                         <th class="title-th" scope="col" width=15%>NOTES</th>
-                        <th class="add-row border border-white"> </th>
+                        <td class="add-row border border-white"> </td>
                     </tr>
                 </thead>
 
@@ -28,7 +28,7 @@
                     <th></th>
                     <th class="total-td"></th>
                     <th class="total-td"></th>
-                    <th class="border border-white"> </th>
+                    <td class="border border-white"> </td>
                 </tr>
 
                 <tbody id="tableLeadconsultant">
@@ -152,6 +152,7 @@
                         <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                             value="{{ old('') }}" name="" id="">
                     </td>
+                    <td class="border border-white add-row"></td>
                 </tr>
 
                 {{-- Design --}}
@@ -171,7 +172,7 @@
                         <td>
                             <input type="number"
                                 class="input js-mytooltip form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ef_DesignerNoc" max="100"
+                                value="{{ old('') }}" name="" id="ef_DesignerNoc1" max="100"
                                 data-mytooltip-content="<i>Includes in depth needs analysis (i.e. surveys, interviews, FGDs),
                                     special research (i.e. to study client materials or client -required materials, industry
                                     or function specific content), creation of client-specific learning aids/tools
@@ -204,13 +205,13 @@
                         <td>
                             <input type="number"
                                 class="input js-mytooltip form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ef_DesignerNoh"
+                                value="{{ old('') }}" name="" id="ef_DesignerNoh1"
                                 data-mytooltip-content="<i>Number of Hours</i>" data-mytooltip-theme="dark"
                                 data-mytooltip-action="focus" data-mytooltip-direction="bottom">
                         </td>
                         <td>
                             <input type="number" class="form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ef_DesignerNwh">
+                                value="{{ old('') }}" name="" id="ef_DesignerNwh1">
                         </td>
                         <td class="total-td" style="background-color: rgba(146, 146, 146, 0.727)">
                             <h4 class="text-center" id="subtotal-design">-</h4>
@@ -420,6 +421,7 @@
                         <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                             value="{{ old('') }}" name="" id="">
                     </td>
+                    <td class="border border-white add-row"></td>
                 </tr>
 
                 {{-- Program --}}
@@ -485,6 +487,7 @@
                             value="{{ old('') }}" name="" id="">
                     </td>
                 </tr>
+
                 <tr class="table-active">
                     <td class="fw-bold text-dark text-uppercase fst-italic overall-total-start">discount given (if any)
                     </td>
