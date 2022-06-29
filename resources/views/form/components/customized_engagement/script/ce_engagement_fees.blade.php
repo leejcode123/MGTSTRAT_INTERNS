@@ -305,11 +305,11 @@
         $("#addBtn4").on("click", function() {
             // Adding a row inside the tbody.
             $("#tableLeadfaci").append(`
-                <tr id="efLeadfaci${++efLeadfaci}" class="table-warning">
+                <tr id="rowLeadFaci${++efLeadfaci}" class="table-warning">
                     <td class="title">Lead Facilitator</td>
-                    <td>
+                    <td class="noc">
                         <input type="number" class="form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ef_LeadfacilitatorNoc" max="100"
+                            value="{{ old('') }}" name="" id="ef_LeadfacilitatorNoc${efLeadfaci}" max="100"
                             oninput="document.getElementById('ec_LeadfacilitatorNoc${efLeadfaci}').value = document.getElementById('ef_LeadfacilitatorNoc${efLeadfaci}').value;">
                     </td>
                     <td>
@@ -339,17 +339,17 @@
                                     
                         </fieldset>
                     </td>
-                    <td>
+                    <td class="noh">
                         <input type="number"
                             class="input js-mytooltip form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ef_LeadfacilitatorNoh"
+                            value="{{ old('') }}" name="" id="ef_LeadfacilitatorNoh${efLeadfaci}"
                             data-mytooltip-content="<i>Number of Hours</i>" data-mytooltip-theme="dark"
                             data-mytooltip-action="focus" data-mytooltip-direction="bottom"
                             oninput="document.getElementById('ec_LeadfacilitatorNoh${efLeadfaci}').value = document.getElementById('ef_LeadfacilitatorNoh${efLeadfaci}').value;">
                         </td>
-                    <td>
+                    <td class="nwh">
                         <input type="number" class="form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ef_LeadfacilitatorNwh" oninput="document.getElementById('ec_LeadfacilitatorNwh${efLeadfaci}').value = document.getElementById('ef_LeadfacilitatorNwh${efLeadfaci}').value;">
+                            value="{{ old('') }}" name="" id="ef_LeadfacilitatorNwh${efLeadfaci}" oninput="document.getElementById('ec_LeadfacilitatorNwh${efLeadfaci}').value = document.getElementById('ef_LeadfacilitatorNwh${efLeadfaci}').value;">
                     </td>
                     <td class="total-td">
                         <h4 class="text-center lead" id="subtotal-lead">-</h4>
@@ -359,71 +359,73 @@
                             value="{{ old('') }}" name="" id="">
                     </td>
                     <td class="border border-white" style="background-color: #FFFFFF;">
-                        <a href="javascript:void(0)" class="text-danger font-18 remove" title="Remove">
+                        <a href="javascript:void(0)" class="text-danger font-18 remove" onclick="$('#ecLeadfaciRemove${efLeadfaci}').trigger('click');" title="Remove">
                             <i class="fa fa-trash-o"></i>
                         </a>
                     </td>
                 </tr>`);
         });
 
-        // $("#tableLeadfaci").on("click", ".remove", function () {
-        //         // Getting all the rows next to the row
-        //         // containing the clicked button
-        //         var child = $(this).closest("tr").nextAll();
+        $("#tableLeadfaci").on("click", ".remove", function () {
+                // Getting all the rows next to the row
+                // containing the clicked button
+                var child = $(this).closest("tr").nextAll();
 
-        //         // Iterating across all the rows
-        //         // obtained to change the index
-        //         child.each(function () {
-        //             // Getting <tr> id.
-        //             var id = $(this).attr("id");
+                // Iterating across all the rows
+                // obtained to change the index
+                child.each(function () {
+                    // Getting <tr> id.
+                    var id = $(this).attr("id");
 
-        //             // Getting the <input> inside the .noc, .noh, .nwh class.
-        //             var noc = $(this).children(".noc").children("input");
-        //             var noh = $(this).children(".noh").children("input");
-        //             var nwh = $(this).children(".nwh").children("input");
+                    // Getting the <input> inside the .noc, .noh, .nwh class.
+                    var noc = $(this).children(".noc").children("input");
+                    var noh = $(this).children(".noh").children("input");
+                    var nwh = $(this).children(".nwh").children("input");
 
-        //             // Gets the row number from <tr> id.
-        //             var dig = parseInt(id.substring(7));
+                    // Gets the row number from <tr> id.
+                    var dig = parseInt(id.substring(11));
 
-        //             // Modifying row id.
-        //             $(this).attr("id", `Analyst${dig - 1}`);
+                    // Modifying row id.
+                    $(this).attr("id", `rowLeadFaci${dig - 1}`);
 
-        //             // Modifying row index.
-        //             noc.attr("id", `ef_AnalystNoc${dig - 1}`);
-        //             noh.attr("id", `ef_AnalystNoh${dig - 1}`);
-        //             nwh.attr("id", `ef_AnalystNwh${dig - 1}`);
-        //         });
+                    // Modifying row index.
+                    noc.attr("id", `ef_LeadfacilitatorNoc${dig - 1}`);
+                    noh.attr("id", `ef_LeadfacilitatorNoh${dig - 1}`);
+                    nwh.attr("id", `ef_LeadfacilitatorNwh${dig - 1}`);
+                });
 
-        //         // Removing the current row.
-        //         $(this).closest("tr").remove();
+                // Removing the current row.
+                $(this).closest("tr").remove();
 
-        //         // Decreasing total number of rows by 1.
-        //         efLeadfaci--;
-        // });
+                // Decreasing total number of rows by 1.
+                efLeadfaci--;
+        });
 
         var efCofaci = 1;
         $("#addBtn5").on("click", function() {
             // Adding a row inside the tbody.
             $("#tableCofaci").append(`
             <tr id="efCofaci${++efCofaci}" class="table-warning">
-                <td class="title">Co-facilitator / Resource Speaker</td>
-                    <td>
+                    <td class="title">Co-facilitator / Resource Speaker</td>
+                    <td class="noc">
                         <input type="number" class="form-control input-table @error('') is-invalid @enderror" value="{{ old('') }}" 
-                            name="" id="ef_CofaciNoc"max="100">
+                            name="" id="ef_CofaciNoc${efCofaci}" oninput="document.getElementById('ec_CofacilitatorNoc${efCofaci}').value = document.getElementById('ef_CofaciNoc${efCofaci}').value;" max="100">
                     </td>
                     <td>
                         <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                             value="{{ old('') }}" name="" id="ef_CofaciHf" data-type="currency">
                     </td>
-                    <td>
+                    <td class="noh">
                         <input type="number" class="input js-mytooltip form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ef_CofaciNoh"
+                            value="{{ old('') }}" name="" id="ef_CofaciNoh${efCofaci}"
                             data-mytooltip-content="<i>Number of Hours</i>" data-mytooltip-theme="dark"
-                            data-mytooltip-action="focus" data-mytooltip-direction="bottom">
+                            data-mytooltip-action="focus" data-mytooltip-direction="bottom"
+                            oninput="document.getElementById('ec_CofacilitatorNoh${efCofaci}').value = document.getElementById('ef_CofaciNoh${efCofaci}').value;">
                     </td>
-                    <td>
+                    <td class="nwh">
                         <input type="number" class="form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ef_CofaciNwh">
+                            value="{{ old('') }}" name="" id="ef_CofaciNwh${efCofaci}" 
+                            oninput="document.getElementById('ec_CofacilitatorNwh${efCofaci}').value = document.getElementById('ef_CofaciNwh${efCofaci}').value;">
                     </td>
                     <td class="total-td">
                         <h4 class="text-center lead" id="subtotal-coFacilitator">-</h4>
@@ -433,36 +435,75 @@
                             value="{{ old('') }}" name="" id="">
                     </td>
                     <td class="border border-white" style="background-color: #FFFFFF;">
-                        <a href="javascript:void(0)" class="text-danger font-18 remove" title="Remove"><i class="fa fa-trash-o"></i></a>
+                        <a href="javascript:void(0)" class="text-danger font-18 remove" title="Remove" onclick="$('#ecCofaciRemove${efCofaci}').trigger('click');">
+                            <i class="fa fa-trash-o"></i>
+                        </a>
                     </td>
-            </tr>
-        `);
+                </tr>`);
         });
+
+        $("#tableCofaci").on("click", ".remove", function () {
+                // Getting all the rows next to the row
+                // containing the clicked button
+                var child = $(this).closest("tr").nextAll();
+
+                // Iterating across all the rows
+                // obtained to change the index
+                child.each(function () {
+                    // Getting <tr> id.
+                    var id = $(this).attr("id");
+
+                    // Getting the <input> inside the .noc, .noh, .nwh class.
+                    var noc = $(this).children(".noc").children("input");
+                    var noh = $(this).children(".noh").children("input");
+                    var nwh = $(this).children(".nwh").children("input");
+
+                    // Gets the row number from <tr> id.
+                    var dig = parseInt(id.substring(8));
+
+                    // Modifying row id.
+                    $(this).attr("id", `efCofaci${dig - 1}`);
+
+                    // Modifying row index.
+                    noc.attr("id", `ef_CofaciNoc${dig - 1}`);
+                    noh.attr("id", `ef_CofaciNoh${dig - 1}`);
+                    nwh.attr("id", `ef_CofaciNwh${dig - 1}`);
+                });
+
+                // Removing the current row.
+                $(this).closest("tr").remove();
+
+                // Decreasing total number of rows by 1.
+                efCofaci--;
+        }); 
 
         var efModerator = 1;
         $("#addBtn6").on("click", function() {
             // Adding a row inside the tbody.
             $("#tableModerator").append(`
-            <tr id="efModerator${++efModerator}" class="table-warning">
+            <tr id="efModeratorRow${++efModerator}" class="table-warning">
                 <td class="title">Moderator</td>
-                <td>
+                <td class="noc">
                     <input type="number" class="form-control input-table @error('') is-invalid @enderror"
-                        value="{{ old('') }}" name="" id="ef_ModeratorNoc" max="100">
+                        value="{{ old('') }}" name="" id="ef_ModeratorNoc${efModerator}" max="100"
+                        oninput="document.getElementById('ec_ModeratorNoc${efModerator}').value = document.getElementById('ef_ModeratorNoc${efModerator}').value;">
                 </td>
                 <td>
                     <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                         value="{{ old('') }}" name="" id="ef_ModeratorHf" data-type="currency">
                 </td>
-                <td>
+                <td class="noh">
                     <input type="number"
                         class="input js-mytooltip form-control input-table @error('') is-invalid @enderror"
-                        value="{{ old('') }}" name="" id="ef_ModeratorNoh"
+                        value="{{ old('') }}" name="" id="ef_ModeratorNoh${efModerator}"
                         data-mytooltip-content="<i>Number of Hours</i>" data-mytooltip-theme="dark"
-                        data-mytooltip-action="focus" data-mytooltip-direction="bottom">
+                        data-mytooltip-action="focus" data-mytooltip-direction="bottom"
+                        oninput="document.getElementById('ec_ModeratorNoh${efModerator}').value = document.getElementById('ef_ModeratorNoh${efModerator}').value;">
                 </td>
-                <td>
+                <td class="nwh">
                     <input type="number" class="form-control input-table @error('') is-invalid @enderror"
-                        value="{{ old('') }}" name="" id="ef_ModeratorNwh">
+                        value="{{ old('') }}" name="" id="ef_ModeratorNwh${efModerator}"
+                        oninput="document.getElementById('ec_ModeratorNwh${efModerator}').value = document.getElementById('ef_ModeratorNwh${efModerator}').value;">
                 </td>
                 <td class="total-td">
                     <h4 class="text-center lead" id="subtotal-moderator">-</h4>
@@ -472,36 +513,73 @@
                         value="{{ old('') }}" name="" id="">
                 </td>
                 <td class="border border-white" style="background-color: #FFFFFF;">
-                    <a href="javascript:void(0)" class="text-danger font-18 remove" title="Remove"><i class="fa fa-trash-o"></i></a>
+                    <a href="javascript:void(0)" class="text-danger font-18 remove" title="Remove" onclick="$('#ecModeratorRemove${efModerator}').trigger('click');">
+                        <i class="fa fa-trash-o"></i>
+                    </a>
                 </td>
-            </tr>
-        `);
+            </tr>`);
+        });
+
+        $("#tableModerator").on("click", ".remove", function () {
+                // Getting all the rows next to the row
+                // containing the clicked button
+                var child = $(this).closest("tr").nextAll();
+
+                // Iterating across all the rows
+                // obtained to change the index
+                child.each(function () {
+                    // Getting <tr> id.
+                    var id = $(this).attr("id");
+
+                    // Getting the <input> inside the .noc, .noh, .nwh class.
+                    var noc = $(this).children(".noc").children("input");
+                    var noh = $(this).children(".noh").children("input");
+                    var nwh = $(this).children(".nwh").children("input");
+
+                    // Gets the row number from <tr> id.
+                    var dig = parseInt(id.substring(14));
+
+                    // Modifying row id.
+                    $(this).attr("id", `efModeratorRow${dig - 1}`);
+
+                    // Modifying row index.
+                    noc.attr("id", `ef_ModeratorNoc${dig - 1}`);
+                    noh.attr("id", `ef_ModeratorNoh${dig - 1}`);
+                    nwh.attr("id", `ef_ModeratorNwh${dig - 1}`);
+                });
+
+                // Removing the current row.
+                $(this).closest("tr").remove();
+
+                // Decreasing total number of rows by 1.
+                efModerator--;
         });
 
         var efProducer = 1;
         $("#addBtn7").on("click", function() {
             // Adding a row inside the tbody.
             $("#tableProducer").append(`
-            <tr id="efProducer${++efProducer}" class="table-warning">
+            <tr id="efProducerRow${++efProducer}" class="table-warning">
                 <td class="title">Producer</td>
-                <td>
+                <td class="noc">
                     <input type="number" class="form-control input-table @error('') is-invalid @enderror"
-                        value="{{ old('') }}" name="" id="ef_ProducerNoc" max="100">
+                        value="{{ old('') }}" name="" id="ef_ProducerNoc${efProducer}" oninput="document.getElementById('ec_ProducerNoc${efProducer}').value = document.getElementById('ef_ProducerNoc${efProducer}').value;" max="100">
                 </td>
                 <td>
                     <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                         value="{{ old('') }}" name="" id="ef_ProducerHf" data-type="currency">
                 </td>
-                <td>
+                <td class="noh">
                     <input type="number"
                         class="input js-mytooltip form-control input-table @error('') is-invalid @enderror"
-                        value="{{ old('') }}" name="" id="ef_ProducerNoh"
+                        value="{{ old('') }}" name="" id="ef_ProducerNoh${efProducer}"
                         data-mytooltip-content="<i>Number of Hours</i>" data-mytooltip-theme="dark"
-                        data-mytooltip-action="focus" data-mytooltip-direction="bottom">
+                        data-mytooltip-action="focus" data-mytooltip-direction="bottom"
+                        oninput="document.getElementById('ec_ProducerNoh${efProducer}').value = document.getElementById('ef_ProducerNoh${efProducer}').value;">
                 </td>
-                <td>
+                <td class="nwh">
                     <input type="number" class="form-control input-table @error('') is-invalid @enderror"
-                        value="{{ old('') }}" name="" id="ef_ProducerNwh">
+                        value="{{ old('') }}" name="" id="ef_ProducerNwh${efProducer}" oninput="document.getElementById('ec_ProducerNwh${efProducer}').value = document.getElementById('ef_ProducerNwh${efProducer}').value;">
                 </td>
                 <td class="total-td">
                     <h4 class="text-center lead" id="subtotal-producer">-</h4>
@@ -511,10 +589,46 @@
                         value="{{ old('') }}" name="" id="">
                 </td>
                 <td class="border border-white" style="background-color: #FFFFFF;">
-                    <a href="javascript:void(0)" class="text-danger font-18 remove" title="Remove"><i class="fa fa-trash-o"></i></a>
+                    <a href="javascript:void(0)" class="text-danger font-18 remove" onclick="$('#ecProducerRemove${efProducer}').trigger('click');" title="Remove">
+                        <i class="fa fa-trash-o"></i>
+                    </a>
                 </td>
-            </tr>
-        `);
+            </tr>`);
+        });
+
+        $("#tableProducer").on("click", ".remove", function () {
+            // Getting all the rows next to the row
+            // containing the clicked button
+            var child = $(this).closest("tr").nextAll();
+
+            // Iterating across all the rows
+            // obtained to change the index
+            child.each(function () {
+                // Getting <tr> id.
+                var id = $(this).attr("id");
+
+                // Getting the <input> inside the .noc, .noh, .nwh class.
+                var noc = $(this).children(".noc").children("input");
+                var noh = $(this).children(".noh").children("input");
+                var nwh = $(this).children(".nwh").children("input");
+
+                // Gets the row number from <tr> id.
+                var dig = parseInt(id.substring(13));
+
+                // Modifying row id.
+                $(this).attr("id", `efProducerRow${dig - 1}`);
+
+                // Modifying row index.
+                noc.attr("id", `ef_ProducerNoc${dig - 1}`);
+                noh.attr("id", `ef_ProducerNoh${dig - 1}`);
+                nwh.attr("id", `ef_ProducerNwh${dig - 1}`);
+            });
+
+            // Removing the current row.
+            $(this).closest("tr").remove();
+
+            // Decreasing total number of rows by 1.
+            efProducer--;
         });
 
 /*******************************************************OTHER TOOLS*********************************************************************/
@@ -522,26 +636,29 @@
         $("#addBtn8").on("click", function() {
             // Adding a row inside the tbody.
             $("#tableDocumentor").append(`
-                <tr id="efDocumentor${++efDocumentor}" class="table-warning">
+                <tr id="rowDocumentor${++efDocumentor}" class="table-warning">
                     <td class="title">Documentor</td>
-                    <td>
+                    <td class="noc">
                         <input type="number" class="form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ef_DocumentorNoc" max="100">
+                            value="{{ old('') }}" name="" id="ef_DocumentorNoc${efDocumentor}" max="100"
+                            oninput="document.getElementById('ec_DocumentorNoc${efDocumentor}').value = document.getElementById('ef_DocumentorNoc${efDocumentor}').value;">
                     </td>
                     <td>
                         <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                             value="{{ old('') }}" name="" id="ef_DocumentorHf" data-type="currency">
                     </td>
-                    <td>
+                    <td class="noh">
                         <input type="number"
                             class="input js-mytooltip form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ef_DocumentorNoh"
+                            value="{{ old('') }}" name="" id="ef_DocumentorNoh${efDocumentor}"
                             data-mytooltip-content="<i>Number of Hours</i>" data-mytooltip-theme="dark"
-                            data-mytooltip-action="focus" data-mytooltip-direction="bottom">
+                            data-mytooltip-action="focus" data-mytooltip-direction="bottom"
+                            oninput="document.getElementById('ec_DocumentorNoh${efDocumentor}').value = document.getElementById('ef_DocumentorNoh${efDocumentor}').value;">
                     </td>
-                    <td>
+                    <td class="nwh">
                         <input type="number" class="form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ef_DocumentorNwh">
+                            value="{{ old('') }}" name="" id="ef_DocumentorNwh${efDocumentor}"
+                            oninput="document.getElementById('ec_DocumentorNwh${efDocumentor}').value = document.getElementById('ef_DocumentorNwh${efDocumentor}').value;">
                     </td>
                     <td class="total-td" style="background-color: rgba(146, 146, 146, 0.727">
                         <h4 class="text-center" id="subtotal-documentor">-</h4>
@@ -551,10 +668,47 @@
                             value="{{ old('') }}" name="" id="">
                     </td>
                     <td class="border border-white" style="background-color: #FFFFFF;">
-                        <a href="javascript:void(0)" class="text-danger font-18 remove" title="Remove"><i class="fa fa-trash-o"></i></a>
+                        <a href="javascript:void(0)" class="text-danger font-18 remove" onclick="$('#ecDocumentorRemove${efDocumentor}').trigger('click');" title="Remove">
+                            <i class="fa fa-trash-o"></i>
+                        </a>
                     </td>
                 </tr>
             `);
+        });
+
+        $("#tableDocumentor").on("click", ".remove", function () {
+            
+            // Getting all the rows next to the row
+            // containing the clicked button
+            var child = $(this).closest("tr").nextAll();
+            
+            // Iterating across all the rows
+            // obtained to change the index
+            child.each(function () {
+                // Getting <tr> id.
+                var id = $(this).attr("id");
+
+                // Getting the <input> inside the .noc, .noh, .nwh class.
+                var noc = $(this).children(".noc").children("input");
+                var noh = $(this).children(".noh").children("input");
+                var nwh = $(this).children(".nwh").children("input");
+
+                // Gets the row number from <tr> id.
+                var dig = parseInt(id.substring(13));
+
+                // Modifying row id.
+                $(this).attr("id", `rowDocumentor${dig - 1}`);
+
+                // Modifying row index.
+                noc.attr("id", `ef_DocumentorNoc${dig - 1}`);
+                noh.attr("id", `ef_DocumentorNoh${dig - 1}`);
+                nwh.attr("id", `ef_DocumentorNwh${dig - 1}`);
+            });
+
+            // Removing the current row.
+            $(this).closest("tr").remove();
+            // Decreasing total number of rows by 1.
+            efDocumentor--;
         });
     });
 </script>

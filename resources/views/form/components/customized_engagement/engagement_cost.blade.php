@@ -452,156 +452,169 @@
                     <td class="total-td"></td>
                     <td class="total-td"></td>
                 </tr>
-                <tr>
-                    <td class="title">Lead Facilitator</td>
-                    <td>
-                        <input type="number"
-                            class="text-center form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ec_LeadfacilitatorNoc" max="100"
-                            readonly>
-                    </td>
-                    <td>
-                        <input type="text"
-                            class="text-center fw-bold text-center text-dark form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ec_LeadfacilitatorHf">
-                    </td>
-                    <td>
-                        <input type="number"
-                            class="text-center form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ec_LeadfacilitatorNoh" readonly>
-                    </td>
-                    <td>
-                        <input type="number"
-                            class="text-center form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ec_LeadfacilitatorNwh" readonly>
-                    </td>
-                    <td class="total-td">
-                        <h4 class="text-center lead" id="ec_LeadfacilitatorTotal">-</h4>
-                    </td>
-                    <td class="total-td">
-                        <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="">
-                    </td>
-                </tr>
-                <tr class="">
-                    <td class="title">Co-Facilitator / Resource Speaker</td>
-                    <td>
-                        <input type="number"
-                            class="text-center text-dark form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ec_CofacilitatorNoc" max="100"
-                            readonly>
-                    </td>
-                    <td>
-                        <input type="text"
-                            class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ec_CofacilitatorHf" ;>
-                    </td>
-                    <td>
-                        <input type="number"
-                            class="text-center text-dark form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ec_CofacilitatorNoh" readonly>
-                    </td>
-                    <td>
-                        <input type="number"
-                            class="text-center text-dark form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ec_CofacilitatorNwh" readonly>
-                    </td>
-                    <td class="total-td">
-                        <h4 class="text-center lead" id="ec_CofacilitatorTotal">-</h4>
-                    </td>
-                    <td class="total-td">
-                        <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="">
-                    </td>
-                </tr>
-                <tr>
-                    <td class="title">Moderator (&#8369;800, &#8369;1,100, &#8369;1,350)</td>
-                    <td>
-                        <input type="number"
-                            class="text-dark text-center form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ec_ModeratorNoc" max="100"
-                            readonly>
-                    </td>
-                    <td>
-                        <fieldset>
-                            <select
-                                class="input js-mytooltip text-center form-select @error('') is-invalid @enderror select"
-                                name="" id="ec_ModeratorHf" style="background-color:#ffcccc; color:red;"
-                                data-mytooltip-content="<i>
-                                        <b>Moderator</b><br/>
-                                        P800  - Associates<br/>
-                                        P1,100 - Consultants<br/>
-                                        P1,350 - Senior Consultant</i>"
-                                data-mytooltip-theme="dark" data-mytooltip-action="focus"
-                                data-mytooltip-direction="right">
-                                <option value="800" {{ old('') == '800' ? 'selected="selected"' : '' }}
-                                    title="">
-                                    &#8369;800
-                                </option>
-                                <option value="1100" {{ old('') == '1100' ? 'selected="selected"' : '' }}
-                                    title="">
-                                    &#8369;1,100
-                                </option>
-                                <option value="1350" {{ old('') == '1350' ? 'selected="selected"' : '' }}
-                                    title="">
-                                    &#8369;1,350
-                                </option>
-                            </select>
-                            @error('ef_customFee')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </fieldset>
-                    </td>
-                    <td>
-                        <input type="number"
-                            class="text-dark text-center form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ec_ModeratorNoh" readonly>
-                    </td>
-                    <td>
-                        <input type="number"
-                            class="text-dark text-center form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ec_ModeratorNwh" readonly>
-                    </td>
-                    <td class="total-td">
-                        <h4 class="text-center lead" id="ec_ModeratorTotal">-</h4>
-                    </td>
-                    <td class="total-td">
-                        <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="">
-                    </td>
-                </tr>
-                <tr>
-                    <td class="title">Producer</td>
-                    <td>
-                        <input type="number"
-                            class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ec_ProducerNoc" readonly>
-                    </td>
-                    <td>
-                        <input type="text"
-                            class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ec_ProducerHf">
-                    </td>
-                    <td>
-                        <input type="number"
-                            class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ec_ProducerNoh" readonly>
-                    </td>
-                    <td>
-                        <input type="number"
-                            class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ec_ProducerNwh" readonly>
-                    </td>
-                    <td class="total-td">
-                        <h4 class="text-center lead" id="ec_ProducerTotal">-</h4>
-                    </td>
-                    <td class="total-td">
-                        <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="">
-                    </td>
-                </tr>
+
+                <tbody id="ec_TableLeadfaci">
+                    <tr>
+                        <td class="title">Lead Facilitator</td>
+                        <td>
+                            <input type="number"
+                                class="text-center form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ec_LeadfacilitatorNoc1" max="100"
+                                readonly>
+                        </td>
+                        <td>
+                            <input type="text"
+                                class="text-center fw-bold text-center text-dark form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ec_LeadfacilitatorHf">
+                        </td>
+                        <td>
+                            <input type="number"
+                                class="text-center form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ec_LeadfacilitatorNoh1" readonly>
+                        </td>
+                        <td>
+                            <input type="number"
+                                class="text-center form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ec_LeadfacilitatorNwh1" readonly>
+                        </td>
+                        <td class="total-td">
+                            <h4 class="text-center lead" id="ec_LeadfacilitatorTotal">-</h4>
+                        </td>
+                        <td class="total-td">
+                            <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="">
+                        </td>
+                    </tr>
+                </tbody>
+
+                <tbody id="ec_TableCofaci">
+                    <tr class="">
+                        <td class="title">Co-Facilitator / Resource Speaker</td>
+                        <td>
+                            <input type="number"
+                                class="text-center text-dark form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ec_CofacilitatorNoc1" max="100"
+                                readonly>
+                        </td>
+                        <td>
+                            <input type="text"
+                                class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ec_CofacilitatorHf" ;>
+                        </td>
+                        <td>
+                            <input type="number"
+                                class="text-center text-dark form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ec_CofacilitatorNoh1" readonly>
+                        </td>
+                        <td>
+                            <input type="number"
+                                class="text-center text-dark form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ec_CofacilitatorNwh1" readonly>
+                        </td>
+                        <td class="total-td">
+                            <h4 class="text-center lead" id="ec_CofacilitatorTotal">-</h4>
+                        </td>
+                        <td class="total-td">
+                            <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="">
+                        </td>
+                    </tr>
+                </tbody>
+
+                <tbody id="ec_TableModerator">
+                    <tr>
+                        <td class="title">Moderator (&#8369;800, &#8369;1,100, &#8369;1,350)</td>
+                        <td>
+                            <input type="number"
+                                class="text-dark text-center form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ec_ModeratorNoc1" max="100"
+                                readonly>
+                        </td>
+                        <td>
+                            <fieldset>
+                                <select
+                                    class="input js-mytooltip text-center form-select @error('') is-invalid @enderror select"
+                                    name="" id="ec_ModeratorHf" style="background-color:#ffcccc; color:red;"
+                                    data-mytooltip-content="<i>
+                                            <b>Moderator</b><br/>
+                                            P800  - Associates<br/>
+                                            P1,100 - Consultants<br/>
+                                            P1,350 - Senior Consultant</i>"
+                                    data-mytooltip-theme="dark" data-mytooltip-action="focus"
+                                    data-mytooltip-direction="right">
+                                    <option value="800" {{ old('') == '800' ? 'selected="selected"' : '' }}
+                                        title="">
+                                        &#8369;800
+                                    </option>
+                                    <option value="1100" {{ old('') == '1100' ? 'selected="selected"' : '' }}
+                                        title="">
+                                        &#8369;1,100
+                                    </option>
+                                    <option value="1350" {{ old('') == '1350' ? 'selected="selected"' : '' }}
+                                        title="">
+                                        &#8369;1,350
+                                    </option>
+                                </select>
+                                @error('ef_customFee')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </fieldset>
+                        </td>
+                        <td>
+                            <input type="number"
+                                class="text-dark text-center form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ec_ModeratorNoh1" readonly>
+                        </td>
+                        <td>
+                            <input type="number"
+                                class="text-dark text-center form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ec_ModeratorNwh1" readonly>
+                        </td>
+                        <td class="total-td">
+                            <h4 class="text-center lead" id="ec_ModeratorTotal">-</h4>
+                        </td>
+                        <td class="total-td">
+                            <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="">
+                        </td>
+                    </tr>
+                </tbody>
+
+                <tbody id="ec_TableProducer">
+                    <tr>
+                        <td class="title">Producer</td>
+                        <td>
+                            <input type="number"
+                                class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ec_ProducerNoc1" readonly>
+                        </td>
+                        <td>
+                            <input type="text"
+                                class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ec_ProducerHf">
+                        </td>
+                        <td>
+                            <input type="number"
+                                class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ec_ProducerNoh1" readonly>
+                        </td>
+                        <td>
+                            <input type="number"
+                                class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ec_ProducerNwh1" readonly>
+                        </td>
+                        <td class="total-td">
+                            <h4 class="text-center lead" id="ec_ProducerTotal">-</h4>
+                        </td>
+                        <td class="total-td">
+                            <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="">
+                        </td>
+                    </tr>
+                </tbody>
+
                 <tr class="table-secondary">
                     <td class="title fw-bold text-dark fst-italic">Subtotal</td>
                     <td></td>
@@ -635,37 +648,39 @@
                     <td class="total-td"></td>
                     <td class="total-td"></td>
                 </tr>
-                <tr>
-                    <td class="title">Documentor</td>
-                    <td>
-                        <input type="number"
-                            class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ec_DocumentorNoc" max="100"
-                            readonly>
-                    </td>
-                    <td>
-                        <input type="text"
-                            class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ec_DocumentorHf">
-                    </td>
-                    <td>
-                        <input type="number"
-                            class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ec_DocumentorNoh" readonly>
-                    </td>
-                    <td>
-                        <input type="number"
-                            class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ec_DocumentorNwh" readonly>
-                    </td>
-                    <td class="total-td" style="background-color: rgba(146, 146, 146, 0.727">
-                        <h4 class="text-center" id="ec_DocumentorTotal">-</h4>
-                    </td>
-                    <td class="total-td">
-                        <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="">
-                    </td>
-                </tr>
+                <tbody id="ec_TableDocumentor">
+                    <tr>
+                        <td class="title">Documentor</td>
+                        <td>
+                            <input type="number"
+                                class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ec_DocumentorNoc1" max="100"
+                                readonly>
+                        </td>
+                        <td>
+                            <input type="text"
+                                class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ec_DocumentorHf">
+                        </td>
+                        <td>
+                            <input type="number"
+                                class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ec_DocumentorNoh1" readonly>
+                        </td>
+                        <td>
+                            <input type="number"
+                                class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ec_DocumentorNwh1" readonly>
+                        </td>
+                        <td class="total-td" style="background-color: rgba(146, 146, 146, 0.727">
+                            <h4 class="text-center" id="ec_DocumentorTotal">-</h4>
+                        </td>
+                        <td class="total-td">
+                            <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="">
+                        </td>
+                    </tr>
+                </tbody>
 
                 {{-- break --}}
                 <tr>
