@@ -319,12 +319,15 @@
                         <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                             value="{{ old('') }}" name="" id="">
                     </td>
+                    <td class="border border-white add-row"> </td>
                 </tr>
+
                 <tr>
                     <td class="title" colspan=""></td>
                     <td class="" colspan="4"></td>
                     <td class="title" colspan=""></td>
                     <td class="title" colspan=""></td>
+                    <td class="border border-white add-row"> </td>
                 </tr>
                 
 
@@ -337,6 +340,7 @@
                     <td></td>
                     <td class="total-td"></td>
                     <td class="total-td"></td>
+                    <td class="border border-white add-row"> </td>
                 </tr>
 
                 <tbody id=ec_TableDesigner>
@@ -439,6 +443,7 @@
                         <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                             value="{{ old('') }}" name="" id="">
                     </td>
+                    <td class="border border-white add-row"> </td>
                 </tr>
 
                 {{-- break --}}
@@ -447,6 +452,7 @@
                     <td class="" colspan="4"></td>
                     <td class="title" colspan=""></td>
                     <td class="title" colspan=""></td>
+                    <td class="border border-white add-row"> </td>
                 </tr>
 
                 {{-- Program --}}
@@ -458,6 +464,7 @@
                     <td></td>
                     <td class="total-td"></td>
                     <td class="total-td"></td>
+                    <td class="border border-white add-row"> </td>
                 </tr>
 
                 <tbody id="ec_TableLeadfaci">
@@ -624,6 +631,7 @@
                             <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                 value="{{ old('') }}" name="" id="">
                         </td>
+                        <td class="border border-white add-row"> </td>
                     </tr>
                 </tbody>
 
@@ -657,6 +665,7 @@
                             <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                 value="{{ old('') }}" name="" id="">
                         </td>
+                        <td class="border border-white add-row"> </td>
                     </tr>
                 </tbody>
 
@@ -673,6 +682,7 @@
                         <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                             value="{{ old('') }}" name="" id="">
                     </td>
+                    <td class="border border-white add-row"> </td>
                 </tr>
 
                 {{-- break --}}
@@ -681,6 +691,7 @@
                     <td class="" colspan="4"></td>
                     <td class="title" colspan=""></td>
                     <td class="title" colspan=""></td>
+                    <td class="border border-white add-row"> </td>
                 </tr>
 
                 {{-- Other roles --}}
@@ -692,7 +703,9 @@
                     <td></td>
                     <td class="total-td"></td>
                     <td class="total-td"></td>
+                    <td class="border border-white add-row"> </td>
                 </tr>
+
                 <tbody id="ec_TableDocumentor">
                     <tr>
                         <td class="title">Documentor</td>
@@ -724,6 +737,7 @@
                             <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                 value="{{ old('') }}" name="" id="">
                         </td>
+                        <td class="border border-white add-row"> </td>
                     </tr>
                 </tbody>
 
@@ -744,6 +758,7 @@
                     <td></td>
                     <td class="total-td"></td>
                     <td class="total-td"></td>
+                    <td class="border border-white add-row"> </td>
                 </tr>
 
                 <tr>
@@ -774,6 +789,7 @@
                         <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                             value="{{ old('') }}" name="" id="">
                     </td>
+                    <td class="border border-white add-row"> </td>
                 </tr>
 
                 {{-- break --}}
@@ -782,6 +798,7 @@
                     <td class="" colspan="4"></td>
                     <td class="title" colspan=""></td>
                     <td class="title" colspan=""></td>
+                    <td class="border border-white add-row"> </td>
                 </tr>
 
                 {{-- miscellaneous --}}
@@ -793,7 +810,9 @@
                     <td></td>
                     <td class="total-td"></td>
                     <td class="total-td"></td>
+                    <td class="border border-white add-row"> </td>
                 </tr>
+
                 <tr>
                     <td class="title">Program Expenses</td>
                     <td></td>
@@ -813,6 +832,7 @@
                         <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                             value="{{ old('') }}" name="" id="">
                     </td>
+                    <td class="border border-white add-row"> </td>
                 </tr>
 
                 {{-- break --}}
@@ -821,6 +841,7 @@
                     <td class="" colspan="4"></td>
                     <td class="title" colspan=""></td>
                     <td class="title" colspan=""></td>
+                    <td class="border border-white add-row"> </td>
                 </tr>
 
                 <tr class="table-active">
