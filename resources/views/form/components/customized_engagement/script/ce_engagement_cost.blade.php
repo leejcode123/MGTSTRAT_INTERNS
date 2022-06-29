@@ -1,4 +1,5 @@
 <script>
+/*****************************************************************COMMISION*****************************************************************************/
     var salesNum = 1;
     $(document).ready(function() {
         $("#addBtn9").on("click", function() {
@@ -132,6 +133,7 @@
         });
     });
 
+/*****************************************************************ENGAGEMENT MANAGER*****************************************************************************/
     var managerNum = 1;
     $(document).ready(function() {
         $("#addBtn11").on("click", function() {
@@ -198,6 +200,7 @@
         });
     });
 
+/*****************************************************************CONSULTING*****************************************************************************/
     var leadConsultant = 1;
     $(document).ready(function () {
         $("#addBtn").on("click", function() {
@@ -357,7 +360,8 @@
             ecAnalyst--;
         }); 
     });
-    
+
+/*****************************************************************DESIGNER*****************************************************************************/
     var ecDesigner = 1;
     $(document).ready(function (){ 
         $("#addBtn3").on("click", function() {
@@ -419,10 +423,10 @@
                 var nwh = $(this).children(".nwh").children("input");
 
                 // Gets the row number from <tr> id.
-                var dig = parseInt(id.substring(10));
+                var dig = parseInt(id.substring(14));
 
                 // Modifying row id.
-                $(this).attr("id", `ec_Analyst${dig - 1}`);
+                $(this).attr("id", `ec_DesignerRow${dig - 1}`);
 
                 // Modifying row index.
                 noc.attr("id", `ec_DesignerNoc${dig - 1}`);
@@ -437,4 +441,431 @@
         }); 
     });
 
+/*****************************************************************PROGRAM*****************************************************************************/
+    $(document).ready(function (){ 
+        var ecLeadfaci = 1;
+        $("#addBtn4").on("click", function() {
+            // Adding a row inside the tbody.
+            $("#ec_TableLeadfaci").append(`
+                <tr id="ec_LeadfaciRow${++ecLeadfaci}">
+                    <td class="title">Lead Facilitator</td>
+                    <td class="noc">
+                        <input type="number"
+                            class="text-center form-control input-table @error('') is-invalid @enderror"
+                            value="{{ old('') }}" name="" id="ec_LeadfacilitatorNoc${ecLeadfaci}" max="100"
+                            readonly>
+                    </td>
+                    <td>
+                        <input type="text"
+                            class="text-center fw-bold text-center text-dark form-control input-table @error('') is-invalid @enderror"
+                            value="{{ old('') }}" name="" id="ec_LeadfacilitatorHf">
+                    </td>
+                    <td class="noh">
+                        <input type="number"
+                            class="text-center form-control input-table @error('') is-invalid @enderror"
+                            value="{{ old('') }}" name="" id="ec_LeadfacilitatorNoh${ecLeadfaci}" readonly>
+                    </td>
+                    <td class="nwh">
+                        <input type="number"
+                            class="text-center form-control input-table @error('') is-invalid @enderror"
+                            value="{{ old('') }}" name="" id="ec_LeadfacilitatorNwh${ecLeadfaci}" readonly>
+                    </td>
+                    <td class="total-td">
+                        <h4 class="text-center lead" id="ec_LeadfacilitatorTotal">-</h4>
+                    </td>
+                    <td class="total-td">
+                        <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                            value="{{ old('') }}" name="" id="">
+                    </td>
+                    <td class="border border-white" style="background-color: #FFFFFF;">
+                        <a href="javascript:void(0)" class="text-danger font-18 remove" id="ecLeadfaciRemove${ecLeadfaci}" title="Remove" style="visibility: hidden;">
+                            <i class="fa fa-trash-o"></i>
+                        </a>
+                    </td>
+                </tr>
+            `);
+        }); 
+
+        $("#ec_TableLeadfaci").on("click", ".remove", function () {
+            
+            // Getting all the rows next to the row
+            // containing the clicked button
+            var child = $(this).closest("tr").nextAll();
+            
+            // Iterating across all the rows
+            // obtained to change the index
+            child.each(function () {
+                // Getting <tr> id.
+                var id = $(this).attr("id");
+
+                // Getting the <input> inside the .noc, .noh, .nwh class.
+                var noc = $(this).children(".noc").children("input");
+                var noh = $(this).children(".noh").children("input");
+                var nwh = $(this).children(".nwh").children("input");
+
+                // Gets the row number from <tr> id.
+                var dig = parseInt(id.substring(14));
+
+                // Modifying row id.
+                $(this).attr("id", `ec_LeadfaciRow${dig - 1}`);
+
+                // Modifying row index.
+                noc.attr("id", `ec_LeadfacilitatorNoc${dig - 1}`);
+                noh.attr("id", `ec_LeadfacilitatorNoh${dig - 1}`);
+                nwh.attr("id", `ec_LeadfacilitatorNwh${dig - 1}`);
+            });
+
+            // Removing the current row.
+            $(this).closest("tr").remove();
+            // Decreasing total number of rows by 1.
+            ecLeadfaci--;
+        }); 
+    });
+
+    $(document).ready(function (){
+        var ecCofaci = 1;
+        $("#addBtn5").on("click", function() {
+            // Adding a row inside the tbody.
+            $("#ec_TableCofaci").append(`
+                <tr id="ec_CofaciRow${++ecCofaci}">
+                    <td class="title">Co-Facilitator / Resource Speaker</td>
+                    <td class="noc">
+                        <input type="number"
+                            class="text-center text-dark form-control input-table @error('') is-invalid @enderror"
+                            value="{{ old('') }}" name="" id="ec_CofacilitatorNoc${ecCofaci}" max="100"
+                            readonly>
+                    </td>
+                    <td>
+                        <input type="text"
+                            class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
+                            value="{{ old('') }}" name="" id="ec_CofacilitatorHf" ;>
+                    </td>
+                    <td class="noh">
+                        <input type="number"
+                            class="text-center text-dark form-control input-table @error('') is-invalid @enderror"
+                            value="{{ old('') }}" name="" id="ec_CofacilitatorNoh${ecCofaci}" readonly>
+                    </td>
+                    <td class="nwh">
+                        <input type="number"
+                            class="text-center text-dark form-control input-table @error('') is-invalid @enderror"
+                            value="{{ old('') }}" name="" id="ec_CofacilitatorNwh${ecCofaci}" readonly>
+                    </td>
+                    <td class="total-td">
+                        <h4 class="text-center lead" id="ec_CofacilitatorTotal">-</h4>
+                    </td>
+                    <td class="total-td">
+                        <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                            value="{{ old('') }}" name="" id="">
+                    </td>
+                    <td class="border border-white" style="background-color: #FFFFFF;">
+                        <a href="javascript:void(0)" class="text-danger font-18 remove" id="ecCofaciRemove${ecCofaci}" title="Remove" style="visibility: hidden;">
+                            <i class="fa fa-trash-o"></i>
+                        </a>
+                    </td>
+                </tr>
+            `);
+        }); 
+
+        $("#ec_TableCofaci").on("click", ".remove", function () {
+            
+            // Getting all the rows next to the row
+            // containing the clicked button
+            var child = $(this).closest("tr").nextAll();
+            
+            // Iterating across all the rows
+            // obtained to change the index
+            child.each(function () {
+                // Getting <tr> id.
+                var id = $(this).attr("id");
+
+                // Getting the <input> inside the .noc, .noh, .nwh class.
+                var noc = $(this).children(".noc").children("input");
+                var noh = $(this).children(".noh").children("input");
+                var nwh = $(this).children(".nwh").children("input");
+
+                // Gets the row number from <tr> id.
+                var dig = parseInt(id.substring(12));
+
+                // Modifying row id.
+                $(this).attr("id", `ec_CofaciRow${dig - 1}`);
+
+                // Modifying row index.
+                noc.attr("id", `ec_CofacilitatorNoc${dig - 1}`);
+                noh.attr("id", `ec_CofacilitatorNoh${dig - 1}`);
+                nwh.attr("id", `ec_CofacilitatorNwh${dig - 1}`);
+            });
+
+            // Removing the current row.
+            $(this).closest("tr").remove();
+            // Decreasing total number of rows by 1.
+            ecCofaci--;
+        });  
+    });
+
+    $(document).ready(function (){
+        var ecModerator = 1;
+        $("#addBtn6").on("click", function() {
+            // Adding a row inside the tbody.
+            $("#ec_TableModerator").append(`
+                <tr id="ec_ModeratorRow${++ecModerator}">
+                    <td class="title">Moderator (&#8369;800, &#8369;1,100, &#8369;1,350)</td>
+                    <td class="noc">
+                        <input type="number"
+                            class="text-dark text-center form-control input-table @error('') is-invalid @enderror"
+                            value="{{ old('') }}" name="" id="ec_ModeratorNoc${ecModerator}" max="100"
+                            readonly>
+                    </td>
+                    <td>
+                        <fieldset>
+                            <select
+                                class="input js-mytooltip text-center form-select @error('') is-invalid @enderror select"
+                                name="" id="ec_ModeratorHf" style="background-color:#ffcccc; color:red;"
+                                data-mytooltip-content="<i>
+                                        <b>Moderator</b><br/>
+                                        P800  - Associates<br/>
+                                        P1,100 - Consultants<br/>
+                                        P1,350 - Senior Consultant</i>"
+                                data-mytooltip-theme="dark" data-mytooltip-action="focus"
+                                data-mytooltip-direction="right">
+                                <option value="800" {{ old('') == '800' ? 'selected="selected"' : '' }}
+                                    title="">
+                                    &#8369;800
+                                </option>
+                                <option value="1100" {{ old('') == '1100' ? 'selected="selected"' : '' }}
+                                    title="">
+                                    &#8369;1,100
+                                </option>
+                                <option value="1350" {{ old('') == '1350' ? 'selected="selected"' : '' }}
+                                    title="">
+                                    &#8369;1,350
+                                </option>
+                            </select>
+                            @error('ef_customFee')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </fieldset>
+                    </td>
+                    <td class="noh">
+                        <input type="number"
+                            class="text-dark text-center form-control input-table @error('') is-invalid @enderror"
+                            value="{{ old('') }}" name="" id="ec_ModeratorNoh${ecModerator}" readonly>
+                    </td>
+                    <td class="nwh">
+                        <input type="number"
+                            class="text-dark text-center form-control input-table @error('') is-invalid @enderror"
+                            value="{{ old('') }}" name="" id="ec_ModeratorNwh${ecModerator}" readonly>
+                    </td>
+                    <td class="total-td">
+                        <h4 class="text-center lead" id="ec_ModeratorTotal">-</h4>
+                    </td>
+                    <td class="total-td">
+                        <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                            value="{{ old('') }}" name="" id="">
+                    </td>
+                    <td class="border border-white" style="background-color: #FFFFFF;">
+                        <a href="javascript:void(0)" class="text-danger font-18 remove" id="ecModeratorRemove${ecModerator}" title="Remove" style="visibility: hidden;">
+                            <i class="fa fa-trash-o"></i>
+                        </a>
+                    </td>
+                </tr>
+            `);
+        }); 
+
+        $("#ec_TableModerator").on("click", ".remove", function () {
+            
+            // Getting all the rows next to the row
+            // containing the clicked button
+            var child = $(this).closest("tr").nextAll();
+            
+            // Iterating across all the rows
+            // obtained to change the index
+            child.each(function () {
+                // Getting <tr> id.
+                var id = $(this).attr("id");
+
+                // Getting the <input> inside the .noc, .noh, .nwh class.
+                var noc = $(this).children(".noc").children("input");
+                var noh = $(this).children(".noh").children("input");
+                var nwh = $(this).children(".nwh").children("input");
+
+                // Gets the row number from <tr> id.
+                var dig = parseInt(id.substring(15));
+
+                // Modifying row id.
+                $(this).attr("id", `ec_ModeratorRow${dig - 1}`);
+
+                // Modifying row index.
+                noc.attr("id", `ec_ModeratorNoc${dig - 1}`);
+                noh.attr("id", `ec_ModeratorNoh${dig - 1}`);
+                nwh.attr("id", `ec_ModeratorNwh${dig - 1}`);
+            });
+
+            // Removing the current row.
+            $(this).closest("tr").remove();
+            // Decreasing total number of rows by 1.
+            ecModerator--;
+        });  
+    });
+
+    $(document).ready(function (){
+        var ecProducer = 1;
+        $("#addBtn7").on("click", function() {
+            // Adding a row inside the tbody.
+            $("#ec_TableProducer").append(`
+                <tr id="ec_ProducerRow${++ecProducer}">
+                    <td class="title">Producer</td>
+                    <td class="noc">
+                        <input type="number"
+                            class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
+                            value="{{ old('') }}" name="" id="ec_ProducerNoc${ecProducer}" readonly>
+                    </td>
+                    <td>
+                        <input type="text"
+                            class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
+                            value="{{ old('') }}" name="" id="ec_ProducerHf">
+                    </td>
+                    <td class="noh">
+                        <input type="number"
+                            class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
+                            value="{{ old('') }}" name="" id="ec_ProducerNoh${ecProducer}" readonly>
+                    </td>
+                    <td class="nwh">
+                        <input type="number"
+                            class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
+                            value="{{ old('') }}" name="" id="ec_ProducerNwh${ecProducer}" readonly>
+                    </td>
+                    <td class="total-td">
+                        <h4 class="text-center lead" id="ec_ProducerTotal">-</h4>
+                    </td>
+                    <td class="total-td">
+                        <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                            value="{{ old('') }}" name="" id="">
+                    </td>
+                    <td class="border border-white" style="background-color: #FFFFFF;">
+                        <a href="javascript:void(0)" class="text-danger font-18 remove" id="ecProducerRemove${ecProducer}" title="Remove" style="visibility: hidden;">
+                            <i class="fa fa-trash-o"></i>
+                        </a>
+                    </td>
+                </tr>
+            `);
+        }); 
+
+        $("#ec_TableProducer").on("click", ".remove", function () {
+            
+            // Getting all the rows next to the row
+            // containing the clicked button
+            var child = $(this).closest("tr").nextAll();
+            
+            // Iterating across all the rows
+            // obtained to change the index
+            child.each(function () {
+                // Getting <tr> id.
+                var id = $(this).attr("id");
+
+                // Getting the <input> inside the .noc, .noh, .nwh class.
+                var noc = $(this).children(".noc").children("input");
+                var noh = $(this).children(".noh").children("input");
+                var nwh = $(this).children(".nwh").children("input");
+
+                // Gets the row number from <tr> id.
+                var dig = parseInt(id.substring(14));
+
+                // Modifying row id.
+                $(this).attr("id", `ec_ProducerRow${dig - 1}`);
+
+                // Modifying row index.
+                noc.attr("id", `ec_ProducerNoc${dig - 1}`);
+                noh.attr("id", `ec_ProducerNoh${dig - 1}`);
+                nwh.attr("id", `ec_ProducerNwh${dig - 1}`);
+            });
+
+            // Removing the current row.
+            $(this).closest("tr").remove();
+            // Decreasing total number of rows by 1.
+            ecProducer--;
+        });  
+    });
+
+/******************************************************************DOCUMENTOR*****************************************************************************/
+$(document).ready(function (){
+        var ecDocumentor = 1;
+        $("#addBtn8").on("click", function() {
+            // Adding a row inside the tbody.
+            $("#ec_TableDocumentor").append(`
+                <tr id="ec_DocumentorRow${++ecDocumentor}">
+                    <td class="title">Documentor</td>
+                    <td>
+                        <input type="number"
+                            class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
+                            value="{{ old('') }}" name="" id="ec_DocumentorNoc${ecDocumentor}" max="100"
+                            readonly>
+                    </td>
+                    <td>
+                        <input type="text"
+                            class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
+                            value="{{ old('') }}" name="" id="ec_DocumentorHf">
+                    </td>
+                    <td>
+                        <input type="number"
+                            class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
+                            value="{{ old('') }}" name="" id="ec_DocumentorNoh${ecDocumentor}" readonly>
+                    </td>
+                    <td>
+                        <input type="number"
+                            class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
+                            value="{{ old('') }}" name="" id="ec_DocumentorNwh${ecDocumentor}" readonly>
+                    </td>
+                    <td class="total-td" style="background-color: rgba(146, 146, 146, 0.727">
+                        <h4 class="text-center" id="ec_DocumentorTotal">-</h4>
+                    </td>
+                    <td class="total-td">
+                        <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                            value="{{ old('') }}" name="" id="">
+                    </td>
+                    <td class="border border-white" style="background-color: #FFFFFF;">
+                        <a href="javascript:void(0)" class="text-danger font-18 remove" id="ecDocumentorRemove${ecDocumentor}" title="Remove" style="visibility: hidden;">
+                            <i class="fa fa-trash-o"></i>
+                        </a>
+                    </td>
+                </tr>
+            `);
+        }); 
+
+        $("#ec_TableDocumentor").on("click", ".remove", function () {
+            
+            // Getting all the rows next to the row
+            // containing the clicked button
+            var child = $(this).closest("tr").nextAll();
+            
+            // Iterating across all the rows
+            // obtained to change the index
+            child.each(function () {
+                // Getting <tr> id.
+                var id = $(this).attr("id");
+
+                // Getting the <input> inside the .noc, .noh, .nwh class.
+                var noc = $(this).children(".noc").children("input");
+                var noh = $(this).children(".noh").children("input");
+                var nwh = $(this).children(".nwh").children("input");
+
+                // Gets the row number from <tr> id.
+                var dig = parseInt(id.substring(16));
+
+                // Modifying row id.
+                $(this).attr("id", `ec_DocumentorRow${dig - 1}`);
+
+                // Modifying row index.
+                noc.attr("id", `ec_DocumentorNoc${dig - 1}`);
+                noh.attr("id", `ec_DocumentorNoh${dig - 1}`);
+                nwh.attr("id", `ec_DocumentorNwh${dig - 1}`);
+            });
+
+            // Removing the current row.
+            $(this).closest("tr").remove();
+            // Decreasing total number of rows by 1.
+            ecDocumentor--;
+        });  
+    });
 </script>
