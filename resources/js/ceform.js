@@ -1,9 +1,9 @@
 require("./components/clusterReference");
 require("./components/currencyFormat");
-//*************************************** CUSTOMIZED ENGAGEMENT BUDGET FORM COMPUTATION ********************************************************//
+/*************************************** CUSTOMIZED ENGAGEMENT BUDGET FORM COMPUTATION ********************************************************/
 $(document).on(
     "change keyup click",
-    ".customized-type, .ga-only-dropdown, .remove, #tableLeadconsultant, #tableAnalyst, #ec_tableAnalyst, #tableDesigner, #ec_TableDesigner, #tableLeadfaci, #ec_TableLeadfaci, #tableCofaci, #ec_TableCofaci, #tableModerator, #ec_TableModerator, #tableProducer, #ec_TableProducer, #tableDocumentor, #ec_tableDocumentor, #ef_LeadconsultantNoc, #ef_LeadconsultantHf, #ef_LeadconsultantNoh, #ef_LeadconsultantNwh, #ef_AnalystNoc1, #ef_AnalystHf, #ef_AnalystNoh1, #ef_AnalystNwh1, #ef_DesignerNoc, #ef_DesignerHf, #ef_DesignerNoh, #ef_DesignerNwh, #ef_LeadfacilitatorNoc1, #ef_LeadfacilitatorHf, #ef_LeadfacilitatorNoh1, #ef_LeadfacilitatorNwh1, #ef_CofaciNoc1, #ef_CofaciHf, #ef_CofaciNoh1, #ef_CofaciNwh1, #ef_ModeratorNoc, #ef_ModeratorHf, #ef_ModeratorNoh, #ef_ModeratorNwh, #ef_ProducerNoc, #ef_ProducerHf, #ef_ProducerNoh, #ef_ProducerNwh, #ef_DocumentorNoc, #ef_DocumentorHf, #ef_DocumentorNoh, #ef_DocumentorNwh, #ef_Totalpackage, #sales, #inputSales, #referral, #engagementManager, #ec_LeadconsultantHf, #ec_AnalystHf, #ec_DesignerHf, #ec_CreatorsNoc, #ec_CreatorsHf, #ec_CreatorsNoh, #ec_LeadfacilitatorHf, #ec_CofacilitatorHf, #ec_ModeratorHf, #ec_ProducerHf, #ec_DocumentorHf, #ec_ProgramNoc, #ec_ProgramHf, #ec_Programexpense, #ef_Totalpackage, #LessCTO_NOC, #inputReferral, #inputManager, #addBtn, #addBtn2, #addBtn3, #addBtn4, #addBtn5, #addBtn6, #addBtn7, #addBtn8, #addBtn9, #addBtn10, #addBtn11",
+    ".customized-type, .ga-only-dropdown, .remove, #ec_tableEngagementFees, #ec_tableEngagementCost",
     function () {
         //customized type
         $(".customized-type").each(function () {
@@ -253,7 +253,7 @@ $(document).on(
         $("#subtotal-consulting").html("₱" + currency.format(Math.ceil(efConsultingSum)));
         // //subtotal engagement cost
         // $("#ec_AnalystTotal").html(currency.format(Math.ceil(sumecAnalyst)));
-        $("#ec_SubtotalConsulting").html(
+        $("#ec_SubtotalConsulting").html("₱" +
             currency.format(Math.ceil(ecConsultingSum))
         );
 
@@ -324,7 +324,7 @@ $(document).on(
             //Engagement Cost in Designer Sum
             $(this)
             .find("#ec_DesignerTotal")
-            .html("₱" + currency.format(Math.ceil(sumecDesigner)));
+            .html(currency.format(Math.ceil(sumecDesigner)));
 
             //adding the subtotal of analyst into sum the sum of engagement cost
             ecDesignSum += +sumecDesigner;
@@ -332,16 +332,21 @@ $(document).on(
         });
 
         //Engagement cost Creators
-        $("#ec_CreatorsHf").each(function () {
-            sumecCreators +=
-                $(this).val() *
-                $("#ec_CreatorsNoh").val() *
-                $("#ec_CreatorsNoc").val();
+        ecCreators = 0;
+        $("#ec_TableCreators > tr").each(function () {
+            ecCreators++;
+
+            sumecCreators =
+                $(this).find(`#ec_CreatorsHf`).val() *
+                $(this).find(`#ec_CreatorsNoh${ecCreators}`).val() *
+                $(this).find(`#ec_CreatorsNoc${ecCreators}`).val();
+
+            $(this).find("#ec_CreatorsTotal").html(currency.format(Math.ceil(sumecCreators)));
+
             ecDesignSum += +sumecCreators;
             sumEngagementCost += +sumecCreators;
         });
-        $("#ec_CreatorsTotal").html(currency.format(Math.ceil(sumecCreators)));
-        $("#ec_DesignSubtotal").html(
+        $("#ec_DesignSubtotal").html("₱" +
             currency.format(Math.ceil(ecDesignSum))
         );
 
@@ -384,6 +389,7 @@ $(document).on(
             $("#ec_LeadfacilitatorNoh1").val($("#ef_LeadfacilitatorNoh1").val());
             $("#ec_LeadfacilitatorNwh1").val($("#ef_LeadfacilitatorNwh1").val());
         });
+
         $("#ec_TableLeadfaci > tr").each(function (){
             ecLeadfaci++;
 
@@ -415,6 +421,42 @@ $(document).on(
             ecProgramSum += sumecLeadfacilitator;
             //adding the subtotal of analyst into sum the sum of engagement cost
             sumEngagementCost += +sumecLeadfacilitator;
+        });
+
+        //CO-LEAD FACILITATOR
+        sumecCoLeadfacilitator = 0;
+        ecCoLead = 0;
+        $("#ec_TableCoLeadfaci > tr").each(function (){
+            ecCoLead++;
+
+            //program engagement cost auto sum
+            sumecCoLeadfacilitator =
+                $(this).find(`#ec_CoLeadfacilitatorNoc${ecCoLead}`).val() *
+                    $(this).find(`#ec_CoLeadfacilitatorHf${ecCoLead}`).val().replace(/\₱|,/g, "") *
+                    $(this).find(`#ec_CoLeadfacilitatorNoh${ecCoLead}`).val() +
+                $(this).find(`#ec_CoLeadfacilitatorNwh${ecCoLead}`).val() *
+                    ($(this).find(`#ec_CoLeadfacilitatorNoc${ecCoLead}`).val() *
+                        $(this).find(`#ec_CoLeadfacilitatorHf${ecCoLead}`).val().replace(/\₱|,/g, "") *
+                        $(this).find(`#ec_CoLeadfacilitatorNoh${ecCoLead}`).val() *
+                        0.2);
+
+            //if the customized type value is G.A
+            if (
+                gaPercentage.val() == "G.A Hybrid" ||
+                gaPercentage.val() == "G.A Virtual"
+            ) {
+                sumecCoLeadfacilitator +=
+                    sumecCoLeadfacilitator *
+                    (document.getElementById("ga-only-dropdown").value / 100);
+            }
+
+            $(this).find("#ec_CoLeadfacilitatorTotal")
+            .html(currency.format(Math.ceil(sumecCoLeadfacilitator)));
+
+            //sum of engagement cost program sum
+            ecProgramSum += sumecCoLeadfacilitator;
+            //adding the subtotal of analyst into sum the sum of engagement cost
+            sumEngagementCost += +sumecCoLeadfacilitator;
         });
 
         //Co-Facilitator
@@ -644,7 +686,7 @@ $(document).on(
         $("#program-subtotal").html(
             "₱" + currency.format(Math.ceil(efProgramSum))
         );
-        $("#ec_ProgramSubtotal").html(
+        $("#ec_ProgramSubtotal").html("₱" +
             currency.format(
                 Math.ceil(
                     ecProgramSum
@@ -746,7 +788,7 @@ $(document).on(
             }
             sumEngagementCost += +sumecOffprogram;
         });
-        $("#ec_ProgramTotal").html(currency.format(Math.ceil(sumecOffprogram)));
+        $("#ec_ProgramTotal").html("₱" +currency.format(Math.ceil(sumecOffprogram)));
 
         /*******************************************************Program Expense******************************************************************/
         $("#ec_Programexpense").each(function () {
@@ -757,7 +799,7 @@ $(document).on(
 
             sumEngagementCost += +sumecProgramexpense;
         });
-        $("#ec_ProgramexpenseTotal").html(
+        $("#ec_ProgramexpenseTotal").html("₱" +
             currency.format(Math.ceil(sumecProgramexpense))
         );
 
@@ -860,7 +902,7 @@ $(document).on(
 //*************************************** APPEND NUMBER FORMAT ********************************************************//
 $(document).on(
     "change keyup click",
-    "#ef_AnalystHf, #ef_CofaciHf, #ef_ModeratorHf, #ef_ProducerHf, #ef_DocumentorHf",
+    "#ef_AnalystHf, #ef_CofaciHf, #ef_ModeratorHf, #ef_ProducerHf, #ef_DocumentorHf, #tableEngagementCost",
     function () {
         // Jquery Dependency
 
@@ -983,28 +1025,28 @@ document.getElementById("ef_ProducerHf").defaultValue =
 document.getElementById("ef_DocumentorHf").defaultValue =
     "₱" + currency.format(Math.ceil(2500));
 
-document.getElementById("ec_AnalystHf1").defaultValue = currency.format(
+document.getElementById("ec_AnalystHf1").defaultValue = "₱" + currency.format(
     Math.ceil(1700)
 );
-document.getElementById("ec_LeadfacilitatorHf").defaultValue = currency.format(
+document.getElementById("ec_LeadfacilitatorHf").defaultValue = "₱" + currency.format(
     Math.ceil(3000)
 );
-document.getElementById("ec_LeadconsultantHf").defaultValue = currency.format(
-    Math.ceil(0.85 * $("#ec_LeadfacilitatorHf").val().replace(/,/g, ""))
+document.getElementById("ec_LeadconsultantHf").defaultValue = "₱" + currency.format(
+    Math.ceil(0.85 * $("#ec_LeadfacilitatorHf").val().replace(/\₱|,/g, ""))
 );
-document.getElementById("ec_DesignerHf").defaultValue = currency.format(
+document.getElementById("ec_DesignerHf").defaultValue = "₱" + currency.format(
     Math.ceil(2250)
 );
-document.getElementById("ec_CofacilitatorHf").defaultValue = currency.format(
+document.getElementById("ec_CofacilitatorHf").defaultValue = "₱" + currency.format(
     Math.ceil(1800)
 );
-document.getElementById("ec_ProducerHf").defaultValue = currency.format(
+document.getElementById("ec_ProducerHf").defaultValue = "₱" + currency.format(
     Math.ceil(550)
 );
-document.getElementById("ec_DocumentorHf").defaultValue = currency.format(
+document.getElementById("ec_DocumentorHf").defaultValue = "₱" + currency.format(
     Math.ceil(700)
 );
-document.getElementById("ec_ProgramHf").defaultValue = currency.format(
+document.getElementById("ec_ProgramHf").defaultValue = "₱" + currency.format(
     Math.ceil(1000)
 );
 document.getElementById("ec_Programexpense").defaultValue = 2 + "%";

@@ -4,7 +4,7 @@
 <div class="form-body container">
     <section>
         <div class="table-responsive" id="no-more-tables" data-animation="slideHorz">
-            <table class="table table-bordered">
+            <table class="table table-bordered" id="ec_tableEngagementFees">
                 <thead class="table-dark">
                     <tr class="text-center">
                         <th class="title-th" scope="col" width=20%></th>
@@ -426,7 +426,7 @@
 
                 {{-- Program --}}
                 <tr class="">
-                    <th class="title px-4 text-dark">4. OTHER TOOLS</th>
+                    <th class="title px-4 text-dark">4. OTHER ROLES</th>
                     <td></td>
                     <td></td>
                     <td></td>

@@ -4,7 +4,7 @@
 <div class="form-body container">
     <section>
         <div class="table-responsive" id="no-more-tables">
-            <table class="table table-bordered" id="tableEngagementCost">
+            <table class="table table-bordered" id="ec_tableEngagementCost">
                 <thead class="table-dark">
                     <tr class="text-center">
                         <th class="title-th" scope="col" width=20%></th>
@@ -250,7 +250,7 @@
                         <td class="">
                             <input type="text"
                                 class="text-center fw-bold text-dark form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ec_LeadconsultantHf">
+                                value="{{ old('') }}" name="" id="ec_LeadconsultantHf" data-type="currency">
                         </td>
                         <td class="">
                             <input type="number"
@@ -284,7 +284,7 @@
                         <td>
                             <input type="text"
                                 class="text-center fw-bold text-dark form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ec_AnalystHf1">
+                                value="{{ old('') }}" name="" id="ec_AnalystHf1" data-type="currency">
                         </td>
                         <td>
                             <input type="number"
@@ -350,7 +350,7 @@
                         <td>
                             <input type="text"
                                 class="text-center fw-bold text-dark text-center form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ec_DesignerHf" max="100">
+                                value="{{ old('') }}" name="" id="ec_DesignerHf" data-type="currency">
                         </td>
                         <td class="">
                             <input type="number"
@@ -372,53 +372,60 @@
                     </tr>
                 </tbody>
 
-                <tr>
-                    <td class="title">Creators Fees (500, 1K)</td>
-                    <td>
-                        <input type="number"
-                            class="text-center yellow-input form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ec_CreatorsNoc" max="100">
-                    </td>
-                    <td>
-                        <fieldset>
-                            <select class="input js-mytooltip form-select @error('') is-invalid @enderror"
-                                name="" id="ec_CreatorsHf"
-                                data-mytooltip-content="<i>
-                                        Creators Fee - 0 - no creators fee<br><br>
-                                        500 - Creators Fee is the creator is the lead, for the 2nd session onwards<br><br>
-                                        1,000 - Creators Fee if creator is NOT the lead, for the 2nd session onwards</i>"
-                                data-mytooltip-theme="dark" data-mytooltip-action="focus"
-                                data-mytooltip-direction="right" style="background-color:#ffcccc; color:red;">
-                                <option value="500" {{ old('') == '500' ? 'selected="selected"' : '' }}
-                                    title="">
-                                    &#8369;500
-                                </option>
-                                <option value="1000" {{ old('') == '1000' ? 'selected="selected"' : '' }}
-                                    title="">
-                                    &#8369;1,000
-                                </option>
-                            </select>
-                            @error('ef_customFee')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </fieldset>
-                    </td>
-                    <td>
-                        <input type="number"
-                            class="text-center yellow-input form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ec_CreatorsNoh">
-                    </td>
-                    <td class=""></td>
-                    <td class="total-td">
-                        <h4 class="text-center lead" id="ec_CreatorsTotal">-</h4>
-                    </td>
-                    <td class="total-td">
-                        <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="">
-                    </td>
-                </tr>
+                <tbody id="ec_TableCreators">
+                    <tr>
+                        <td class="title">Creators Fees (500, 1K)</td>
+                        <td>
+                            <input type="number"
+                                class="text-center yellow-input form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ec_CreatorsNoc1" max="100">
+                        </td>
+                        <td>
+                            <fieldset>
+                                <select class="input js-mytooltip form-select @error('') is-invalid @enderror"
+                                    name="" id="ec_CreatorsHf"
+                                    data-mytooltip-content="<i>
+                                            Creators Fee - 0 - no creators fee<br><br>
+                                            500 - Creators Fee is the creator is the lead, for the 2nd session onwards<br><br>
+                                            1,000 - Creators Fee if creator is NOT the lead, for the 2nd session onwards</i>"
+                                    data-mytooltip-theme="dark" data-mytooltip-action="focus"
+                                    data-mytooltip-direction="right" style="background-color:#ffcccc; color:red;">
+                                    <option value="500" {{ old('') == '500' ? 'selected="selected"' : '' }}
+                                        title="">
+                                        &#8369;500
+                                    </option>
+                                    <option value="1000" {{ old('') == '1000' ? 'selected="selected"' : '' }}
+                                        title="">
+                                        &#8369;1,000
+                                    </option>
+                                </select>
+                                @error('ef_customFee')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </fieldset>
+                        </td>
+                        <td>
+                            <input type="number"
+                                class="text-center yellow-input form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ec_CreatorsNoh1">
+                        </td>
+                        <td class=""></td>
+                        <td class="total-td">
+                            <h4 class="text-center lead" id="ec_CreatorsTotal">-</h4>
+                        </td>
+                        <td class="total-td">
+                            <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="">
+                        </td>
+                        <td style="background-color: #FFFFFF;" class="border border-white"><a href="javascript:void(0)"
+                            class="text-success font-18" title="Add" id="addBtnCreators"><i
+                                class="fa fa-plus"></i></a>
+                        </td>
+                    </tr>
+                </tbody>
+
                 <tr class="table-secondary">
                     <td class="title fw-bold text-dark fst-italic">Subtotal</td>
                     <td></td>
@@ -465,7 +472,7 @@
                         <td>
                             <input type="text"
                                 class="text-center fw-bold text-center text-dark form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ec_LeadfacilitatorHf">
+                                value="{{ old('') }}" name="" id="ec_LeadfacilitatorHf" data-type="currency">
                         </td>
                         <td>
                             <input type="number"
@@ -487,6 +494,44 @@
                     </tr>
                 </tbody>
 
+                <tbody id="ec_TableCoLeadfaci">
+                    <tr>
+                        <td class="title">Co-Lead Facilitator</td>
+                        <td>
+                            <input type="number"
+                                class="text-center form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ec_CoLeadfacilitatorNoc1" max="100">
+                        </td>
+                        <td>
+                            <input type="text"
+                                class="text-center fw-bold text-center text-dark form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ec_CoLeadfacilitatorHf1" data-type="currency">
+                        </td>
+                        <td>
+                            <input type="number"
+                                class="text-center form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ec_CoLeadfacilitatorNoh1">
+                        </td>
+                        <td>
+                            <input type="number"
+                                class="text-center form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ec_CoLeadfacilitatorNwh1">
+                        </td>
+                        <td class="total-td">
+                            <h4 class="text-center lead" id="ec_CoLeadfacilitatorTotal">-</h4>
+                        </td>
+                        <td class="total-td">
+                            <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="">
+                        </td>
+                        <td style="background-color: #FFFFFF;" class="border border-white">
+                            <a href="javascript:void(0)" class="text-success font-18" title="Add" id="addBtnCoLead">
+                                <i class="fa fa-plus"></i>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+                
                 <tbody id="ec_TableCofaci">
                     <tr class="">
                         <td class="title">Co-Facilitator / Resource Speaker</td>
@@ -499,7 +544,7 @@
                         <td>
                             <input type="text"
                                 class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ec_CofacilitatorHf" ;>
+                                value="{{ old('') }}" name="" id="ec_CofacilitatorHf" data-type="currency">
                         </td>
                         <td>
                             <input type="number"
@@ -593,7 +638,7 @@
                         <td>
                             <input type="text"
                                 class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ec_ProducerHf">
+                                value="{{ old('') }}" name="" id="ec_ProducerHf" data-type="currency">
                         </td>
                         <td>
                             <input type="number"
@@ -660,7 +705,7 @@
                         <td>
                             <input type="text"
                                 class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ec_DocumentorHf">
+                                value="{{ old('') }}" name="" id="ec_DocumentorHf" data-type="currency">
                         </td>
                         <td>
                             <input type="number"
@@ -700,6 +745,7 @@
                     <td class="total-td"></td>
                     <td class="total-td"></td>
                 </tr>
+
                 <tr>
                     <td class="title">Off-Program fee</td>
                     <td>
@@ -717,7 +763,7 @@
                     <td>
                         <input type="text"
                             class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ec_ProgramHf">
+                            value="{{ old('') }}" name="" id="ec_ProgramHf" data-type="currency">
                     </td>
                     <td></td>
                     <td></td>
