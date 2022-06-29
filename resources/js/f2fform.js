@@ -396,12 +396,14 @@ $(document).on(
         sumofecLeadconsultant = 0;
         sumofecAnalyst = 0;
         sumofecDesigner = 0;
+        ecDesignSubtotal = 0;
         sumofecCreators = 0;
         sumofecLeadfacilitator = 0;
         sumofecCofacilitator = 0;
         sumofecActionlearningcoach = 0;
         sumofecMarshal = 0;
         sumofecOnsitepc = 0;
+        ecProgramSubtotal = 0;
         sumofecDocumentor = 0;
         sumofecPerdiem = 0;
         sumofecOffprogram = 0;
@@ -622,6 +624,7 @@ $(document).on(
 
                 $(this).find("#ec_DesignersTotal").html(currency.format(Math.ceil(sumofecDesigner)));
 
+                ecDesignSubtotal += +sumofecDesigner;
                 sumofEngagementCost += +sumofecDesigner;
 
             });
@@ -688,6 +691,7 @@ $(document).on(
 
                     $(this).find("#ec_LeadfacilitatorsTotal").html(currency.format(Math.ceil(sumofecLeadfacilitator)));
 
+                ecProgramSubtotal += +sumofecLeadfacilitator;
                 sumofEngagementCost += +sumofecLeadfacilitator;
 
                
@@ -749,7 +753,7 @@ $(document).on(
                 $(this).find("#ec_CofacilitatorsTotal").html(
                     currency.format(Math.ceil(sumofecCofacilitator))
                 );
-
+                ecProgramSubtotal+= +sumofecCofacilitator;
                 sumofEngagementCost += +sumofecCofacilitator;
 
             });
@@ -992,10 +996,11 @@ $(document).on(
                     $("#ec_CreatorNod").val() *
                     $("#ec_CreatorNoc").val();
 
+                ecDesignSubtotal += +sumofecCreators;
                 sumofEngagementCost += +sumofecCreators;
             });
                 $("#ec_CreatorTotal").html(currency.format(Math.ceil(sumofecCreators)));
-                $("#ec_DesignsSubtotal").html("₱" + currency.format(Math.ceil(sumofEngagementCost)));
+                $("#ec_DesignsSubtotal").html("₱" + currency.format(Math.ceil(ecDesignSubtotal)));
             
 
             //Lead Facilitator
@@ -1026,7 +1031,8 @@ $(document).on(
                     0.2);
 
             $(this).find("#ec_ActionlearningcoachTotal").html(currency.format(Math.ceil(sumofecActionlearningcoach)));
-
+            
+            ecProgramSubtotal += +sumofecActionlearningcoach;
             sumofEngagementCost += +sumofecActionlearningcoach;
             
             });
@@ -1058,7 +1064,8 @@ $(document).on(
                     $(this).find("#ec_MarshalTotal").html(
                         currency.format(Math.ceil(sumofecMarshal))
                     );
-
+            
+            ecProgramSubtotal += +sumofecMarshal;
             sumofEngagementCost += +sumofecMarshal;
 
 
@@ -1090,7 +1097,8 @@ $(document).on(
                     $(this).find("#ec_OnsitepcTotal").html(
                         currency.format(Math.ceil(sumofecOnsitepc))
                     );
-
+            
+            ecProgramSubtotal += +sumofecOnsitepc;
             sumofEngagementCost += +sumofecOnsitepc;
 
             
@@ -1098,7 +1106,7 @@ $(document).on(
             $("#ec_ProgramsSubtotal").html(
                 "₱" + currency.format(
                     Math.ceil(
-                        sumofEngagementCost
+                        ecProgramSubtotal
                     )
                 )
             );
