@@ -998,8 +998,8 @@
                             class="text-center form-control input-table @error('') is-invalid @enderror"
                             value="{{ old('') }}" name="" id="ec_DocumentorsNwh${ecDocumentor}" readonly>
                     </td>
-                    <td class="total-td">
-                        <h4 class="text-center lead" id="ec_DocumentorsTotal">-</h4>
+                    <td class="total-td" style="background-color: rgba(146, 146, 146, 0.727">
+                        <h4 class="text-center" id="ec_DocumentorsTotal">-</h4>
                     </td>
                     <td class="total-td">
                         <input type="text" class="form-control input-table @error('') is-invalid @enderror"

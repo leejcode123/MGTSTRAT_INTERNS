@@ -667,7 +667,7 @@
                             </td>
                             <td>
                                 <input type="text"
-                                    class="text-center form-control input-table @error('') is-invalid @enderror"
+                                    class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
                                     value="{{ old('') }}" name="" id="ec_MarshalPd">
                             </td>
                             <td>
