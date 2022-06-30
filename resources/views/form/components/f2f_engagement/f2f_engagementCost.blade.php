@@ -5,7 +5,7 @@
 <div class="form-body container">
     <section>
         <div class="table-responsive-md" id="no-more-tables">
-            <table class="table table-bordered table-hover">
+            <table class="table table-bordered table-hover" id="f2f-ec-table">
                 <thead class="table-dark">
                     <tr class="text-center">
                         <th class="title-th" scope="col" width=15%></th>
@@ -300,6 +300,7 @@
                         <th></th>
                         <th class="total-td"></th>
                         <th class="total-td"></th>
+                        <th class="border border-white"></th>
                     </tr>
                     <tbody id="tableofLeadConsultant">
                         <tr class="" id="rowofLeadConsultant">
@@ -336,6 +337,7 @@
                                 <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                     value="{{ old('') }}" name="" id="">
                             </td>
+                            <td class="border border-white"></td>
                         </tr>
                     </tbody>
                     <tbody id="tableofAnalyst">
@@ -373,6 +375,7 @@
                                 <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                     value="{{ old('') }}" name="" id="">
                             </td>
+                            <td class="border border-white"></td>
                         </tr>
                     </tbody>
                     <tr class="table-secondary">
@@ -396,6 +399,7 @@
                         <td class="" colspan="5"></td>
                         <td class="title" colspan=""></td>
                         <td class="title" colspan=""></td>
+                        <td class="border border-white"></td>
                     </tr>
 
                     {{-- Design --}}
@@ -408,6 +412,7 @@
                         <td></td>
                         <td class="total-td"></td>
                         <td class="total-td"></td>
+                        <td class="border border-white"></td>
                     </tr>
                     <tbody id="tableofDesigner">
                         <tr id="rowofDesigner">
@@ -444,9 +449,9 @@
                                 <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                     value="{{ old('') }}" name="" id="">
                             </td>
+                            <td class="border border-white"></td>
                         </tr>
                     </tbody>
-                    
                         <tr id="rowofCreator">
                             <td class="title">Creators Fees (500, 1K)</td>
                             <td>
@@ -499,6 +504,7 @@
                                 <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                     value="{{ old('') }}" name="" id="">
                             </td>
+                            <td class="border border-white"></td>
                         </tr>
                     <tr class="table-secondary">
                         <td class="title fw-bold text-dark fst-italic">Subtotal</td>
@@ -522,6 +528,7 @@
                         <td class="" colspan="5"></td>
                         <td class="title" colspan=""></td>
                         <td class="title" colspan=""></td>
+                        <td class="border border-white"></td>
                     </tr>
 
                     {{-- Program --}}
@@ -534,6 +541,7 @@
                         <td></td>
                         <td class="total-td"></td>
                         <td class="total-td"></td>
+                        <td class="border border-white"></td>
                     </tr>
                     <tbody id="tableofLeadFacilitator">
                         <tr id="rowofLeadFacilitator">
@@ -570,6 +578,7 @@
                                 <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                     value="{{ old('') }}" name="" id="">
                             </td>
+                            <td class="border border-white"></td>
                         </tr>
                     </tbody>
                     <tbody id="tableofCoFacilitator">
@@ -607,6 +616,7 @@
                                 <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                     value="{{ old('') }}" name="" id="">
                             </td>
+                            <td class="border border-white"></td>
                         </tr>
                     </tbody>
                     <tbody id="tableofActionLearningCoach">
@@ -644,6 +654,7 @@
                                 <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                     value="{{ old('') }}" name="" id="">
                             </td>
+                            <td class="border border-white"></td>
                         </tr>
                     </tbody>
                     <tbody id="tableofMarshal">
@@ -681,6 +692,7 @@
                                 <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                     value="{{ old('') }}" name="" id="">
                             </td>
+                            <td class="border border-white"></td>
                         </tr>
                     </tbody>
                     <tbody id="tableofOnsitePC">
@@ -744,6 +756,7 @@
                                 <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                     value="{{ old('') }}" name="" id="">
                             </td>
+                            <td class="border border-white"></td>
                         </tr>
                     </tbody>
                     <tr class="table-secondary">
@@ -768,6 +781,7 @@
                         <td class="" colspan="5"></td>
                         <td class="title" colspan=""></td>
                         <td class="title" colspan=""></td>
+                        <td class="border border-white"></td>
                     </tr>
 
                     {{-- Other roles --}}
@@ -780,6 +794,7 @@
                         <td></td>
                         <td class="total-td"></td>
                         <td class="total-td"></td>
+                        <td class="border border-white"></td>
                     </tr>
                     <tbody id="tableofDocumentor">
                         <tr id="rowofDocumentor">
@@ -816,6 +831,7 @@
                                 <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                     value="{{ old('') }}" name="" id="">
                             </td>
+                            <td class="border border-white"></td>
                         </tr>
                     </tbody>
 
@@ -825,6 +841,7 @@
                         <td class="" colspan="5"></td>
                         <td class="title" colspan=""></td>
                         <td class="title" colspan=""></td>
+                        <td class="border border-white"></td>
                     </tr>
 
                     {{-- Per Diem --}}
@@ -855,6 +872,7 @@
                                 <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                     value="{{ old('') }}" name="" id="">
                             </td>
+                            <td class="border border-white"></td>
                         </tr>
                     {{-- break --}}
                     <tr>
@@ -862,6 +880,7 @@
                         <td class="" colspan="5"></td>
                         <td class="title" colspan=""></td>
                         <td class="title" colspan=""></td>
+                        <td class="border border-white"></td>
                     </tr>
 
                     {{-- Off-Program --}}
@@ -874,6 +893,7 @@
                         <td></td>
                         <td class="total-td"></td>
                         <td class="total-td"></td>
+                        <td class="border border-white"></td>
                     </tr>
                         <tr id="rowofOffProgram">
                             <td class="title">Off-Program fee</td>
@@ -905,6 +925,7 @@
                                 <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                     value="{{ old('') }}" name="" id="">
                             </td>
+                            <td class="border border-white"></td>
                         </tr>
 
                     {{-- break --}}
@@ -913,6 +934,7 @@
                         <td class="" colspan="5"></td>
                         <td class="title" colspan=""></td>
                         <td class="title" colspan=""></td>
+                        <td class="border border-white"></td>
                     </tr>
 
                     {{-- miscellaneous --}}
@@ -925,6 +947,7 @@
                         <td></td>
                         <td class="total-td"></td>
                         <td class="total-td"></td>
+                        <td class="border border-white"></td>
                     </tr>
                     <tr>
                         <td class="title">Program Expenses</td>
@@ -946,6 +969,7 @@
                             <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                 value="{{ old('') }}" name="" id="">
                         </td>
+                        <td class="border border-white"></td>
                     </tr>
 
                     {{-- break --}}
@@ -954,6 +978,7 @@
                         <td class="" colspan="5"></td>
                         <td class="title" colspan=""></td>
                         <td class="title" colspan=""></td>
+                        <td class="border border-white"></td>
                     </tr>
 
                     <tr class="table-active">

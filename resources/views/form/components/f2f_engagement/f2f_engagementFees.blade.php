@@ -5,7 +5,7 @@
 <div class="form-body container">
     <section>
         <div class="table-responsive-md" id="no-more-tables">
-            <table class="table table-bordered table-hover">
+            <table class="table table-bordered table-hover" id="f2f-ef-table">
                 <thead class="table-dark">
                     <tr class="text-center">
                         <th class="title-th" scope="col" width=20%></th>

@@ -100,7 +100,7 @@
             }
         });
 
-        $("#tableofReferrals > tr").on("click", ".remove", function() {
+        $("#tableofReferrals").on("click", ".remove", function() {
             var child = $(this).closest("tr").nextAll();
 
             $(this).closest("tr").remove();
@@ -159,7 +159,7 @@
             }
         });
 
-        $("#tableofEngagementManager > tr").on("click", ".remove", function() {
+        $("#tableofEngagementManager").on("click", ".remove", function() {
             var child = $(this).closest("tr").nextAll();
 
             $(this).closest("tr").remove();
@@ -218,7 +218,7 @@
             }
         });
 
-        $("#tableofOffsite > tr").on("click", ".remove", function() {
+        $("#tableofOffsite").on("click", ".remove", function() {
             var child = $(this).closest("tr").nextAll();
 
             $(this).closest("tr").remove();
@@ -391,10 +391,10 @@
                 var atd = $(this).children(".atd").children("input");
 
                 // Gets the row number from <tr> id.
-                var dig = parseInt(id.substring(11));
+                var dig = parseInt(id.substring(12));
 
                 // Modifying row id.
-                $(this).attr("id", `ec_Analysts${dig - 1}`);
+                $(this).attr("id", `rowofAnalyst${dig - 1}`);
 
                 // Modifying row index.
                 noc.attr("id", `ec_AnalystsNoc${dig - 1}`);
@@ -479,10 +479,10 @@
                 var atd = $(this).children(".atd").children("input");
 
                 // Gets the row number from <tr> id.
-                var dig = parseInt(id.substring(11));
+                var dig = parseInt(id.substring(13));
 
                 // Modifying row id.
-                $(this).attr("id", `ec_Designers${dig - 1}`);
+                $(this).attr("id", `rowofDesigner${dig - 1}`);
 
                 // Modifying row index.
                 noc.attr("id", `ec_DesignersNoc${dig - 1}`);
@@ -567,10 +567,10 @@
                 var atd = $(this).children(".atd").children("input");
 
                 // Gets the row number from <tr> id.
-                var dig = parseInt(id.substring(11));
+                var dig = parseInt(id.substring(20));
 
                 // Modifying row id.
-                $(this).attr("id", `ec_Leadfacilitators${dig - 1}`);
+                $(this).attr("id", `rowofLeadFacilitator${dig - 1}`);
 
                 // Modifying row index.
                 noc.attr("id", `ec_LeadfacilitatorsNoc${dig - 1}`);
@@ -655,10 +655,10 @@
                 var atd = $(this).children(".atd").children("input");
 
                 // Gets the row number from <tr> id.
-                var dig = parseInt(id.substring(11));
+                var dig = parseInt(id.substring(18));
 
                 // Modifying row id.
-                $(this).attr("id", `ec_Cofacilitators${dig - 1}`);
+                $(this).attr("id", `rowofCoFacilitator${dig - 1}`);
 
                 // Modifying row index.
                 noc.attr("id", `ec_CofacilitatorsNoc${dig - 1}`);
@@ -743,10 +743,10 @@
                 var atd = $(this).children(".atd").children("input");
 
                 // Gets the row number from <tr> id.
-                var dig = parseInt(id.substring(11));
+                var dig = parseInt(id.substring(24));
 
                 // Modifying row id.
-                $(this).attr("id", `ec_Actionlearningcoach${dig - 1}`);
+                $(this).attr("id", `rowofActionLearningCoach${dig - 1}`);
 
                 // Modifying row index.
                 noc.attr("id", `ec_ActionlearningcoachNoc${dig - 1}`);
@@ -831,10 +831,10 @@
                 var atd = $(this).children(".atd").children("input");
 
                 // Gets the row number from <tr> id.
-                var dig = parseInt(id.substring(11));
+                var dig = parseInt(id.substring(12));
 
                 // Modifying row id.
-                $(this).attr("id", `ec_Marshal${dig - 1}`);
+                $(this).attr("id", `rowofMarshal${dig - 1}`);
 
                 // Modifying row index.
                 noc.attr("id", `ec_MarshalNoc${dig - 1}`);
@@ -945,10 +945,10 @@
                 var atd = $(this).children(".atd").children("input");
 
                 // Gets the row number from <tr> id.
-                var dig = parseInt(id.substring(11));
+                var dig = parseInt(id.substring(13));
 
                 // Modifying row id.
-                $(this).attr("id", `ec_Onsitepc${dig - 1}`);
+                $(this).attr("id", `rowofOnsitePC${dig - 1}`);
 
                 // Modifying row index.
                 noc.attr("id", `ec_OnsitepcNoc${dig - 1}`);
@@ -1033,10 +1033,10 @@
                 var atd = $(this).children(".atd").children("input");
 
                 // Gets the row number from <tr> id.
-                var dig = parseInt(id.substring(11));
+                var dig = parseInt(id.substring(15));
 
                 // Modifying row id.
-                $(this).attr("id", `ec_Documentors${dig - 1}`);
+                $(this).attr("id", `rowofDocumentor${dig - 1}`);
 
                 // Modifying row index.
                 noc.attr("id", `ec_DocumentorsNoc${dig - 1}`);

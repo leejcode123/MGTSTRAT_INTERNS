@@ -323,7 +323,7 @@ document.getElementById("ec_Programexpenses").defaultValue = 2 + "%";
 //Customized Engagement form of Engagement Fees
 $(document).on(
     "change keyup click",
-    ".f2f-customized-type, .f2f-ga-only-dropdown, .removed, #remove, #tableLeadconsultant, #tableofLeadConsultant, #ef_TableAnalyst, #tableofAnalyst, #ef_TableDesigner, #tableofDesigner, #ef_TableLeadFaci, #tableofLeadFacilitator, #ef_TableCoFaci, #tableofCoFacilitator, #ef_TableActionLearn, #tableofActionLearningCoach, #ef_TableMarshal, #tableofMarshal, #ef_TableOnsite, #tableofOnsitePC, #ef_TableDocumentor, #tableofDocumentor, #ef_LeadconsultantAtd, #ef_LeadconsultantNoc, #ef_LeadconsultantHf, #ef_LeadconsultantNoh, #ef_LeadconsultantNwh, #ef_AnalystNoc, #ef_AnalystPdf, #ef_AnalystNod, #ef_AnalystAtd, #ef_AnalystNsw, #ef_DesignerNoc, #ef_DesignerPdf, #ef_DesignerNod, #ef_DesignerAtd, #ef_DesignerNsw, #ef_LeadFaciNoc, #ef_LeadFaciPdf, #ef_LeadFaciNod, #ef_LeadFaciAtd, #ef_LeadFaciNsw, #ef_CoFaciNoc, #ef_CoFaciPdf, #ef_CoFaciNod, #ef_CoFaciAtd, #ef_CoFaciNsw, #ef_ActionLearnNoc, #ef_ActionLearnPdf, #ef_ActionLearnNod, #ef_ActionLearnAtd, #ef_ActionLearnNsw, #ef_MarshalNoc, #ef_MarshalPdf, #ef_MarshalNod, #ef_MarshalAtd, #ef_MarshalNsw, #ef_OnsiteNoc, #ef_OnsitePdf, #ef_OnsiteNod, #ef_OnsiteAtd, #ef_OnsiteNsw, #ef_DocumentorNoc, #ef_DocumentorPdf, #ef_DocumentorNod, #ef_DocumentorAtd, #ef_DocumentorNsw,  #ef_PDNoc, #ef_PDPdf, #ef_PDNod, #ef_PDAtd, #ef_PDNsw, #input_totalPackages, #ec_sale, #inputforSale, #referrals, #inputforReferrals, #ecengagementManager, #inputforEngagementManager, #ec_offsitePc, #inputforOffsite, #ec_LeadconsultantsPd, #ec_AnalystsPd, #ec_DesignersPd, #ec_CreatorNoc, #ec_CreatorPd, #ec_CreatorNod, #ec_LeadfacilitatorsPd, #ec_CofacilitatorsPd, #ec_ActionlearningcoachPd, #ec_MarshalPd, #ec_OnsitepcPD, #ec_DocumentorsPd, #ec_PerdiemPd, #ec_PerdiemNoc, #ec_OffprogramsPd, #ec_OffprogramsNoc, #ec_Programexpenses, #ecaddButton, #ecaddButton2, #ecaddButton3, #ecaddButton4",
+    ".f2f-customized-type, .f2f-ga-only-dropdown, .removed, #remove, #f2f-ef-table, #f2f-ec-table",
     function () {
         //customized type
         $(".f2f-customized-type").each(function () {
@@ -438,6 +438,11 @@ $(document).on(
         //Lead consultant
         $("#tableLeadconsultant > tr").each(function () {
             rowIndx++;
+
+            $("#ec_LeadconsultantsNoc1").val($("#ef_LeadconsultantNoc1").val());
+            $("#ec_LeadconsultantsNod1").val($("#ef_LeadconsultantNoh1").val());
+            $("#ec_LeadconsultantsNwh1").val($("#ef_LeadconsultantNwh1").val());
+            $("#ec_LeadconsultantsAtd1").val($("#ef_LeadconsultantAtd1").val());
     
             sumLc =
                 $(this).find(`#ef_LeadconsultantNoc${rowIndx}`).val() *
@@ -470,10 +475,10 @@ $(document).on(
         $("#tableofLeadConsultant > tr").each(function () { 
             ecleadConsultant++;
 
-            $("#ec_LeadconsultantsNoc1").val($("#ef_LeadconsultantNoc1").val());
-            $("#ec_LeadconsultantsNod1").val($("#ef_LeadconsultantNoh1").val());
-            $("#ec_LeadconsultantsNwh1").val($("#ef_LeadconsultantNwh1").val());
-            $("#ec_LeadconsultantsAtd1").val($("#ef_LeadconsultantAtd1").val());
+            //$("#ec_LeadconsultantsNoc1").val($("#ef_LeadconsultantNoc1").val());
+            //$("#ec_LeadconsultantsNod1").val($("#ef_LeadconsultantNoh1").val());
+            //$("#ec_LeadconsultantsNwh1").val($("#ef_LeadconsultantNwh1").val());
+            //$("#ec_LeadconsultantsAtd1").val($("#ef_LeadconsultantAtd1").val());
 
             sumofecLeadconsultant =
                 $(this).find(`#ec_LeadconsultantsNoc${ecleadConsultant}`).val() *
@@ -498,6 +503,12 @@ $(document).on(
             // Analyst
             $("#ef_TableAnalyst > tr").each(function () {
                 rowAnalyst++;
+
+                $("#ec_AnalystsNoc1").val($("#ef_AnalystNoc1").val());
+                $("#ec_AnalystsNod1").val($("#ef_AnalystNod1").val());
+                $("#ec_AnalystsNwh1").val($("#ef_AnalystNsw1").val());
+                $("#ec_AnalystsAtd1").val($("#ef_AnalystAtd1").val());
+
                 sumAnlst =
                     $(this).find(`#ef_AnalystNoc${rowAnalyst}`).val() *
                     +$(this).find("#ef_AnalystPdf").val().replace(/\₱|,/g, "") *
@@ -533,10 +544,10 @@ $(document).on(
             $("#tableofAnalyst > tr").each(function () {
                 ecAnalyst++;
 
-                $("#ec_AnalystsNoc1").val($("#ef_AnalystNoc1").val());
-                $("#ec_AnalystsNod1").val($("#ef_AnalystNod1").val());
-                $("#ec_AnalystsNwh1").val($("#ef_AnalystNsw1").val());
-                $("#ec_AnalystsAtd1").val($("#ef_AnalystAtd1").val());
+                //$("#ec_AnalystsNoc1").val($("#ef_AnalystNoc1").val());
+                //$("#ec_AnalystsNod1").val($("#ef_AnalystNod1").val());
+                //$("#ec_AnalystsNwh1").val($("#ef_AnalystNsw1").val());
+                //$("#ec_AnalystsAtd1").val($("#ef_AnalystAtd1").val());
 
                 sumofecAnalyst =
                     $(this).find(`#ec_AnalystsNoc${ecAnalyst}`).val() *
@@ -569,6 +580,12 @@ $(document).on(
             // Designer
             $("#ef_TableDesigner > tr").each(function () {
                 rowDesigner++;
+
+                $("#ec_DesignersNoc1").val($("#ef_DesignerNoc1").val());
+                $("#ec_DesignersNod1").val($("#ef_DesignerNod1").val());
+                $("#ec_DesignersNwh1").val($("#ef_DesignerNsw1").val());
+                $("#ec_DesignersAtd1").val($("#ef_DesignerAtd1").val());
+
                 sumDesigner =
                     $(this).find(`#ef_DesignerNoc${rowDesigner}`).val() *
                     +$(this).find("#ef_DesignerPdf").val().replace(/\₱|,/g, "")  *
@@ -604,10 +621,10 @@ $(document).on(
             $("#tableofDesigner > tr").each(function () {
                 ecDesigner++;
 
-                $("#ec_DesignersNoc1").val($("#ef_DesignerNoc1").val());
-                $("#ec_DesignersNod1").val($("#ef_DesignerNod1").val());
-                $("#ec_DesignersNwh1").val($("#ef_DesignerNsw1").val());
-                $("#ec_DesignersAtd1").val($("#ef_DesignerAtd1").val());
+                //$("#ec_DesignersNoc1").val($("#ef_DesignerNoc1").val());
+                //$("#ec_DesignersNod1").val($("#ef_DesignerNod1").val());
+                //$("#ec_DesignersNwh1").val($("#ef_DesignerNsw1").val());
+                //$("#ec_DesignersAtd1").val($("#ef_DesignerAtd1").val());
 
                 sumofecDesigner =
                     $(this).find(`#ec_DesignersNoc${ecDesigner}`).val() *
@@ -635,6 +652,12 @@ $(document).on(
             $("#ef_TableLeadFaci > tr").each(function () {
                 
                 rowLeadFaci++;
+
+                $("#ec_LeadfacilitatorsNoc1").val($("#ef_LeadFaciNoc1").val());
+                $("#ec_LeadfacilitatorsNod1").val($("#ef_LeadFaciNod1").val());
+                $("#ec_LeadfacilitatorsNwh1").val($("#ef_LeadFaciNsw1").val());
+                $("#ec_LeadfacilitatorsAtd1").val($("#ef_LeadFaciAtd1").val());
+
                 sumLeadFaci =
                     $(this).find(`#ef_LeadFaciNoc${rowLeadFaci}`).val() *
                     +$(this).find("#ef_LeadFaciPdf").val().replace(/\₱|,/g, "") *
@@ -672,10 +695,10 @@ $(document).on(
             $("#tableofLeadFacilitator > tr").each(function () {
                 ecLeadFacilitator++;
 
-                $("#ec_LeadfacilitatorsNoc1").val($("#ef_LeadFaciNoc1").val());
-                $("#ec_LeadfacilitatorsNod1").val($("#ef_LeadFaciNod1").val());
-                $("#ec_LeadfacilitatorsNwh1").val($("#ef_LeadFaciNsw1").val());
-                $("#ec_LeadfacilitatorsAtd1").val($("#ef_LeadFaciAtd1").val());
+                //$("#ec_LeadfacilitatorsNoc1").val($("#ef_LeadFaciNoc1").val());
+                //$("#ec_LeadfacilitatorsNod1").val($("#ef_LeadFaciNod1").val());
+                //$("#ec_LeadfacilitatorsNwh1").val($("#ef_LeadFaciNsw1").val());
+                //$("#ec_LeadfacilitatorsAtd1").val($("#ef_LeadFaciAtd1").val());
 
                 sumofecLeadfacilitator =
                     $(this).find(`#ec_LeadfacilitatorsNoc${ecLeadFacilitator}`).val() *
@@ -703,6 +726,12 @@ $(document).on(
             // Co Facilitator
             $("#ef_TableCoFaci > tr").each(function () {
                 rowCoFaci++;
+
+                $("#ec_CofacilitatorsNoc1").val($("#ef_CoFaciNoc1").val());
+                $("#ec_CofacilitatorsNod1").val($("#ef_CoFaciNod1").val());
+                $("#ec_CofacilitatorsNwh1").val($("#ef_CoFaciNsw1").val());
+                $("#ec_CofacilitatorsAtd1").val($("#ef_CoFaciAtd1").val());
+
                 sumCoFaci =
                     $(this).find(`#ef_CoFaciNoc${rowCoFaci}`).val() *
                     +$(this).find("#ef_CoFaciPdf").val().replace(/\₱|,/g, "") *
@@ -733,10 +762,10 @@ $(document).on(
             $("#tableofCoFacilitator > tr").each(function () {
                 ecCoFacilitator++;
 
-                $("#ec_CofacilitatorsNoc1").val($("#ef_CoFaciNoc1").val());
-                $("#ec_CofacilitatorsNod1").val($("#ef_CoFaciNod1").val());
-                $("#ec_CofacilitatorsNwh1").val($("#ef_CoFaciNsw1").val());
-                $("#ec_CofacilitatorsAtd1").val($("#ef_CoFaciAtd1").val());
+                //$("#ec_CofacilitatorsNoc1").val($("#ef_CoFaciNoc1").val());
+                //$("#ec_CofacilitatorsNod1").val($("#ef_CoFaciNod1").val());
+                //$("#ec_CofacilitatorsNwh1").val($("#ef_CoFaciNsw1").val());
+                //$("#ec_CofacilitatorsAtd1").val($("#ef_CoFaciAtd1").val());
 
                 sumofecCofacilitator =
                     $(this).find(`#ec_CofacilitatorsNoc${ecCoFacilitator}`).val() *
@@ -765,6 +794,12 @@ $(document).on(
             // Action Learning
             $("#ef_TableActionLearn > tr").each(function () {
                 rowActionLearn++;
+
+                $("#ec_ActionlearningcoachNoc1").val($("#ef_ActionLearnNoc1").val());
+                $("#ec_ActionlearningcoachNod1").val($("#ef_ActionLearnNod1").val());
+                $("#ec_ActionlearningcoachNwh1").val($("#ef_ActionLearnNsw1").val());
+                $("#ec_ActionlearningcoachAtd1").val($("#ef_ActionLearnAtd1").val());
+
                 sumActionLearn =
                     $(this).find(`#ef_ActionLearnNoc${rowActionLearn}`).val() *
                     +$(this).find("#ef_ActionLearnPdf").val().replace(/\₱|,/g, "") *
@@ -795,6 +830,12 @@ $(document).on(
             // Marshal
             $("#ef_TableMarshal > tr").each(function () {
                 rowMarshal++;
+
+                $("#ec_MarshalNoc1").val($("#ef_MarshalNoc1").val());
+                $("#ec_MarshalNod1").val($("#ef_MarshalNod1").val());
+                $("#ec_MarshalNwh1").val($("#ef_MarshalNsw1").val());
+                $("#ec_MarshalAtd1").val($("#ef_MarshalAtd1").val());
+
                 sumMarshal =
                 $(this).find(`#ef_MarshalNoc${rowMarshal}`).val() *
                 +$(this).find("#ef_MarshalPdf").val().replace(/\₱|,/g, "") *
@@ -824,6 +865,12 @@ $(document).on(
             // Documentor
             $("#ef_TableDocumentor > tr").each(function () {
                 rowDocumentor++;
+
+                $("#ec_DocumentorsNoc1").val($("#ef_DocumentorNoc1").val());
+                $("#ec_DocumentorsNod1").val($("#ef_DocumentorNod1").val());
+                $("#ec_DocumentorsNwh1").val($("#ef_DocumentorNsw1").val());
+                $("#ec_DocumentorsAtd1").val($("#ef_DocumentorAtd1").val());
+
                 sumDocumentor =
                     $(this).find(`#ef_DocumentorNoc${rowDocumentor}`).val() *
                     +$(this).find("#ef_DocumentorPdf").val().replace(/\₱|,/g, "") *
@@ -874,6 +921,12 @@ $(document).on(
             // Onsite PC
             $("#ef_TableOnsite > tr").each(function () {
                 rowOnsite++;
+
+                $("#ec_OnsitepcNoc1").val($("#ef_OnsiteNoc1").val());
+                $("#ec_OnsitepcNod1").val($("#ef_OnsiteNod1").val());
+                $("#ec_OnsitepcNwh1").val($("#ef_OnsiteNsw1").val());
+                $("#ec_OnsitepcAtd1").val($("#ef_OnsiteAtd1").val());
+
                 sumOnsite =
                 $(this).find(`#ef_OnsiteNoc${rowOnsite}`).val() *
                 +$(this).find("#ef_OnsitePdf").val().replace(/\₱|,/g, "") *
@@ -1017,10 +1070,10 @@ $(document).on(
             $("#tableofActionLearningCoach > tr").each(function () {
                 ecActionLearning++;
 
-            $("#ec_ActionlearningcoachNoc1").val($("#ef_ActionLearnNoc1").val());
-            $("#ec_ActionlearningcoachNod1").val($("#ef_ActionLearnNod1").val());
-            $("#ec_ActionlearningcoachNwh1").val($("#ef_ActionLearnNsw1").val());
-            $("#ec_ActionlearningcoachAtd1").val($("#ef_ActionLearnAtd1").val());
+            //$("#ec_ActionlearningcoachNoc1").val($("#ef_ActionLearnNoc1").val());
+            //$("#ec_ActionlearningcoachNod1").val($("#ef_ActionLearnNod1").val());
+            //$("#ec_ActionlearningcoachNwh1").val($("#ef_ActionLearnNsw1").val());
+            //$("#ec_ActionlearningcoachAtd1").val($("#ef_ActionLearnAtd1").val());
 
             sumofecActionlearningcoach =
                 $(this).find(`#ec_ActionlearningcoachNoc${ecActionLearning}`).val() *
@@ -1048,10 +1101,10 @@ $(document).on(
             $("#tableofMarshal > tr").each(function () {
                 ecMarshal++;
 
-            $("#ec_MarshalNoc1").val($("#ef_MarshalNoc1").val());
-            $("#ec_MarshalNod1").val($("#ef_MarshalNod1").val());
-            $("#ec_MarshalNwh1").val($("#ef_MarshalNsw1").val());
-            $("#ec_MarshalAtd1").val($("#ef_MarshalAtd1").val());
+            //$("#ec_MarshalNoc1").val($("#ef_MarshalNoc1").val());
+            //$("#ec_MarshalNod1").val($("#ef_MarshalNod1").val());
+            //$("#ec_MarshalNwh1").val($("#ef_MarshalNsw1").val());
+            //$("#ec_MarshalAtd1").val($("#ef_MarshalAtd1").val());
 
             sumofecMarshal =
                 $(this).find(`#ec_MarshalNoc${ecMarshal}`).val() *
@@ -1081,10 +1134,10 @@ $(document).on(
             $("#tableofOnsitePC > tr").each(function () {
                 ecOnsite++;
                 
-            $("#ec_OnsitepcNoc1").val($("#ef_OnsiteNoc1").val());
-            $("#ec_OnsitepcNod1").val($("#ef_OnsiteNod1").val());
-            $("#ec_OnsitepcNwh1").val($("#ef_OnsiteNsw1").val());
-            $("#ec_OnsitepcAtd1").val($("#ef_OnsiteAtd1").val());
+            //$("#ec_OnsitepcNoc1").val($("#ef_OnsiteNoc1").val());
+            //$("#ec_OnsitepcNod1").val($("#ef_OnsiteNod1").val());
+            //$("#ec_OnsitepcNwh1").val($("#ef_OnsiteNsw1").val());
+            //$("#ec_OnsitepcAtd1").val($("#ef_OnsiteAtd1").val());
 
             sumofecOnsitepc =
                 $(this).find(`#ec_OnsitepcNoc${ecOnsite}`).val() *
@@ -1122,10 +1175,10 @@ $(document).on(
             $("#tableofDocumentor > tr").each(function () {
                 ecDocumentor++;
 
-            $("#ec_DocumentorsNoc1").val($("#ef_DocumentorNoc1").val());
-            $("#ec_DocumentorsNod1").val($("#ef_DocumentorNod1").val());
-            $("#ec_DocumentorsNwh1").val($("#ef_DocumentorNsw1").val());
-            $("#ec_DocumentorsAtd1").val($("#ef_DocumentorAtd1").val());
+            //$("#ec_DocumentorsNoc1").val($("#ef_DocumentorNoc1").val());
+            //$("#ec_DocumentorsNod1").val($("#ef_DocumentorNod1").val());
+            //$("#ec_DocumentorsNwh1").val($("#ef_DocumentorNsw1").val());
+            //$("#ec_DocumentorsAtd1").val($("#ef_DocumentorAtd1").val());
 
             sumofecDocumentor =
                 $(this).find(`#ec_DocumentorsNoc${ecDocumentor}`).val() *
