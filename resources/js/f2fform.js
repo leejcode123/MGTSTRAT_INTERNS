@@ -424,6 +424,7 @@ $(document).on(
         ecleadConsultant = 0;
         ecAnalyst = 0;
         ecDesigner = 0;
+        ecCreator = 0;
         ecLeadFacilitator = 0;
         ecCoFacilitator = 0;
         ecActionLearning = 0;
@@ -1030,13 +1031,13 @@ $(document).on(
             //Offsite PC
             //$("#ec_offsitePc").each(function () {
             $("#tableofOffsite > tr").each(function () {
-                sumofOffsitepc +=
-                    ($("#input_totalPackages").val().replace(/\₱|,/g, "") / 100) -
-                    $("#subtotalConsulting").val() - $("#subtotal-PD").val() *
+                sumofOffsitepc =
+                    ($("#input_totalPackages").val().replace(/\₱|,/g, "") / 100 -
+                    $("#subtotalConsulting").val() - $("#subtotal-PD").val()) *
                     $(this).find("#ec_offsitePc").val() || 
-                    ($("#input_totalPackages").val().replace(/\₱|,/g, "") / 100) -
-                    $("#subtotalConsulting").val() - $("#subtotal-PD").val() *
-                    $(this).find("#inputforOffsite").val();
+                    ($("#input_totalPackages").val().replace(/\₱|,/g, "") / 100 -
+                    $("#subtotalConsulting").val() - $("#subtotal-PD").val()) *
+                    $(this).find("#inputforOffsite").val().replace(/\%|,/g, "");
 
                     $(this).find("#ec_offsitePcTotal").html("₱" + currency.format(Math.ceil(sumofOffsitepc)));
 
@@ -1049,16 +1050,21 @@ $(document).on(
             //Designer
 
             //Creators Fee
-            $("#ec_CreatorPd").each(function () {
-                sumofecCreators +=
-                    $(this).val() *
-                    $("#ec_CreatorNod").val() *
-                    $("#ec_CreatorNoc").val();
+            //$("#ec_CreatorPd").each(function () {
+
+            $("#tableofCreator > tr").each(function () {
+                ecCreator++;
+
+                sumofecCreators =
+                    $(this).find("#ec_CreatorPd").val() *
+                    $(this).find(`#ec_CreatorNod${ecCreator}`).val() *
+                    $(this).find(`#ec_CreatorNoc${ecCreator}`).val();
+
+                $(this).find("#ec_CreatorTotal").html(currency.format(Math.ceil(sumofecCreators)));
 
                 ecDesignSubtotal += +sumofecCreators;
                 sumofEngagementCost += +sumofecCreators;
             });
-                $("#ec_CreatorTotal").html(currency.format(Math.ceil(sumofecCreators)));
                 $("#ec_DesignsSubtotal").html("₱" + currency.format(Math.ceil(ecDesignSubtotal)));
             
 

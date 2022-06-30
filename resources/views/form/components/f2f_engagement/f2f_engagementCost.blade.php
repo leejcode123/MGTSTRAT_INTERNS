@@ -452,12 +452,13 @@
                             <td class="border border-white"></td>
                         </tr>
                     </tbody>
+                    <tbody id="tableofCreator">
                         <tr id="rowofCreator">
                             <td class="title">Creators Fees (500, 1K)</td>
                             <td>
                                 <input type="number"
                                     class="text-center yellow-input form-control input-table @error('') is-invalid @enderror"
-                                    value="{{ old('') }}" name="" id="ec_CreatorNoc" max="100"
+                                    value="{{ old('') }}" name="" id="ec_CreatorNoc1" max="100"
                                     >
                             </td>
                             <td>
@@ -492,7 +493,7 @@
                             <td>
                                 <input type="number"
                                     class="text-center yellow-input form-control input-table @error('') is-invalid @enderror"
-                                    value="{{ old('') }}" name="" id="ec_CreatorNod" max="100"
+                                    value="{{ old('') }}" name="" id="ec_CreatorNod1" max="100"
                                     >
                             </td>
                             <td class=""></td>
@@ -504,8 +505,11 @@
                                 <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                     value="{{ old('') }}" name="" id="">
                             </td>
-                            <td class="border border-white"></td>
+                            <td><a href="javascript:void(0)" class="text-success font-18" title="Add" id="ecaddButton5"><i
+                                class="fa fa-plus"></i></a>
+                            </td>
                         </tr>
+                    </tbody>
                     <tr class="table-secondary">
                         <td class="title fw-bold text-dark fst-italic">Subtotal</td>
                         <td></td>
