@@ -71,7 +71,8 @@ display:block;
     .overall-total-middle:nth-child(2),
     .overall-total-middle:nth-child(3),
     .overall-total-middle:nth-child(4),
-    .overall-total-middle:nth-child(5)
+    .overall-total-middle:nth-child(5),
+    .overall-total-middle:nth-child(6)
     {
         border:3px solid black;
         border-right:none;
@@ -79,7 +80,8 @@ display:block;
     }
 
     .overall-total-end:nth-child(6),
-    .overall-total-end:nth-child(7)
+    .overall-total-end:nth-child(7),
+    .overall-total-end:nth-child(8)
     {
         border:3px solid black;
     }
