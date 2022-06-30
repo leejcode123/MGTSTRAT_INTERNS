@@ -16,6 +16,7 @@
                         <th class="title-middle" scope="col" style="font-size: 0.9rem;" width=10%>NIGHT SHIFT, WEEKENDS HOLIDAYS *</th>
                         <th class="title-th" scope="col" width=15%>TOTAL FEE</th>
                         <th class="title-th" scope="col" width=15%>NOTES</th>
+                        <td class="add-row border border-white" scope="col"></td>
                     </tr>
                 </thead>
         
@@ -188,6 +189,7 @@
                                 value="{{ old('') }}" 
                                 name="" id="">
                         </td>
+                        <td class="border border-white"></td>
                     </tr>
         
                     {{-- Design --}}
@@ -543,6 +545,7 @@
                                 value="{{ old('') }}" 
                                 name="" id="">
                         </td>
+                        <td class="border border-white"></td>
                     </tr>
 
                     {{-- Program --}}
@@ -642,8 +645,9 @@
                                 value="{{ old('') }}" 
                                 name="" id="">
                         </td>
+                      
                     </tr>
-                    <tr class="table-active" style="border:3px solid black">
+                    <tr class="table-active">
                         <td class="fw-bold text-dark text-uppercase fst-italic overall-total-start">discount given (if any)</td>
                         <td class="overall-total-middle"></td>
                         <td class="overall-total-middle table-warning">
@@ -658,9 +662,10 @@
                             <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                 value="{{ old('') }}"  name="" id="total_dsct">
                         </td>
+                      
                     </tr>
 
-                    <tr class="table-active" style="border:3px solid black">
+                    <tr class="table-active">
                         <td class="fw-bold text-uppercase text-dark fst-italic overall-total-start">total package</td>
                         <td class="overall-total-middle"></td>
                         <td class="overall-total-middle"></td>
@@ -675,6 +680,7 @@
                             <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                 value="{{ old('') }}" name="" id="">
                         </td>
+                        
                     </tr>
 
                     
