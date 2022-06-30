@@ -323,7 +323,7 @@ document.getElementById("ec_Programexpenses").defaultValue = 2 + "%";
 //Customized Engagement form of Engagement Fees
 $(document).on(
     "change keyup click",
-    ".f2f-customized-type, .f2f-ga-only-dropdown, .removed, #tableLeadconsultant, #tableofLeadConsultant, #ef_TableAnalyst, #tableofAnalyst, #ef_TableDesigner, #tableofDesigner, #ef_TableLeadFaci, #tableofLeadFacilitator, #ef_TableCoFaci, #tableofCoFacilitator, #ef_TableActionLearn, #tableofActionLearningCoach, #ef_TableMarshal, #tableofMarshal, #ef_TableOnsite, #tableofOnsitePC, #ef_TableDocumentor, #tableofDocumentor, #ef_LeadconsultantAtd, #ef_LeadconsultantNoc, #ef_LeadconsultantHf, #ef_LeadconsultantNoh, #ef_LeadconsultantNwh, #ef_AnalystNoc, #ef_AnalystPdf, #ef_AnalystNod, #ef_AnalystAtd, #ef_AnalystNsw, #ef_DesignerNoc, #ef_DesignerPdf, #ef_DesignerNod, #ef_DesignerAtd, #ef_DesignerNsw, #ef_LeadFaciNoc, #ef_LeadFaciPdf, #ef_LeadFaciNod, #ef_LeadFaciAtd, #ef_LeadFaciNsw, #ef_CoFaciNoc, #ef_CoFaciPdf, #ef_CoFaciNod, #ef_CoFaciAtd, #ef_CoFaciNsw, #ef_ActionLearnNoc, #ef_ActionLearnPdf, #ef_ActionLearnNod, #ef_ActionLearnAtd, #ef_ActionLearnNsw, #ef_MarshalNoc, #ef_MarshalPdf, #ef_MarshalNod, #ef_MarshalAtd, #ef_MarshalNsw, #ef_OnsiteNoc, #ef_OnsitePdf, #ef_OnsiteNod, #ef_OnsiteAtd, #ef_OnsiteNsw, #ef_DocumentorNoc, #ef_DocumentorPdf, #ef_DocumentorNod, #ef_DocumentorAtd, #ef_DocumentorNsw,  #ef_PDNoc, #ef_PDPdf, #ef_PDNod, #ef_PDAtd, #ef_PDNsw, #input_totalPackages, #ec_sale, #inputforSale, #referrals, #inputforReferrals, #ecengagementManager, #inputforEngagementManager, #ec_offsitePc, #inputforOffsite, #ec_LeadconsultantsPd, #ec_AnalystsPd, #ec_DesignersPd, #ec_CreatorNoc, #ec_CreatorPd, #ec_CreatorNod, #ec_LeadfacilitatorsPd, #ec_CofacilitatorsPd, #ec_ActionlearningcoachPd, #ec_MarshalPd, #ec_OnsitepcPD, #ec_DocumentorsPd, #ec_PerdiemPd, #ec_PerdiemNoc, #ec_OffprogramsPd, #ec_OffprogramsNoc, #ec_Programexpenses, #ecaddButton, #ecaddButton2, #ecaddButton3, #ecaddButton4",
+    ".f2f-customized-type, .f2f-ga-only-dropdown, .removed, #remove, #tableLeadconsultant, #tableofLeadConsultant, #ef_TableAnalyst, #tableofAnalyst, #ef_TableDesigner, #tableofDesigner, #ef_TableLeadFaci, #tableofLeadFacilitator, #ef_TableCoFaci, #tableofCoFacilitator, #ef_TableActionLearn, #tableofActionLearningCoach, #ef_TableMarshal, #tableofMarshal, #ef_TableOnsite, #tableofOnsitePC, #ef_TableDocumentor, #tableofDocumentor, #ef_LeadconsultantAtd, #ef_LeadconsultantNoc, #ef_LeadconsultantHf, #ef_LeadconsultantNoh, #ef_LeadconsultantNwh, #ef_AnalystNoc, #ef_AnalystPdf, #ef_AnalystNod, #ef_AnalystAtd, #ef_AnalystNsw, #ef_DesignerNoc, #ef_DesignerPdf, #ef_DesignerNod, #ef_DesignerAtd, #ef_DesignerNsw, #ef_LeadFaciNoc, #ef_LeadFaciPdf, #ef_LeadFaciNod, #ef_LeadFaciAtd, #ef_LeadFaciNsw, #ef_CoFaciNoc, #ef_CoFaciPdf, #ef_CoFaciNod, #ef_CoFaciAtd, #ef_CoFaciNsw, #ef_ActionLearnNoc, #ef_ActionLearnPdf, #ef_ActionLearnNod, #ef_ActionLearnAtd, #ef_ActionLearnNsw, #ef_MarshalNoc, #ef_MarshalPdf, #ef_MarshalNod, #ef_MarshalAtd, #ef_MarshalNsw, #ef_OnsiteNoc, #ef_OnsitePdf, #ef_OnsiteNod, #ef_OnsiteAtd, #ef_OnsiteNsw, #ef_DocumentorNoc, #ef_DocumentorPdf, #ef_DocumentorNod, #ef_DocumentorAtd, #ef_DocumentorNsw,  #ef_PDNoc, #ef_PDPdf, #ef_PDNod, #ef_PDAtd, #ef_PDNsw, #input_totalPackages, #ec_sale, #inputforSale, #referrals, #inputforReferrals, #ecengagementManager, #inputforEngagementManager, #ec_offsitePc, #inputforOffsite, #ec_LeadconsultantsPd, #ec_AnalystsPd, #ec_DesignersPd, #ec_CreatorNoc, #ec_CreatorPd, #ec_CreatorNod, #ec_LeadfacilitatorsPd, #ec_CofacilitatorsPd, #ec_ActionlearningcoachPd, #ec_MarshalPd, #ec_OnsitepcPD, #ec_DocumentorsPd, #ec_PerdiemPd, #ec_PerdiemNoc, #ec_OffprogramsPd, #ec_OffprogramsNoc, #ec_Programexpenses, #ecaddButton, #ecaddButton2, #ecaddButton3, #ecaddButton4",
     function () {
         //customized type
         $(".f2f-customized-type").each(function () {
@@ -377,6 +377,7 @@ $(document).on(
         //Onsite
         sumOnsite = 0;
 
+        sumProgram = 0;
         //Documentor
         sumDocumentor = 0;
 
@@ -654,6 +655,7 @@ $(document).on(
                         sumLeadFaci *
                         (document.getElementById("ga-only-dropdown").value / 100);
                 }
+                sumProgram += +sumLeadFaci;
                 sumEf += +sumLeadFaci;
 
                 $(this).find("#subtotal-LeadFaci").html(currency.format(Math.ceil(sumLeadFaci)));
@@ -721,7 +723,7 @@ $(document).on(
                         sumCoFaci *
                         (document.getElementById("ga-only-dropdown").value / 100);
                 }
-
+                sumProgram += +sumCoFaci;
                 sumEf += +sumCoFaci;
 
                 $(this).find("#subtotal-coFacilitator").html(currency.format(Math.ceil(sumCoFaci)));
@@ -783,6 +785,7 @@ $(document).on(
                         sumActionLearn *
                         (document.getElementById("ga-only-dropdown").value / 100);
                 }
+                sumProgram += +sumActionLearn;
                 sumEf += +sumActionLearn;
 
                 $(this).find("#subtotal-ActionLearn").html(currency.format(Math.ceil(sumActionLearn)));
@@ -812,6 +815,7 @@ $(document).on(
                         sumMarshal *
                         (document.getElementById("ga-only-dropdown").value / 100);
                 }
+                sumProgram += +sumMarshal;
                 sumEf += +sumMarshal;
                 $(this).find("#subtotal-marshal").html(currency.format(Math.ceil(sumMarshal)));
 
@@ -840,6 +844,7 @@ $(document).on(
                         sumDocumentor *
                         (document.getElementById("ga-only-dropdown").value / 100);
                 }
+
                 sumEf += +sumDocumentor;
 
                 $(this).find("#subtotal-Documentor").html(currency.format(Math.ceil(sumDocumentor)));
@@ -889,6 +894,7 @@ $(document).on(
                         sumOnsite *
                         (document.getElementById("ga-only-dropdown").value / 100);
                 }
+                sumProgram += +sumOnsite;
                 sumEf += +sumOnsite;
 
                 $(this).find("#subtotal-Onsite").html(currency.format(Math.ceil(sumOnsite)));
@@ -897,7 +903,7 @@ $(document).on(
 
             // $("#subtotal-Onsite").html(currency.format(Math.ceil(sumOnsite)));
             $("#program-Subtotal").html(
-               "₱" + currency.format(Math.ceil(sumEf)))
+               "₱" + currency.format(Math.ceil(sumProgram)))
             $("#standard_total").html("₱" + currency.format(Math.ceil(sumEf)));
 
             // Discountsss-------------------------------------------------------------------
@@ -1187,7 +1193,7 @@ $(document).on(
 //*************************************** APPEND NUMBER FORMAT ********************************************************//
 $(document).on(
     "change keyup click",
-    "#ef_AnalystPdf, #ef_LeadFaciPdf, #ef_ModeratorHf, #ef_ProducerHf, #ef_DocumentorHf",
+    "#ef_AnalystPdf, #ef_LeadFaciPdf, #ef_CoFaciPdf, #ef_ActionLearnPdf, #ef_MarshalPdf, #ef_DocumentorPdf, #ef_DocumentorHf",
     function () {
         // Jquery Dependency
 

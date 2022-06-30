@@ -30,6 +30,7 @@
                         <th></th>
                         <th class="total-td"></th>
                         <th class="total-td"></th>
+                        <th class="border border-white"></th>
                     </tr>
                     <tbody id="tableLeadconsultant">
                     <tr class="table-warning" id="leadConsultant">
@@ -300,7 +301,8 @@
                                     P96,000 - Effective May 1, 2022</i>"
                                 data-mytooltip-theme="dark"
                                 data-mytooltip-action="focus" 
-                                data-mytooltip-direction="bottom">
+                                data-mytooltip-direction="bottom"
+                                data-type="currency">
                         </td>
                         <td>
                             <input type="number" class="noh-d21 input js-mytooltip form-control input-table @error('') is-invalid @enderror" 
@@ -345,7 +347,8 @@
                                 data-mytooltip-content="<i>½ Day = 0.70</i>"
                                 data-mytooltip-theme="dark"
                                 data-mytooltip-action="focus" 
-                                data-mytooltip-direction="bottom">
+                                data-mytooltip-direction="bottom"
+                                data-type="currency">
                         </td>
                         <td>
                             <input type="number" class="noh-d22 input js-mytooltip form-control input-table @error('') is-invalid @enderror" 
@@ -386,7 +389,7 @@
                         </td>
                         <td>
                             <input type="text" class="hf-c22 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="ef_ActionLearnPdf";>
+                                value="{{ old('') }}" name="" id="ef_ActionLearnPdf" data-type="currency";>
                         </td>
                         <td>
                             <input type="number" class="noh-d23 input js-mytooltip form-control input-table @error('') is-invalid @enderror" 
@@ -427,7 +430,7 @@
                         </td>
                         <td>
                             <input type="text" class="hf-c22 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="ef_MarshalPdf";>
+                                value="{{ old('') }}" name="" id="ef_MarshalPdf" data-type="currency";>
                         </td>
                         <td>
                             <input type="number" class="noh-d23 input js-mytooltip form-control input-table @error('') is-invalid @enderror" 
@@ -562,7 +565,7 @@
                         </td>
                         <td>
                             <input type="text" class="hf-c22 form-control input-table @error('') is-invalid @enderror" 
-                                value="{{ old('') }}" name="" id="ef_DocumentorPdf";>
+                                value="{{ old('') }}" name="" id="ef_DocumentorPdf" data-type="currency";>
                         </td>
                         <td>
                             <input type="number" class="noh-d28 input js-mytooltip form-control input-table @error('') is-invalid @enderror" 
@@ -624,7 +627,7 @@
                                 value="{{ old('') }}" name="" id="">
                         </td>
                     </tr>
-                    <tr class="table-active overall-total" style="border:3px solid black">
+                    <tr class="table-active overall-total">
                         <td class="text-uppercase text-dark fst-italic fw-bold overall-total-start">TOTAL STANDARD FEES</td>
                         <td class="overall-total-middle"></td>
                         <td class="overall-total-middle"></td>

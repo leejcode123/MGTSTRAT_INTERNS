@@ -41,7 +41,7 @@
             }
         });
 
-        $("#tableofSale > tr").on("click", ".remove", function() {
+        $("#tableofSale").on("click", ".remove", function() {
             var child = $(this).closest("tr").nextAll();
 
             $(this).closest("tr").remove();
@@ -303,10 +303,10 @@
                 var atd = $(this).children(".atd").children("input");
 
                 // Gets the row number from <tr> id.
-                var dig = parseInt(id.substring(11));
+                var dig = parseInt(id.substring(19));
 
                 // Modifying row id.
-                $(this).attr("id", `ec_LeadConsultants${dig - 1}`);
+                $(this).attr("id", `rowofLeadConsultant${dig - 1}`);
 
                 // Modifying row index.
                 noc.attr("id", `ec_LeadconsultantsNoc${dig - 1}`);
