@@ -1413,7 +1413,7 @@ var rowOnsite = 1;
         (`
             <tr id="ef_RowOnsite${++rowOnsite}" class="table-warning">
                 <td class="title">On-site PC (P20K / P25K / P30K)</td>
-                        <td>
+                        <td class="noc">
                             <input type="number" class="noc-b23 form-control input-table @error('') is-invalid @enderror" 
                                 value="{{ old('') }}" name="" id="ef_OnsiteNoc${rowOnsite}" max="100" oninput="document.getElementById('ec_OnsitepcNoc${rowOnsite}').value = document.getElementById('ef_OnsiteNoc${rowOnsite}').value;">
                         </td>
@@ -1446,7 +1446,7 @@ var rowOnsite = 1;
                                 @enderror
                             </fieldset>
                         </td>
-                        <td>
+                        <td class="nod">
                             <input type="number" class="noh-d23 input js-mytooltip form-control input-table @error('') is-invalid @enderror" 
                                 value="{{ old('') }}" 
                                 name="" 
@@ -1456,11 +1456,11 @@ var rowOnsite = 1;
                                 data-mytooltip-action="focus" 
                                 data-mytooltip-direction="bottom" oninput="document.getElementById('ec_OnsitepcNod${rowOnsite}').value = document.getElementById('ef_OnsiteNod${rowOnsite}').value;">
                         </td>
-                        <td>
+                        <td class="atd">
                             <input type="number" class="nwh-e23 form-control input-table @error('') is-invalid @enderror" 
                                 value="{{ old('') }}" name="" id="ef_OnsiteAtd${rowOnsite}" oninput="document.getElementById('ec_OnsitepcAtd${rowOnsite}').value = document.getElementById('ef_OnsiteAtd${rowOnsite}').value;">
                         </td>
-                        <td>
+                        <td class="nsw">
                             <input type="number" class="nwh-e23 form-control input-table @error('') is-invalid @enderror" 
                                 value="{{ old('') }}" name="" id="ef_OnsiteNsw${rowOnsite}" oninput="document.getElementById('ec_OnsitepcNwh${rowOnsite}').value = document.getElementById('ef_OnsiteNsw${rowOnsite}').value;">
                         </td>
