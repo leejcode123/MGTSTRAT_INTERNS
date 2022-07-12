@@ -1,3 +1,29 @@
+<style>
+    span.deleteicon {
+        position: relative;
+        display: none;
+        align-items: center;
+    }
+    span.deleteicon span {
+        position: absolute;
+        display: block;
+        right: 5px;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        color: #FFFFFF;
+        background-color: rgba(255, 0, 0, 0.8);
+        font: 13px monospace;
+        text-align: center;
+        line-height: 1em;
+        cursor: pointer;
+    }
+    span.deleteicon input {
+        padding-right: 18px;
+        box-sizing: border-box;
+    }
+</style>
+
 <div class="card-header">
     <h4 class="card-title">Engagement Fees</h4>
 </div>
@@ -5,21 +31,41 @@
     <section>
         <div class="table-responsive" id="no-more-tables" data-animation="slideHorz">
             <table class="table table-bordered" id="ec_tableEngagementFees">
+<!----------------------------------------------------------------TABLE HEADING TITLE---------------------------------------------------------------------->
                 <thead class="table-dark">
                     <tr class="text-center">
                         <th class="title-th" scope="col" width=20%></th>
                         <th class="title-middle" scope="col" style="font-size: 0.9rem;">NUMBER OF CONSULTANTS</th>
                         <th class="title-middle px-4" width=15% scope="col">HOURLY FEES</th>
                         <th class="title-middle" scope="col" style="font-size: 0.9rem;">NUMBER OF HOURS</th>
-                        <th class="title-middle" scope="col" style="font-size: 0.9rem;" width=10%>NIGHT SHIFT,
-                            WEEKENDS HOLIDAYS *</th>
+                        <th class="title-middle" scope="col" style="font-size: 0.9rem;" width=10%>    
+                            <label for="Night Shift, Weekends and Holidays">NSWH</label>
+                            <select
+                                class="input js-mytooltip form-select form-select-sm engagement-fee @error('') is-invalid @enderror select"
+                                name="" id="nswh">
+                                <option value="0.1" {{ old('') == '0.1' ? 'selected="selected"' : '' }}>
+                                    &#8369;10%
+                                </option>
+                                <option value="0.15" {{ old('') == '0.15' ? 'selected="selected"' : '' }}>
+                                    &#8369;15%
+                                </option>
+                                <option value="0.2" {{ old('') == '0.2' ? 'selected="selected"' : '' }} selected>
+                                    &#8369;20%
+                                </option>
+                                <option value="0.25" {{ old('') == '0.25' ? 'selected="selected"' : '' }}>
+                                    &#8369;25%
+                                </option>
+                            </select>
+                        </th>
+                        {{-- <th class="title-middle" scope="col" style="font-size: 0.9rem;" width=10%>NIGHT SHIFT,
+                            WEEKENDS HOLIDAYS *</th> --}}
                         <th class="title-th" scope="col" width=15%>TOTAL FEE</th>
                         <th class="title-th" scope="col" width=15%>NOTES</th>
                         <td class="add-row border border-white"> </td>
                     </tr>
                 </thead>
 
-                {{-- Consulting --}}
+<!----------------------------------------------------------------CONSULTING---------------------------------------------------------------------->
                 <tr class="">
                     <th class="px-4 title text-dark">1. CONSULTING</th>
                     <th></th>
@@ -155,7 +201,7 @@
                     <td class="border border-white add-row"></td>
                 </tr>
 
-                {{-- Design --}}
+<!----------------------------------------------------------------DESIGN---------------------------------------------------------------------->
                 <tr class="">
                     <th class="title px-4 text-dark">2. DESIGN</th>
                     <td></td>
@@ -227,7 +273,7 @@
                     </tr>
                 </tbody>
 
-                {{-- Program --}}
+<!----------------------------------------------------------------PROGRAM---------------------------------------------------------------------->
                 <tr class="">
                     <th class="title px-4 text-dark">3. PROGRAM</th>
                     <td></td>
@@ -248,6 +294,9 @@
                         </td>
                         <td>
                             <fieldset>
+                                <input type="text" class="form-control input-table input-delete @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ef_InputLeadFaciHf" data-type="currency" style="display:none;">
+
                                 <select
                                     class="input js-mytooltip form-select engagement-fee @error('') is-invalid @enderror select"
                                     name="" id="ef_LeadfacilitatorHf"
@@ -266,7 +315,12 @@
                                         selected>
                                         &#8369;12,000
                                     </option>
+                                    <option value="others" {{ old('') == 'others' ? 'selected="selected"' : '' }}
+                                    onclick="document.getElementById('ef_InputLeadFaciHf').focus()">
+                                        Others
+                                    </option>
                                 </select>
+
                                 @error('ef_customFee')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -424,7 +478,7 @@
                     <td class="border border-white add-row"></td>
                 </tr>
 
-                {{-- Program --}}
+<!----------------------------------------------------------------OTHER ROLES---------------------------------------------------------------------->
                 <tr class="">
                     <th class="title px-4 text-dark">4. OTHER ROLES</th>
                     <td></td>
@@ -472,6 +526,7 @@
                     </tr>
                 </tbody>
 
+<!----------------------------------------------------------------TOTAL PACKAGE---------------------------------------------------------------------->
                 <tr class="table-active overall-total">
                     <td class="text-uppercase text-dark fst-italic fw-bold overall-total-start">TOTAL STANDARD FEES
                     </td>
@@ -525,13 +580,36 @@
                 </tr>
                 </tbody>
             </table>
-            {{-- next and prev button --}}
-            {{-- <div class="button-row d-flex justify-content-center mt-3">
-                <button class="btn btn-primary js-btn-prev" type="button" title="Prev">Prev</button>
-                <button class="btn btn-primary js-btn-next" type="button" title="Next">Next</button>
-            </div> --}}
         </div>
     </section>
 </div>
+<script>
+    $(document).ready(function() {
+        $("#tableLeadfaci").each(function () {
+            $(`#ef_LeadfacilitatorHf`).click(function () {
+                var others = $(`#ef_LeadfacilitatorHf`);
+                if (others.val() == "others") {
+                    $(`#ef_InputLeadFaciHf`).css("display", "")
+                    $(`#ef_InputLeadFaciHf`).prop('disabled', false)
+                    $(`#ef_InputLeadFaciHf`).val("₱")
+                    $(`#ef_LeadfacilitatorHf`).prop('disabled', true)
+                    $(`#ef_LeadfacilitatorHf`).css("display", "none")
+                    $("#deleteIcon").css("display", "inline-flex")
+                } else {
+                    $(`#ef_InputLeadFaciHf`).css("display", "none")
+                }
+            });
 
+            $('input.input-delete').wrap('<span class="deleteicon" id="deleteIcon"></span>').after($('<span title="Remove Others"><b>X</b></span>').click(function() {
+                // $(this).prev('input').val('').trigger('change').focus();
+                $(`#ef_InputLeadFaciHf`).css("display", "none")
+                $(`#ef_InputLeadFaciHf`).prop('disabled', true)
+                $(`#deleteIcon`).css("display", "none")
+                $(`#ef_LeadfacilitatorHf`).prop('disabled', false)
+                $(`#ef_LeadfacilitatorHf`).css("display", "")
+                $(`#ef_LeadfacilitatorHf`).val(12000)
+            }));
+        });
+    });
+</script>
 @include('form.components.customized_engagement.script.ce_engagement_fees')

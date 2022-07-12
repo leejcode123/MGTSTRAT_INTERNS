@@ -1,10 +1,61 @@
 <div class="form-group row justify-content-center clusterRows" id="clusterRows">
-    <div class="col-md-4 listed" id="listed">
+    <div class="col-md-4 listed" id="listed[${dates}]">
         <div class="form-group has-icon-left">
             <label class="fw-bold required">Cluster</label>
             <div class="position-relative">
                 <fieldset class="form-group">
-                    <select class="input js-mytooltip form-select cluster-dropdown @error('') is-invalid @enderror" name="" id="cluster-dropdown"
+                    <select class="input js-mytooltip form-select cluster-dropdown @error('') is-invalid @enderror" name="" id="cluster-dropdown[${dates}]"
+                    onchange=" 
+                        if($('.capability').is(':selected')){
+                            document.getElementById('listed[${dates}]').style.display = '';
+                            document.getElementById('input-notListed[${dates}]').disabled = true;
+                            document.getElementById('div-notListed[${dates}]').style.display = 'none';
+                            document.getElementById('core-valueInput[${dates}]').value = 'Capability';
+                            document.getElementById('core-valueInput[${dates}]').disabled = true;
+                        } 
+                        if($('.culture').is(':selected')) {
+                            document.getElementById('listed[${dates}]').style.display = '';
+                            document.getElementById('input-notListed[${dates}]').disabled = true;
+                            document.getElementById('div-notListed[${dates}]').style.display = 'none';
+                            document.getElementById('core-valueInput[${dates}]').value = 'Culture';
+                            document.getElementById('core-valueInput[${dates}]').disabled = true;
+                        } 
+                        if($('.leadership').is(':selected')) {
+                            document.getElementById('listed[${dates}]').style.display = '';
+                            document.getElementById('input-notListed[${dates}]').disabled = true;
+                            document.getElementById('div-notListed[${dates}]').style.display = 'none';
+                            document.getElementById('core-valueInput[${dates}]').value = 'Leadership';
+                            document.getElementById('core-valueInput[${dates}]').disabled = true;
+                        } 
+                        if($('.social').is(':selected')) {
+                            document.getElementById('listed[${dates}]').style.display = '';
+                            document.getElementById('input-notListed[${dates}]').disabled = true;
+                            document.getElementById('div-notListed[${dates}]').style.display = 'none';
+                            document.getElementById('core-valueInput[${dates}]').value = 'Social';
+                            document.getElementById('core-valueInput[${dates}]').disabled = true;
+                        } 
+                        if($('.strategy').is(':selected')) {
+                            document.getElementById('listed[${dates}]').style.display = '';
+                            document.getElementById('input-notListed[${dates}]').disabled = true;
+                            document.getElementById('div-notListed[${dates}]').style.display = 'none';
+                            document.getElementById('core-valueInput[${dates}]').value = 'Strategy';
+                            document.getElementById('core-valueInput[${dates}]').disabled = true;
+                        } 
+                        if($('.teams').is(':selected')) {
+                            document.getElementById('listed[${dates}]').style.display = '';
+                            document.getElementById('input-notListed[${dates}]').disabled = true;
+                            document.getElementById('div-notListed[${dates}]').style.display = 'none';
+                            document.getElementById('core-valueInput[${dates}]').value = 'Teams';
+                            document.getElementById('core-valueInput[${dates}]').disabled = true;
+                        }
+                        if($('.notListed').is(':selected')) {
+                            document.getElementById('listed[${dates}]').style.display = 'none';
+                            document.getElementById('input-notListed[${dates}]').disabled = false;
+                            document.getElementById('input-notListed[${dates}]').value = '';
+                            document.getElementById('div-notListed[${dates}]').style.display = '';
+                            document.getElementById('core-valueInput[${dates}]').disabled = false;
+                        }
+                        "
                     data-mytooltip-content="<i>
                         If not on the list, choose suggested cluster title at Core Area.
                         </i>"
@@ -24,7 +75,7 @@
                             {{ old('') == 'Anxiety' ? 'selected="selected"' : '' }}>
                             Anxiety
                         </option>
-                        <option id="capability" class="capability"
+                        <option id="capability" class='capability[${dates}]'
                             value="Art of Asking Questions"
                             {{ old('') == 'Art of Asking Questions' ? 'selected="selected"' : '' }}>
                             Art of Asking Questions
@@ -316,6 +367,16 @@
                             {{ old('') == 'World Cafe' ? 'selected="selected"' : '' }}>
                             World Cafe
                         </option>
+
+
+                        {{-- <option value="{{ $data[0]->cluster }}"
+                            {{ $data[0]->cluster == $data[0]->cluster ? 'selected' : '' }}>
+                            {{ $data[0]->cluster }}
+                        </option>
+                        @foreach ($cluster as $key => $value)
+                            <option value="{{ $value->role_type }}">
+                                {{ $value->role_type }}</option>
+                        @endforeach --}}
                     </select>
                     <div class="form-control-icon">
                         <i class="fa-solid fa-diagram-project"></i>
@@ -329,15 +390,21 @@
             </div>
         </div>
     </div>
-
-    <div class="col-md-4 div-notListed" id="div-notListed" style="display: none">
+    <div class="col-md-4 div-notListed" id="div-notListed[${dates}]" style="display: none">
         <div class="form-group has-icon-right">
             <label class="fw-bold required">Cluster</label>
             <div class="position-relative">
                 <input type="text" class="form-control input-notListed @error('') is-invalid @enderror" value="{{ old('') }}"
-                    name="" id="input-notListed" disabled>
+                    name="" id="input-notListed[${dates}]" disabled>
                 <div class="form-control-icon">
-                    <a href="javascript:void(0)" class="remove-not-listed" id="remove-not-listed">
+                    <a href="javascript:void(0)" class="remove-not-listed" id="remove-not-listed[${dates}]"
+                    onclick="
+                        document.getElementById('cluster-dropdown[${dates}]').value = 'Above The Line';
+                        document.getElementById('listed[${dates}]').style.display = '';
+                        document.getElementById('core-valueInput[${dates}]').value = 'Culture';
+                        document.getElementById('input-notListed[${dates}]').disabled = true;
+                        document.getElementById('div-notListed[${dates}]').style.display = 'none';
+                        document.getElementById('core-valueInput[${dates}]').disabled = true;">
                         <i class="fa-solid fa-square-xmark text-danger"></i>
                     </a>
                 </div>
@@ -349,13 +416,12 @@
             </div>
         </div>
     </div>
-
     <div class="col-md-4">
         <div class="form-group has-icon-left">
             <label class="fw-bold required">Core Area</label>
             <div class="position-relative">
                 <fieldset class="form-group">
-                    <select class="form-select core-valueInput @error('') is-invalid @enderror" name="" id="core-valueInput" disabled>
+                    <select class="form-select core-valueInput @error('') is-invalid @enderror" name="" id="core-valueInput[${dates}]" disabled>
                         <option value="Culture">Culture</option>
                         <option value="Capability" selected>Capability</option>
                         <option value="Leadership">Leadership</option>
@@ -377,134 +443,3 @@
     </div>
 </div>
 <hr>
-
-<script>    
-    document.getElementById('cluster-dropdown').addEventListener("click", clusterChange);
-
-    function clusterChange() {
-        if($('.capability').is(':selected')){
-            // document.getElementById('core-valueInput').value = 'Capability';
-            $('.listed').each(function (){
-                $(this).css('display', '');
-            });
-            $('.input-notListed').each(function (){
-                $(this).prop( 'disabled', true );
-            });
-            $('.div-notListed').each(function (){
-                $(this).css('display', 'none');
-            });
-            $('.core-valueInput').each(function (){
-                $(this).val('Capability');
-                $(this).prop( 'disabled', true );
-            });
-        } 
-        if($('.culture').is(':selected')) {
-            // document.getElementById('core-valueInput').value = 'Culture';
-            $('.listed').each(function (){
-                $(this).css('display', '');
-            });
-            $('.input-notListed').each(function (){
-                $(this).prop( 'disabled', true );
-            });
-            $('.div-notListed').each(function (){
-                $(this).css('display', 'none');
-            });
-            $('.core-valueInput').each(function (){
-                $(this).val('Culture');
-                $(this).prop( 'disabled', true );
-            });
-        } 
-        if($('.leadership').is(':selected')) {
-            // document.getElementById('core-valueInput').value = 'Leadership';
-            $('.listed').each(function (){
-                $(this).css('display', '');
-            });
-            $('.input-notListed').each(function (){
-                $(this).prop( 'disabled', true );
-            });
-            $('.div-notListed').each(function (){
-                $(this).css('display', 'none');
-            });
-            $('.core-valueInput').each(function (){
-                $(this).val('Leadership');
-                $(this).prop( 'disabled', true );
-            });
-        } 
-        if($('.social').is(':selected')) {
-            // document.getElementById('core-valueInput').value = 'Social';
-            $('.listed').each(function (){
-                $(this).css('display', '');
-            });
-            $('.input-notListed').each(function (){
-                $(this).prop( 'disabled', true );
-            });
-            $('.div-notListed').each(function (){
-                $(this).css('display', 'none');
-            });
-            $('.core-valueInput').each(function (){
-                $(this).val('Social');
-                $(this).prop( 'disabled', true );
-            });
-        } 
-        if($('.strategy').is(':selected')) {
-            // document.getElementById('core-valueInput').value = 'Strategy';
-            $('.listed').each(function (){
-                $(this).css('display', '');
-            });
-            $('.input-notListed').each(function (){
-                $(this).prop( 'disabled', true );
-            });
-            $('.div-notListed').each(function (){
-                $(this).css('display', 'none');
-            });
-            $('.core-valueInput').each(function (){
-                $(this).val('Strategy');
-                $(this).prop( 'disabled', true );
-            });
-        } 
-        if($('.teams').is(':selected')) {
-            // document.getElementById('core-valueInput').value = 'Teams';
-            $('.listed').each(function (){
-                $(this).css('display', '');
-            });
-            $('.input-notListed').each(function (){
-                $(this).prop( 'disabled', true );
-            });
-            $('.div-notListed').each(function (){
-                $(this).css('display', 'none');
-            });
-            $('.core-valueInput').each(function (){
-                $(this).val('Teams');
-                $(this).prop( 'disabled', true );
-            });
-        }
-        if($('.notListed').is(':selected')) {
-            // document.getElementById('core-valueInput').value = 'Teams';
-            $(`#listed`).each(function (){
-                $(this).css('display', 'none');
-            });
-            $(`#input-notListed`).each(function (){
-                $(this).prop( 'disabled', false );
-                $(this).val('');
-            });
-            $(`#div-notListed`).each(function (){
-                $(this).css('display', '');
-            });
-            $(`#core-valueInput`).each(function (){
-                $(this).prop( 'disabled', false );
-            });
-        }
-    }
-
-    // REMOVE NOT-LISTED INPUT FIELD WHEN CLICK THE REMOVE ICON
-    $('#remove-not-listed').click(function (){
-        document.getElementById("cluster-dropdown").value = 'Above The Line';
-        document.getElementById("listed").style.display = "";
-        document.getElementById("core-valueInput").value = "Culture";
-        document.getElementById("input-notListed").disabled = true;
-        document.getElementById("div-notListed").style.display = "none";
-        document.getElementById("core-valueInput").disabled = true;
-    });
-
-</script>
-

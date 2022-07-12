@@ -314,6 +314,9 @@
                     </td>
                     <td>
                         <fieldset>
+                            <input type="text" class="form-control input-table input-delete @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ef_InputLeadFaciHf" style="display:none;">
+
                             <select
                                 class="input js-mytooltip form-select engagement-fee @error('') is-invalid @enderror select"
                                 name="" id="ef_LeadfacilitatorHf" data-mytooltip-content="<i>&#8369;10,000 - For Key Accounts w/ 2021 contract <br>
@@ -328,6 +331,9 @@
                                 </option>
                                 <option value="12000" {{ old('') == '12000' ? 'selected="selected"' : '' }} selected>
                                     &#8369;12,000
+                                </option>
+                                <option value="others" {{ old('') == 'others' ? 'selected="selected"' : '' }}>
+                                        Others
                                 </option>
                             </select>
 
@@ -363,8 +369,36 @@
                             <i class="fa fa-trash-o"></i>
                         </a>
                     </td>
-                </tr>`);
+                </tr>
+            `);
         });
+
+        // const efLeadFaci = document.querySelectorAll("#ef_LeadfacilitatorHf");
+        // for (let i = 0; i < efLeadFaci.length; i++) {
+        // efLeadFaci[i].value = "0";
+        // }
+
+        // $(`#ef_LeadfacilitatorHf${efLeadfaci}`).click(function () {
+        //     var others = $(`#ef_LeadfacilitatorHf${efLeadfaci}`);
+        //     if (
+        //         others.val() == "others"
+        //     ) {
+        //         document.getElementById(`ef_InputLeadFaciHf${efLeadfaci}`).style.display = ""
+        //         document.getElementById(`ef_LeadfacilitatorHf${efLeadfaci}`).style.display = "none"
+        //         document.getElementById("deleteIcon").style.display = "inline-flex";
+        //     } else {
+        //         document.getElementById(`ef_InputLeadFaciHf${efLeadfaci}`).style.display =
+        //             "none";
+        //     }
+        // });
+
+        // $('input.input-delete').wrap('<span class="deleteicon" id="deleteIcon"></span>').after($('<span>x</span>').click(function() {
+        //     // $(this).prev('input').val('').trigger('change').focus();
+        //     document.getElementById(`ef_InputLeadFaciHf${efLeadfaci}`).style.display = "none"
+        //     document.getElementById(`deleteIcon`).style.display = "none";
+        //     document.getElementById(`ef_LeadfacilitatorHf${efLeadfaci}`).style.display = ""
+        //     document.getElementById(`ef_LeadfacilitatorHf${efLeadfaci}`).selectedIndex = "0"
+        // }));
 
         $("#tableLeadfaci").on("click", ".remove", function () {
                 // Getting all the rows next to the row

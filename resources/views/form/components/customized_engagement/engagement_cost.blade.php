@@ -4,7 +4,7 @@
 <div class="form-body container">
     <section>
         <div class="table-responsive" id="no-more-tables">
-            <table class="table table-bordered" id="ec_tableEngagementCost">
+            <table class="table table-bordered table-hover" id="ec_tableEngagementCost">
                 <thead class="table-dark">
                     <tr class="text-center">
                         <th class="title-th" scope="col" width=20%></th>
@@ -19,8 +19,8 @@
                     </tr>
                 </thead>
 
-                {{-- COMMISSION --}}
-                <tr>
+<!----------------------------------------------------------------COMMISION---------------------------------------------------------------------->
+                <tr class="">
                     <th class="px-4 title text-dark fw-bolder">COMMISSION</th>
                     <th></th>
                     <th></th>
@@ -28,7 +28,7 @@
                     <th></th>
                     <th class="total-td"></th>
                     <th class="total-td"></th>
-                    <th class="border border-white add-row"> </th>
+                    <th class="border border-white add-row" style="display: none"> </th>
                 </tr>
 
                 <tbody id="tableSales">
@@ -224,9 +224,10 @@
                     <td class="" colspan="4"></td>
                     <td class="title" colspan=""></td>
                     <td class="title" colspan=""></td>
+                    <td class="border border-white add-row invisible"></td>
                 </tr>
 
-                {{-- Consulting --}}
+<!----------------------------------------------------------------CONSULTING---------------------------------------------------------------------->
                 <tr class="">
                     <th class="px-4 title text-dark">1. CONSULTING</th>
                     <th></th>
@@ -235,7 +236,7 @@
                     <th></th>
                     <th class="total-td"></th>
                     <th class="total-td"></th>
-                    <th class="border border-white add-row"></th>
+                    <th class="border border-white add-row" style="display: none"></th>
                 </tr>
 
                 <tbody id="ec_tableLeadConsultant">
@@ -269,7 +270,7 @@
                             <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                 value="{{ old('') }}" name="" id="">
                         </td>
-                        <td class="border border-white add-row"></td>
+                        <td class="border border-white add-row invisible"></td>
                     </tr>
                 </tbody>
 
@@ -319,7 +320,7 @@
                         <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                             value="{{ old('') }}" name="" id="">
                     </td>
-                    <td class="border border-white add-row"> </td>
+                    <td class="border border-white add-row invisible"> </td>
                 </tr>
 
                 <tr>
@@ -327,11 +328,11 @@
                     <td class="" colspan="4"></td>
                     <td class="title" colspan=""></td>
                     <td class="title" colspan=""></td>
-                    <td class="border border-white add-row"> </td>
+                    <td class="border border-white add-row invisible"> </td>
                 </tr>
                 
 
-                {{-- Design --}}
+<!----------------------------------------------------------------DESIGN---------------------------------------------------------------------->
                 <tr class="">
                     <th class="title px-4 text-dark">2. DESIGN</th>
                     <td></td>
@@ -340,7 +341,7 @@
                     <td></td>
                     <td class="total-td"></td>
                     <td class="total-td"></td>
-                    <td class="border border-white add-row"> </td>
+                    <td class="border border-white add-row" style="display: none"> </td>
                 </tr>
 
                 <tbody id=ec_TableDesigner>
@@ -443,7 +444,7 @@
                         <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                             value="{{ old('') }}" name="" id="">
                     </td>
-                    <td class="border border-white add-row"> </td>
+                    <td class="border border-white add-row invisible"> </td>
                 </tr>
 
                 {{-- break --}}
@@ -452,19 +453,36 @@
                     <td class="" colspan="4"></td>
                     <td class="title" colspan=""></td>
                     <td class="title" colspan=""></td>
-                    <td class="border border-white add-row"> </td>
+                    <td class="border border-white add-row invisible"> </td>
                 </tr>
 
-                {{-- Program --}}
+<!----------------------------------------------------------------PROGRAM---------------------------------------------------------------------->
                 <tr class="">
                     <th class="title px-4 text-dark">3. PROGRAM</th>
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td></td>
+                    <td>
+                        <select
+                            class="input js-mytooltip form-select form-select-sm engagement-fee @error('') is-invalid @enderror select"
+                            name="" id="ec_nswh">
+                            <option value="0.1" {{ old('') == '0.1' ? 'selected="selected"' : '' }}>
+                                &#8369;10%
+                            </option>
+                            <option value="0.15" {{ old('') == '0.15' ? 'selected="selected"' : '' }}>
+                                &#8369;15%
+                            </option>
+                            <option value="0.2" {{ old('') == '0.2' ? 'selected="selected"' : '' }} selected>
+                                &#8369;20%
+                            </option>
+                            <option value="0.25" {{ old('') == '0.25' ? 'selected="selected"' : '' }}>
+                                &#8369;25%
+                            </option>
+                        </select>
+                    </td>
                     <td class="total-td"></td>
                     <td class="total-td"></td>
-                    <td class="border border-white add-row"> </td>
+                    <td class="border border-white add-row invisible"> </td>
                 </tr>
 
                 <tbody id="ec_TableLeadfaci">
@@ -503,7 +521,7 @@
 
                 <tbody id="ec_TableCoLeadfaci">
                     <tr>
-                        <td class="title">Co-Lead Facilitator</td>
+                        <td class="title">Co-Lead</td>
                         <td>
                             <input type="number"
                                 class="text-center form-control input-table @error('') is-invalid @enderror"
@@ -539,6 +557,44 @@
                     </tr>
                 </tbody>
                 
+                <tbody id="ec_TableAlCoach">
+                    <tr>
+                        <td class="title">AL Coach</td>
+                        <td>
+                            <input type="number"
+                                class="text-center form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ec_AlCoachNoc1" max="100">
+                        </td>
+                        <td>
+                            <input type="text"
+                                class="text-center fw-bold text-center text-dark form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ec_AlCoachHf1" data-type="currency">
+                        </td>
+                        <td>
+                            <input type="number"
+                                class="text-center form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ec_AlCoachNoh1">
+                        </td>
+                        <td>
+                            <input type="number"
+                                class="text-center form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ec_AlCoachNwh1">
+                        </td>
+                        <td class="total-td">
+                            <h4 class="text-center lead" id="ec_AlCoachTotal">-</h4>
+                        </td>
+                        <td class="total-td">
+                            <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="">
+                        </td>
+                        <td style="background-color: #FFFFFF;" class="border border-white">
+                            <a href="javascript:void(0)" class="text-success font-18" title="Add" id="addBtnAlCoach">
+                                <i class="fa fa-plus"></i>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+
                 <tbody id="ec_TableCofaci">
                     <tr class="">
                         <td class="title">Co-Facilitator / Resource Speaker</td>
@@ -631,7 +687,7 @@
                             <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                 value="{{ old('') }}" name="" id="">
                         </td>
-                        <td class="border border-white add-row"> </td>
+                        <td class="border border-white add-row invisible"> </td>
                     </tr>
                 </tbody>
 
@@ -665,7 +721,7 @@
                             <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                 value="{{ old('') }}" name="" id="">
                         </td>
-                        <td class="border border-white add-row"> </td>
+                        <td class="border border-white add-row invisible"> </td>
                     </tr>
                 </tbody>
 
@@ -682,7 +738,7 @@
                         <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                             value="{{ old('') }}" name="" id="">
                     </td>
-                    <td class="border border-white add-row"> </td>
+                    <td class="border border-white add-row invisible"> </td>
                 </tr>
 
                 {{-- break --}}
@@ -691,10 +747,10 @@
                     <td class="" colspan="4"></td>
                     <td class="title" colspan=""></td>
                     <td class="title" colspan=""></td>
-                    <td class="border border-white add-row"> </td>
+                    <td class="border border-white add-row invisible"> </td>
                 </tr>
 
-                {{-- Other roles --}}
+<!----------------------------------------------------------------OTHER ROLES---------------------------------------------------------------------->
                 <tr class="">
                     <th class="title px-4 text-dark">4. OTHER ROLES</th>
                     <td></td>
@@ -703,7 +759,7 @@
                     <td></td>
                     <td class="total-td"></td>
                     <td class="total-td"></td>
-                    <td class="border border-white add-row"> </td>
+                    <td class="border border-white add-row invisible"> </td>
                 </tr>
 
                 <tbody id="ec_TableDocumentor">
@@ -737,7 +793,7 @@
                             <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                 value="{{ old('') }}" name="" id="">
                         </td>
-                        <td class="border border-white add-row"> </td>
+                        <td class="border border-white add-row invisible"> </td>
                     </tr>
                 </tbody>
 
@@ -749,7 +805,7 @@
                     <td class="title" colspan=""></td>
                 </tr>
 
-                {{-- Off-Program --}}
+<!----------------------------------------------------------------OFF-PROGRAM---------------------------------------------------------------------->
                 <tr class="">
                     <th class="title px-4 text-dark">5. OFF-PROGRAM</th>
                     <td></td>
@@ -758,7 +814,7 @@
                     <td></td>
                     <td class="total-td"></td>
                     <td class="total-td"></td>
-                    <td class="border border-white add-row"> </td>
+                    <td class="border border-white add-row invisible"> </td>
                 </tr>
 
                 <tr>
@@ -789,7 +845,7 @@
                         <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                             value="{{ old('') }}" name="" id="">
                     </td>
-                    <td class="border border-white add-row"> </td>
+                    <td class="border border-white add-row invisible"> </td>
                 </tr>
 
                 {{-- break --}}
@@ -798,10 +854,10 @@
                     <td class="" colspan="4"></td>
                     <td class="title" colspan=""></td>
                     <td class="title" colspan=""></td>
-                    <td class="border border-white add-row"> </td>
+                    <td class="border border-white add-row invisible"> </td>
                 </tr>
 
-                {{-- miscellaneous --}}
+<!----------------------------------------------------------------MISCELLANEOUS---------------------------------------------------------------------->
                 <tr class="">
                     <th class="title px-4 text-dark">MISCELLANEOUS</th>
                     <td></td>
@@ -810,7 +866,7 @@
                     <td></td>
                     <td class="total-td"></td>
                     <td class="total-td"></td>
-                    <td class="border border-white add-row"> </td>
+                    <td class="border border-white add-row invisible"> </td>
                 </tr>
 
                 <tr>
@@ -832,7 +888,7 @@
                         <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                             value="{{ old('') }}" name="" id="">
                     </td>
-                    <td class="border border-white add-row"> </td>
+                    <td class="border border-white add-row invisible"> </td>
                 </tr>
 
                 {{-- break --}}
@@ -841,9 +897,10 @@
                     <td class="" colspan="4"></td>
                     <td class="title" colspan=""></td>
                     <td class="title" colspan=""></td>
-                    <td class="border border-white add-row"> </td>
+                    <td class="border border-white add-row invisible"> </td>
                 </tr>
 
+<!----------------------------------------------------------------TOTAL---------------------------------------------------------------------->
                 <tr class="table-active">
                     <td class="fw-bold text-uppercase text-dark fst-italic overall-total-start">TOTAL</td>
                     <td class="overall-total-middle"></td>
@@ -857,6 +914,7 @@
                         <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                             value="{{ old('') }}" name="" id="">
                     </td>
+                    <td class="border border-white add-row invisible"></td>
                 </tr>
             </table>
         </div>

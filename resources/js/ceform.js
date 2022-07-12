@@ -85,6 +85,7 @@ $(document).on(
         //Lead consultant
         efConsultingSum = 0;
         ecConsultingSum = 0;
+        nswh = $("#nswh").val();
         $("#tableLeadconsultant > tr").each(function () {
 
             rowIdx++;
@@ -98,7 +99,7 @@ $(document).on(
                     ($(this).find(`#ef_LeadconsultantNoc${rowIdx}`).val() *
                         +$(this).find("#ef_LeadconsultantHf").val() *
                         $(this).find(`#ef_LeadconsultantNoh${rowIdx}`).val() *
-                        0.2);
+                        $("#nswh").val());
 
             // if the customized type is G.A Hybrid or G.A Virtual is
             // selected the percent of customized type will execute
@@ -187,7 +188,7 @@ $(document).on(
                             .val()
                             .replace(/\₱|,/g, "") *
                         $(this).find(`#ef_AnalystNoh${efAnalyst}`).val() *
-                        0.2);
+                        $("#nswh").val());
 
             //if the customized type value is G.A then it will add percentage
             //to engagement fees analyst subtotal
@@ -271,7 +272,7 @@ $(document).on(
                     ($(this).find(`#ef_DesignerNoc${efDesigner}`).val() *
                         +$(this).find("#ef_DesignerHf").val() *
                         $(this).find(`#ef_DesignerNoh${efDesigner}`).val() *
-                        0.2);
+                        $("#nswh").val());
 
             if (
                 gaPercentage.val() == "G.A Hybrid" ||
@@ -364,7 +365,15 @@ $(document).on(
                     ($(this).find(`#ef_LeadfacilitatorNoc${efLeadfaci}`).val() *
                         +$(this).find("#ef_LeadfacilitatorHf").val() *
                         $(this).find(`#ef_LeadfacilitatorNoh${efLeadfaci}`).val() *
-                        0.2);
+                        $("#nswh").val()) ||
+                $(this).find(`#ef_LeadfacilitatorNoc${efLeadfaci}`).val() *
+                    +$(this).find("#ef_InputLeadFaciHf").val().replace(/\₱|,/g, "") *
+                    $(this).find(`#ef_LeadfacilitatorNoh${efLeadfaci}`).val() +
+                $(this).find(`#ef_LeadfacilitatorNwh${efLeadfaci}`).val() *
+                    ($(this).find(`#ef_LeadfacilitatorNoc${efLeadfaci}`).val() *
+                        +$(this).find("#ef_InputLeadFaciHf").val().replace(/\₱|,/g, "") *
+                        $(this).find(`#ef_LeadfacilitatorNoh${efLeadfaci}`).val() *
+                        $("#nswh").val());
 
             if (
                 gaPercentage.val() == "G.A Hybrid" ||
@@ -402,7 +411,7 @@ $(document).on(
                     ($(this).find(`#ec_LeadfacilitatorNoc${ecLeadfaci}`).val() *
                         $(this).find("#ec_LeadfacilitatorHf").val().replace(/\₱|,/g, "") *
                         $(this).find(`#ec_LeadfacilitatorNoh${ecLeadfaci}`).val() *
-                        0.2);
+                        $("#ec_nswh").val());
 
             //if the customized type value is G.A
             if (
@@ -438,7 +447,7 @@ $(document).on(
                     ($(this).find(`#ec_CoLeadfacilitatorNoc${ecCoLead}`).val() *
                         $(this).find(`#ec_CoLeadfacilitatorHf${ecCoLead}`).val().replace(/\₱|,/g, "") *
                         $(this).find(`#ec_CoLeadfacilitatorNoh${ecCoLead}`).val() *
-                        0.2);
+                        $("#ec_nswh").val());
 
             //if the customized type value is G.A
             if (
@@ -459,6 +468,41 @@ $(document).on(
             sumEngagementCost += +sumecCoLeadfacilitator;
         });
 
+        sumecAlCoach = 0;
+        ecAlCoach = 0;
+        $("#ec_TableAlCoach > tr").each(function (){
+            ecAlCoach++;
+
+            //program engagement cost auto sum
+            sumecAlCoach =
+                $(this).find(`#ec_AlCoachNoc${ecAlCoach}`).val() *
+                    $(this).find(`#ec_AlCoachHf${ecAlCoach}`).val().replace(/\₱|,/g, "") *
+                    $(this).find(`#ec_AlCoachNoh${ecAlCoach}`).val() +
+                $(this).find(`#ec_AlCoachNwh${ecAlCoach}`).val() *
+                    ($(this).find(`#ec_AlCoachNoc${ecAlCoach}`).val() *
+                        $(this).find(`#ec_AlCoachHf${ecAlCoach}`).val().replace(/\₱|,/g, "") *
+                        $(this).find(`#ec_AlCoachNoh${ecAlCoach}`).val() *
+                        $("#ec_nswh").val());
+
+            //if the customized type value is G.A
+            if (
+                gaPercentage.val() == "G.A Hybrid" ||
+                gaPercentage.val() == "G.A Virtual"
+            ) {
+                sumecAlCoach +=
+                    sumecAlCoach *
+                    (document.getElementById("ga-only-dropdown").value / 100);
+            }
+
+            $(this).find("#ec_AlCoachTotal")
+            .html(currency.format(Math.ceil(sumecAlCoach)));
+
+            //sum of engagement cost program sum
+            ecProgramSum += sumecAlCoach;
+            //adding the subtotal of analyst into sum the sum of engagement cost
+            sumEngagementCost += +sumecAlCoach;
+        });
+
         //Co-Facilitator
         $("#tableCofaci > tr").each(function () {
             efCofaci++;
@@ -474,7 +518,7 @@ $(document).on(
                             .val()
                             .replace(/\₱|,/g, "") *
                         $(this).find(`#ef_CofaciNoh${efCofaci}`).val() *
-                        0.2);
+                        $("#nswh").val());
 
             if (
                 gaPercentage.val() == "G.A Hybrid" ||
@@ -513,7 +557,7 @@ $(document).on(
                     ($(this).find(`#ec_CofacilitatorNoc${ecCofaci}`).val() *
                         $(this).find("#ec_CofacilitatorHf").val().replace(/\₱|,/g, "") *
                         $(this).find(`#ec_CofacilitatorNoh${ecCofaci}`).val() *
-                        0.2);
+                        $("#ec_nswh").val());
 
             //if the customized type value is G.A
             if (
@@ -554,7 +598,7 @@ $(document).on(
                             .val()
                             .replace(/\₱|,/g, "") *
                         $(this).find(`#ef_ModeratorNoh${efModerator}`).val() *
-                        0.2);
+                        $("#nswh").val());
 
             if (
                 gaPercentage.val() == "G.A Hybrid" ||
@@ -592,7 +636,7 @@ $(document).on(
                     ($(this).find(`#ec_ModeratorNoc${ecModerator}`).val() *
                         $(this).find("#ec_ModeratorHf").val().replace(/\₱|,/g, "") *
                         $(this).find(`#ec_ModeratorNoh${ecModerator}`).val() *
-                        0.2);
+                        $("#ec_nswh").val());
 
             //if the customized type value is G.A
             if (
@@ -630,7 +674,7 @@ $(document).on(
                             .val()
                             .replace(/\₱|,/g, "") *
                         $(this).find(`#ef_ProducerNoh${efProducer}`).val() *
-                        0.2);
+                        $("#nswh").val());
 
             if (
                 gaPercentage.val() == "G.A Hybrid" ||
@@ -648,6 +692,12 @@ $(document).on(
 
             efProgramSum += +sum24;
             sum += +sum24;
+
+            // Getting the value of engagement fees of program to pass the value
+            // into the engagement cost program
+            $("#ec_ProducerNoc1").val($("#ef_ProducerNoc1").val());
+            $("#ec_ProducerNoh1").val($("#ef_ProducerNoh1").val());
+            $("#ec_ProducerNwh1").val($("#ef_ProducerNwh1").val());
         });
 
         ecProducer = 0;
@@ -662,7 +712,7 @@ $(document).on(
                     ($(this).find(`#ec_ProducerNoc${ecProducer}`).val() *
                         $(this).find("#ec_ProducerHf").val().replace(/\₱|,/g, "") *
                         $(this).find(`#ec_ProducerNoh${ecProducer}`).val() *
-                        0.2);
+                        $("#ec_nswh").val());
 
             //if the customized type value is G.A
             if (
@@ -712,7 +762,7 @@ $(document).on(
                             .val()
                             .replace(/\₱|,/g, "") *
                         $(this).find(`#ef_DocumentorNoh${efDocumentor}`).val() *
-                        0.2);
+                        $("#nswh").val());
 
             if (
                 gaPercentage.val() == "G.A Hybrid" ||
@@ -902,10 +952,9 @@ $(document).on(
 //*************************************** APPEND NUMBER FORMAT ********************************************************//
 $(document).on(
     "change keyup click",
-    "#ef_AnalystHf, #ef_CofaciHf, #ef_ModeratorHf, #ef_ProducerHf, #ef_DocumentorHf, #tableEngagementCost",
+    "#tableEngagementCost, #ec_tableEngagementCost",
     function () {
         // Jquery Dependency
-
         $("input[data-type='currency']").on({
             keyup: function () {
                 formatCurrency($(this));
@@ -991,14 +1040,23 @@ function myFunction() {
     } else {
         DatesCoveredByEngagement.style.visibility = "hidden";
     }
-}
+};
 
 //datepicker
-$(function () {
-    $("#datepicker").datepicker();
-    $("#datepicker").on("change", function () {
-        $("#datepicker").datepicker("option", "dateFormat", "M d, yy");
+$(document).on("click change focus", "#dcbe", function() {
+    $(".datepicker").each(function () {
+        $(this).datepicker();
+        $(this).on("change", function () {
+            $(this).datepicker("option", "dateFormat", "M d, yy");
+        });
     });
+
+    // $(function () {
+    //     $("#datepicker").datepicker();
+    //     $("#datepicker").on("change", function () {
+    //         $("#datepicker").datepicker("option", "dateFormat", "M d, yy");
+    //     });
+    // });
 });
 
 $('input[type="number"]').on("input", function () {
@@ -1071,7 +1129,7 @@ $("#ec_LeadconsultantHf").on({
         let input_val = $(this).val();
         input_val = numberToCurrency(input_val, true, true);
         $(this).val(input_val);
-    },
+    }
 });
 $("#ec_AnalystHf1").on({
     keyup: function () {
@@ -1083,7 +1141,7 @@ $("#ec_AnalystHf1").on({
         let input_val = $(this).val();
         input_val = numberToCurrency(input_val, true, true);
         $(this).val(input_val);
-    },
+    }
 });
 $("#ec_DesignerHf").on({
     keyup: function () {
@@ -1095,7 +1153,7 @@ $("#ec_DesignerHf").on({
         let input_val = $(this).val();
         input_val = numberToCurrency(input_val, true, true);
         $(this).val(input_val);
-    },
+    }
 });
 $("#ec_LeadfacilitatorHf").on({
     keyup: function () {
@@ -1107,7 +1165,7 @@ $("#ec_LeadfacilitatorHf").on({
         let input_val = $(this).val();
         input_val = numberToCurrency(input_val, true, true);
         $(this).val(input_val);
-    },
+    }
 });
 $("#ec_CofacilitatorHf").on({
     keyup: function () {
@@ -1119,7 +1177,7 @@ $("#ec_CofacilitatorHf").on({
         let input_val = $(this).val();
         input_val = numberToCurrency(input_val, true, true);
         $(this).val(input_val);
-    },
+    }
 });
 $("#ec_ProducerHf").on({
     keyup: function () {
@@ -1131,7 +1189,7 @@ $("#ec_ProducerHf").on({
         let input_val = $(this).val();
         input_val = numberToCurrency(input_val, true, true);
         $(this).val(input_val);
-    },
+    }
 });
 $("#ec_DocumentorHf").on({
     keyup: function () {
@@ -1143,7 +1201,7 @@ $("#ec_DocumentorHf").on({
         let input_val = $(this).val();
         input_val = numberToCurrency(input_val, true, true);
         $(this).val(input_val);
-    },
+    }
 });
 $("#ec_ProgramHf").on({
     keyup: function () {
@@ -1155,5 +1213,5 @@ $("#ec_ProgramHf").on({
         let input_val = $(this).val();
         input_val = numberToCurrency(input_val, true, true);
         $(this).val(input_val);
-    },
+    }
 });

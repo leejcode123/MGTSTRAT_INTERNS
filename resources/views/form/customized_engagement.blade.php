@@ -1,5 +1,16 @@
 @section('title', 'Customized Engagement Form')
 <link rel="stylesheet" href="{{ URL::asset('css/custom.css') }}">
+{{-- <link href="{{ url('css/ComboBoxCss/jquery.scombobox.css') }}" rel="stylesheet" />
+<script src="{{ url('js/ComboBoxJs/missed.js') }}"></script><!-- add this script for IE8 compatibility -->
+<script src="{{ url('js/ComboBoxJs/latinize.js') }}"></script><!-- add this to use filterIgnoreAccents option (convert Művész to Muvesz) -->
+<script src="{{ url('js/ComboBoxJs/jquery-1.10.1.min.js') }}"></script>
+<script src="{{ url('js/ComboBoxJs/jquery.scombobox.min.js') }}"></script>
+<script src="{{ url('js/ComboBoxJs/jquery.easing.min.js') }}"></script> --}}
+{{-- <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.1.0.js"></script> --}}
+{{-- <link rel="stylesheet" href="http://kremer.pro/projects/scombobox/css/jquery.scombobox.css">
+<script src="http://kremer.pro/projects/scombobox/js/jquery.scombobox.js"></script>
+<script src="http://kremer.pro/projects/scombobox/js/jquery.easing.min.js"></script> --}}
 @extends('layouts.master')
 @section('menu')
     @extends('sidebar.customizedEng')
