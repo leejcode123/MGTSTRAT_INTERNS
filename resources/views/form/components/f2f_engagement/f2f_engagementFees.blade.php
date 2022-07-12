@@ -6,8 +6,8 @@
     <section>
         <div class="table-responsive-md" id="no-more-tables">
             <table class="table table-bordered table-hover" id="f2f-ef-table">
-                <thead class="table-dark">
-                    <tr class="text-center">
+                <thead class="table">
+                    <tr class="text-center th-blue-grey">
                         <th class="title-th" scope="col" width=20%></th>
                         <th class="title-middle" scope="col" style="font-size: 0.9rem;">NUMBER OF CONSULTANTS</th>
                         <th class="title-middle px-4" width=15% scope="col">PER DAY FEES</th>
@@ -22,8 +22,8 @@
         
            
                     {{-- Consulting --}}
-                    <tr class="">
-                        <th class="px-4 title text-dark">1. CONSULTING</th>
+                    <tr class="th-blue-grey-lighten">
+                        <th class="px-4 title  ">1. CONSULTING</th>
                         <th></th>
                         <th></th>
                         <th></th>
@@ -31,10 +31,10 @@
                         <th></th>
                         <th class="total-td"></th>
                         <th class="total-td"></th>
-                        <th class="border border-white"></th>
+                        
                     </tr>
                     <tbody id="tableLeadconsultant">
-                    <tr class="table-warning" id="leadConsultant">
+                    <tr class="th-blue-grey-lighten-2" id="leadConsultant">
                         <td class="title">Lead Consultant</td>
                         <td data-title="# OF CONSULTANTS">
                             <input type="number" class="input js-mytooltip input-table form-control  @error('') is-invalid @enderror"
@@ -119,7 +119,7 @@
                     </tbody>
         {{-- Analyst --}}
         <tbody id="ef_TableAnalyst">
-                    <tr class="table-warning" id="ef_RowAnalyst">
+                    <tr class="th-blue-grey-lighten-2" id="ef_RowAnalyst">
                         <td class="title">Analyst</td>
                         <td>
                             <input type="number" class=" input js-mytooltip form-control input-table @error('') is-invalid @enderror" 
@@ -193,7 +193,7 @@
                     </tr>
         
                     {{-- Design --}}
-                    <tr class="">
+                    <tr class="th-blue-grey-lighten">
                         <th class="title px-4 text-dark">2. DESIGN</th>
                         <td></td>
                         <td></td>
@@ -204,7 +204,7 @@
                         <td class="total-td"></td>
                     </tr>
         <tbody id="ef_TableDesigner">
-                    <tr class="table-warning" id="ef_RowDesigner">
+                    <tr class="th-blue-grey-lighten-2" id="ef_RowDesigner">
                         <td class="title">Designer</td>
                         <td>
                             <input type="number" class="noc-b18 input js-mytooltip form-control input-table @error('') is-invalid @enderror" 
@@ -278,7 +278,7 @@
         </tbody>
                     {{-- Program --}}
         
-                 <tr class="">
+                 <tr class="th-blue-grey-lighten">
                         <th class="title px-4 text-dark">3. PROGRAM</th>
                         <td></td>
                         <td></td>
@@ -289,7 +289,7 @@
                         <td class="total-td"></td>
                     </tr>
         <tbody id="ef_TableLeadFaci">
-                    <tr class="table-warning" id="ef_RowLeadFaci">
+                    <tr class="th-blue-grey-lighten-2" id="ef_RowLeadFaci">
                         <td class="title">Lead Facilitator</td>
                         <td>
                             <input type="number" class="noc-b21 form-control input-table @error('') is-invalid @enderror" 
@@ -337,7 +337,7 @@
                     </tr>
         </tbody>
         <tbody id="ef_TableCoFaci">
-                    <tr class="table-warning" id="ef_RowCoFaci">
+                    <tr class="th-blue-grey-lighten-2" id="ef_RowCoFaci">
                         <td class="title">Co-facilitator / Resource Speaker</td>
                         <td>
                             <input type="number" class="noc-b22 form-control input-table @error('') is-invalid @enderror" 
@@ -383,7 +383,7 @@
                     </tr>
         </tbody>
         <tbody id="ef_TableActionLearn">
-                    <tr class="table-warning" id="ef_RowActionLearn">
+                    <tr class="th-blue-grey-lighten-2" id="ef_RowActionLearn">
                         <td class="title">Action Learning Coach</td>
                         <td>
                             <input type="number" class="noc-b23 form-control input-table @error('') is-invalid @enderror" 
@@ -424,7 +424,7 @@
                     </tr>
         </tbody>
         <tbody id="ef_TableMarshal">
-                    <tr class="table-warning" id="ef_RowMarshal">
+                    <tr class="th-blue-grey-lighten-2" id="ef_RowMarshal">
                         <td class="title">Marshal</td>
                         <td>
                             <input type="number" class="noc-b23 form-control input-table @error('') is-invalid @enderror" 
@@ -465,7 +465,7 @@
                     </tr>
         </tbody>
         <tbody id="ef_TableOnsite">
-                    <tr class="table-warning" id="ef_RowOnsite">
+                    <tr class="th-blue-grey-lighten-2" id="ef_RowOnsite">
                         <td class="title">On-site PC (P20K / P25K / P30K)</td>
                         <td>
                             <input type="number" class="noc-b23 form-control input-table @error('') is-invalid @enderror" 
@@ -547,9 +547,9 @@
                         </td>
                         <td class="border border-white"></td>
                     </tr>
-
-                    {{-- Program --}}
-                    <tr class="">
+<!--------------------------PROGRAM--------------------------->
+                    
+                    <tr class="th-blue-grey-lighten">
                         <th class="title px-4 text-dark">4. OTHER ROLES</th>
                         <td></td>
                         <td></td>
@@ -560,7 +560,7 @@
                         <td class="total-td"></td>
                     </tr>
             <tbody id="ef_TableDocumentor">
-                    <tr class="table-warning" id="ef_RowDocumentor">
+                    <tr class="th-blue-grey-lighten-2" id="ef_RowDocumentor">
                         <td class="title">Documentor</td>
                         <td>
                             <input type="number" class="noc-b28 form-control input-table @error('') is-invalid @enderror" 
@@ -600,7 +600,8 @@
                         </td>
                     </tr>
             </tbody>
-                    <tr class="">
+            <!--------------------------PER DIEM--------------------------->
+                    <tr class="th-blue-grey-lighten">
                         <th class="title px-4 text-dark">5. PER DIEM</th>
                         <td>
                             {{-- <input type="number" class="noc-b28 form-control input-table @error('') is-invalid @enderror" 
