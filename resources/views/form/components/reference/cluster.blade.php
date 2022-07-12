@@ -379,58 +379,58 @@
 <hr>
 
 <script>    
-    document.getElementById('cluster-dropdown').addEventListener("click", clusterChange);
+    document.getElementById('cluster-dropdown').addEventListener("change", clusterChange);
 
     function clusterChange() {
-        if($('.capability').is(':selected')){
+        if($('#capability').is(':selected')){
             // document.getElementById('core-valueInput').value = 'Capability';
-            $('.listed').each(function (){
+            $('#listed').each(function (){
                 $(this).css('display', '');
             });
-            $('.input-notListed').each(function (){
+            $('#input-notListed').each(function (){
                 $(this).prop( 'disabled', true );
             });
-            $('.div-notListed').each(function (){
+            $('#div-notListed').each(function (){
                 $(this).css('display', 'none');
             });
-            $('.core-valueInput').each(function (){
+            $('#core-valueInput').each(function (){
                 $(this).val('Capability');
                 $(this).prop( 'disabled', true );
             });
         } 
-        if($('.culture').is(':selected')) {
+        if($('#culture').is(':selected')) {
             // document.getElementById('core-valueInput').value = 'Culture';
-            $('.listed').each(function (){
+            $('#listed').each(function (){
                 $(this).css('display', '');
             });
-            $('.input-notListed').each(function (){
+            $('#input-notListed').each(function (){
                 $(this).prop( 'disabled', true );
             });
-            $('.div-notListed').each(function (){
+            $('#div-notListed').each(function (){
                 $(this).css('display', 'none');
             });
-            $('.core-valueInput').each(function (){
+            $('#core-valueInput').each(function (){
                 $(this).val('Culture');
                 $(this).prop( 'disabled', true );
             });
         } 
-        if($('.leadership').is(':selected')) {
+        if($('#leadership').is(':selected')) {
             // document.getElementById('core-valueInput').value = 'Leadership';
-            $('.listed').each(function (){
+            $('#listed').each(function (){
                 $(this).css('display', '');
             });
-            $('.input-notListed').each(function (){
+            $('#input-notListed').each(function (){
                 $(this).prop( 'disabled', true );
             });
-            $('.div-notListed').each(function (){
+            $('#div-notListed').each(function (){
                 $(this).css('display', 'none');
             });
-            $('.core-valueInput').each(function (){
+            $('#core-valueInput').each(function (){
                 $(this).val('Leadership');
                 $(this).prop( 'disabled', true );
             });
         } 
-        if($('.social').is(':selected')) {
+        if($('#social').is(':selected')) {
             // document.getElementById('core-valueInput').value = 'Social';
             $('.listed').each(function (){
                 $(this).css('display', '');
@@ -446,7 +446,7 @@
                 $(this).prop( 'disabled', true );
             });
         } 
-        if($('.strategy').is(':selected')) {
+        if($('#strategy').is(':selected')) {
             // document.getElementById('core-valueInput').value = 'Strategy';
             $('.listed').each(function (){
                 $(this).css('display', '');
@@ -462,7 +462,7 @@
                 $(this).prop( 'disabled', true );
             });
         } 
-        if($('.teams').is(':selected')) {
+        if($('#teams').is(':selected')) {
             // document.getElementById('core-valueInput').value = 'Teams';
             $('.listed').each(function (){
                 $(this).css('display', '');
@@ -478,7 +478,7 @@
                 $(this).prop( 'disabled', true );
             });
         }
-        if($('.notListed').is(':selected')) {
+        if($('#notListed').is(':selected')) {
             // document.getElementById('core-valueInput').value = 'Teams';
             $(`#listed`).each(function (){
                 $(this).css('display', 'none');
@@ -500,7 +500,7 @@
     $('#remove-not-listed').click(function (){
         document.getElementById("cluster-dropdown").value = 'Above The Line';
         document.getElementById("listed").style.display = "";
-        document.getElementById("core-valueInput").value = "Culture";
+        document.getElementById("core-valueInput").value = "Capability";
         document.getElementById("input-notListed").disabled = true;
         document.getElementById("div-notListed").style.display = "none";
         document.getElementById("core-valueInput").disabled = true;

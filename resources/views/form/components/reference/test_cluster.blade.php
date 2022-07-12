@@ -401,7 +401,7 @@
                     onclick="
                         document.getElementById('cluster-dropdown[${dates}]').value = 'Above The Line';
                         document.getElementById('listed[${dates}]').style.display = '';
-                        document.getElementById('core-valueInput[${dates}]').value = 'Culture';
+                        document.getElementById('core-valueInput[${dates}]').value = 'Capability';
                         document.getElementById('input-notListed[${dates}]').disabled = true;
                         document.getElementById('div-notListed[${dates}]').style.display = 'none';
                         document.getElementById('core-valueInput[${dates}]').disabled = true;">
