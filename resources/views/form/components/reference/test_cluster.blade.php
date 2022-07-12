@@ -6,21 +6,21 @@
                 <fieldset class="form-group">
                     <select class="input js-mytooltip form-select cluster-dropdown @error('') is-invalid @enderror" name="" id="cluster-dropdown[${dates}]"
                     onchange=" 
-                        if($('.capability').is(':selected')){
+                        if($('.capability${dates}').is(':selected')){
                             document.getElementById('listed[${dates}]').style.display = '';
                             document.getElementById('input-notListed[${dates}]').disabled = true;
                             document.getElementById('div-notListed[${dates}]').style.display = 'none';
                             document.getElementById('core-valueInput[${dates}]').value = 'Capability';
                             document.getElementById('core-valueInput[${dates}]').disabled = true;
                         } 
-                        if($('.culture').is(':selected')) {
+                        if($('.culture${dates}').is(':selected')) {
                             document.getElementById('listed[${dates}]').style.display = '';
                             document.getElementById('input-notListed[${dates}]').disabled = true;
                             document.getElementById('div-notListed[${dates}]').style.display = 'none';
                             document.getElementById('core-valueInput[${dates}]').value = 'Culture';
                             document.getElementById('core-valueInput[${dates}]').disabled = true;
                         } 
-                        if($('.leadership').is(':selected')) {
+                        if($('.leadership${dates}').is(':selected')) {
                             document.getElementById('listed[${dates}]').style.display = '';
                             document.getElementById('input-notListed[${dates}]').disabled = true;
                             document.getElementById('div-notListed[${dates}]').style.display = 'none';
@@ -63,15 +63,15 @@
                     data-mytooltip-action="focus" 
                     data-mytooltip-direction="top">
                         <option value="" id="notListed" class="notListed">-- Not listed --</option>
-                        <option id="capability" class="capability" value="Above The Line"
+                        <option id="capability" class="capability${dates}" value="Above The Line"
                             {{ old('') == 'Above The Line' ? 'selected="selected"' : '' }} selected>
                             Above The Line
                         </option>
-                        <option id="culture" class="culture" value="Action Learning"
+                        <option id="culture" class="culture${dates}" value="Action Learning"
                             {{ old('') == 'Action Learning' ? 'selected="selected"' : '' }}>
                             Action Learning
                         </option>
-                        <option id="culture" class="culture" value="Anxiety"
+                        <option id="culture" class="culture${dates}" value="Anxiety"
                             {{ old('') == 'Anxiety' ? 'selected="selected"' : '' }}>
                             Anxiety
                         </option>
@@ -80,65 +80,65 @@
                             {{ old('') == 'Art of Asking Questions' ? 'selected="selected"' : '' }}>
                             Art of Asking Questions
                         </option>
-                        <option id="capability" class="capability"
+                        <option id="capability" class="capability${dates}"
                             value="Building Effective Relationships"
                             {{ old('') == 'Building Effective Relationships' ? 'selected="selected"' : '' }}>
                             Building Effective Relationships
                         </option>
-                        <option id="capability" class="capability" value="Business Analytics"
+                        <option id="capability" class="capability${dates}" value="Business Analytics"
                             {{ old('') == 'Business Analytics' ? 'selected="selected"' : '' }}>
                             Business Analytics
                         </option>
-                        <option id="capability" class="capability" value="Business Storytelling"
+                        <option id="capability" class="capability${dates}" value="Business Storytelling"
                             {{ old('') == 'Business Storytelling' ? 'selected="selected"' : '' }}>
                             Business Storytelling
                         </option>
-                        <option id="leadership" class="leadership" value="Change Management"
+                        <option id="leadership" class="leadership${dates}" value="Change Management"
                             {{ old('') == 'Change Management' ? 'selected="selected"' : '' }}>
                             Change Management
                         </option>
-                        <option id="leadership" class="leadership" value="Coaching"
+                        <option id="leadership" class="leadership${dates}" value="Coaching"
                             {{ old('') == 'Coaching' ? 'selected="selected"' : '' }}>
                             Coaching
                         </option>
-                        <option id="leadership" class="leadership"
+                        <option id="leadership" class="leadership${dates}"
                             value="Collaborative Leadership"
                             {{ old('') == 'Collaborative Leadership' ? 'selected="selected"' : '' }}>
                             Collaborative Leadership
                         </option>
-                        <option id="capability" class="capability" value="Communicating Across the Organization"
+                        <option id="capability" class="capability${dates}" value="Communicating Across the Organization"
                             {{ old('') == 'Communicating Across the Organization' ? 'selected="selected"' : '' }}>
                             Communicating Across the Organization
                         </option>
-                        <option id="capability" class="capability" value="Communication 1 (Capability)"
+                        <option id="capability" class="capability${dates}" value="Communication 1 (Capability)"
                             {{ old('') == 'Communication 1 (Capability)' ? 'selected="selected"' : '' }}>
                             Communication 1 (Capability)
                         </option>
-                        <option id="leadership" class="leadership" value="Communication 2 (Leadership)"
+                        <option id="leadership" class="leadership${dates}" value="Communication 2 (Leadership)"
                             {{ old('') == 'Communication 2 (Leadership)' ? 'selected="selected"' : '' }}>
                             Communication 2 (Leadership)
                         </option>
-                        <option id="capability" class="capability" value="Competency Building"
+                        <option id="capability" class="capability${dates}" value="Competency Building"
                             {{ old('') == 'Competency Building' ? 'selected="selected"' : '' }}>
                             Competency Building
                         </option>
-                        <option id="capability" class="capability" value="Conflict Resolution"
+                        <option id="capability" class="capability${dates}" value="Conflict Resolution"
                             {{ old('') == 'Conflict Resolution' ? 'selected="selected"' : '' }}>
                             Conflict Resolution
                         </option>
-                        <option id="capability" class="capability" value="Create Authentic Connections"
+                        <option id="capability" class="capability${dates}" value="Create Authentic Connections"
                             {{ old('') == 'Create Authentic Connections' ? 'selected="selected"' : '' }}>
                             Create Authentic Connections
                         </option>
-                        <option id="capability" class="capability" value="Credibility"
+                        <option id="capability" class="capability${dates}" value="Credibility"
                             {{ old('') == 'Credibility' ? 'selected="selected"' : '' }}>
                             Credibility
                         </option>
-                        <option id="capability" class="capability" value="Critical Thinking"
+                        <option id="capability" class="capability${dates}" value="Critical Thinking"
                             {{ old('') == 'Critical Thinking' ? 'selected="selected"' : '' }}>
                             Critical Thinking
                         </option>
-                        <option id="capability" class="capability" value="Design Thinking"
+                        <option id="capability" class="capability${dates}" value="Design Thinking"
                             {{ old('') == 'Design Thinking' ? 'selected="selected"' : '' }}>
                             Design Thinking
                         </option>
@@ -146,19 +146,19 @@
                             {{ old('') == 'Diversity & Inclusion 1 (Society)' ? 'selected="selected"' : '' }}>
                             Diversity & Inclusion 1 (Society)
                         </option>
-                        <option id="culture" class="culture" value="Diversity & Inclusion 2 (Culture)"
+                        <option id="culture" class="culture${dates}" value="Diversity & Inclusion 2 (Culture)"
                             {{ old('') == 'Diversity & Inclusion 2 (Culture)' ? 'selected="selected"' : '' }}>
                             Diversity & Inclusion 2 (Culture)
                         </option>
-                        <option id="leadership" class="leadership" value="Emotional Intelligence 1 (Leadership)"
+                        <option id="leadership" class="leadership${dates}" value="Emotional Intelligence 1 (Leadership)"
                             {{ old('') == 'Emotional Intelligence 1 (Leadership)' ? 'selected="selected"' : '' }}>
                             Emotional Intelligence 1 (Leadership)
                         </option>
-                        <option id="culture" class="culture" value="Emotional Intelligence 2 (Capability)"
+                        <option id="culture" class="culture${dates}" value="Emotional Intelligence 2 (Capability)"
                             {{ old('') == 'Emotional Intelligence 2 (Capability)' ? 'selected="selected"' : '' }}>
                             Emotional Intelligence 2 (Capability)
                         </option>
-                        <option id="capability" class="capability" value="Enhance My Credibility"
+                        <option id="capability" class="capability${dates}" value="Enhance My Credibility"
                             {{ old('') == 'Enhance My Credibility' ? 'selected="selected"' : '' }}>
                             Enhance My Credibility
                         </option>
@@ -166,75 +166,75 @@
                             {{ old('') == 'Goal Setting' ? 'selected="selected"' : '' }}>
                             Goal Setting
                         </option>
-                        <option id="capability" class="capability" value="Growth Mindset"
+                        <option id="capability" class="capability${dates}" value="Growth Mindset"
                             {{ old('') == 'Growth Mindset' ? 'selected="selected"' : '' }}>
                             Growth Mindset
                         </option>
-                        <option id="capability" class="capability" value="Improv"
+                        <option id="capability" class="capability${dates}" value="Improv"
                             {{ old('') == 'Improv' ? 'selected="selected"' : '' }}>
                             Improv
                         </option>
-                        <option id="capability" class="capability" value="Influencing"
+                        <option id="capability" class="capability${dates}" value="Influencing"
                             {{ old('') == 'Influencing' ? 'selected="selected"' : '' }}>
                             Influencing
                         </option>
-                        <option id="leadership" class="leadership" value="Kick Off (Leadership)"
+                        <option id="leadership" class="leadership${dates}" value="Kick Off (Leadership)"
                             {{ old('') == 'Kick Off (Leadership)' ? 'selected="selected"' : '' }}>
                             Kick Off (Leadership)
                         </option>
-                        <option id="culture" class="culture" value="Kick Off 1 (Culture)"
+                        <option id="culture" class="culture${dates}" value="Kick Off 1 (Culture)"
                             {{ old('') == 'Kick Off 1 (Culture)' ? 'selected="selected"' : '' }}>
                             Kick Off 1 (Culture)
                         </option>
-                        <option id="leadership" class="leadership" value="Leadership"
+                        <option id="leadership" class="leadership${dates}" value="Leadership"
                             {{ old('') == 'Leadership' ? 'selected="selected"' : '' }}>
                             Leadership
                         </option>
-                        <option id="leadership" class="leadership" value="Leadership Brand"
+                        <option id="leadership" class="leadership${dates}" value="Leadership Brand"
                             {{ old('') == 'Leadership Brand' ? 'selected="selected"' : '' }}>
                             Leadership Brand
                         </option>
-                        <option id="leadership" class="leadership" value="Leadership Presence"
+                        <option id="leadership" class="leadership${dates}" value="Leadership Presence"
                             {{ old('') == 'Leadership Presence' ? 'selected="selected"' : '' }}>
                             Leadership Presence
                         </option>
-                        <option id="capability" class="capability" value="Leadership Hybrid Teams 1 (Capability)"
+                        <option id="capability" class="capability${dates}" value="Leadership Hybrid Teams 1 (Capability)"
                             {{ old('') == 'Leadership Hybrid Teams 1 (Capability)' ? 'selected="selected"' : '' }}>
                             Leadership Hybrid Teams 1 (Capability)
                         </option>
-                        <option id="culture" class="culture" value="Leadership Hybrid Teams 2 (Culture)"
+                        <option id="culture" class="culture${dates}" value="Leadership Hybrid Teams 2 (Culture)"
                             {{ old('') == 'Leadership Hybrid Teams 2 (Culture)' ? 'selected="selected"' : '' }}>
                             Leadership Hybrid Teams 2 (Culture)
                         </option>
-                        <option id="leadership" class="leadership" value="Leadership Hybrid Teams  3 (Leadership)"
+                        <option id="leadership" class="leadership${dates}" value="Leadership Hybrid Teams  3 (Leadership)"
                             {{ old('') == 'Leadership Hybrid Teams  3 (Leadership)' ? 'selected="selected"' : '' }}>
                             Leadership Hybrid Teams  3 (Leadership)
                         </option>
-                        <option id="leadership" class="leadership" value="Leading with Questions"
+                        <option id="leadership" class="leadership${dates}" value="Leading with Questions"
                             {{ old('') == 'Leading with Questions' ? 'selected="selected"' : '' }}>
                             Leading with Questions
                         </option>
-                        <option id="capability" class="capability" value="Learning Evolution"
+                        <option id="capability" class="capability${dates}" value="Learning Evolution"
                             {{ old('') == 'Learning Evolution' ? 'selected="selected"' : '' }}>
                             Learning Evolution
                         </option>
-                        <option id="capability" class="capability" value="Learning How to Set Goals"
+                        <option id="capability" class="capability${dates}" value="Learning How to Set Goals"
                             {{ old('') == 'Learning How to Set Goals' ? 'selected="selected"' : '' }}>
                             Learning How to Set Goals
                         </option>
-                        <option id="capability" class="capability" value="Mental Health 1 (Capability)"
+                        <option id="capability" class="capability${dates}" value="Mental Health 1 (Capability)"
                             {{ old('') == 'Mental Health 1 (Capability)' ? 'selected="selected"' : '' }}>
                             Mental Health 1 (Capability)
                         </option>
-                        <option id="leadership" class="leadership" value="Mental Health 2 (Leadership)"
+                        <option id="leadership" class="leadership${dates}" value="Mental Health 2 (Leadership)"
                             {{ old('') == 'Mental Health 2 (Leadership)' ? 'selected="selected"' : '' }}>
                             Mental Health 2 (Leadership)
                         </option>
-                        <option id="leadership" class="leadership" value="Mentoring"
+                        <option id="leadership" class="leadership${dates}" value="Mentoring"
                             {{ old('') == 'Mentoring' ? 'selected="selected"' : '' }}>
                             Mentoring
                         </option>
-                        <option id="capability" class="capability" value="Mindfulness"
+                        <option id="capability" class="capability${dates}" value="Mindfulness"
                             {{ old('') == 'Mindfulness' ? 'selected="selected"' : '' }}>
                             Mindfulness
                         </option>
@@ -242,7 +242,7 @@
                             {{ old('') == 'Mission & Vision Review' ? 'selected="selected"' : '' }}>
                             Mission & Vision Review
                         </option>
-                        <option id="capability" class="capability"
+                        <option id="capability" class="capability${dates}"
                             value="Negotiation"
                             {{ old('') == 'Negotiation' ? 'selected="selected"' : '' }}>
                             Negotiation
@@ -251,55 +251,55 @@
                             {{ old('') == 'Parenting' ? 'selected="selected"' : '' }}>
                             Parenting
                         </option>
-                        <option id="capability" class="capability" value="Problem-Solving"
+                        <option id="capability" class="capability${dates}" value="Problem-Solving"
                             {{ old('') == 'Problem-Solving' ? 'selected="selected"' : '' }}>
                             Problem-Solving
                         </option>
-                        <option id="capability" class="capability" value="Productivity"
+                        <option id="capability" class="capability${dates}" value="Productivity"
                             {{ old('') == 'Productivity' ? 'selected="selected"' : '' }}>
                             Productivity
                         </option>
-                        <option id="capability" class="capability" value="Project Management"
+                        <option id="capability" class="capability${dates}" value="Project Management"
                             {{ old('') == 'Project Management' ? 'selected="selected"' : '' }}>
                             Project Management
                         </option>
-                        <option id="capability" class="capability" value="Psychological Safety"
+                        <option id="capability" class="capability${dates}" value="Psychological Safety"
                             {{ old('') == 'Psychological Safety' ? 'selected="selected"' : '' }}>
                             Psychological Safety
                         </option>
-                        <option id="capability" class="capability" value="Purpose 1 (Capability)"
+                        <option id="capability" class="capability${dates}" value="Purpose 1 (Capability)"
                             {{ old('') == 'Purpose 1 (Capability)' ? 'selected="selected"' : '' }}>
                             Purpose 1 (Capability)
                         </option>
-                        <option id="leadership" class="leadership" value="Purpose 2 (Leadership)"
+                        <option id="leadership" class="leadership${dates}" value="Purpose 2 (Leadership)"
                             {{ old('') == 'Purpose 2 (Leadership)' ? 'selected="selected"' : '' }}>
                             Purpose 2 (Leadership)
                         </option>
-                        <option id="leadership" class="leadership" value="Situational Leadership"
+                        <option id="leadership" class="leadership${dates}" value="Situational Leadership"
                             {{ old('') == 'Situational Leadership' ? 'selected="selected"' : '' }}>
                             Situational Leadership
                         </option>
-                        <option id="capability" class="capability" value="Stakeholder Management"
+                        <option id="capability" class="capability${dates}" value="Stakeholder Management"
                             {{ old('') == 'Stakeholder Management' ? 'selected="selected"' : '' }}>
                             Stakeholder Management
                         </option>
-                        <option id="capability" class="capability" value="Strategic Agility"
+                        <option id="capability" class="capability${dates}" value="Strategic Agility"
                             {{ old('') == 'Strategic Agility' ? 'selected="selected"' : '' }}>
                             Strategic Agility
                         </option>
-                        <option id="capability" class="capability" value="Strategic Execution"
+                        <option id="capability" class="capability${dates}" value="Strategic Execution"
                             {{ old('') == 'Strategic Execution' ? 'selected="selected"' : '' }}>
                             Strategic Execution
                         </option>
-                        <option id="leadership" class="leadership" value="Strategic Leadership"
+                        <option id="leadership" class="leadership${dates}" value="Strategic Leadership"
                             {{ old('') == 'Strategic Leadership' ? 'selected="selected"' : '' }}>
                             Strategic Leadership
                         </option>
-                        <option id="capability" class="capability" value="Strategic Thinking"
+                        <option id="capability" class="capability${dates}" value="Strategic Thinking"
                             {{ old('') == 'Strategic Thinking' ? 'selected="selected"' : '' }}>
                             Strategic Thinking
                         </option>
-                        <option id="leadership" class="leadership" value="Strengths 1 (Leadership)"
+                        <option id="leadership" class="leadership${dates}" value="Strengths 1 (Leadership)"
                             {{ old('') == 'Strengths 1 (Leadership)' ? 'selected="selected"' : '' }}>
                             Strengths 1 (Leadership)
                         </option>
@@ -307,11 +307,11 @@
                             {{ old('') == 'Strengths 2 (Teams)' ? 'selected="selected"' : '' }}>
                             Strengths 2 (Teams)
                         </option>
-                        <option id="capability" class="capability" value="Systems Thinking"
+                        <option id="capability" class="capability${dates}" value="Systems Thinking"
                             {{ old('') == 'Systems Thinking' ? 'selected="selected"' : '' }}>
                             Systems Thinking
                         </option>
-                        <option id="capability" class="capability" value="Talent Building"
+                        <option id="capability" class="capability${dates}" value="Talent Building"
                             {{ old('') == 'Talent Building' ? 'selected="selected"' : '' }}>
                             Talent Building
                         </option>
@@ -319,7 +319,7 @@
                             {{ old('') == 'Talent Building - F2F' ? 'selected="selected"' : '' }}>
                             Talent Building - F2F
                         </option>
-                        <option id="leadership" class="leadership" value="Talent Building - Virtual 1 (Leadership)"
+                        <option id="leadership" class="leadership${dates}" value="Talent Building - Virtual 1 (Leadership)"
                             {{ old('') == 'Talent Building - Virtual 1 (Leadership)' ? 'selected="selected"' : '' }}>
                             Talent Building - Virtual 1 (Leadership)
                         </option>
@@ -335,7 +335,7 @@
                             {{ old('') == 'Team Engagement - F2F' ? 'selected="selected"' : '' }}>
                             Team Engagement - F2F
                         </option>
-                        <option id="leadership" class="leadership" value="Team Engagement - Virtual 1 (Leadership)"
+                        <option id="leadership" class="leadership${dates}" value="Team Engagement - Virtual 1 (Leadership)"
                             {{ old('') == 'Team Engagement - Virtual 1 (Leadership)' ? 'selected="selected"' : '' }}>
                             Team Engagement - Virtual 1 (Leadership)
                         </option>
@@ -343,7 +343,7 @@
                             {{ old('') == 'Team Building - Virtual 2 (Teams)' ? 'selected="selected"' : '' }}>
                             Team Building - Virtual 2 (Teams)
                         </option>
-                        <option id="capability" class="capability" value="Time and Energy Management"
+                        <option id="capability" class="capability${dates}" value="Time and Energy Management"
                             {{ old('') == 'Time and Energy Management' ? 'selected="selected"' : '' }}>
                             Time and Energy Management
                         </option>
@@ -355,11 +355,11 @@
                             {{ old('') == 'Visioning' ? 'selected="selected"' : '' }}>
                             Visioning
                         </option>
-                        <option id="capability" class="capability" value="Work From Home"
+                        <option id="capability" class="capability${dates}" value="Work From Home"
                             {{ old('') == 'Work From Home' ? 'selected="selected"' : '' }}>
                             Work From Home
                         </option>
-                        <option id="capability" class="capability" value="Workplace Learning"
+                        <option id="capability" class="capability${dates}" value="Workplace Learning"
                             {{ old('') == 'Workplace Learning' ? 'selected="selected"' : '' }}>
                             Workplace Learning
                         </option>

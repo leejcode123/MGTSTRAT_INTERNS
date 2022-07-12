@@ -67,19 +67,19 @@
 
 <!----------------------------------------------------------------CONSULTING---------------------------------------------------------------------->
                 <tr class="">
-                    <th class="px-4 title text-dark">1. CONSULTING</th>
+                    <th class="px-4 title table-light">1. CONSULTING</th>
                     <th></th>
                     <th></th>
                     <th></th>
                     <th></th>
-                    <th class="total-td"></th>
-                    <th class="total-td"></th>
+                    <th class="table-light total-td"></th>
+                    <th class="table-light total-td"></th>
                     <td class="border border-white"> </td>
                 </tr>
 
                 <tbody id="tableLeadconsultant">
                     <tr class="table-warning">
-                        <td class="title">Lead Consultant</td>
+                        <td class="title table-light">Lead Consultant</td>
                         <td data-title="# OF CONSULTANTS">
                             <input type="number"
                                 class="input js-mytooltip input-table form-control  @error('') is-invalid @enderror"
@@ -125,10 +125,10 @@
                             <input type="number" class="form-control input-table @error('') is-invalid @enderror"
                                 value="{{ old('') }}" name="ef_Leadconsultant[]" id="ef_LeadconsultantNwh1">
                         </td>
-                        <td class="total-td">
+                        <td class="total-td table-light">
                             <h4 class="text-center lead" id="leadTotal">-</h4>
                         </td>
-                        <td class="total-td">
+                        <td class="total-td table-light">
                             <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                 value="{{ old('') }}" name="" id="">
                         </td>
@@ -141,7 +141,7 @@
 
                 <tbody id="tableAnalyst">
                     <tr class="table-warning">
-                        <td class="title">Analyst</td>
+                        <td class="title table-light">Analyst</td>
                         <td>
                             <input type="number"
                                 class="input js-mytooltip form-control input-table @error('') is-invalid @enderror"
@@ -168,13 +168,10 @@
                             <input type="number" class="form-control input-table @error('') is-invalid @enderror"
                                 value="{{ old('') }}" name="" id="ef_AnalystNwh1">
                         </td>
-                        <td class="total-td">
-                            {{-- <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" 
-                                name="" id="" disabled> --}}
+                        <td class="total-td table-light">
                             <h4 class="text-center lead" id="analyst-total">-</h4>
                         </td>
-                        <td class="total-td">
+                        <td class="total-td table-light">
                             <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                 value="{{ old('') }}" name="" id="">
                         </td>
@@ -186,7 +183,7 @@
                 </tbody>
 
                 <tr class="">
-                    <td class="title fw-bold text-dark fst-italic">Subtotal</td>
+                    <td class="title fw-bold text-dark fst-italic table-light">Subtotal</td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -194,7 +191,7 @@
                     <td class="total-td" style="background-color: rgba(146, 146, 146, 0.727)">
                         <h4 class="text-center" id="subtotal-consulting">-</h4>
                     </td>
-                    <td class="total-td">
+                    <td class="total-td table-light">
                         <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                             value="{{ old('') }}" name="" id="">
                     </td>
@@ -203,18 +200,18 @@
 
 <!----------------------------------------------------------------DESIGN---------------------------------------------------------------------->
                 <tr class="">
-                    <th class="title px-4 text-dark">2. DESIGN</th>
+                    <th class="title px-4 text-dark table-light">2. DESIGN</th>
                     <td></td>
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td class="total-td"></td>
-                    <td class="total-td"></td>
+                    <td class="table-light total-td"></td>
+                    <td class="table-light total-td"></td>
                 </tr>
 
                 <tbody id="tableDesigner">
                     <tr class="table-warning">
-                        <td class="title">Designer</td>
+                        <td class="title table-light">Designer</td>
                         <td>
                             <input type="number"
                                 class="input js-mytooltip form-control input-table @error('') is-invalid @enderror"
@@ -259,10 +256,10 @@
                             <input type="number" class="form-control input-table @error('') is-invalid @enderror"
                                 value="{{ old('') }}" name="" id="ef_DesignerNwh1">
                         </td>
-                        <td class="total-td" style="background-color: rgba(146, 146, 146, 0.727)">
+                        <td class="table-light total-td" style="background-color: rgba(146, 146, 146, 0.727)">
                             <h4 class="text-center" id="subtotal-design">-</h4>
                         </td>
-                        <td class="total-td">
+                        <td class="table-light total-td">
                             <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                 value="{{ old('') }}" name="" id="">
                         </td>
@@ -275,18 +272,18 @@
 
 <!----------------------------------------------------------------PROGRAM---------------------------------------------------------------------->
                 <tr class="">
-                    <th class="title px-4 text-dark">3. PROGRAM</th>
+                    <th class="title px-4 text-dark table-light">3. PROGRAM</th>
                     <td></td>
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td class="total-td"></td>
-                    <td class="total-td"></td>
+                    <td class="table-light total-td"></td>
+                    <td class="table-light total-td"></td>
                 </tr>
 
                 <tbody id="tableLeadfaci">
                     <tr class="table-warning">
-                        <td class="title">Lead Facilitator</td>
+                        <td class="title table-light">Lead Facilitator</td>
                         <td>
                             <input type="number" class="form-control input-table @error('') is-invalid @enderror"
                                 value="{{ old('') }}" name="" id="ef_LeadfacilitatorNoc1"
@@ -339,10 +336,10 @@
                             <input type="number" class="form-control input-table @error('') is-invalid @enderror"
                                 value="{{ old('') }}" name="" id="ef_LeadfacilitatorNwh1">
                         </td>
-                        <td class="total-td">
+                        <td class="table-light total-td">
                             <h4 class="text-center lead" id="subtotal-lead">-</h4>
                         </td>
-                        <td class="total-td">
+                        <td class="table-light total-td">
                             <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                 value="{{ old('') }}" name="" id="">
                         </td>
@@ -355,7 +352,7 @@
 
                 <tbody id="tableCofaci">
                     <tr class="table-warning">
-                        <td class="title">Co-facilitator / Resource Speaker</td>
+                        <td class="title table-light">Co-facilitator / Resource Speaker</td>
                         <td>
                             <input type="number" class="form-control input-table @error('') is-invalid @enderror"
                                 value="{{ old('') }}" name="" id="ef_CofaciNoc1" max="100">
@@ -375,10 +372,10 @@
                             <input type="number" class="form-control input-table @error('') is-invalid @enderror"
                                 value="{{ old('') }}" name="" id="ef_CofaciNwh1">
                         </td>
-                        <td class="total-td">
+                        <td class="table-light total-td">
                             <h4 class="text-center lead" id="subtotal-coFacilitator">-</h4>
                         </td>
-                        <td class="total-td">
+                        <td class="table-light total-td">
                             <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                 value="{{ old('') }}" name="" id="">
                         </td>
@@ -391,7 +388,7 @@
 
                 <tbody id="tableModerator">
                     <tr class="table-warning">
-                        <td class="title">Moderator</td>
+                        <td class="title table-light">Moderator</td>
                         <td>
                             <input type="number" class="form-control input-table @error('') is-invalid @enderror"
                                 value="{{ old('') }}" name="" id="ef_ModeratorNoc1" max="100">
@@ -412,10 +409,10 @@
                             <input type="number" class="form-control input-table @error('') is-invalid @enderror"
                                 value="{{ old('') }}" name="" id="ef_ModeratorNwh1">
                         </td>
-                        <td class="total-td">
+                        <td class="table-light total-td">
                             <h4 class="text-center lead" id="subtotal-moderator">-</h4>
                         </td>
-                        <td class="total-td">
+                        <td class="table-light total-td">
                             <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                 value="{{ old('') }}" name="" id="">
                         </td>
@@ -428,7 +425,7 @@
 
                 <tbody id="tableProducer">
                     <tr class="table-warning">
-                        <td class="title">Producer</td>
+                        <td class="title table-light">Producer</td>
                         <td>
                             <input type="number" class="form-control input-table @error('') is-invalid @enderror"
                                 value="{{ old('') }}" name="" id="ef_ProducerNoc1" max="100">
@@ -448,10 +445,10 @@
                             <input type="number" class="form-control input-table @error('') is-invalid @enderror"
                                 value="{{ old('') }}" name="" id="ef_ProducerNwh1">
                         </td>
-                        <td class="total-td">
+                        <td class="table-light total-td">
                             <h4 class="text-center lead" id="subtotal-producer">-</h4>
                         </td>
-                        <td class="total-td">
+                        <td class="table-light total-td">
                             <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                 value="{{ old('') }}" name="" id="">
                         </td>
@@ -463,15 +460,15 @@
                 </tbody>
 
                 <tr class="">
-                    <td class="title fw-bold text-dark fst-italic">Subtotal</td>
+                    <td class="title fw-bold text-dark fst-italic table-light">Subtotal</td>
                     <td></td>
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td class="total-td" style="background-color: rgba(146, 146, 146, 0.727)">
+                    <td class="table-light total-td" style="background-color: rgba(146, 146, 146, 0.727)">
                         <h4 class="text-center" id="program-subtotal">-</h4>
                     </td>
-                    <td class="total-td">
+                    <td class="table-light total-td">
                         <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                             value="{{ old('') }}" name="" id="">
                     </td>
@@ -480,18 +477,18 @@
 
 <!----------------------------------------------------------------OTHER ROLES---------------------------------------------------------------------->
                 <tr class="">
-                    <th class="title px-4 text-dark">4. OTHER ROLES</th>
+                    <th class="title px-4 text-dark table-light">4. OTHER ROLES</th>
                     <td></td>
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td class="total-td"></td>
-                    <td class="total-td"></td>
+                    <td class="table-light total-td"></td>
+                    <td class="table-light total-td"></td>
                 </tr>
 
                 <tbody id="tableDocumentor">
                     <tr class="table-warning">
-                        <td class="title">Documentor</td>
+                        <td class="table-light title">Documentor</td>
                         <td>
                             <input type="number" class="form-control input-table @error('') is-invalid @enderror"
                                 value="{{ old('') }}" name="" id="ef_DocumentorNoc1" max="100">
@@ -512,10 +509,10 @@
                             <input type="number" class="form-control input-table @error('') is-invalid @enderror"
                                 value="{{ old('') }}" name="" id="ef_DocumentorNwh1">
                         </td>
-                        <td class="total-td" style="background-color: rgba(146, 146, 146, 0.727">
+                        <td class="table-light total-td" style="background-color: rgba(146, 146, 146, 0.727">
                             <h4 class="text-center" id="subtotal-documentor">-</h4>
                         </td>
-                        <td class="total-td">
+                        <td class="table-light total-td">
                             <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                 value="{{ old('') }}" name="" id="">
                         </td>
@@ -528,7 +525,7 @@
 
 <!----------------------------------------------------------------TOTAL PACKAGE---------------------------------------------------------------------->
                 <tr class="table-active overall-total">
-                    <td class="text-uppercase text-dark fst-italic fw-bold overall-total-start">TOTAL STANDARD FEES
+                    <td class="table-light text-uppercase text-dark fst-italic fw-bold overall-total-start">TOTAL STANDARD FEES
                     </td>
                     <td class="overall-total-middle"></td>
                     <td class="overall-total-middle"></td>
@@ -544,7 +541,7 @@
                 </tr>
 
                 <tr class="table-active">
-                    <td class="fw-bold text-dark text-uppercase fst-italic overall-total-start">discount given (if any)
+                    <td class="table-light fw-bold text-dark text-uppercase fst-italic overall-total-start">discount given (if any)
                     </td>
                     <td class="overall-total-middle"></td>
                     <td class="overall-total-middle table-warning">
@@ -562,7 +559,7 @@
                 </tr>
 
                 <tr class="table-active">
-                    <td class="fw-bold text-uppercase text-dark fst-italic overall-total-start">total package</td>
+                    <td class="table-light fw-bold text-uppercase text-dark fst-italic overall-total-start">total package</td>
                     <td class="overall-total-middle"></td>
                     <td class="overall-total-middle"></td>
                     <td class="overall-total-middle"></td>
