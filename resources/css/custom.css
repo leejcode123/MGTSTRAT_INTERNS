@@ -12,6 +12,10 @@
     background-color: #eceff1;
     color: black;
 }
+.th-blue-grey-darken-4{
+    background-color: #e0e0e0;
+    color: black;
+}
 .form-group[class*=has-icon-].has-icon-left .form-select {
     padding-left: 2.5rem;
 }
