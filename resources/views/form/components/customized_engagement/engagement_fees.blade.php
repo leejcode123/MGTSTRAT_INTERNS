@@ -1,25 +1,71 @@
+<style>
+    span.deleteicon {
+        position: relative;
+        display: none;
+        align-items: center;
+    }
+    span.deleteicon span {
+        position: absolute;
+        display: block;
+        right: 5px;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        color: #FFFFFF;
+        background-color: rgba(255, 0, 0, 0.8);
+        font: 13px monospace;
+        text-align: center;
+        line-height: 1em;
+        cursor: pointer;
+    }
+    span.deleteicon input {
+        padding-right: 18px;
+        box-sizing: border-box;
+    }
+</style>
+
 <div class="card-header">
     <h4 class="card-title">Engagement Fees</h4>
 </div>
 <div class="form-body container">
     <section>
         <div class="table-responsive" id="no-more-tables" data-animation="slideHorz">
-            <table class="table table-bordered">
+            <table class="table table-bordered" id="ec_tableEngagementFees">
+<!----------------------------------------------------------------TABLE HEADING TITLE---------------------------------------------------------------------->
                 <thead class="table-dark">
                     <tr class="text-center">
                         <th class="title-th" scope="col" width=20%></th>
                         <th class="title-middle" scope="col" style="font-size: 0.9rem;">NUMBER OF CONSULTANTS</th>
                         <th class="title-middle px-4" width=15% scope="col">HOURLY FEES</th>
                         <th class="title-middle" scope="col" style="font-size: 0.9rem;">NUMBER OF HOURS</th>
-                        <th class="title-middle" scope="col" style="font-size: 0.9rem;" width=10%>NIGHT SHIFT,
-                            WEEKENDS HOLIDAYS *</th>
+                        <th class="title-middle" scope="col" style="font-size: 0.9rem;" width=10%>    
+                            <label for="Night Shift, Weekends and Holidays">NSWH</label>
+                            <select
+                                class="input js-mytooltip form-select form-select-sm engagement-fee @error('') is-invalid @enderror select"
+                                name="" id="nswh">
+                                <option value="0.1" {{ old('') == '0.1' ? 'selected="selected"' : '' }}>
+                                    &#8369;10%
+                                </option>
+                                <option value="0.15" {{ old('') == '0.15' ? 'selected="selected"' : '' }}>
+                                    &#8369;15%
+                                </option>
+                                <option value="0.2" {{ old('') == '0.2' ? 'selected="selected"' : '' }} selected>
+                                    &#8369;20%
+                                </option>
+                                <option value="0.25" {{ old('') == '0.25' ? 'selected="selected"' : '' }}>
+                                    &#8369;25%
+                                </option>
+                            </select>
+                        </th>
+                        {{-- <th class="title-middle" scope="col" style="font-size: 0.9rem;" width=10%>NIGHT SHIFT,
+                            WEEKENDS HOLIDAYS *</th> --}}
                         <th class="title-th" scope="col" width=15%>TOTAL FEE</th>
                         <th class="title-th" scope="col" width=15%>NOTES</th>
-                        <th class="add-row border border-white"> </th>
+                        <td class="add-row border border-white"> </td>
                     </tr>
                 </thead>
 
-                {{-- Consulting --}}
+<!----------------------------------------------------------------CONSULTING---------------------------------------------------------------------->
                 <tr class="">
                     <th class="px-4 title text-dark">1. CONSULTING</th>
                     <th></th>
@@ -28,7 +74,7 @@
                     <th></th>
                     <th class="total-td"></th>
                     <th class="total-td"></th>
-                    <th class="border border-white"> </th>
+                    <td class="border border-white"> </td>
                 </tr>
 
                 <tbody id="tableLeadconsultant">
@@ -99,7 +145,7 @@
                         <td>
                             <input type="number"
                                 class="input js-mytooltip form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ef_AnalystNoc" max="100"
+                                value="{{ old('') }}" name="" id="ef_AnalystNoc1" max="100"
                                 data-mytooltip-content="<i>Includes in depth needs analysis (i.e. surveys, interviews, FGDs),
                                 special research (i.e. to study client materials or client -required materials, industry
                                 or function specific content), creation of client-specific learning aids/tools
@@ -114,13 +160,13 @@
                         <td>
                             <input type="number"
                                 class="input js-mytooltip form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ef_AnalystNoh"
+                                value="{{ old('') }}" name="" id="ef_AnalystNoh1"
                                 data-mytooltip-content="<i>Number of Hours</i>" data-mytooltip-theme="dark"
                                 data-mytooltip-action="focus" data-mytooltip-direction="bottom">
                         </td>
                         <td>
                             <input type="number" class="form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ef_AnalystNwh">
+                                value="{{ old('') }}" name="" id="ef_AnalystNwh1">
                         </td>
                         <td class="total-td">
                             {{-- <input type="text" class="form-control input-table @error('') is-invalid @enderror"
@@ -152,9 +198,10 @@
                         <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                             value="{{ old('') }}" name="" id="">
                     </td>
+                    <td class="border border-white add-row"></td>
                 </tr>
 
-                {{-- Design --}}
+<!----------------------------------------------------------------DESIGN---------------------------------------------------------------------->
                 <tr class="">
                     <th class="title px-4 text-dark">2. DESIGN</th>
                     <td></td>
@@ -171,7 +218,7 @@
                         <td>
                             <input type="number"
                                 class="input js-mytooltip form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ef_DesignerNoc" max="100"
+                                value="{{ old('') }}" name="" id="ef_DesignerNoc1" max="100"
                                 data-mytooltip-content="<i>Includes in depth needs analysis (i.e. surveys, interviews, FGDs),
                                     special research (i.e. to study client materials or client -required materials, industry
                                     or function specific content), creation of client-specific learning aids/tools
@@ -204,13 +251,13 @@
                         <td>
                             <input type="number"
                                 class="input js-mytooltip form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ef_DesignerNoh"
+                                value="{{ old('') }}" name="" id="ef_DesignerNoh1"
                                 data-mytooltip-content="<i>Number of Hours</i>" data-mytooltip-theme="dark"
                                 data-mytooltip-action="focus" data-mytooltip-direction="bottom">
                         </td>
                         <td>
                             <input type="number" class="form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ef_DesignerNwh">
+                                value="{{ old('') }}" name="" id="ef_DesignerNwh1">
                         </td>
                         <td class="total-td" style="background-color: rgba(146, 146, 146, 0.727)">
                             <h4 class="text-center" id="subtotal-design">-</h4>
@@ -226,7 +273,7 @@
                     </tr>
                 </tbody>
 
-                {{-- Program --}}
+<!----------------------------------------------------------------PROGRAM---------------------------------------------------------------------->
                 <tr class="">
                     <th class="title px-4 text-dark">3. PROGRAM</th>
                     <td></td>
@@ -242,11 +289,14 @@
                         <td class="title">Lead Facilitator</td>
                         <td>
                             <input type="number" class="form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ef_LeadfacilitatorNoc"
+                                value="{{ old('') }}" name="" id="ef_LeadfacilitatorNoc1"
                                 max="100">
                         </td>
                         <td>
                             <fieldset>
+                                <input type="text" class="form-control input-table input-delete @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ef_InputLeadFaciHf" data-type="currency" style="display:none;">
+
                                 <select
                                     class="input js-mytooltip form-select engagement-fee @error('') is-invalid @enderror select"
                                     name="" id="ef_LeadfacilitatorHf"
@@ -265,7 +315,12 @@
                                         selected>
                                         &#8369;12,000
                                     </option>
+                                    <option value="others" {{ old('') == 'others' ? 'selected="selected"' : '' }}
+                                    onclick="document.getElementById('ef_InputLeadFaciHf').focus()">
+                                        Others
+                                    </option>
                                 </select>
+
                                 @error('ef_customFee')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -276,13 +331,13 @@
                         <td>
                             <input type="number"
                                 class="input js-mytooltip form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ef_LeadfacilitatorNoh"
+                                value="{{ old('') }}" name="" id="ef_LeadfacilitatorNoh1"
                                 data-mytooltip-content="<i>Number of Hours</i>" data-mytooltip-theme="dark"
                                 data-mytooltip-action="focus" data-mytooltip-direction="bottom">
                         </td>
                         <td>
                             <input type="number" class="form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ef_LeadfacilitatorNwh">
+                                value="{{ old('') }}" name="" id="ef_LeadfacilitatorNwh1">
                         </td>
                         <td class="total-td">
                             <h4 class="text-center lead" id="subtotal-lead">-</h4>
@@ -303,7 +358,7 @@
                         <td class="title">Co-facilitator / Resource Speaker</td>
                         <td>
                             <input type="number" class="form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ef_CofaciNoc" max="100">
+                                value="{{ old('') }}" name="" id="ef_CofaciNoc1" max="100">
                         </td>
                         <td>
                             <input type="text" class="form-control input-table @error('') is-invalid @enderror"
@@ -312,13 +367,13 @@
                         <td>
                             <input type="number"
                                 class="input js-mytooltip form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ef_CofaciNoh"
+                                value="{{ old('') }}" name="" id="ef_CofaciNoh1"
                                 data-mytooltip-content="<i>Number of Hours</i>" data-mytooltip-theme="dark"
                                 data-mytooltip-action="focus" data-mytooltip-direction="bottom">
                         </td>
                         <td>
                             <input type="number" class="form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ef_CofaciNwh">
+                                value="{{ old('') }}" name="" id="ef_CofaciNwh1">
                         </td>
                         <td class="total-td">
                             <h4 class="text-center lead" id="subtotal-coFacilitator">-</h4>
@@ -339,7 +394,7 @@
                         <td class="title">Moderator</td>
                         <td>
                             <input type="number" class="form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ef_ModeratorNoc" max="100">
+                                value="{{ old('') }}" name="" id="ef_ModeratorNoc1" max="100">
                         </td>
                         <td>
                             <input type="text" class="form-control input-table @error('') is-invalid @enderror"
@@ -349,13 +404,13 @@
                         <td>
                             <input type="number"
                                 class="input js-mytooltip form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ef_ModeratorNoh"
+                                value="{{ old('') }}" name="" id="ef_ModeratorNoh1"
                                 data-mytooltip-content="<i>Number of Hours</i>" data-mytooltip-theme="dark"
                                 data-mytooltip-action="focus" data-mytooltip-direction="bottom">
                         </td>
                         <td>
                             <input type="number" class="form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ef_ModeratorNwh">
+                                value="{{ old('') }}" name="" id="ef_ModeratorNwh1">
                         </td>
                         <td class="total-td">
                             <h4 class="text-center lead" id="subtotal-moderator">-</h4>
@@ -376,7 +431,7 @@
                         <td class="title">Producer</td>
                         <td>
                             <input type="number" class="form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ef_ProducerNoc" max="100">
+                                value="{{ old('') }}" name="" id="ef_ProducerNoc1" max="100">
                         </td>
                         <td>
                             <input type="text" class="form-control input-table @error('') is-invalid @enderror"
@@ -385,13 +440,13 @@
                         <td>
                             <input type="number"
                                 class="input js-mytooltip form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ef_ProducerNoh"
+                                value="{{ old('') }}" name="" id="ef_ProducerNoh1"
                                 data-mytooltip-content="<i>Number of Hours</i>" data-mytooltip-theme="dark"
                                 data-mytooltip-action="focus" data-mytooltip-direction="bottom">
                         </td>
                         <td>
                             <input type="number" class="form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ef_ProducerNwh">
+                                value="{{ old('') }}" name="" id="ef_ProducerNwh1">
                         </td>
                         <td class="total-td">
                             <h4 class="text-center lead" id="subtotal-producer">-</h4>
@@ -420,11 +475,12 @@
                         <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                             value="{{ old('') }}" name="" id="">
                     </td>
+                    <td class="border border-white add-row"></td>
                 </tr>
 
-                {{-- Program --}}
+<!----------------------------------------------------------------OTHER ROLES---------------------------------------------------------------------->
                 <tr class="">
-                    <th class="title px-4 text-dark">4. OTHER TOOLS</th>
+                    <th class="title px-4 text-dark">4. OTHER ROLES</th>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -438,7 +494,7 @@
                         <td class="title">Documentor</td>
                         <td>
                             <input type="number" class="form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ef_DocumentorNoc" max="100">
+                                value="{{ old('') }}" name="" id="ef_DocumentorNoc1" max="100">
                         </td>
                         <td>
                             <input type="text" class="form-control input-table @error('') is-invalid @enderror"
@@ -448,13 +504,13 @@
                         <td>
                             <input type="number"
                                 class="input js-mytooltip form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ef_DocumentorNoh"
+                                value="{{ old('') }}" name="" id="ef_DocumentorNoh1"
                                 data-mytooltip-content="<i>Number of Hours</i>" data-mytooltip-theme="dark"
                                 data-mytooltip-action="focus" data-mytooltip-direction="bottom">
                         </td>
                         <td>
                             <input type="number" class="form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ef_DocumentorNwh">
+                                value="{{ old('') }}" name="" id="ef_DocumentorNwh1">
                         </td>
                         <td class="total-td" style="background-color: rgba(146, 146, 146, 0.727">
                             <h4 class="text-center" id="subtotal-documentor">-</h4>
@@ -470,6 +526,7 @@
                     </tr>
                 </tbody>
 
+<!----------------------------------------------------------------TOTAL PACKAGE---------------------------------------------------------------------->
                 <tr class="table-active overall-total">
                     <td class="text-uppercase text-dark fst-italic fw-bold overall-total-start">TOTAL STANDARD FEES
                     </td>
@@ -485,6 +542,7 @@
                             value="{{ old('') }}" name="" id="">
                     </td>
                 </tr>
+
                 <tr class="table-active">
                     <td class="fw-bold text-dark text-uppercase fst-italic overall-total-start">discount given (if any)
                     </td>
@@ -522,13 +580,36 @@
                 </tr>
                 </tbody>
             </table>
-            {{-- next and prev button --}}
-            {{-- <div class="button-row d-flex justify-content-center mt-3">
-                <button class="btn btn-primary js-btn-prev" type="button" title="Prev">Prev</button>
-                <button class="btn btn-primary js-btn-next" type="button" title="Next">Next</button>
-            </div> --}}
         </div>
     </section>
 </div>
+<script>
+    $(document).ready(function() {
+        $("#tableLeadfaci").each(function () {
+            $(`#ef_LeadfacilitatorHf`).click(function () {
+                var others = $(`#ef_LeadfacilitatorHf`);
+                if (others.val() == "others") {
+                    $(`#ef_InputLeadFaciHf`).css("display", "")
+                    $(`#ef_InputLeadFaciHf`).prop('disabled', false)
+                    $(`#ef_InputLeadFaciHf`).val("₱")
+                    $(`#ef_LeadfacilitatorHf`).prop('disabled', true)
+                    $(`#ef_LeadfacilitatorHf`).css("display", "none")
+                    $("#deleteIcon").css("display", "inline-flex")
+                } else {
+                    $(`#ef_InputLeadFaciHf`).css("display", "none")
+                }
+            });
 
+            $('input.input-delete').wrap('<span class="deleteicon" id="deleteIcon"></span>').after($('<span title="Remove Others"><b>X</b></span>').click(function() {
+                // $(this).prev('input').val('').trigger('change').focus();
+                $(`#ef_InputLeadFaciHf`).css("display", "none")
+                $(`#ef_InputLeadFaciHf`).prop('disabled', true)
+                $(`#deleteIcon`).css("display", "none")
+                $(`#ef_LeadfacilitatorHf`).prop('disabled', false)
+                $(`#ef_LeadfacilitatorHf`).css("display", "")
+                $(`#ef_LeadfacilitatorHf`).val(12000)
+            }));
+        });
+    });
+</script>
 @include('form.components.customized_engagement.script.ce_engagement_fees')
