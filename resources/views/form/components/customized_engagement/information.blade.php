@@ -196,7 +196,7 @@
 
     <div class="row justify-content-center g-3 gx-5 mt-2" id="dcbe">
         <h6 class="text-center mt-3 fst-italic">Date Covered by Engagement</h3>
-        <div class="d-flex justify-content-center">
+        <div class="d-flex justify-content-center" id="dateRows1">
         <div class="flex-column">
             <div>
                 <div class="row justify-content-center" id="dateRows">
@@ -433,7 +433,7 @@
                         </div>
 
                         <div>
-                            @include('form.components.reference.test_cluster')     
+                            @include('form.components.reference.append_cluster')     
                         </div>
             
                     </div>
@@ -454,7 +454,7 @@
             $("#dcbe").on("click", ".remove", function () {
                 // Getting all the rows next to the row
                 // containing the clicked button
-                var child = $(this).closest(`#dateRows${dates}`).nextAll();
+                var child = $(this).closest('.d-flex').nextAll();
 
                 // Iterating across all the rows
                 // obtained to change the index
@@ -468,7 +468,7 @@
                     // var nwh = $(this).children(".nwh").children("input");
 
                     // Gets the row number from <tr> id.
-                    var dig = parseInt(id.substring(9));
+                    var dig = parseInt(id.substring(8));
 
                     // Modifying row id.
                     $(this).attr("id", `dateRows${dig - 1}`);
@@ -480,10 +480,10 @@
                 });
 
                 // Removing the current row.
-                $(this).closest(`#dateRows${dates}`).remove();
+                $(this).closest('.d-flex').remove();
 
                 // Decreasing total number of rows by 1.
-                dcbe--;
+                dates--;
             });
             
     });

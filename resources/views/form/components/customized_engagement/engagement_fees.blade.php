@@ -290,13 +290,25 @@
                                 max="100">
                         </td>
                         <td>
+                            <div class="form-group has-icon-right mb-0" id="inputLeadfaci1" style="display:none">
+                                <div class="position-relative">
+                                    <input type="text" class="form-control input-table @error('') is-invalid @enderror" value="{{ old('') }}"
+                                        name="" id="ef_InputLeadFaciHf1" data-type="currency" disabled>
+                                    <div class="form-control-icon">
+                                        <a href="javascript:void(0)" class="deleteIcon" id="deleteIcon1">
+                                            <i class="fa-solid fa-square-xmark text-danger"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
                             <fieldset>
-                                <input type="text" class="form-control input-table input-delete @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ef_InputLeadFaciHf" data-type="currency" style="display:none;">
+                                {{-- <input type="text" class="form-control input-table input-delete @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ef_InputLeadFaciHf1" data-type="currency" style="display:none;"> --}}
 
                                 <select
                                     class="input js-mytooltip form-select engagement-fee @error('') is-invalid @enderror select"
-                                    name="" id="ef_LeadfacilitatorHf"
+                                    name="" id="ef_LeadfacilitatorHf1"
                                     data-mytooltip-content="<i>&#8369;10,000 - For Key Accounts w/ 2021 contract <br>
                                         &#8369;11,000 - For Key Accounts with minimum guaranteed 50 sessions w/in 6 months <br>
                                         &#8369;12,000 - all else</i>"
@@ -313,7 +325,7 @@
                                         &#8369;12,000
                                     </option>
                                     <option value="others" {{ old('') == 'others' ? 'selected="selected"' : '' }}
-                                    onclick="document.getElementById('ef_InputLeadFaciHf').focus()">
+                                    id="others1" onclick="document.getElementById('ef_InputLeadFaciHf1').focus()">
                                         Others
                                     </option>
                                 </select>
@@ -583,29 +595,30 @@
 <script>
     $(document).ready(function() {
         $("#tableLeadfaci").each(function () {
-            $(`#ef_LeadfacilitatorHf`).click(function () {
-                var others = $(`#ef_LeadfacilitatorHf`);
-                if (others.val() == "others") {
-                    $(`#ef_InputLeadFaciHf`).css("display", "")
-                    $(`#ef_InputLeadFaciHf`).prop('disabled', false)
-                    $(`#ef_InputLeadFaciHf`).val("₱")
-                    $(`#ef_LeadfacilitatorHf`).prop('disabled', true)
-                    $(`#ef_LeadfacilitatorHf`).css("display", "none")
-                    $("#deleteIcon").css("display", "inline-flex")
+            $(`#ef_LeadfacilitatorHf1`).click(function () {
+                var others = $(`#ef_LeadfacilitatorHf1`);
+                if ($('#others1').is(':selected')) {
+                    $(`#inputLeadfaci1`).css("display", "")
+                    $(`#ef_InputLeadFaciHf1`).prop('disabled', false)
+                    $(`#ef_InputLeadFaciHf1`).val("₱")
+                    $(`#ef_LeadfacilitatorHf1`).prop('disabled', true)
+                    $(`#ef_LeadfacilitatorHf1`).css("display", "none")
                 } else {
-                    $(`#ef_InputLeadFaciHf`).css("display", "none")
+                    $(`#inputLeadfaci1`).css("display", "none")
                 }
+                // if ($('#capability${dates}').is(':selected')){
+
+                // }
             });
 
-            $('input.input-delete').wrap('<span class="deleteicon" id="deleteIcon"></span>').after($('<span title="Remove Others"><b>X</b></span>').click(function() {
+            $('#deleteIcon1').click(function() {
                 // $(this).prev('input').val('').trigger('change').focus();
-                $(`#ef_InputLeadFaciHf`).css("display", "none")
-                $(`#ef_InputLeadFaciHf`).prop('disabled', true)
-                $(`#deleteIcon`).css("display", "none")
-                $(`#ef_LeadfacilitatorHf`).prop('disabled', false)
-                $(`#ef_LeadfacilitatorHf`).css("display", "")
-                $(`#ef_LeadfacilitatorHf`).val(12000)
-            }));
+                $(`#inputLeadfaci1`).css("display", "none")
+                $(`#ef_InputLeadFaciHf1`).prop('disabled', true)
+                $(`#ef_LeadfacilitatorHf1`).prop('disabled', false)
+                $(`#ef_LeadfacilitatorHf1`).css("display", "")
+                $(`#ef_LeadfacilitatorHf1`).val(12000)
+            });
         });
     });
 </script>
