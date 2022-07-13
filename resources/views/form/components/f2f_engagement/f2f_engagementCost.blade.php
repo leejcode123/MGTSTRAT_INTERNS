@@ -163,7 +163,7 @@
                             </td>
                         </tr>
                     </tbody>
-                    <tr class="th-blue-grey-darken-4">
+                    <tr class="th-blue-grey-lighten-2">
                         <td class="title" colspan=""></td>
                         <td class="" colspan="5"></td>
                         <td class="title" colspan=""></td>
