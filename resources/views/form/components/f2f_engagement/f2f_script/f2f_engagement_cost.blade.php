@@ -3,7 +3,7 @@
     $(document).ready(function() {
         $("#ecaddButton").on("click", function() {
             $("#tableofSale").append(
-                `<tr class="" id="rowofSale${++ecsaleNum}">
+                `<tr class="th-blue-grey-lighten-2" id="rowofSale${++ecsaleNum}">
                             <td class="title">Sales (4% / 5% / 6% / 7%)</td>
                             <td></td>
                             <td>
@@ -62,7 +62,7 @@
     $(document).ready(function() {
         $("#ecaddButton2").on("click", function() {
             $("#tableofReferrals").append(
-                `<tr class="" id="rowofReferrals${++ecreferralsNum}">
+                `<tr class="th-blue-grey-lighten-2" id="rowofReferrals${++ecreferralsNum}">
                             <td class="title">Referral (2% / 3%)</td>
                             <td></td>
                             <td>
@@ -121,7 +121,7 @@
     $(document).ready(function() {
         $("#ecaddButton3").on("click", function() {
             $("#tableofEngagementManager").append(
-                `<tr class="" id="rowofEngagementManager${++ecengagementNum}">
+                `<tr class="th-blue-grey-lighten" id="rowofEngagementManager${++ecengagementNum}">
                             <td class="title fw-bold text-dark">ENGAGEMENT MANAGER(4%)</td>
                             <td></td>
                             <td>
@@ -180,7 +180,7 @@
     $(document).ready(function() {
         $("#ecaddButton4").on("click", function() {
             $("#tableofOffsite").append(
-                `<tr class="" id="rowofOffsite${++ecoffsiteNum}">
+                `<tr class="th-blue-grey-lighten" id="rowofOffsite${++ecoffsiteNum}">
                             <td class="title fw-bold text-dark">OFFSITE PC(3%/4%/5%)</td>
                             <td></td>
                             <td>
@@ -240,7 +240,7 @@
         $("#addBtn1").on("click", function() {
             // Adding a row inside the tbody.
             $("#tableofLeadConsultant").append(`
-                <tr id="rowofLeadConsultant${++ecleadConsultant}">
+                <tr class="th-blue-grey-lighten-2" id="rowofLeadConsultant${++ecleadConsultant}">
                     <td class="title">Lead Consultant</td>
                     <td class="noc">
                         <input type="number"
@@ -328,7 +328,7 @@
         $("#addBtn2").on("click", function() {
             // Adding a row inside the tbody.
             $("#tableofAnalyst").append(`
-                <tr id="rowofAnalyst${++ecAnalyst}">
+                <tr class="th-blue-grey-lighten-2" id="rowofAnalyst${++ecAnalyst}">
                     <td class="title">Analyst</td>
                     <td class="noc">
                         <input type="number"
@@ -416,7 +416,7 @@
         $("#addBtn3").on("click", function() {
             // Adding a row inside the tbody.
             $("#tableofDesigner").append(`
-                <tr id="rowofDesigner${++ecDesigner}">
+                <tr class="th-blue-grey-lighten-2" id="rowofDesigner${++ecDesigner}">
                     <td class="title">Designer</td>
                     <td class="noc">
                         <input type="number"
@@ -503,11 +503,11 @@
     $(document).ready(function () {
         $("#ecaddButton5").on("click", function() {
             $("#tableofCreator").append(`
-                <tr id="rowofCreator${++ecCreator}">
+                <tr class="th-blue-grey-lighten-2" id="rowofCreator${++ecCreator}">
                             <td class="title">Creators Fees (500, 1K)</td>
                             <td class="noc">
                                 <input type="number"
-                                    class="text-center yellow-input form-control input-table @error('') is-invalid @enderror"
+                                    class="text-center form-control input-table @error('') is-invalid @enderror"
                                     value="{{ old('') }}" name="" id="ec_CreatorNoc${ecCreator}" max="100"
                                     >
                             </td>
@@ -542,7 +542,7 @@
                             </td>
                             <td class="nod">
                                 <input type="number"
-                                    class="text-center yellow-input form-control input-table @error('') is-invalid @enderror"
+                                    class="text-center form-control input-table @error('') is-invalid @enderror"
                                     value="{{ old('') }}" name="" id="ec_CreatorNod${ecCreator}" max="100"
                                     >
                             </td>
@@ -603,7 +603,7 @@
         $("#addBtn4").on("click", function() {
             // Adding a row inside the tbody.
             $("#tableofLeadFacilitator").append(`
-                <tr id="rowofLeadFacilitator${++ecLeadFacilitator}">
+                <tr class="th-blue-grey-lighten-2" id="rowofLeadFacilitator${++ecLeadFacilitator}">
                     <td class="title">Lead Facilitator</td>
                     <td class="noc">
                         <input type="number"
@@ -691,7 +691,7 @@
         $("#addBtn5").on("click", function() {
             // Adding a row inside the tbody.
             $("#tableofCoFacilitator").append(`
-                <tr id="rowofCoFacilitator${++ecCoFacilitator}">
+                <tr class="th-blue-grey-lighten-2" id="rowofCoFacilitator${++ecCoFacilitator}">
                     <td class="title">Co-Facilitator / Resource Speaker</td>
                     <td class="noc">
                         <input type="number"
@@ -779,7 +779,7 @@
         $("#addBtn6").on("click", function() {
             // Adding a row inside the tbody.
             $("#tableofActionLearningCoach").append(`
-                <tr id="rowofActionLearningCoach${++ecActionLearning}">
+                <tr class="th-blue-grey-lighten-2" id="rowofActionLearningCoach${++ecActionLearning}">
                     <td class="title">Action Learning Coach</td>
                     <td class="noc">
                         <input type="number"
@@ -867,7 +867,7 @@
         $("#addBtn7").on("click", function() {
             // Adding a row inside the tbody.
             $("#tableofMarshal").append(`
-                <tr id="rowofMarshal${++ecMarshal}">
+                <tr class="th-blue-grey-lighten-2" id="rowofMarshal${++ecMarshal}">
                     <td class="title">Marshal</td>
                     <td class="noc">
                         <input type="number"
@@ -955,7 +955,7 @@
         $("#addBtn8").on("click", function() {
             // Adding a row inside the tbody.
             $("#tableofOnsitePC").append(`
-            <tr id="rowofOnsitePC${++ecOnsite}">
+            <tr class="th-blue-grey-lighten-2" id="rowofOnsitePC${++ecOnsite}">
                             <td class="title">On-site PC (P4400/P6600/P8500)</td>
                             <td class="noc">
                                 <input type="number"
@@ -1069,7 +1069,7 @@
         $("#addBtn9").on("click", function() {
             // Adding a row inside the tbody.
             $("#tableofDocumentor").append(`
-                <tr id="rowofDocumentor${++ecDocumentor}">
+                <tr class="th-blue-grey-lighten-2" id="rowofDocumentor${++ecDocumentor}">
                     <td class="title">Documentor</td>
                     <td class="noc">
                         <input type="number"

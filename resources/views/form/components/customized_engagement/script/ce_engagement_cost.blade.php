@@ -1,5 +1,6 @@
 <script>
 /*****************************************************************COMMISION*****************************************************************************/
+    /********* SALES *********/
     var salesNum = 1;
     $(document).ready(function() {
         $("#addBtn9").on("click", function() {
@@ -67,6 +68,7 @@
         });
     });
 
+    /********* REFERRAL *********/
     var refferalNum = 1;
     $(document).ready(function() {
         $("#addBtn10").on("click", function() {
@@ -134,6 +136,7 @@
     });
 
 /*****************************************************************ENGAGEMENT MANAGER*****************************************************************************/
+    /********* ENGAGEMENT MANAGER *********/
     var managerNum = 1;
     $(document).ready(function() {
         $("#addBtn11").on("click", function() {
@@ -201,6 +204,7 @@
     });
 
 /*****************************************************************CONSULTING*****************************************************************************/
+    /********* LEAD CONSULTANT *********/
     var leadConsultant = 1;
     $(document).ready(function () {
         $("#addBtn").on("click", function() {
@@ -282,6 +286,7 @@
 
     });
 
+    /********* ANALYST *********/
     var ecAnalyst = 1;
     $(document).ready(function () {
         $("#addBtn2").on("click", function() {
@@ -362,6 +367,7 @@
     });
 
 /*****************************************************************DESIGNER*****************************************************************************/
+    /********* DESIGNER *********/
     var ecDesigner = 1;
     $(document).ready(function (){ 
         $("#addBtn3").on("click", function() {
@@ -441,6 +447,7 @@
         }); 
     });
 
+    /********* CREATORS FEES *********/
     var ecCreators = 1;
     $(document).ready(function (){ 
         $("#addBtnCreators").on("click", function() {
@@ -538,6 +545,7 @@
     });
 
 /*****************************************************************PROGRAM*****************************************************************************/
+    /********* LEAD FACILITATOR *********/
     $(document).ready(function (){ 
         var ecLeadfaci = 1;
         $("#addBtn4").on("click", function() {
@@ -618,6 +626,7 @@
         }); 
     });
 
+    /********* CO-LEAD FACILITATOR *********/
     $(document).ready(function (){ 
         var ecCoLead = 1;
         $("#addBtnCoLead").on("click", function() {
@@ -699,6 +708,7 @@
         }); 
     });
 
+    /********* AL COACH *********/
     $(document).ready(function (){
         var ecAlCoach = 1;
         $("#addBtnAlCoach").on("click", function() {
@@ -778,6 +788,7 @@
         });  
     });
 
+    /********* CO-FACILITATOR / RESOURCE SPEAKER *********/
     $(document).ready(function (){
         var ecCofaci = 1;
         $("#addBtn5").on("click", function() {
@@ -858,6 +869,7 @@
         });  
     });
 
+    /********* MODERATOR *********/
     $(document).ready(function (){
         var ecModerator = 1;
         $("#addBtn6").on("click", function() {
@@ -965,6 +977,7 @@
         });  
     });
 
+    /********* PRODUCER *********/
     $(document).ready(function (){
         var ecProducer = 1;
         $("#addBtn7").on("click", function() {
@@ -1045,85 +1058,86 @@
     });
 
 /******************************************************************DOCUMENTOR*****************************************************************************/
-$(document).ready(function (){
-        var ecDocumentor = 1;
-        $("#addBtn8").on("click", function() {
-            // Adding a row inside the tbody.
-            $("#ec_TableDocumentor").append(`
-                <tr id="ec_DocumentorRow${++ecDocumentor}">
-                    <td class="title">Documentor</td>
-                    <td>
-                        <input type="number"
-                            class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ec_DocumentorNoc${ecDocumentor}" max="100"
-                            readonly>
-                    </td>
-                    <td>
-                        <input type="text"
-                            class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ec_DocumentorHf">
-                    </td>
-                    <td>
-                        <input type="number"
-                            class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ec_DocumentorNoh${ecDocumentor}" readonly>
-                    </td>
-                    <td>
-                        <input type="number"
-                            class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ec_DocumentorNwh${ecDocumentor}" readonly>
-                    </td>
-                    <td class="total-td" style="background-color: rgba(146, 146, 146, 0.727">
-                        <h4 class="text-center" id="ec_DocumentorTotal">-</h4>
-                    </td>
-                    <td class="total-td">
-                        <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="">
-                    </td>
-                    <td class="border border-white" style="background-color: #FFFFFF;">
-                        <a href="javascript:void(0)" class="text-danger font-18 remove" id="ecDocumentorRemove${ecDocumentor}" title="Remove" style="visibility: hidden;">
-                            <i class="fa fa-trash-o"></i>
-                        </a>
-                    </td>
-                </tr>
-            `);
-        }); 
+    /********* DOCUMENTOR *********/
+    $(document).ready(function (){
+            var ecDocumentor = 1;
+            $("#addBtn8").on("click", function() {
+                // Adding a row inside the tbody.
+                $("#ec_TableDocumentor").append(`
+                    <tr id="ec_DocumentorRow${++ecDocumentor}">
+                        <td class="title">Documentor</td>
+                        <td>
+                            <input type="number"
+                                class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ec_DocumentorNoc${ecDocumentor}" max="100"
+                                readonly>
+                        </td>
+                        <td>
+                            <input type="text"
+                                class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ec_DocumentorHf">
+                        </td>
+                        <td>
+                            <input type="number"
+                                class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ec_DocumentorNoh${ecDocumentor}" readonly>
+                        </td>
+                        <td>
+                            <input type="number"
+                                class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="ec_DocumentorNwh${ecDocumentor}" readonly>
+                        </td>
+                        <td class="total-td" style="background-color: rgba(146, 146, 146, 0.727">
+                            <h4 class="text-center" id="ec_DocumentorTotal">-</h4>
+                        </td>
+                        <td class="total-td">
+                            <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="" id="">
+                        </td>
+                        <td class="border border-white" style="background-color: #FFFFFF;">
+                            <a href="javascript:void(0)" class="text-danger font-18 remove" id="ecDocumentorRemove${ecDocumentor}" title="Remove" style="visibility: hidden;">
+                                <i class="fa fa-trash-o"></i>
+                            </a>
+                        </td>
+                    </tr>
+                `);
+            }); 
 
-        $("#ec_TableDocumentor").on("click", ".remove", function () {
-            
-            // Getting all the rows next to the row
-            // containing the clicked button
-            var child = $(this).closest("tr").nextAll();
-            
-            // Iterating across all the rows
-            // obtained to change the index
-            child.each(function () {
-                // Getting <tr> id.
-                var id = $(this).attr("id");
+            $("#ec_TableDocumentor").on("click", ".remove", function () {
+                
+                // Getting all the rows next to the row
+                // containing the clicked button
+                var child = $(this).closest("tr").nextAll();
+                
+                // Iterating across all the rows
+                // obtained to change the index
+                child.each(function () {
+                    // Getting <tr> id.
+                    var id = $(this).attr("id");
 
-                // Getting the <input> inside the .noc, .noh, .nwh class.
-                var noc = $(this).children(".noc").children("input");
-                var noh = $(this).children(".noh").children("input");
-                var nwh = $(this).children(".nwh").children("input");
+                    // Getting the <input> inside the .noc, .noh, .nwh class.
+                    var noc = $(this).children(".noc").children("input");
+                    var noh = $(this).children(".noh").children("input");
+                    var nwh = $(this).children(".nwh").children("input");
 
-                // Gets the row number from <tr> id.
-                var dig = parseInt(id.substring(16));
+                    // Gets the row number from <tr> id.
+                    var dig = parseInt(id.substring(16));
 
-                // Modifying row id.
-                $(this).attr("id", `ec_DocumentorRow${dig - 1}`);
+                    // Modifying row id.
+                    $(this).attr("id", `ec_DocumentorRow${dig - 1}`);
 
-                // Modifying row index.
-                noc.attr("id", `ec_DocumentorNoc${dig - 1}`);
-                noh.attr("id", `ec_DocumentorNoh${dig - 1}`);
-                nwh.attr("id", `ec_DocumentorNwh${dig - 1}`);
-            });
+                    // Modifying row index.
+                    noc.attr("id", `ec_DocumentorNoc${dig - 1}`);
+                    noh.attr("id", `ec_DocumentorNoh${dig - 1}`);
+                    nwh.attr("id", `ec_DocumentorNwh${dig - 1}`);
+                });
 
-            // Removing the current row.
-            $(this).closest("tr").remove();
-            // Decreasing total number of rows by 1.
-            ecDocumentor--;
-        });  
-    });
+                // Removing the current row.
+                $(this).closest("tr").remove();
+                // Decreasing total number of rows by 1.
+                ecDocumentor--;
+            });  
+        });
 
-</script>
+    </script>
 

@@ -1,6 +1,8 @@
 <script>
     $(document).ready(function() {
 /*******************************************************CONSULTING*********************************************************************/
+        /********* LEAD CONSULTANT *********/
+        //LEAD CONSULTANT TRIGGER APPEND WHEN ADD BUTTON CLICKED
         var rowIdx = 1;
         $("#addBtn").on("click", function() {
             // Adding a row inside the tbody.
@@ -73,6 +75,7 @@
             `);
         });
         
+        //REMOVE LEAD CONSULTANT ROW
         $("#tableLeadconsultant").on("click", ".remove", function () {
 
                 // Getting all the rows next to the row
@@ -110,6 +113,8 @@
                 // $(`#ecButton${rowIdx}`).trigger('click');
         });
 
+        /********* ANALYST *********/
+        //ANALYST TRIGGER APPEND WHEN ADD BUTTON CLICKED
         var efAnalyst = 1;
         $("#addBtn2").on("click", function() {
             // Adding a row inside the tbody.
@@ -161,6 +166,7 @@
             `);
         });
 
+        //REMOVE ANALYST ROW
         $("#tableAnalyst").on("click", ".remove", function () {
                 // Getting all the rows next to the row
                 // containing the clicked button
@@ -198,6 +204,8 @@
         });
         
 /*******************************************************DESIGNER*********************************************************************/
+        /********* DESIGNER *********/
+        //DESIGNER TRIGGER APPEND WHEN ADD BUTTON CLICKED
         var efDesigner = 1;
         $("#addBtn3").on("click", function() {
             // Adding a row inside the tbody.
@@ -265,6 +273,7 @@
             </tr>`);
         });
 
+        //REMOVE DESIGNER ROW
         $("#tableDesigner").on("click", ".remove", function () {
                 // Getting all the rows next to the row
                 // containing the clicked button
@@ -301,6 +310,8 @@
             });
 
 /*******************************************************PROGRAM*********************************************************************/
+        /********* LEAD FACILITATOR *********/
+        // LEAD FACILITATOR TRIGGER APPEND WHEN ADD BUTTON CLICKED
         var efLeadfaci = 1;
         $("#addBtn4").on("click", function() {
             // Adding a row inside the tbody.
@@ -313,16 +324,40 @@
                             oninput="document.getElementById('ec_LeadfacilitatorNoc${efLeadfaci}').value = document.getElementById('ef_LeadfacilitatorNoc${efLeadfaci}').value;">
                     </td>
                     <td>
-                        <fieldset>
-                            <input type="text" class="form-control input-table input-delete @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ef_InputLeadFaciHf" style="display:none;">
+                        <div class="form-group has-icon-right mb-0" id="inputLeadfaci${efLeadfaci}" style="display:none">
+                            <div class="position-relative">
+                                <input type="text" class="form-control input-table @error('') is-invalid @enderror" value="{{ old('') }}"
+                                    name="" id="ef_InputLeadFaciHf${efLeadfaci}" data-type="currency" disabled>
+                                <div class="form-control-icon">
+                                    <a href="javascript:void(0)" class="deleteIcon" id="deleteIcon${efLeadfaci}"
+                                            onclick="$('#inputLeadfaci${efLeadfaci}').css('display', 'none');
+                                            $('#ef_InputLeadFaciHf${efLeadfaci}').prop('disabled', true);
+                                            $('#inputLeadfaci${efLeadfaci}').css('display', 'none');
+                                            $('#ef_LeadfacilitatorHf${efLeadfaci}').prop('disabled', false);
+                                            $('#ef_LeadfacilitatorHf${efLeadfaci}').css('display', '');
+                                            $('#ef_LeadfacilitatorHf${efLeadfaci}').val(12000);">
+                                        <i class="fa-solid fa-square-xmark text-danger"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
 
+                        <fieldset>
                             <select
                                 class="input js-mytooltip form-select engagement-fee @error('') is-invalid @enderror select"
-                                name="" id="ef_LeadfacilitatorHf" data-mytooltip-content="<i>&#8369;10,000 - For Key Accounts w/ 2021 contract <br>
+                                name="" id="ef_LeadfacilitatorHf${efLeadfaci}" data-mytooltip-content="<i>&#8369;10,000 - For Key Accounts w/ 2021 contract <br>
                                     &#8369;11,000 - For Key Accounts with minimum guaranteed 50 sessions w/in 6 months <br>
                                     &#8369;12,000 - all else</i>" data-mytooltip-theme="dark"
-                                data-mytooltip-action="focus" data-mytooltip-direction="right" style="background-color:#ffcccc; color:red;">
+                                data-mytooltip-action="focus" data-mytooltip-direction="right" style="background-color:#ffcccc; color:red;"
+                                onchange="if ($('#others${efLeadfaci}').is(':selected')){
+                                            $('#inputLeadfaci${efLeadfaci}').css('display', '')
+                                            $('#ef_InputLeadFaciHf${efLeadfaci}').prop('disabled', false)
+                                            $('#ef_InputLeadFaciHf${efLeadfaci}').val('₱')
+                                            $('#ef_LeadfacilitatorHf${efLeadfaci}').prop('disabled', true)
+                                            $('#ef_LeadfacilitatorHf${efLeadfaci}').css('display', 'none')
+                                        } else {
+                                            $('#inputLeadfaci${efLeadfaci}').css('display', 'none')
+                                        }">
                                 <option value="10000" {{ old('') == '10000' ? 'selected="selected"' : '' }}>
                                     &#8369;10,000
                                 </option>
@@ -332,8 +367,8 @@
                                 <option value="12000" {{ old('') == '12000' ? 'selected="selected"' : '' }} selected>
                                     &#8369;12,000
                                 </option>
-                                <option value="others" {{ old('') == 'others' ? 'selected="selected"' : '' }}>
-                                        Others
+                                <option id="others${efLeadfaci}" value="others" {{ old('') == 'others' ? 'selected="selected"' : '' }}>
+                                    Others
                                 </option>
                             </select>
 
@@ -373,33 +408,7 @@
             `);
         });
 
-        // const efLeadFaci = document.querySelectorAll("#ef_LeadfacilitatorHf");
-        // for (let i = 0; i < efLeadFaci.length; i++) {
-        // efLeadFaci[i].value = "0";
-        // }
-
-        // $(`#ef_LeadfacilitatorHf${efLeadfaci}`).click(function () {
-        //     var others = $(`#ef_LeadfacilitatorHf${efLeadfaci}`);
-        //     if (
-        //         others.val() == "others"
-        //     ) {
-        //         document.getElementById(`ef_InputLeadFaciHf${efLeadfaci}`).style.display = ""
-        //         document.getElementById(`ef_LeadfacilitatorHf${efLeadfaci}`).style.display = "none"
-        //         document.getElementById("deleteIcon").style.display = "inline-flex";
-        //     } else {
-        //         document.getElementById(`ef_InputLeadFaciHf${efLeadfaci}`).style.display =
-        //             "none";
-        //     }
-        // });
-
-        // $('input.input-delete').wrap('<span class="deleteicon" id="deleteIcon"></span>').after($('<span>x</span>').click(function() {
-        //     // $(this).prev('input').val('').trigger('change').focus();
-        //     document.getElementById(`ef_InputLeadFaciHf${efLeadfaci}`).style.display = "none"
-        //     document.getElementById(`deleteIcon`).style.display = "none";
-        //     document.getElementById(`ef_LeadfacilitatorHf${efLeadfaci}`).style.display = ""
-        //     document.getElementById(`ef_LeadfacilitatorHf${efLeadfaci}`).selectedIndex = "0"
-        // }));
-
+        // REMOVE LEAD FACILITATOR ROW
         $("#tableLeadfaci").on("click", ".remove", function () {
                 // Getting all the rows next to the row
                 // containing the clicked button
@@ -435,6 +444,8 @@
                 efLeadfaci--;
         });
 
+        /********* CO FACILITATOR *********/
+        //CO FACILITATOR TRIGGER APPEND WHEN ADD BUTTON CLICKED
         var efCofaci = 1;
         $("#addBtn5").on("click", function() {
             // Adding a row inside the tbody.
@@ -476,6 +487,7 @@
                 </tr>`);
         });
 
+        //REMOVE CO FACILITATOR ROW
         $("#tableCofaci").on("click", ".remove", function () {
                 // Getting all the rows next to the row
                 // containing the clicked button
@@ -511,6 +523,8 @@
                 efCofaci--;
         }); 
 
+        /********* MODERATOR *********/
+        //MODERATOR TRIGGER APPEND WHEN ADD BUTTON CLICKED
         var efModerator = 1;
         $("#addBtn6").on("click", function() {
             // Adding a row inside the tbody.
@@ -554,6 +568,7 @@
             </tr>`);
         });
 
+        //REMOVE MODERATOR ROW
         $("#tableModerator").on("click", ".remove", function () {
                 // Getting all the rows next to the row
                 // containing the clicked button
@@ -589,6 +604,8 @@
                 efModerator--;
         });
 
+        /********* PRODUCER *********/
+        //PRODUCER TRIGGER APPEND WHEN ADD BUTTON CLICKED
         var efProducer = 1;
         $("#addBtn7").on("click", function() {
             // Adding a row inside the tbody.
@@ -630,6 +647,7 @@
             </tr>`);
         });
 
+        //REMOVE PRODUCER ROW
         $("#tableProducer").on("click", ".remove", function () {
             // Getting all the rows next to the row
             // containing the clicked button
@@ -665,7 +683,9 @@
             efProducer--;
         });
 
-/*******************************************************OTHER TOOLS*********************************************************************/
+/*******************************************************OTHER ROLES*********************************************************************/
+        /********* DOCUMENTOR *********/
+        //DOCUMENTOR TRIGGER APPEND WHEN ADD BUTTON CLICKED
         var efDocumentor = 1;
         $("#addBtn8").on("click", function() {
             // Adding a row inside the tbody.
@@ -710,6 +730,7 @@
             `);
         });
 
+        //REMOVE DOCUMENTOR ROW
         $("#tableDocumentor").on("click", ".remove", function () {
             
             // Getting all the rows next to the row

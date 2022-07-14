@@ -359,19 +359,19 @@ $(document).on(
             efLeadfaci++;
             sum21 =
                 $(this).find(`#ef_LeadfacilitatorNoc${efLeadfaci}`).val() *
-                    +$(this).find("#ef_LeadfacilitatorHf").val() *
+                    +$(this).find(`#ef_LeadfacilitatorHf${efLeadfaci}`).val() *
                     $(this).find(`#ef_LeadfacilitatorNoh${efLeadfaci}`).val() +
                 $(this).find(`#ef_LeadfacilitatorNwh${efLeadfaci}`).val() *
                     ($(this).find(`#ef_LeadfacilitatorNoc${efLeadfaci}`).val() *
-                        +$(this).find("#ef_LeadfacilitatorHf").val() *
+                        +$(this).find(`#ef_LeadfacilitatorHf${efLeadfaci}`).val() *
                         $(this).find(`#ef_LeadfacilitatorNoh${efLeadfaci}`).val() *
                         $("#nswh").val()) ||
                 $(this).find(`#ef_LeadfacilitatorNoc${efLeadfaci}`).val() *
-                    +$(this).find("#ef_InputLeadFaciHf").val().replace(/\₱|,/g, "") *
+                    +$(this).find(`#ef_InputLeadFaciHf${efLeadfaci}`).val().replace(/\₱|,/g, "") *
                     $(this).find(`#ef_LeadfacilitatorNoh${efLeadfaci}`).val() +
                 $(this).find(`#ef_LeadfacilitatorNwh${efLeadfaci}`).val() *
                     ($(this).find(`#ef_LeadfacilitatorNoc${efLeadfaci}`).val() *
-                        +$(this).find("#ef_InputLeadFaciHf").val().replace(/\₱|,/g, "") *
+                        +$(this).find(`#ef_InputLeadFaciHf${efLeadfaci}`).val().replace(/\₱|,/g, "") *
                         $(this).find(`#ef_LeadfacilitatorNoh${efLeadfaci}`).val() *
                         $("#nswh").val());
 
@@ -952,7 +952,7 @@ $(document).on(
 //*************************************** APPEND NUMBER FORMAT ********************************************************//
 $(document).on(
     "change keyup click",
-    "#tableEngagementCost, #ec_tableEngagementCost",
+    "#tableEngagementCost, #ec_tableEngagementCost, #tableLeadfaci",
     function () {
         // Jquery Dependency
         $("input[data-type='currency']").on({
