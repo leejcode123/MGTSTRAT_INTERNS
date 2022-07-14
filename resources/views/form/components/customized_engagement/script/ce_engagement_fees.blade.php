@@ -1,6 +1,8 @@
 <script>
     $(document).ready(function() {
 /*******************************************************CONSULTING*********************************************************************/
+        /********* LEAD CONSULTANT *********/
+        //LEAD CONSULTANT TRIGGER APPEND WHEN ADD BUTTON CLICKED
         var rowIdx = 1;
         $("#addBtn").on("click", function() {
             // Adding a row inside the tbody.
@@ -73,6 +75,7 @@
             `);
         });
         
+        //REMOVE LEAD CONSULTANT ROW
         $("#tableLeadconsultant").on("click", ".remove", function () {
 
                 // Getting all the rows next to the row
@@ -110,6 +113,8 @@
                 // $(`#ecButton${rowIdx}`).trigger('click');
         });
 
+        /********* ANALYST *********/
+        //ANALYST TRIGGER APPEND WHEN ADD BUTTON CLICKED
         var efAnalyst = 1;
         $("#addBtn2").on("click", function() {
             // Adding a row inside the tbody.
@@ -161,6 +166,7 @@
             `);
         });
 
+        //REMOVE ANALYST ROW
         $("#tableAnalyst").on("click", ".remove", function () {
                 // Getting all the rows next to the row
                 // containing the clicked button
@@ -198,6 +204,8 @@
         });
         
 /*******************************************************DESIGNER*********************************************************************/
+        /********* DESIGNER *********/
+        //DESIGNER TRIGGER APPEND WHEN ADD BUTTON CLICKED
         var efDesigner = 1;
         $("#addBtn3").on("click", function() {
             // Adding a row inside the tbody.
@@ -265,6 +273,7 @@
             </tr>`);
         });
 
+        //REMOVE DESIGNER ROW
         $("#tableDesigner").on("click", ".remove", function () {
                 // Getting all the rows next to the row
                 // containing the clicked button
@@ -301,6 +310,8 @@
             });
 
 /*******************************************************PROGRAM*********************************************************************/
+        /********* LEAD FACILITATOR *********/
+        // LEAD FACILITATOR TRIGGER APPEND WHEN ADD BUTTON CLICKED
         var efLeadfaci = 1;
         $("#addBtn4").on("click", function() {
             // Adding a row inside the tbody.
@@ -397,6 +408,7 @@
             `);
         });
 
+        // REMOVE LEAD FACILITATOR ROW
         $("#tableLeadfaci").on("click", ".remove", function () {
                 // Getting all the rows next to the row
                 // containing the clicked button
@@ -432,6 +444,8 @@
                 efLeadfaci--;
         });
 
+        /********* CO FACILITATOR *********/
+        //CO FACILITATOR TRIGGER APPEND WHEN ADD BUTTON CLICKED
         var efCofaci = 1;
         $("#addBtn5").on("click", function() {
             // Adding a row inside the tbody.
@@ -473,6 +487,7 @@
                 </tr>`);
         });
 
+        //REMOVE CO FACILITATOR ROW
         $("#tableCofaci").on("click", ".remove", function () {
                 // Getting all the rows next to the row
                 // containing the clicked button
@@ -508,6 +523,8 @@
                 efCofaci--;
         }); 
 
+        /********* MODERATOR *********/
+        //MODERATOR TRIGGER APPEND WHEN ADD BUTTON CLICKED
         var efModerator = 1;
         $("#addBtn6").on("click", function() {
             // Adding a row inside the tbody.
@@ -551,6 +568,7 @@
             </tr>`);
         });
 
+        //REMOVE MODERATOR ROW
         $("#tableModerator").on("click", ".remove", function () {
                 // Getting all the rows next to the row
                 // containing the clicked button
@@ -586,6 +604,8 @@
                 efModerator--;
         });
 
+        /********* PRODUCER *********/
+        //PRODUCER TRIGGER APPEND WHEN ADD BUTTON CLICKED
         var efProducer = 1;
         $("#addBtn7").on("click", function() {
             // Adding a row inside the tbody.
@@ -627,6 +647,7 @@
             </tr>`);
         });
 
+        //REMOVE PRODUCER ROW
         $("#tableProducer").on("click", ".remove", function () {
             // Getting all the rows next to the row
             // containing the clicked button
@@ -662,7 +683,9 @@
             efProducer--;
         });
 
-/*******************************************************OTHER TOOLS*********************************************************************/
+/*******************************************************OTHER ROLES*********************************************************************/
+        /********* DOCUMENTOR *********/
+        //DOCUMENTOR TRIGGER APPEND WHEN ADD BUTTON CLICKED
         var efDocumentor = 1;
         $("#addBtn8").on("click", function() {
             // Adding a row inside the tbody.
@@ -707,6 +730,7 @@
             `);
         });
 
+        //REMOVE DOCUMENTOR ROW
         $("#tableDocumentor").on("click", ".remove", function () {
             
             // Getting all the rows next to the row
