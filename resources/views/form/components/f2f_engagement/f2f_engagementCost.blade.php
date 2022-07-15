@@ -7,7 +7,7 @@
     <section>
         <div class="table-responsive-md" id="no-more-tables">
             <table class="table table-bordered table-hover" id="f2f-ec-table">
-            <!---------------TABLE HEADING TITLE------------------------------>
+            <!--------------------------TABLE HEADING TITLE------------------------------>
                 <thead class="table">
                     <tr class="text-center th-blue-grey">
                         <th class="title-th" scope="col" width=15%></th>
@@ -25,7 +25,7 @@
 
 
 
-            <!---------------COMMISSION--------------------------------------->
+            <!--------------------------COMMISSION--------------------------------------->
                 <tbody>
 
                     <tr class="th-blue-grey-lighten">
@@ -177,7 +177,7 @@
                     </tr>
 
 
-            <!---------------ENGAGEMENT MANAGER------------------------------->
+            <!--------------------------ENGAGEMENT MANAGER------------------------------->
                     <tbody id="tableofEngagementManager">
                         <tr class="th-blue-grey-lighten" id="rowofEngagementManager">
                             <td class="title fw-bold text-dark">ENGAGEMENT MANAGER(4%)</td>
@@ -229,7 +229,7 @@
                             </td>
                         </tr>
                     </tbody>
-            <!---------------OFFSITE PC--------------------------------------->
+            <!--------------------------OFFSITE PC--------------------------------------->
                     <tbody id="tableofOffsite">
                         <tr class="th-blue-grey-lighten" id="rowofOffsite">
                             <td class="title fw-bold text-dark">OFFSITE PC(3%/4%/5%)</td>
@@ -300,7 +300,7 @@
                         <td style="background-color: #FFFFFF;" class="border border-white"></td>
                     </tr>
             
-            <!---------------CONSULTING--------------------------------------->
+            <!--------------------------CONSULTING--------------------------------------->
                     {{-- Consulting --}}
                     <tr class="th-blue-grey-lighten">
                         <th class="px-4 title text-dark">1. CONSULTING</th>
@@ -416,7 +416,7 @@
                     </tr>
 
 
-            <!---------------DESIGN------------------------------------------->
+            <!--------------------------DESIGN------------------------------------------->
                     {{-- Design --}}
                     <tr class="th-blue-grey-lighten">
                         <th class="title px-4 text-dark">2. DESIGN</th>
@@ -551,7 +551,7 @@
                         <td style="background-color: #FFFFFF;" class="border border-white"></td>
                     </tr>
 
-            <!---------------PROGRAM------------------------------------------>
+            <!--------------------------PROGRAM------------------------------------------>
                     {{-- Program --}}
                     <tr class="th-blue-grey-lighten">
                         <th class="title px-4 text-dark">3. PROGRAM</th>
@@ -806,7 +806,7 @@
 
                     </tr>
 
-            <!---------------OTHER ROLES-------------------------------------->
+            <!--------------------------OTHER ROLES-------------------------------------->
                     {{-- Other roles --}}
                     <tr class="th-blue-grey-lighten">
                         <th class="title px-4 text-dark">4. OTHER ROLES</th>
@@ -867,7 +867,7 @@
                         <td style="background-color: #FFFFFF;" class="border border-white"></td>
                     </tr>
                 
-            <!---------------PER DIEM----------------------------------------->
+            <!--------------------------PER DIEM----------------------------------------->
                     {{-- Per Diem --}}
                         <tr class="th-blue-grey-lighten" id="rowofPerDiem">
                             <th class="title px-4 text-dark">5. PER DIEM</th>
@@ -907,7 +907,7 @@
                         <td style="background-color: #FFFFFF;" class="border border-white"></td>
                     </tr>
 
-            <!---------------OFF-PROGRAM-------------------------------------->
+            <!--------------------------OFF-PROGRAM-------------------------------------->
                     {{-- Off-Program --}}
                     <tr class="th-blue-grey-lighten">
                         <th class="title px-4 text-dark">6. OFF-PROGRAM</th>
@@ -962,7 +962,7 @@
                         <td style="background-color: #FFFFFF;" class="border border-white"></td>
                     </tr>
 
-            <!---------------MISCELLANEOUS------------------------------------>
+            <!--------------------------MISCELLANEOUS------------------------------------>
                     {{-- miscellaneous --}}
                     <tr class="th-blue-grey-lighten">
                         <th class="title px-4 text-dark">MISCELLANEOUS</th>
@@ -1007,7 +1007,7 @@
                         <td style="background-color: #FFFFFF;" class="border border-white"></td>
                     </tr>
 
-            <!---------------TOTAL-------------------------------------------->
+            <!--------------------------TOTAL-------------------------------------------->
                     <tr class="table-active">
                         <td class="fw-bold text-uppercase text-dark fst-italic overall-total-start">TOTAL</td>
                         <td class="overall-total-middle"></td>
