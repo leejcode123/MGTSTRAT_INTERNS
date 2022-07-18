@@ -1,4 +1,6 @@
 <script>
+    
+    //SALES
     var ecsaleNum = 1;
     $(document).ready(function() {
         $("#ecaddButton").on("click", function() {
@@ -58,6 +60,7 @@
 
     });
 
+    //REFERRALS
     var ecreferralsNum = 1;
     $(document).ready(function() {
         $("#ecaddButton2").on("click", function() {
@@ -117,6 +120,7 @@
 
     });
 
+    //ENGAGEMENT MANAGER
     var ecengagementNum = 1;
     $(document).ready(function() {
         $("#ecaddButton3").on("click", function() {
@@ -176,6 +180,7 @@
 
     });
 
+    //OFFSITE PC
     var ecoffsiteNum = 1;
     $(document).ready(function() {
         $("#ecaddButton4").on("click", function() {
@@ -235,6 +240,7 @@
 
     });
 
+    //LEAD CONSULTANT
     var ecleadConsultant = 1;
     $(document).ready(function () {
         $("#addBtn1").on("click", function() {
@@ -323,6 +329,7 @@
 
     });
 
+    //ANALYST
     var ecAnalyst = 1;
     $(document).ready(function () {
         $("#addBtn2").on("click", function() {
@@ -411,6 +418,7 @@
 
     });
 
+    //DESIGNER
     var ecDesigner = 1;
     $(document).ready(function () {
         $("#addBtn3").on("click", function() {
@@ -499,6 +507,7 @@
 
     });
 
+    //CREATORS
     var ecCreator = 1;
     $(document).ready(function () {
         $("#ecaddButton5").on("click", function() {
@@ -598,6 +607,7 @@
 
     });
 
+    //LEAD FACILITATOR
     var ecLeadFacilitator = 1;
     $(document).ready(function () {
         $("#addBtn4").on("click", function() {
@@ -686,6 +696,7 @@
 
     });
 
+    //CO-FACILITATOR
     var ecCoFacilitator = 1;
     $(document).ready(function () {
         $("#addBtn5").on("click", function() {
@@ -774,6 +785,7 @@
 
     });
     
+    //ACTION LEARNING COACH
     var ecActionLearning = 1;
     $(document).ready(function () {
         $("#addBtn6").on("click", function() {
@@ -862,6 +874,7 @@
 
     });
 
+    //MARSHAL
     var ecMarshal = 1;
     $(document).ready(function () {
         $("#addBtn7").on("click", function() {
@@ -950,6 +963,7 @@
 
     });
 
+    //ONSITE PC
     var ecOnsite = 1;
     $(document).ready(function () {
         $("#addBtn8").on("click", function() {
@@ -1064,6 +1078,7 @@
 
     });
 
+    //DOCUMENTOR
     var ecDocumentor = 1;
     $(document).ready(function () {
         $("#addBtn9").on("click", function() {

@@ -38,6 +38,7 @@
                         <th class="total-td"></th>
                         <th class="total-td"></th>
                     </tr>
+                <!---------------SALE-------------------------->
                     <tbody id="tableofSale">
                         <tr class="th-blue-grey-lighten-2" id="rowofSale">
                             <td class="title">Sales (4% / 5% / 6% / 7%)</td>
@@ -111,6 +112,7 @@
                             </td>
                         </tr>
                     </tbody>
+                <!---------------REFERRALS--------------------->
                     <tbody id="tableofReferrals">
                         <tr class="th-blue-grey-lighten-2" id="rowofReferrals">
                             <td class="title">Referral (2% / 3%)</td>
@@ -301,7 +303,6 @@
                     </tr>
             
             <!--------------------------CONSULTING--------------------------------------->
-                    {{-- Consulting --}}
                     <tr class="th-blue-grey-lighten">
                         <th class="px-4 title text-dark">1. CONSULTING</th>
                         <th></th>
@@ -313,6 +314,7 @@
                         <th class="total-td"></th>
                         <th style="background-color: #FFFFFF;" class="border border-white"></th>
                     </tr>
+                <!---------------LEAD CONSULTANT---------------->
                     <tbody id="tableofLeadConsultant">
                         <tr class="th-blue-grey-lighten-2" id="rowofLeadConsultant">
                             <td class="title">Lead Consultant</td>
@@ -351,6 +353,7 @@
                             <td style="background-color: #FFFFFF;" class="border border-white"></td>
                         </tr>
                     </tbody>
+                <!---------------ANALYST------------------------>
                     <tbody id="tableofAnalyst">
                         <tr class="th-blue-grey-lighten-2" id="rowofAnalyst">
                             <td class="title">Analyst</td>
@@ -417,7 +420,6 @@
 
 
             <!--------------------------DESIGN------------------------------------------->
-                    {{-- Design --}}
                     <tr class="th-blue-grey-lighten">
                         <th class="title px-4 text-dark">2. DESIGN</th>
                         <td></td>
@@ -429,6 +431,7 @@
                         <td class="total-td"></td>
                         <td style="background-color: #FFFFFF;" class="border border-white"></td>
                     </tr>
+                <!---------------DESIGNER---------------------->
                     <tbody id="tableofDesigner">
                         <tr class="th-blue-grey-lighten-2" id="rowofDesigner">
                             <td class="title">Designer</td>
@@ -467,6 +470,7 @@
                             <td style="background-color: #FFFFFF;" class="border border-white"></td>
                         </tr>
                     </tbody>
+                <!---------------CREATOR----------------------->
                     <tbody id="tableofCreator">
                         <tr class="th-blue-grey-lighten-2" id="rowofCreator">
                             <td class="title">Creators Fees (500, 1K)</td>
@@ -552,7 +556,6 @@
                     </tr>
 
             <!--------------------------PROGRAM------------------------------------------>
-                    {{-- Program --}}
                     <tr class="th-blue-grey-lighten">
                         <th class="title px-4 text-dark">3. PROGRAM</th>
                         <td></td>
@@ -564,6 +567,7 @@
                         <td class="total-td"></td>
                         <td style="background-color: #FFFFFF;" class="border border-white"></td>
                     </tr>
+                <!---------------LEAD FACILITATOR-------------->
                     <tbody id="tableofLeadFacilitator">
                         <tr class="th-blue-grey-lighten-2" id="rowofLeadFacilitator">
                             <td class="title">Lead Facilitator</td>
@@ -602,6 +606,7 @@
                             <td style="background-color: #FFFFFF;" class="border border-white"></td>
                         </tr>
                     </tbody>
+                <!---------------CO-FACILITATOR---------------->
                     <tbody id="tableofCoFacilitator">
                         <tr class="th-blue-grey-lighten-2" id="rowofCoFacilitator">
                             <td class="title">Co-Facilitator / Resource Speaker</td>
@@ -640,6 +645,7 @@
                             <td style="background-color: #FFFFFF;" class="border border-white"></td>
                         </tr>
                     </tbody>
+                <!---------------ACTION LEARNING COACH--------->
                     <tbody id="tableofActionLearningCoach">
                         <tr class="th-blue-grey-lighten-2" id="rowofActionLearningCoach">
                             <td class="title">Action Learning Coach</td>
@@ -678,6 +684,7 @@
                             <td style="background-color: #FFFFFF;" class="border border-white"></td>
                         </tr>
                     </tbody>
+                <!---------------MARSHAL----------------------->
                     <tbody id="tableofMarshal">
                         <tr class="th-blue-grey-lighten-2" id="rowofMarshal">
                             <td class="title">Marshal</td>
@@ -716,6 +723,7 @@
                             <td style="background-color: #FFFFFF;" class="border border-white"></td>
                         </tr>
                     </tbody>
+                <!---------------ONSITE PC--------------------->
                     <tbody id="tableofOnsitePC">
                         <tr class="th-blue-grey-lighten-2" id="rowofOnsitePC">
                             <td class="title">On-site PC (P4400/P6600/P8500)</td>
@@ -807,7 +815,6 @@
                     </tr>
 
             <!--------------------------OTHER ROLES-------------------------------------->
-                    {{-- Other roles --}}
                     <tr class="th-blue-grey-lighten">
                         <th class="title px-4 text-dark">4. OTHER ROLES</th>
                         <td></td>
@@ -819,6 +826,7 @@
                         <td class="total-td"></td>
                         <td style="background-color: #FFFFFF;" class="border border-white"></td>
                     </tr>
+                <!---------------DOCUMENTOR-------------------->
                     <tbody id="tableofDocumentor">
                         <tr class="th-blue-grey-lighten-2" id="rowofDocumentor">
                             <td class="title">Documentor</td>
