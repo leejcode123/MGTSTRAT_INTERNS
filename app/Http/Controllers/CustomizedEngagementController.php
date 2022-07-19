@@ -41,13 +41,9 @@ class CustomizedEngagementController extends Controller
             'ef_LeadconsultantNoh' => $request->input('ef_LeadconsultantNoh'),
             'ef_LeadconsultantNwh' => $request->input('ef_LeadconsultantNwh')
         ]);
+        
         foreach($request->item as $key => $items)
         {
-            // $estimatesAdd['item']            = $items;
-            // $estimatesAdd['estimate_number'] = $estimate_number;
-            // $estimatesAdd['description']     = $request->description[$key];
-            // $estimatesAdd['unit_cost']       = $request->unit_cost[$key];
-            // $estimatesAdd['qty']             = $request->qty[$key];
             $estimatesAdd['ef_Leadconsultant']          = $request->ef_Leadconsultant[$key];
 
             EstimatesAdd::create($estimatesAdd);
