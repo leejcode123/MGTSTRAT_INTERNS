@@ -92,7 +92,7 @@
                                             {{-- prev and submit button --}}
                                             <div class="col-12 d-flex justify-content-center mt-3">
                                                 <button class="btn btn-secondary mx-2 js-btn-prev" type="button" title="Prev">Prev</button>
-                                                {{-- <button class="btn btn-success mx-2 js-btn-next" type="submit" title="Submit">Submit</button> --}}
+                                                <button class="btn btn-success mx-2 js-btn-next" type="submit" title="Submit">Submit</button>
                                             </div>
                                         </div>
                                 </form>
