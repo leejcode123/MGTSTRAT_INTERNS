@@ -307,7 +307,7 @@
                         </td>
                     </tr>
             
-            <!--------------------------CONSULTING--------------------------------------->
+<!--------------------------CONSULTING--------------------------------------->
                     <tr class="th-blue-grey-lighten">
                         <th class="px-4 title text-dark">1. CONSULTING</th>
                         <th></th>
@@ -397,62 +397,6 @@
                             <td style="background-color: #FFFFFF;" class="border border-white"></td>
                         </tr>
                     </tbody>
-                    <tr class="table-secondary">
-                        <td class="title fw-bold text-dark fst-italic">Subtotal</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td class="total-td" style="background-color: rgba(146, 146, 146, 0.727">
-                            <h4 class="text-center" id="ec_SubtotalsConsulting">-</h4>
-                        </td>
-                        <td class="total-td">
-                            <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="">
-                        </td>
-                        <td style="background-color: #FFFFFF;" class="border border-white"></td>
-                    </tr>
-                </tbody>
-                <tbody id="tableofAnalyst">
-                    <tr class="th-blue-grey-lighten-2" id="rowofAnalyst">
-                        <td class="title">Analyst</td>
-                        <td class="">
-                            <input type="number"
-                                class="text-center form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ec_AnalystsNoc1" max="100"
-                                readonly>
-                        </td>
-                        <td class="">
-                            <input type="text"
-                                class="text-center fw-bold text-dark form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ec_AnalystsPd">
-                        </td>
-                        <td class="">
-                            <input type="number"
-                                class="text-center form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ec_AnalystsNod1" readonly>
-                        </td>
-                        <td class="">
-                            <input type="number"
-                                class="text-center form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ec_AnalystsAtd1" readonly>
-                        </td>
-                        <td class="">
-                            <input type="number"
-                                class="text-center form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ec_AnalystsNwh1" readonly>
-                        </td>
-                        <td class="total-td">
-                            <h4 class="text-center lead" id="ec_AnalystsTotal">-</h4>
-                        </td>
-                        <td class="total-td">
-                            <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="">
-                        </td>
-                        <td style="background-color: #FFFFFF;" class="border border-white"></td>
-                    </tr>
-                </tbody>
                 <tr class="table-secondary">
                     <td class="title fw-bold text-dark fst-italic">Subtotal</td>
                     <td></td>
@@ -480,7 +424,7 @@
                 </tr>
 
 
-            <!--------------------------DESIGN------------------------------------------->
+<!--------------------------DESIGN------------------------------------------->
                     <tr class="th-blue-grey-lighten">
                         <th class="title px-4 text-dark">2. DESIGN</th>
                         <td></td>
@@ -589,6 +533,7 @@
                         </td>
                     </tr>
                 </tbody>
+                
                 <tr class="table-secondary">
                     <td class="title fw-bold text-dark fst-italic">Subtotal</td>
                     <td></td>
@@ -616,97 +561,6 @@
                 </tr>
 
 <!--------------------------PROGRAM------------------------------>
-                {{-- Program --}}
-                <tr class="th-blue-grey-lighten">
-                    <th class="title px-4 text-dark">3. PROGRAM</th>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td class="total-td"></td>
-                    <td class="total-td"></td>
-                    <td style="background-color: #FFFFFF;" class="border border-white"></td>
-                </tr>
-                <tbody id="tableofLeadFacilitator">
-                    <tr class="th-blue-grey-lighten-2" id="rowofLeadFacilitator">
-                        <td class="title">Lead Facilitator</td>
-                        <td>
-                            <input type="number"
-                                class="text-center form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ec_LeadfacilitatorsNoc1"
-                                max="100" readonly>
-                        </td>
-                        <td>
-                            <input type="text"
-                                class="text-center fw-bold text-center text-dark form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ec_LeadfacilitatorsPd">
-                        </td>
-                        <td>
-                            <input type="number"
-                                class="text-center form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ec_LeadfacilitatorsNod1" readonly>
-                        </td>
-                        <td>
-                            <input type="number"
-                                class="text-center form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ec_LeadfacilitatorsAtd1" readonly>
-                        </td>
-                        <td>
-                            <input type="number"
-                                class="text-center form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ec_LeadfacilitatorsNwh1" readonly>
-                        </td>
-                        <td class="total-td">
-                            <h4 class="text-center lead" id="ec_LeadfacilitatorsTotal">-</h4>
-                        </td>
-                        <td class="total-td">
-                            <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="">
-                        </td>
-                        <td style="background-color: #FFFFFF;" class="border border-white"></td>
-                    </tr>
-                </tbody>
-                <tbody id="tableofCoFacilitator">
-                    <tr class="th-blue-grey-lighten-2" id="rowofCoFacilitator">
-                        <td class="title">Co-Facilitator / Resource Speaker</td>
-                        <td>
-                            <input type="number"
-                                class="text-center text-dark form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ec_CofacilitatorsNoc1"
-                                max="100" readonly>
-                        </td>
-                        <td>
-                            <input type="text"
-                                class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ec_CofacilitatorsPd" ;>
-                        </td>
-                        <td>
-                            <input type="number"
-                                class="text-center text-dark form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ec_CofacilitatorsNod1" readonly>
-                        </td>
-                        <td>
-                            <input type="number"
-                                class="text-center text-dark form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ec_CofacilitatorsAtd1" readonly>
-                        </td>
-                        <td>
-                            <input type="number"
-                                class="text-center text-dark form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ec_CofacilitatorsNwh1" readonly>
-                        </td>
-                        <td class="total-td">
-                            <h4 class="text-center lead" id="ec_CofacilitatorsTotal">-</h4>
-                        </td>
-                        <td class="total-td">
-                            <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="">
-                        </td>
-                        <td style="background-color: #FFFFFF;" class="border border-white"></td>
-                    </tr>
-
-            <!--------------------------PROGRAM------------------------------------------>
                     <tr class="th-blue-grey-lighten">
                         <th class="title px-4 text-dark">3. PROGRAM</th>
                         <td></td>
@@ -948,67 +802,6 @@
 
                     </tr>
 
-            <!--------------------------OTHER ROLES-------------------------------------->
-                    <tr class="th-blue-grey-lighten">
-                        <th class="title px-4 text-dark">4. OTHER ROLES</th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td class="total-td"></td>
-                        <td class="total-td"></td>
-                        <td style="background-color: #FFFFFF;" class="border border-white"></td>
-                    </tr>
-                <!---------------DOCUMENTOR-------------------->
-                    <tbody id="tableofDocumentor">
-                        <tr class="th-blue-grey-lighten-2" id="rowofDocumentor">
-                            <td class="title">Documentor</td>
-                            <td>
-                                <input type="number"
-                                    class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
-                                    value="{{ old('') }}" name="" id="ec_DocumentorsNoc1" max="100" readonly>
-                            </td>
-                            <td>
-                                <input type="text"
-                                    class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
-                                    value="{{ old('') }}" name="" id="ec_DocumentorsPd">
-                            </td>
-                            <td>
-                                <input type="number"
-                                    class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
-                                    value="{{ old('') }}" name="" id="ec_DocumentorsNod1" readonly>
-                            </td>
-                            <td>
-                                <input type="number"
-                                    class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
-                                    value="{{ old('') }}" name="" id="ec_DocumentorsAtd1" readonly>
-                            </td>
-                            <td>
-                                <input type="number"
-                                    class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
-                                    value="{{ old('') }}" name="" id="ec_DocumentorsNwh1" readonly>
-                            </td>
-                            <td class="total-td" style="background-color: rgba(146, 146, 146, 0.727">
-                                <h4 class="text-center" id="ec_DocumentorsTotal">-</h4>
-                            </td>
-                            <td class="total-td">
-                                <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                                    value="{{ old('') }}" name="" id="">
-                            </td>
-                            <td style="background-color: #FFFFFF;" class="border border-white"></td>
-                        </tr>
-                    </tbody>
-
-                {{-- break --}}
-                <tr class="th-blue-grey-darken-4">
-                    <td class="title" colspan=""></td>
-                    <td class="" colspan="5"></td>
-                    <td class="title" colspan=""></td>
-                    <td class="title" colspan=""></td>
-                    <td style="background-color: #FFFFFF;" class="border border-white"></td>
-
-                </tr>
 <!--------------------------OTHER ROLES--------------------------------->
                 {{-- Other roles --}}
                 <tr class="th-blue-grey-lighten">
