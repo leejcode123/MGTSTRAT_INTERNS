@@ -87,6 +87,9 @@
                         <li class="submenu-item">
                             <a href="{{ route('form/f2f_engagement/new') }}">F2F ENGAGEMENT</a>
                         </li>
+                        <li class="submenu-item">
+                            <a href="{{ route('form/mgtstratu_workshops/new') }}">MGTSTRATU WORKSHOPS</a>
+                        </li>
                 </li>
 
                 <li class="sidebar-item  has-sub">

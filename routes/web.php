@@ -86,6 +86,10 @@ Route::get('form/customizedEngagement/new', [App\Http\Controllers\CustomizedEnga
 Route::post('form/customizedEngagement/save', [App\Http\Controllers\CustomizedEngagementController::class, 'store'])->name('form/customizedEngagement/save');
 // ----------------------------- F2F engagement form ------------------------------//
 Route::get('form/f2f_engagement/new', [App\Http\Controllers\F2fEngagementController::class, 'index'])->middleware('auth')->name('form/f2f_engagement/new');
+// ----------------------------- MGTSTRAT U WORKSHOPS ------------------------------//
+Route::get('form/mgtstratu_workshops/new', [App\Http\Controllers\MgtstratUController::class, 'index'])->middleware('auth')->name('form/mgtstratu_workshops/new');
+
+
 // Route::get('view/detail/{id}', [App\Http\Controllers\UserManagementController::class, 'viewDetail'])->middleware('auth');
 // ----------------------------- WEBINAR form ------------------------------//
 Route::get('form/budget/new', [App\Http\Controllers\WebinarformController::class, 'index'])->middleware('auth')->name('form/budget/new');
