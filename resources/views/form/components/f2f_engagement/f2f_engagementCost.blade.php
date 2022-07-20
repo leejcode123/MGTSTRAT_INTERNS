@@ -26,9 +26,7 @@
 
 
 
-<!--------------------------COMMISSION-------------------------------->
-                <tbody>
-
+<!--------------------------COMMISSION--------------------------------------->
                     <tr class="th-blue-grey-lighten">
                         <th class="px-4 title text-dark fw-bolder">COMMISSION</th>
                         <th></th>
@@ -306,6 +304,7 @@
                                 id="ecaddButton4"><i class="fa fa-plus"></i></a>
                         </td>
                     </tr>
+                </tbody>
             
 <!--------------------------CONSULTING--------------------------------------->
                     <tr class="th-blue-grey-lighten">
@@ -482,8 +481,7 @@
                             <td>
                                 <input type="number"
                                     class="text-center form-control input-table @error('') is-invalid @enderror"
-                                    value="{{ old('') }}" name="" id="ec_CreatorNoc1" max="100"
-                                    >
+                                    value="{{ old('') }}" name="" id="ec_CreatorNoc1" max="100">
                             </td>
                             <td>
                                 <fieldset>
@@ -492,47 +490,47 @@
                                             Creators Fee - 0 - no creators fee<br><br>
                                             500 - Creators Fee is the creator is the lead, for the 2nd session onwards<br><br>
                                             1,000 - Creators Fee if creator is NOT the lead, for the 2nd session onwards</i>"
-                                    data-mytooltip-theme="dark" data-mytooltip-action="focus"
-                                    data-mytooltip-direction="right" style="background-color:#ffcccc; color:red;">
-                                    <option value="0" {{ old('') == '0' ? 'selected="selected"' : '' }}
-                                        title="">
-                                        &#8369;0
-                                    </option>
-                                    <option value="500" {{ old('') == '500' ? 'selected="selected"' : '' }}
-                                        title="">
-                                        &#8369;500
-                                    </option>
-                                    <option value="1000" {{ old('') == '1000' ? 'selected="selected"' : '' }}
-                                        title="">
-                                        &#8369;1,000
-                                    </option>
-                                </select>
-                                @error('ef_customFee')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </fieldset>
-                        </td>
-                        <td>
-                            <input type="number"
-                                class="text-center form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ec_CreatorNod1" max="100">
-                        </td>
-                        <td class=""></td>
-                        <td class=""></td>
-                        <td class="total-td">
-                            <h4 class="text-center lead" id="ec_CreatorTotal">-</h4>
-                        </td>
-                        <td class="total-td">
-                            <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="">
-                        </td>
-                        <td><a href="javascript:void(0)" class="text-success font-18" title="Add"
-                                id="ecaddButton5"><i class="fa fa-plus"></i></a>
-                        </td>
-                    </tr>
-                </tbody>
+                                        data-mytooltip-theme="dark" data-mytooltip-action="focus"
+                                        data-mytooltip-direction="right" style="background-color:#ffcccc; color:red;">
+                                        <option value="0" {{ old('') == '0' ? 'selected="selected"' : '' }}
+                                            title="">
+                                            &#8369;0
+                                        </option>
+                                        <option value="500" {{ old('') == '500' ? 'selected="selected"' : '' }}
+                                            title="">
+                                            &#8369;500
+                                        </option>
+                                        <option value="1000" {{ old('') == '1000' ? 'selected="selected"' : '' }}
+                                            title="">
+                                            &#8369;1,000
+                                        </option>
+                                    </select>
+                                    @error('ef_customFee')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </fieldset>
+                            </td>
+                            <td>
+                                <input type="number"
+                                    class="text-center form-control input-table @error('') is-invalid @enderror"
+                                    value="{{ old('') }}" name="" id="ec_CreatorNod1" max="100">
+                            </td>
+                            <td class=""></td>
+                            <td class=""></td>
+                            <td class="total-td">
+                                <h4 class="text-center lead" id="ec_CreatorTotal">-</h4>
+                            </td>
+                            <td class="total-td">
+                                <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                                    value="{{ old('') }}" name="" id="">
+                            </td>
+                            <td><a href="javascript:void(0)" class="text-success font-18" title="Add"
+                                    id="ecaddButton5"><i class="fa fa-plus"></i></a>
+                            </td>
+                        </tr>
+                    </tbody>
                 
                 <tr class="table-secondary">
                     <td class="title fw-bold text-dark fst-italic">Subtotal</td>
@@ -560,7 +558,7 @@
                     <td style="background-color: #FFFFFF;" class="border border-white"></td>
                 </tr>
 
-<!--------------------------PROGRAM------------------------------------->
+<!--------------------------PROGRAM------------------------------------------>
                     <tr class="th-blue-grey-lighten">
                         <th class="title px-4 text-dark">3. PROGRAM</th>
                         <td></td>
@@ -623,7 +621,7 @@
                             <td>
                                 <input type="text"
                                     class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
-                                    value="{{ old('') }}" name="" id="ec_CofacilitatorsPd" ;>
+                                    value="{{ old('') }}" name="" id="ec_CofacilitatorsPd">
                             </td>
                             <td>
                                 <input type="number"
@@ -767,29 +765,47 @@
                                     </span>
                                 @enderror
                             </fieldset>
-                        </td>
-                        <td>
-                            <input type="number"
-                                class="text-center  form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ec_OnsitepcNod1" readonly>
-                        </td>
-                        <td>
-                            <input type="number"
-                                class="text-center form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ec_OnsitepcAtd1" readonly>
-                        </td>
-                        <td>
-                            <input type="number"
-                                class="text-center form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ec_OnsitepcNwh1" readonly>
-                        </td>
-                        <td class="total-td">
-                            <h4 class="text-center lead" id="ec_OnsitepcTotal">-</h4>
+                            </td>
+                            <td>
+                                <input type="number"
+                                    class="text-center  form-control input-table @error('') is-invalid @enderror"
+                                    value="{{ old('') }}" name="" id="ec_OnsitepcNod1" readonly>
+                            </td>
+                            <td>
+                                <input type="number"
+                                    class="text-center form-control input-table @error('') is-invalid @enderror"
+                                    value="{{ old('') }}" name="" id="ec_OnsitepcAtd1" readonly>
+                            </td>
+                            <td>
+                                <input type="number"
+                                    class="text-center form-control input-table @error('') is-invalid @enderror"
+                                    value="{{ old('') }}" name="" id="ec_OnsitepcNwh1" readonly>
+                            </td>
+                            <td class="total-td">
+                                <h4 class="text-center lead" id="ec_OnsitepcTotal">-</h4>
+                            </td>
+                            <td class="total-td">
+                                <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                                    value="{{ old('') }}" name="" id="">
+                            </td>
+                        </tr>
+                    </tbody>
+
+                    <tr class="table-secondary">
+                        <td class="title fw-bold text-dark fst-italic">Subtotal</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="total-td" style="background-color: rgba(146, 146, 146, 0.727)">
+                            <h4 class="text-center" id="ec_ProgramsSubtotal">-</h4>
                         </td>
                         <td class="total-td">
                             <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                 value="{{ old('') }}" name="" id="">
                         </td>
+                        <td style="background-color: #FFFFFF;" class="border border-white"></td>
                     </tr>
 
                     {{-- break --}}
@@ -802,8 +818,7 @@
 
                     </tr>
 
-<!--------------------------OTHER ROLES--------------------------------->
-                {{-- Other roles --}}
+<!--------------------------OTHER ROLES-------------------------------------->
                 <tr class="th-blue-grey-lighten">
                     <th class="title px-4 text-dark">4. OTHER ROLES</th>
                     <td></td>
@@ -864,8 +879,7 @@
                     <td style="background-color: #FFFFFF;" class="border border-white"></td>
                 </tr>
 
-<!--------------------------PER DIEM------------------------------------>
-                {{-- Per Diem --}}
+<!--------------------------PER DIEM----------------------------------------->
                 <tr class="th-blue-grey-lighten" id="rowofPerDiem">
                     <th class="title px-4 text-dark">5. PER DIEM</th>
                     <td>
@@ -903,8 +917,7 @@
                     <td style="background-color: #FFFFFF;" class="border border-white"></td>
                 </tr>
 
-<!--------------------------OFF-PROGRAM--------------------------------->
-                {{-- Off-Program --}}
+<!--------------------------OFF-PROGRAM-------------------------------------->
                 <tr class="th-blue-grey-lighten">
                     <th class="title px-4 text-dark">6. OFF-PROGRAM</th>
                     <td></td>
@@ -957,8 +970,7 @@
                     <td style="background-color: #FFFFFF;" class="border border-white"></td>
                 </tr>
 
-<!--------------------------MISCELLANEOUS------------------------------->
-                {{-- miscellaneous --}}
+<!--------------------------MISCELLANEOUS------------------------------------>
                 <tr class="th-blue-grey-lighten">
                     <th class="title px-4 text-dark">MISCELLANEOUS</th>
                     <td></td>
@@ -976,8 +988,7 @@
                     <td>
                         <input type="text"
                             class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ec_Programexpenses"
-                            {{-- oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" --}} maxlength="4">
+                            value="{{ old('') }}" name="" id="ec_Programexpenses" maxlength="4">
                     </td>
                     <td></td>
                     <td></td>
@@ -1001,7 +1012,7 @@
                     <td style="background-color: #FFFFFF;" class="border border-white"></td>
                 </tr>
 
-<!--------------------------TOTAL--------------------------------------->
+<!--------------------------TOTAL-------------------------------------------->
                 <tr class="table-active">
                     <td class="fw-bold text-uppercase text-dark fst-italic overall-total-start">TOTAL</td>
                     <td class="overall-total-middle"></td>
@@ -1018,8 +1029,6 @@
                     </td>
                 </tr>
 
-
-                </tbody>
             </table>
         </div>
     </section>
