@@ -3,7 +3,7 @@ require("./components/currencyFormat");
 /*************************************** CUSTOMIZED ENGAGEMENT BUDGET FORM COMPUTATION ********************************************************/
 $(document).on(
     "change keyup click",
-    ".customized-type, .ga-only-dropdown, .remove, #ec_tableEngagementFees, #ec_tableEngagementCost",
+    ".customized-type, .ga-only-dropdown, .remove, #ec_tableEngagementFees, #ec_tableEngagementCost, #LessCTO_NOC",
     function () {
         //customized type
         $(".customized-type").each(function () {
@@ -86,6 +86,7 @@ $(document).on(
         efConsultingSum = 0;
         ecConsultingSum = 0;
         nswh = $("#nswh").val();
+        
         $("#tableLeadconsultant > tr").each(function () {
 
             rowIdx++;
@@ -411,7 +412,7 @@ $(document).on(
                     ($(this).find(`#ec_LeadfacilitatorNoc${ecLeadfaci}`).val() *
                         $(this).find("#ec_LeadfacilitatorHf").val().replace(/\₱|,/g, "") *
                         $(this).find(`#ec_LeadfacilitatorNoh${ecLeadfaci}`).val() *
-                        $("#ec_nswh").val());
+                        $("#nswh").val());
 
             //if the customized type value is G.A
             if (
@@ -447,7 +448,7 @@ $(document).on(
                     ($(this).find(`#ec_CoLeadfacilitatorNoc${ecCoLead}`).val() *
                         $(this).find(`#ec_CoLeadfacilitatorHf${ecCoLead}`).val().replace(/\₱|,/g, "") *
                         $(this).find(`#ec_CoLeadfacilitatorNoh${ecCoLead}`).val() *
-                        $("#ec_nswh").val());
+                        $("#nswh").val());
 
             //if the customized type value is G.A
             if (
@@ -482,7 +483,7 @@ $(document).on(
                     ($(this).find(`#ec_AlCoachNoc${ecAlCoach}`).val() *
                         $(this).find(`#ec_AlCoachHf${ecAlCoach}`).val().replace(/\₱|,/g, "") *
                         $(this).find(`#ec_AlCoachNoh${ecAlCoach}`).val() *
-                        $("#ec_nswh").val());
+                        $("#nswh").val());
 
             //if the customized type value is G.A
             if (
@@ -557,7 +558,7 @@ $(document).on(
                     ($(this).find(`#ec_CofacilitatorNoc${ecCofaci}`).val() *
                         $(this).find("#ec_CofacilitatorHf").val().replace(/\₱|,/g, "") *
                         $(this).find(`#ec_CofacilitatorNoh${ecCofaci}`).val() *
-                        $("#ec_nswh").val());
+                        $("#nswh").val());
 
             //if the customized type value is G.A
             if (
@@ -636,7 +637,7 @@ $(document).on(
                     ($(this).find(`#ec_ModeratorNoc${ecModerator}`).val() *
                         $(this).find("#ec_ModeratorHf").val().replace(/\₱|,/g, "") *
                         $(this).find(`#ec_ModeratorNoh${ecModerator}`).val() *
-                        $("#ec_nswh").val());
+                        $("#nswh").val());
 
             //if the customized type value is G.A
             if (
@@ -712,7 +713,7 @@ $(document).on(
                     ($(this).find(`#ec_ProducerNoc${ecProducer}`).val() *
                         $(this).find("#ec_ProducerHf").val().replace(/\₱|,/g, "") *
                         $(this).find(`#ec_ProducerNoh${ecProducer}`).val() *
-                        $("#ec_nswh").val());
+                        $("#nswh").val());
 
             //if the customized type value is G.A
             if (
@@ -930,9 +931,9 @@ $(document).on(
         $("#LessCTO_NOC").each(function () {
             sumCto +=
                 ($("#ef_Totalpackage").val().replace(/\₱|,/g, "") *
-                    $(this).val()) /
-                100;
+                    $(this).val()) / 100;
         });
+
         $("#LessContributionToOverhead").html(
             currency.format(Math.ceil(sumCto))
         );

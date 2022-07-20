@@ -8,7 +8,7 @@
             // Adding a row inside the tbody.
             $("#tableLeadconsultant").append(`
                 <tr id="leadConsultant${++rowIdx}" class="table-warning">
-                    <td class="title">Lead Consultant</td>
+                    <td class="title table-light">Lead Consultant</td>
                     <td data-title="# OF CONSULTANTS" class="noc">
                         <input type="number"
                             class="input js-mytooltip input-table form-control  @error('') is-invalid @enderror"
@@ -59,10 +59,10 @@
                             value="{{ old('') }}" name="ef_Leadconsultant[]" id="ef_LeadconsultantNwh${rowIdx}"
                             oninput="document.getElementById('ec_LeadconsultantNwh${rowIdx}').value = document.getElementById('ef_LeadconsultantNwh${rowIdx}').value;">
                     </td>
-                    <td class="total-td">
+                    <td class="total-td table-light">
                         <h4 class="text-center lead" id="leadTotal">-</h4>
                     </td>
-                    <td class="total-td">
+                    <td class="total-td table-light">
                         <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                             value="{{ old('') }}" name="" id="">
                     </td>
@@ -120,7 +120,7 @@
             // Adding a row inside the tbody.
             $("#tableAnalyst").append(`
                 <tr class="table-warning" id="Analyst${++efAnalyst}">
-                    <td class="title">Analyst</td>
+                    <td class="title table-light">Analyst</td>
                         <td class="noc">
                             <input type="number"
                                 class="input js-mytooltip form-control input-table @error('') is-invalid @enderror"
@@ -147,13 +147,13 @@
                                 value="{{ old('') }}" name="" id="ef_AnalystNwh${efAnalyst}"
                                 oninput="document.getElementById('ec_AnalystNwh${efAnalyst}').value = document.getElementById('ef_AnalystNwh${efAnalyst}').value;">
                         </td>
-                        <td class="total-td">
+                        <td class="total-td table-light">
                             {{-- <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                     value="{{ old('') }}" 
                                     name="" id="" disabled> --}}
                             <h4 class="text-center lead" id="analyst-total">-</h4>
                         </td>
-                        <td class="total-td">
+                        <td class="total-td table-light">
                             <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                 value="{{ old('') }}" name="" id="">
                         </td>
@@ -211,7 +211,7 @@
             // Adding a row inside the tbody.
             $("#tableDesigner").append(`
             <tr id="efDesigner${++efDesigner}" class="table-warning">
-                <td class="title">Designer</td>
+                <td class="title table-light">Designer</td>
                 <td class="noc">
                     <input type="number"
                         class="input js-mytooltip form-control input-table @error('') is-invalid @enderror"
@@ -258,10 +258,10 @@
                         value="{{ old('') }}" name="" id="ef_DesignerNwh${efDesigner}"
                         oninput="document.getElementById('ec_DesignerNwh${efDesigner}').value = document.getElementById('ef_DesignerNwh${efDesigner}').value;">
                 </td>
-                <td class="total-td" style="background-color: rgba(146, 146, 146, 0.727)">
+                <td class="total-td table-light" style="background-color: rgba(146, 146, 146, 0.727)">
                     <h4 class="text-center" id="subtotal-design">-</h4>
                 </td>
-                <td class="total-td">
+                <td class="total-td table-light">
                     <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                         value="{{ old('') }}" name="" id="">
                 </td>
@@ -317,7 +317,7 @@
             // Adding a row inside the tbody.
             $("#tableLeadfaci").append(`
                 <tr id="rowLeadFaci${++efLeadfaci}" class="table-warning">
-                    <td class="title">Lead Facilitator</td>
+                    <td class="title table-light">Lead Facilitator</td>
                     <td class="noc">
                         <input type="number" class="form-control input-table @error('') is-invalid @enderror"
                             value="{{ old('') }}" name="" id="ef_LeadfacilitatorNoc${efLeadfaci}" max="100"
@@ -392,10 +392,10 @@
                         <input type="number" class="form-control input-table @error('') is-invalid @enderror"
                             value="{{ old('') }}" name="" id="ef_LeadfacilitatorNwh${efLeadfaci}" oninput="document.getElementById('ec_LeadfacilitatorNwh${efLeadfaci}').value = document.getElementById('ef_LeadfacilitatorNwh${efLeadfaci}').value;">
                     </td>
-                    <td class="total-td">
+                    <td class="total-td table-light">
                         <h4 class="text-center lead" id="subtotal-lead">-</h4>
                     </td>
-                    <td class="total-td">
+                    <td class="total-td table-light">
                         <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                             value="{{ old('') }}" name="" id="">
                     </td>
@@ -451,7 +451,7 @@
             // Adding a row inside the tbody.
             $("#tableCofaci").append(`
             <tr id="efCofaci${++efCofaci}" class="table-warning">
-                    <td class="title">Co-facilitator / Resource Speaker</td>
+                    <td class="title table-light">Co-facilitator / Resource Speaker</td>
                     <td class="noc">
                         <input type="number" class="form-control input-table @error('') is-invalid @enderror" value="{{ old('') }}" 
                             name="" id="ef_CofaciNoc${efCofaci}" oninput="document.getElementById('ec_CofacilitatorNoc${efCofaci}').value = document.getElementById('ef_CofaciNoc${efCofaci}').value;" max="100">
@@ -472,10 +472,10 @@
                             value="{{ old('') }}" name="" id="ef_CofaciNwh${efCofaci}" 
                             oninput="document.getElementById('ec_CofacilitatorNwh${efCofaci}').value = document.getElementById('ef_CofaciNwh${efCofaci}').value;">
                     </td>
-                    <td class="total-td">
+                    <td class="total-td table-light">
                         <h4 class="text-center lead" id="subtotal-coFacilitator">-</h4>
                     </td>
-                    <td class="total-td">
+                    <td class="total-td table-light">
                         <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                             value="{{ old('') }}" name="" id="">
                     </td>
@@ -530,7 +530,7 @@
             // Adding a row inside the tbody.
             $("#tableModerator").append(`
             <tr id="efModeratorRow${++efModerator}" class="table-warning">
-                <td class="title">Moderator</td>
+                <td class="title table-light">Moderator</td>
                 <td class="noc">
                     <input type="number" class="form-control input-table @error('') is-invalid @enderror"
                         value="{{ old('') }}" name="" id="ef_ModeratorNoc${efModerator}" max="100"
@@ -553,10 +553,10 @@
                         value="{{ old('') }}" name="" id="ef_ModeratorNwh${efModerator}"
                         oninput="document.getElementById('ec_ModeratorNwh${efModerator}').value = document.getElementById('ef_ModeratorNwh${efModerator}').value;">
                 </td>
-                <td class="total-td">
+                <td class="total-td table-light">
                     <h4 class="text-center lead" id="subtotal-moderator">-</h4>
                 </td>
-                <td class="total-td">
+                <td class="total-td table-light">
                     <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                         value="{{ old('') }}" name="" id="">
                 </td>
@@ -611,7 +611,7 @@
             // Adding a row inside the tbody.
             $("#tableProducer").append(`
             <tr id="efProducerRow${++efProducer}" class="table-warning">
-                <td class="title">Producer</td>
+                <td class="title table-light">Producer</td>
                 <td class="noc">
                     <input type="number" class="form-control input-table @error('') is-invalid @enderror"
                         value="{{ old('') }}" name="" id="ef_ProducerNoc${efProducer}" oninput="document.getElementById('ec_ProducerNoc${efProducer}').value = document.getElementById('ef_ProducerNoc${efProducer}').value;" max="100">
@@ -632,10 +632,10 @@
                     <input type="number" class="form-control input-table @error('') is-invalid @enderror"
                         value="{{ old('') }}" name="" id="ef_ProducerNwh${efProducer}" oninput="document.getElementById('ec_ProducerNwh${efProducer}').value = document.getElementById('ef_ProducerNwh${efProducer}').value;">
                 </td>
-                <td class="total-td">
+                <td class="total-td table-light">
                     <h4 class="text-center lead" id="subtotal-producer">-</h4>
                 </td>
-                <td class="total-td">
+                <td class="total-td table-light">
                     <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                         value="{{ old('') }}" name="" id="">
                 </td>
@@ -691,7 +691,7 @@
             // Adding a row inside the tbody.
             $("#tableDocumentor").append(`
                 <tr id="rowDocumentor${++efDocumentor}" class="table-warning">
-                    <td class="title">Documentor</td>
+                    <td class="title table-light">Documentor</td>
                     <td class="noc">
                         <input type="number" class="form-control input-table @error('') is-invalid @enderror"
                             value="{{ old('') }}" name="" id="ef_DocumentorNoc${efDocumentor}" max="100"
@@ -714,10 +714,10 @@
                             value="{{ old('') }}" name="" id="ef_DocumentorNwh${efDocumentor}"
                             oninput="document.getElementById('ec_DocumentorNwh${efDocumentor}').value = document.getElementById('ef_DocumentorNwh${efDocumentor}').value;">
                     </td>
-                    <td class="total-td" style="background-color: rgba(146, 146, 146, 0.727">
+                    <td class="total-td table-light" style="background-color: rgba(146, 146, 146, 0.727">
                         <h4 class="text-center" id="subtotal-documentor">-</h4>
                     </td>
-                    <td class="total-td">
+                    <td class="total-td table-light">
                         <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                             value="{{ old('') }}" name="" id="">
                     </td>

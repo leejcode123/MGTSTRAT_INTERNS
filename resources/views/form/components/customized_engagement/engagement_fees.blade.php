@@ -10,41 +10,45 @@
                 <table class="table table-bordered" id="ec_tableEngagementFees">
                 <!----------------------------------------------------------------TABLE HEADING TITLE---------------------------------------------------------------------->
                     <thead class="table-dark">
-                        <tr class="text-center">
-                            <th class="title-th" scope="col" width=20%></th>
-                            <th class="title-middle" scope="col" style="font-size: 0.9rem;">NUMBER OF CONSULTANTS</th>
-                            <th class="title-middle px-4" width=15% scope="col">HOURLY FEES</th>
-                            <th class="title-middle" scope="col" style="font-size: 0.9rem;">NUMBER OF HOURS</th>
-                            <th class="title-middle" scope="col" style="font-size: 0.9rem;" width=10%>    
-                                <label for="Night Shift, Weekends and Holidays">NSWH</label>
-                                <select
-                                    class="input js-mytooltip form-select form-select-sm engagement-fee @error('') is-invalid @enderror select"
-                                    name="" id="nswh">
-                                    <option value="0.1" {{ old('') == '0.1' ? 'selected="selected"' : '' }}>
-                                        &#8369;10%
-                                    </option>
-                                    <option value="0.15" {{ old('') == '0.15' ? 'selected="selected"' : '' }}>
-                                        &#8369;15%
-                                    </option>
-                                    <option value="0.2" {{ old('') == '0.2' ? 'selected="selected"' : '' }} selected>
-                                        &#8369;20%
-                                    </option>
-                                    <option value="0.25" {{ old('') == '0.25' ? 'selected="selected"' : '' }}>
-                                        &#8369;25%
-                                    </option>
-                                </select>
-                            </th>
-                            {{-- <th class="title-middle" scope="col" style="font-size: 0.9rem;" width=10%>NIGHT SHIFT,
-                                WEEKENDS HOLIDAYS *</th> --}}
-                            <th class="title-th" scope="col" width=15%>TOTAL FEE</th>
-                            <th class="title-th" scope="col" width=15%>NOTES</th>
-                            <td class="add-row border border-white"> </td>
-                        </tr>
+                        <b>
+                            <tr class="text-center">
+                                <th class="title-th" scope="col" width=20%></th>
+                                <th class="title-middle" scope="col" style="font-size: 0.9rem;">NUMBER OF CONSULTANTS</th>
+                                <th class="title-middle px-4" width=15% scope="col">HOURLY FEES</th>
+                                <th class="title-middle" scope="col" style="font-size: 0.9rem;">NUMBER OF HOURS</th>
+                                <th class="title-middle" scope="col" style="font-size: 0.9rem;" width=10%>    
+                                    <label for="Night Shift, Weekends and Holidays">NSWH</label>
+                                    <select
+                                        class="input js-mytooltip form-select form-select-sm engagement-fee @error('') is-invalid @enderror select"
+                                        name="" id="nswh">
+                                        <option value="0.1" {{ old('') == '0.1' ? 'selected="selected"' : '' }}>
+                                            &#8369;10%
+                                        </option>
+                                        <option value="0.15" {{ old('') == '0.15' ? 'selected="selected"' : '' }}>
+                                            &#8369;15%
+                                        </option>
+                                        <option value="0.2" {{ old('') == '0.2' ? 'selected="selected"' : '' }} selected>
+                                            &#8369;20%
+                                        </option>
+                                        <option value="0.25" {{ old('') == '0.25' ? 'selected="selected"' : '' }}>
+                                            &#8369;25%
+                                        </option>
+                                    </select>
+                                </th>
+                                {{-- <th class="title-middle" scope="col" style="font-size: 0.9rem;" width=10%>NIGHT SHIFT,
+                                    WEEKENDS HOLIDAYS *</th> --}}
+                                <th class="title-th" scope="col" width=15%>TOTAL FEE</th>
+                                <th class="title-th" scope="col" width=15%>NOTES</th>
+                                <td class="add-row border border-white"> </td>
+                            </tr>
+                        </b>
                     </thead>
 
                 <!----------------------------------------------------------------CONSULTING---------------------------------------------------------------------->
                     <tr class="">
-                        <th class="px-4 title table-light">1. CONSULTING</th>
+                        <th class="px-4 title table-light">
+                            <b>1. CONSULTING</b>
+                        </th>
                         <th></th>
                         <th></th>
                         <th></th>
@@ -177,7 +181,9 @@
 
                 <!----------------------------------------------------------------DESIGN---------------------------------------------------------------------->
                     <tr class="">
-                        <th class="title px-4 text-dark table-light">2. DESIGN</th>
+                        <th class="title px-4 text-dark table-light">
+                            <b>2. DESIGN</b>
+                        </th>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -249,7 +255,9 @@
 
                 <!----------------------------------------------------------------PROGRAM---------------------------------------------------------------------->
                     <tr class="">
-                        <th class="title px-4 text-dark table-light">3. PROGRAM</th>
+                        <th class="title px-4 text-dark table-light">
+                            <b>3. PROGRAM</b>
+                        </th>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -466,7 +474,9 @@
 
                 <!----------------------------------------------------------------OTHER ROLES---------------------------------------------------------------------->
                     <tr class="">
-                        <th class="title px-4 text-dark table-light">4. OTHER ROLES</th>
+                        <th class="title px-4 text-dark table-light">
+                            <b>4. OTHER ROLES</b>
+                        </th>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -514,7 +524,8 @@
 
                 <!----------------------------------------------------------------TOTAL PACKAGE---------------------------------------------------------------------->
                     <tr class="table-active overall-total">
-                        <td class="table-light text-uppercase text-dark fst-italic fw-bold overall-total-start">TOTAL STANDARD FEES
+                        <td class="table-light text-uppercase text-dark fst-italic fw-bold overall-total-start">
+                            <b>TOTAL STANDARD FEES</b>
                         </td>
                         <td class="overall-total-middle"></td>
                         <td class="overall-total-middle"></td>
@@ -530,7 +541,8 @@
                     </tr>
 
                     <tr class="table-active">
-                        <td class="table-light fw-bold text-dark text-uppercase fst-italic overall-total-start">discount given (if any)
+                        <td class="table-light fw-bold text-dark text-uppercase fst-italic overall-total-start">
+                            <b>Discount given (if any)</b>
                         </td>
                         <td class="overall-total-middle"></td>
                         <td class="overall-total-middle table-warning">
@@ -548,7 +560,9 @@
                     </tr>
 
                     <tr class="table-active">
-                        <td class="table-light fw-bold text-uppercase text-dark fst-italic overall-total-start">total package</td>
+                        <td class="table-light fw-bold text-uppercase text-dark fst-italic overall-total-start">
+                            <b>Total Package</b>
+                        </td>
                         <td class="overall-total-middle"></td>
                         <td class="overall-total-middle"></td>
                         <td class="overall-total-middle"></td>

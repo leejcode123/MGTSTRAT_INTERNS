@@ -1,4 +1,5 @@
 <script>
+/********* START *********/
 /*****************************************************************COMMISION*****************************************************************************/
     /********* SALES *********/
     var salesNum = 1;
@@ -6,8 +7,8 @@
         $("#addBtn9").on("click", function() {
             // Adding a row inside the tbody.
             $("#tableSales").append(
-                `<tr id="salesRow${++salesNum}">
-                    <td class="title">Sales (4% / 5% / 6% / 7%)</td>
+                `<tr class="table-warning" id="salesRow${++salesNum}">
+                    <td class="title table-light">Sales (4% / 5% / 6% / 7%)</td>
                         <td></td>
                         <td>
                             <input type="text" class="form-control input-table @error('') is-invalid @enderror"
@@ -17,10 +18,10 @@
                         </td>
                         <td></td>
                         <td></td>
-                        <td class="total-td tbl-engmt-cost">
+                        <td class="total-td tbl-engmt-cost table-light">
                             <h4 class="text-center" id="salesTotal">-</h4>
                         </td>
-                        <td class="total-td">
+                        <td class="total-td table-light">
                             <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                 value="{{ old('') }}" name="" id="">
                         </td>
@@ -74,8 +75,8 @@
         $("#addBtn10").on("click", function() {
             // Adding a row inside the tbody.
             $("#tableReferral").append(
-                `<tr id="salesRow${++refferalNum}">
-                    <td class="title">Referral (2% / 3%)</td>
+                `<tr class="table-warning" id="salesRow${++refferalNum}">
+                    <td class="title table-light">Referral (2% / 3%)</td>
                             <td></td>
                             <td>
                                 <input type="text" class="form-control input-table @error('') is-invalid @enderror"
@@ -84,10 +85,10 @@
                             </td>
                             <td></td>
                             <td></td>
-                            <td class="total-td tbl-engmt-cost">
+                            <td class="total-td tbl-engmt-cost table-light">
                                 <h4 class="text-center" id="referralTotal">-</h4>
                             </td>
-                            <td class="total-td">
+                            <td class="total-td table-light">
                                 <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                     value="{{ old('') }}" name="" id="">
                             </td>
@@ -142,8 +143,8 @@
         $("#addBtn11").on("click", function() {
             // Adding a row inside the tbody.
             $("#tableEngagementmanager").append(
-                `<tr id="engagementmanagerRow${++managerNum}">
-                    <td class="title fw-bold text-dark">ENGAGEMENT MANAGER</td>
+                `<tr class="table-warning" id="engagementmanagerRow${++managerNum}">
+                    <td class="title fw-bold text-dark table-light">ENGAGEMENT MANAGER</td>
                             <td></td>
                             <td>
                                 <input type="text" class="form-control input-table @error('') is-invalid @enderror"
@@ -152,10 +153,10 @@
                             </td>
                             <td></td>
                             <td></td>
-                            <td class="total-td tbl-engmt-cost">
+                            <td class="total-td tbl-engmt-cost table-light">
                                 <h4 class="text-center" id="engagementManagerTotal">-</h4>
                             </td>
-                            <td class="total-td">
+                            <td class="total-td table-light">
                                 <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                     value="{{ old('') }}" name="" id="">
                             </td>
@@ -210,8 +211,8 @@
         $("#addBtn").on("click", function() {
             // Adding a row inside the tbody.
             $("#ec_tableLeadConsultant").append(`
-                <tr id="ec_LeadConsultant${++leadConsultant}">
-                    <td class="title">Lead Consultant (P7K, P9K)</td>
+                <tr class="table-warning" id="ec_LeadConsultant${++leadConsultant}">
+                    <td class="title table-light">Lead Consultant (P7K, P9K)</td>
                     <td class="noc">
                         <input type="number"
                             class="text-center form-control input-table @error('') is-invalid @enderror"
@@ -233,10 +234,10 @@
                             class="text-center form-control input-table @error('') is-invalid @enderror"
                             value="{{ old('') }}" name="" id="ec_LeadconsultantNwh${leadConsultant}" readonly>
                     </td>
-                    <td class="total-td">
+                    <td class="total-td table-light">
                         <h4 class="text-center lead" id="ec_LeadconsultantTotal">-</h4>
                     </td>
-                    <td class="total-td">
+                    <td class="total-td table-light">
                         <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                             value="{{ old('') }}" name="" id="">
                     </td>
@@ -292,8 +293,8 @@
         $("#addBtn2").on("click", function() {
             // Adding a row inside the tbody.
             $("#ec_tableAnalyst").append(`
-                <tr id="ec_Analyst${++ecAnalyst}">
-                    <td class="title">Analyst</td>
+                <tr class="table-warning" id="ec_Analyst${++ecAnalyst}">
+                    <td class="title table-light">Analyst</td>
                         <td class="noc">
                             <input type="number"
                                 class="text-center form-control input-table @error('') is-invalid @enderror"
@@ -314,10 +315,10 @@
                                 class="text-center form-control input-table @error('') is-invalid @enderror"
                                 value="{{ old('') }}" name="" id="ec_AnalystNwh${ecAnalyst}" readonly>
                         </td>
-                        <td class="total-td">
+                        <td class="total-td table-light">
                             <h4 class="text-center lead" id="ec_AnalystTotal">-</h4>
                         </td>
-                        <td class="total-td">
+                        <td class="total-td table-light">
                             <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                 value="{{ old('') }}" name="" id="">
                         </td>
@@ -373,8 +374,8 @@
         $("#addBtn3").on("click", function() {
             // Adding a row inside the tbody.
             $("#ec_TableDesigner").append(`
-                <tr id="ec_DesignerRow${++ecDesigner}">
-                    <td class="title">Designer (P48K / P64K)</td>
+                <tr class="table-warning" id="ec_DesignerRow${++ecDesigner}">
+                    <td class="title table-light">Designer (P48K / P64K)</td>
                     <td class="noh">
                         <input type="number"
                             class="text-center form-control input-table @error('') is-invalid @enderror"
@@ -395,10 +396,10 @@
                             class="text-center form-control input-table @error('') is-invalid @enderror"
                             value="{{ old('') }}" name="" id="ec_DesignerNwh${ecDesigner}" readonly>
                     </td>
-                    <td class="total-td">
+                    <td class="total-td table-light">
                         <h4 class="text-center lead" id="ec_DesignerTotal">-</h4>
                     </td>
-                    <td class="total-td">
+                    <td class="total-td table-light">
                         <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                             value="{{ old('') }}" name="" id="">
                     </td>
@@ -453,8 +454,8 @@
         $("#addBtnCreators").on("click", function() {
             // Adding a row inside the tbody.
             $("#ec_TableCreators").append(`
-                <tr id="ec_CreatorsRow${++ecCreators}">
-                    <td class="title">Creators Fees (500, 1K)</td>
+                <tr class="table-warning" id="ec_CreatorsRow${++ecCreators}">
+                    <td class="title table-light">Creators Fees (500, 1K)</td>
                     <td>
                         <input type="number"
                             class="text-center yellow-input form-control input-table @error('') is-invalid @enderror"
@@ -492,10 +493,10 @@
                             value="{{ old('') }}" name="" id="ec_CreatorsNoh${ecCreators}">
                     </td>
                     <td class=""></td>
-                    <td class="total-td">
+                    <td class="total-td table-light">
                         <h4 class="text-center lead" id="ec_CreatorsTotal">-</h4>
                     </td>
-                    <td class="total-td">
+                    <td class="total-td table-light">
                         <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                             value="{{ old('') }}" name="" id="">
                     </td>
@@ -551,8 +552,8 @@
         $("#addBtn4").on("click", function() {
             // Adding a row inside the tbody.
             $("#ec_TableLeadfaci").append(`
-                <tr id="ec_LeadfaciRow${++ecLeadfaci}">
-                    <td class="title">Lead Facilitator</td>
+                <tr class="table-warning" id="ec_LeadfaciRow${++ecLeadfaci}">
+                    <td class="title table-light">Lead Facilitator</td>
                     <td class="noc">
                         <input type="number"
                             class="text-center form-control input-table @error('') is-invalid @enderror"
@@ -574,10 +575,10 @@
                             class="text-center form-control input-table @error('') is-invalid @enderror"
                             value="{{ old('') }}" name="" id="ec_LeadfacilitatorNwh${ecLeadfaci}" readonly>
                     </td>
-                    <td class="total-td">
+                    <td class="total-td table-light">
                         <h4 class="text-center lead" id="ec_LeadfacilitatorTotal">-</h4>
                     </td>
-                    <td class="total-td">
+                    <td class="total-td table-light">
                         <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                             value="{{ old('') }}" name="" id="">
                     </td>
@@ -632,8 +633,8 @@
         $("#addBtnCoLead").on("click", function() {
             // Adding a row inside the tbody.
             $("#ec_TableCoLeadfaci").append(`
-                <tr id="ec_CoLeadRow${++ecCoLead}">
-                    <td class="title">Co-Lead Facilitator</td>
+                <tr class="table-warning" id="ec_CoLeadRow${++ecCoLead}">
+                    <td class="title table-light">Co-Lead</td>
                     <td class="noc">
                         <input type="number"
                             class="text-center form-control input-table @error('') is-invalid @enderror"
@@ -654,10 +655,10 @@
                             class="text-center form-control input-table @error('') is-invalid @enderror"
                             value="{{ old('') }}" name="" id="ec_CoLeadfacilitatorNwh${ecCoLead}">
                     </td>
-                    <td class="total-td">
+                    <td class="total-td table-light">
                         <h4 class="text-center lead" id="ec_CoLeadfacilitatorTotal">-</h4>
                     </td>
-                    <td class="total-td">
+                    <td class="total-td table-light">
                         <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                             value="{{ old('') }}" name="" id="">
                     </td>
@@ -714,8 +715,8 @@
         $("#addBtnAlCoach").on("click", function() {
             // Adding a row inside the tbody.
             $("#ec_TableAlCoach").append(`
-                <tr id="ec_AlCoachRow${++ecAlCoach}">
-                    <td class="title">AL Coach</td>
+                <tr class="table-warning" id="ec_AlCoachRow${++ecAlCoach}">
+                    <td class="title table-light">AL Coach</td>
                     <td class="noc">
                         <input type="number"
                             class="text-center text-dark form-control input-table @error('') is-invalid @enderror"
@@ -736,10 +737,10 @@
                             class="text-center text-dark form-control input-table @error('') is-invalid @enderror"
                             value="{{ old('') }}" name="" id="ec_AlCoachNwh${ecAlCoach}">
                     </td>
-                    <td class="total-td">
+                    <td class="total-td table-light">
                         <h4 class="text-center lead" id="ec_AlCoachTotal">-</h4>
                     </td>
-                    <td class="total-td">
+                    <td class="total-td table-light">
                         <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                             value="{{ old('') }}" name="" id="">
                     </td>
@@ -794,8 +795,8 @@
         $("#addBtn5").on("click", function() {
             // Adding a row inside the tbody.
             $("#ec_TableCofaci").append(`
-                <tr id="ec_CofaciRow${++ecCofaci}">
-                    <td class="title">Co-Facilitator / Resource Speaker</td>
+                <tr class="table-warning" id="ec_CofaciRow${++ecCofaci}">
+                    <td class="title table-light">Co-Facilitator / Resource Speaker</td>
                     <td class="noc">
                         <input type="number"
                             class="text-center text-dark form-control input-table @error('') is-invalid @enderror"
@@ -817,10 +818,10 @@
                             class="text-center text-dark form-control input-table @error('') is-invalid @enderror"
                             value="{{ old('') }}" name="" id="ec_CofacilitatorNwh${ecCofaci}" readonly>
                     </td>
-                    <td class="total-td">
+                    <td class="total-td table-light">
                         <h4 class="text-center lead" id="ec_CofacilitatorTotal">-</h4>
                     </td>
-                    <td class="total-td">
+                    <td class="total-td table-light">
                         <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                             value="{{ old('') }}" name="" id="">
                     </td>
@@ -875,8 +876,8 @@
         $("#addBtn6").on("click", function() {
             // Adding a row inside the tbody.
             $("#ec_TableModerator").append(`
-                <tr id="ec_ModeratorRow${++ecModerator}">
-                    <td class="title">Moderator (&#8369;800, &#8369;1,100, &#8369;1,350)</td>
+                <tr class="table-warning" id="ec_ModeratorRow${++ecModerator}">
+                    <td class="title table-light">Moderator (&#8369;800, &#8369;1,100, &#8369;1,350)</td>
                     <td class="noc">
                         <input type="number"
                             class="text-dark text-center form-control input-table @error('') is-invalid @enderror"
@@ -925,10 +926,10 @@
                             class="text-dark text-center form-control input-table @error('') is-invalid @enderror"
                             value="{{ old('') }}" name="" id="ec_ModeratorNwh${ecModerator}" readonly>
                     </td>
-                    <td class="total-td">
+                    <td class="total-td table-light">
                         <h4 class="text-center lead" id="ec_ModeratorTotal">-</h4>
                     </td>
-                    <td class="total-td">
+                    <td class="total-td table-light">
                         <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                             value="{{ old('') }}" name="" id="">
                     </td>
@@ -983,8 +984,8 @@
         $("#addBtn7").on("click", function() {
             // Adding a row inside the tbody.
             $("#ec_TableProducer").append(`
-                <tr id="ec_ProducerRow${++ecProducer}">
-                    <td class="title">Producer</td>
+                <tr class="table-warning" id="ec_ProducerRow${++ecProducer}">
+                    <td class="title table-light">Producer</td>
                     <td class="noc">
                         <input type="number"
                             class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
@@ -1005,10 +1006,10 @@
                             class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
                             value="{{ old('') }}" name="" id="ec_ProducerNwh${ecProducer}" readonly>
                     </td>
-                    <td class="total-td">
+                    <td class="total-td table-light">
                         <h4 class="text-center lead" id="ec_ProducerTotal">-</h4>
                     </td>
-                    <td class="total-td">
+                    <td class="total-td table-light">
                         <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                             value="{{ old('') }}" name="" id="">
                     </td>
@@ -1064,8 +1065,8 @@
             $("#addBtn8").on("click", function() {
                 // Adding a row inside the tbody.
                 $("#ec_TableDocumentor").append(`
-                    <tr id="ec_DocumentorRow${++ecDocumentor}">
-                        <td class="title">Documentor</td>
+                    <tr class="table-warning" id="ec_DocumentorRow${++ecDocumentor}">
+                        <td class="title table-light">Documentor</td>
                         <td>
                             <input type="number"
                                 class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
@@ -1087,10 +1088,10 @@
                                 class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
                                 value="{{ old('') }}" name="" id="ec_DocumentorNwh${ecDocumentor}" readonly>
                         </td>
-                        <td class="total-td" style="background-color: rgba(146, 146, 146, 0.727">
+                        <td class="total-td table-light" style="background-color: rgba(146, 146, 146, 0.727">
                             <h4 class="text-center" id="ec_DocumentorTotal">-</h4>
                         </td>
-                        <td class="total-td">
+                        <td class="total-td table-light">
                             <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                 value="{{ old('') }}" name="" id="">
                         </td>
@@ -1138,6 +1139,6 @@
                 ecDocumentor--;
             });  
         });
-
-    </script>
+/********* END *********/
+</script>
 
