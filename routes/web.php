@@ -87,6 +87,7 @@ Route::post('form/customizedEngagement/save', [App\Http\Controllers\CustomizedEn
 // ----------------------------- F2F engagement form ------------------------------//
 Route::get('form/f2f_engagement/new', [App\Http\Controllers\F2fEngagementController::class, 'index'])->middleware('auth')->name('form/f2f_engagement/new');
 // Route::get('view/detail/{id}', [App\Http\Controllers\UserManagementController::class, 'viewDetail'])->middleware('auth');
+// ----------------------------- WEBINAR form ------------------------------//
 Route::get('form/budget/new', [App\Http\Controllers\WebinarformController::class, 'index'])->middleware('auth')->name('form/budget/new');
 Route::post('form/save', [App\Http\Controllers\WebinarformController::class, 'saveRecord'])->name('form/save');
 Route::get('form/view/detail', [App\Http\Controllers\WebinarformController::class, 'viewRecord'])->middleware('auth')->name('form/view/detail');

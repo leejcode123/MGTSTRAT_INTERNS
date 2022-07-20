@@ -25,11 +25,13 @@
 
                 <div class="col-md-2" id="">
                     <select class="input js-mytooltip form-select @error('') is-invalid @enderror"
-                        name="" id="status" value="{{ old('') }}" data-mytooltip-content="<i>Please Choose Status</i>" 
-                        data-mytooltip-theme="dark" data-mytooltip-action="focus" data-mytooltip-direction="right"
-                        >
+                        name="status" id="status" value="{{ old('') }}" data-mytooltip-content="<i>Please Choose Status</i>" 
+                        data-mytooltip-theme="dark" data-mytooltip-action="focus" data-mytooltip-direction="right">
+                        <option value="Trial" {{ old('') == 'Trial' ? 'selected="selected"' : '' }}>
+                            Trial
+                        </option>
                         <option value="Active" {{ old('') == 'Active' ? 'selected="selected"' : '' }} selected>
-                            Active
+                            Confirmed
                         </option>
                         <option value="In-progress" {{ old('') == 'In-progress' ? 'selected="selected"' : '' }}>
                             In-progress
@@ -84,7 +86,7 @@
                 </div>
                 <div class="col-md-2" id="dropdown-ga" style="visibility: hidden;">
                     <select class="input js-mytooltip ga-only-dropdown form-select @error('') is-invalid @enderror"
-                        name="dropdown_ga" id="ga-only-dropdown" value="{{ old('') }}" data-mytooltip-content="<i>
+                        name="ga_percent" id="ga-only-dropdown" value="{{ old('') }}" data-mytooltip-content="<i>
                             Please Choose 0% if not G.A
                             </i>" data-mytooltip-theme="dark" data-mytooltip-action="focus" data-mytooltip-direction="right">
                         <option value="0" {{ old('') == '0' ? 'selected="selected"' : '' }} selected>
@@ -114,7 +116,7 @@
                     <div class="form-group has-icon-left">
                         <div class="position-relative">
                             <input type="text" class="form-control @error('') is-invalid @enderror" value="{{ old('') }}"
-                                name="client" id="fourth" title="asdasdasd">
+                                name="client" id="fourth">
                             <div class="form-control-icon">
                                 <i class="fa-solid fa-user"></i>
                             </div>
@@ -137,7 +139,7 @@
                     <div class="form-group has-icon-left">
                         <div class="position-relative">
                             <input type="text" class="form-control @error('') is-invalid @enderror" value="{{ old('') }}"
-                                name="" id="">
+                                name="engagement_title" id="">
                             <div class="form-control-icon">
                                 <i class="fa-solid fa-t"></i>
                             </div>
@@ -207,7 +209,7 @@
                                         <label class="fw-bold required">Date</label>
                                         <div class="position-relative">
                                             <input type="text" class="form-control datepicker @error('doe') is-invalid @enderror"
-                                                value="{{ old('doe') }}" placeholder="Enter Date" name="doe" id="datepicker"
+                                                value="{{ old('doe') }}" placeholder="Enter Date" name="program_dates" id="datepicker"
                                                 size="30">
                                             <div class="form-control-icon">
                                                 <i class="bi bi-calendar"></i>
@@ -225,7 +227,7 @@
                                         <label class="fw-bold required">Start Time</label>
                                         <div class="position-relative">
                                             <input type="time" class="form-control @error('dot') is-invalid @enderror"
-                                                value="{{ old('dot') }}" placeholder="Enter Time" name="dot">
+                                                value="{{ old('dot') }}" placeholder="Enter Time" name="program_start_time">
                                             <div class="form-control-icon">
                                                 <i class="bi bi-clock"></i>
                                             </div>
@@ -242,7 +244,7 @@
                                         <label class="fw-bold required">End Time</label>
                                         <div class="position-relative">
                                             <input type="time" class="form-control @error('dot') is-invalid @enderror"
-                                                value="{{ old('dot') }}" placeholder="Enter Time" name="dot">
+                                                value="{{ old('dot') }}" placeholder="Enter Time" name="program_end_time">
                                             <div class="form-control-icon">
                                                 <i class="fa-solid fa-hourglass-end"></i>
                                             </div>
@@ -287,6 +289,7 @@
 
             //ASSIGN EVENT LISTENER IN STATUS
             document.getElementById("status").addEventListener("change", status);
+
             //EVENT OF STATUS
             function status() { 
                 var status = document.getElementById("status").value;
@@ -307,6 +310,11 @@
                     $('#status option').css('color', 'black')
                 } else if(status == "Lost"){
                     $('#status').css('background-color', '#dc3545')
+                    $('#status').css('color', 'white')
+                    $('#status option').css('background-color', 'white')
+                    $('#status option').css('color', 'black')
+                } else if(status == "Trial"){
+                    $('#status').css('background-color', '#17a2b8')
                     $('#status').css('color', 'white')
                     $('#status option').css('background-color', 'white')
                     $('#status option').css('color', 'black')

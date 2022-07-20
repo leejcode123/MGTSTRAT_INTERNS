@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Customized_engagement;
+use Brian2694\Toastr\Facades\Toastr;
+use App\Models\Customized_engagement_form;
 use DB;
 
 class CustomizedEngagementController extends Controller
@@ -32,23 +33,54 @@ class CustomizedEngagementController extends Controller
 
     public function store(Request $request)
     {
-        $test = $request->all();
-        dd($test);
-
-        $ceform = Customized_engagement::create([
-            'ef_LeadconsultantNoc' => $request->input('ef_LeadconsultantNoc'),
-            'ef_LeadconsultantHf' => $request->input('ef_LeadconsultantHf'),
-            'ef_LeadconsultantNoh' => $request->input('ef_LeadconsultantNoh'),
-            'ef_LeadconsultantNwh' => $request->input('ef_LeadconsultantNwh')
+        $request->validate([
+            'status' => 'required|string',
+            'customized_type' => 'required|string',
+            'ga_percent' => '',
+            'client' => '',
+            'engagement_title' => '',
+            'pax_number' => '',
+            'program_dates' => '',
+            'program_start_time' => '',
+            'program_end_time' => '',
+            'cluster' => '',
+            'core_area' => '',
         ]);
-        
-        foreach($request->item as $key => $items)
-        {
-            $estimatesAdd['ef_Leadconsultant']          = $request->ef_Leadconsultant[$key];
+            
+        try{
+            $status             =  $request->status;
+            $customized_type    =  $request->customized_type;
+            $ga_percent         =  $request->ga_percent;
+            $client             =  $request->client;
+            $engagement_title   =  $request->engagement_title;
+            $pax_number         =  $request->pax_number;
+            $program_dates      =  $request->program_dates;
+            $program_start_time =  $request->program_start_time;
+            $program_end_time   =  $request->program_end_time;
+            $cluster            =  $request->cluster;
+            $core_area          =  $request->core_area;
+            
+            $ce_form = new Customized_engagement_form();
+            $ce_form->status                = $status;
+            $ce_form->customized_type       = $customized_type;
+            $ce_form->ga_percent            = $ga_percent;
+            $ce_form->client                = $client;
+            $ce_form->engagement_title      = $engagement_title;
+            $ce_form->pax_number            = $pax_number;
+            $ce_form->program_dates         = $program_dates;
+            $ce_form->program_start_time    = $program_start_time;
+            $ce_form->program_end_time      = $program_end_time;
+            $ce_form->cluster               = $cluster;
+            $ce_form->core_area             = $core_area;
+            $ce_form->save();
 
-            EstimatesAdd::create($estimatesAdd);
+            Toastr::success('Data added successfully :)','Success');
+            return redirect()->route('home');
+        } catch(\Exception $e){
+            Toastr::error('Data added fail :)','Error');
+            return redirect()->route('form/customizedEngagement/new');
         }
         
-        return redirect('form/customizedEngagement/save');
+        // return redirect('form/customizedEngagement/save');
     }
 }
