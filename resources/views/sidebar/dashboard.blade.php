@@ -88,7 +88,7 @@
                             <a href="{{ route('form/f2f_engagement/new') }}">F2F ENGAGEMENT</a>
                         </li>
                         <li class="submenu-item">
-                            <a href="{{ route('form/mgtstratu_workshops/new') }}">MGTSTRATU WORKSHOPS</a>
+                            <a href="{{ route('form/mgtstratu_workshops/new') }}">MGTSTRAT-U WORKSHOPS</a>
                         </li>
                 </li>
 

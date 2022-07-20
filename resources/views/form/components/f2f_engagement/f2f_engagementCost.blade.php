@@ -560,7 +560,7 @@
                     <td style="background-color: #FFFFFF;" class="border border-white"></td>
                 </tr>
 
-<!--------------------------PROGRAM------------------------------>
+<!--------------------------PROGRAM------------------------------------->
                     <tr class="th-blue-grey-lighten">
                         <th class="title px-4 text-dark">3. PROGRAM</th>
                         <td></td>
@@ -864,7 +864,7 @@
                     <td style="background-color: #FFFFFF;" class="border border-white"></td>
                 </tr>
 
-<!--------------------------PER DIEM----------------------------->
+<!--------------------------PER DIEM------------------------------------>
                 {{-- Per Diem --}}
                 <tr class="th-blue-grey-lighten" id="rowofPerDiem">
                     <th class="title px-4 text-dark">5. PER DIEM</th>
@@ -903,7 +903,7 @@
                     <td style="background-color: #FFFFFF;" class="border border-white"></td>
                 </tr>
 
-<!--------------------------OFF-PROGRAM---------------------------------->
+<!--------------------------OFF-PROGRAM--------------------------------->
                 {{-- Off-Program --}}
                 <tr class="th-blue-grey-lighten">
                     <th class="title px-4 text-dark">6. OFF-PROGRAM</th>
@@ -957,7 +957,7 @@
                     <td style="background-color: #FFFFFF;" class="border border-white"></td>
                 </tr>
 
-<!--------------------------MISCELLANEOUS-------------------------------->
+<!--------------------------MISCELLANEOUS------------------------------->
                 {{-- miscellaneous --}}
                 <tr class="th-blue-grey-lighten">
                     <th class="title px-4 text-dark">MISCELLANEOUS</th>
@@ -1001,7 +1001,7 @@
                     <td style="background-color: #FFFFFF;" class="border border-white"></td>
                 </tr>
 
-<!--------------------------TOTAL----------------------------->
+<!--------------------------TOTAL--------------------------------------->
                 <tr class="table-active">
                     <td class="fw-bold text-uppercase text-dark fst-italic overall-total-start">TOTAL</td>
                     <td class="overall-total-middle"></td>
