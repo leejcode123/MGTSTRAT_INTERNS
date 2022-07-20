@@ -10,13 +10,13 @@
         <div class="page-title">
             <div class="row">
                 <div class="col-12 col-md-6 order-md-1 order-last">
-                    <h3>MGTSTRATU WORKSHOPS</h3>
+                    <h3>MGTSTRAT-U WORKSHOPS</h3>
                 </div>
                 <div class="col-12 col-md-6 order-md-2 order-first">
                     <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{{ route('home') }}">Dashboard</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">MGTSTRATU WORKSHOPS</li>
+                            <li class="breadcrumb-item active" aria-current="page">MGTSTRAT-U WORKSHOPS</li>
                         </ol>
                     </nav>
                 </div>
@@ -56,7 +56,7 @@
 
                                 {{-- INFORMATION --}}
                                 <div class="multisteps-form__panel js-active" data-animation="slideHorz">
-                                    @include('form.components.f2f_engagement.f2f_information')
+                                    @include('form.components.mgtstratu_workshops.workshops_information')
                                     {{-- next button --}}
                                     <div class="col-12 d-flex justify-content-center mt-3">
                                         <button class="btn btn-primary ml-auto js-btn-next" type="button" title="Next">Next</button>
@@ -65,7 +65,7 @@
 
                                 {{-- ENGAGEMENT FEES --}}
                                 <div class="multisteps-form__panel" data-animation="slideHorz">
-                                    @include('form.components.f2f_engagement.f2f_engagementFees')
+                                    @include('form.components.mgtstratu_workshops.workshops_engagementFees')
                                     {{-- next and prev button --}}
                                     <div class="button-row d-flex justify-content-center mt-3">
                                         <button class="btn btn-secondary mx-2 js-btn-prev" type="button" title="Prev">Prev</button>
@@ -75,7 +75,7 @@
 
                                 {{-- ENGAGEMENT COST --}}
                                 <div class="multisteps-form__panel" data-animation="slideHorz">
-                                    @include('form.components.f2f_engagement.f2f_engagementCost')
+                                    @include('form.components.mgtstratu_workshops.workshops_engagementCost')
                                     {{-- next and prev button --}}
                                     <div class="col-12 d-flex justify-content-center mt-3">
                                         <button class="btn btn-secondary mx-2 js-btn-prev" type="button" title="Prev">Prev</button>
@@ -85,7 +85,7 @@
 
                                  {{-- PROFIT FORECAST --}}
                                 <div class="multisteps-form__panel" data-animation="slideHorz">
-                                    @include('form.components.f2f_engagement.f2f_profit_forecast')
+                                    @include('form.components.mgtstratu_workshops.workshops_profit_forecast')
                                     {{-- prev and submit button --}}
                                     <div class="col-12 d-flex justify-content-center mt-3">
                                         <button class="btn btn-secondary mx-2 js-btn-prev" type="button" title="Prev">Prev</button>
