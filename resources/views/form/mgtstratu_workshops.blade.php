@@ -1,4 +1,4 @@
-@section('title', 'F2F Engagement Form')
+@section('title', 'MGTSTRAT-U WORKSHOPS')
 <link rel="stylesheet" href="{{ URL::asset('css/custom.css') }}">
 @extends('layouts.master')
 @section('menu')
