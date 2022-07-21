@@ -250,9 +250,29 @@
                                 value="{{ old('') }}" name="" id="workshop_CustomizationHf" max="100">
                         </td>
                         <td class="">
-                            <input type="number"
-                                class="text-center form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="workshop_CustomizationNoh1" readonly>
+                            <fieldset>
+                                <select class="input js-mytooltip  text-center form-select @error('') is-invalid @enderror" name="" id="workshop_CustomizationNoh1"
+                                    data-mytooltip-content="<i>
+                                        # of Hours<br>
+                                        0 - no customization<br><br>
+                                        2 - automatic when we charge customization fee<br><br></i>"
+                                    data-mytooltip-theme="dark" data-mytooltip-action="focus"
+                                    data-mytooltip-direction="right" style="background-color:#ffcccc; color:red;">
+                                    <option value="0" {{ old('') == '0' ? 'selected="selected"' : '' }}
+                                        title="">
+                                        0
+                                    </option>
+                                    <option value="2" {{ old('') == '2' ? 'selected="selected"' : '' }}
+                                        title="">
+                                        2
+                                    </option>
+                                </select>
+                                @error('ef_customFee')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </fieldset>
                         </td>
                         <td class="">
                             <input type="number"
