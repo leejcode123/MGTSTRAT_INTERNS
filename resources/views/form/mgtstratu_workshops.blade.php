@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="{{ URL::asset('css/custom.css') }}">
 @extends('layouts.master')
 @section('menu')
-    @extends('sidebar.form_staff')
+    @extends('sidebar.mgtstrat_u_workshop')
 @endsection
 @section('content')
     <div id="main">
@@ -50,7 +50,7 @@
                                 <div class="card-body">
 
                         {{-- Budget form --}}
-                        <form class="form form-horizontal multisteps-form__form" action="{{ route('form/save') }}"
+                        <form class="form form-horizontal multisteps-form__form" action="{{ route('form/mgtstratu_workshops/save') }}"
                         method="POST">
                         @csrf
 

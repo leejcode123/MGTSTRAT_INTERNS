@@ -1,0 +1,95 @@
+@section('title', 'Webinar Record')
+@extends('layouts.master')
+@section('menu')
+    @extends('sidebar.viewrecord')
+@endsection
+@section('content')
+    <div id="main">
+        @include('headers.header')
+        <div class="page-heading">
+            <div class="page-title">
+                <div class="row">
+                    <div class="col-12 col-md-6 order-md-1 order-last">
+                        <h3>Customized Engagement Record</h3>
+                        {{-- <p class="text-subtitle text-muted">Budget information list</p> --}}
+                    </div>
+                    <div class="col-12 col-md-6 order-md-2 order-first">
+                        <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="{{ route('home') }}">Dashboard</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">View</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+            {{-- message --}}
+            {!! Toastr::message() !!}
+
+            <section class="section">
+                <div class="card">
+                    {{-- <div class="card-header">
+                        Customized Engagement Record
+                    </div> --}}
+                    <div class="card-body">
+                        <table class="table table-striped" id="table1">
+                            <thead>
+                                <tr class="text-dark">
+                                    <th>NO</th>
+                                    <th>STATUS</th>
+                                    <th>COMPANY NAME</th>
+                                    <th width="10%">ENGAGEMENT TYPE</th>
+                                    <th width="20%">WEBINAR TITLE</th>
+                                    <th>NUMBER OF PAX</th>
+                                    <th>SCHEDULED DATES</th>
+                                    <th>SCHEDULED TIME</th>
+                                    <th class="text-center">Modify</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($data as $key => $item)
+                                    <tr>
+                                        <td class="id fw-bold">{{ ++$key }}</td>
+                                        <td class="status">
+                                            <span id="p" class="badge bg-secondary">{{ $item->status }}</span>
+                                        </td>
+                                        <td class="name fw-bold">{{ $item->client }}</td>
+                                        <td class="name fw-bold">{{ $item->customized_type }}</td>
+                                        <td class="email fw-bold">{{ $item->engagement_title }}</td>
+                                        <td class="fw-bold">{{ $item->pax_number }}</td>
+                                        <td class="fw-bold">{{ Str::limit(str_replace (array('[', '"', ']'), ' ' , $item->program_dates), '15'); }}</td>
+                                        <td class="fw-bold">{{ date('h:i a',strtotime($item->program_start_time)) }}</td>
+                                        <td class="text-center fw-bold">
+                                            <a href="">
+                                                <span class="badge bg-info"><i class="bi bi-person-plus-fill"></i></span>
+                                            </a>
+                                            <a href="">
+                                                <span class="badge bg-success"><i class="bi bi-pencil-square"></i></span>
+                                            </a>
+                                            <a href="{{ url('delete/' . $item->id) }}"
+                                                onclick="return confirm('Are you sure to want to delete it?')"><span
+                                                    class="badge bg-danger"><i class="bi bi-trash"></i></span></a>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <footer>
+            <div class="footer clearfix mb-0 text-muted ">
+                <div class="float-start">
+                    <p>2022 &copy; MGT-STRAT</p>
+                </div>
+                <div class="float-end">
+                    <p>Crafted with <span class="text-danger"><i class="bi bi-heart"></i></span> by <a
+                            href="#">MGT-STRAT</a></p>
+                </div>
+            </div>
+        </footer>
+    </div>
+@endsection
+

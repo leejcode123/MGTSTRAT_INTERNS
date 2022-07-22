@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Brian2694\Toastr\Facades\Toastr;
+use RealRashid\SweetAlert\Facades\Alert;
 use App\Models\Customized_engagement_form;
 use DB;
 
@@ -15,6 +16,22 @@ class CustomizedEngagementController extends Controller
         // $cluster = DB::table('reference')->get();
         // return view('form.customized_engagement',compact('cluster'));
         return view('form.customized_engagement');
+    }
+
+    // view record
+    public function viewRecord()
+    {
+        $data = DB::table('customized_engagement_forms')->get();
+        return view('view_record.ce_record.ce_view_record',compact('data'));
+    }
+
+    // view delete
+    public function viewDelete($id)
+    {
+        $delete = Customized_engagement_form::find($id);
+        $delete->delete();
+        Alert::success('Data deleted successfully :)','Success');
+        return redirect()->route('form/view/detail');
     }
 
     public function viewDetail($id)

@@ -4,49 +4,43 @@
             <label class="fw-bold required">Cluster</label>
             <div class="position-relative">
                 <fieldset class="form-group">
-                    <select class="input js-mytooltip form-select cluster-dropdown @error('') is-invalid @enderror" name="" id="cluster-dropdown[${dates}]"
+                    <select class="input js-mytooltip form-select cluster-dropdown @error('') is-invalid @enderror" name="cluster[]" id="cluster-dropdown[${dates}]"
                     onchange=" 
                         if($('.capability${dates}').is(':selected')){
                             document.getElementById('listed[${dates}]').style.display = '';
                             document.getElementById('input-notListed[${dates}]').disabled = true;
                             document.getElementById('div-notListed[${dates}]').style.display = 'none';
                             document.getElementById('core-valueInput[${dates}]').value = 'Capability';
-                            document.getElementById('core-valueInput[${dates}]').disabled = true;
                         } 
                         if($('.culture${dates}').is(':selected')) {
                             document.getElementById('listed[${dates}]').style.display = '';
                             document.getElementById('input-notListed[${dates}]').disabled = true;
                             document.getElementById('div-notListed[${dates}]').style.display = 'none';
                             document.getElementById('core-valueInput[${dates}]').value = 'Culture';
-                            document.getElementById('core-valueInput[${dates}]').disabled = true;
                         } 
                         if($('.leadership${dates}').is(':selected')) {
                             document.getElementById('listed[${dates}]').style.display = '';
                             document.getElementById('input-notListed[${dates}]').disabled = true;
                             document.getElementById('div-notListed[${dates}]').style.display = 'none';
                             document.getElementById('core-valueInput[${dates}]').value = 'Leadership';
-                            document.getElementById('core-valueInput[${dates}]').disabled = true;
                         } 
                         if($('.social').is(':selected')) {
                             document.getElementById('listed[${dates}]').style.display = '';
                             document.getElementById('input-notListed[${dates}]').disabled = true;
                             document.getElementById('div-notListed[${dates}]').style.display = 'none';
                             document.getElementById('core-valueInput[${dates}]').value = 'Social';
-                            document.getElementById('core-valueInput[${dates}]').disabled = true;
                         } 
                         if($('.strategy').is(':selected')) {
                             document.getElementById('listed[${dates}]').style.display = '';
                             document.getElementById('input-notListed[${dates}]').disabled = true;
                             document.getElementById('div-notListed[${dates}]').style.display = 'none';
                             document.getElementById('core-valueInput[${dates}]').value = 'Strategy';
-                            document.getElementById('core-valueInput[${dates}]').disabled = true;
                         } 
                         if($('.teams').is(':selected')) {
                             document.getElementById('listed[${dates}]').style.display = '';
                             document.getElementById('input-notListed[${dates}]').disabled = true;
                             document.getElementById('div-notListed[${dates}]').style.display = 'none';
-                            document.getElementById('core-valueInput[${dates}]').value = 'Teams';
-                            document.getElementById('core-valueInput[${dates}]').disabled = true;
+                            document.getElementById('core-valueInput[${dates}]').value = 'Teams'
                         }
                         if($('.notListed').is(':selected')) {
                             document.getElementById('listed[${dates}]').style.display = 'none';
@@ -395,7 +389,7 @@
             <label class="fw-bold required">Cluster</label>
             <div class="position-relative">
                 <input type="text" class="form-control input-notListed @error('') is-invalid @enderror" value="{{ old('') }}"
-                    name="" id="input-notListed[${dates}]" disabled>
+                    name="cluster[]" id="input-notListed[${dates}]">
                 <div class="form-control-icon">
                     <a href="javascript:void(0)" class="remove-not-listed" id="remove-not-listed[${dates}]"
                     onclick="
@@ -403,8 +397,7 @@
                         document.getElementById('listed[${dates}]').style.display = '';
                         document.getElementById('core-valueInput[${dates}]').value = 'Capability';
                         document.getElementById('input-notListed[${dates}]').disabled = true;
-                        document.getElementById('div-notListed[${dates}]').style.display = 'none';
-                        document.getElementById('core-valueInput[${dates}]').disabled = true;">
+                        document.getElementById('div-notListed[${dates}]').style.display = 'none';">
                         <i class="fa-solid fa-square-xmark text-danger"></i>
                     </a>
                 </div>
@@ -421,7 +414,7 @@
             <label class="fw-bold required">Core Area</label>
             <div class="position-relative">
                 <fieldset class="form-group">
-                    <select class="form-select core-valueInput @error('') is-invalid @enderror" name="" id="core-valueInput[${dates}]" disabled>
+                    <select class="form-select core-valueInput @error('') is-invalid @enderror" name="core_area[]" id="core-valueInput[${dates}]">
                         <option value="Culture">Culture</option>
                         <option value="Capability" selected>Capability</option>
                         <option value="Leadership">Leadership</option>

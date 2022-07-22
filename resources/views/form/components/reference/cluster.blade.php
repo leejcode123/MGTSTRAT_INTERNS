@@ -4,7 +4,7 @@
             <label class="fw-bold required">Cluster</label>
             <div class="position-relative">
                 <fieldset class="form-group">
-                    <select class="input js-mytooltip form-select cluster-dropdown @error('') is-invalid @enderror" name="cluster" id="cluster-dropdown1"
+                    <select class="input js-mytooltip form-select cluster-dropdown @error('') is-invalid @enderror" name="cluster[]" id="cluster-dropdown1"
                     data-mytooltip-content="<i>
                         If not on the list, choose suggested cluster title at Core Area.
                         </i>"
@@ -337,7 +337,7 @@
                 <input type="text" class="form-control input-notListed @error('') is-invalid @enderror" value="{{ old('') }}"
                     name="" id="input-notListed1" disabled>
                 <div class="form-control-icon">
-                    <a href="javascript:void(0)" class="remove-not-listed" name="cluster" id="remove-not-listed1">
+                    <a href="javascript:void(0)" class="remove-not-listed" name="cluster[]" id="remove-not-listed1">
                         <i class="fa-solid fa-square-xmark text-danger"></i>
                     </a>
                 </div>
@@ -355,7 +355,7 @@
             <label class="fw-bold required">Core Area</label>
             <div class="position-relative">
                 <fieldset class="form-group">
-                    <select class="form-select core-valueInput @error('') is-invalid @enderror" name="core_area" id="core-valueInput1">
+                    <select class="form-select core-valueInput @error('') is-invalid @enderror" name="core_area[]" id="core-valueInput1">
                         <option value="Culture">Culture</option>
                         <option value="Capability" selected>Capability</option>
                         <option value="Leadership">Leadership</option>
