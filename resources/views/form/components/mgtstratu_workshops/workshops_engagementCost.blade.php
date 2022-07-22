@@ -99,7 +99,7 @@
                                 <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                     value="{{ old('') }}" name="" id="">
                             </td>
-                            <td><a href="javascript:void(0)" class="text-success font-18" title="Add" id="ecaddButton"><i
+                            <td><a href="javascript:void(0)" class="text-success font-18" title="Add" id="mucaddButton"><i
                                 class="fa fa-plus"></i></a>
                             </td>
                         </tr>
@@ -163,7 +163,7 @@
                                 value="{{ old('') }}" name="" id="">
                         </td>
                         <td><a href="javascript:void(0)" class="text-success font-18" title="Add"
-                                id="ecaddButton2"><i class="fa fa-plus"></i></a>
+                                id="muaddButton2"><i class="fa fa-plus"></i></a>
                         </td>
                     </tr>
                     </tbody>
@@ -225,7 +225,7 @@
                                 value="{{ old('') }}" name="" id="">
                         </td>
                         <td><a href="javascript:void(0)" class="text-success font-18" title="Add"
-                                id="ecaddButton3"><i class="fa fa-plus"></i></a>
+                                id="muaddButton3"><i class="fa fa-plus"></i></a>
                         </td>
                     </tr>
                 </tbody>
@@ -275,9 +275,9 @@
                             </fieldset>
                         </td>
                         <td class="">
-                            <input type="number"
+                            <!--<input type="number"
                                 class="text-center form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="workshop_CustomizationNwh1" readonly>
+                                value="{{ old('') }}" name="" id="workshop_CustomizationNwh1" readonly>-->
                         </td>
                         <td class="total-td" style="border-left:3px solid black">
                             <h4 class="text-center lead" id="workshop_CustomizationsTotal">-</h4>
@@ -336,7 +336,7 @@
                                 value="{{ old('') }}" name="" id="">
                         </td>
                         <td><a href="javascript:void(0)" class="text-success font-18" title="Add"
-                                id="ecaddButton5"><i class="fa fa-plus"></i></a>
+                                id="muaddButton4"><i class="fa fa-plus"></i></a>
                         </td>
                     </tr>
                 </tbody>
@@ -401,7 +401,9 @@
                             <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                 value="{{ old('') }}" name="" id="">
                         </td>
-                        <td style="background-color: #FFFFFF;" class="border border-white"></td>
+                        <td><a href="javascript:void(0)" class="text-success font-18" title="Add"
+                            id="muaddButton5"><i class="fa fa-plus"></i></a>
+                        </td>
                     </tr>
                 </tbody>
             <!---------------MODERATOR--------------------->
@@ -456,6 +458,9 @@
                             <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                 value="{{ old('') }}" name="" id="">
                         </td>
+                        <td><a href="javascript:void(0)" class="text-success font-18" title="Add"
+                            id="muaddButton6"><i class="fa fa-plus"></i></a>
+                        </td>
                     </tr>
                 </tbody>
             <!---------------PRODUCER---------------------->
@@ -484,7 +489,9 @@
                             <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                 value="{{ old('') }}" name="" id="">
                         </td>
-                        <td style="background-color: #FFFFFF;" class="border border-white"></td>
+                        <td><a href="javascript:void(0)" class="text-success font-18" title="Add"
+                            id="muaddButton7"><i class="fa fa-plus"></i></a>
+                        </td>
                     </tr>
                 </tbody>
 
