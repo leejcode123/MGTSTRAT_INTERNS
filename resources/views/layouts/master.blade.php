@@ -27,6 +27,17 @@
     {{-- Select2 CDN --}}
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+        {{-- DATEPICKER CSS --}}
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+        {{-- TOOLTIP CSS --}}
+        <link rel="stylesheet" href="{{ url('css/tooltip-css/jquery.mytooltip.min.css') }}">
+        {{-- DATEPICKER JS --}}
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+        {{-- TOOLTIP JS --}}
+        <script src="{{ url('js/tooltipJs/jquery.mytooltip.js') }}"></script>
+        <script src="{{ url('js/tooltipJs/demo/script.js') }}"></script>
 </head>
 
 <body id="body">

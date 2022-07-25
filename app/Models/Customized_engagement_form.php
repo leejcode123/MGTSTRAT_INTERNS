@@ -9,6 +9,8 @@ class Customized_engagement_form extends Model
 {
     // use HasFactory;
     public $timestamps = false;
+    protected $table = 'customized_engagement_forms';
+    protected $primaryKey = 'id';
     protected $casts = [
         'program_dates' => 'array',
         'program_start_time' => 'array',
@@ -16,4 +18,9 @@ class Customized_engagement_form extends Model
         'cluster' => 'array',
         'core_area' => 'array'
     ];
+
+    public function Engagement_fee()
+    {
+        return $this->hasMany(Engagement_fee::class);
+    }
 }

@@ -51,8 +51,28 @@
                                 @foreach ($data as $key => $item)
                                     <tr>
                                         <td class="id fw-bold">{{ ++$key }}</td>
-                                        <td class="status">
-                                            <span id="p" class="badge bg-secondary">{{ $item->status }}</span>
+                                        <td>
+                                            <span id="status" class="badge">{{ $item->status }}</span>
+                                            {{-- Automatic change the status color --}}
+                                            <script>
+                                                $( ".badge" ).each(function() {
+                                                    if($(this).html() === 'Trial'){
+                                                        $(this).addClass( "bg-info" );                                                    
+                                                    }
+                                                    else if($(this).html() === 'Confirmed'){
+                                                        $(this).addClass( "bg-primary" );                                                    
+                                                    }
+                                                    else if($(this).html() === 'In-progress'){
+                                                        $(this).addClass( "bg-warning" );                                                    
+                                                    }
+                                                    else if($(this).html() === 'Completed'){
+                                                        $(this).addClass( "bg-success" );                                                    
+                                                    }
+                                                    else if($(this).html() === 'Lost'){
+                                                        $(this).addClass( "bg-danger" );                                                    
+                                                    }
+                                                });
+                                            </script>
                                         </td>
                                         <td class="name fw-bold">{{ $item->client }}</td>
                                         <td class="name fw-bold">{{ $item->customized_type }}</td>
@@ -92,4 +112,5 @@
         </footer>
     </div>
 @endsection
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 

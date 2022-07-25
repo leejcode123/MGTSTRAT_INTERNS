@@ -11,24 +11,24 @@ class CreateGenerateIdTblsTable extends Migration
      *
      * @return void
      */
-    public function up()
-    {
-        DB::unprepared('
-                CREATE TRIGGER hbspt_id BEFORE INSERT ON webinarforms FOR EACH ROW
-                    BEGIN
-                        INSERT INTO sequence_tbls VALUES (NULL);
-                        SET NEW.deal_number = CONCAT("HBSPT_", LPAD(LAST_INSERT_ID(), 10, "0"));
-                    END
-        ');
-    }
+    // public function up()
+    // {
+    //     DB::unprepared('
+    //             CREATE TRIGGER hbspt_id BEFORE INSERT ON webinarforms FOR EACH ROW
+    //                 BEGIN
+    //                     INSERT INTO sequence_tbls VALUES (NULL);
+    //                     SET NEW.deal_number = CONCAT("HBSPT_", LPAD(LAST_INSERT_ID(), 10, "0"));
+    //                 END
+    //     ');
+    // }
 
     /**
      * Reverse the migrations.
      *
      * @return void
      */
-    public function down()
-    {
-       DB::unprepared('DROP TRIGGER "hbspt_id"');
-    }
+    // public function down()
+    // {
+    //    DB::unprepared('DROP TRIGGER "hbspt_id"');
+    // }
 }
