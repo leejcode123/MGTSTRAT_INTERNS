@@ -82,10 +82,12 @@ Route::get('change/password', [App\Http\Controllers\UserManagementController::cl
 Route::post('change/password/db', [App\Http\Controllers\UserManagementController::class, 'changePasswordDB'])->name('change/password/db');
 
 // ----------------------------- Customized engagement form ------------------------------//
+Route::controller(CustomizedEngagementController::class)->group(function () {
 Route::get('form/customizedEngagement/new', [App\Http\Controllers\CustomizedEngagementController::class, 'index'])->middleware('auth')->name('form/customizedEngagement/new');
 Route::post('form/customizedEngagement/save', [App\Http\Controllers\CustomizedEngagementController::class, 'store'])->name('form/customizedEngagement/save');
 Route::get('form/view/detail', [App\Http\Controllers\CustomizedEngagementController::class, 'viewRecord'])->middleware('auth')->name('form/view/detail');
 Route::get('delete/{id}', [App\Http\Controllers\CustomizedEngagementController::class, 'viewDelete'])->middleware('auth');
+});
 // ----------------------------- F2F engagement form ------------------------------//
 Route::get('form/f2f_engagement/new', [App\Http\Controllers\F2fEngagementController::class, 'index'])->middleware('auth')->name('form/f2f_engagement/new');
 Route::post('form/f2f_engagement/save', [App\Http\Controllers\F2fEngagementController::class, 'store'])->name('form/f2f_engagement/save');

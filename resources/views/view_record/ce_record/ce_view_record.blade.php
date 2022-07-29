@@ -40,7 +40,7 @@
                                     <th>STATUS</th>
                                     <th>COMPANY NAME</th>
                                     <th width="10%">ENGAGEMENT TYPE</th>
-                                    <th width="20%">WEBINAR TITLE</th>
+                                    <th width="15%">WEBINAR TITLE</th>
                                     <th>NUMBER OF PAX</th>
                                     <th>SCHEDULED DATES</th>
                                     <th>SCHEDULED TIME</th>
@@ -99,17 +99,19 @@
                 </div>
             </section>
         </div>
+        <!------------ FOOTER ------------>
         <footer>
-            <div class="footer clearfix mb-0 text-muted ">
-                <div class="float-start">
-                    <p>2022 &copy; MGT-STRAT</p>
-                </div>
+            <div class="footer clearfix mb-0 text-muted">
                 <div class="float-end">
+                    <p><script>document.write(new Date().getFullYear());</script> Copyright &copy MGT-STRAT</p>
+                </div>
+                {{-- <div class="float-end">
                     <p>Crafted with <span class="text-danger"><i class="bi bi-heart"></i></span> by <a
                             href="#">MGT-STRAT</a></p>
-                </div>
+                </div> --}}
             </div>
         </footer>
+    <!------------ END OF FOOTER ------------>
     </div>
 @endsection
 <script src="https://code.jquery.com/jquery-3.5.0.js"></script>

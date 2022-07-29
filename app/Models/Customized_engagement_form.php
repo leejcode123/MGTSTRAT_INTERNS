@@ -18,9 +18,4 @@ class Customized_engagement_form extends Model
         'cluster' => 'array',
         'core_area' => 'array'
     ];
-
-    public function Engagement_fee()
-    {
-        return $this->hasMany(Engagement_fee::class);
-    }
 }

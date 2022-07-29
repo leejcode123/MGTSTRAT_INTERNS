@@ -99,7 +99,7 @@
                     </a>
                     <ul class="submenu">
                         <li class="submenu-item">
-                            <a href="{{ route('form/view/detail') }}">View Detail</a>
+                            <a href="{{ route('form/view/detail') }}">Customized Engagement</a>
                         </li>
                     </ul>
                 </li>

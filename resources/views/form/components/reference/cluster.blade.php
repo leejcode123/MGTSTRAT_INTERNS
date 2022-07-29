@@ -335,7 +335,7 @@
             <label class="fw-bold required">Cluster</label>
             <div class="position-relative">
                 <input type="text" class="form-control input-notListed @error('') is-invalid @enderror" value="{{ old('') }}"
-                    name="" id="input-notListed1" disabled>
+                    name="cluster[]" id="input-notListed1" disabled>
                 <div class="form-control-icon">
                     <a href="javascript:void(0)" class="remove-not-listed" name="cluster[]" id="remove-not-listed1">
                         <i class="fa-solid fa-square-xmark text-danger"></i>
@@ -477,6 +477,7 @@
             $(`#listed1`).each(function (){
                 $(this).css('display', 'none');
             });
+            $('#cluster-dropdown1').prop( 'disabled', true );
             $(`#input-notListed1`).each(function (){
                 $(this).prop( 'disabled', false );
                 $(this).val('');

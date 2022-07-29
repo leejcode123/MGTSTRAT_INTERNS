@@ -19,7 +19,7 @@
                         <option value="Trial" {{ old('') == 'Trial' ? 'selected="selected"' : '' }}>
                             Trial
                         </option>
-                        <option value="Active" {{ old('') == 'Active' ? 'selected="selected"' : '' }} selected>
+                        <option value="Confirmed" {{ old('') == 'Confirmed' ? 'selected="selected"' : '' }} selected>
                             Confirmed
                         </option>
                         <option value="In-progress" {{ old('') == 'In-progress' ? 'selected="selected"' : '' }}>
@@ -282,7 +282,7 @@
             //EVENT OF STATUS
             function status() { 
                 var status = document.getElementById("status").value;
-                if(status == "Active"){
+                if(status == "Confirmed"){
                     $('#status').css('background-color', '#007bff')
                     $('#status').css('color', 'white')
                     $('#status option').css('background-color', 'white')

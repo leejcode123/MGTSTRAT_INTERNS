@@ -94,11 +94,11 @@ $(document).on(
 
             sum13 =
                 $(this).find(`#ef_LeadconsultantNoc${rowIdx}`).val() *
-                    +$(this).find("#ef_LeadconsultantHf").val() *
+                    +$(this).find("#ef_LeadconsultantHf").val().replace(/\₱|,/g, "") *
                     $(this).find(`#ef_LeadconsultantNoh${rowIdx}`).val() +
                 $(this).find(`#ef_LeadconsultantNwh${rowIdx}`).val() *
                     ($(this).find(`#ef_LeadconsultantNoc${rowIdx}`).val() *
-                        +$(this).find("#ef_LeadconsultantHf").val() *
+                        +$(this).find("#ef_LeadconsultantHf").val().replace(/\₱|,/g, "") *
                         $(this).find(`#ef_LeadconsultantNoh${rowIdx}`).val() *
                         $("#nswh").val());
 
@@ -253,8 +253,6 @@ $(document).on(
 
         //Subtotal
         $("#subtotal-consulting").html("₱" + currency.format(Math.ceil(efConsultingSum)));
-        // //subtotal engagement cost
-        // $("#ec_AnalystTotal").html(currency.format(Math.ceil(sumecAnalyst)));
         $("#ec_SubtotalConsulting").html("₱" +
             currency.format(Math.ceil(ecConsultingSum))
         );
@@ -267,11 +265,11 @@ $(document).on(
 
             sum18 =
                 $(this).find(`#ef_DesignerNoc${efDesigner}`).val() *
-                    +$(this).find("#ef_DesignerHf").val() *
+                    +$(this).find("#ef_DesignerHf").val().replace(/\₱|,/g, "") *
                     $(this).find(`#ef_DesignerNoh${efDesigner}`).val() +
                 $(this).find(`#ef_DesignerNwh${efDesigner}`).val() *
                     ($(this).find(`#ef_DesignerNoc${efDesigner}`).val() *
-                        +$(this).find("#ef_DesignerHf").val() *
+                        +$(this).find("#ef_DesignerHf").val().replace(/\₱|,/g, "") *
                         $(this).find(`#ef_DesignerNoh${efDesigner}`).val() *
                         $("#nswh").val());
 
@@ -360,11 +358,11 @@ $(document).on(
             efLeadfaci++;
             sum21 =
                 $(this).find(`#ef_LeadfacilitatorNoc${efLeadfaci}`).val() *
-                    +$(this).find(`#ef_LeadfacilitatorHf${efLeadfaci}`).val() *
+                    +$(this).find(`#ef_LeadfacilitatorHf${efLeadfaci}`).val().replace(/\₱|,/g, "") *
                     $(this).find(`#ef_LeadfacilitatorNoh${efLeadfaci}`).val() +
                 $(this).find(`#ef_LeadfacilitatorNwh${efLeadfaci}`).val() *
                     ($(this).find(`#ef_LeadfacilitatorNoc${efLeadfaci}`).val() *
-                        +$(this).find(`#ef_LeadfacilitatorHf${efLeadfaci}`).val() *
+                        +$(this).find(`#ef_LeadfacilitatorHf${efLeadfaci}`).val().replace(/\₱|,/g, "") *
                         $(this).find(`#ef_LeadfacilitatorNoh${efLeadfaci}`).val() *
                         $("#nswh").val()) ||
                 $(this).find(`#ef_LeadfacilitatorNoc${efLeadfaci}`).val() *
@@ -856,6 +854,8 @@ $(document).on(
 
         /*******************************************TOTAL STANDARD FEES**********************************************************************/
         $("#total-standard").html("₱" + currency.format(Math.ceil(sum)));
+        //TOTAL PACKAGE
+        document.getElementById("ef_Totalpackage").defaultValue = $("#total-standard").html();
 
         /********************************************DISCOUNTS*******************************************************************************/
         $("#ef_Totalpackage").each(function () {
