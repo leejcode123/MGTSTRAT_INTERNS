@@ -1,5 +1,5 @@
-<div class="form-group row justify-content-center clusterRows" id="clusterRows">
-    <div class="col-md-4 listed" id="listed1">
+{{-- <div class="form-group row justify-content-center clusterRows" id="clusterRows"> --}}
+    <div class="col-lg-3 col-md-3 listed" id="listed1">
         <div class="form-group has-icon-left">
             <label class="fw-bold required">Cluster</label>
             <div class="position-relative">
@@ -330,7 +330,7 @@
         </div>
     </div>
 
-    <div class="col-md-4 div-notListed" id="div-notListed1" style="display: none">
+    <div class="col-lg-2 col-md-2 div-notListed" id="div-notListed1" style="display: none">
         <div class="form-group has-icon-right">
             <label class="fw-bold required">Cluster</label>
             <div class="position-relative">
@@ -350,7 +350,7 @@
         </div>
     </div>
 
-    <div class="col-md-4">
+    <div class="col-lg-2 col-md-2">
         <div class="form-group has-icon-left">
             <label class="fw-bold required">Core Area</label>
             <div class="position-relative">
@@ -375,8 +375,8 @@
             </div>
         </div>
     </div>
-</div>
-<hr>
+{{-- </div> --}}
+{{-- <hr> --}}
 
 <script>    
     document.getElementById('cluster-dropdown1').addEventListener("change", clusterChange);

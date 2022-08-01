@@ -7,6 +7,7 @@ use Brian2694\Toastr\Facades\Toastr;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Models\Customized_engagement_form;
 use App\Models\Engagement_fee;
+use App\Models\Engagement_cost;
 use DB;
 
 class CustomizedEngagementController extends Controller
@@ -26,8 +27,8 @@ class CustomizedEngagementController extends Controller
         // $data = DB::table('customized_engagement_forms')->get();
         $data     = DB::table('customized_engagement_forms')->get();
         $dataJoin = DB::table('customized_engagement_forms')
-            ->join('engagement_fees', 'customized_engagement_forms.cstmzd_eng_form_id', '=', 'engagement_fees.cstmzd_eng_form_id')
-            ->select('customized_engagement_forms.*', 'engagement_fees.*')
+            ->join('engagement_fees', 'engagement_costs', 'customized_engagement_forms.cstmzd_eng_form_id', '=', 'engagement_fees.cstmzd_eng_form_id', 'engagement_costs.cstmzd_eng_form_id')
+            ->select('customized_engagement_forms.*', 'engagement_fees.*', 'engagement_costs.*')
             ->get();
         return view('view_record.ce_record.ce_view_record',compact('data', 'dataJoin'));
     }
@@ -70,6 +71,7 @@ class CustomizedEngagementController extends Controller
         //     'cluster' => '',
         //     'core_area' => '',
         // ]);
+        
         $request->validate([
             'client'   => 'required|string|max:255',
         ]);
@@ -97,16 +99,27 @@ class CustomizedEngagementController extends Controller
 
             foreach($request->type as $key => $types)
             {
-                $engagement_fee['type']            = $types;
-                $engagement_fee['cstmzd_eng_form_id'] = $cstmzd_eng_form_id;
-                $engagement_fee['consultant_num']     = $request->consultant_num[$key];
-                $engagement_fee['hour_fee']       = $request->hour_fee[$key];
+                $engagement_fee['type']                 = $types;
+                $engagement_fee['cstmzd_eng_form_id']   = $cstmzd_eng_form_id;
+                $engagement_fee['consultant_num']       = $request->consultant_num[$key];
+                $engagement_fee['hour_fee']             = $request->hour_fee[$key];
                 $engagement_fee['hour_num']             = $request->hour_num[$key];
-                $engagement_fee['nswh']          = $request->nswh[$key];
-                $engagement_fee['notes']          = $request->notes[$key];
+                $engagement_fee['nswh']                 = $request->nswh[$key];
+                $engagement_fee['notes']                = $request->notes[$key];
 
                 Engagement_fee::create($engagement_fee);
+
+                $engagement_cost['type']                = $types;
+                $engagement_cost['cstmzd_eng_form_id']  = $cstmzd_eng_form_id;
+                $engagement_cost['consultant_num']      = $request->consultant_num[$key];
+                $engagement_cost['hour_fee']            = $request->hour_fee[$key];
+                $engagement_cost['hour_num']            = $request->hour_num[$key];
+                $engagement_cost['nswh']                = $request->nswh[$key];
+                $engagement_cost['rooster']             = $request->rooster[$key];
+
+                Engagement_cost::create($engagement_cost);
             }
+
 
             DB::commit();
             Toastr::success('Data added successfully :)','Success');

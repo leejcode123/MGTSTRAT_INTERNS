@@ -37,7 +37,10 @@
 
                     <tbody id="tableSales">
                         <tr class="table-warning" id="salesRow">
-                            <td class="title table-light">Sales (4% / 5% / 6% / 7%)</td>
+                            <td class="title table-light">
+                                <input type="text" class="d-none" value="Sales" name="" readonly>
+                                Sales (4% / 5% / 6% / 7%)
+                            </td>
                             <td></td>
                             <td>
                                 <input type="text" class="form-control input-table @error('') is-invalid @enderror"
@@ -231,34 +234,37 @@
 
                     <tbody id="ec_tableLeadConsultant">
                         <tr class="table-warning" id="ec_LeadConsultant">
-                            <td class="title table-light">Lead Consultant (P7K, P9K)</td>
+                            <td class="title table-light">
+                                <input type="text" class="d-none" value="Lead Consultant" name="type[]" readonly>
+                                Lead Consultant (P7K, P9K)
+                            </td>
                             <td class="">
                                 <input type="number"
                                     class="text-center form-control input-table @error('') is-invalid @enderror"
-                                    value="{{ old('') }}" name="" id="ec_LeadconsultantNoc1" max="100"
+                                    value="{{ old('') }}" name="consultant_num[]" id="ec_LeadconsultantNoc1" max="100"
                                     readonly>
                             </td>
                             <td class="">
                                 <input type="text"
                                     class="text-center fw-bold text-dark form-control input-table @error('') is-invalid @enderror"
-                                    value="{{ old('') }}" name="" id="ec_LeadconsultantHf" data-type="currency">
+                                    value="{{ old('') }}" name="hour_fee[]" id="ec_LeadconsultantHf" data-type="currency">
                             </td>
                             <td class="">
                                 <input type="number"
                                     class="text-center form-control input-table @error('') is-invalid @enderror"
-                                    value="{{ old('') }}" name="" id="ec_LeadconsultantNoh1" readonly>
+                                    value="{{ old('') }}" name="hour_num[]" id="ec_LeadconsultantNoh1" readonly>
                             </td>
                             <td class="">
                                 <input type="number"
                                     class="text-center form-control input-table @error('') is-invalid @enderror"
-                                    value="{{ old('') }}" name="" id="ec_LeadconsultantNwh1" readonly>
+                                    value="{{ old('') }}" name="nswh[]" id="ec_LeadconsultantNwh1" readonly>
                             </td>
                             <td class="total-td table-light">
                                 <h4 class="text-center lead" id="ec_LeadconsultantTotal">-</h4>
                             </td>
                             <td class="total-td table-light">
                                 <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                                    value="{{ old('') }}" name="" id="">
+                                    value="{{ old('') }}" name="rooster[]" id="">
                             </td>
                             <td class="border border-white add-row invisible"></td>
                         </tr>

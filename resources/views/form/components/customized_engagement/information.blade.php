@@ -187,13 +187,23 @@
             </div>
 
         <!------------ DATE COVERED BY ENGAGEMENT ------------>
-            <div class="row justify-content-center g-3 gx-5 mt-2" id="dcbe">
+            {{-- <div class="row justify-content-center g-3 gx-5 mt-2" id="dcbe"> --}}
+            <div class="row justify-content-center mt-2" id="dcbe">
                 <h6 class="text-center mt-3 fst-italic">Date Covered by Engagement</h3>
                 <div class="d-flex justify-content-center" id="dateRows1">
+                    <div class="align-self-center p-0">
+                        <div class="form-group has-icon-left">
+                            <label class="fw-bold invisible">Add</label>
+                            <a href="javascript:void(0)" class="text-success font-18" title="Add"
+                            id="addDates"><i class="fa fa-plus"></i></a>
+                            <div class="position-relative invisible">
+                            </div>
+                        </div>
+                    </div>
                     <div class="flex-column">
                         <div>
                             <div class="row justify-content-center" id="dateRows">
-                                <div class="col-lg-4 col-md-4">
+                                <div class="col-lg-2 col-md-2">
                                     <div class="form-group has-icon-left">
                                         <label class="fw-bold required">Date</label>
                                         <div class="position-relative">
@@ -211,7 +221,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-md-4">
+                                <div class="col-lg-2 col-md-2">
                                     <div class="form-group has-icon-left">
                                         <label class="fw-bold required">Start Time</label>
                                         <div class="position-relative">
@@ -228,7 +238,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-md-4">
+                                <div class="col-lg-2 col-md-2">
                                     <div class="form-group has-icon-left">
                                         <label class="fw-bold required">End Time</label>
                                         <div class="position-relative">
@@ -245,16 +255,17 @@
                                         </div>
                                     </div>
                                 </div>
+                                @include('form.components.reference.cluster')     
                             </div>
                         </div>
 
-                        <div>
+                        {{-- <div>
                             @include('form.components.reference.cluster')     
-                        </div>
+                        </div> --}}
             
                     </div>
 
-                    <div class="align-self-center p-0">
+                    {{-- <div class="align-self-center p-0">
                         <div class="form-group has-icon-left">
                             <label class="fw-bold invisible">Add</label>
                             <a href="javascript:void(0)" class="text-success font-18" title="Add"
@@ -262,7 +273,7 @@
                             <div class="position-relative invisible">
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
     </div>

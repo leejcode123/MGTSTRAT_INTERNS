@@ -36,7 +36,7 @@
                         <table class="table table-striped" id="table1">
                             <thead>
                                 <tr class="text-dark">
-                                    <th>NO</th>
+                                    <th>ID NUMBER</th>
                                     <th>STATUS</th>
                                     <th>COMPANY NAME</th>
                                     <th width="10%">ENGAGEMENT TYPE</th>
@@ -50,7 +50,8 @@
                             <tbody>
                                 @foreach ($data as $key => $item)
                                     <tr>
-                                        <td class="id fw-bold">{{ ++$key }}</td>
+                                        {{-- <td class="id fw-bold">{{ ++$key }}</td> --}}
+                                        <td class="id fw-bold">{{ $item->cstmzd_eng_form_id }}</td>
                                         <td>
                                             <span id="status" class="badge">{{ $item->status }}</span>
                                             {{-- Automatic change the status color --}}
