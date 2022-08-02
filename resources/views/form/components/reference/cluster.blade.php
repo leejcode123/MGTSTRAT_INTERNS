@@ -1,19 +1,19 @@
 {{-- <div class="form-group row justify-content-center clusterRows" id="clusterRows"> --}}
-    <div class="col-lg-3 col-md-3 listed" id="listed1">
+    <div class="col-lg-3 col-md-3 listed" id="listed1" style="display: none">
         <div class="form-group has-icon-left">
             <label class="fw-bold required">Cluster</label>
             <div class="position-relative">
                 <fieldset class="form-group">
                     <select class="input js-mytooltip form-select cluster-dropdown @error('') is-invalid @enderror" name="cluster[]" id="cluster-dropdown1"
-                    data-mytooltip-content="<i>
-                        If not on the list, choose suggested cluster title at Core Area.
-                        </i>"
-                    data-mytooltip-theme="dark"
-                    data-mytooltip-action="focus" 
-                    data-mytooltip-direction="top">
-                        <option value="" id="notListed" class="notListed1">-- Not listed --</option>
+                        data-mytooltip-content="<i>
+                            If not on the list, choose suggested cluster title at Core Area.
+                            </i>"
+                        data-mytooltip-theme="dark"
+                        data-mytooltip-action="focus" 
+                        data-mytooltip-direction="top" disabled>
+                        <option value="" id="notListed" class="notListed1" selected>-- Not listed --</option>
                         <option id="capability" class="capability1" value="Above The Line"
-                            {{ old('') == 'Above The Line' ? 'selected="selected"' : '' }} selected>
+                            {{ old('') == 'Above The Line' ? 'selected="selected"' : '' }}>
                             Above The Line
                         </option>
                         <option id="culture" class="culture1" value="Action Learning"
@@ -330,17 +330,20 @@
         </div>
     </div>
 
-    <div class="col-lg-2 col-md-2 div-notListed" id="div-notListed1" style="display: none">
+    <div class="col-lg-3 col-md-3 div-notListed" id="div-notListed1">
         <div class="form-group has-icon-right">
             <label class="fw-bold required">Cluster</label>
             <div class="position-relative">
                 <input type="text" class="form-control input-notListed @error('') is-invalid @enderror" value="{{ old('') }}"
-                    name="cluster[]" id="input-notListed1" disabled>
+                    name="cluster[]" id="input-notListed1">
                 <div class="form-control-icon">
                     <a href="javascript:void(0)" class="remove-not-listed" name="cluster[]" id="remove-not-listed1">
-                        <i class="fa-solid fa-square-xmark text-danger"></i>
+                        <i class="fa-solid fa-square-xmark text-danger" title="remove"></i>
                     </a>
                 </div>
+                {{-- <div class="form-control-icon">
+                    <i class="fa-solid fa-diagram-project"></i>
+                </div> --}}
                 @error('')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -387,6 +390,7 @@
             $('#listed1').each(function (){
                 $(this).css('display', '');
             });
+            $('#cluster-dropdown1').prop( 'disabled', false );
             $('#input-notListed1').each(function (){
                 $(this).prop( 'disabled', true );
             });
@@ -402,6 +406,7 @@
             $('#listed1').each(function (){
                 $(this).css('display', '');
             });
+            $('#cluster-dropdown1').prop( 'disabled', false );
             $('#input-notListed1').each(function (){
                 $(this).prop( 'disabled', true );
             });
@@ -417,6 +422,7 @@
             $('#listed1').each(function (){
                 $(this).css('display', '');
             });
+            $('#cluster-dropdown1').prop( 'disabled', false );
             $('#input-notListed1').each(function (){
                 $(this).prop( 'disabled', true );
             });
@@ -432,6 +438,7 @@
             $('#listed1').each(function (){
                 $(this).css('display', '');
             });
+            $('#cluster-dropdown1').prop( 'disabled', false );
             $('#input-notListed1').each(function (){
                 $(this).prop( 'disabled', true );
             });
@@ -447,6 +454,7 @@
             $('#listed1').each(function (){
                 $(this).css('display', '');
             });
+            $('#cluster-dropdown1').prop( 'disabled', false );
             $('#input-notListed1').each(function (){
                 $(this).prop( 'disabled', true );
             });
@@ -462,6 +470,7 @@
             $('#listed1').each(function (){
                 $(this).css('display', '');
             });
+            $('#cluster-dropdown1').prop( 'disabled', false );
             $('#input-notListed1').each(function (){
                 $(this).prop( 'disabled', true );
             });
@@ -492,6 +501,7 @@
     $('#remove-not-listed1').click(function (){
         document.getElementById("cluster-dropdown1").value = 'Above The Line';
         document.getElementById("listed1").style.display = "";
+        $('#cluster-dropdown1').prop( 'disabled', false );
         document.getElementById("core-valueInput1").value = "Capability";
         document.getElementById("input-notListed1").disabled = true;
         document.getElementById("div-notListed1").style.display = "none";

@@ -1,5 +1,5 @@
-<div class="form-group row justify-content-center clusterRows" id="clusterRows">
-    <div class="col-md-4 listed" id="listed[${dates}]">
+{{-- <div class="form-group row justify-content-center clusterRows" id="clusterRows"> --}}
+    <div class="col-lg-3 col-md-3 listed" id="listed[${dates}]" style="display: none">
         <div class="form-group has-icon-left">
             <label class="fw-bold required">Cluster</label>
             <div class="position-relative">
@@ -7,42 +7,55 @@
                     <select class="input js-mytooltip form-select cluster-dropdown @error('') is-invalid @enderror" name="cluster[]" id="cluster-dropdown[${dates}]"
                     onchange=" 
                         if($('.capability${dates}').is(':selected')){
+                            document.getElementById('cluster-dropdown[${dates}]').style.display = '';
+                            document.getElementById('cluster-dropdown[${dates}]').disabled = false;
                             document.getElementById('listed[${dates}]').style.display = '';
                             document.getElementById('input-notListed[${dates}]').disabled = true;
                             document.getElementById('div-notListed[${dates}]').style.display = 'none';
                             document.getElementById('core-valueInput[${dates}]').value = 'Capability';
                         } 
                         if($('.culture${dates}').is(':selected')) {
+                            document.getElementById('cluster-dropdown[${dates}]').style.display = '';
+                            document.getElementById('cluster-dropdown[${dates}]').disabled = false;
                             document.getElementById('listed[${dates}]').style.display = '';
                             document.getElementById('input-notListed[${dates}]').disabled = true;
                             document.getElementById('div-notListed[${dates}]').style.display = 'none';
                             document.getElementById('core-valueInput[${dates}]').value = 'Culture';
                         } 
                         if($('.leadership${dates}').is(':selected')) {
+                            document.getElementById('cluster-dropdown[${dates}]').style.display = '';
+                            document.getElementById('cluster-dropdown[${dates}]').disabled = false;
                             document.getElementById('listed[${dates}]').style.display = '';
                             document.getElementById('input-notListed[${dates}]').disabled = true;
                             document.getElementById('div-notListed[${dates}]').style.display = 'none';
                             document.getElementById('core-valueInput[${dates}]').value = 'Leadership';
                         } 
                         if($('.social').is(':selected')) {
+                            document.getElementById('cluster-dropdown[${dates}]').style.display = '';
+                            document.getElementById('cluster-dropdown[${dates}]').disabled = false;
                             document.getElementById('listed[${dates}]').style.display = '';
                             document.getElementById('input-notListed[${dates}]').disabled = true;
                             document.getElementById('div-notListed[${dates}]').style.display = 'none';
                             document.getElementById('core-valueInput[${dates}]').value = 'Social';
                         } 
                         if($('.strategy').is(':selected')) {
+                            document.getElementById('cluster-dropdown[${dates}]').style.display = '';
+                            document.getElementById('cluster-dropdown[${dates}]').disabled = false;
                             document.getElementById('listed[${dates}]').style.display = '';
                             document.getElementById('input-notListed[${dates}]').disabled = true;
                             document.getElementById('div-notListed[${dates}]').style.display = 'none';
                             document.getElementById('core-valueInput[${dates}]').value = 'Strategy';
                         } 
                         if($('.teams').is(':selected')) {
+                            document.getElementById('cluster-dropdown[${dates}]').style.display = '';
+                            document.getElementById('cluster-dropdown[${dates}]').disabled = false;
                             document.getElementById('listed[${dates}]').style.display = '';
                             document.getElementById('input-notListed[${dates}]').disabled = true;
                             document.getElementById('div-notListed[${dates}]').style.display = 'none';
                             document.getElementById('core-valueInput[${dates}]').value = 'Teams'
                         }
                         if($('.notListed').is(':selected')) {
+                            document.getElementById('cluster-dropdown[${dates}]').disabled = true;
                             document.getElementById('listed[${dates}]').style.display = 'none';
                             document.getElementById('input-notListed[${dates}]').disabled = false;
                             document.getElementById('input-notListed[${dates}]').value = '';
@@ -55,10 +68,11 @@
                         </i>"
                     data-mytooltip-theme="dark"
                     data-mytooltip-action="focus" 
-                    data-mytooltip-direction="top">
-                        <option value="" id="notListed" class="notListed">-- Not listed --</option>
+                    data-mytooltip-direction="top"
+                    disabled>
+                        <option value="" id="notListed" class="notListed" selected>-- Not listed --</option>
                         <option id="capability" class="capability${dates}" value="Above The Line"
-                            {{ old('') == 'Above The Line' ? 'selected="selected"' : '' }} selected>
+                            {{ old('') == 'Above The Line' ? 'selected="selected"' : '' }}>
                             Above The Line
                         </option>
                         <option id="culture" class="culture${dates}" value="Action Learning"
@@ -384,7 +398,7 @@
             </div>
         </div>
     </div>
-    <div class="col-md-4 div-notListed" id="div-notListed[${dates}]" style="display: none">
+    <div class="col-lg-3 col-md-3 div-notListed" id="div-notListed[${dates}]">
         <div class="form-group has-icon-right">
             <label class="fw-bold required">Cluster</label>
             <div class="position-relative">
@@ -393,6 +407,7 @@
                 <div class="form-control-icon">
                     <a href="javascript:void(0)" class="remove-not-listed" id="remove-not-listed[${dates}]"
                     onclick="
+                        document.getElementById('cluster-dropdown[${dates}]').disabled = false;
                         document.getElementById('cluster-dropdown[${dates}]').value = 'Above The Line';
                         document.getElementById('listed[${dates}]').style.display = '';
                         document.getElementById('core-valueInput[${dates}]').value = 'Capability';
@@ -409,7 +424,7 @@
             </div>
         </div>
     </div>
-    <div class="col-md-4">
+    <div class="col-lg-2 col-md-2">
         <div class="form-group has-icon-left">
             <label class="fw-bold required">Core Area</label>
             <div class="position-relative">
@@ -434,5 +449,5 @@
             </div>
         </div>
     </div>
-</div>
+{{-- </div> --}}
 <hr>

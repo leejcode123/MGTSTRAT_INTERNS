@@ -16,12 +16,12 @@ class CreateEngagementCostsTable extends Migration
         Schema::create('engagement_costs', function (Blueprint $table) {
             $table->id();
             $table->string('cstmzd_eng_form_id', 15);
-            $table->string('type', 50)->nullable();
-            $table->integer('consultant_num')->nullable();
-            $table->string('hour_fee', 30)->nullable();
-            $table->integer('hour_num')->nullable();
-            $table->integer('nswh')->nullable();
-            $table->string('rooster')->nullable();
+            $table->string('type', 50)->nullable($value = true);
+            $table->integer('consultant_num')->nullable($value = true);
+            $table->string('hour_fee', 30)->nullable($value = true);
+            $table->integer('hour_num')->nullable($value = true);
+            $table->integer('nswh')->nullable($value = true);
+            $table->string('rooster')->nullable($value = true);
         });
     }
 

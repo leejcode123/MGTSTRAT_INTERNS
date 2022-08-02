@@ -394,7 +394,8 @@ $(document).on(
             efProgramSum += +sum21;
 
             $("#ec_LeadfacilitatorNoc1").val($("#ef_LeadfacilitatorNoc1").val());
-            $("#ec_LeadfacilitatorNoh1").val($("#ef_LeadfacilitatorNoh1").val());
+            // $("#ec_LeadfacilitatorNoh1").val($("#ef_LeadfacilitatorNoh1").val());
+            document.getElementById("ec_LeadfacilitatorNoh1").defaultValue = $("#ef_LeadfacilitatorNoh1").val();
             $("#ec_LeadfacilitatorNwh1").val($("#ef_LeadfacilitatorNwh1").val());
         });
 
@@ -540,8 +541,10 @@ $(document).on(
 
             // Getting the value of engagement fees of program to pass the value
             // into the engagement cost program
-            $("#ec_CofacilitatorNoc1").val($("#ef_CofaciNoc1").val());
-            $("#ec_CofacilitatorNoh1").val($("#ef_CofaciNoh1").val());
+            // $("#ec_CofacilitatorNoc1").val($("#ef_CofaciNoc1").val());
+            document.getElementById("ec_CofacilitatorNoc1").defaultValue = $("#ef_CofaciNoc1").val();
+            // $("#ec_CofacilitatorNoh1").val($("#ef_CofaciNoh1").val());
+            document.getElementById("ec_CofacilitatorNoh1").defaultValue = $("#ef_CofaciNoh1").val();
             $("#ec_CofacilitatorNwh1").val($("#ef_CofaciNwh1").val());
         });
 
@@ -619,7 +622,8 @@ $(document).on(
             // Getting the value of engagement fees of program to pass the value
             // into the engagement cost program
             $("#ec_ModeratorNoc1").val($("#ef_ModeratorNoc1").val());
-            $("#ec_ModeratorNoh1").val($("#ef_ModeratorNoh1").val());
+            // $("#ec_ModeratorNoh1").val($("#ef_ModeratorNoh1").val());
+            document.getElementById("ec_ModeratorNoh1").defaultValue = $("#ef_ModeratorNoh1").val();
             $("#ec_ModeratorNwh1").val($("#ef_ModeratorNwh1").val());
         });
 
@@ -695,7 +699,8 @@ $(document).on(
             // Getting the value of engagement fees of program to pass the value
             // into the engagement cost program
             $("#ec_ProducerNoc1").val($("#ef_ProducerNoc1").val());
-            $("#ec_ProducerNoh1").val($("#ef_ProducerNoh1").val());
+            // $("#ec_ProducerNoh1").val($("#ef_ProducerNoh1").val());
+            document.getElementById("ec_ProducerNoh1").defaultValue = $("#ef_ProducerNoh1").val();
             $("#ec_ProducerNwh1").val($("#ef_ProducerNwh1").val());
         });
 
@@ -876,7 +881,7 @@ $(document).on(
         $("#tableSales > tr").each(function () {
             sumSales =
                 ($("#ef_Totalpackage").val().replace(/\₱|,/g, "") / 100) *
-                    $(this).find("#sales").val() ||
+                    $(this).find("#sales").val().replace(/%/g, "") ||
                 ($("#ef_Totalpackage").val().replace(/\₱|,/g, "") / 100) *
                     $(this).find("#inputSales").val().replace(/%/g, "");
 
