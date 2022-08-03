@@ -3,9 +3,8 @@
         <div class="sidebar-header">
             <div class="d-flex justify-content-between">
                 <div class="logo">
-                    <a href="{{ route('home') }}"><img class="img-fluid" src="{{ URL::to('assets/images/logo/main-logo1.png') }}" alt="Logo"
-                            srcset=""></a>
-                            {{-- <img class="img-fluid" src="{{ asset('images/logo/main-logo.png') }}" alt=""> --}}
+                    <a href="{{ route('home') }}"><img class="img-fluid"
+                            src="{{ URL::to('assets/images/logo/main-logo1.png') }}" alt="Logo" srcset=""></a>
                 </div>
                 <div class="toggler">
                     <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
@@ -55,19 +54,19 @@
 
                 @if (Auth::user()->role_name == 'Admin')
                     <li class="sidebar-title">Page &amp; Controller</li>
-                    <li class="sidebar-item  has-sub active">
+                    <li class="sidebar-item  has-sub">
                         <a href="#" class='sidebar-link'>
                             <i class="bi bi-hexagon-fill"></i>
                             <span>Maintenance</span>
                         </a>
-                        <ul class="submenu active">
+                        <ul class="submenu">
                             <li class="submenu-item">
                                 <a href="{{ route('userManagement') }}">User Control</a>
                             </li>
                             <li class="submenu-item">
                                 <a href="{{ route('activity/log') }}">User Activity Log</a>
                             </li>
-                            <li class="submenu-item active">
+                            <li class="submenu-item">
                                 <a href="{{ route('activity/login/logout') }}">Activity Log</a>
                             </li>
                         </ul>
@@ -75,17 +74,20 @@
                 @endif
 
                 <li class="sidebar-title">Forms &amp; Tables</li>
-                <li class="sidebar-item  has-sub">
+                <li class="sidebar-item  has-sub active">
                     <a href="#" class='sidebar-link'>
                         <i class="bi bi-file-earmark-medical-fill"></i>
                         <span>Budget Form</span>
                     </a>
-                    <ul class="submenu">
+                    <ul class="submenu active">
                         <li class="submenu-item">
                             <a href="{{ route('form/customizedEngagement/new') }}">CUSTOMIZED ENGAGEMENT</a>
                         </li>
                         <li class="submenu-item">
                             <a href="{{ route('form/f2f_engagement/new') }}">F2F ENGAGEMENT</a>
+                        </li>
+                        <li class="submenu-item active">
+                            <a href="{{ route('form/mgtstratu_workshops/new') }}">MGTSTRAT-U WORKSHOPS</a>
                         </li>
                     </ul>
                 </li>
@@ -101,14 +103,8 @@
                         </li>
                     </ul>
                 </li>
-            </ul>
-            {{-- <li class="sidebar-item">
-                    <a href="{{ route('logout') }}" class='sidebar-link'>
-                        <i class="bi bi-box-arrow-right"></i>
-                        <span>Log Out</span>
-                    </a>
-                </li> --}}
 
+            </ul>
         </div>
         <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
     </div>

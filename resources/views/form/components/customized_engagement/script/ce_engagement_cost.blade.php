@@ -1,4 +1,5 @@
 <script>
+/********* START *********/
 /*****************************************************************COMMISION*****************************************************************************/
     /********* SALES *********/
     var salesNum = 1;
@@ -6,23 +7,26 @@
         $("#addBtn9").on("click", function() {
             // Adding a row inside the tbody.
             $("#tableSales").append(
-                `<tr id="salesRow${++salesNum}">
-                    <td class="title">Sales (4% / 5% / 6% / 7%)</td>
-                        <td></td>
+                `<tr class="table-warning" id="salesRow${++salesNum}">
+                        <td class="title table-light">
+                            <input type="text" class="d-none" value="Sales" name="cost_type[]" readonly>
+                            Sales (4% / 5% / 6% / 7%)
+                        </td>
+                        <td><input type="text" class="d-none" value="" name="cost_consultant_num[]" readonly></td>
                         <td>
                             <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="inputSales" onblur="this.value = this.value.replace('%', '') + '%';"
-                            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\......*)\./g, '$1');">
+                            value="{{ old('') }}" name="cost_hour_fee[]" id="inputSales" onblur="this.value = this.value.replace('%', '') + '%';"
+                            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\...*)\./g, '$1') ;">
                             
                         </td>
-                        <td></td>
-                        <td></td>
-                        <td class="total-td tbl-engmt-cost">
+                        <td><input type="text" class="d-none" value="" name="cost_hour_num[]" readonly></td>
+                        <td><input type="text" class="d-none" value="" name="cost_nswh[]" readonly></td>
+                        <td class="total-td tbl-engmt-cost table-light">
                             <h4 class="text-center" id="salesTotal">-</h4>
                         </td>
-                        <td class="total-td">
+                        <td class="total-td table-light">
                             <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="">
+                                value="{{ old('') }}" name="cost_rooster[]" id="">
                         </td>
                         <td><a href="javascript:void(0)" class="text-danger font-18 remove" title="Remove"><i class="fa fa-trash-o"></i></a></td>
                 </tr>`);
@@ -31,18 +35,17 @@
             //sales into 0% when adding row
             const salesId = document.querySelectorAll("#sales");
             for (let i = 0; i < salesId.length; i++) {
-                salesId[i].value = "0";
+                salesId[i].value = "0%";
             }
 
             //if you add row the 
             //if statement will execute
             if (salesNum > 1) {
-                document.getElementById("dropdownSales").style.display =
-                    "none"; //the dropdown will display none
-                document.getElementById("inputSales").style.display =
-                    ""; //the input field will remove the style of "display = none;"
-                document.getElementById("inputSales").disabled =
-                    false; //remove the disabled attribute in input field
+                document.getElementById("dropdownSales").style.display = "none"; //the dropdown will display none
+                document.getElementById("sales").value = "0%"; //the dropdown will be disabled
+                document.getElementById("sales").disabled = true; //the dropdown will be disabled
+                document.getElementById("inputSales").style.display = ""; //the input field will remove the style of "display = none;"
+                document.getElementById("inputSales").disabled = false; //remove the disabled attribute in input field
                 // document.getElementById("inputSales").value = "";   //to remove the last inputed value
             }
         });
@@ -59,8 +62,9 @@
             // Decreasing total number of rows by 1.
             salesNum--;
             if (salesNum == 1) {
+                document.getElementById("sales").disabled = false; //the dropdown will be disabled
                 document.getElementById("inputSales").style.display = "none";
-                document.getElementById("sales").value = "0";
+                document.getElementById("sales").value = "0%";
                 document.getElementById("dropdownSales").style.display = "";
                 document.getElementById("inputSales").value = ""; //to remove the last inputed value
             }
@@ -74,23 +78,26 @@
         $("#addBtn10").on("click", function() {
             // Adding a row inside the tbody.
             $("#tableReferral").append(
-                `<tr id="salesRow${++refferalNum}">
-                    <td class="title">Referral (2% / 3%)</td>
-                            <td></td>
-                            <td>
-                                <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="inputReferral" onblur="this.value = this.value.replace('%', '') + '%';"
-                            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\......*)\./g, '$1');">
-                            </td>
-                            <td></td>
-                            <td></td>
-                            <td class="total-td tbl-engmt-cost">
-                                <h4 class="text-center" id="referralTotal">-</h4>
-                            </td>
-                            <td class="total-td">
-                                <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                                    value="{{ old('') }}" name="" id="">
-                            </td>
+                `<tr class="table-warning" id="salesRow${++refferalNum}">
+                        <td class="title table-light">
+                            Referral (2% / 3%)
+                            <input type="text" class="d-none" value="Referral" name="" readonly>
+                        </td>
+                        <td><input type="text" class="d-none" value="" name="cost_consultant_num[]" readonly></td>
+                        <td>
+                            <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                        value="{{ old('') }}" name="cost_hour_fee[]" id="inputReferral" onblur="this.value = this.value.replace('%', '') + '%';"
+                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\...*)\./g, '$1');">
+                        </td>
+                        <td><input type="text" class="d-none" value="" name="cost_hour_num[]" readonly></td>
+                        <td><input type="text" class="d-none" value="" name="cost_nswh[]" readonly></td>
+                        <td class="total-td tbl-engmt-cost table-light">
+                            <h4 class="text-center" id="referralTotal">-</h4>
+                        </td>
+                        <td class="total-td table-light">
+                            <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                                value="{{ old('') }}" name="cost_rooster" id="">
+                        </td>
                         <td><a href="javascript:void(0)" class="text-danger font-18 remove" title="Remove"><i class="fa fa-trash-o"></i></a></td>
                 </tr>`);
 
@@ -98,12 +105,13 @@
             //sales into 0% when adding row
             const referralId = document.querySelectorAll("#referral");
             for (let i = 0; i < referralId.length; i++) {
-                referralId[i].value = "0";
+                referralId[i].value = "0%";
             }
 
             //if you add row the 
             //if statement will execute
             if (refferalNum > 1) {
+                document.getElementById("referral").disabled = true; //the dropdown will be disabled
                 document.getElementById("dropdownReferral").style.display =
                     "none"; //the dropdown will display none
                 document.getElementById("inputReferral").style.display =
@@ -126,8 +134,9 @@
             // Decreasing total number of rows by 1.
             refferalNum--;
             if (refferalNum == 1) {
+                document.getElementById("referral").disabled = false; //the dropdown will remove the disabled
                 document.getElementById("inputReferral").style.display = "none";
-                document.getElementById("referral").value = "0";
+                document.getElementById("referral").value = "0%";
                 document.getElementById("dropdownReferral").style.display = "";
                 document.getElementById("inputReferral").value = ""; //to remove the last inputed value
             }
@@ -142,36 +151,40 @@
         $("#addBtn11").on("click", function() {
             // Adding a row inside the tbody.
             $("#tableEngagementmanager").append(
-                `<tr id="engagementmanagerRow${++managerNum}">
-                    <td class="title fw-bold text-dark">ENGAGEMENT MANAGER</td>
-                            <td></td>
-                            <td>
-                                <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                                    value="{{ old('') }}" name="" id="inputManager" onblur="this.value = this.value.replace('%', '') + '%';"
-                                    oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\......*)\./g, '$1');">
-                            </td>
-                            <td></td>
-                            <td></td>
-                            <td class="total-td tbl-engmt-cost">
-                                <h4 class="text-center" id="engagementManagerTotal">-</h4>
-                            </td>
-                            <td class="total-td">
-                                <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                                    value="{{ old('') }}" name="" id="">
-                            </td>
-                        <td><a href="javascript:void(0)" class="text-danger font-18 remove" title="Remove"><i class="fa fa-trash-o"></i></a></td>
+                `<tr class="table-warning" id="engagementmanagerRow${++managerNum}">
+                    <td class="title fw-bold text-dark table-light">
+                        ENGAGEMENT MANAGER
+                        <input type="text" class="d-none" value="Engagement Manager" name="cost_type[]" readonly>
+                    </td>
+                    <td><input type="text" class="d-none" value="" name="cost_consultant_num[]" readonly></td>
+                    <td>
+                        <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                            value="{{ old('') }}" name="cost_hour_fee[]" id="inputManager" onblur="this.value = this.value.replace('%', '') + '%';"
+                            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\...*)\./g, '$1');">
+                    </td>
+                    <td><input type="text" class="d-none" value="" name="cost_hour_num[]" readonly></td>
+                    <td><input type="text" class="d-none" value="" name="cost_nswh[]" readonly></td>
+                    <td class="total-td tbl-engmt-cost table-light">
+                        <h4 class="text-center" id="engagementManagerTotal">-</h4>
+                    </td>
+                    <td class="total-td table-light">
+                        <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                            value="{{ old('') }}" name="cost_rooster[]" id="">
+                    </td>
+                    <td><a href="javascript:void(0)" class="text-danger font-18 remove" title="Remove"><i class="fa fa-trash-o"></i></a></td>
                 </tr>`);
 
             //Setting the default value of
             //sales into 0% when adding row
             const managerId = document.querySelectorAll("#engagementManager");
             for (let i = 0; i < managerId.length; i++) {
-                managerId[i].value = "0";
+                managerId[i].value = "0%";
             }
 
             //if you add row the 
             //if statement will execute
             if (managerNum > 1) {
+                document.getElementById("engagementManager").disabled = true; //the dropdown will be disabled
                 document.getElementById("dropdownManager").style.display =
                     "none"; //the dropdown will display none
                 document.getElementById("inputManager").style.display =
@@ -194,8 +207,9 @@
             // Decreasing total number of rows by 1.
             managerNum--;
             if (managerNum == 1) {
+                document.getElementById("engagementManager").disabled = false; //the dropdown will remove disabled
                 document.getElementById("inputManager").style.display = "none";
-                document.getElementById("engagementManager").value = "0";
+                document.getElementById("engagementManager").value = "0%";
                 document.getElementById("dropdownManager").style.display = "";
                 document.getElementById("inputManager").value = ""; //to remove the last inputed value
             }
@@ -210,35 +224,38 @@
         $("#addBtn").on("click", function() {
             // Adding a row inside the tbody.
             $("#ec_tableLeadConsultant").append(`
-                <tr id="ec_LeadConsultant${++leadConsultant}">
-                    <td class="title">Lead Consultant (P7K, P9K)</td>
+                <tr class="table-warning" id="ec_LeadConsultant${++leadConsultant}">
+                    <td class="title table-light">
+                        <input type="text" class="d-none" value="Lead Consultant" name="cost_type[]" readonly>
+                        Lead Consultant (P7K, P9K)
+                        </td>
                     <td class="noc">
                         <input type="number"
                             class="text-center form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ec_LeadconsultantNoc${leadConsultant}" max="100"
+                            value="{{ old('') }}" name="cost_consultant_num[]" id="ec_LeadconsultantNoc${leadConsultant}" max="100"
                             readonly>
                     </td>
                     <td class="">
                         <input type="text"
                             class="text-center fw-bold text-dark form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ec_LeadconsultantHf" data-type="currency">
+                            value="{{ old('') }}" name="cost_hour_fee[]" id="ec_LeadconsultantHf" data-type="currency">
                             </td>
                     <td class="noh">
                         <input type="number"
                             class="text-center form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ec_LeadconsultantNoh${leadConsultant}" readonly>
+                            value="{{ old('') }}" name="cost_hour_num[]" id="ec_LeadconsultantNoh${leadConsultant}" readonly>
                     </td>
                     <td class="nwh">
                         <input type="number"
                             class="text-center form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ec_LeadconsultantNwh${leadConsultant}" readonly>
+                            value="{{ old('') }}" name="cost_nswh[]" id="ec_LeadconsultantNwh${leadConsultant}" readonly>
                     </td>
-                    <td class="total-td">
+                    <td class="total-td table-light">
                         <h4 class="text-center lead" id="ec_LeadconsultantTotal">-</h4>
                     </td>
-                    <td class="total-td">
+                    <td class="total-td table-light">
                         <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="">
+                            value="{{ old('') }}" name="cost_rooster[]" id="">
                     </td>
                     <td class="border border-white" style="background-color: #FFFFFF;">
                         <a href="javascript:void(0)" class="text-danger font-18 remove" id="ecButton${leadConsultant}" title="Remove" style="visibility: hidden;">
@@ -292,34 +309,37 @@
         $("#addBtn2").on("click", function() {
             // Adding a row inside the tbody.
             $("#ec_tableAnalyst").append(`
-                <tr id="ec_Analyst${++ecAnalyst}">
-                    <td class="title">Analyst</td>
+                <tr class="table-warning" id="ec_Analyst${++ecAnalyst}">
+                        <td class="title table-light">
+                            <input type="text" class="d-none" value="Analyst" name="cost_type[]" readonly>
+                            Analyst
+                        </td>
                         <td class="noc">
                             <input type="number"
                                 class="text-center form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ec_AnalystNoc${ecAnalyst}" max="100" readonly>
+                                value="{{ old('') }}" name="cost_consultant_num[]" id="ec_AnalystNoc${ecAnalyst}" max="100" readonly>
                         </td>
                         <td>
                             <input type="text"
                                 class="text-center fw-bold text-dark form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ec_AnalystHf${ecAnalyst}" data-type="currency">
+                                value="{{ old('') }}" name="cost_hour_fee[]" id="ec_AnalystHf${ecAnalyst}" data-type="currency">
                         </td>
                         <td class="noh">
                             <input type="number"
                                 class="text-center form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ec_AnalystNoh${ecAnalyst}" readonly>
+                                value="{{ old('') }}" name="cost_hour_num[]" id="ec_AnalystNoh${ecAnalyst}" readonly>
                         </td>
                         <td class="nwh">
                             <input type="number"
                                 class="text-center form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ec_AnalystNwh${ecAnalyst}" readonly>
+                                value="{{ old('') }}" name="cost_nswh[]" id="ec_AnalystNwh${ecAnalyst}" readonly>
                         </td>
-                        <td class="total-td">
+                        <td class="total-td table-light">
                             <h4 class="text-center lead" id="ec_AnalystTotal">-</h4>
                         </td>
-                        <td class="total-td">
+                        <td class="total-td table-light">
                             <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="">
+                                value="{{ old('') }}" name="cost_rooster[]" id="">
                         </td>
                     <td class="border border-white" style="background-color: #FFFFFF;">
                         <a href="javascript:void(0)" class="text-danger font-18 remove" id="ecAnalystRemove${ecAnalyst}" title="Remove" style="visibility: hidden;">
@@ -373,34 +393,36 @@
         $("#addBtn3").on("click", function() {
             // Adding a row inside the tbody.
             $("#ec_TableDesigner").append(`
-                <tr id="ec_DesignerRow${++ecDesigner}">
-                    <td class="title">Designer (P48K / P64K)</td>
+                <tr class="table-warning" id="ec_DesignerRow${++ecDesigner}">
+                    <td class="title table-light">Designer (P48K / P64K)
+                        <input type="text" class="d-none" value="Designer" name="cost_type[]" readonly>
+                    </td>
                     <td class="noh">
                         <input type="number"
                             class="text-center form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ec_DesignerNoc${ecDesigner}" max="100" readonly>
+                            value="{{ old('') }}" name="cost_consultant_num[]" id="ec_DesignerNoc${ecDesigner}" max="100" readonly>
                     </td>
                     <td>
                         <input type="text"
                             class="text-center fw-bold text-dark text-center form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ec_DesignerHf" data-type="currency">
+                            value="{{ old('') }}" name="cost_hour_fee[]" id="ec_DesignerHf" data-type="currency">
                     </td>
                     <td class="noh">
                         <input type="number"
                             class="text-center form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ec_DesignerNoh${ecDesigner}" readonly>
+                            value="{{ old('') }}" name="cost_hour_num[]" id="ec_DesignerNoh${ecDesigner}" readonly>
                     </td>
                     <td class="nwh">
                         <input type="number"
                             class="text-center form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ec_DesignerNwh${ecDesigner}" readonly>
+                            value="{{ old('') }}" name="cost_nswh[]" id="ec_DesignerNwh${ecDesigner}" readonly>
                     </td>
-                    <td class="total-td">
+                    <td class="total-td table-light">
                         <h4 class="text-center lead" id="ec_DesignerTotal">-</h4>
                     </td>
-                    <td class="total-td">
+                    <td class="total-td table-light">
                         <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="">
+                            value="{{ old('') }}" name="cost_rooster[]" id="">
                     </td>
                     <td class="border border-white" style="background-color: #FFFFFF;">
                         <a href="javascript:void(0)" class="text-danger font-18 remove" id="ecDesignerRemove${ecDesigner}" title="Remove" style="visibility: hidden;">
@@ -453,17 +475,19 @@
         $("#addBtnCreators").on("click", function() {
             // Adding a row inside the tbody.
             $("#ec_TableCreators").append(`
-                <tr id="ec_CreatorsRow${++ecCreators}">
-                    <td class="title">Creators Fees (500, 1K)</td>
+                <tr class="table-warning" id="ec_CreatorsRow${++ecCreators}">
+                    <td class="title table-light">Creators Fees (500, 1K)
+                        <input type="text" class="d-none" value="Creators Fees" name="cost_type[]" readonly>    
+                    </td>
                     <td>
                         <input type="number"
                             class="text-center yellow-input form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ec_CreatorsNoc${ecCreators}" max="100">
+                            value="{{ old('') }}" name="cost_consultant_num[]" id="ec_CreatorsNoc${ecCreators}" max="100">
                     </td>
                     <td>
                         <fieldset>
                             <select class="input js-mytooltip form-select @error('') is-invalid @enderror"
-                                name="" id="ec_CreatorsHf"
+                                name="cost_hour_fee[]" id="ec_CreatorsHf"
                                 data-mytooltip-content="<i>
                                         Creators Fee - 0 - no creators fee<br><br>
                                         500 - Creators Fee is the creator is the lead, for the 2nd session onwards<br><br>
@@ -489,15 +513,15 @@
                     <td>
                         <input type="number"
                             class="text-center yellow-input form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ec_CreatorsNoh${ecCreators}">
+                            value="{{ old('') }}" name="cost_hour_num[]" id="ec_CreatorsNoh${ecCreators}">
                     </td>
-                    <td class=""></td>
-                    <td class="total-td">
+                    <td class=""><input type="text" class="d-none" name="cost_nswh[]" readonly></td>
+                    <td class="total-td table-light">
                         <h4 class="text-center lead" id="ec_CreatorsTotal">-</h4>
                     </td>
-                    <td class="total-td">
+                    <td class="total-td table-light">
                         <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="">
+                            value="{{ old('') }}" name="cost_rooster[]" id="">
                     </td>
                     <td class="border border-white" style="background-color: #FFFFFF;">
                         <a href="javascript:void(0)" class="text-danger font-18 remove" id="ecCreatorsRemove${ecCreators}" title="Remove">
@@ -551,35 +575,38 @@
         $("#addBtn4").on("click", function() {
             // Adding a row inside the tbody.
             $("#ec_TableLeadfaci").append(`
-                <tr id="ec_LeadfaciRow${++ecLeadfaci}">
-                    <td class="title">Lead Facilitator</td>
+                <tr class="table-warning" id="ec_LeadfaciRow${++ecLeadfaci}">
+                    <td class="title table-light">
+                        <input type="text" class="d-none" value="Lead Facilitator" name="cost_type[]" readonly>
+                        Lead Facilitator
+                    </td>
                     <td class="noc">
                         <input type="number"
                             class="text-center form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ec_LeadfacilitatorNoc${ecLeadfaci}" max="100"
+                            value="{{ old('') }}" name="cost_consultant_num[]" id="ec_LeadfacilitatorNoc${ecLeadfaci}" max="100"
                             readonly>
                     </td>
                     <td>
                         <input type="text"
                             class="text-center fw-bold text-center text-dark form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ec_LeadfacilitatorHf" data-type="currency">
+                            value="{{ old('') }}" name="cost_hour_fee[]" id="ec_LeadfacilitatorHf" data-type="currency">
                     </td>
                     <td class="noh">
                         <input type="number"
                             class="text-center form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ec_LeadfacilitatorNoh${ecLeadfaci}" readonly>
+                            value="{{ old('') }}" name="cost_hour_num[]" id="ec_LeadfacilitatorNoh${ecLeadfaci}" readonly>
                     </td>
                     <td class="nwh">
                         <input type="number"
                             class="text-center form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ec_LeadfacilitatorNwh${ecLeadfaci}" readonly>
+                            value="{{ old('') }}" name="cost_nswh[]" id="ec_LeadfacilitatorNwh${ecLeadfaci}" readonly>
                     </td>
-                    <td class="total-td">
+                    <td class="total-td table-light">
                         <h4 class="text-center lead" id="ec_LeadfacilitatorTotal">-</h4>
                     </td>
-                    <td class="total-td">
+                    <td class="total-td table-light">
                         <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="">
+                            value="{{ old('') }}" name="cost_rooster[]" id="">
                     </td>
                     <td class="border border-white" style="background-color: #FFFFFF;">
                         <a href="javascript:void(0)" class="text-danger font-18 remove" id="ecLeadfaciRemove${ecLeadfaci}" title="Remove" style="visibility: hidden;">
@@ -632,34 +659,37 @@
         $("#addBtnCoLead").on("click", function() {
             // Adding a row inside the tbody.
             $("#ec_TableCoLeadfaci").append(`
-                <tr id="ec_CoLeadRow${++ecCoLead}">
-                    <td class="title">Co-Lead Facilitator</td>
+                <tr class="table-warning" id="ec_CoLeadRow${++ecCoLead}">
+                    <td class="title table-light">
+                        Co-Lead
+                        <input type="text" class="d-none" value="Co-Lead" name="cost_type[]" readonly>
+                    </td>
                     <td class="noc">
                         <input type="number"
                             class="text-center form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ec_CoLeadfacilitatorNoc${ecCoLead}" max="100">
+                            value="{{ old('') }}" name="cost_consultant_num[]" id="ec_CoLeadfacilitatorNoc${ecCoLead}" max="100">
                     </td>
                     <td class="hf">
                         <input type="text"
                             class="text-center fw-bold text-center text-dark form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ec_CoLeadfacilitatorHf${ecCoLead}" data-type="currency">
+                            value="{{ old('') }}" name="cost_hour_fee[]" id="ec_CoLeadfacilitatorHf${ecCoLead}" data-type="currency">
                     </td>
                     <td class="noh">
                         <input type="number"
                             class="text-center form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ec_CoLeadfacilitatorNoh${ecCoLead}">
+                            value="{{ old('') }}" name="cost_hour_num[]" id="ec_CoLeadfacilitatorNoh${ecCoLead}">
                     </td>
                     <td class="nwh">
                         <input type="number"
                             class="text-center form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ec_CoLeadfacilitatorNwh${ecCoLead}">
+                            value="{{ old('') }}" name="cost_nswh[]" id="ec_CoLeadfacilitatorNwh${ecCoLead}">
                     </td>
-                    <td class="total-td">
+                    <td class="total-td table-light">
                         <h4 class="text-center lead" id="ec_CoLeadfacilitatorTotal">-</h4>
                     </td>
-                    <td class="total-td">
+                    <td class="total-td table-light">
                         <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="">
+                            value="{{ old('') }}" name="cost_rooster[]" id="">
                     </td>
                     <td class="border border-white" style="background-color: #FFFFFF;">
                         <a href="javascript:void(0)" class="text-danger font-18 remove" id="ecCoLeadRemove${ecCoLead}" title="Remove">
@@ -714,34 +744,37 @@
         $("#addBtnAlCoach").on("click", function() {
             // Adding a row inside the tbody.
             $("#ec_TableAlCoach").append(`
-                <tr id="ec_AlCoachRow${++ecAlCoach}">
-                    <td class="title">AL Coach</td>
+                <tr class="table-warning" id="ec_AlCoachRow${++ecAlCoach}">
+                    <td class="title table-light">
+                        AL Coach
+                        <input type="text" class="d-none" value="AL Coach" name="cost_type[]" readonly>
+                    </td>
                     <td class="noc">
                         <input type="number"
                             class="text-center text-dark form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ec_AlCoachNoc${ecAlCoach}" max="100">
+                            value="{{ old('') }}" name="cost_consultant_num[]" id="ec_AlCoachNoc${ecAlCoach}" max="100">
                     </td>
                     <td>
                         <input type="text"
                             class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ec_AlCoachHf${ecAlCoach}" data-type="currency">
+                            value="{{ old('') }}" name="cost_hour_fee[]" id="ec_AlCoachHf${ecAlCoach}" data-type="currency">
                     </td>
                     <td class="noh">
                         <input type="number"
                             class="text-center text-dark form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ec_AlCoachNoh${ecAlCoach}">
+                            value="{{ old('') }}" name="cost_hour_num[]" id="ec_AlCoachNoh${ecAlCoach}">
                     </td>
                     <td class="nwh">
                         <input type="number"
                             class="text-center text-dark form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ec_AlCoachNwh${ecAlCoach}">
+                            value="{{ old('') }}" name="cost_nswh[]" id="ec_AlCoachNwh${ecAlCoach}">
                     </td>
-                    <td class="total-td">
+                    <td class="total-td table-light">
                         <h4 class="text-center lead" id="ec_AlCoachTotal">-</h4>
                     </td>
-                    <td class="total-td">
+                    <td class="total-td table-light">
                         <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="">
+                            value="{{ old('') }}" name="cost_rooster[]" id="">
                     </td>
                     <td class="border border-white" style="background-color: #FFFFFF;">
                         <a href="javascript:void(0)" class="text-danger font-18 remove" title="Remove">
@@ -794,35 +827,38 @@
         $("#addBtn5").on("click", function() {
             // Adding a row inside the tbody.
             $("#ec_TableCofaci").append(`
-                <tr id="ec_CofaciRow${++ecCofaci}">
-                    <td class="title">Co-Facilitator / Resource Speaker</td>
+                <tr class="table-warning" id="ec_CofaciRow${++ecCofaci}">
+                    <td class="title table-light">
+                        Co-Facilitator / Resource Speaker
+                        <input type="text" class="d-none" value="Co-Facilitator / Resource Speaker" name="cost_type[]" readonly>
+                    </td>
                     <td class="noc">
                         <input type="number"
                             class="text-center text-dark form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ec_CofacilitatorNoc${ecCofaci}" max="100"
+                            value="{{ old('') }}" name="cost_consultant_num[]" id="ec_CofacilitatorNoc${ecCofaci}" max="100"
                             readonly>
                     </td>
                     <td>
                         <input type="text"
                             class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ec_CofacilitatorHf" data-type="currency">
+                            value="{{ old('') }}" name="cost_hour_fee[]" id="ec_CofacilitatorHf" data-type="currency">
                     </td>
                     <td class="noh">
                         <input type="number"
                             class="text-center text-dark form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ec_CofacilitatorNoh${ecCofaci}" readonly>
+                            value="{{ old('') }}" name="cost_hour_num[]" id="ec_CofacilitatorNoh${ecCofaci}" readonly>
                     </td>
                     <td class="nwh">
                         <input type="number"
                             class="text-center text-dark form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ec_CofacilitatorNwh${ecCofaci}" readonly>
+                            value="{{ old('') }}" name="cost_nswh[]" id="ec_CofacilitatorNwh${ecCofaci}" readonly>
                     </td>
-                    <td class="total-td">
+                    <td class="total-td table-light">
                         <h4 class="text-center lead" id="ec_CofacilitatorTotal">-</h4>
                     </td>
-                    <td class="total-td">
+                    <td class="total-td table-light">
                         <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="">
+                            value="{{ old('') }}" name="cost_rooster[]" id="">
                     </td>
                     <td class="border border-white" style="background-color: #FFFFFF;">
                         <a href="javascript:void(0)" class="text-danger font-18 remove" id="ecCofaciRemove${ecCofaci}" title="Remove" style="visibility: hidden;">
@@ -875,19 +911,22 @@
         $("#addBtn6").on("click", function() {
             // Adding a row inside the tbody.
             $("#ec_TableModerator").append(`
-                <tr id="ec_ModeratorRow${++ecModerator}">
-                    <td class="title">Moderator (&#8369;800, &#8369;1,100, &#8369;1,350)</td>
+                <tr class="table-warning" id="ec_ModeratorRow${++ecModerator}">
+                    <td class="title table-light">
+                        Moderator (&#8369;800, &#8369;1,100, &#8369;1,350)
+                        <input type="text" class="d-none" value="Moderator" name="cost_type[]" readonly>
+                    </td>
                     <td class="noc">
                         <input type="number"
                             class="text-dark text-center form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ec_ModeratorNoc${ecModerator}" max="100"
+                            value="{{ old('') }}" name="cost_consultant_num[]" id="ec_ModeratorNoc${ecModerator}" max="100"
                             readonly>
                     </td>
                     <td>
                         <fieldset>
                             <select
                                 class="input js-mytooltip text-center form-select @error('') is-invalid @enderror select"
-                                name="" id="ec_ModeratorHf" style="background-color:#ffcccc; color:red;"
+                                name="cost_hour_fee[]" id="ec_ModeratorHf" style="background-color:#ffcccc; color:red;"
                                 data-mytooltip-content="<i>
                                         <b>Moderator</b><br/>
                                         P800  - Associates<br/>
@@ -895,15 +934,15 @@
                                         P1,350 - Senior Consultant</i>"
                                 data-mytooltip-theme="dark" data-mytooltip-action="focus"
                                 data-mytooltip-direction="right">
-                                <option value="800" {{ old('') == '800' ? 'selected="selected"' : '' }}
+                                <option value="₱800" {{ old('') == '800' ? 'selected="selected"' : '' }}
                                     title="">
                                     &#8369;800
                                 </option>
-                                <option value="1100" {{ old('') == '1100' ? 'selected="selected"' : '' }}
+                                <option value="₱1100" {{ old('') == '1100' ? 'selected="selected"' : '' }}
                                     title="">
                                     &#8369;1,100
                                 </option>
-                                <option value="1350" {{ old('') == '1350' ? 'selected="selected"' : '' }}
+                                <option value="₱1350" {{ old('') == '1350' ? 'selected="selected"' : '' }}
                                     title="">
                                     &#8369;1,350
                                 </option>
@@ -918,19 +957,19 @@
                     <td class="noh">
                         <input type="number"
                             class="text-dark text-center form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ec_ModeratorNoh${ecModerator}" readonly>
+                            value="{{ old('') }}" name="cost_hour_num[]" id="ec_ModeratorNoh${ecModerator}" readonly>
                     </td>
                     <td class="nwh">
                         <input type="number"
                             class="text-dark text-center form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ec_ModeratorNwh${ecModerator}" readonly>
+                            value="{{ old('') }}" name="cost_nswh[]" id="ec_ModeratorNwh${ecModerator}" readonly>
                     </td>
-                    <td class="total-td">
+                    <td class="total-td table-light">
                         <h4 class="text-center lead" id="ec_ModeratorTotal">-</h4>
                     </td>
-                    <td class="total-td">
+                    <td class="total-td table-light">
                         <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="">
+                            value="{{ old('') }}" name="cost_rooster" id="">
                     </td>
                     <td class="border border-white" style="background-color: #FFFFFF;">
                         <a href="javascript:void(0)" class="text-danger font-18 remove" id="ecModeratorRemove${ecModerator}" title="Remove" style="visibility: hidden;">
@@ -983,34 +1022,37 @@
         $("#addBtn7").on("click", function() {
             // Adding a row inside the tbody.
             $("#ec_TableProducer").append(`
-                <tr id="ec_ProducerRow${++ecProducer}">
-                    <td class="title">Producer</td>
+                <tr class="table-warning" id="ec_ProducerRow${++ecProducer}">
+                    <td class="title table-light">
+                        Producer
+                        <input type="text" class="d-none" value="Producer" name="cost_type[]" readonly>
+                    </td>
                     <td class="noc">
                         <input type="number"
                             class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ec_ProducerNoc${ecProducer}" readonly>
+                            value="{{ old('') }}" name="cost_consultant_num[]" id="ec_ProducerNoc${ecProducer}" readonly>
                     </td>
                     <td>
                         <input type="text"
                             class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ec_ProducerHf" data-type="currency">
+                            value="{{ old('') }}" name="cost_hour_fee[]" id="ec_ProducerHf" data-type="currency">
                     </td>
                     <td class="noh">
                         <input type="number"
                             class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ec_ProducerNoh${ecProducer}" readonly>
+                            value="{{ old('') }}" name="cost_hour_num[]" id="ec_ProducerNoh${ecProducer}" readonly>
                     </td>
                     <td class="nwh">
                         <input type="number"
                             class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ec_ProducerNwh${ecProducer}" readonly>
+                            value="{{ old('') }}" name="cost_nswh[]" id="ec_ProducerNwh${ecProducer}" readonly>
                     </td>
-                    <td class="total-td">
+                    <td class="total-td table-light">
                         <h4 class="text-center lead" id="ec_ProducerTotal">-</h4>
                     </td>
-                    <td class="total-td">
+                    <td class="total-td table-light">
                         <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="">
+                            value="{{ old('') }}" name="cost_rooster[]" id="">
                     </td>
                     <td class="border border-white" style="background-color: #FFFFFF;">
                         <a href="javascript:void(0)" class="text-danger font-18 remove" id="ecProducerRemove${ecProducer}" title="Remove" style="visibility: hidden;">
@@ -1064,35 +1106,38 @@
             $("#addBtn8").on("click", function() {
                 // Adding a row inside the tbody.
                 $("#ec_TableDocumentor").append(`
-                    <tr id="ec_DocumentorRow${++ecDocumentor}">
-                        <td class="title">Documentor</td>
+                    <tr class="table-warning" id="ec_DocumentorRow${++ecDocumentor}">
+                        <td class="title table-light">
+                            Documentor
+                            <input type="text" class="d-none" value="Documentor" name="cost_type[]" readonly>
+                        </td>
                         <td>
                             <input type="number"
                                 class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ec_DocumentorNoc${ecDocumentor}" max="100"
+                                value="{{ old('') }}" name="cost_consultant_num[]" id="ec_DocumentorNoc${ecDocumentor}" max="100"
                                 readonly>
                         </td>
                         <td>
                             <input type="text"
                                 class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ec_DocumentorHf">
+                                value="{{ old('') }}" name="cost_hour_fee[]" id="ec_DocumentorHf">
                         </td>
                         <td>
                             <input type="number"
                                 class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ec_DocumentorNoh${ecDocumentor}" readonly>
+                                value="{{ old('') }}" name="cost_hour_num[]" id="ec_DocumentorNoh${ecDocumentor}" readonly>
                         </td>
                         <td>
                             <input type="number"
                                 class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ec_DocumentorNwh${ecDocumentor}" readonly>
+                                value="{{ old('') }}" name="cost_nswh[]" id="ec_DocumentorNwh${ecDocumentor}" readonly>
                         </td>
-                        <td class="total-td" style="background-color: rgba(146, 146, 146, 0.727">
+                        <td class="total-td table-light" style="background-color: rgba(146, 146, 146, 0.727">
                             <h4 class="text-center" id="ec_DocumentorTotal">-</h4>
                         </td>
-                        <td class="total-td">
+                        <td class="total-td table-light">
                             <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="">
+                                value="{{ old('') }}" name="cost_rooster[]" id="">
                         </td>
                         <td class="border border-white" style="background-color: #FFFFFF;">
                             <a href="javascript:void(0)" class="text-danger font-18 remove" id="ecDocumentorRemove${ecDocumentor}" title="Remove" style="visibility: hidden;">
@@ -1138,6 +1183,6 @@
                 ecDocumentor--;
             });  
         });
-
-    </script>
+/********* END *********/
+</script>
 

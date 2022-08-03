@@ -21,7 +21,7 @@
                 </thead>
         
            
-                    {{-- Consulting --}}
+<!------------------------------------------------CONSULTING------------------------------------------------------------------>
                     <tr class="th-blue-grey-lighten">
                         <th class="px-4 title  ">1. CONSULTING</th>
                         <th></th>
@@ -33,6 +33,7 @@
                         <th class="total-td"></th>
                         
                     </tr>
+<!------------------------------------------------LEAD CONSULTANT------------------------------------------------------------->
                     <tbody id="tableLeadconsultant">
                     <tr class="th-blue-grey-lighten-2" id="leadConsultant">
                         <td class="title">Lead Consultant</td>
@@ -117,7 +118,7 @@
                         </td>
                     </tr>
                     </tbody>
-        {{-- Analyst --}}
+<!------------------------------------------------ANALYST--------------------------------------------------------------------->
         <tbody id="ef_TableAnalyst">
                     <tr class="th-blue-grey-lighten-2" id="ef_RowAnalyst">
                         <td class="title">Analyst</td>
@@ -160,9 +161,6 @@
                                 value="{{ old('') }}" name="" id="ef_AnalystNsw1">
                         </td>
                         <td class="total-td">
-                            {{-- <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" 
-                                name="" id="" disabled> --}}
                                 <h4 class="text-center lead" id="analyst-total">-</h4>
                         </td>
                         <td class="total-td">
@@ -174,6 +172,7 @@
                         </td>
                     </tr>
         </tbody>
+<!------------------------------------------------SUBTOTAL-------------------------------------------------------------------->
                     <tr class="">
                         <td class="title fw-bold text-dark fst-italic">Subtotal</td>
                         <td></td>
@@ -192,7 +191,7 @@
                         <td class="border border-white"></td>
                     </tr>
         
-                    {{-- Design --}}
+<!------------------------------------------------DESIGN---------------------------------------------------------------------->
                     <tr class="th-blue-grey-lighten">
                         <th class="title px-4 text-dark">2. DESIGN</th>
                         <td></td>
@@ -203,6 +202,7 @@
                         <td class="total-td"></td>
                         <td class="total-td"></td>
                     </tr>
+<!------------------------------------------------DESIGNER-------------------------------------------------------------------->
         <tbody id="ef_TableDesigner">
                     <tr class="th-blue-grey-lighten-2" id="ef_RowDesigner">
                         <td class="title">Designer</td>
@@ -276,8 +276,8 @@
                         </td>
                     </tr>
         </tbody>
-                    {{-- Program --}}
-        
+                    
+<!------------------------------------------------PROGRAM--------------------------------------------------------------------->
                  <tr class="th-blue-grey-lighten">
                         <th class="title px-4 text-dark">3. PROGRAM</th>
                         <td></td>
@@ -288,6 +288,7 @@
                         <td class="total-td"></td>
                         <td class="total-td"></td>
                     </tr>
+<!------------------------------------------------LEAD FACILITATOR------------------------------------------------------------>
         <tbody id="ef_TableLeadFaci">
                     <tr class="th-blue-grey-lighten-2" id="ef_RowLeadFaci">
                         <td class="title">Lead Facilitator</td>
@@ -336,6 +337,7 @@
                         </td>
                     </tr>
         </tbody>
+<!------------------------------------------------CO-FACILITATOR-------------------------------------------------------------->
         <tbody id="ef_TableCoFaci">
                     <tr class="th-blue-grey-lighten-2" id="ef_RowCoFaci">
                         <td class="title">Co-facilitator / Resource Speaker</td>
@@ -382,6 +384,7 @@
                         </td>
                     </tr>
         </tbody>
+<!------------------------------------------------ACTION LEARNING COACH------------------------------------------------------->
         <tbody id="ef_TableActionLearn">
                     <tr class="th-blue-grey-lighten-2" id="ef_RowActionLearn">
                         <td class="title">Action Learning Coach</td>
@@ -423,6 +426,7 @@
                         </td>
                     </tr>
         </tbody>
+<!------------------------------------------------MARSHAL--------------------------------------------------------------------->
         <tbody id="ef_TableMarshal">
                     <tr class="th-blue-grey-lighten-2" id="ef_RowMarshal">
                         <td class="title">Marshal</td>
@@ -464,6 +468,7 @@
                         </td>
                     </tr>
         </tbody>
+<!------------------------------------------------ONSITE PC------------------------------------------------------------------->
         <tbody id="ef_TableOnsite">
                     <tr class="th-blue-grey-lighten-2" id="ef_RowOnsite">
                         <td class="title">On-site PC (P20K / P25K / P30K)</td>
@@ -530,6 +535,7 @@
                         </td>
                     </tr>
         </tbody>
+<!------------------------------------------------SUBTOTAL-------------------------------------------------------------------->
                     <tr class="">
                         <td class="title fw-bold text-dark fst-italic">Subtotal</td>
                         <td></td>
@@ -547,7 +553,7 @@
                         </td>
                         <td class="border border-white"></td>
                     </tr>
-<!--------------------------PROGRAM--------------------------->
+<!------------------------------------------------OTHER ROLES----------------------------------------------------------------->
                     
                     <tr class="th-blue-grey-lighten">
                         <th class="title px-4 text-dark">4. OTHER ROLES</th>
@@ -559,6 +565,7 @@
                         <td class="total-td"></td>
                         <td class="total-td"></td>
                     </tr>
+<!------------------------------------------------DOCUMENTOR------------------------------------------------------------------>
             <tbody id="ef_TableDocumentor">
                     <tr class="th-blue-grey-lighten-2" id="ef_RowDocumentor">
                         <td class="title">Documentor</td>
@@ -600,7 +607,7 @@
                         </td>
                     </tr>
             </tbody>
-            <!--------------------------PER DIEM--------------------------->
+<!------------------------------------------------PER DIEM-------------------------------------------------------------------->
                     <tr class="th-blue-grey-lighten">
                         <th class="title px-4 text-dark">5. PER DIEM</th>
                         <td>
@@ -698,7 +705,6 @@ $('input[type="number"]').on('input', function () {
 });
 
 $('input[type="number"]').attr('min', '0');
-
 
 var rowIndx = 1;
     // $("#addBtn1").on("click", function() {

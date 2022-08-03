@@ -1,14 +1,3 @@
-{{-- DATEPICKER CSS --}}
-<link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
-{{-- TOOLTIP CSS --}}
-<link rel="stylesheet" href="{{ url('css/tooltip-css/jquery.mytooltip.min.css') }}">
-{{-- DATEPICKER JS --}}
-<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
-{{-- TOOLTIP JS --}}
-<script src="{{ url('js/tooltipJs/jquery.mytooltip.js') }}"></script>
-<script src="{{ url('js/tooltipJs/demo/script.js') }}"></script>
-
 <!------------ CARD HEADER ------------>
     <div class="card-header">
         <h4 class="card-title">Information</h4>
@@ -25,11 +14,13 @@
 
                 <div class="col-md-2" id="">
                     <select class="input js-mytooltip form-select @error('') is-invalid @enderror"
-                        name="" id="status" value="{{ old('') }}" data-mytooltip-content="<i>Please Choose Status</i>" 
-                        data-mytooltip-theme="dark" data-mytooltip-action="focus" data-mytooltip-direction="right"
-                        >
-                        <option value="Active" {{ old('') == 'Active' ? 'selected="selected"' : '' }} selected>
-                            Active
+                        name="status" id="status" value="{{ old('') }}" data-mytooltip-content="<i>Please Choose Status</i>" 
+                        data-mytooltip-theme="dark" data-mytooltip-action="focus" data-mytooltip-direction="right">
+                        <option value="Trial" {{ old('') == 'Trial' ? 'selected="selected"' : '' }}>
+                            Trial
+                        </option>
+                        <option value="Confirmed" {{ old('') == 'Confirmed' ? 'selected="selected"' : '' }} selected>
+                            Confirmed
                         </option>
                         <option value="In-progress" {{ old('') == 'In-progress' ? 'selected="selected"' : '' }}>
                             In-progress
@@ -84,7 +75,7 @@
                 </div>
                 <div class="col-md-2" id="dropdown-ga" style="visibility: hidden;">
                     <select class="input js-mytooltip ga-only-dropdown form-select @error('') is-invalid @enderror"
-                        name="dropdown_ga" id="ga-only-dropdown" value="{{ old('') }}" data-mytooltip-content="<i>
+                        name="ga_percent" id="ga-only-dropdown" value="{{ old('') }}" data-mytooltip-content="<i>
                             Please Choose 0% if not G.A
                             </i>" data-mytooltip-theme="dark" data-mytooltip-action="focus" data-mytooltip-direction="right">
                         <option value="0" {{ old('') == '0' ? 'selected="selected"' : '' }} selected>
@@ -114,7 +105,7 @@
                     <div class="form-group has-icon-left">
                         <div class="position-relative">
                             <input type="text" class="form-control @error('') is-invalid @enderror" value="{{ old('') }}"
-                                name="client" id="fourth" title="asdasdasd">
+                                name="client" id="fourth">
                             <div class="form-control-icon">
                                 <i class="fa-solid fa-user"></i>
                             </div>
@@ -137,7 +128,7 @@
                     <div class="form-group has-icon-left">
                         <div class="position-relative">
                             <input type="text" class="form-control @error('') is-invalid @enderror" value="{{ old('') }}"
-                                name="" id="">
+                                name="engagement_title" id="">
                             <div class="form-control-icon">
                                 <i class="fa-solid fa-t"></i>
                             </div>
@@ -196,18 +187,35 @@
             </div>
 
         <!------------ DATE COVERED BY ENGAGEMENT ------------>
-            <div class="row justify-content-center g-3 gx-5 mt-2" id="dcbe">
-                <h6 class="text-center mt-3 fst-italic">Date Covered by Engagement</h3>
-                <div class="d-flex justify-content-center" id="dateRows1">
+            {{-- <div class="row justify-content-center g-3 gx-5 mt-2" id="dcbe"> --}}
+            <div class="row justify-content-center mt-3" id="dcbe">
+                <h5 class="text-center mt-5 fst-italic">Date Covered by Engagement</h5>
+                <div class="d-flex justify-content-center mt-4" id="dateRows1">
+                    {{-- <div class="align-self-center mb-2">
+                        <div class="form-group has-icon-left">
+                            <label class="fw-bold invisible">Add</label>
+                            <a href="javascript:void(0)" class="text-success font-18" title="Add"
+                            id="addDates"><i class="fa fa-plus"></i></a>
+                            <div class="position-relative invisible">
+                            </div>
+                        </div>
+                    </div> --}}
                     <div class="flex-column">
                         <div>
                             <div class="row justify-content-center" id="dateRows">
-                                <div class="col-lg-4 col-md-4">
+                                <div class="col-lg-1 col-md-1">
+                                    <div class="px-0">
+                                            <label class="fw-bold invisible mb-4">Add</label>
+                                            <a href="javascript:void(0)" class="text-success font-18 px-0" title="Add"
+                                            id="addDates"><i class="fa fa-plus"></i></a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2">
                                     <div class="form-group has-icon-left">
                                         <label class="fw-bold required">Date</label>
                                         <div class="position-relative">
                                             <input type="text" class="form-control datepicker @error('doe') is-invalid @enderror"
-                                                value="{{ old('doe') }}" placeholder="Enter Date" name="doe" id="datepicker"
+                                                value="{{ old('doe') }}" placeholder="Enter Date" name="program_dates[]" id="datepicker"
                                                 size="30">
                                             <div class="form-control-icon">
                                                 <i class="bi bi-calendar"></i>
@@ -220,12 +228,12 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-md-4">
+                                <div class="col-lg-2 col-md-2">
                                     <div class="form-group has-icon-left">
                                         <label class="fw-bold required">Start Time</label>
                                         <div class="position-relative">
-                                            <input type="time" class="form-control @error('dot') is-invalid @enderror"
-                                                value="{{ old('dot') }}" placeholder="Enter Time" name="dot">
+                                            <input type="text" class="form-control timepicker @error('dot') is-invalid @enderror"
+                                                value="{{ old('dot') }}" placeholder="Enter Time" id="program_start_time" name="program_start_time[]">
                                             <div class="form-control-icon">
                                                 <i class="bi bi-clock"></i>
                                             </div>
@@ -237,12 +245,12 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-md-4">
+                                <div class="col-lg-2 col-md-2">
                                     <div class="form-group has-icon-left">
                                         <label class="fw-bold required">End Time</label>
                                         <div class="position-relative">
-                                            <input type="time" class="form-control @error('dot') is-invalid @enderror"
-                                                value="{{ old('dot') }}" placeholder="Enter Time" name="dot">
+                                            <input type="text" class="form-control timepicker @error('dot') is-invalid @enderror"
+                                                value="{{ old('dot') }}" placeholder="Enter Time" id="program_end_time" name="program_end_time[]">
                                             <div class="form-control-icon">
                                                 <i class="fa-solid fa-hourglass-end"></i>
                                             </div>
@@ -254,16 +262,17 @@
                                         </div>
                                     </div>
                                 </div>
+                                @include('form.components.reference.cluster')     
                             </div>
                         </div>
 
-                        <div>
+                        {{-- <div>
                             @include('form.components.reference.cluster')     
-                        </div>
+                        </div> --}}
             
                     </div>
 
-                    <div class="align-self-center p-0">
+                    {{-- <div class="align-self-center p-0">
                         <div class="form-group has-icon-left">
                             <label class="fw-bold invisible">Add</label>
                             <a href="javascript:void(0)" class="text-success font-18" title="Add"
@@ -271,8 +280,9 @@
                             <div class="position-relative invisible">
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
+            <hr class="mt-3">
             </div>
     </div>
 <!------------ END OF FORM BODY ------------>
@@ -287,10 +297,11 @@
 
             //ASSIGN EVENT LISTENER IN STATUS
             document.getElementById("status").addEventListener("change", status);
+
             //EVENT OF STATUS
             function status() { 
                 var status = document.getElementById("status").value;
-                if(status == "Active"){
+                if(status == "Confirmed"){
                     $('#status').css('background-color', '#007bff')
                     $('#status').css('color', 'white')
                     $('#status option').css('background-color', 'white')
@@ -310,6 +321,11 @@
                     $('#status').css('color', 'white')
                     $('#status option').css('background-color', 'white')
                     $('#status option').css('color', 'black')
+                } else if(status == "Trial"){
+                    $('#status').css('background-color', '#17a2b8')
+                    $('#status').css('color', 'white')
+                    $('#status option').css('background-color', 'white')
+                    $('#status option').css('color', 'black')
                 }
             };
 
@@ -318,16 +334,24 @@
             $("#addDates").on("click", function() {
                 // Adding a row inside the tbody.
                 $("#dcbe").append(`
-                <div class="d-flex justify-content-center" id="dateRows${++dates}">
+                <div class="d-flex justify-content-center mt-4" id="dateRows${++dates}">
                     <div class="flex-column">
                         <div>
                             <div class="row justify-content-center">
-                                <div class="col-lg-4 col-md-4">
+                                <div class="col-lg-1 col-md-1">
+                                    <div class="px-0">
+                                        <label class="fw-bold invisible mb-4">Add</label>
+                                        <a href="javascript:void(0)" class="text-danger font-18 remove px-0" title="Remove">
+                                            <i class="fa fa-trash-o"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2">
                                     <div class="form-group has-icon-left">
                                         <label class="fw-bold required">Date</label>
                                         <div class="position-relative">
                                             <input type="text" class="form-control datepicker @error('doe') is-invalid @enderror"
-                                                value="{{ old('doe') }}" placeholder="Enter Date" name="doe" id="datepicker${dates}"
+                                                value="{{ old('doe') }}" placeholder="Enter Date" name="program_dates[]" id="datepicker${dates}"
                                                 size="30">
                                             <div class="form-control-icon">
                                                 <i class="bi bi-calendar"></i>
@@ -340,12 +364,12 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-md-4">
+                                <div class="col-lg-2 col-md-2">
                                     <div class="form-group has-icon-left">
                                         <label class="fw-bold required">Start Time</label>
                                         <div class="position-relative">
-                                            <input type="time" class="form-control @error('dot') is-invalid @enderror"
-                                                value="{{ old('dot') }}" placeholder="Enter Time" name="dot">
+                                            <input type="text" class="form-control timepicker @error('dot') is-invalid @enderror"
+                                                value="{{ old('dot') }}" placeholder="Enter Time" id="program_start_time" name="program_start_time[]">
                                             <div class="form-control-icon">
                                                 <i class="bi bi-clock"></i>
                                             </div>
@@ -357,12 +381,12 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-md-4">
+                                <div class="col-lg-2 col-md-2">
                                     <div class="form-group has-icon-left">
                                         <label class="fw-bold required">End Time</label>
                                         <div class="position-relative">
-                                            <input type="time" class="form-control @error('dot') is-invalid @enderror"
-                                                value="{{ old('dot') }}" placeholder="Enter Time" name="dot">
+                                            <input type="text" class="form-control timepicker @error('dot') is-invalid @enderror"
+                                                value="{{ old('dot') }}" placeholder="Enter Time" id="program_end_time" name="program_end_time[]">
                                             <div class="form-control-icon">
                                                 <i class="fa-solid fa-hourglass-end"></i>
                                             </div>
@@ -374,26 +398,25 @@
                                         </div>
                                     </div>
                                 </div>
+                                @include('form.components.reference.append_cluster') 
                             </div>
-                        </div>
-
-                        <div>
-                            @include('form.components.reference.append_cluster')     
                         </div>
             
                     </div>
 
-                    <div class="align-self-center p-0">
-                        <div class="form-group has-icon-left">
-                            <label class="fw-bold invisible">Add</label>
-                            <a href="javascript:void(0)" class="text-danger font-18 remove" title="Remove">
-                                <i class="fa fa-trash-o"></i>
-                            </a>
-                            <div class="position-relative invisible">
-                            </div>
-                        </div>
-                    </div>
+
                 </div>`);
+                $('.timepicker').timepicker({
+                    timeFormat: 'h:mm p',
+                    interval: 30,
+                    minTime: '06',
+                    maxTime: '10:00pm',
+                    // defaultTime: '06',
+                    startTime: '06:00',
+                    dynamic: false,
+                    dropdown: true,
+                    scrollbar: true
+                });
             });
 
             $("#dcbe").on("click", ".remove", function () {
@@ -429,6 +452,18 @@
 
                 // Decreasing total number of rows by 1.
                 dates--;
+            });
+
+            $('.timepicker').timepicker({
+                timeFormat: 'h:mm p',
+                interval: 30,
+                minTime: '06',
+                maxTime: '10:00pm',
+                // defaultTime: '06',
+                startTime: '06:00',
+                dynamic: false,
+                dropdown: true,
+                scrollbar: true
             });
             
     });

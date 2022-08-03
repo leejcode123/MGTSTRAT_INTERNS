@@ -3,7 +3,7 @@ require("./components/currencyFormat");
 /*************************************** CUSTOMIZED ENGAGEMENT BUDGET FORM COMPUTATION ********************************************************/
 $(document).on(
     "change keyup click",
-    ".customized-type, .ga-only-dropdown, .remove, #ec_tableEngagementFees, #ec_tableEngagementCost",
+    ".customized-type, .ga-only-dropdown, .remove, #ec_tableEngagementFees, #ec_tableEngagementCost, #LessCTO_NOC",
     function () {
         //customized type
         $(".customized-type").each(function () {
@@ -86,6 +86,7 @@ $(document).on(
         efConsultingSum = 0;
         ecConsultingSum = 0;
         nswh = $("#nswh").val();
+        
         $("#tableLeadconsultant > tr").each(function () {
 
             rowIdx++;
@@ -93,11 +94,11 @@ $(document).on(
 
             sum13 =
                 $(this).find(`#ef_LeadconsultantNoc${rowIdx}`).val() *
-                    +$(this).find("#ef_LeadconsultantHf").val() *
+                    +$(this).find("#ef_LeadconsultantHf").val().replace(/\₱|,/g, "") *
                     $(this).find(`#ef_LeadconsultantNoh${rowIdx}`).val() +
                 $(this).find(`#ef_LeadconsultantNwh${rowIdx}`).val() *
                     ($(this).find(`#ef_LeadconsultantNoc${rowIdx}`).val() *
-                        +$(this).find("#ef_LeadconsultantHf").val() *
+                        +$(this).find("#ef_LeadconsultantHf").val().replace(/\₱|,/g, "") *
                         $(this).find(`#ef_LeadconsultantNoh${rowIdx}`).val() *
                         $("#nswh").val());
 
@@ -252,8 +253,6 @@ $(document).on(
 
         //Subtotal
         $("#subtotal-consulting").html("₱" + currency.format(Math.ceil(efConsultingSum)));
-        // //subtotal engagement cost
-        // $("#ec_AnalystTotal").html(currency.format(Math.ceil(sumecAnalyst)));
         $("#ec_SubtotalConsulting").html("₱" +
             currency.format(Math.ceil(ecConsultingSum))
         );
@@ -266,11 +265,11 @@ $(document).on(
 
             sum18 =
                 $(this).find(`#ef_DesignerNoc${efDesigner}`).val() *
-                    +$(this).find("#ef_DesignerHf").val() *
+                    +$(this).find("#ef_DesignerHf").val().replace(/\₱|,/g, "") *
                     $(this).find(`#ef_DesignerNoh${efDesigner}`).val() +
                 $(this).find(`#ef_DesignerNwh${efDesigner}`).val() *
                     ($(this).find(`#ef_DesignerNoc${efDesigner}`).val() *
-                        +$(this).find("#ef_DesignerHf").val() *
+                        +$(this).find("#ef_DesignerHf").val().replace(/\₱|,/g, "") *
                         $(this).find(`#ef_DesignerNoh${efDesigner}`).val() *
                         $("#nswh").val());
 
@@ -359,11 +358,11 @@ $(document).on(
             efLeadfaci++;
             sum21 =
                 $(this).find(`#ef_LeadfacilitatorNoc${efLeadfaci}`).val() *
-                    +$(this).find(`#ef_LeadfacilitatorHf${efLeadfaci}`).val() *
+                    +$(this).find(`#ef_LeadfacilitatorHf${efLeadfaci}`).val().replace(/\₱|,/g, "") *
                     $(this).find(`#ef_LeadfacilitatorNoh${efLeadfaci}`).val() +
                 $(this).find(`#ef_LeadfacilitatorNwh${efLeadfaci}`).val() *
                     ($(this).find(`#ef_LeadfacilitatorNoc${efLeadfaci}`).val() *
-                        +$(this).find(`#ef_LeadfacilitatorHf${efLeadfaci}`).val() *
+                        +$(this).find(`#ef_LeadfacilitatorHf${efLeadfaci}`).val().replace(/\₱|,/g, "") *
                         $(this).find(`#ef_LeadfacilitatorNoh${efLeadfaci}`).val() *
                         $("#nswh").val()) ||
                 $(this).find(`#ef_LeadfacilitatorNoc${efLeadfaci}`).val() *
@@ -395,7 +394,8 @@ $(document).on(
             efProgramSum += +sum21;
 
             $("#ec_LeadfacilitatorNoc1").val($("#ef_LeadfacilitatorNoc1").val());
-            $("#ec_LeadfacilitatorNoh1").val($("#ef_LeadfacilitatorNoh1").val());
+            // $("#ec_LeadfacilitatorNoh1").val($("#ef_LeadfacilitatorNoh1").val());
+            document.getElementById("ec_LeadfacilitatorNoh1").defaultValue = $("#ef_LeadfacilitatorNoh1").val();
             $("#ec_LeadfacilitatorNwh1").val($("#ef_LeadfacilitatorNwh1").val());
         });
 
@@ -411,7 +411,7 @@ $(document).on(
                     ($(this).find(`#ec_LeadfacilitatorNoc${ecLeadfaci}`).val() *
                         $(this).find("#ec_LeadfacilitatorHf").val().replace(/\₱|,/g, "") *
                         $(this).find(`#ec_LeadfacilitatorNoh${ecLeadfaci}`).val() *
-                        $("#ec_nswh").val());
+                        $("#nswh").val());
 
             //if the customized type value is G.A
             if (
@@ -447,7 +447,7 @@ $(document).on(
                     ($(this).find(`#ec_CoLeadfacilitatorNoc${ecCoLead}`).val() *
                         $(this).find(`#ec_CoLeadfacilitatorHf${ecCoLead}`).val().replace(/\₱|,/g, "") *
                         $(this).find(`#ec_CoLeadfacilitatorNoh${ecCoLead}`).val() *
-                        $("#ec_nswh").val());
+                        $("#nswh").val());
 
             //if the customized type value is G.A
             if (
@@ -482,7 +482,7 @@ $(document).on(
                     ($(this).find(`#ec_AlCoachNoc${ecAlCoach}`).val() *
                         $(this).find(`#ec_AlCoachHf${ecAlCoach}`).val().replace(/\₱|,/g, "") *
                         $(this).find(`#ec_AlCoachNoh${ecAlCoach}`).val() *
-                        $("#ec_nswh").val());
+                        $("#nswh").val());
 
             //if the customized type value is G.A
             if (
@@ -541,8 +541,10 @@ $(document).on(
 
             // Getting the value of engagement fees of program to pass the value
             // into the engagement cost program
-            $("#ec_CofacilitatorNoc1").val($("#ef_CofaciNoc1").val());
-            $("#ec_CofacilitatorNoh1").val($("#ef_CofaciNoh1").val());
+            // $("#ec_CofacilitatorNoc1").val($("#ef_CofaciNoc1").val());
+            document.getElementById("ec_CofacilitatorNoc1").defaultValue = $("#ef_CofaciNoc1").val();
+            // $("#ec_CofacilitatorNoh1").val($("#ef_CofaciNoh1").val());
+            document.getElementById("ec_CofacilitatorNoh1").defaultValue = $("#ef_CofaciNoh1").val();
             $("#ec_CofacilitatorNwh1").val($("#ef_CofaciNwh1").val());
         });
 
@@ -557,7 +559,7 @@ $(document).on(
                     ($(this).find(`#ec_CofacilitatorNoc${ecCofaci}`).val() *
                         $(this).find("#ec_CofacilitatorHf").val().replace(/\₱|,/g, "") *
                         $(this).find(`#ec_CofacilitatorNoh${ecCofaci}`).val() *
-                        $("#ec_nswh").val());
+                        $("#nswh").val());
 
             //if the customized type value is G.A
             if (
@@ -620,7 +622,8 @@ $(document).on(
             // Getting the value of engagement fees of program to pass the value
             // into the engagement cost program
             $("#ec_ModeratorNoc1").val($("#ef_ModeratorNoc1").val());
-            $("#ec_ModeratorNoh1").val($("#ef_ModeratorNoh1").val());
+            // $("#ec_ModeratorNoh1").val($("#ef_ModeratorNoh1").val());
+            document.getElementById("ec_ModeratorNoh1").defaultValue = $("#ef_ModeratorNoh1").val();
             $("#ec_ModeratorNwh1").val($("#ef_ModeratorNwh1").val());
         });
 
@@ -636,7 +639,7 @@ $(document).on(
                     ($(this).find(`#ec_ModeratorNoc${ecModerator}`).val() *
                         $(this).find("#ec_ModeratorHf").val().replace(/\₱|,/g, "") *
                         $(this).find(`#ec_ModeratorNoh${ecModerator}`).val() *
-                        $("#ec_nswh").val());
+                        $("#nswh").val());
 
             //if the customized type value is G.A
             if (
@@ -696,7 +699,8 @@ $(document).on(
             // Getting the value of engagement fees of program to pass the value
             // into the engagement cost program
             $("#ec_ProducerNoc1").val($("#ef_ProducerNoc1").val());
-            $("#ec_ProducerNoh1").val($("#ef_ProducerNoh1").val());
+            // $("#ec_ProducerNoh1").val($("#ef_ProducerNoh1").val());
+            document.getElementById("ec_ProducerNoh1").defaultValue = $("#ef_ProducerNoh1").val();
             $("#ec_ProducerNwh1").val($("#ef_ProducerNwh1").val());
         });
 
@@ -712,7 +716,7 @@ $(document).on(
                     ($(this).find(`#ec_ProducerNoc${ecProducer}`).val() *
                         $(this).find("#ec_ProducerHf").val().replace(/\₱|,/g, "") *
                         $(this).find(`#ec_ProducerNoh${ecProducer}`).val() *
-                        $("#ec_nswh").val());
+                        $("#nswh").val());
 
             //if the customized type value is G.A
             if (
@@ -855,6 +859,8 @@ $(document).on(
 
         /*******************************************TOTAL STANDARD FEES**********************************************************************/
         $("#total-standard").html("₱" + currency.format(Math.ceil(sum)));
+        //TOTAL PACKAGE
+        document.getElementById("ef_Totalpackage").defaultValue = $("#total-standard").html();
 
         /********************************************DISCOUNTS*******************************************************************************/
         $("#ef_Totalpackage").each(function () {
@@ -872,28 +878,39 @@ $(document).on(
         });
 
         //Sales
+        sumSalesPercent = 0;
         $("#tableSales > tr").each(function () {
-            sumSales =
+
+            if (document.getElementById("inputSales").disabled === true) {
+                sumSales =
                 ($("#ef_Totalpackage").val().replace(/\₱|,/g, "") / 100) *
-                    $(this).find("#sales").val() ||
+                    $(this).find("#sales").val().replace(/%/g, "")
+            } else {
+                sumSales =
                 ($("#ef_Totalpackage").val().replace(/\₱|,/g, "") / 100) *
-                    $(this).find("#inputSales").val().replace(/%/g, "");
+                $(this).find("#inputSales").val().replace(/%/g, "")
+            };
 
             //Producer engagement fees sum
             $(this)
                 .find("#salesTotal")
-                .html(currency.format(Math.ceil(sumSales)));
+                .html(currency.format(Math.ceil(sumSales + sumSalesPercent)));
 
             sumEngagementCost += +sumSales;
         });
 
         //Referral
         $("#tableReferral > tr").each(function () {
-            sumReferral =
+
+            if (document.getElementById("inputReferral").disabled === true) {
+                sumReferral =
                 ($("#ef_Totalpackage").val().replace(/\₱|,/g, "") / 100) *
-                    $(this).find("#referral").val() ||
+                    $(this).find("#referral").val().replace(/\%/g, "")
+            } else {
+                sumReferral =
                 ($("#ef_Totalpackage").val().replace(/\₱|,/g, "") / 100) *
-                    $(this).find("#inputReferral").val().replace(/%/g, "");
+                    $(this).find("#inputReferral").val().replace(/\%/g, "")
+            };
 
             $(this)
                 .find("#referralTotal")
@@ -903,11 +920,22 @@ $(document).on(
 
         //Engagement Manager
         $("#tableEngagementmanager > tr").each(function () {
-            sumEngagementManager =
+
+            if (document.getElementById("inputManager").disabled === true) {
+                sumEngagementManager =
                 ($("#ef_Totalpackage").val().replace(/\₱|,/g, "") / 100) *
-                    $(this).find("#engagementManager").val() ||
+                    $(this).find("#engagementManager").val().replace(/\%/g, "")
+            } else {
+                sumEngagementManager =
                 ($("#ef_Totalpackage").val().replace(/\₱|,/g, "") / 100) *
-                    $(this).find("#inputManager").val().replace(/%/g, "");
+                    $(this).find("#inputManager").val().replace(/%/g, "")
+            };
+
+            // sumEngagementManager =
+            //     ($("#ef_Totalpackage").val().replace(/\₱|,/g, "") / 100) *
+            //         $(this).find("#engagementManager").val().replace(/\%/g, "") ||
+            //     ($("#ef_Totalpackage").val().replace(/\₱|,/g, "") / 100) *
+            //         $(this).find("#inputManager").val().replace(/%/g, "");
 
             $(this)
                 .find("#engagementManagerTotal")
@@ -930,9 +958,9 @@ $(document).on(
         $("#LessCTO_NOC").each(function () {
             sumCto +=
                 ($("#ef_Totalpackage").val().replace(/\₱|,/g, "") *
-                    $(this).val()) /
-                100;
+                    $(this).val()) / 100;
         });
+
         $("#LessContributionToOverhead").html(
             currency.format(Math.ceil(sumCto))
         );
