@@ -232,8 +232,8 @@
                                     <div class="form-group has-icon-left">
                                         <label class="fw-bold required">Start Time</label>
                                         <div class="position-relative">
-                                            <input type="time" class="form-control @error('dot') is-invalid @enderror"
-                                                value="{{ old('dot') }}" placeholder="Enter Time" name="program_start_time[]">
+                                            <input type="text" class="form-control timepicker @error('dot') is-invalid @enderror"
+                                                value="{{ old('dot') }}" placeholder="Enter Time" id="program_start_time" name="program_start_time[]">
                                             <div class="form-control-icon">
                                                 <i class="bi bi-clock"></i>
                                             </div>
@@ -249,8 +249,8 @@
                                     <div class="form-group has-icon-left">
                                         <label class="fw-bold required">End Time</label>
                                         <div class="position-relative">
-                                            <input type="time" class="form-control @error('dot') is-invalid @enderror"
-                                                value="{{ old('dot') }}" placeholder="Enter Time" name="program_end_time[]">
+                                            <input type="text" class="form-control timepicker @error('dot') is-invalid @enderror"
+                                                value="{{ old('dot') }}" placeholder="Enter Time" id="program_end_time" name="program_end_time[]">
                                             <div class="form-control-icon">
                                                 <i class="fa-solid fa-hourglass-end"></i>
                                             </div>
@@ -368,8 +368,8 @@
                                     <div class="form-group has-icon-left">
                                         <label class="fw-bold required">Start Time</label>
                                         <div class="position-relative">
-                                            <input type="time" class="form-control @error('dot') is-invalid @enderror"
-                                                value="{{ old('dot') }}" placeholder="Enter Time" name="program_start_time[]">
+                                            <input type="text" class="form-control timepicker @error('dot') is-invalid @enderror"
+                                                value="{{ old('dot') }}" placeholder="Enter Time" id="program_start_time" name="program_start_time[]">
                                             <div class="form-control-icon">
                                                 <i class="bi bi-clock"></i>
                                             </div>
@@ -385,8 +385,8 @@
                                     <div class="form-group has-icon-left">
                                         <label class="fw-bold required">End Time</label>
                                         <div class="position-relative">
-                                            <input type="time" class="form-control @error('dot') is-invalid @enderror"
-                                                value="{{ old('dot') }}" placeholder="Enter Time" name="program_end_time[]">
+                                            <input type="text" class="form-control timepicker @error('dot') is-invalid @enderror"
+                                                value="{{ old('dot') }}" placeholder="Enter Time" id="program_end_time" name="program_end_time[]">
                                             <div class="form-control-icon">
                                                 <i class="fa-solid fa-hourglass-end"></i>
                                             </div>
@@ -401,13 +401,22 @@
                                 @include('form.components.reference.append_cluster') 
                             </div>
                         </div>
-
-
             
                     </div>
 
 
                 </div>`);
+                $('.timepicker').timepicker({
+                    timeFormat: 'h:mm p',
+                    interval: 30,
+                    minTime: '06',
+                    maxTime: '10:00pm',
+                    // defaultTime: '06',
+                    startTime: '06:00',
+                    dynamic: false,
+                    dropdown: true,
+                    scrollbar: true
+                });
             });
 
             $("#dcbe").on("click", ".remove", function () {
@@ -443,6 +452,18 @@
 
                 // Decreasing total number of rows by 1.
                 dates--;
+            });
+
+            $('.timepicker').timepicker({
+                timeFormat: 'h:mm p',
+                interval: 30,
+                minTime: '06',
+                maxTime: '10:00pm',
+                // defaultTime: '06',
+                startTime: '06:00',
+                dynamic: false,
+                dropdown: true,
+                scrollbar: true
             });
             
     });
