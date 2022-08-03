@@ -878,28 +878,39 @@ $(document).on(
         });
 
         //Sales
+        sumSalesPercent = 0;
         $("#tableSales > tr").each(function () {
-            sumSales =
+
+            if (document.getElementById("inputSales").disabled === true) {
+                sumSales =
                 ($("#ef_Totalpackage").val().replace(/\₱|,/g, "") / 100) *
-                    $(this).find("#sales").val().replace(/%/g, "") ||
+                    $(this).find("#sales").val().replace(/%/g, "")
+            } else {
+                sumSales =
                 ($("#ef_Totalpackage").val().replace(/\₱|,/g, "") / 100) *
-                    $(this).find("#inputSales").val().replace(/%/g, "");
+                $(this).find("#inputSales").val().replace(/%/g, "")
+            };
 
             //Producer engagement fees sum
             $(this)
                 .find("#salesTotal")
-                .html(currency.format(Math.ceil(sumSales)));
+                .html(currency.format(Math.ceil(sumSales + sumSalesPercent)));
 
             sumEngagementCost += +sumSales;
         });
 
         //Referral
         $("#tableReferral > tr").each(function () {
-            sumReferral =
+
+            if (document.getElementById("inputReferral").disabled === true) {
+                sumReferral =
                 ($("#ef_Totalpackage").val().replace(/\₱|,/g, "") / 100) *
-                    $(this).find("#referral").val() ||
+                    $(this).find("#referral").val().replace(/\%/g, "")
+            } else {
+                sumReferral =
                 ($("#ef_Totalpackage").val().replace(/\₱|,/g, "") / 100) *
-                    $(this).find("#inputReferral").val().replace(/%/g, "");
+                    $(this).find("#inputReferral").val().replace(/\%/g, "")
+            };
 
             $(this)
                 .find("#referralTotal")
@@ -909,11 +920,22 @@ $(document).on(
 
         //Engagement Manager
         $("#tableEngagementmanager > tr").each(function () {
-            sumEngagementManager =
+
+            if (document.getElementById("inputManager").disabled === true) {
+                sumEngagementManager =
                 ($("#ef_Totalpackage").val().replace(/\₱|,/g, "") / 100) *
-                    $(this).find("#engagementManager").val() ||
+                    $(this).find("#engagementManager").val().replace(/\%/g, "")
+            } else {
+                sumEngagementManager =
                 ($("#ef_Totalpackage").val().replace(/\₱|,/g, "") / 100) *
-                    $(this).find("#inputManager").val().replace(/%/g, "");
+                    $(this).find("#inputManager").val().replace(/%/g, "")
+            };
+
+            // sumEngagementManager =
+            //     ($("#ef_Totalpackage").val().replace(/\₱|,/g, "") / 100) *
+            //         $(this).find("#engagementManager").val().replace(/\%/g, "") ||
+            //     ($("#ef_Totalpackage").val().replace(/\₱|,/g, "") / 100) *
+            //         $(this).find("#inputManager").val().replace(/%/g, "");
 
             $(this)
                 .find("#engagementManagerTotal")

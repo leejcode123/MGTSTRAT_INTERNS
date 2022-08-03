@@ -282,7 +282,7 @@
                         </div>
                     </div> --}}
                 </div>
-            <hr>
+            <hr class="mt-3">
             </div>
     </div>
 <!------------ END OF FORM BODY ------------>

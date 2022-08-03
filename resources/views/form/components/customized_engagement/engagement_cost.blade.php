@@ -47,7 +47,7 @@
                                     value="{{ old('') }}" name="cost_hour_fee[]" id="inputSales" style="display: none;"
                                     onblur="this.value = this.value.replace('%', '') + '%';"
                                     oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
-                                    maxlength="5" disabled>
+                                    maxlength="2" disabled>
 
                                 <fieldset id="dropdownSales">
                                     <select class="input js-mytooltip form-select @error('') is-invalid @enderror"
@@ -104,7 +104,7 @@
                                 <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                     value="{{ old('') }}" name="cost_rooster[]" id="">
                             </td>
-                            <td style="background-color: #FFFFFF;" class="border border-white"><a href="javascript:void(0)" class="text-success font-18" title="Add" id="addBtn9"><i
+                            <td style="background-color: #FFFFFF;" class="border border-white"><a href="javascript:void(0)" class="text-success font-18" title="Add" id="addBtn9" onclick="$('#salesTotal').html(0)"><i
                                         class="fa fa-plus"></i></a></td>
                         </tr>
                     </tbody>
@@ -115,13 +115,15 @@
                                 Referral (2% / 3%)
                                 <input type="text" class="d-none" value="Referral" name="cost_type[]" readonly>
                             </td>
-                            <td><input type="text" class="d-none" value="" name="cost_consultant_num[]" readonly></td>
+                            <td>
+                                <input type="text" class="d-none" value="" name="cost_consultant_num[]" readonly>
+                            </td>
                             <td>
                                 <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                     value="{{ old('') }}" name="cost_hour_fee[]" id="inputReferral" style="display: none;"
                                     onblur="this.value = this.value.replace('%', '') + '%';"
                                     oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
-                                    maxlength="5" disabled>
+                                    maxlength="2" disabled>
 
                                 <fieldset id="dropdownReferral">
                                     <select class="input js-mytooltip form-select @error('') is-invalid @enderror"
@@ -181,7 +183,7 @@
                                     value="{{ old('') }}" name="cost_hour_fee[]" id="inputManager" style="display: none;"
                                     onblur="this.value = this.value.replace('%', '') + '%';"
                                     oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
-                                    maxlength="5" disabled>
+                                    maxlength="2" disabled>
 
                                 <fieldset id="dropdownManager">
                                     <select class="input js-mytooltip form-select @error('') is-invalid @enderror"

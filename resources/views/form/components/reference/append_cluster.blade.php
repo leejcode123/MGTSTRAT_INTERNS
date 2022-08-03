@@ -398,6 +398,7 @@
             </div>
         </div>
     </div>
+
     <div class="col-lg-3 col-md-3 div-notListed" id="div-notListed[${dates}]">
         <div class="form-group has-icon-right">
             <label class="fw-bold required">Cluster</label>
@@ -424,6 +425,7 @@
             </div>
         </div>
     </div>
+
     <div class="col-lg-2 col-md-2">
         <div class="form-group has-icon-left">
             <label class="fw-bold required">Core Area</label>
@@ -450,4 +452,4 @@
         </div>
     </div>
 {{-- </div> --}}
-<hr>
+<hr class="mt-3">

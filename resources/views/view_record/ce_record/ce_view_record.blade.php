@@ -36,7 +36,7 @@
                         <table class="table table-striped" id="table1">
                             <thead>
                                 <tr class="text-dark">
-                                    <th>ID NUMBER</th>
+                                    <th>BUDGET NUMBER</th>
                                     <th>STATUS</th>
                                     <th>COMPANY NAME</th>
                                     <th width="10%">ENGAGEMENT TYPE</th>
@@ -79,8 +79,10 @@
                                         <td class="name fw-bold">{{ $item->customized_type }}</td>
                                         <td class="email fw-bold">{{ $item->engagement_title }}</td>
                                         <td class="fw-bold">{{ $item->pax_number }}</td>
-                                        <td class="fw-bold">{{ Str::limit(str_replace (array('[', '"', ']'), ' ' , $item->program_dates), '15'); }}</td>
-                                        <td class="fw-bold">{{ date('h:i a',strtotime($item->program_start_time)) }}</td>
+                                        <td class="fw-bold">{{ Str::limit(str_replace (array('[', '"', ']'), ' ' , $item->program_dates), '15') }}</td>
+                                        {{-- <td class="fw-bold">{{ date('h:i a',strtotime($item->program_start_time)) }}</td> --}}
+                                        {{-- <td class="fw-bold">{{ date('h:i A',strtotime(Str::limit(str_replace (array('[', '"', ']'), ' ' , $item->program_start_time), '20'))); }}</td> --}}
+                                        <td class="fw-bold">{{ date('h:i A',strtotime(Str::limit(str_replace (array('[', '"', ']'), ' ' , $item->program_start_time), '20'))); }}</td>
                                         <td class="text-center fw-bold">
                                             <a href="">
                                                 <span class="badge bg-info"><i class="bi bi-person-plus-fill"></i></span>

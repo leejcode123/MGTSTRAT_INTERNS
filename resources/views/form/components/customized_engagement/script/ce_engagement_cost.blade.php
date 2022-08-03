@@ -16,7 +16,7 @@
                         <td>
                             <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                             value="{{ old('') }}" name="cost_hour_fee[]" id="inputSales" onblur="this.value = this.value.replace('%', '') + '%';"
-                            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\......*)\./g, '$1');">
+                            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\...*)\./g, '$1') ;">
                             
                         </td>
                         <td><input type="text" class="d-none" value="" name="cost_hour_num[]" readonly></td>
@@ -35,18 +35,17 @@
             //sales into 0% when adding row
             const salesId = document.querySelectorAll("#sales");
             for (let i = 0; i < salesId.length; i++) {
-                salesId[i].value = "0";
+                salesId[i].value = "0%";
             }
 
             //if you add row the 
             //if statement will execute
             if (salesNum > 1) {
-                document.getElementById("dropdownSales").style.display =
-                    "none"; //the dropdown will display none
-                document.getElementById("inputSales").style.display =
-                    ""; //the input field will remove the style of "display = none;"
-                document.getElementById("inputSales").disabled =
-                    false; //remove the disabled attribute in input field
+                document.getElementById("dropdownSales").style.display = "none"; //the dropdown will display none
+                document.getElementById("sales").value = "0%"; //the dropdown will be disabled
+                document.getElementById("sales").disabled = true; //the dropdown will be disabled
+                document.getElementById("inputSales").style.display = ""; //the input field will remove the style of "display = none;"
+                document.getElementById("inputSales").disabled = false; //remove the disabled attribute in input field
                 // document.getElementById("inputSales").value = "";   //to remove the last inputed value
             }
         });
@@ -63,8 +62,9 @@
             // Decreasing total number of rows by 1.
             salesNum--;
             if (salesNum == 1) {
+                document.getElementById("sales").disabled = false; //the dropdown will be disabled
                 document.getElementById("inputSales").style.display = "none";
-                document.getElementById("sales").value = "0";
+                document.getElementById("sales").value = "0%";
                 document.getElementById("dropdownSales").style.display = "";
                 document.getElementById("inputSales").value = ""; //to remove the last inputed value
             }
@@ -87,7 +87,7 @@
                         <td>
                             <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                         value="{{ old('') }}" name="cost_hour_fee[]" id="inputReferral" onblur="this.value = this.value.replace('%', '') + '%';"
-                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\......*)\./g, '$1');">
+                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\...*)\./g, '$1');">
                         </td>
                         <td><input type="text" class="d-none" value="" name="cost_hour_num[]" readonly></td>
                         <td><input type="text" class="d-none" value="" name="cost_nswh[]" readonly></td>
@@ -105,12 +105,13 @@
             //sales into 0% when adding row
             const referralId = document.querySelectorAll("#referral");
             for (let i = 0; i < referralId.length; i++) {
-                referralId[i].value = "0";
+                referralId[i].value = "0%";
             }
 
             //if you add row the 
             //if statement will execute
             if (refferalNum > 1) {
+                document.getElementById("referral").disabled = true; //the dropdown will be disabled
                 document.getElementById("dropdownReferral").style.display =
                     "none"; //the dropdown will display none
                 document.getElementById("inputReferral").style.display =
@@ -133,8 +134,9 @@
             // Decreasing total number of rows by 1.
             refferalNum--;
             if (refferalNum == 1) {
+                document.getElementById("referral").disabled = false; //the dropdown will remove the disabled
                 document.getElementById("inputReferral").style.display = "none";
-                document.getElementById("referral").value = "0";
+                document.getElementById("referral").value = "0%";
                 document.getElementById("dropdownReferral").style.display = "";
                 document.getElementById("inputReferral").value = ""; //to remove the last inputed value
             }
@@ -158,7 +160,7 @@
                     <td>
                         <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                             value="{{ old('') }}" name="cost_hour_fee[]" id="inputManager" onblur="this.value = this.value.replace('%', '') + '%';"
-                            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\......*)\./g, '$1');">
+                            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\...*)\./g, '$1');">
                     </td>
                     <td><input type="text" class="d-none" value="" name="cost_hour_num[]" readonly></td>
                     <td><input type="text" class="d-none" value="" name="cost_nswh[]" readonly></td>
@@ -176,12 +178,13 @@
             //sales into 0% when adding row
             const managerId = document.querySelectorAll("#engagementManager");
             for (let i = 0; i < managerId.length; i++) {
-                managerId[i].value = "0";
+                managerId[i].value = "0%";
             }
 
             //if you add row the 
             //if statement will execute
             if (managerNum > 1) {
+                document.getElementById("engagementManager").disabled = true; //the dropdown will be disabled
                 document.getElementById("dropdownManager").style.display =
                     "none"; //the dropdown will display none
                 document.getElementById("inputManager").style.display =
@@ -204,8 +207,9 @@
             // Decreasing total number of rows by 1.
             managerNum--;
             if (managerNum == 1) {
+                document.getElementById("engagementManager").disabled = false; //the dropdown will remove disabled
                 document.getElementById("inputManager").style.display = "none";
-                document.getElementById("engagementManager").value = "0";
+                document.getElementById("engagementManager").value = "0%";
                 document.getElementById("dropdownManager").style.display = "";
                 document.getElementById("inputManager").value = ""; //to remove the last inputed value
             }
