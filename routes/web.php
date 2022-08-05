@@ -81,9 +81,11 @@ Route::get('activity/login/logout', [App\Http\Controllers\UserManagementControll
 
 
 // ----------------------------- Client Management -----------------------//
-Route::get('clientManagement', [App\Http\Controllers\ClientsController::class, 'index'])->middleware('auth')->name('clientManagement');
-Route::get('client/add/new', [App\Http\Controllers\ClientsController::class, 'addNewClient'])->middleware('auth')->name('client/add/new');
+// Route::get('clientManagement', [App\Http\Controllers\ClientsController::class, 'index'])->middleware('auth')->name('clientManagement');
+// Route::get('client/add/new', [App\Http\Controllers\ClientsController::class, 'addNewClient'])->middleware('auth')->name('client/add/new');
+Route::get('form/clients/new', [App\Http\Controllers\ClientsController::class, 'index'])->middleware('auth')->name('form/clients/new');
 Route::post('client/add/save', [App\Http\Controllers\ClientsController::class, 'addNewClientSave'])->name('client/add/save');
+Route::get('deleteClients/{id}', [App\Http\Controllers\ClientsController::class, 'deleteClient'])->middleware('auth');
 
 
 
@@ -107,7 +109,7 @@ Route::post('form/mgtstratu_workshops/save', [App\Http\Controllers\MgtstratUCont
 
 
 // ----------------------------- CLIENTS ------------------------------//
-Route::get('form/clients/new', [App\Http\Controllers\ClientsController::class, 'index'])->middleware('auth')->name('form/clients/new');
+// Route::get('form/clients/new', [App\Http\Controllers\ClientsController::class, 'index'])->middleware('auth')->name('form/clients/new');
 
 
 

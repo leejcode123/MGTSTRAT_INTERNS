@@ -42,37 +42,49 @@
                             <thead>
                                 <tr>
                                     <th>No.</th>
-                                    <th>Cient ID</th>
-                                    <th>Client Name</th>
-                                    <th>Address</th>
+                                    <th>Year+Month+Sales</th>
+                                    <th>Company Name</th>
+                                    <th>Old ID</th>
+                                    <th>Sales Pax</th>
+                                    <th>Class</th>
+                                    <th>Industry</th>
+                                    <th>Old/ New</th>
+                                    <th>First Engagement</th>
+                                    <th>Second Engagement</th>
                                     <th class="text-center">Modify</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach ($data as $key => $client)
                                     <tr>
-                                        <td class="id"></td>
-                                        <td class="name"></td>
+                                        <td class="id">{{ ++$key }}</td>
+                                        <td class="name">{{ $client->yr_mnth_sales }}</td>
                                         <td class="name">
-                                            {{-- <div class="avatar avatar-xl">
-                                                <img src=""
-                                                    alt="">
-                                            </div> --}}
+                                            {{$client->company_name}}
                                         </td>
-                                            <td class="status"><span
-                                                    class="badge bg-success"></span></td>
+                                        <td class="name">
+                                            {{$client->old_id}}
+                                        </td>
+                                        <td class="name">
+                                            {{$client->sales_pax}}
+                                        </td>
+                                        <td class="name">
+                                            {{$client->client_class}}
+                                        </td>
+                                        <td class="status">{{$client->industry}}</td>
+                                        <td class="status">{{$client->old_new}}</td>
+                                        <td class="status">{{$client->first_eng}}</td>
+                                        <td class="status">{{$client->second_eng}}</td>
                                         <td class="text-center">
-                                            <a href="">
-                                                <span class="badge bg-info"><i class="bi bi-person-plus-fill"></i></span>
-                                            </a>
                                             <a href="">
                                                 <span class="badge bg-success"><i class="bi bi-pencil-square"></i></span>
                                             </a>
-                                            <a href=""
+                                            <a href="{{ url('deleteClients/' . $client->id) }}"
                                                 onclick="return confirm('Are you sure to want to delete it?')"><span
                                                     class="badge bg-danger"><i class="bi bi-trash"></i></span></a>
                                         </td>
                                     </tr>
-                               
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

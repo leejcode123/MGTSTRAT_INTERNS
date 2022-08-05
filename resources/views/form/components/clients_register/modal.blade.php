@@ -9,7 +9,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                     </div>
-                    <form>
+                    {{-- <form> --}}
                     <div class="modal-body">
             {{-- Start Insert Client --}}
             <div class="col-12">
@@ -19,7 +19,6 @@
                             <form method="POST" action="{{ route('client/add/save') }}" class="form form-horizontal"  
                                 enctype="multipart/form-data">
                                 @csrf
-                                <input type="hidden" name="company_name" value="">
                                 <div class="form-body">
                                     <div class="row">
                                         <div class="col-md-4">
@@ -29,7 +28,7 @@
                                             <div class="form-group has-icon-left">
                                                 <div class="position-relative">
                                                     <input type="text" class="form-control" placeholder="Company Name"
-                                                        id="first-name-icon" name="fullName" value="">
+                                                        id="first-name-icon" name="company_name" value="">
                                                     <div class="form-control-icon">
                                                         <i class="bi bi-building"></i>
                                                     </div>
@@ -88,9 +87,9 @@
                                                     <select class="form-select" name="client_class" id="status">
                                                         <option value="">...
                                                         </option>
-                                                        <option value="">Active
+                                                        <option value="ACTIVE">Active
                                                         </option>
-                                                        <option value="">Inactive
+                                                        <option value="INACTIVE">Inactive
                                                         </option>
                                                     </select>
                                                     <div class="form-control-icon">
@@ -123,9 +122,9 @@
                                                     <select class="form-select" name="old_new" id="">
                                                         <option value="">...
                                                         </option>
-                                                        <option value="">Old
+                                                        <option value="OLD">Old
                                                         </option>
-                                                        <option value="">New
+                                                        <option value="NEW">New
                                                         </option>
                                                     </select>
                                                     <div class="form-control-icon">
