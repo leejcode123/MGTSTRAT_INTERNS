@@ -80,9 +80,6 @@
                                         <td class="email fw-bold">{{ $item->engagement_title }}</td>
                                         <td class="fw-bold">{{ $item->pax_number }}</td>
                                         <td class="fw-bold">{{ Str::limit(str_replace (array('[', '"', ']'), ' ' , $item->program_dates), '15') }}</td>
-                                        {{-- <td class="fw-bold">{{ date('h:i a',strtotime($item->program_start_time)) }}</td> --}}
-                                        {{-- <td class="fw-bold">{{ date('h:i A',strtotime(Str::limit(str_replace (array('[', '"', ']'), ' ' , $item->program_start_time), '20'))); }}</td> --}}
-                                        {{-- <td class="fw-bold">{{ date('h:i A',strtotime(Str::limit(str_replace (array('[', '"', ']'), ' ' , $item->program_start_time), '20'))); }}</td> --}}
                                         <td class="fw-bold">{{ Str::limit(str_replace (array('[', '"', ']'), ' ' , $item->program_start_time), '10') }}</td>
                                         <td class="text-center fw-bold">
                                             <a href="">

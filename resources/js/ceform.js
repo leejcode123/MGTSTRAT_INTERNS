@@ -980,7 +980,7 @@ $(document).on(
 //*************************************** APPEND NUMBER FORMAT ********************************************************//
 $(document).on(
     "change keyup click",
-    "#tableEngagementCost, #ec_tableEngagementCost, #tableLeadfaci",
+    "#ec_tableEngagementFees, #ec_tableEngagementCost, #tableLeadfaci",
     function () {
         // Jquery Dependency
         $("input[data-type='currency']").on({

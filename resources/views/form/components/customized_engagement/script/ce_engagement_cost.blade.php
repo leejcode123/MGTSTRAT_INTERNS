@@ -81,7 +81,7 @@
                 `<tr class="table-warning" id="salesRow${++refferalNum}">
                         <td class="title table-light">
                             Referral (2% / 3%)
-                            <input type="text" class="d-none" value="Referral" name="" readonly>
+                            <input type="text" class="d-none" value="Referral" name="cost_type[]" readonly>
                         </td>
                         <td><input type="text" class="d-none" value="" name="cost_consultant_num[]" readonly></td>
                         <td>
@@ -96,7 +96,7 @@
                         </td>
                         <td class="total-td table-light">
                             <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="cost_rooster" id="">
+                                value="{{ old('') }}" name="cost_rooster[]" id="">
                         </td>
                         <td><a href="javascript:void(0)" class="text-danger font-18 remove" title="Remove"><i class="fa fa-trash-o"></i></a></td>
                 </tr>`);
@@ -969,7 +969,7 @@
                     </td>
                     <td class="total-td table-light">
                         <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="cost_rooster" id="">
+                            value="{{ old('') }}" name="cost_rooster[]" id="">
                     </td>
                     <td class="border border-white" style="background-color: #FFFFFF;">
                         <a href="javascript:void(0)" class="text-danger font-18 remove" id="ecModeratorRemove${ecModerator}" title="Remove" style="visibility: hidden;">
