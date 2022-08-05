@@ -8,6 +8,7 @@ use App\Http\Controllers\ResetPasswordController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\WebinarformController;
 use App\Http\Controllers\UserManagementController;
+use App\Http\Controllers\ClientsController;
 use App\Http\Controllers\LockScreen;
 
 
@@ -78,6 +79,15 @@ Route::get('delete_user/{id}', [App\Http\Controllers\UserManagementController::c
 Route::get('activity/log', [App\Http\Controllers\UserManagementController::class, 'activityLog'])->middleware('auth')->name('activity/log');
 Route::get('activity/login/logout', [App\Http\Controllers\UserManagementController::class, 'activityLogInLogOut'])->middleware('auth')->name('activity/login/logout');
 
+
+// ----------------------------- Client Management -----------------------//
+Route::get('clientManagement', [App\Http\Controllers\ClientsController::class, 'index'])->middleware('auth')->name('clientManagement');
+Route::get('client/add/new', [App\Http\Controllers\ClientsController::class, 'addNewClient'])->middleware('auth')->name('client/add/new');
+Route::post('client/add/save', [App\Http\Controllers\ClientsController::class, 'addNewClientSave'])->name('client/add/save');
+
+
+
+
 Route::get('change/password', [App\Http\Controllers\UserManagementController::class, 'changePasswordView'])->middleware('auth')->name('change/password');
 Route::post('change/password/db', [App\Http\Controllers\UserManagementController::class, 'changePasswordDB'])->name('change/password/db');
 
@@ -94,6 +104,11 @@ Route::post('form/f2f_engagement/save', [App\Http\Controllers\F2fEngagementContr
 // ----------------------------- MGTSTRAT U WORKSHOPS ------------------------------//
 Route::get('form/mgtstratu_workshops/new', [App\Http\Controllers\MgtstratUController::class, 'index'])->middleware('auth')->name('form/mgtstratu_workshops/new');
 Route::post('form/mgtstratu_workshops/save', [App\Http\Controllers\MgtstratUController::class, 'store'])->name('form/mgtstratu_workshops/save');
+
+
+// ----------------------------- CLIENTS ------------------------------//
+Route::get('form/clients/new', [App\Http\Controllers\ClientsController::class, 'index'])->middleware('auth')->name('form/clients/new');
+
 
 
 // Route::get('view/detail/{id}', [App\Http\Controllers\UserManagementController::class, 'viewDetail'])->middleware('auth');

@@ -43,6 +43,7 @@
                     </div>
                 </div>
             </div>
+            {{-- Start View User --}}
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
@@ -176,6 +177,7 @@
                     </div>
                 </div>
             </div>
+            {{-- End View User --}}
         </div>
         <footer>
             <div class="footer clearfix mb-0 text-muted ">

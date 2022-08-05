@@ -3,9 +3,8 @@
         <div class="sidebar-header">
             <div class="d-flex justify-content-between">
                 <div class="logo">
-                    {{-- <a href="{{ route('home') }}"><img src="{{ URL::to('assets/images/logo/logo.png') }}" alt="Logo" srcset=""></a> --}}
-                    <a href="{{ route('home') }}"><img class="img-fluid" src="{{ URL::to('assets/images/logo/main-logo1.png') }}" alt="Logo"
-                            srcset=""></a>
+                    <a href="{{ route('home') }}"><img class="img-fluid"
+                            src="{{ URL::to('assets/images/logo/main-logo1.png') }}" alt="Logo" srcset=""></a>
                 </div>
                 <div class="toggler">
                     <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
@@ -15,7 +14,8 @@
         <div class="sidebar-menu">
             <ul class="menu">
                 <li class="sidebar-title">Menu</li>
-                <li class="sidebar-item active">
+
+                <li class="sidebar-item">
                     <a href="{{ route('home') }}" class='sidebar-link'>
                         <i class="bi bi-house-fill"></i>
                         <span>Dashboard</span>
@@ -45,7 +45,6 @@
                         </div>
                     </div>
                 </li>
-
                 <li class="sidebar-item">
                     <a href="{{ route('change/password') }}" class='sidebar-link'>
                         <i class="bi bi-shield-lock"></i>
@@ -73,32 +72,29 @@
                         </ul>
                     </li>
                 @endif
-
-                {{-- Clients  --}}
-                <li class="sidebar-item ">
+                <li class="sidebar-item active">
                     <a href="{{ route('form/clients/new') }}" class='sidebar-link'>
                         <i class="bi bi-building"></i>
                         <span>Clients</span>
                     </a>
                 </li>
-                {{-- end of CLients --}}
-
                 <li class="sidebar-title">Forms &amp; Tables</li>
-                <li class="sidebar-item  has-sub">
+                <li class="sidebar-item  has-sub ">
                     <a href="#" class='sidebar-link'>
                         <i class="bi bi-file-earmark-medical-fill"></i>
                         <span>Budget Form</span>
                     </a>
-                    <ul class="submenu">
+                    <ul class="submenu ">
                         <li class="submenu-item">
                             <a href="{{ route('form/customizedEngagement/new') }}">CUSTOMIZED ENGAGEMENT</a>
                         </li>
                         <li class="submenu-item">
                             <a href="{{ route('form/f2f_engagement/new') }}">F2F ENGAGEMENT</a>
                         </li>
-                        <li class="submenu-item">
+                        <li class="submenu-item ">
                             <a href="{{ route('form/mgtstratu_workshops/new') }}">MGTSTRAT-U WORKSHOPS</a>
                         </li>
+                    </ul>
                 </li>
 
                 <li class="sidebar-item  has-sub">
@@ -112,15 +108,8 @@
                         </li>
                     </ul>
                 </li>
-                
-            </ul>
-            {{-- <li class="sidebar-item">
-                    <a href="{{ route('logout') }}" class='sidebar-link'>
-                        <i class="bi bi-box-arrow-right"></i>
-                        <span>Log Out</span>
-                    </a>
-                </li> --}}
 
+            </ul>
         </div>
         <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
     </div>
