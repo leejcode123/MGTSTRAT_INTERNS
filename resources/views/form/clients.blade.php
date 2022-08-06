@@ -68,16 +68,32 @@
                                         <td class="name">
                                             {{$client->sales_pax}}
                                         </td>
-                                        <td class="name">
+                                        {{-- <td class="name">
                                             {{$client->client_class}}
-                                        </td>
+                                        </td> --}}
+                                        @if ($client->client_class == 'ACTIVE')
+                                            <td class=""><span
+                                                    class="badge bg-info">{{ $client->client_class }}</span></td>
+                                        @endif
+                                        @if ($client->client_class == 'INACTIVE')
+                                            <td class=""><span
+                                                    class="badge bg-warning">{{ $client->client_class }}</span></td>
+                                        @endif
                                         <td class="status">{{$client->industry}}</td>
-                                        <td class="status">{{$client->old_new}}</td>
+                                        {{-- <td class="status">{{$client->old_new}}</td> --}}
+                                        @if ($client->old_new == 'NEW')
+                                            <td class=""><span
+                                                    class="badge bg-primary">{{ $client->old_new }}</span></td>
+                                        @endif
+                                        @if ($client->old_new == 'OLD')
+                                            <td class=""><span
+                                                    class="badge bg-dark">{{ $client->old_new }}</span></td>
+                                        @endif
                                         <td class="status">{{$client->first_eng}}</td>
                                         <td class="status">{{$client->second_eng}}</td>
                                         <td class="text-center">
-                                            <a href="">
-                                                <span class="badge bg-success"><i class="bi bi-pencil-square"></i></span>
+                                            <a href="{{ url('form/view/detail/' . $client->id) }}" >
+                                                <span class="badge bg-success"><i class="bi bi-pencil-square" data-target="#exampleModal"></i></span>
                                             </a>
                                             <a href="{{ url('deleteClients/' . $client->id) }}"
                                                 onclick="return confirm('Are you sure to want to delete it?')"><span
