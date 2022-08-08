@@ -114,8 +114,8 @@
 
     </div>
 
-    {{-- F2F ENGAGEMENT SCRIPT --}}
-    <script type="text/javascript" src="/js/f2fform.js"></script>
+    {{-- MGT STRAT WORKSHOP SCRIPT --}}
+    <script type="text/javascript" src="/js/mgt.js"></script>
     <script type="text/javascript" src="/js/MultiStep.js"></script>
     <script type="text/javascript" src="/js/currencyFormat.js"></script>
 @endsection

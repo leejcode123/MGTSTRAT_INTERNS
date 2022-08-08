@@ -41,7 +41,7 @@
                                         <div class="col-md-8">
                                             <div class="form-group has-icon-left">
                                                 <div class="position-relative">
-                                                    <input type="date" class="form-control" placeholder="Year | Month | Sales"
+                                                    <input type="text" class="form-control" placeholder="Year | Month | Sales"
                                                         id="first-name-icon" name="yr_mnth_sales" value="">
                                                     <div class="form-control-icon">
                                                         <i class="bi bi-calendar-event-fill"></i>
