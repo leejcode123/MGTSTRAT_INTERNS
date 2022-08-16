@@ -26,11 +26,16 @@ class CustomizedEngagementController extends Controller
     {
         // $data = DB::table('customized_engagement_forms')->get();
         $data     = DB::table('customized_engagement_forms')->get();
-        $dataJoin = DB::table('customized_engagement_forms')
+        $dataJoin1 = DB::table('customized_engagement_forms')
             ->join('engagement_fees', 'customized_engagement_forms.cstmzd_eng_form_id', '=', 'engagement_fees.cstmzd_eng_form_id')
             ->select('customized_engagement_forms.*', 'engagement_fees.*')
+            // ->where('engagement_fees.customized_engagement_forms',$cstmzd_eng_form_id)
             ->get();
-        return view('view_record.ce_record.ce_view_record',compact('data', 'dataJoin'));
+        $dataJoin2 = DB::table('customized_engagement_forms')
+            ->join('engagement_costs', 'customized_engagement_forms.cstmzd_eng_form_id', '=', 'engagement_costs.cstmzd_eng_form_id')
+            ->select('customized_engagement_forms.*', 'engagement_costs.*')
+            ->get();
+        return view('view_record.ce_record.ce_view_record',compact('data', 'dataJoin1', 'dataJoin2'));
     }
 
     // view delete
@@ -39,39 +44,28 @@ class CustomizedEngagementController extends Controller
         $delete = Customized_engagement_form::find($id);
         $delete->delete();
         Alert::success('Data deleted successfully :)','Success');
-        return redirect()->route('form/view/detail');
+        return redirect()->route('form/customizedEngagement/detail');
     }
 
-    public function viewDetail($id)
+    public function updateRecord($cstmzd_eng_form_id)
     {
-        // $data = DB::table('reference')->where('id',$id)->get();
-        $cluster = DB::table('reference')->whereNotNull('cluster')->get();
-        // $webinarTitle = DB::table('webinar')->whereNotNull('title')->get();
-
-        return view('form.components.customized_engagement.information',compact(
-            'cluster',
-            // 'engagementType',
-            // 'webinarTitle'
-        ));
+        $data = DB::table('customized_engagement_forms') ->where('cstmzd_eng_form_id',$cstmzd_eng_form_id)->first();
+        $dataJoin1 = DB::table('customized_engagement_forms')
+            ->join('engagement_fees', 'customized_engagement_forms.cstmzd_eng_form_id', '=', 'engagement_fees.cstmzd_eng_form_id')
+            ->select('customized_engagement_forms.*', 'engagement_fees.*')
+            ->where('engagement_fees.cstmzd_eng_form_id',$cstmzd_eng_form_id)
+            ->get();
+        $dataJoin2 = DB::table('customized_engagement_forms')
+            ->join('engagement_costs', 'customized_engagement_forms.cstmzd_eng_form_id', '=', 'engagement_costs.cstmzd_eng_form_id')
+            ->select('customized_engagement_forms.*', 'engagement_costs.*')
+            ->where('engagement_costs.cstmzd_eng_form_id',$cstmzd_eng_form_id)
+            ->get();
+        return view('form.budgetForm_update.ce_update',compact('data','dataJoin1','dataJoin2'));
 
     }
 
     public function store(Request $request)
     {
-        // $request->validate([
-        //     'status' => 'required|string',
-        //     'customized_type' => 'required|string',
-        //     'ga_percent' => '',
-        //     'client' => '',
-        //     'engagement_title' => '',
-        //     'pax_number' => '',
-        //     'program_dates' => '',
-        //     'program_start_time' => '',
-        //     'program_end_time' => '',
-        //     'cluster' => '',
-        //     'core_area' => '',
-        // ]);
-
         $request->validate([
             'client'   => 'required|string|max:255',
         ]);
@@ -152,4 +146,71 @@ class CustomizedEngagementController extends Controller
         
         // return redirect('form/customizedEngagement/save');
     }
+
+    /** update customized engagement record */
+    // public function EstimateUpdateRecord(Request $request)
+    // {
+    //     DB::beginTransaction();
+    //     try {
+    //         $update = [
+    //             'id'                => $request->id,
+    //             'status'            => $request->status,
+    //             'customized_type'           => $request->customized_type,
+    //             'ga_percent'             => $request->ga_percent,
+    //             'client'               => $request->client,
+    //             'engagement_title'    => $request->engagement_title,
+    //             'pax_number'   => $request->pax_number,
+    //             'program_dates'     => $request->program_dates,
+    //             'program_start_time'       => $request->program_start_time,
+    //             'program_end_time'             => $request->program_end_time,
+    //             'cluster'             => $request->cluster,
+    //             'core_area'          => $request->core_area,
+    //         ];
+    //         Estimates::where('id',$request->id)->update($update);
+
+    //         /** delete record */
+    //         foreach ($request->engagement_fees as $key => $items) {
+    //             DB::table('engagement_fees')->where('id', $request->engagement_fees[$key])->delete();
+    //         }
+    //         foreach ($request->engagement_costs as $key => $items) {
+    //             DB::table('engagement_costs')->where('id', $request->engagement_costs[$key])->delete();
+    //         }
+
+    //         /** insert new record */
+    //         foreach($request->fee_type as $key => $fee_types)
+    //         {
+    //             $engagement_fee['type']                 = $fee_types;
+    //             $engagement_fee['cstmzd_eng_form_id']   = $cstmzd_eng_form_id;
+    //             $engagement_fee['consultant_num']       = $request->fee_consultant_num[$key];
+    //             $engagement_fee['hour_fee']             = $request->fee_hour_fee[$key];
+    //             $engagement_fee['hour_num']             = $request->fee_hour_num[$key];
+    //             $engagement_fee['nswh']                 = $request->fee_nswh[$key];
+    //             $engagement_fee['notes']                = $request->fee_notes[$key];
+
+    //             Engagement_fee::create($engagement_fee);
+    //         }
+
+    //         foreach($request->cost_type as $key => $cost_type)
+    //         {
+    //             $engagement_cost['type']                = $cost_types;
+    //             $engagement_cost['cstmzd_eng_form_id']  = $cstmzd_eng_form_id;
+    //             $engagement_cost['consultant_num']      = $request->cost_consultant_num[$key];
+    //             $engagement_cost['hour_fee']            = $request->cost_hour_fee[$key];
+    //             $engagement_cost['hour_num']            = $request->cost_hour_num[$key];
+    //             $engagement_cost['nswh']                = $request->cost_nswh[$key];
+    //             $engagement_cost['rooster']             = $request->cost_rooster[$key];
+
+    //             Engagement_cost::create($engagement_cost);
+    //         }
+            
+    //         DB::commit();
+    //         Toastr::success('Updated Estimates successfully :)','Success');
+    //         return redirect()->back();
+    //     } catch(\Exception $e) {
+    //         DB::rollback();
+    //         Toastr::error('Update Estimates fail :)','Error');
+    //         return redirect()->back();
+    //     } 
+    // }
 }
+

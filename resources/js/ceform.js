@@ -2,20 +2,17 @@ require("./components/clusterReference");
 require("./components/currencyFormat");
 /*************************************** CUSTOMIZED ENGAGEMENT BUDGET FORM COMPUTATION ********************************************************/
 $(document).on(
-    "change keyup click",
+    "change keyup click load",
     ".customized-type, .ga-only-dropdown, .remove, #ec_tableEngagementFees, #ec_tableEngagementCost, #LessCTO_NOC",
     function () {
         //customized type
         $(".customized-type").each(function () {
             var gaPercentage = $(".customized-type");
-            if (
-                gaPercentage.val() == "G.A Hybrid" ||
-                gaPercentage.val() == "G.A Virtual"
-            ) {
+            if (gaPercentage.val() == "G.A Hybrid" || gaPercentage.val() == "G.A Virtual") {
                 document.getElementById("dropdown-ga").style.visibility = "";
             } else {
-                document.getElementById("dropdown-ga").style.visibility =
-                    "hidden";
+                document.getElementById("dropdown-ga").style.visibility = "hidden"
+                $("#ga-only-dropdown").val('0')
             }
         });
 
@@ -100,7 +97,7 @@ $(document).on(
                     ($(this).find(`#ef_LeadconsultantNoc${rowIdx}`).val() *
                         +$(this).find("#ef_LeadconsultantHf").val().replace(/\₱|,/g, "") *
                         $(this).find(`#ef_LeadconsultantNoh${rowIdx}`).val() *
-                        $("#nswh").val());
+                        $("#nswh").val())
 
             // if the customized type is G.A Hybrid or G.A Virtual is
             // selected the percent of customized type will execute
@@ -879,14 +876,22 @@ $(document).on(
 
         //Sales
         sumSalesPercent = 0;
+        sumInputSale = 0;
         $("#tableSales > tr").each(function () {
+            // sumSales =
+            // ($("#ef_Totalpackage").val().replace(/\₱|,/g, "") / 100) *
+            //     $(this).find("#sales").val().replace(/\%/g, "");
 
-            if (document.getElementById("inputSales").disabled === true) {
+            // sumInputSale =
+            // ($("#ef_Totalpackage").val().replace(/\₱|,/g, "") / 100) *
+            // $(this).find("#inputSales").val().replace(/\%/g, "");
+
+            if (document.getElementById("sales").disabled === false) {
                 sumSales =
                 ($("#ef_Totalpackage").val().replace(/\₱|,/g, "") / 100) *
                     $(this).find("#sales").val().replace(/%/g, "")
             } else {
-                sumSales =
+                sumInputSale =
                 ($("#ef_Totalpackage").val().replace(/\₱|,/g, "") / 100) *
                 $(this).find("#inputSales").val().replace(/%/g, "")
             };
@@ -894,7 +899,7 @@ $(document).on(
             //Producer engagement fees sum
             $(this)
                 .find("#salesTotal")
-                .html(currency.format(Math.ceil(sumSales + sumSalesPercent)));
+                .html(currency.format(Math.ceil(sumSales + sumInputSale)));
 
             sumEngagementCost += +sumSales;
         });
@@ -902,7 +907,7 @@ $(document).on(
         //Referral
         $("#tableReferral > tr").each(function () {
 
-            if (document.getElementById("inputReferral").disabled === true) {
+            if (document.getElementById("referral").disabled === false) {
                 sumReferral =
                 ($("#ef_Totalpackage").val().replace(/\₱|,/g, "") / 100) *
                     $(this).find("#referral").val().replace(/\%/g, "")
@@ -921,7 +926,7 @@ $(document).on(
         //Engagement Manager
         $("#tableEngagementmanager > tr").each(function () {
 
-            if (document.getElementById("inputManager").disabled === true) {
+            if (document.getElementById("engagementManager").disabled === false) {
                 sumEngagementManager =
                 ($("#ef_Totalpackage").val().replace(/\₱|,/g, "") / 100) *
                     $(this).find("#engagementManager").val().replace(/\%/g, "")
@@ -1094,152 +1099,111 @@ $('input[type="number"]').on("input", function () {
 $('input[type="number"]').attr("min", "0");
 
 //*************************************** CURRENCY FORMATTER ********************************************************//
-let currency = Intl.NumberFormat("en-US");
-//default value in ANALYST
-document.getElementById("ef_AnalystHf").defaultValue =
-    "₱" + currency.format(Math.ceil(5000));
-//default value CO-FACILITATOR
-document.getElementById("ef_CofaciHf").defaultValue =
-    "₱" + currency.format(Math.ceil(5000));
-//default value in MODERATOR
-document.getElementById("ef_ModeratorHf").defaultValue =
-    "₱" + currency.format(Math.ceil(3500));
-//default value in PRODUCER
-document.getElementById("ef_ProducerHf").defaultValue =
-    "₱" + currency.format(Math.ceil(2500));
-//default value in DOCUMENTOR
-document.getElementById("ef_DocumentorHf").defaultValue =
-    "₱" + currency.format(Math.ceil(2500));
-
-document.getElementById("ec_AnalystHf1").defaultValue = "₱" + currency.format(
-    Math.ceil(1700)
-);
-document.getElementById("ec_LeadfacilitatorHf").defaultValue = "₱" + currency.format(
-    Math.ceil(3000)
-);
-document.getElementById("ec_LeadconsultantHf").defaultValue = "₱" + currency.format(
-    Math.ceil(0.85 * $("#ec_LeadfacilitatorHf").val().replace(/\₱|,/g, ""))
-);
-document.getElementById("ec_DesignerHf").defaultValue = "₱" + currency.format(
-    Math.ceil(2250)
-);
-document.getElementById("ec_CofacilitatorHf").defaultValue = "₱" + currency.format(
-    Math.ceil(1800)
-);
-document.getElementById("ec_ProducerHf").defaultValue = "₱" + currency.format(
-    Math.ceil(550)
-);
-document.getElementById("ec_DocumentorHf").defaultValue = "₱" + currency.format(
-    Math.ceil(700)
-);
-document.getElementById("ec_ProgramHf").defaultValue = "₱" + currency.format(
-    Math.ceil(1000)
-);
-document.getElementById("ec_Programexpense").defaultValue = 2 + "%";
-
-//percentage string of program expense
-$("#ec_Programexpense").on("blur", function () {
-    $(this).val(function (i, v) {
-        return v.replace("%", "") + "%";
+$( document ).ready(function() {
+    //percentage string of program expense
+    $("#ec_Programexpense").on("blur", function () {
+        $(this).val(function (i, v) {
+            return v.replace("%", "") + "%";
+        });
     });
-});
 
-//CURRENCY FORMATTER
+    //CURRENCY FORMATTER
 
-//ENGAGEMENT COST
-$("#ec_LeadconsultantHf").on({
-    keyup: function () {
-        let input_val = $(this).val();
-        input_val = numberToCurrency(input_val);
-        $(this).val(input_val);
-    },
-    blur: function () {
-        let input_val = $(this).val();
-        input_val = numberToCurrency(input_val, true, true);
-        $(this).val(input_val);
-    }
-});
-$("#ec_AnalystHf1").on({
-    keyup: function () {
-        let input_val = $(this).val();
-        input_val = numberToCurrency(input_val);
-        $(this).val(input_val);
-    },
-    blur: function () {
-        let input_val = $(this).val();
-        input_val = numberToCurrency(input_val, true, true);
-        $(this).val(input_val);
-    }
-});
-$("#ec_DesignerHf").on({
-    keyup: function () {
-        let input_val = $(this).val();
-        input_val = numberToCurrency(input_val);
-        $(this).val(input_val);
-    },
-    blur: function () {
-        let input_val = $(this).val();
-        input_val = numberToCurrency(input_val, true, true);
-        $(this).val(input_val);
-    }
-});
-$("#ec_LeadfacilitatorHf").on({
-    keyup: function () {
-        let input_val = $(this).val();
-        input_val = numberToCurrency(input_val);
-        $(this).val(input_val);
-    },
-    blur: function () {
-        let input_val = $(this).val();
-        input_val = numberToCurrency(input_val, true, true);
-        $(this).val(input_val);
-    }
-});
-$("#ec_CofacilitatorHf").on({
-    keyup: function () {
-        let input_val = $(this).val();
-        input_val = numberToCurrency(input_val);
-        $(this).val(input_val);
-    },
-    blur: function () {
-        let input_val = $(this).val();
-        input_val = numberToCurrency(input_val, true, true);
-        $(this).val(input_val);
-    }
-});
-$("#ec_ProducerHf").on({
-    keyup: function () {
-        let input_val = $(this).val();
-        input_val = numberToCurrency(input_val);
-        $(this).val(input_val);
-    },
-    blur: function () {
-        let input_val = $(this).val();
-        input_val = numberToCurrency(input_val, true, true);
-        $(this).val(input_val);
-    }
-});
-$("#ec_DocumentorHf").on({
-    keyup: function () {
-        let input_val = $(this).val();
-        input_val = numberToCurrency(input_val);
-        $(this).val(input_val);
-    },
-    blur: function () {
-        let input_val = $(this).val();
-        input_val = numberToCurrency(input_val, true, true);
-        $(this).val(input_val);
-    }
-});
-$("#ec_ProgramHf").on({
-    keyup: function () {
-        let input_val = $(this).val();
-        input_val = numberToCurrency(input_val);
-        $(this).val(input_val);
-    },
-    blur: function () {
-        let input_val = $(this).val();
-        input_val = numberToCurrency(input_val, true, true);
-        $(this).val(input_val);
-    }
+    //ENGAGEMENT COST
+    $("#ec_LeadconsultantHf").on({
+        keyup: function () {
+            let input_val = $(this).val();
+            input_val = numberToCurrency(input_val);
+            $(this).val(input_val);
+        },
+        blur: function () {
+            let input_val = $(this).val();
+            input_val = numberToCurrency(input_val, true, true);
+            $(this).val(input_val);
+        }
+    });
+    $("#ec_AnalystHf1").on({
+        keyup: function () {
+            let input_val = $(this).val();
+            input_val = numberToCurrency(input_val);
+            $(this).val(input_val);
+        },
+        blur: function () {
+            let input_val = $(this).val();
+            input_val = numberToCurrency(input_val, true, true);
+            $(this).val(input_val);
+        }
+    });
+    $("#ec_DesignerHf").on({
+        keyup: function () {
+            let input_val = $(this).val();
+            input_val = numberToCurrency(input_val);
+            $(this).val(input_val);
+        },
+        blur: function () {
+            let input_val = $(this).val();
+            input_val = numberToCurrency(input_val, true, true);
+            $(this).val(input_val);
+        }
+    });
+    $("#ec_LeadfacilitatorHf").on({
+        keyup: function () {
+            let input_val = $(this).val();
+            input_val = numberToCurrency(input_val);
+            $(this).val(input_val);
+        },
+        blur: function () {
+            let input_val = $(this).val();
+            input_val = numberToCurrency(input_val, true, true);
+            $(this).val(input_val);
+        }
+    });
+    $("#ec_CofacilitatorHf").on({
+        keyup: function () {
+            let input_val = $(this).val();
+            input_val = numberToCurrency(input_val);
+            $(this).val(input_val);
+        },
+        blur: function () {
+            let input_val = $(this).val();
+            input_val = numberToCurrency(input_val, true, true);
+            $(this).val(input_val);
+        }
+    });
+    $("#ec_ProducerHf").on({
+        keyup: function () {
+            let input_val = $(this).val();
+            input_val = numberToCurrency(input_val);
+            $(this).val(input_val);
+        },
+        blur: function () {
+            let input_val = $(this).val();
+            input_val = numberToCurrency(input_val, true, true);
+            $(this).val(input_val);
+        }
+    });
+    $("#ec_DocumentorHf").on({
+        keyup: function () {
+            let input_val = $(this).val();
+            input_val = numberToCurrency(input_val);
+            $(this).val(input_val);
+        },
+        blur: function () {
+            let input_val = $(this).val();
+            input_val = numberToCurrency(input_val, true, true);
+            $(this).val(input_val);
+        }
+    });
+    $("#ec_ProgramHf").on({
+        keyup: function () {
+            let input_val = $(this).val();
+            input_val = numberToCurrency(input_val);
+            $(this).val(input_val);
+        },
+        blur: function () {
+            let input_val = $(this).val();
+            input_val = numberToCurrency(input_val, true, true);
+            $(this).val(input_val);
+        }
+    });
 });

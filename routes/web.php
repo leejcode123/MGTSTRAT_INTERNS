@@ -84,8 +84,10 @@ Route::post('change/password/db', [App\Http\Controllers\UserManagementController
 // ----------------------------- Customized engagement form ------------------------------//
 Route::controller(CustomizedEngagementController::class)->group(function () {
 Route::get('form/customizedEngagement/new', [App\Http\Controllers\CustomizedEngagementController::class, 'index'])->middleware('auth')->name('form/customizedEngagement/new');
+Route::get('form/customizedEngagement/update', [App\Http\Controllers\CustomizedEngagementController::class, 'updateRecord'])->middleware('auth')->name('form/customizedEngagement/update');
 Route::post('form/customizedEngagement/save', [App\Http\Controllers\CustomizedEngagementController::class, 'store'])->name('form/customizedEngagement/save');
-Route::get('form/view/detail', [App\Http\Controllers\CustomizedEngagementController::class, 'viewRecord'])->middleware('auth')->name('form/view/detail');
+Route::get('form/customizedEngagement/detail', [App\Http\Controllers\CustomizedEngagementController::class, 'viewRecord'])->middleware('auth')->name('form/customizedEngagement/detail');
+Route::get('form/customizedEngagement/detail/{cstmzd_eng_form_id}', [App\Http\Controllers\CustomizedEngagementController::class, 'updateRecord'])->middleware('auth');
 Route::get('delete/{id}', [App\Http\Controllers\CustomizedEngagementController::class, 'viewDelete'])->middleware('auth');
 });
 // ----------------------------- F2F engagement form ------------------------------//

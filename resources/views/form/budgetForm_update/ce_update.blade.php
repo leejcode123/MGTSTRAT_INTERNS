@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="{{ URL::asset('css/custom.css') }}">
 @extends('layouts.master')
 @section('menu')
-    @extends('sidebar.customizedEng')
+    @extends('sidebar.viewrecord')
 @endsection
 @section('content')
     <div id="main">
@@ -16,8 +16,15 @@
                 <div class="col-12 col-md-6 order-md-2 order-first">
                     <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="{{ route('home') }}">Dashboard</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Customized Engagement</li>
+                            <li class="breadcrumb-item">
+                                <a href="{{ route('home') }}">Dashboard</a>
+                            </li>
+                            <li class="breadcrumb-item active">
+                                <a href="{{ route('form/customizedEngagement/detail') }}">View</a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">
+                                <a href="">Customized Engagement</a>
+                            </li>
                         </ol>
                     </nav>
                 </div>
@@ -60,7 +67,7 @@
 
                                     <!------------ INFORMATION ------------>
                                         <div class="multisteps-form__panel js-active" data-animation="slideHorz">
-                                            @include('form.components.customized_engagement.information')
+                                            @include('form.budgetForm_update.budgetForm_components_update.ce_update_information')
                                             {{-- next button --}}
                                             <div class="col-12 d-flex justify-content-center mt-3">
                                                 <button class="btn btn-primary ml-auto js-btn-next" type="button" title="Next">Next</button>
@@ -69,7 +76,7 @@
 
                                     <!------------ ENGAGEMENT FEES ------------>
                                         <div class="multisteps-form__panel" data-animation="slideHorz">
-                                            @include('form.components.customized_engagement.engagement_fees')
+                                            @include('form.budgetForm_update.budgetForm_components_update.ce_update_engagementFees')
                                             {{-- next and prev button --}}
                                             <div class="button-row d-flex justify-content-center mt-3">
                                                 <button class="btn btn-secondary mx-2 js-btn-prev" type="button" title="Prev">Prev</button>
@@ -79,7 +86,7 @@
 
                                     <!------------ ENGAGEMENT COST ------------>
                                         <div class="multisteps-form__panel" data-animation="slideHorz">
-                                            @include('form.components.customized_engagement.engagement_cost')
+                                            @include('form.budgetForm_update.budgetForm_components_update.ce_update_engagementCost')
                                             {{-- next and prev button --}}
                                             <div class="col-12 d-flex justify-content-center mt-3">
                                                 <button class="btn btn-secondary mx-2 js-btn-prev" type="button" title="Prev">Prev</button>
@@ -121,7 +128,6 @@
     
     {{-- CUSTOMIZED ENGAGEMENT SCRIPT --}}
     <script type="text/javascript" src="/js/ceform.js"></script>
-    <script type="text/javascript" src="/js/ceFormAdd.js"></script>
     <script type="text/javascript" src="/js/MultiStep.js"></script>
     <script type="text/javascript" src="/js/currencyFormat.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>

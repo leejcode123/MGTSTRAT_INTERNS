@@ -1,6 +1,7 @@
 {
     "/js/app.js": "/js/app.js",
     "/js/ceform.js": "/js/ceform.js",
+    "/js/ceFormAdd.js": "/js/ceFormAdd.js",
     "/js/f2fform.js": "/js/f2fform.js",
     "/js/MultiStep.js": "/js/MultiStep.js",
     "/js/currencyFormat.js": "/js/currencyFormat.js",

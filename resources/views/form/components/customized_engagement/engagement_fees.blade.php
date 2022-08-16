@@ -397,7 +397,7 @@
                     <tbody id="tableModerator">
                         <tr class="table-warning">
                             <td class="title table-light">
-                                <input type="text" class="d-none" value="Designer" name="fee_type[]" readonly>
+                                <input type="text" class="d-none" value="Moderator" name="fee_type[]" readonly>
                                 Moderator
                             </td>
                             <td>

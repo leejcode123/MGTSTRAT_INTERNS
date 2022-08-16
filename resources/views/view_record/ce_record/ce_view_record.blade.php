@@ -85,7 +85,7 @@
                                             <a href="">
                                                 <span class="badge bg-info"><i class="bi bi-person-plus-fill"></i></span>
                                             </a>
-                                            <a href="">
+                                            <a href="{{ url('form/customizedEngagement/detail/' . $item->cstmzd_eng_form_id) }}">
                                                 <span class="badge bg-success"><i class="bi bi-pencil-square"></i></span>
                                             </a>
                                             <a href="{{ url('delete/' . $item->id) }}"

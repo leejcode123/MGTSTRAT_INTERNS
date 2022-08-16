@@ -98,7 +98,7 @@
                     </a>
                     <ul class="submenu active">
                         <li class="submenu-item active">
-                            <a href="{{ route('form/view/detail') }}">Customized Engagement</a>
+                            <a href="{{ route('form/customizedEngagement/detail') }}">Customized Engagement</a>
                         </li>
                     </ul>
                 </li>
