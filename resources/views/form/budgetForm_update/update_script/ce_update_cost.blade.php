@@ -2,7 +2,7 @@
     /********* START *********/
     /*****************************************************************COMMISION*****************************************************************************/
         /********* SALES *********/
-        var salesNum = 1;
+        var salesNum = {{$ecSales}};
         $(document).ready(function() {
             $("#addBtn9").on("click", function() {
                 // Adding a row inside the tbody.
@@ -21,7 +21,7 @@
                             </td>
                             <td><input type="text" class="d-none" value="" name="cost_hour_num[]" readonly></td>
                             <td><input type="text" class="d-none" value="" name="cost_nswh[]" readonly></td>
-                            <td class="total-td tbl-engmt-cost table-light">
+                            <td class="total-td tbl-engmt-cost table-light" style="background-color: rgba(146, 146, 146, 0.727">
                                 <h4 class="text-center" id="salesTotal">-</h4>
                             </td>
                             <td class="total-td table-light">
@@ -48,14 +48,16 @@
                     document.getElementById("inputSales").disabled = false; //remove the disabled attribute in input field
                     // document.getElementById("inputSales").value = "";   //to remove the last inputed value
                 }
-                //  else {
-                //     document.getElementById("dropdownSales").style.display = ""; //the dropdown will display none
-                //     document.getElementById("sales").value = "0%"; //the dropdown will be disabled
-                //     document.getElementById("sales").disabled = false; //the dropdown will be disabled
-                //     document.getElementById("inputSales").style.display = "none"; //the input field will remove the style of "display = none;"
-                //     document.getElementById("inputSales").disabled = true; //remove the disabled attribute in input field
-                // }
             });
+
+            //browser load check if the sales is greater than 1
+            if (salesNum > 1) {
+                $(".dropdown-sales").css("display","none");
+                $("#sales").val("0%")
+                $("#sales").prop( "disabled", true );
+                $(".input-sales").css("display","block");
+                $(".input-sales").prop( "disabled", false );
+            }
     
             // Remove row   
             $("#tableSales").on("click", ".remove", function() {
@@ -80,7 +82,7 @@
         });
     
         /********* REFERRAL *********/
-        var refferalNum = 1;
+        var refferalNum = {{$ecReferral}};
         $(document).ready(function() {
             $("#addBtn10").on("click", function() {
                 // Adding a row inside the tbody.
@@ -98,7 +100,7 @@
                             </td>
                             <td><input type="text" class="d-none" value="" name="cost_hour_num[]" readonly></td>
                             <td><input type="text" class="d-none" value="" name="cost_nswh[]" readonly></td>
-                            <td class="total-td tbl-engmt-cost table-light">
+                            <td class="total-td tbl-engmt-cost table-light" style="background-color: rgba(146, 146, 146, 0.727">
                                 <h4 class="text-center" id="referralTotal">-</h4>
                             </td>
                             <td class="total-td table-light">
@@ -128,6 +130,14 @@
                     // document.getElementById("inputSales").value = "";   //to remove the last inputed value
                 }
             });
+
+            //browser load check if the referral is greater than 1
+            if (refferalNum > 1) {
+                $("#referral").prop( "disabled", true );
+                $(".dropdown-referral").css("display","none");
+                $(".input-referral").css("display","block");
+                $(".input-referral").prop( "disabled", false );
+            }
     
             // Remove row   
             $("#tableReferral").on("click", ".remove", function() {
@@ -153,7 +163,7 @@
     
     /*****************************************************************ENGAGEMENT MANAGER*****************************************************************************/
         /********* ENGAGEMENT MANAGER *********/
-        var managerNum = 1;
+        var managerNum = {{$ecEngagementManager}};
         $(document).ready(function() {
             $("#addBtn11").on("click", function() {
                 // Adding a row inside the tbody.
@@ -171,7 +181,7 @@
                         </td>
                         <td><input type="text" class="d-none" value="" name="cost_hour_num[]" readonly></td>
                         <td><input type="text" class="d-none" value="" name="cost_nswh[]" readonly></td>
-                        <td class="total-td tbl-engmt-cost table-light">
+                        <td class="total-td tbl-engmt-cost table-light" style="background-color: rgba(146, 146, 146, 0.727">
                             <h4 class="text-center" id="engagementManagerTotal">-</h4>
                         </td>
                         <td class="total-td table-light">
@@ -201,6 +211,14 @@
                     // document.getElementById("inputSales").value = "";   //to remove the last inputed value
                 }
             });
+
+                //browser load check if the engagement manager is greater than 1
+            if (managerNum > 1) {
+                $("#engagementManager").prop( "disabled", true );
+                $(".dropdown-manager").css("display","none");
+                $(".input-manager").css("display","block");
+                $(".input-manager").prop( "disabled", false );
+            }
     
             // Remove row   
             $("#tableEngagementmanager").on("click", ".remove", function() {

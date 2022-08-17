@@ -6,6 +6,9 @@
 
 <!------------ FORM BODY ------------>
 @php
+    $ecSales = 0;
+    $ecReferral = 0;
+    $ecEngagementManager = 0;
     $ecLeadConsultant = 0;
     $ecAnalyst = 0;
     $ecDesigner = 0;
@@ -51,22 +54,17 @@
                 <tbody id="tableSales">
                     @foreach ($dataJoin2 as $key=>$cost_types )
                         @if ($cost_types->type === 'Sales')
-                            <tr class="table-warning" id="salesRow">
+                            <tr class="table-warning" id="salesRow{{++$ecSales}}">
                                 <td class="title table-light">
                                     <input type="text" class="d-none" value="{{$cost_types->type}}" name="cost_type[]" readonly>
                                     Sales (4% / 5% / 6% / 7%)
                                 </td>
                                 <td><input type="text" class="d-none" value="{{$cost_types->consultant_num}}" name="cost_consultant_num[]" readonly></td>
                                 <td>
-                                    <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                                        value="{{$cost_types->hour_fee}}" name="cost_hour_fee[]" id="inputSales" style="display: none;"
-                                        onblur="this.value = this.value.replace('%', '') + '%';"
-                                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
-                                        maxlength="2" disabled>
 
-                                    <fieldset id="dropdownSales">
+                                    <fieldset class="dropdown-sales" id="dropdownSales">
                                         <select class="input js-mytooltip form-select @error('') is-invalid @enderror"
-                                            name="cost_hour_fee[]" id="sales"
+                                            name="cost_hour_fee[]" id="sales" style="background-color:#ffcccc; color:red;"
                                             data-mytooltip-content="<i>
                                                     <b>Sales</b><br>
                                                     For large engagements, with EMs: <br>
@@ -81,7 +79,7 @@
                                                     4% - discounted<br>
                                                     5% - packaged rate</i>"
                                             data-mytooltip-theme="dark" data-mytooltip-action="focus"
-                                            data-mytooltip-direction="right" style="background-color:#ffcccc; color:red;">
+                                            data-mytooltip-direction="right">
                                             <option value="0%" {{ $cost_types->hour_fee == '0%' ? 'selected="selected"' : '' }}
                                                 title="with minimal design customization, or platform customization outside of Zoom/Google Meets/MS Teams. Up to 2 hours of work">
                                                 0%
@@ -109,6 +107,13 @@
                                             </span>
                                         @enderror
                                     </fieldset>
+
+                                    <input type="text" class="form-control input-sales input-table @error('') is-invalid @enderror"
+                                        value="{{$cost_types->hour_fee}}" name="cost_hour_fee[]" id="inputSales"
+                                        onblur="this.value = this.value.replace('%', '') + '%';"
+                                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+                                        maxlength="2" style="display: none;" disabled>
+
                                 </td>
                                 <td><input type="text" class="d-none" value="{{$cost_types->hour_num}}" name="cost_hour_num[]" readonly></td>
                                 <td><input type="text" class="d-none" value="{{$cost_types->nswh}}" name="cost_nswh[]" readonly></td>
@@ -119,8 +124,11 @@
                                     <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                         value="{{$cost_types->rooster}}" name="cost_rooster[]" id="">
                                 </td>
-                                <td style="background-color: #FFFFFF;" class="border border-white"><a href="javascript:void(0)" class="text-success font-18" title="Add" id="addBtn9" onclick="$('#salesTotal').html(0)"><i
-                                            class="fa fa-plus"></i></a></td>
+                                @if ($ecSales === 1)
+                                    <td style="background-color: #FFFFFF;" class="border border-white"><a href="javascript:void(0)" class="text-success font-18" title="Add" id="addBtn9" onclick="$('#salesTotal').html(0)"><i class="fa fa-plus"></i></a></td>
+                                @else 
+                                    <td><a href="javascript:void(0)" class="text-danger font-18 remove" title="Remove"><i class="fa fa-trash-o"></i></a></td>
+                                @endif
                             </tr>
                         @endif
                     @endforeach
@@ -129,7 +137,7 @@
                 <tbody id="tableReferral">
                     @foreach ($dataJoin2 as $key=>$cost_types )
                         @if ($cost_types->type === 'Referral')
-                            <tr class="table-warning" id="referralRow">
+                            <tr class="table-warning" id="referralRow{{++$ecReferral}}">
                                 <td class="title table-light">
                                     Referral (2% / 3%)
                                     <input type="text" class="d-none" value="{{$cost_types->type}}" name="cost_type[]" readonly>
@@ -138,13 +146,13 @@
                                     <input type="text" class="d-none" value="{{$cost_types->consultant_num}}" name="cost_consultant_num[]" readonly>
                                 </td>
                                 <td>
-                                    <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                                    <input type="text" class="form-control input-referral input-table @error('') is-invalid @enderror"
                                         value="{{$cost_types->hour_fee}}" name="cost_hour_fee[]" id="inputReferral" style="display: none;"
                                         onblur="this.value = this.value.replace('%', '') + '%';"
                                         oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
                                         maxlength="2" disabled>
 
-                                    <fieldset id="dropdownReferral">
+                                    <fieldset class="dropdown-referral" id="dropdownReferral">
                                         <select class="input js-mytooltip form-select @error('') is-invalid @enderror"
                                             name="cost_hour_fee[]" id="referral"
                                             data-mytooltip-content="<i>
@@ -185,8 +193,12 @@
                                     <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                         value="{{$cost_types->rooster}}" name="cost_rooster[]" id="">
                                 </td>
-                                <td class="border border-white add-row"><a href="javascript:void(0)" class="text-success font-18" title="Add"
+                                @if ($ecReferral === 1)
+                                    <td class="border border-white add-row"><a href="javascript:void(0)" class="text-success font-18" title="Add"
                                         id="addBtn10"><i class="fa fa-plus"></i></a></td>
+                                @else 
+                                    <td><a href="javascript:void(0)" class="text-danger font-18 remove" title="Remove"><i class="fa fa-trash-o"></i></a></td>
+                                @endif
                             </tr>
                         @endif
                     @endforeach
@@ -195,20 +207,20 @@
                 <tbody id="tableEngagementmanager">
                     @foreach ($dataJoin2 as $key=>$cost_types )
                         @if ($cost_types->type === 'Engagement Manager')
-                            <tr class="table-warning" id="engagementmanagerRow">
+                            <tr class="table-warning" id="engagementmanagerRow{{++$ecEngagementManager}}">
                                 <td class="title fw-bold text-dark table-light">
                                     ENGAGEMENT MANAGER
                                     <input type="text" class="d-none" value="{{$cost_types->type}}" name="cost_type[]" readonly>
                                 </td>
                                 <td><input type="text" class="d-none" value="{{$cost_types->consultant_num}}" name="cost_consultant_num[]" readonly></td>
                                 <td>
-                                    <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                                    <input type="text" class="form-control input-manager input-table @error('') is-invalid @enderror"
                                         value="{{$cost_types->hour_fee}}" name="cost_hour_fee[]" id="inputManager" style="display: none;"
                                         onblur="this.value = this.value.replace('%', '') + '%';"
                                         oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
                                         maxlength="2" disabled>
 
-                                    <fieldset id="dropdownManager">
+                                    <fieldset class="dropdown-manager" id="dropdownManager">
                                         <select class="input js-mytooltip form-select @error('') is-invalid @enderror"
                                             name="cost_hour_fee[]" id="engagementManager"
                                             style="background-color:#ffcccc; color:red;"
@@ -244,8 +256,12 @@
                                     <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                         value="{{$cost_types->rooster}}" name="cost_rooster[]" id="">
                                 </td>
-                                <td class="border border-white add-row"><a href="javascript:void(0)" class="text-success font-18" title="Add"
-                                        id="addBtn11"><i class="fa fa-plus"></i></a></td>
+                                @if ($ecEngagementManager === 1)
+                                    <td class="border border-white add-row"><a href="javascript:void(0)" class="text-success font-18" title="Add"
+                                            id="addBtn11"><i class="fa fa-plus"></i></a></td>
+                                @else
+                                    <td><a href="javascript:void(0)" class="text-danger font-18 remove" title="Remove"><i class="fa fa-trash-o"></i></a></td>
+                                @endif
                             </tr>
                         @endif
                     @endforeach

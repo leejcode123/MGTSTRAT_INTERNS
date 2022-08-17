@@ -878,13 +878,6 @@ $(document).on(
         sumSalesPercent = 0;
         sumInputSale = 0;
         $("#tableSales > tr").each(function () {
-            // sumSales =
-            // ($("#ef_Totalpackage").val().replace(/\₱|,/g, "") / 100) *
-            //     $(this).find("#sales").val().replace(/\%/g, "");
-
-            // sumInputSale =
-            // ($("#ef_Totalpackage").val().replace(/\₱|,/g, "") / 100) *
-            // $(this).find("#inputSales").val().replace(/\%/g, "");
 
             if (document.getElementById("sales").disabled === false) {
                 sumSales =
