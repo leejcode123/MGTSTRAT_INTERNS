@@ -72,6 +72,7 @@
                     @if ($fee_types->type === 'Lead Consultant')
                     <tr class="table-warning">
                         <td class="title table-light">
+                            <input type="hidden" name="ce_id[]" value="{{$fee_types->id }}">
                             <input type="text" class="d-none" value="{{ $fee_types->type }}" name="fee_type[]" readonly {{$efLeadConsultant++}}>
                                 {{$fee_types->type}}
                         </td>
@@ -149,6 +150,7 @@
                     @if ($fee_types->type === 'Analyst')
                     <tr class="table-warning">
                         <td class="title table-light">
+                            <input type="hidden" name="ce_id[]" value="{{$fee_types->id }}">
                             <input type="text" class="d-none" value="{{ $fee_types->type }}" name="fee_type[]" readonly {{$efAnalyst++}}>
                             {{ $fee_types->type }}
                         </td>
@@ -236,6 +238,7 @@
                     @if ($fee_types->type === 'Designer')
                     <tr class="table-warning">
                         <td class="title table-light">
+                            <input type="hidden" name="ce_id[]" value="{{$fee_types->id }}">
                             <input type="text" class="d-none" value="{{ $fee_types->type }}" name="fee_type[]" readonly {{$efDesigner++}}>
                             {{ $fee_types->type }}
                         </td>
@@ -325,6 +328,7 @@
                     @if ($fee_types->type === 'Lead Facilitator')
                     <tr class="table-warning">
                         <td class="title table-light">
+                            <input type="hidden" name="ce_id[]" value="{{$fee_types->id }}">
                             <input type="text" class="d-none" value="{{ $fee_types->type }}" name="fee_type[]" readonly {{$efLeadfaci++}}>
                             {{ $fee_types->type }}</td>
                         <td>
@@ -417,6 +421,7 @@
                     @if ($fee_types->type === 'Co-facilitator / Resource Speaker')
                     <tr class="table-warning">
                         <td class="title table-light">
+                            <input type="hidden" name="ce_id[]" value="{{$fee_types->id }}">
                             <input type="text" class="d-none" value="{{ $fee_types->type }}" name="fee_type[]" readonly {{$efCofaci++}}>
                             {{ $fee_types->type }}
                         </td>
@@ -468,6 +473,7 @@
                     @if ($fee_types->type === 'Moderator')
                     <tr class="table-warning">
                         <td class="title table-light">
+                            <input type="hidden" name="ce_id[]" value="{{$fee_types->id }}">
                             <input type="text" class="d-none" value="{{ $fee_types->type }}" name="fee_type[]" readonly {{$efModerator++}}>
                             {{ $fee_types->type }}
                         </td>
@@ -520,6 +526,7 @@
                     @if ($fee_types->type === 'Producer')
                     <tr class="table-warning">
                         <td class="title table-light">
+                            <input type="hidden" name="ce_id[]" value="{{$fee_types->id }}">
                             <input type="text" class="d-none" value="{{ $fee_types->type }}" name="fee_type[]" readonly {{$efProducer++}}>
                             {{ $fee_types->type }}
                         </td>
@@ -600,6 +607,7 @@
                     @if ($fee_types->type === 'Documentor')
                     <tr class="table-warning">
                         <td class="table-light title">
+                            <input type="hidden" name="ce_id[]" value="{{$fee_types->id }}">
                             <input type="text" class="d-none" value="{{ $fee_types->type }}" name="fee_type[]" readonly {{$efDocumentor++}}>
                             {{ $fee_types->type }}
                         </td>

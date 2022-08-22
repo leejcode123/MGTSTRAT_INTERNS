@@ -55,13 +55,15 @@
                     @foreach ($dataJoin2 as $key=>$cost_types )
                         @if ($cost_types->type === 'Sales')
                             <tr class="table-warning" id="salesRow{{++$ecSales}}">
+                                {{-- <td hidden class="ids">{{ $cost_types->id }}</td> --}}
                                 <td class="title table-light">
+                                    <input type="hidden" class="ce-id" name="ce_id[]" value="{{$cost_types->id }}">
                                     <input type="text" class="d-none" value="{{$cost_types->type}}" name="cost_type[]" readonly>
                                     Sales (4% / 5% / 6% / 7%)
                                 </td>
                                 <td><input type="text" class="d-none" value="{{$cost_types->consultant_num}}" name="cost_consultant_num[]" readonly></td>
                                 <td>
-
+                                    {{-- @if ($ecSales === 1) --}}
                                     <fieldset class="dropdown-sales" id="dropdownSales">
                                         <select class="input js-mytooltip form-select @error('') is-invalid @enderror"
                                             name="cost_hour_fee[]" id="sales" style="background-color:#ffcccc; color:red;"
@@ -79,7 +81,7 @@
                                                     4% - discounted<br>
                                                     5% - packaged rate</i>"
                                             data-mytooltip-theme="dark" data-mytooltip-action="focus"
-                                            data-mytooltip-direction="right">
+                                            data-mytooltip-direction="right" disabled>
                                             <option value="0%" {{ $cost_types->hour_fee == '0%' ? 'selected="selected"' : '' }}
                                                 title="with minimal design customization, or platform customization outside of Zoom/Google Meets/MS Teams. Up to 2 hours of work">
                                                 0%
@@ -107,12 +109,11 @@
                                             </span>
                                         @enderror
                                     </fieldset>
-
                                     <input type="text" class="form-control input-sales input-table @error('') is-invalid @enderror"
                                         value="{{$cost_types->hour_fee}}" name="cost_hour_fee[]" id="inputSales"
                                         onblur="this.value = this.value.replace('%', '') + '%';"
                                         oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
-                                        maxlength="2" style="display: none;" disabled>
+                                        maxlength="2" disabled>
 
                                 </td>
                                 <td><input type="text" class="d-none" value="{{$cost_types->hour_num}}" name="cost_hour_num[]" readonly></td>
@@ -128,7 +129,13 @@
                                     <td style="background-color: #FFFFFF;" class="border border-white"><a href="javascript:void(0)" class="text-success font-18" title="Add" id="addBtn9" onclick="$('#salesTotal').html(0)"><i class="fa fa-plus"></i></a></td>
                                 @else 
                                     <td><a href="javascript:void(0)" class="text-danger font-18 remove" title="Remove"><i class="fa fa-trash-o"></i></a></td>
+                                    {{-- <td>
+                                        <a class="text-danger font-18 ce_delete" href="#" data-toggle="modal" data-target="#ce_delete" title="Remove">
+                                            <i class="fa fa-trash-o"></i>
+                                        </a>
+                                    </td>  --}}
                                 @endif
+                                <td hidden class="ids">{{ $cost_types->id }}</td>
                             </tr>
                         @endif
                     @endforeach
@@ -140,6 +147,7 @@
                             <tr class="table-warning" id="referralRow{{++$ecReferral}}">
                                 <td class="title table-light">
                                     Referral (2% / 3%)
+                                    <input type="hidden" name="ce_id[]" value="{{$cost_types->id }}">
                                     <input type="text" class="d-none" value="{{$cost_types->type}}" name="cost_type[]" readonly>
                                 </td>
                                 <td>
@@ -210,6 +218,7 @@
                             <tr class="table-warning" id="engagementmanagerRow{{++$ecEngagementManager}}">
                                 <td class="title fw-bold text-dark table-light">
                                     ENGAGEMENT MANAGER
+                                    <input type="hidden" name="ce_id[]" value="{{$cost_types->id }}">
                                     <input type="text" class="d-none" value="{{$cost_types->type}}" name="cost_type[]" readonly>
                                 </td>
                                 <td><input type="text" class="d-none" value="{{$cost_types->consultant_num}}" name="cost_consultant_num[]" readonly></td>
@@ -286,6 +295,7 @@
                         @if ($cost_types->type === 'Lead Consultant')
                             <tr class="table-warning" id="ec_LeadConsultant">
                                 <td class="title table-light">
+                                    <input type="hidden" name="ce_id[]" value="{{$cost_types->id }}">
                                     <input type="text" class="d-none" value="Lead Consultant" name="cost_type[]" readonly {{$ecLeadConsultant++}}>
                                     Lead Consultant (P7K, P9K)
                                 </td>
@@ -328,6 +338,7 @@
                         @if ($cost_types->type === 'Analyst')
                             <tr class="table-warning" id="ec_Analyst1">
                                 <td class="title table-light">
+                                    <input type="hidden" name="ce_id[]" value="{{$cost_types->id }}">
                                     <input type="text" class="d-none" value="Analyst" name="cost_type[]" readonly {{$ecAnalyst++}}>
                                     Analyst
                                 </td>
@@ -398,6 +409,7 @@
                         @if ($cost_types->type === 'Designer')
                             <tr class="table-warning" id=ec_DesignerRow>
                                 <td class="title table-light">Designer (P48K / P64K)
+                                    <input type="hidden" name="ce_id[]" value="{{$cost_types->id }}">
                                     <input type="text" class="d-none" value="{{$cost_types->type}}" name="cost_type[]" readonly {{$ecDesigner++}}>
                                 </td>
                                 <td class="">
@@ -438,6 +450,7 @@
                             <tr class="table-warning">
                                 <td class="title table-light">
                                     Creators Fees (500, 1K)
+                                    <input type="hidden" name="ce_id[]" value="{{$cost_types->id }}">
                                     <input type="text" class="d-none" value="{{$cost_types->type}}" name="cost_type[]" readonly {{$ecCreators++}}>
                                 </td>
                                 <td>
@@ -533,6 +546,7 @@
                                 <td class="title table-light">
                                     Lead Facilitator
                                     <input type="text" class="d-none" value="{{$cost_types->type}}" name="cost_type[]" readonly {{$ecLeadfaci++}}>
+                                    <input type="hidden" name="ce_id[]" value="{{$cost_types->id }}">
                                 </td>
                                 <td>
                                     <input type="number"
@@ -573,6 +587,7 @@
                             <tr class="table-warning">
                                 <td class="title table-light">
                                     Co-Lead
+                                    <input type="hidden" name="ce_id[]" value="{{$cost_types->id }}">
                                     <input type="text" class="d-none" value="{{$cost_types->type}}" name="cost_type[]" readonly {{$ecColeadfaci++}}>
                                 </td>
                                 <td>
@@ -620,6 +635,7 @@
                             <tr class="table-warning">
                                 <td class="title table-light">
                                     AL Coach
+                                    <input type="hidden" name="ce_id[]" value="{{$cost_types->id }}">
                                     <input type="text" class="d-none" value="AL Coach" name="cost_type[]" readonly {{$ecAlCoach++}}>
                                 </td>
                                 <td>
@@ -667,6 +683,7 @@
                             <tr class="table-warning">
                                 <td class="title table-light">
                                     Co-Facilitator / Resource Speaker
+                                    <input type="hidden" name="ce_id[]" value="{{$cost_types->id }}">
                                     <input type="text" class="d-none" value="Co-Facilitator / Resource Speaker" name="cost_type[]" readonly {{$ecCofaci++}}>
                                 </td>
                                 <td>
@@ -707,6 +724,7 @@
                             <tr class="table-warning">
                                 <td class="title table-light">
                                     Moderator (&#8369;800, &#8369;1,100, &#8369;1,350)
+                                    <input type="hidden" name="ce_id[]" value="{{$cost_types->id }}">
                                     <input type="text" class="d-none" value="{{$cost_types->type}}" name="cost_type[]" readonly {{$ecModerator++}}>
                                 </td>
                                 <td>
@@ -776,6 +794,7 @@
                             <tr class="table-warning">
                                 <td class="title table-light">
                                     Producer
+                                    <input type="hidden" name="ce_id[]" value="{{$cost_types->id }}">
                                     <input type="text" class="d-none" value="{{$cost_types->type}}" name="cost_type[]" readonly {{$ecProducer++}}>
                                 </td>
                                 <td>
@@ -847,6 +866,7 @@
                             <tr class="table-warning">
                                 <td class="title table-light">
                                     Documentor
+                                    <input type="hidden" name="ce_id[]" value="{{$cost_types->id }}">
                                     <input type="text" class="d-none" value="{{$cost_types->type}}" name="cost_type[]" readonly>
                                 </td>
                                 <td>
@@ -902,6 +922,7 @@
                         <tr class="table-warning">
                             <td class="title table-light">
                                 Off-Program fee
+                                <input type="hidden" name="ce_id[]" value="{{$cost_types->id }}">
                                 <input type="text" class="d-none" value="Off-Program fee" name="cost_type[]" readonly>
                             </td>
                             <td>
@@ -954,6 +975,7 @@
                         <tr class="table-warning">
                             <td class="title table-light">
                                 Program Expenses
+                                <input type="hidden" name="ce_id[]" value="{{$cost_types->id }}">
                                 <input type="text" class="d-none" value="{{$cost_types->type}}" name="cost_type[]" readonly>
                             </td>
                             <td><input type="text" class="d-none" name="cost_consultant_num[]" readonly></td>
@@ -999,16 +1021,52 @@
             </table>
         </div>
     </section>
+    {{-- <!-- Delete Estimate Modal -->
+    <div class="modal custom-modal fade" id="ce_delete" role="dialog">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="form-header">
+                        <h3>Delete Row</h3>
+                        <p>Are you sure want to remove row?</p>
+                    </div>
+                    <form action="{{ route('delete') }}" method="POST">
+                        @csrf
+                        <input type="hidden" name="id" class="ce-id" value="">
+                        <div class="row">
+                            <div class="col-6">
+                                <button type="submit" class="btn btn-primary continue-btn submit-btn">Delete</button>
+                            </div>
+                            <div class="col-6">
+                                <a href="javascript:void(0);" data-dismiss="modal" class="btn btn-primary cancel-btn">Cancel</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Delete Estimate Modal --> --}}
+    <!------------ END OF BUDGET FORM ------------>
 </div>
 <!------------ END OF FORM BODY ------------>
 <script>
+// $(document).ready(function() {
+//     $(".remove").click(function(event) {
+//         // event.preventDefault();
+//         var _this = $(this).parents('tr');
+//         _this.find('.ids').text();
+//         // alert("The required page will not be open");
+//     });
+// });
+</script>
+<script>
 document.addEventListener('keypress', function (e) {
-        if (e.keyCode === 13 || e.which === 13) {
-            e.preventDefault();
-            return false;
-        }
-        
-    });
+    if (e.keyCode === 13 || e.which === 13) {
+        e.preventDefault();
+        return false;
+    }
+});
 </script>
 <!------------ CE ENGAGEMENT COST SCRIPT ------------>
 @include('form.budgetForm_update.update_script.ce_update_cost')

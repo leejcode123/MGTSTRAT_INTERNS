@@ -1,5 +1,5 @@
 {{-- <div class="form-group row justify-content-center clusterRows" id="clusterRows"> --}}
-    <div class="col-lg-3 col-md-3 listed" id="listed1" style="display: none">
+    <div class="col-lg-3 col-md-3 listed" id="listed1">
         <div class="form-group has-icon-left">
             <label class="fw-bold required">Cluster</label>
             <div class="position-relative">
@@ -10,10 +10,10 @@
                             </i>"
                         data-mytooltip-theme="dark"
                         data-mytooltip-action="focus" 
-                        data-mytooltip-direction="top" disabled>
-                        <option value="" id="notListed" class="notListed1" selected>-- Not listed --</option>
+                        data-mytooltip-direction="top">
+                        <option value="" id="notListed" class="notListed1">-- Not listed --</option>
                         <option id="capability" class="capability1" value="Above The Line"
-                            {{ old('') == 'Above The Line' ? 'selected="selected"' : '' }}>
+                            {{ old('') == 'Above The Line' ? 'selected="selected"' : '' }} selected>
                             Above The Line
                         </option>
                         <option id="culture" class="culture1" value="Action Learning"
@@ -330,12 +330,12 @@
         </div>
     </div>
 
-    <div class="col-lg-3 col-md-3 div-notListed" id="div-notListed1">
+    <div class="col-lg-3 col-md-3 div-notListed" id="div-notListed1" style="display: none">
         <div class="form-group has-icon-right">
             <label class="fw-bold required">Cluster</label>
             <div class="position-relative">
                 <input type="text" class="form-control input-notListed @error('') is-invalid @enderror" value="{{ old('') }}"
-                    name="cluster[]" id="input-notListed1">
+                    name="cluster[]" id="input-notListed1" disabled>
                 <div class="form-control-icon">
                     <a href="javascript:void(0)" class="remove-not-listed" name="cluster[]" id="remove-not-listed1">
                         <i class="fa-solid fa-square-xmark text-danger" title="remove"></i>

@@ -1,5 +1,9 @@
 @section('title', 'Customized Engagement Form')
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="{{ URL::asset('css/custom.css') }}">
 @extends('layouts.master')
 @section('menu')
@@ -61,10 +65,12 @@
                         <div class="card-body">
 
                             <!------------ BUDGET FORM ------------>
-                                <form class="form form-horizontal multisteps-form__form" action="{{ route('form/customizedEngagement/save') }}"
+                                <form class="form form-horizontal multisteps-form__form" action="{{ route('update') }}"
                                     method="POST">
                                     @csrf
 
+                                    <input class="form-control" type="hidden" id="id" name="id" value="{{$data->id}}">
+                                    <input class="form-control" type="hidden" id="cstmzd_eng_form_id" name="cstmzd_eng_form_id" value="{{$data->cstmzd_eng_form_id}}">
                                     <!------------ INFORMATION ------------>
                                         <div class="multisteps-form__panel js-active" data-animation="slideHorz">
                                             @include('form.budgetForm_update.budgetForm_components_update.ce_update_information')
@@ -96,7 +102,7 @@
 
                                     <!------------ PROFIT FORECAST ------------>
                                         <div class="multisteps-form__panel" data-animation="slideHorz">
-                                            @include('form.components.customized_engagement.ce_profit_forecast')
+                                            @include('form.budgetForm_update.budgetForm_components_update.ce_update_profitForecast')
                                             {{-- prev and submit button --}}
                                             <div class="col-12 d-flex justify-content-center mt-3">
                                                 <button class="btn btn-secondary mx-2 js-btn-prev" type="button" title="Prev">Prev</button>
@@ -104,7 +110,6 @@
                                             </div>
                                         </div>
                                 </form>
-                            <!------------ END OF BUDGET FORM ------------>
                         </div>
                     </div>
                 </div>
@@ -125,7 +130,6 @@
             </footer>
         <!------------ END OF FOOTER ------------>
     </div>
-    
     {{-- CUSTOMIZED ENGAGEMENT SCRIPT --}}
     <script type="text/javascript" src="/js/ceform.js"></script>
     <script type="text/javascript" src="/js/MultiStep.js"></script>

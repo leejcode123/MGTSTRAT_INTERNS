@@ -148,69 +148,93 @@ class CustomizedEngagementController extends Controller
     }
 
     /** update customized engagement record */
-    // public function EstimateUpdateRecord(Request $request)
-    // {
-    //     DB::beginTransaction();
-    //     try {
-    //         $update = [
-    //             'id'                => $request->id,
-    //             'status'            => $request->status,
-    //             'customized_type'           => $request->customized_type,
-    //             'ga_percent'             => $request->ga_percent,
-    //             'client'               => $request->client,
-    //             'engagement_title'    => $request->engagement_title,
-    //             'pax_number'   => $request->pax_number,
-    //             'program_dates'     => $request->program_dates,
-    //             'program_start_time'       => $request->program_start_time,
-    //             'program_end_time'             => $request->program_end_time,
-    //             'cluster'             => $request->cluster,
-    //             'core_area'          => $request->core_area,
-    //         ];
-    //         Estimates::where('id',$request->id)->update($update);
+    public function ceUpdateRecord(Request $request)
+    {
+        DB::beginTransaction();
+        try {
+            $update = [
+                'id'                    => $request->id,
+                'status'                => $request->status,
+                'customized_type'       => $request->customized_type,
+                'ga_percent'            => $request->ga_percent,
+                'client'                => $request->client,
+                'engagement_title'      => $request->engagement_title,
+                'pax_number'            => $request->pax_number,
+                // 'program_dates'         => $request->program_dates,
+                // 'program_start_time'    => $request->program_start_time,
+                // 'program_end_time'      => $request->program_end_time,
+                // 'cluster'               => $request->cluster,
+                // 'core_area'             => $request->core_area,
+            ];
+            Customized_engagement_form::where('id',$request->id)->update($update);
+            /** delete record */
+            foreach ($request->ce_id as $key => $fee_types) {
+                DB::table('engagement_fees')->where('id', $request->ce_id[$key])->delete();
+            }
+            foreach ($request->ce_id as $key => $cost_types) {
+                DB::table('engagement_costs')->where('id', $request->ce_id[$key])->delete();
+            }
 
-    //         /** delete record */
-    //         foreach ($request->engagement_fees as $key => $items) {
-    //             DB::table('engagement_fees')->where('id', $request->engagement_fees[$key])->delete();
-    //         }
-    //         foreach ($request->engagement_costs as $key => $items) {
-    //             DB::table('engagement_costs')->where('id', $request->engagement_costs[$key])->delete();
-    //         }
+            /** insert new record */
+            foreach($request->fee_type as $key => $fee_type)
+            {
+                // $engagement_fee['type']                 = $fee_types;
+                $engagement_fee['cstmzd_eng_form_id']   = $request->cstmzd_eng_form_id;
+                $engagement_fee['type']                 = $request->fee_type[$key];
+                $engagement_fee['consultant_num']       = $request->fee_consultant_num[$key];
+                $engagement_fee['hour_fee']             = $request->fee_hour_fee[$key];
+                $engagement_fee['hour_num']             = $request->fee_hour_num[$key];
+                $engagement_fee['nswh']                 = $request->fee_nswh[$key];
+                $engagement_fee['notes']                = $request->fee_notes[$key];
 
-    //         /** insert new record */
-    //         foreach($request->fee_type as $key => $fee_types)
-    //         {
-    //             $engagement_fee['type']                 = $fee_types;
-    //             $engagement_fee['cstmzd_eng_form_id']   = $cstmzd_eng_form_id;
-    //             $engagement_fee['consultant_num']       = $request->fee_consultant_num[$key];
-    //             $engagement_fee['hour_fee']             = $request->fee_hour_fee[$key];
-    //             $engagement_fee['hour_num']             = $request->fee_hour_num[$key];
-    //             $engagement_fee['nswh']                 = $request->fee_nswh[$key];
-    //             $engagement_fee['notes']                = $request->fee_notes[$key];
+                Engagement_fee::create($engagement_fee);
+            }
 
-    //             Engagement_fee::create($engagement_fee);
-    //         }
+            foreach($request->cost_type as $key => $cost_type)
+            {
+                $engagement_cost['id']                  = $request->ce_id;
+                $engagement_cost['cstmzd_eng_form_id']  = $request->cstmzd_eng_form_id;
+                $engagement_cost['type']                = $request->cost_type[$key];
+                $engagement_cost['consultant_num']      = $request->cost_consultant_num[$key];
+                $engagement_cost['hour_fee']            = $request->cost_hour_fee[$key];
+                $engagement_cost['hour_num']            = $request->cost_hour_num[$key];
+                $engagement_cost['nswh']                = $request->cost_nswh[$key];
+                $engagement_cost['rooster']             = $request->cost_rooster[$key];
 
-    //         foreach($request->cost_type as $key => $cost_type)
-    //         {
-    //             $engagement_cost['type']                = $cost_types;
-    //             $engagement_cost['cstmzd_eng_form_id']  = $cstmzd_eng_form_id;
-    //             $engagement_cost['consultant_num']      = $request->cost_consultant_num[$key];
-    //             $engagement_cost['hour_fee']            = $request->cost_hour_fee[$key];
-    //             $engagement_cost['hour_num']            = $request->cost_hour_num[$key];
-    //             $engagement_cost['nswh']                = $request->cost_nswh[$key];
-    //             $engagement_cost['rooster']             = $request->cost_rooster[$key];
+                Engagement_cost::create($engagement_cost);
+            }
+            // Engagement_fee::destroy($request->id);
+            // Engagement_cost::destroy($request->ce_id);
 
-    //             Engagement_cost::create($engagement_cost);
-    //         }
+            DB::commit();
+            Toastr::success('Updated successfully','Success');
+            return redirect()->back();
+        } catch(\Exception $e) {
+            DB::rollback();
+            // Toastr::error('Update Estimates fail','Error');
+            Toastr::error($e->getMessage());
+            return redirect()->back();
+        } 
+    }
+
+    /** delete record customized engagement add */
+    public function ceAddDeleteRecord(Request $request)
+    {
+        DB::beginTransaction();
+        try {
+
+            Engagement_fee::destroy($request->id);
+            Engagement_cost::destroy($request->id);
+
+            DB::commit();
+            Toastr::success('Deleted successfully','Success');
+            return redirect()->back();
             
-    //         DB::commit();
-    //         Toastr::success('Updated Estimates successfully :)','Success');
-    //         return redirect()->back();
-    //     } catch(\Exception $e) {
-    //         DB::rollback();
-    //         Toastr::error('Update Estimates fail :)','Error');
-    //         return redirect()->back();
-    //     } 
-    // }
+        } catch(\Exception $e) {
+            DB::rollback();
+            Toastr::error('Deleted fail','Error');
+            return redirect()->back();
+        }
+    }
 }
 

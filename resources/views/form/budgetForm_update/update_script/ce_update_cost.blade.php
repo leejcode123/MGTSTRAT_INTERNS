@@ -17,7 +17,6 @@
                                 <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                 value="{{ old('') }}" name="cost_hour_fee[]" id="inputSales" onblur="this.value = this.value.replace('%', '') + '%';"
                                 oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\...*)\./g, '$1') ;">
-                                
                             </td>
                             <td><input type="text" class="d-none" value="" name="cost_hour_num[]" readonly></td>
                             <td><input type="text" class="d-none" value="" name="cost_nswh[]" readonly></td>
@@ -57,6 +56,12 @@
                 $("#sales").prop( "disabled", true );
                 $(".input-sales").css("display","block");
                 $(".input-sales").prop( "disabled", false );
+            } else {
+                $(".dropdown-sales").css("display","");
+                $("#sales").prop( "disabled", false );
+                $(".input-sales").css("display","none");
+                $(".input-sales").prop( "disabled", true );
+                $(".input-sales").val("0%")
             }
     
             // Remove row   
@@ -67,7 +72,7 @@
     
                 // Removing the current row.
                 $(this).closest("tr").remove();
-    
+
                 // Decreasing total number of rows by 1.
                 salesNum--;
                 if (salesNum == 1) {

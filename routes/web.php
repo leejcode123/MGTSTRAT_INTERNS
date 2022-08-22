@@ -84,11 +84,14 @@ Route::post('change/password/db', [App\Http\Controllers\UserManagementController
 // ----------------------------- Customized engagement form ------------------------------//
 Route::controller(CustomizedEngagementController::class)->group(function () {
 Route::get('form/customizedEngagement/new', [App\Http\Controllers\CustomizedEngagementController::class, 'index'])->middleware('auth')->name('form/customizedEngagement/new');
-Route::get('form/customizedEngagement/update', [App\Http\Controllers\CustomizedEngagementController::class, 'updateRecord'])->middleware('auth')->name('form/customizedEngagement/update');
-Route::post('form/customizedEngagement/save', [App\Http\Controllers\CustomizedEngagementController::class, 'store'])->name('form/customizedEngagement/save');
 Route::get('form/customizedEngagement/detail', [App\Http\Controllers\CustomizedEngagementController::class, 'viewRecord'])->middleware('auth')->name('form/customizedEngagement/detail');
 Route::get('form/customizedEngagement/detail/{cstmzd_eng_form_id}', [App\Http\Controllers\CustomizedEngagementController::class, 'updateRecord'])->middleware('auth');
 Route::get('delete/{id}', [App\Http\Controllers\CustomizedEngagementController::class, 'viewDelete'])->middleware('auth');
+// Route::get('form/customizedEngagement/update', [App\Http\Controllers\CustomizedEngagementController::class, 'updateRecord'])->middleware('auth')->name('form/customizedEngagement/update'); 
+
+Route::post('save', [App\Http\Controllers\CustomizedEngagementController::class, 'store'])->name('save');
+Route::post('update', [App\Http\Controllers\CustomizedEngagementController::class, 'ceUpdateRecord','ceAddDeleteRecord'])->middleware('auth')->name('update');
+// Route::post('delete', [App\Http\Controllers\CustomizedEngagementController::class, 'ceAddDeleteRecord'])->middleware('auth')->name('delete');
 });
 // ----------------------------- F2F engagement form ------------------------------//
 Route::get('form/f2f_engagement/new', [App\Http\Controllers\F2fEngagementController::class, 'index'])->middleware('auth')->name('form/f2f_engagement/new');
