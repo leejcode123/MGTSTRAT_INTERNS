@@ -121,6 +121,7 @@ class CustomizedEngagementController extends Controller
                     $engagement_cost['hour_num']            = $request->cost_hour_num[$key];
                     $engagement_cost['nswh']                = $request->cost_nswh[$key];
                     $engagement_cost['rooster']             = $request->cost_rooster[$key];
+                    $engagement_cost['notes']               = $request->cost_notes[$key];
     
                     Engagement_cost::create($engagement_cost);
                 }
@@ -200,6 +201,7 @@ class CustomizedEngagementController extends Controller
                 $engagement_cost['hour_num']            = $request->cost_hour_num[$key];
                 $engagement_cost['nswh']                = $request->cost_nswh[$key];
                 $engagement_cost['rooster']             = $request->cost_rooster[$key];
+                $engagement_cost['notes']               = $request->cost_notes[$key];
 
                 Engagement_cost::create($engagement_cost);
             }

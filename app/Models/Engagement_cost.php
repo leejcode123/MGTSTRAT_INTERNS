@@ -17,5 +17,6 @@ class Engagement_cost extends Model
         'hour_num',
         'nswh',
         'rooster',
+        'notes',
     ];
 }

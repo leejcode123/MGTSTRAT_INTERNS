@@ -22,6 +22,7 @@ class CreateEngagementCostsTable extends Migration
             $table->integer('hour_num')->nullable($value = true);
             $table->integer('nswh')->nullable($value = true);
             $table->string('rooster')->nullable($value = true);
+            $table->string('notes')->nullable($value = true);
         });
     }
 

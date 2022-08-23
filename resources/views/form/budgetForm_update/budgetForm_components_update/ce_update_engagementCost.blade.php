@@ -28,7 +28,7 @@
             <table class="table table-bordered" id="ec_tableEngagementCost">
                 <thead class="table-dark">
                     <tr class="text-center">
-                        <th class="title-th" scope="col" width=20%></th>
+                        {{-- <th class="title-th" scope="col" width=20%></th>
                         <th class="title-middle" scope="col" style="font-size: 0.9rem;">NUMBER OF CONSULTANTS</th>
                         <th class="title-middle px-4" width=15% scope="col">HOURLY FEES</th>
                         <th class="title-middle" scope="col" style="font-size: 0.9rem;">NUMBER OF HOURS</th>
@@ -36,6 +36,16 @@
                             WEEKENDS HOLIDAYS *</th>
                         <th class="title-th" scope="col" width=15%>TOTAL FEE</th>
                         <th class="title-th" scope="col" width=15%>ROSTER</th>
+                        <th class="title-th" scope="col" width=15%>NOTES</th> --}}
+                        <th class="title-th" scope="col" width=15%></th>
+                        <th class="title-middle" scope="col" style="font-size: 0.9rem;" width=10%>NUMBER OF CONSULTANTS</th>
+                        <th class="title-middle px-4" scope="col" width=15%>HOURLY FEES</th>
+                        <th class="title-middle" scope="col" style="font-size: 0.9rem;" width=10%>NUMBER OF HOURS</th>
+                        <th class="title-middle" scope="col" style="font-size: 0.9rem;" width=10%>NIGHT SHIFT,
+                            WEEKENDS HOLIDAYS *</th>
+                        <th class="title-th" scope="col" width=12%>TOTAL FEE</th>
+                        <th class="title-th" scope="col" width=15%>ROSTER</th>
+                        <th class="title-th" scope="col" width=15%>NOTES</th>
                         <td class="border border-white add-row"> </td>
                     </tr>
                 </thead>
@@ -46,6 +56,7 @@
                     <th></th>
                     <th></th>
                     <th></th>
+                    <th class="total-td"></th>
                     <th class="total-td"></th>
                     <th class="total-td"></th>
                     <th class="border border-white add-row" style="display: none"> </th>
@@ -125,6 +136,10 @@
                                     <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                         value="{{$cost_types->rooster}}" name="cost_rooster[]" id="">
                                 </td>
+                                <td class="total-td table-light">
+                                    <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                                        value="{{$cost_types->notes}}" name="cost_notes[]" id="">
+                                </td>
                                 @if ($ecSales === 1)
                                     <td style="background-color: #FFFFFF;" class="border border-white"><a href="javascript:void(0)" class="text-success font-18" title="Add" id="addBtn9" onclick="$('#salesTotal').html(0)"><i class="fa fa-plus"></i></a></td>
                                 @else 
@@ -201,6 +216,10 @@
                                     <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                         value="{{$cost_types->rooster}}" name="cost_rooster[]" id="">
                                 </td>
+                                <td class="total-td table-light">
+                                    <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                                        value="{{$cost_types->notes}}" name="cost_notes[]" id="">
+                                </td>
                                 @if ($ecReferral === 1)
                                     <td class="border border-white add-row"><a href="javascript:void(0)" class="text-success font-18" title="Add"
                                         id="addBtn10"><i class="fa fa-plus"></i></a></td>
@@ -265,6 +284,10 @@
                                     <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                         value="{{$cost_types->rooster}}" name="cost_rooster[]" id="">
                                 </td>
+                                <td class="total-td table-light">
+                                    <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                                        value="{{$cost_types->notes}}" name="cost_notes[]" id="">
+                                </td>
                                 @if ($ecEngagementManager === 1)
                                     <td class="border border-white add-row"><a href="javascript:void(0)" class="text-success font-18" title="Add"
                                             id="addBtn11"><i class="fa fa-plus"></i></a></td>
@@ -285,6 +308,7 @@
                     <th></th>
                     <th></th>
                     <th></th>
+                    <th class="total-td"></th>
                     <th class="total-td"></th>
                     <th class="total-td"></th>
                     <th class="border border-white add-row" style="display: none"></th>
@@ -326,6 +350,10 @@
                                 <td class="total-td table-light">
                                     <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                         value="{{ $cost_types->rooster }}" name="cost_rooster[]" id="">
+                                </td>
+                                <td class="total-td table-light">
+                                    <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                                        value="{{$cost_types->notes}}" name="cost_notes[]" id="">
                                 </td>
                                 <td class="border border-white add-row invisible"></td>
                             </tr>
@@ -369,6 +397,10 @@
                                     <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                         value="{{ $cost_types->rooster }}" name="cost_rooster[]" id="">
                                 </td>
+                                <td class="total-td table-light">
+                                    <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                                        value="{{$cost_types->notes}}" name="cost_notes[]" id="">
+                                </td>
                             </tr>
                         @endif
                     @endforeach
@@ -383,10 +415,8 @@
                     <td class="total-td tbl-engmt-cost" style="background-color: rgba(146, 146, 146, 0.727">
                         <h4 class="text-center" id="ec_SubtotalConsulting">-</h4>
                     </td>
-                    <td class="total-td">
-                        <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="">
-                    </td>
+                    <td class="total-td"></td>
+                    <td class="total-td"></td>
                     <td class="border border-white add-row invisible"> </td>
                 </tr>   
 
@@ -399,6 +429,7 @@
                     <td></td>
                     <td></td>
                     <td></td>
+                    <td class="total-td"></td>
                     <td class="total-td"></td>
                     <td class="total-td"></td>
                     <td class="border border-white add-row" style="display: none"> </td>
@@ -438,6 +469,10 @@
                                 <td class="total-td table-light">
                                     <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                         value="{{ $cost_types->rooster }}" name="cost_rooster[]" id="">
+                                </td>
+                                <td class="total-td table-light">
+                                    <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                                        value="{{ $cost_types->notes }}" name="cost_notes[]" id="">
                                 </td>
                             </tr>
                         @endif
@@ -497,6 +532,10 @@
                                     <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                         value="{{$cost_types->rooster}}" name="cost_rooster[]" id="">
                                 </td>
+                                <td class="total-td table-light">
+                                    <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                                        value="{{ $cost_types->notes }}" name="cost_notes[]" id="">
+                                </td>
                                 @if ($ecCreators === 1)
                                     <td style="background-color: #FFFFFF;" class="border border-white"><a href="javascript:void(0)"
                                         class="text-success font-18" title="Add" id="addBtnCreators"><i
@@ -517,10 +556,8 @@
                     <td class="total-td tbl-engmt-cost" style="background-color: rgba(146, 146, 146, 0.727">
                         <h4 class="text-center" id="ec_DesignSubtotal">-</h4>
                     </td>
-                    <td class="total-td">
-                        <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="">
-                    </td>
+                    <td class="total-td"></td>
+                    <td class="total-td"></td>
                     <td class="border border-white add-row invisible"> </td>
                 </tr>
 
@@ -534,6 +571,7 @@
                     <td></td>
                     <td>
                     </td>
+                    <td class="total-td"></td>
                     <td class="total-td"></td>
                     <td class="total-td"></td>
                     <td class="border border-white add-row invisible"> </td>
@@ -576,6 +614,10 @@
                                     <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                         value="{{$cost_types->rooster}}" name="cost_rooster[]" id="">
                                 </td>
+                                <td class="total-td table-light">
+                                    <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                                        value="{{$cost_types->notes}}" name="cost_notes[]" id="">
+                                </td>
                             </tr>
                         @endif
                     @endforeach
@@ -616,6 +658,10 @@
                                 <td class="total-td table-light">
                                     <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                         value="{{$cost_types->rooster}}" name="cost_rooster[]" id="">
+                                </td>
+                                <td class="total-td table-light">
+                                    <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                                        value="{{$cost_types->notes}}" name="cost_notes[]" id="">
                                 </td>
                                 @if ($ecColeadfaci === 1)
                                     <td style="background-color: #FFFFFF;" class="border border-white">
@@ -665,6 +711,10 @@
                                     <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                         value="{{$cost_types->rooster}}" name="cost_rooster[]" id="">
                                 </td>
+                                <td class="total-td table-light">
+                                    <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                                        value="{{$cost_types->notes}}" name="cost_notes[]" id="">
+                                </td>
                                 @if ($ecAlCoach === 1)
                                     <td style="background-color: #FFFFFF;" class="border border-white">
                                         <a href="javascript:void(0)" class="text-success font-18" title="Add" id="addBtnAlCoach">
@@ -712,6 +762,10 @@
                                 <td class="total-td table-light">
                                     <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                         value="{{$cost_types->rooster}}" name="cost_rooster[]" id="">
+                                </td>
+                                <td class="total-td table-light">
+                                    <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                                        value="{{$cost_types->notes}}" name="cost_notes[]" id="">
                                 </td>
                             </tr>
                         @endif
@@ -782,6 +836,10 @@
                                     <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                         value="{{$cost_types->rooster}}" name="cost_rooster[]" id="">
                                 </td>
+                                <td class="total-td table-light">
+                                    <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                                        value="{{$cost_types->notes}}" name="cost_notes[]" id="">
+                                </td>
                                 <td class="border border-white add-row invisible"> </td>
                             </tr>
                         @endif
@@ -824,6 +882,10 @@
                                     <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                         value="{{$cost_types->rooster}}" name="cost_rooster[]" id="">
                                 </td>
+                                <td class="total-td table-light">
+                                    <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                                        value="{{$cost_types->notes}}" name="cost_notes[]" id="">
+                                </td>
                                 <td class="border border-white add-row invisible"> </td>
                             </tr>
                         @endif
@@ -839,10 +901,8 @@
                     <td class="total-td" style="background-color: rgba(146, 146, 146, 0.727)">
                         <h4 class="text-center" id="ec_ProgramSubtotal">-</h4>
                     </td>
-                    <td class="total-td">
-                        <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="">
-                    </td>
+                    <td class="total-td"></td>
+                    <td class="total-td"></td>
                     <td class="border border-white add-row invisible"> </td>
                 </tr>
 
@@ -855,6 +915,7 @@
                     <td></td>
                     <td></td>
                     <td></td>
+                    <td class="total-td"></td>
                     <td class="total-td"></td>
                     <td class="total-td"></td>
                     <td class="border border-white add-row invisible"> </td>
@@ -897,6 +958,10 @@
                                     <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                         value="{{$cost_types->rooster}}" name="cost_rooster[]" id="">
                                 </td>
+                                <td class="total-td table-light">
+                                    <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                                        value="{{$cost_types->notes}}" name="cost_notes[]" id="">
+                                </td>
                                 <td class="border border-white add-row invisible"> </td>
                             </tr>
                         @endif
@@ -912,6 +977,7 @@
                     <td></td>
                     <td></td>
                     <td></td>
+                    <td class="total-td"></td>
                     <td class="total-td"></td>
                     <td class="total-td"></td>
                     <td class="border border-white add-row invisible"> </td>
@@ -951,6 +1017,10 @@
                                 <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                     value="{{$cost_types->rooster}}" name="cost_rooster[]" id="">
                             </td>
+                            <td class="total-td table-light">
+                                <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                                    value="{{$cost_types->notes}}" name="cost_notes[]" id="">
+                            </td>
                             <td class="border border-white add-row invisible"> </td>
                         </tr>
                     @endif
@@ -965,6 +1035,7 @@
                     <td></td>
                     <td></td>
                     <td></td>
+                    <td class="total-td"></td>
                     <td class="total-td"></td>
                     <td class="total-td"></td>
                     <td class="border border-white add-row invisible"> </td>
@@ -995,6 +1066,10 @@
                                 <input type="text" class="form-control input-table @error('') is-invalid @enderror"
                                     value="{{$cost_types->rooster}}" name="cost_rooster[]" id="">
                             </td>
+                            <td class="total-td table-light">
+                                <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                                    value="{{$cost_types->notes}}" name="cost_notes[]" id="">
+                            </td>
                             <td class="border border-white add-row invisible"> </td>
                         </tr>
                     @endif
@@ -1012,10 +1087,8 @@
                     <td class="overall-total-end">
                         <h4 class="text-center text-danger" id="ec_Total">-</h4>
                     </td>
-                    <td class="overall-total-end">
-                        <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="">
-                    </td>
+                    <td class="overall-total-end"></td>
+                    <td class="overall-total-end"></td>
                     <td class="border border-white add-row invisible"></td>
                 </tr>
             </table>
