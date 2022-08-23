@@ -1,4 +1,5 @@
 @section('title', 'Dashboard')
+<link rel="shortcut icon" type="image/png" href="{{ URL::to('assets/images/logo/logo.png') }}">
 @extends('layouts.master')
 <style>
         .pbi-iframe {

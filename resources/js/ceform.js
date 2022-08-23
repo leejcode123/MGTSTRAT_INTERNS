@@ -2,8 +2,8 @@ require("./components/clusterReference");
 require("./components/currencyFormat");
 /*************************************** CUSTOMIZED ENGAGEMENT BUDGET FORM COMPUTATION ********************************************************/
 $(document).on(
-    "change keyup click load",
-    ".customized-type, .ga-only-dropdown, .remove, #ec_tableEngagementFees, #ec_tableEngagementCost, #LessCTO_NOC",
+    "load change keyup click",
+    ".customized-engagement, .customized-type, .ga-only-dropdown, .remove, #ec_tableEngagementFees, #ec_tableEngagementCost, #LessCTO_NOC",
     function () {
         //customized type
         $(".customized-type").each(function () {
