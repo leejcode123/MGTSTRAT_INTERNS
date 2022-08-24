@@ -299,6 +299,7 @@ $('document').ready(function() {
 
         //ASSIGN EVENT LISTENER IN STATUS
         document.getElementById("status").addEventListener("change", status);
+        window.addEventListener("load", status);
 
         //EVENT OF STATUS
         function status() { 
