@@ -217,7 +217,7 @@
                                     <label class="fw-bold required">Date</label>
                                     <div class="position-relative">
                                         <input type="text" class="form-control datepicker @error('doe') is-invalid @enderror"
-                                            value="{{ old('doe') }}" placeholder="Enter Date" name="program_dates[]" id="datepicker"
+                                            value="{{ str_replace (array('[', '"', ']'), '' , $data->program_dates) }}" placeholder="Enter Date" name="program_dates[]" id="datepicker"
                                             size="30">
                                         <div class="form-control-icon">
                                             <i class="bi bi-calendar"></i>
@@ -235,7 +235,7 @@
                                     <label class="fw-bold required">Start Time</label>
                                     <div class="position-relative">
                                         <input type="text" class="form-control timepicker @error('dot') is-invalid @enderror"
-                                            value="{{ old('dot') }}" placeholder="Enter Time" id="program_start_time" name="program_start_time[]">
+                                            value="{{ str_replace (array('[', '"', ']'), '' , $data->program_start_time) }}" placeholder="Enter Time" id="program_start_time" name="program_start_time[]">
                                         <div class="form-control-icon">
                                             <i class="bi bi-clock"></i>
                                         </div>
@@ -252,7 +252,7 @@
                                     <label class="fw-bold required">End Time</label>
                                     <div class="position-relative">
                                         <input type="text" class="form-control timepicker @error('dot') is-invalid @enderror"
-                                            value="{{ old('dot') }}" placeholder="Enter Time" id="program_end_time" name="program_end_time[]">
+                                            value="{{ str_replace (array('[', '"', ']'), '' , $data->program_end_time) }}" placeholder="Enter Time" id="program_end_time" name="program_end_time[]">
                                         <div class="form-control-icon">
                                             <i class="fa-solid fa-hourglass-end"></i>
                                         </div>

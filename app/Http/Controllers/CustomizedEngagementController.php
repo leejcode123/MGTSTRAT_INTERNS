@@ -161,9 +161,9 @@ class CustomizedEngagementController extends Controller
                 'client'                => $request->client,
                 'engagement_title'      => $request->engagement_title,
                 'pax_number'            => $request->pax_number,
-                // 'program_dates'         => $request->program_dates,
-                // 'program_start_time'    => $request->program_start_time,
-                // 'program_end_time'      => $request->program_end_time,
+                'program_dates'         => $request->program_dates,
+                'program_start_time'    => $request->program_start_time,
+                'program_end_time'      => $request->program_end_time,
                 // 'cluster'               => $request->cluster,
                 // 'core_area'             => $request->core_area,
             ];
