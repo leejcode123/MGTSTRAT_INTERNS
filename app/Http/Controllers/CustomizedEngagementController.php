@@ -8,17 +8,21 @@ use RealRashid\SweetAlert\Facades\Alert;
 use App\Models\Customized_engagement_form;
 use App\Models\Engagement_fee;
 use App\Models\Engagement_cost;
+use App\Models\Client;
 use DB;
 
 class CustomizedEngagementController extends Controller
 {
+
+
+    
     public function index()
     {
         // $cluster = DB::table('reference')->whereNotNull('cluster')->get();
         // $cluster = DB::table('reference')->get();
         // return view('form.customized_engagement',compact('cluster'));
-        
-        return view('form.customized_engagement');
+        $companyList = DB::table('clients')->get();
+        return view('form.customized_engagement',compact('companyList'));
     }
 
     // view record
@@ -135,7 +139,18 @@ class CustomizedEngagementController extends Controller
                 DB::rollback();
                 Toastr::error('cost'.$e->getMessage(), 'Error');
             }
-            
+
+// Client
+            try {
+
+
+                $clients['cstmzd_eng_form_id']  = $cstmzd_eng_form_id;
+                Client::create($clients);
+
+            }catch(\Exception $e){
+                DB::rollback();
+                Toastr::error('cost'.$e->getMessage(), 'Error');
+            }
 
 
             DB::commit();

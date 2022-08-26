@@ -42,15 +42,14 @@
                             <thead>
                                 <tr>
                                     <th>No.</th>
-                                    <th>Year+Month+Sales</th>
                                     <th>Company Name</th>
-                                    <th>Old ID</th>
-                                    <th>Sales Pax</th>
-                                    <th>Class</th>
+                                    <th>ID Number</th>
+                                    <th>Status</th>
+                                    <th>Sales Person</th>
                                     <th>Industry</th>
                                     <th>Old/ New</th>
                                     <th>First Engagement</th>
-                                    <th>Second Engagement</th>
+                                    <th>Latest Engagement</th>
                                     <th class="text-center">Modify</th>
                                 </tr>
                             </thead>
@@ -58,39 +57,37 @@
                                 @foreach ($data as $key => $client)
                                     <tr>
                                         <td class="id">{{ ++$key }}</td>
-                                        <td class="name">{{ $client->yr_mnth_sales }}</td>
                                         <td class="name">
                                             {{$client->company_name}}
                                         </td>
                                         <td class="name">
-                                            {{$client->old_id}}
+                                            {{$client->cstmzd_eng_form_id}}
                                         </td>
                                         <td class="name">
-                                            {{$client->sales_pax}}
+                                            {{$client->status}}
                                         </td>
-                                        {{-- <td class="name">
-                                            {{$client->client_class}}
-                                        </td> --}}
-                                        @if ($client->client_class == 'ACTIVE')
+                                        {{-- @if ($client->client_class == 'ACTIVE')
                                             <td class=""><span
                                                     class="badge bg-info">{{ $client->client_class }}</span></td>
                                         @endif
                                         @if ($client->client_class == 'INACTIVE')
                                             <td class=""><span
                                                     class="badge bg-warning">{{ $client->client_class }}</span></td>
-                                        @endif
-                                        <td class="status">{{$client->industry}}</td>
+                                        @endif --}}
                                         {{-- <td class="status">{{$client->old_new}}</td> --}}
-                                        @if ($client->old_new == 'NEW')
+                                        {{-- @if ($client->old_new == 'NEW')
                                             <td class=""><span
                                                     class="badge bg-primary">{{ $client->old_new }}</span></td>
                                         @endif
                                         @if ($client->old_new == 'OLD')
                                             <td class=""><span
                                                     class="badge bg-dark">{{ $client->old_new }}</span></td>
-                                        @endif
+                                        @endif --}}
+                                        <td class="status">{{$client->sales_person}}</td>
+                                        <td class="status">{{$client->industry}}</td>
+                                        <td class="status">{{$client->old_new}}</td>
                                         <td class="status">{{$client->first_eng}}</td>
-                                        <td class="status">{{$client->second_eng}}</td>
+                                        <td class="status">{{$client->latest_eng}}</td>
                                         <td class="text-center">
                                             <a href="{{ url('form/view/detail/' . $client->id) }}" >
                                                 <span class="badge bg-success"><i class="bi bi-pencil-square" data-target="#exampleModal"></i></span>

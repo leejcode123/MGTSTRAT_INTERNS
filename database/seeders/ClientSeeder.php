@@ -18,14 +18,13 @@ class ClientSeeder extends Seeder
         DB::table('clients')->insert([
             [
                 'company_name' => 'MGT_STRAT',
-                'yr_mnth_sales' => 'C2010-00-01-029',
-                'old_id' => 'C2018-11-02-175',
-                'sales_pax' => 'Tine',
-                'client_class' => 'ACTIVE',
+                'cstmzd_eng_form_id' => '0001',
+                'status' => 'ACTIVE',
+                'sales_person' => 'Tine',
                 'industry' => 'Shipping & Logistics',
-                'old_new' => 'Old',
+                'old_new' => 'OLD',
                 'first_eng' => '7/2/1905',
-                'second_eng' => 'Jan 2016',
+                'latest_eng' => '08/10/2022',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
             ]

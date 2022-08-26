@@ -35,56 +35,27 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
-                                            <label>YEAR+MONTH+SALES</label>
+                                        {{-- <div class="col-md-4">
+                                            <label>ID Number</label>
                                         </div>
                                         <div class="col-md-8">
                                             <div class="form-group has-icon-left">
                                                 <div class="position-relative">
-                                                    <input type="text" class="form-control" placeholder="Year | Month | Sales"
-                                                        id="first-name-icon" name="yr_mnth_sales" value="">
-                                                    <div class="form-control-icon">
-                                                        <i class="bi bi-calendar-event-fill"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-4">
-                                            <label>OLD ID Number</label>
-                                        </div>
-                                        <div class="col-md-8">
-                                            <div class="form-group has-icon-left">
-                                                <div class="position-relative">
-                                                    <input type="TEXT" class="form-control" placeholder="Old ID Number"
-                                                        id="first-name-icon" name="old_id" value="">
+                                                    <input type="text" class="form-control" placeholder=""
+                                                        name="cstmzd_eng_form_id" value="">
                                                     <div class="form-control-icon">
                                                         <i class="bi bi-123"></i>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> --}}
                                         <div class="col-md-4">
-                                            <label>Sales Pax</label>
-                                        </div>
-                                        <div class="col-md-8">
-                                            <div class="form-group has-icon-left">
-                                                <div class="position-relative">
-                                                    <input type="text" class="form-control" placeholder="Sales Pax"
-                                                        name="sales_pax" value="">
-                                                    <div class="form-control-icon">
-                                                        <i class="bi bi-people-fill"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <label>Class</label>
+                                            <label>Status</label>
                                         </div>
                                         <div class="col-md-8">
                                             <div class="form-group position-relative has-icon-left mb-4">
                                                 <fieldset class="form-group">
-                                                    <select class="form-select" name="client_class" id="status">
+                                                    <select class="form-select" name="status" id="status">
                                                         <option value="">...
                                                         </option>
                                                         <option value="ACTIVE">Active
@@ -99,13 +70,101 @@
                                             </div>
                                         </div>
                                         <div class="col-md-4">
-                                            <label>Industry</label>
+                                            <label>Sales Person</label>
                                         </div>
                                         <div class="col-md-8">
                                             <div class="form-group has-icon-left">
                                                 <div class="position-relative">
                                                     <input type="text" class="form-control" placeholder=""
-                                                        name="industry" value="">
+                                                        name="sales_person" value="">
+                                                    <div class="form-control-icon">
+                                                        <i class="bi bi-people"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label>Industry</label>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="form-group has-icon-left">
+                                                <div class="position-relative">
+                                                    <fieldset class="form-group">
+                                                        <select class="select select2s-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true" id="industry" name="industry">
+                                                            <option value="">...
+                                                            </option>
+                                                            <option value="Advertising">Advertising
+                                                            </option>
+                                                            <option value="Agro Industrial">Agro Industrial
+                                                            </option>
+                                                            <option value="Airline">Airline
+                                                            </option>
+                                                            <option value="Airport">Airport
+                                                            </option>
+                                                            <option value="Architechture and Design">Architechture and Design
+                                                            </option>
+                                                            <option value="Association">Association
+                                                            </option>
+                                                            <option value="Automotive">Automotive
+                                                            </option>
+                                                            <option value="Banking">Banking
+                                                            </option>
+                                                            <option value="Banking and Finance">Banking and Finance
+                                                            </option>
+                                                            <option value="BPO">BPO
+                                                            </option>
+                                                            <option value="Chemical/Ingredients Manufacturer">Chemical/Ingredients Manufacturer
+                                                            </option>
+                                                            <option value="Chemical/Ingredients Manufacturer">Chemical/Ingredients Manufacturer
+                                                            </option>
+                                                            <option value="Church">Church
+                                                            </option>
+                                                            <option value="Construction">Construction
+                                                            </option>
+                                                            <option value="Consultancy">Consultancy
+                                                            </option>
+                                                            <option value="Data Analytics">Data Analytics
+                                                            </option>
+                                                            <option value="Distribution">Distribution
+                                                            </option>
+                                                            <option value="Distributor">Distributor
+                                                            </option>
+                                                            <option value="E Commerce Marketing/ Tech Solution">E Commerce Marketing/ Tech Solution
+                                                            </option>
+                                                            <option value="Education">Education
+                                                            </option>
+                                                            <option value="Electronics">Electronics
+                                                            </option>
+                                                            <option value="Embassy">Embassy
+                                                            </option>
+                                                            <option value="Events">Events
+                                                            </option>
+                                                            <option value="Fast Food">Fast Food
+                                                            </option>
+                                                            <option value="Finance Tech">Finance Tech
+                                                            </option>
+                                                            <option value="Financial Svcs & Digital Payments">Financial Svcs & Digital Payments
+                                                            </option>
+                                                            <option value="FMCG">FMCG
+                                                            </option>
+                                                            <option value="Food">Food
+                                                            </option>
+                                                            <option value="Foundation">Foundation
+                                                            </option>
+                                                            <option value="Government">Government
+                                                            </option>
+                                                            <option value="Healthcare">Healthcare
+                                                            </option>
+                                                            <option value="HMO">HMO
+                                                            </option>
+                                                            <option value="Home Appliance">Home Appliance
+                                                            </option>
+                                                            <option value="Hospitality">Hospitality
+                                                            </option>
+                                                            <option value="Incubator">Incubator
+                                                            </option>
+                                                        </select>
+                                                    </fieldset>
                                                     <div class="form-control-icon">
                                                         <i class="bi bi-building"></i>
                                                     </div>
@@ -148,13 +207,13 @@
                                             </div>
                                         </div>
                                         <div class="col-md-4">
-                                            <label>Second Engagement</label>
+                                            <label>Latest Engagement</label>
                                         </div>
                                         <div class="col-md-8">
                                             <div class="form-group has-icon-left">
                                                 <div class="position-relative">
                                                     <input type="date" class="form-control" placeholder="Second Engagement"
-                                                        name="second_eng" value="">
+                                                        name="latest_eng" value="">
                                                     <div class="form-control-icon">
                                                         <i class="bi bi-calendar-event-fill"></i>
                                                     </div>
@@ -181,3 +240,13 @@
                 </div>
                 </div>
             </div>
+            <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script>
+            $(document).ready(function() {
+            $('.select2s-hidden-accessible').select2({
+                // closeOnSelect: false
+                placeholder: 'Enter Client',
+                tags: true,
+            });
+        });
+</script>

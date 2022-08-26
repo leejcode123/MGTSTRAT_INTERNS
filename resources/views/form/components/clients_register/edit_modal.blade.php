@@ -50,28 +50,13 @@
                                             </div>
                                         </div>
                                         <div class="col-md-4">
-                                            <label>YEAR+MONTH+SALES</label>
-                                        </div>
-                                        <div class="col-md-8">
-                                            <div class="form-group has-icon-left">
-                                                <div class="position-relative">
-                                                    <input type="date" class="form-control" placeholder="Year | Month | Sales"
-                                                        id="first-name-icon" name="yr_mnth_sales" value="{{ $dataClnt[0]->yr_mnth_sales }}">
-                                                    <div class="form-control-icon">
-                                                        <i class="bi bi-calendar-event-fill"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-4">
-                                            <label>OLD ID Number</label>
+                                            <label>ID Number</label>
                                         </div>
                                         <div class="col-md-8">
                                             <div class="form-group has-icon-left">
                                                 <div class="position-relative">
                                                     <input type="TEXT" class="form-control" placeholder="Old ID Number"
-                                                        id="first-name-icon" name="old_id" value="{{ $dataClnt[0]->old_id }}">
+                                                        id="first-name-icon" name="cstmzd_eng_form_id" value="{{ $dataClnt[0]->cstmzd_eng_form_id}}">
                                                     <div class="form-control-icon">
                                                         <i class="bi bi-123"></i>
                                                     </div>
@@ -79,29 +64,15 @@
                                             </div>
                                         </div>
                                         <div class="col-md-4">
-                                            <label>Sales Pax</label>
-                                        </div>
-                                        <div class="col-md-8">
-                                            <div class="form-group has-icon-left">
-                                                <div class="position-relative">
-                                                    <input type="text" class="form-control" placeholder="Sales Pax"
-                                                        name="sales_pax" value="{{ $dataClnt[0]->sales_pax }}">
-                                                    <div class="form-control-icon">
-                                                        <i class="bi bi-people-fill"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <label>Class</label>
+                                            <label>Status</label>
                                         </div>
                                         <div class="col-md-8">
                                             <div class="form-group position-relative has-icon-left mb-4">
                                                 <fieldset class="form-group">
-                                                    <select class="form-select" name="client_class" id="status" value="{{ $dataClnt[0]->client_class }}">
-                                                        <option value="{{ $dataClnt[0]->client_class }}"
-                                                            {{ $dataClnt[0]->client_class == $dataClnt[0]->client_class ? 'selected' : '' }}>
-                                                            {{ $dataClnt[0]->client_class }}
+                                                    <select class="form-select" name="status" id="status">
+                                                        <option value="{{ $dataClnt[0]->status }}"
+                                                            {{ $dataClnt[0]->status == $dataClnt[0]->status ? 'selected' : '' }}>
+                                                            {{ $dataClnt[0]->status }}
                                                         </option>
                                                         <option value="ACTIVE">ACTIVE</option>
                                                         <option value="INACTIVE">INACTIVE</option>
@@ -118,15 +89,14 @@
                                         <div class="col-md-8">
                                             <div class="form-group has-icon-left">
                                                 <div class="position-relative">
-                                                    <input type="text" class="form-control" placeholder=""
+                                                    <input type="text" class="form-control" placeholder="Industry"
                                                         name="industry" value="{{ $dataClnt[0]->industry }}">
                                                     <div class="form-control-icon">
-                                                        <i class="bi bi-building"></i>
+                                                        <i class="bi bi-people-fill"></i>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-
                                         <div class="col-md-4">
                                             <label>Old/ New</label>
                                         </div>
@@ -166,13 +136,13 @@
                                             </div>
                                         </div>
                                         <div class="col-md-4">
-                                            <label>Second Engagement</label>
+                                            <label>Latest Engagement</label>
                                         </div>
                                         <div class="col-md-8">
                                             <div class="form-group has-icon-left">
                                                 <div class="position-relative">
                                                     <input type="date" class="form-control" placeholder="Second Engagement"
-                                                        name="second_eng" value="{{ $dataClnt[0]->second_eng }}">
+                                                        name="latest_eng" value="{{ $dataClnt[0]->latest_eng }}">
                                                     <div class="form-control-icon">
                                                         <i class="bi bi-calendar-event-fill"></i>
                                                     </div>

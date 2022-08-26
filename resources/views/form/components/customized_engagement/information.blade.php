@@ -104,10 +104,14 @@
                 <div class="col-md-6">
                     <div class="form-group has-icon-left">
                         <div class="position-relative">
-                            <input type="text" class="form-control @error('') is-invalid @enderror" value="{{ old('') }}"
-                                name="client" id="fourth">
+                            <select class="select select2s-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true" id="client" name="client">
+                                <option value="Select">-- Select --</option>
+                                @foreach ($companyList as $key=>$clients )
+                                    <option value="{{ $clients->company_name }}" data-first_eng={{ $clients->first_eng }}>{{ $clients->company_name }}</option>
+                                @endforeach
+                            </select>
                             <div class="form-control-icon">
-                                <i class="fa-solid fa-user"></i>
+                                <i class="fa-solid fa-clients"></i>
                             </div>
                             @error('')
                                 <span class="invalid-feedback" role="alert">
@@ -286,7 +290,24 @@
             </div>
     </div>
 <!------------ END OF FORM BODY ------------>
+	<!-- Select2 JS -->
+	<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    
 <script>
+        // // select auto id and email
+        // $('#name').on('change',function()
+        // {
+        //     $('#datepicker').val($(this).find(':selected').data('first_eng'));
+        //     // $('#email').val($(this).find(':selected').data('email'));
+        // });
+        $(document).ready(function() {
+            $('.select2s-hidden-accessible').select2({
+                // closeOnSelect: false
+                placeholder: 'Enter Client',
+                tags: true,
+            });
+        });
+  
     $('document').ready(function() {
         /*************************************STATUS**************************************/
             //DEFAULT COLOR
