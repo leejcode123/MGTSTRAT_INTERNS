@@ -8,14 +8,14 @@
     <div class="form-body container">
         <section>
             <div class="table-responsive" id="no-more-tables">
-                <table class="table table-bordered" id="ec_tableEngagementCost">
+                <table class="table table-bordered" id="ec_tableEngagementCost" style="width: 100%">
                     <thead class="table-dark">
                         <tr class="text-center">
-                            <th class="title-th" scope="col" width=15%></th>
-                            <th class="title-middle" scope="col" style="font-size: 0.9rem;" width=10%>NUMBER OF CONSULTANTS</th>
-                            <th class="title-middle px-4" scope="col" width=15%>HOURLY FEES</th>
-                            <th class="title-middle" scope="col" style="font-size: 0.9rem;" width=10%>NUMBER OF HOURS</th>
-                            <th class="title-middle" scope="col" style="font-size: 0.9rem;" width=10%>NIGHT SHIFT,
+                            <th class="title-th" scope="col" width=10%></th>
+                            <th class="title-middle px-1" scope="col" style="font-size: 0.8rem;" width=5%>NUMBER OF CONSULTANTS</th>
+                            <th class="title-middle px-5" scope="col" style="font-size: 0.9rem;" width=10%>HOURLY FEES</th>
+                            <th class="title-middle px-3" scope="col" style="font-size: 0.8rem;" width=5%>NUMBER OF HOURS</th>
+                            <th class="title-middle" scope="col" style="font-size: 0.8rem;" width=5%>NIGHT SHIFT,
                                 WEEKENDS HOLIDAYS *</th>
                             <th class="title-th" scope="col" width=12%>TOTAL FEE</th>
                             <th class="title-th" scope="col" width=15%>ROSTER</th>
@@ -107,8 +107,8 @@
                                     value="{{ old('') }}" name="cost_rooster[]" id="">
                             </td>
                             <td class="total-td table-light">
-                                <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                                    value="{{ old('') }}" name="cost_notes[]" id="">
+                                <textarea class="form-control input-table @error('') is-invalid @enderror"
+                                    name="cost_notes[]" id="" rows="2" cols="55"></textarea>
                             </td>
                             <td style="background-color: #FFFFFF;" class="border border-white"><a href="javascript:void(0)" class="text-success font-18" title="Add" id="addBtn9" onclick="$('#salesTotal').html(0)"><i
                                         class="fa fa-plus"></i></a>
@@ -174,8 +174,8 @@
                                     value="{{ old('') }}" name="cost_rooster[]" id="">
                             </td>
                             <td class="total-td table-light">
-                                <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                                    value="{{ old('') }}" name="cost_notes[]" id="">
+                                <textarea class="form-control input-table @error('') is-invalid @enderror"
+                                    name="cost_notes[]" id="" rows="2" cols="55"></textarea>
                             </td>
                             <td class="border border-white add-row"><a href="javascript:void(0)" class="text-success font-18" title="Add"
                                     id="addBtn10"><i class="fa fa-plus"></i></a></td>
@@ -233,11 +233,14 @@
                                     value="{{ old('') }}" name="cost_rooster[]" id="">
                             </td>
                             <td class="total-td table-light">
-                                <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                                    value="{{ old('') }}" name="cost_notes[]" id="">
+                                <textarea class="form-control input-table @error('') is-invalid @enderror"
+                                    name="cost_notes[]" id="" rows="2" cols="55"></textarea>
                             </td>
-                            <td class="border border-white add-row"><a href="javascript:void(0)" class="text-success font-18" title="Add"
-                                    id="addBtn11"><i class="fa fa-plus"></i></a></td>
+                            <td class="border border-white add-row">
+                                <a href="javascript:void(0)" class="text-success font-18" title="Add" id="addBtn11">
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                            </td>
                         </tr>
                     </tbody>
 
@@ -287,14 +290,18 @@
                                 <h4 class="text-center lead" id="ec_LeadconsultantTotal">-</h4>
                             </td>
                             <td class="total-td table-light">
-                                <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                                    value="{{ old('') }}" name="cost_notes[]" id="">
+                                <textarea class="form-control input-table @error('') is-invalid @enderror"
+                                    name="cost_notes[]" id="" rows="2" cols="55"></textarea>
                             </td>
                             <td class="total-td table-light">
-                                <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                                    value="{{ old('') }}" name="cost_rooster[]" id="">
+                                <textarea class="form-control input-table @error('') is-invalid @enderror"
+                                    name="cost_notes[]" id="" rows="2" cols="55"></textarea>
                             </td>
-                            <td class="border border-white add-row invisible"></td>
+                            <td class="border border-white add-row">
+                                <a href="javascript:void(0)" class="text-success font-18" title="Add" id="CeAddBtn">
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                            </td>
                         </tr>
                     </tbody>
 
@@ -329,12 +336,17 @@
                                 <h4 class="text-center lead" id="ec_AnalystTotal">-</h4>
                             </td>
                             <td class="total-td table-light">
-                                <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                                    value="{{ old('') }}" name="cost_notes[]" id="">
+                                <textarea class="form-control input-table @error('') is-invalid @enderror"
+                                    name="cost_notes[]" id="" rows="2" cols="55"></textarea>
                             </td>
                             <td class="total-td table-light">
-                                <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                                    value="{{ old('') }}" name="cost_rooster[]" id="">
+                                <textarea class="form-control input-table @error('') is-invalid @enderror"
+                                    name="cost_notes[]" id="" rows="2" cols="55"></textarea>
+                            </td>
+                            <td class="border border-white add-row">
+                                <a href="javascript:void(0)" class="text-success font-18" title="Add" id="CeAddBtn2">
+                                    <i class="fa fa-plus"></i>
+                                </a>
                             </td>
                         </tr>
                     </tbody>
@@ -369,7 +381,7 @@
                     </tr>
 
                     <tbody id=ec_TableDesigner>
-                        <tr class="table-warning" id=ec_DesignerRow>
+                        <tr class="table-warning" id=ec_DesignerRow1>
                             <td class="title table-light">Designer (P48K / P64K)
                                 <input type="text" class="d-none" value="Designer" name="cost_type[]" readonly>
                             </td>
@@ -401,14 +413,19 @@
                                     value="{{ old('') }}" name="cost_rooster[]" id="">
                             </td>
                             <td class="total-td table-light">
-                                <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                                    value="{{ old('') }}" name="cost_notes[]" id="">
+                                <textarea class="form-control input-table @error('') is-invalid @enderror"
+                                    name="cost_notes[]" id="" rows="2" cols="55"></textarea>
+                            </td>
+                            <td class="border border-white add-row">
+                                <a href="javascript:void(0)" class="text-success font-18" title="Add" id="CeAddBtn3">
+                                    <i class="fa fa-plus"></i>
+                                </a>
                             </td>
                         </tr>
                     </tbody>
 
                     <tbody id="ec_TableCreators">
-                        <tr class="table-warning">
+                        <tr class="table-warning" id="ec_CreatorsRow1">
                             <td class="title table-light">
                                 Creators Fees (500, 1K)
                                 <input type="text" class="d-none" value="Creators Fees" name="cost_type[]" readonly>
@@ -416,7 +433,7 @@
                             <td>
                                 <input type="number"
                                     class="text-center form-control input-table @error('') is-invalid @enderror"
-                                    value="{{ old('') }}" name="cost_consultant_num[]" id="ec_CreatorsNoc1" max="100">
+                                    value="" name="cost_consultant_num[]" id="ec_CreatorsNoc1" max="100" hidden>
                             </td>
                             <td>
                                 <fieldset>
@@ -458,8 +475,8 @@
                                     value="{{ old('') }}" name="cost_rooster[]" id="">
                             </td>
                             <td class="total-td table-light">
-                                <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                                    value="{{ old('') }}" name="cost_notes[]" id="">
+                                <textarea class="form-control input-table @error('') is-invalid @enderror"
+                                    name="cost_notes[]" id="" rows="2" cols="55"></textarea>
                             </td>
                             <td style="background-color: #FFFFFF;" class="border border-white"><a href="javascript:void(0)"
                                 class="text-success font-18" title="Add" id="addBtnCreators"><i
@@ -533,8 +550,13 @@
                                     value="{{ old('') }}" name="cost_rooster[]" id="">
                             </td>
                             <td class="total-td table-light">
-                                <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                                    value="{{ old('') }}" name="cost_notes[]" id="">
+                                <textarea class="form-control input-table @error('') is-invalid @enderror"
+                                    name="cost_notes[]" id="" rows="2" cols="55"></textarea>
+                            </td>
+                            <td class="border border-white add-row">
+                                <a href="javascript:void(0)" class="text-success font-18" title="Add" id="CeAddBtn4">
+                                    <i class="fa fa-plus"></i>
+                                </a>
                             </td>
                         </tr>
                     </tbody>
@@ -573,8 +595,8 @@
                                     value="{{ old('') }}" name="cost_rooster[]" id="">
                             </td>
                             <td class="total-td table-light">
-                                <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                                    value="{{ old('') }}" name="cost_notes[]" id="">
+                                <textarea class="form-control input-table @error('') is-invalid @enderror"
+                                    name="cost_notes[]" id="" rows="2" cols="55"></textarea>
                             </td>
                             <td style="background-color: #FFFFFF;" class="border border-white">
                                 <a href="javascript:void(0)" class="text-success font-18" title="Add" id="addBtnCoLead">
@@ -618,8 +640,8 @@
                                     value="{{ old('') }}" name="cost_rooster[]" id="">
                             </td>
                             <td class="total-td table-light">
-                                <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                                    value="{{ old('') }}" name="cost_notes[]" id="">
+                                <textarea class="form-control input-table @error('') is-invalid @enderror"
+                                    name="cost_notes[]" id="" rows="2" cols="55"></textarea>
                             </td>
                             <td style="background-color: #FFFFFF;" class="border border-white">
                                 <a href="javascript:void(0)" class="text-success font-18" title="Add" id="addBtnAlCoach">
@@ -663,8 +685,13 @@
                                     value="{{ old('') }}" name="cost_rooster[]" id="">
                             </td>
                             <td class="total-td table-light">
-                                <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                                    value="{{ old('') }}" name="cost_notes[]" id="">
+                                <textarea class="form-control input-table @error('') is-invalid @enderror"
+                                    name="cost_notes[]" id="" rows="2" cols="55"></textarea>
+                            </td>
+                            <td class="border border-white add-row">
+                                <a href="javascript:void(0)" class="text-success font-18" title="Add" id="CeAddBtn5">
+                                    <i class="fa fa-plus"></i>
+                                </a>
                             </td>
                         </tr>
                     </tbody>
@@ -731,10 +758,14 @@
                                     value="{{ old('') }}" name="cost_rooster[]" id="">
                             </td>
                             <td class="total-td table-light">
-                                <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                                    value="{{ old('') }}" name="cost_notes[]" id="">
+                                <textarea class="form-control input-table @error('') is-invalid @enderror"
+                                    name="cost_notes[]" id="" rows="2" cols="55"></textarea>
                             </td>
-                            <td class="border border-white add-row invisible"> </td>
+                            <td class="border border-white add-row">
+                                <a href="javascript:void(0)" class="text-success font-18" title="Add" id="CeAddBtn6">
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                            </td>
                         </tr>
                     </tbody>
 
@@ -772,10 +803,14 @@
                                     value="{{ old('') }}" name="cost_rooster[]" id="">
                             </td>
                             <td class="total-td table-light">
-                                <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                                    value="{{ old('') }}" name="cost_notes[]" id="">
+                                <textarea class="form-control input-table @error('') is-invalid @enderror"
+                                    name="cost_notes[]" id="" rows="2" cols="55"></textarea>
                             </td>
-                            <td class="border border-white add-row invisible"> </td>
+                            <td class="border border-white add-row">
+                                <a href="javascript:void(0)" class="text-success font-18" title="Add" id="CeAddBtn7">
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                            </td>
                         </tr>
                     </tbody>
 
@@ -843,10 +878,14 @@
                                     value="{{ old('') }}" name="cost_rooster[]" id="">
                             </td>
                             <td class="total-td table-light">
-                                <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                                    value="{{ old('') }}" name="cost_notes[]" id="">
+                                <textarea class="form-control input-table @error('') is-invalid @enderror"
+                                    name="cost_notes[]" id="" rows="2" cols="55"></textarea>
                             </td>
-                            <td class="border border-white add-row invisible"> </td>
+                            <td class="border border-white add-row">
+                                <a href="javascript:void(0)" class="text-success font-18" title="Add" id="CeAddBtn8">
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                            </td>
                         </tr>
                     </tbody>
 
@@ -897,8 +936,8 @@
                                 value="{{ old('') }}" name="cost_rooster[]" id="">
                         </td>
                         <td class="total-td table-light">
-                            <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="cost_notes[]" id="">
+                            <textarea class="form-control input-table @error('') is-invalid @enderror"
+                                name="cost_notes[]" id="" rows="2" cols="55"></textarea>
                         </td>
                         <td class="border border-white add-row invisible"> </td>
                     </tr>
@@ -941,8 +980,8 @@
                                 value="{{ old('') }}" name="cost_rooster[]" id="">
                         </td>
                         <td class="total-td table-light">
-                            <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="cost_notes[]" id="">
+                            <textarea class="form-control input-table @error('') is-invalid @enderror"
+                                name="cost_notes[]" id="" rows="2" cols="55"></textarea>
                         </td>
                         <td class="border border-white add-row invisible"> </td>
                     </tr>

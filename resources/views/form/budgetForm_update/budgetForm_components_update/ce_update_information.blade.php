@@ -3,9 +3,19 @@
     <h4 class="card-title">Information</h4>
 </div>
 <!------------ END CARD HEADER ------------>
-
+@php
+    $dateRow = 0;
+@endphp
 <!------------ FORM BODY ------------>
 <div class="form-body container">
+    
+    {{--<ul>
+     @foreach ($DateOfEngagements as $DateOfEngagement )
+        {{-- <li>{{ str_replace (array('[', '"', ']'), ' ' , $DateOfEngagement->program_dates) }}</li> 
+        <li>{{ $DateOfEngagement['program_dates'] }}</li>
+    @endforeach       
+    </ul>--}}
+
     <!------------ STATUS ------------>
         <div class="form-group row mb-4">
             <div class="col-md-2">

@@ -113,8 +113,8 @@
                                 <h4 class="text-center lead" id="leadTotal">-</h4>
                             </td>
                             <td class="total-td table-light">
-                                <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                                    name="fee_notes[]" id="">
+                                <textarea class="form-control input-table @error('') is-invalid @enderror"
+                                    name="fee_notes[]" id="" rows="2" cols="55"></textarea>
                             </td>
                             <td style="background-color: #FFFFFF;" class="border border-white"><a href="javascript:void(0)"
                                     class="text-success font-18" title="Add" id="addBtn"><i
@@ -159,8 +159,8 @@
                                 <h4 class="text-center lead" id="analyst-total">-</h4>
                             </td>
                             <td class="total-td table-light">
-                                <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                                    value="{{ old('') }}" name="fee_notes[]" id="">
+                                <textarea class="form-control input-table @error('') is-invalid @enderror"
+                                    name="fee_notes[]" id="" rows="2" cols="55"></textarea>
                             </td>
                             <td style="background-color: #FFFFFF;" class="border border-white"><a
                                     href="javascript:void(0)" class="text-success font-18" title="Add"
@@ -178,10 +178,7 @@
                         <td class="total-td" style="background-color: rgba(146, 146, 146, 0.727)">
                             <h4 class="text-center" id="subtotal-consulting">-</h4>
                         </td>
-                        <td class="total-td table-light">
-                            <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="">
-                        </td>
+                        <td class="total-td table-light"></td>
                         <td class="border border-white add-row"></td>
                     </tr>
 
@@ -252,8 +249,8 @@
                                 <h4 class="text-center" id="subtotal-design">-</h4>
                             </td>
                             <td class="table-light total-td">
-                                <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                                    value="{{ old('') }}" name="fee_notes[]" id="">
+                                <textarea class="form-control input-table @error('') is-invalid @enderror"
+                                    name="fee_notes[]" id="" rows="2" cols="55"></textarea>
                             </td>
                             <td style="background-color: #FFFFFF;" class="border border-white"><a
                                     href="javascript:void(0)" class="text-success font-18" title="Add"
@@ -345,8 +342,8 @@
                                 <h4 class="text-center lead" id="subtotal-lead">-</h4>
                             </td>
                             <td class="table-light total-td">
-                                <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                                    value="{{ old('') }}" name="fee_notes[]" id="">
+                                <textarea class="form-control input-table @error('') is-invalid @enderror"
+                                    name="fee_notes[]" id="" rows="2" cols="55"></textarea>
                             </td>
                             <td style="background-color: #FFFFFF;" class="border border-white"><a
                                     href="javascript:void(0)" class="text-success font-18" title="Add"
@@ -384,8 +381,8 @@
                                 <h4 class="text-center lead" id="subtotal-coFacilitator">-</h4>
                             </td>
                             <td class="table-light total-td">
-                                <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                                    value="{{ old('') }}" name="fee_notes[]" id="">
+                                <textarea class="form-control input-table @error('') is-invalid @enderror"
+                                    name="fee_notes[]" id="" rows="2" cols="55"></textarea>
                             </td>
                             <td style="background-color: #FFFFFF;" class="border border-white"><a
                                     href="javascript:void(0)" class="text-success font-18" title="Add"
@@ -424,8 +421,8 @@
                                 <h4 class="text-center lead" id="subtotal-moderator">-</h4>
                             </td>
                             <td class="table-light total-td">
-                                <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                                    value="{{ old('') }}" name="fee_notes[]" id="">
+                                <textarea class="form-control input-table @error('') is-invalid @enderror"
+                                    name="fee_notes[]" id="" rows="2" cols="55"></textarea>
                             </td>
                             <td style="background-color: #FFFFFF;" class="border border-white"><a
                                     href="javascript:void(0)" class="text-success font-18" title="Add"
@@ -463,8 +460,8 @@
                                 <h4 class="text-center lead" id="subtotal-producer">-</h4>
                             </td>
                             <td class="table-light total-td">
-                                <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                                    value="{{ old('') }}" name="fee_notes[]" id="">
+                                <textarea class="form-control input-table @error('') is-invalid @enderror"
+                                    name="fee_notes[]" id="" rows="2" cols="55"></textarea>
                             </td>
                             <td style="background-color: #FFFFFF;" class="border border-white"><a
                                     href="javascript:void(0)" class="text-success font-18" title="Add"
@@ -482,10 +479,7 @@
                         <td class="table-light total-td" style="background-color: rgba(146, 146, 146, 0.727)">
                             <h4 class="text-center" id="program-subtotal">-</h4>
                         </td>
-                        <td class="table-light total-td">
-                            <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="">
-                        </td>
+                        <td class="table-light total-td"></td>
                         <td class="border border-white add-row"></td>
                     </tr>
 
@@ -532,8 +526,8 @@
                                 <h4 class="text-center" id="subtotal-documentor">-</h4>
                             </td>
                             <td class="table-light total-td">
-                                <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                                    value="{{ old('') }}" name="fee_notes[]" id="">
+                                <textarea class="form-control input-table @error('') is-invalid @enderror"
+                                    name="fee_notes[]" id="" rows="2" cols="55"></textarea>
                             </td>
                             <td style="background-color: #FFFFFF;" class="border border-white"><a
                                     href="javascript:void(0)" class="text-success font-18" title="Add"
@@ -554,28 +548,32 @@
                         <td class="overall-total-end" style="background-color: rgba(146, 146, 146, 0.727)">
                             <h4 class="text-center fw-bold text-danger" id="total-standard">-</h4>
                         </td>
-                        <td class="overall-total-end">
-                            <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="">
-                        </td>
+                        <td class="overall-total-end"></td>
                     </tr>
 
                     <tr class="table-active">
                         <td class="table-light fw-bold text-dark text-uppercase fst-italic overall-total-start">
+                            <input type="text" class="d-none" value="Discounts" name="fee_type[]" readonly>
                             <b>Discount given (if any)</b>
                         </td>
-                        <td class="overall-total-middle"></td>
+                        <td class="overall-total-middle">
+                            <input type="text" class="d-none" value=" " name="fee_consultant_num[]" readonly>
+                        </td>
                         <td class="overall-total-middle table-warning">
                             <input type="text"
                                 class="hf-c32 form-control input-table text-center @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="input-discount" readonly>
+                                value="{{ old('') }}" name="fee_hour_fee[]" id="input-discount" readonly>
                         </td>
-                        <td class="overall-total-middle"></td>
-                        <td class="overall-total-middle"></td>
+                        <td class="overall-total-middle">
+                            <input type="text" class="d-none" value=" " name="fee_hour_num[]" readonly>
+                        </td>
+                        <td class="overall-total-middle">
+                            <input type="text" class="d-none" value=" " name="fee_nswh[]" readonly>
+                        </td>
                         <td class="overall-total-end"></td>
                         <td class="overall-total-end">
-                            <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="">
+                            <textarea class="form-control input-table @error('') is-invalid @enderror"
+                                name="fee_notes[]" id="" rows="2" cols="55"></textarea>
                         </td>
                     </tr>
 
@@ -590,13 +588,10 @@
                         <td class="overall-total-end table-warning">
                             <input type="text"
                                 class="tf-f34 form-control text-center text-danger fw-bolder input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="ef_Totalpackage" data-type="currency"
-                                style="font-size: 20px;">
+                                value="{{ old('') }}" name="engagement_fees_total" id="ef_Totalpackage" data-type="currency"
+                                style="font-size: 25px;">
                         </td>
-                        <td class="overall-total-end">
-                            <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                                value="{{ old('') }}" name="" id="">
-                        </td>
+                        <td class="overall-total-end"></td>
                     </tr>
                     </tbody>
                 </table>
@@ -634,6 +629,10 @@
                     $(`#ef_LeadfacilitatorHf1`).val(12000)
                 });
             });
+        });
+
+        $(document).on("load keyup change click", "#ec_tableEngagementFees", function (){
+            document.getElementById("ef_Totalpackage").defaultValue = $("#total-standard").html();
         });
     </script>
 @include('form.components.customized_engagement.script.ce_engagement_fees')

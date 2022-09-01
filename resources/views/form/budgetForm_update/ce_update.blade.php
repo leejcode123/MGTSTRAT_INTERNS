@@ -57,7 +57,7 @@
         </div>
 
         <!------------ CARD BODY ------------>
-            <div class="col-12">
+            <div class="col-12 col-md-12 col-sm-12">
                 {{-- card --}}
                 <div class="card">
                     {{-- card content --}}

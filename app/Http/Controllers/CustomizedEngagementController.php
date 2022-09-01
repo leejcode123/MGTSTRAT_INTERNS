@@ -49,7 +49,8 @@ class CustomizedEngagementController extends Controller
 
     public function updateRecord($cstmzd_eng_form_id)
     {
-        $data = DB::table('customized_engagement_forms') ->where('cstmzd_eng_form_id',$cstmzd_eng_form_id)->first();
+        // $data = Customized_engagement_form::findOrFail($cstmzd_eng_form_id);
+        $data = DB::table('customized_engagement_forms')->where('cstmzd_eng_form_id',$cstmzd_eng_form_id)->first();
         $dataJoin1 = DB::table('customized_engagement_forms')
             ->join('engagement_fees', 'customized_engagement_forms.cstmzd_eng_form_id', '=', 'engagement_fees.cstmzd_eng_form_id')
             ->select('customized_engagement_forms.*', 'engagement_fees.*')
@@ -60,7 +61,13 @@ class CustomizedEngagementController extends Controller
             ->select('customized_engagement_forms.*', 'engagement_costs.*')
             ->where('engagement_costs.cstmzd_eng_form_id',$cstmzd_eng_form_id)
             ->get();
-        return view('form.budgetForm_update.ce_update',compact('data','dataJoin1','dataJoin2'));
+        // $DateOfEngagements = DB::select('select * from customized_engagement_forms');
+        $DateOfEngagements = [
+            ['program_dates' => 'Aug 20, 1999'],
+        ]
+        ;
+        return view('form.budgetForm_update.ce_update',['DateOfEngagements'=>$DateOfEngagements], compact('data','dataJoin1','dataJoin2'));
+        // return view('form.budgetForm_update.ce_update', ['data' => $data]);
 
     }
 
@@ -85,6 +92,7 @@ class CustomizedEngagementController extends Controller
             $ce_form->program_end_time      = $request->program_end_time;
             $ce_form->cluster               = $request->cluster;
             $ce_form->core_area             = $request->core_area;
+            $ce_form->Engagement_fees_total = $request->engagement_fees_total;
             $ce_form->save();
 
             $cstmzd_eng_form_id = DB::table('customized_engagement_forms')->orderBy('cstmzd_eng_form_id','DESC')->select('cstmzd_eng_form_id')->first();
@@ -205,9 +213,7 @@ class CustomizedEngagementController extends Controller
 
                 Engagement_cost::create($engagement_cost);
             }
-            // Engagement_fee::destroy($request->id);
-            // Engagement_cost::destroy($request->ce_id);
-
+            
             DB::commit();
             Toastr::success('Updated successfully','Success');
             return redirect()->back();

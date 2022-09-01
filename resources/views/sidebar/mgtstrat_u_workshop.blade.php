@@ -7,7 +7,7 @@
                             src="{{ URL::to('assets/images/logo/main-logo1.png') }}" alt="Logo" srcset=""></a>
                 </div>
                 <div class="toggler">
-                    <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
+                    <a href="#" id="SidebarHide" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
                 </div>
             </div>
         </div>

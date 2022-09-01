@@ -125,20 +125,22 @@
                             <h4 class="text-center lead" id="leadTotal">-</h4>
                         </td>
                         <td class="total-td table-light">
-                            <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                                value="{{ $fee_types->notes }}" name="fee_notes[]" id="">
+                            {{-- <input type="text" class="form-control input-table @error('') is-invalid @enderror"
+                                value="{{ $fee_types->notes }}" name="fee_notes[]" id=""> --}}
+                            <textarea class="form-control input-table @error('') is-invalid @enderror"
+                                name="fee_notes[]" id="" rows="2" cols="55">{{$fee_types->notes}}</textarea>
                         </td>
                         @if ($efLeadConsultant === 1)
                         <td style="background-color: #FFFFFF;" class="border border-white"><a href="javascript:void(0)"
                                 class="text-success font-18" title="Add" id="addBtn"><i
                                     class="fa fa-plus"></i></a>
                         </td>
-                        @else
+                        {{-- @else
                         <td class="border border-white" style="background-color: #FFFFFF;">
                             <a href="javascript:void(0)" class="text-danger font-18 remove" title="Remove" onclick="$('#ecButton{{$efLeadConsultant}}').trigger('click');">
                                 <i class="fa fa-trash-o"></i>
                             </a>
-                        </td>
+                        </td> --}}
                         @endif
                     </tr>
                     @endif
@@ -184,20 +186,20 @@
                             <h4 class="text-center lead" id="analyst-total">-</h4>
                         </td>
                         <td class="total-td table-light">
-                            <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                                value="{{ $fee_types->notes }}" name="fee_notes[]" id="">
+                            <textarea class="form-control input-table @error('') is-invalid @enderror"
+                                name="fee_notes[]" id="" rows="2" cols="55">{{$fee_types->notes}}</textarea>
                         </td>
                         @if($efAnalyst === 1)
                             <td style="background-color: #FFFFFF;" class="border border-white"><a
                                     href="javascript:void(0)" class="text-success font-18" title="Add"
                                     id="addBtn2"><i class="fa fa-plus"></i></a>
                             </td>
-                        @else
+                        {{-- @else
                             <td class="border border-white" style="background-color: #FFFFFF;">
                                 <a href="javascript:void(0)" class="text-danger font-18 remove" title="Remove" onclick="$('#ecAnalystRemove{{$efAnalyst}}').trigger('click');">
                                     <i class="fa fa-trash-o"></i>
                                 </a>
-                            </td>
+                            </td> --}}
                         @endif
                     </tr>
                     @endif
@@ -213,10 +215,7 @@
                     <td class="total-td" style="background-color: rgba(146, 146, 146, 0.727)">
                         <h4 class="text-center" id="subtotal-consulting">-</h4>
                     </td>
-                    <td class="total-td table-light">
-                        <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="">
-                    </td>
+                    <td class="total-td table-light"></td>
                     <td class="border border-white add-row"></td>
                 </tr>
 
@@ -290,20 +289,20 @@
                             <h4 class="text-center" id="subtotal-design">-</h4>
                         </td>
                         <td class="table-light total-td">
-                            <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                                value="{{ $fee_types->notes }}" name="fee_notes[]" id="">
+                            <textarea class="form-control input-table @error('') is-invalid @enderror"
+                                name="fee_notes[]" id="" rows="2" cols="55">{{$fee_types->notes}}</textarea>
                         </td>
                         @if ($efDesigner === 1 )
                             <td style="background-color: #FFFFFF;" class="border border-white"><a
                                     href="javascript:void(0)" class="text-success font-18" title="Add"
                                     id="addBtn3"><i class="fa fa-plus"></i></a>
                             </td>
-                        @else
+                        {{-- @else
                             <td class="border border-white" style="background-color: #FFFFFF;">
                                 <a href="javascript:void(0)" class="text-danger font-18 remove" onclick="$('#ecDesignerRemove{{$efDesigner}}').trigger('click');" title="Remove">
                                     <i class="fa fa-trash-o"></i>
                                 </a>
-                            </td>
+                            </td> --}}
                         @endif
                     </tr>
                     @endif
@@ -396,20 +395,20 @@
                             <h4 class="text-center lead" id="subtotal-lead">-</h4>
                         </td>
                         <td class="table-light total-td">
-                            <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                                value="{{ $fee_types->notes }}" name="fee_notes[]" id="">
+                            <textarea class="form-control input-table @error('') is-invalid @enderror"
+                                name="fee_notes[]" id="" rows="2" cols="55">{{$fee_types->notes}}</textarea>
                         </td>
                         @if ($efLeadfaci === 1)
                             <td style="background-color: #FFFFFF;" class="border border-white"><a
                                     href="javascript:void(0)" class="text-success font-18" title="Add"
                                     id="addBtn4"><i class="fa fa-plus"></i></a>
                             </td>
-                        @else
+                        {{-- @else
                             <td class="border border-white" style="background-color: #FFFFFF;">
                                 <a href="javascript:void(0)" class="text-danger font-18 remove" onclick="$('#ecLeadfaciRemove{{$efLeadfaci}}').trigger('click');" title="Remove">
                                     <i class="fa fa-trash-o"></i>
                                 </a>
-                            </td>
+                            </td> --}}
                         @endif
                     </tr>
                     @endif
@@ -448,20 +447,20 @@
                             <h4 class="text-center lead" id="subtotal-coFacilitator">-</h4>
                         </td>
                         <td class="table-light total-td">
-                            <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                                value="{{ $fee_types->notes }}" name="fee_notes[]" id="">
+                            <textarea class="form-control input-table @error('') is-invalid @enderror"
+                                name="fee_notes[]" id="" rows="2" cols="55">{{$fee_types->notes}}</textarea>
                         </td>
                         @if ($efCofaci === 1)
                             <td style="background-color: #FFFFFF;" class="border border-white"><a
                                     href="javascript:void(0)" class="text-success font-18" title="Add"
                                     id="addBtn5"><i class="fa fa-plus"></i></a>
                             </td>
-                        @else
+                        {{-- @else
                             <td class="border border-white" style="background-color: #FFFFFF;">
                                 <a href="javascript:void(0)" class="text-danger font-18 remove" title="Remove" onclick="$('#ecCofaciRemove{{$efCofaci}}').trigger('click');">
                                     <i class="fa fa-trash-o"></i>
                                 </a>
-                            </td>
+                            </td> --}}
                         @endif
                     </tr>
                     @endif
@@ -501,20 +500,20 @@
                             <h4 class="text-center lead" id="subtotal-moderator">-</h4>
                         </td>
                         <td class="table-light total-td">
-                            <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                                value="{{ $fee_types->notes }}" name="fee_notes[]" id="">
+                            <textarea class="form-control input-table @error('') is-invalid @enderror"
+                                name="fee_notes[]" id="" rows="2" cols="55">{{$fee_types->notes}}</textarea>
                         </td>
                         @if ($efModerator === 1)
                             <td style="background-color: #FFFFFF;" class="border border-white"><a
                                     href="javascript:void(0)" class="text-success font-18" title="Add"
                                     id="addBtn6"><i class="fa fa-plus"></i></a>
                             </td>
-                        @else
+                        {{-- @else
                             <td class="border border-white" style="background-color: #FFFFFF;">
                                 <a href="javascript:void(0)" class="text-danger font-18 remove" title="Remove" onclick="$('#ecModeratorRemove{{$efModerator}}').trigger('click');">
                                     <i class="fa fa-trash-o"></i>
                                 </a>
-                            </td>
+                            </td> --}}
                         @endif
                     </tr>
                     @endif
@@ -553,20 +552,20 @@
                             <h4 class="text-center lead" id="subtotal-producer">-</h4>
                         </td>
                         <td class="table-light total-td">
-                            <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                                value="{{ $fee_types->notes }}" name="fee_notes[]" id="">
+                            <textarea class="form-control input-table @error('') is-invalid @enderror"
+                                name="fee_notes[]" id="" rows="2" cols="55">{{$fee_types->notes}}</textarea>
                         </td>
                         @if($efProducer === 1)
                             <td style="background-color: #FFFFFF;" class="border border-white"><a
                                     href="javascript:void(0)" class="text-success font-18" title="Add"
                                     id="addBtn7"><i class="fa fa-plus"></i></a>
                             </td>
-                        @else
+                        {{-- @else
                             <td class="border border-white" style="background-color: #FFFFFF;">
                                 <a href="javascript:void(0)" class="text-danger font-18 remove" onclick="$('#ecProducerRemove{{$efProducer}}').trigger('click');" title="Remove">
                                     <i class="fa fa-trash-o"></i>
                                 </a>
-                            </td>
+                            </td> --}}
                         @endif
                     </tr>
                     @endif
@@ -582,10 +581,7 @@
                     <td class="table-light total-td" style="background-color: rgba(146, 146, 146, 0.727)">
                         <h4 class="text-center" id="program-subtotal">-</h4>
                     </td>
-                    <td class="table-light total-td">
-                        <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="">
-                    </td>
+                    <td class="table-light total-td"></td>
                     <td class="border border-white add-row"></td>
                 </tr>
 
@@ -635,20 +631,20 @@
                             <h4 class="text-center" id="subtotal-documentor">-</h4>
                         </td>
                         <td class="table-light total-td">
-                            <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                                value="{{ $fee_types->notes }}" name="fee_notes[]" id="">
+                            <textarea class="form-control input-table @error('') is-invalid @enderror"
+                                name="fee_notes[]" id="" rows="2" cols="55">{{$fee_types->notes}}</textarea>
                         </td>
                         @if($efDocumentor === 1)
                         <td style="background-color: #FFFFFF;" class="border border-white"><a
                                 href="javascript:void(0)" class="text-success font-18" title="Add"
                                 id="addBtn8"><i class="fa fa-plus"></i></a>
                         </td>
-                        @else
+                        {{-- @else
                             <td class="border border-white" style="background-color: #FFFFFF;">
                                 <a href="javascript:void(0)" class="text-danger font-18 remove" onclick="$('#ecDocumentorRemove{{$efDocumentor}}').trigger('click');" title="Remove">
                                     <i class="fa fa-trash-o"></i>
                                 </a>
-                            </td>
+                            </td> --}}
                         @endif
                     </tr>
                     @endif
@@ -665,32 +661,40 @@
                     <td class="overall-total-middle"></td>
                     <td class="overall-total-middle"></td>
                     <td class="overall-total-end" style="background-color: rgba(146, 146, 146, 0.727)">
-                        <h4 class="text-center fw-bold text-danger" id="total-standard">-</h4>
+                        <h4 class="text-center fw-bold text-danger" id="total-standard" onclick="this.innerHTML = $ef_Totalpackage">-</h4>
                     </td>
-                    <td class="overall-total-end">
-                        <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="">
-                    </td>
+                    <td class="overall-total-end"></td>
                 </tr>
 
-                <tr class="table-active">
-                    <td class="table-light fw-bold text-dark text-uppercase fst-italic overall-total-start">
-                        <b>Discount given (if any)</b>
-                    </td>
-                    <td class="overall-total-middle"></td>
-                    <td class="overall-total-middle table-warning">
-                        <input type="text"
-                            class="hf-c32 form-control input-table text-center @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="input-discount" readonly>
-                    </td>
-                    <td class="overall-total-middle"></td>
-                    <td class="overall-total-middle"></td>
-                    <td class="overall-total-end"></td>
-                    <td class="overall-total-end">
-                        <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="">
-                    </td>
-                </tr>
+                @foreach ($dataJoin1 as $key=>$fee_types )
+                    @if ($fee_types->type === 'Discounts')
+                        <tr class="table-active">
+                            <td class="table-light fw-bold text-dark text-uppercase fst-italic overall-total-start">
+                                <input type="text" class="d-none" value="{{$fee_types->type}}" name="fee_type[]" readonly>
+                                <b>Discount given (if any)</b>
+                            </td>
+                            <td class="overall-total-middle">
+                                <input type="text" class="d-none" value="" name="fee_consultant_num[]" readonly>
+                            </td>
+                            <td class="overall-total-middle table-warning">
+                                <input type="text"
+                                    class="hf-c32 form-control input-table text-center @error('') is-invalid @enderror"
+                                    value="{{$fee_types->hour_fee}}" name="fee_hour_fee[]" id="input-discount" readonly>
+                            </td>
+                            <td class="overall-total-middle">
+                                <input type="text" class="d-none" value="" name="fee_hour_num[]" readonly>
+                            </td>
+                            <td class="overall-total-middle">
+                                <input type="text" class="d-none" value="" name="fee_nswh[]" readonly>
+                            </td>
+                            <td class="overall-total-end"></td>
+                            <td class="overall-total-end">
+                                <textarea class="form-control input-table @error('') is-invalid @enderror"
+                                    name="fee_notes[]" id="" rows="2" cols="55">{{$fee_types->notes}}</textarea>
+                            </td>
+                        </tr>
+                    @endif
+                @endforeach
 
                 <tr class="table-active">
                     <td class="table-light fw-bold text-uppercase text-dark fst-italic overall-total-start">
@@ -703,13 +707,10 @@
                     <td class="overall-total-end table-warning">
                         <input type="text"
                             class="tf-f34 form-control text-center text-danger fw-bolder input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="ef_Totalpackage" data-type="currency"
+                            value="{{ $data->Engagement_fees_total }}" name="engagement_fees_total" id="ef_Totalpackage" data-type="currency"
                             style="font-size: 20px;">
                     </td>
-                    <td class="overall-total-end">
-                        <input type="text" class="form-control input-table @error('') is-invalid @enderror"
-                            value="{{ old('') }}" name="" id="">
-                    </td>
+                    <td class="overall-total-end"></td>
                 </tr>
                 </tbody>
             </table>

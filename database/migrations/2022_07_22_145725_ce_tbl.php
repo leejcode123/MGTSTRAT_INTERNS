@@ -22,7 +22,8 @@ class CeTbl extends Migration
             $table->string('client', 50)->nullable();
             $table->string('engagement_title', 100)->nullable();
             $table->integer('pax_number')->nullable();
-            $table->string('program_dates')->nullable();
+            // $table->string('program_dates')->nullable();
+            $table->json('program_dates')->nullable();
             $table->string('program_start_time')->nullable();
             $table->string('program_end_time')->nullable();
             $table->string('cluster')->nullable();

@@ -6,8 +6,8 @@
                     <a href="{{ route('home') }}"><img class="img-fluid" src="{{ URL::to('assets/images/logo/main-logo1.png') }}" alt="Logo"
                             srcset=""></a>
                 </div>
-                <div class="toggler">
-                    <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
+                <div class="toggler"><!--d-xl-none-->
+                    <a href="#" id="SidebarHide" class="sidebar-hide d-block"><i class="bi bi-x bi-middle"></i></a>
                 </div>
             </div>
         </div>
