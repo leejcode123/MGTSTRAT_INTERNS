@@ -67,14 +67,14 @@
 
                             <!------------ BUDGET FORM ------------>
                                 <form class="form form-horizontal multisteps-form__form" action="{{ route('update') }}"
-                                    method="POST">
+                                    method="POST" autocomplete="off">
                                     @csrf
 
                                     <input class="form-control" type="hidden" id="id" name="id" value="{{$data->id}}">
                                     <input class="form-control" type="hidden" id="cstmzd_eng_form_id" name="cstmzd_eng_form_id" value="{{$data->cstmzd_eng_form_id}}">
                                     <!------------ INFORMATION ------------>
                                         <div class="multisteps-form__panel js-active" data-animation="slideHorz">
-                                            @include('form.budgetForm_update.budgetForm_components_update.ce_update_information')
+                                            @include('form.components.customized_engagement.update.ce_update_information')
                                             {{-- next button --}}
                                             <div class="col-12 d-flex justify-content-center mt-3">
                                                 <button class="btn btn-primary ml-auto js-btn-next" type="button" title="Next">Next</button>
@@ -83,7 +83,7 @@
 
                                     <!------------ ENGAGEMENT FEES ------------>
                                         <div class="multisteps-form__panel" data-animation="slideHorz">
-                                            @include('form.budgetForm_update.budgetForm_components_update.ce_update_engagementFees')
+                                            @include('form.components.customized_engagement.update.ce_update_engagementFees')
                                             {{-- next and prev button --}}
                                             <div class="button-row d-flex justify-content-center mt-3">
                                                 <button class="btn btn-secondary mx-2 js-btn-prev" type="button" title="Prev">Prev</button>
@@ -93,7 +93,7 @@
 
                                     <!------------ ENGAGEMENT COST ------------>
                                         <div class="multisteps-form__panel" data-animation="slideHorz">
-                                            @include('form.budgetForm_update.budgetForm_components_update.ce_update_engagementCost')
+                                            @include('form.components.customized_engagement.update.ce_update_engagementCost')
                                             {{-- next and prev button --}}
                                             <div class="col-12 d-flex justify-content-center mt-3">
                                                 <button class="btn btn-secondary mx-2 js-btn-prev" type="button" title="Prev">Prev</button>
@@ -103,7 +103,7 @@
 
                                     <!------------ PROFIT FORECAST ------------>
                                         <div class="multisteps-form__panel" data-animation="slideHorz">
-                                            @include('form.budgetForm_update.budgetForm_components_update.ce_update_profitForecast')
+                                            @include('form.components.customized_engagement.update.ce_update_profitForecast')
                                             {{-- prev and submit button --}}
                                             <div class="col-12 d-flex justify-content-center mt-3">
                                                 <button class="btn btn-secondary mx-2 js-btn-prev" type="button" title="Prev">Prev</button>
@@ -131,8 +131,24 @@
             </footer>
         <!------------ END OF FOOTER ------------>
     </div>
-    {{-- CUSTOMIZED ENGAGEMENT SCRIPT --}}
+
+    {{-- AJAX DELETE ROW SCRIPT --}}
+    <script>
+    $(".remove").on("click", function(e){
+        var id = $(this).attr("data-id");
+        $.ajax({ 
+            url: "{{ route('delete') }}",
+            data: {"id": id,"_token": "{{ csrf_token() }}"},
+            type: 'post',
+            success: function(result){
+            toastr.warning('Data deleted successfully','Success');
+            }
+        });
+    });
+    </script>
+
     <script type="text/javascript" src="/js/ceform.js"></script>
+    <script type="text/javascript" src="/js/ceFormUpdate.js"></script>
     <script type="text/javascript" src="/js/MultiStep.js"></script>
     <script type="text/javascript" src="/js/currencyFormat.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>

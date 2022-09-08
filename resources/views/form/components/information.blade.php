@@ -1,29 +1,13 @@
-{{-- p --}}
 <div class="card-header">
     <h4 class="card-title">Information</h4>
 </div>
+
 <div class="form-body container">
     <div class="form-group row">
         <div class="col-md-3">
             <label class="required">Company Name</label>
         </div>
-        {{-- <div class="col-md-8">
-            <div class="form-group has-icon-left">
-                <div class="position-relative">
-                    <input type="text" class="form-control @error('fullName') is-invalid @enderror"
-                        value="{{ old('fullName') }}" placeholder="Enter full name" id="first-name-icon"
-                        name="fullName"></input>
-                    <div class="form-control-icon">
-                        <i class="fa-solid fa-user"></i>
-                    </div>
-                    @error('fullName')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
-                </div>
-            </div>
-        </div> --}}
+
         <div class="col-md-8">
             <div class="form-group has-icon-left">
                 <div class="position-relative">
@@ -45,6 +29,7 @@
         <div class="col-md-3">
             <label class="required">Engagement Type</label>
         </div>
+
         <div class="col-md-8">
             <div class="form-group has-icon-left">
                 <div class="position-relative">
@@ -80,6 +65,7 @@
         <div class="col-md-3">
             <label class="required">Webinar Title</label>
         </div>
+
         <div class="col-md-8">
             <div class="form-group has-icon-left">
                 <div class="position-relative">
@@ -185,9 +171,6 @@
                     </div>
                 </div>
         </div>
-        {{-- <div class="col-12 d-flex justify-content-center mt-3">
-                <button type="submit" class="btn btn-primary me-1 mb-1">Save</button>
-                <button type="reset" class="btn btn-light-secondary me-1 mb-1">Reset</button>
-            </div> --}}
+
     </div>
 </div>

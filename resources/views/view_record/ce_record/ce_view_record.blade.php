@@ -45,13 +45,15 @@
                                     <th>NUMBER OF PAX</th>
                                     <th>SCHEDULED DATES</th>
                                     <th>SCHEDULED TIME</th>
+                                    <th>DATE ADDED</th>
                                     <th class="text-center">Modify</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($data as $key => $item)
                                     <tr>
-                                        {{-- <td class="id fw-bold">{{ ++$key }}</td> --}}
+                                        {{-- <td hidden class="ids">{{ $item->id }}</td>
+                                        <td hidden class="estimate_number">{{ $item->cstmzd_eng_form_id }}</td> --}}
                                         <td class="id fw-bold">{{ $item->cstmzd_eng_form_id }}</td>
                                         <td>
                                             <span id="status" class="badge">{{ $item->status }}</span>
@@ -80,8 +82,10 @@
                                         <td class="name fw-bold">{{ $item->customized_type }}</td>
                                         <td class="email fw-bold">{{ $item->engagement_title }}</td>
                                         <td class="fw-bold">{{ $item->pax_number }}</td>
-                                        <td class="fw-bold">{{ Str::limit(str_replace (array('[', '"', ']'), ' ' , $item->program_dates), '15') }}</td>
-                                        <td class="fw-bold">{{ Str::limit(str_replace (array('[', '"', ']'), ' ' , $item->program_start_time), '10') }}</td>
+                                        <td class="fw-bold">{{ Str::limit(str_replace (array('[', '"', ']'), ' ' , $item->program_dates),'14') }}</td>
+                                        <td class="fw-bold">{{ Str::limit(str_replace (array('[', '"', ']'), ' ' , $item->program_start_time),'10') }}</td>
+                                        {{-- <td class="fw-bold">{{ \Carbon\Carbon::parse($item->created_at)->format('d/m/Y')}}</td> --}}
+                                        <td class="fw-bold">{{ \Carbon\Carbon::parse($item->created_at)->toFormattedDateString()}}</td>
                                         <td class="text-center fw-bold">
                                             <a href="">
                                                 <span class="badge bg-info"><i class="bi bi-person-plus-fill"></i></span>
@@ -107,10 +111,6 @@
                 <div class="float-end">
                     <p><script>document.write(new Date().getFullYear());</script> Copyright &copy MGT-STRAT</p>
                 </div>
-                {{-- <div class="float-end">
-                    <p>Crafted with <span class="text-danger"><i class="bi bi-heart"></i></span> by <a
-                            href="#">MGT-STRAT</a></p>
-                </div> --}}
             </div>
         </footer>
     <!------------ END OF FOOTER ------------>

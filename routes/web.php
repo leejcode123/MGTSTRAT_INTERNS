@@ -91,7 +91,8 @@ Route::get('delete/{id}', [App\Http\Controllers\CustomizedEngagementController::
 
 Route::post('save', [App\Http\Controllers\CustomizedEngagementController::class, 'store'])->name('save');
 Route::post('update', [App\Http\Controllers\CustomizedEngagementController::class, 'ceUpdateRecord','ceAddDeleteRecord'])->middleware('auth')->name('update');
-// Route::post('delete', [App\Http\Controllers\CustomizedEngagementController::class, 'ceAddDeleteRecord'])->middleware('auth')->name('delete');
+// Route::post('delete', [App\Http\Controllers\CustomizedEngagementController::class, 'deleteRow'])->middleware('auth')->name('delete');
+Route::post('delete',[App\Http\Controllers\CustomizedEngagementController::class, 'deleteRow'])->name('delete');
 });
 // ----------------------------- F2F engagement form ------------------------------//
 Route::get('form/f2f_engagement/new', [App\Http\Controllers\F2fEngagementController::class, 'index'])->middleware('auth')->name('form/f2f_engagement/new');

@@ -263,13 +263,12 @@
                         <tr class="table-warning" id="ec_LeadConsultant">
                             <td class="title table-light">
                                 <input type="text" class="d-none" value="Lead Consultant" name="cost_type[]" readonly>
-                                Lead Consultant (P7K, P9K)
+                                Lead Consultant
                             </td>
                             <td class="">
                                 <input type="number"
                                     class="text-center form-control input-table @error('') is-invalid @enderror"
-                                    value="{{ old('') }}" name="cost_consultant_num[]" id="ec_LeadconsultantNoc1" max="100"
-                                    readonly>
+                                    value="{{ old('') }}" name="cost_consultant_num[]" id="ec_LeadconsultantNoc1" max="100">
                             </td>
                             <td class="">
                                 <input type="text"
@@ -279,19 +278,19 @@
                             <td class="">
                                 <input type="number"
                                     class="text-center form-control input-table @error('') is-invalid @enderror"
-                                    value="{{ old('') }}" name="cost_hour_num[]" id="ec_LeadconsultantNoh1" readonly>
+                                    value="{{ old('') }}" name="cost_hour_num[]" id="ec_LeadconsultantNoh1" >
                             </td>
                             <td class="">
                                 <input type="number"
                                     class="text-center form-control input-table @error('') is-invalid @enderror"
-                                    value="{{ old('') }}" name="cost_nswh[]" id="ec_LeadconsultantNwh1" readonly>
+                                    value="{{ old('') }}" name="cost_nswh[]" id="ec_LeadconsultantNwh1" >
                             </td>
                             <td class="total-td table-light">
                                 <h4 class="text-center lead" id="ec_LeadconsultantTotal">-</h4>
                             </td>
                             <td class="total-td table-light">
                                 <textarea class="form-control input-table @error('') is-invalid @enderror"
-                                    name="cost_notes[]" id="" rows="2" cols="55"></textarea>
+                                    name="cost_rooster[]" id="" rows="2" cols="55"></textarea>
                             </td>
                             <td class="total-td table-light">
                                 <textarea class="form-control input-table @error('') is-invalid @enderror"
@@ -315,7 +314,7 @@
                             <td>
                                 <input type="number"
                                     class="text-center form-control input-table @error('') is-invalid @enderror"
-                                    value="{{ old('') }}" name="cost_consultant_num[]" id="ec_AnalystNoc1" max="100" readonly>
+                                    value="{{ old('') }}" name="cost_consultant_num[]" id="ec_AnalystNoc1" max="100">
                             </td>
                             <td>
                                 <input type="text"
@@ -325,19 +324,19 @@
                             <td>
                                 <input type="number"
                                     class="text-center form-control input-table @error('') is-invalid @enderror"
-                                    value="{{ old('') }}" name="cost_hour_num[]" id="ec_AnalystNoh1" readonly>
+                                    value="{{ old('') }}" name="cost_hour_num[]" id="ec_AnalystNoh1">
                             </td>
                             <td>
                                 <input type="number"
                                     class="text-center form-control input-table @error('') is-invalid @enderror"
-                                    value="{{ old('') }}" name="cost_nswh[]" id="ec_AnalystNwh1" readonly>
+                                    value="{{ old('') }}" name="cost_nswh[]" id="ec_AnalystNwh1">
                             </td>
                             <td class="total-td table-light">
                                 <h4 class="text-center lead" id="ec_AnalystTotal">-</h4>
                             </td>
                             <td class="total-td table-light">
                                 <textarea class="form-control input-table @error('') is-invalid @enderror"
-                                    name="cost_notes[]" id="" rows="2" cols="55"></textarea>
+                                    name="cost_rooster[]" id="" rows="2" cols="55"></textarea>
                             </td>
                             <td class="total-td table-light">
                                 <textarea class="form-control input-table @error('') is-invalid @enderror"
@@ -382,13 +381,13 @@
 
                     <tbody id=ec_TableDesigner>
                         <tr class="table-warning" id=ec_DesignerRow1>
-                            <td class="title table-light">Designer (P48K / P64K)
+                            <td class="title table-light">Designer
                                 <input type="text" class="d-none" value="Designer" name="cost_type[]" readonly>
                             </td>
                             <td class="">
                                 <input type="number"
                                     class="text-center form-control input-table @error('') is-invalid @enderror"
-                                    value="{{ old('') }}" name="cost_consultant_num[]" id="ec_DesignerNoc1" max="100" readonly>
+                                    value="{{ old('') }}" name="cost_consultant_num[]" id="ec_DesignerNoc1" max="100">
                             </td>
                             <td>
                                 <input type="text"
@@ -398,12 +397,12 @@
                             <td class="">
                                 <input type="number"
                                     class="text-center form-control input-table @error('') is-invalid @enderror"
-                                    value="{{ old('') }}" name="cost_hour_num[]" id="ec_DesignerNoh1" readonly>
+                                    value="{{ old('') }}" name="cost_hour_num[]" id="ec_DesignerNoh1">
                             </td>
                             <td class="">
                                 <input type="number"
                                     class="text-center form-control input-table @error('') is-invalid @enderror"
-                                    value="{{ old('') }}" name="cost_nswh[]" id="ec_DesignerNwh1" readonly>
+                                    value="{{ old('') }}" name="cost_nswh[]" id="ec_DesignerNwh1">
                             </td>
                             <td class="total-td table-light">
                                 <h4 class="text-center lead" id="ec_DesignerTotal">-</h4>
@@ -427,13 +426,13 @@
                     <tbody id="ec_TableCreators">
                         <tr class="table-warning" id="ec_CreatorsRow1">
                             <td class="title table-light">
-                                Creators Fees (500, 1K)
+                                Creators Fees
                                 <input type="text" class="d-none" value="Creators Fees" name="cost_type[]" readonly>
                             </td>
                             <td>
                                 <input type="number"
                                     class="text-center form-control input-table @error('') is-invalid @enderror"
-                                    value="" name="cost_consultant_num[]" id="ec_CreatorsNoc1" max="100" hidden>
+                                    value="1" name="cost_consultant_num[]" id="ec_CreatorsNoc1" max="100" hidden>
                             </td>
                             <td>
                                 <fieldset>
@@ -524,8 +523,7 @@
                             <td>
                                 <input type="number"
                                     class="text-center form-control input-table @error('') is-invalid @enderror"
-                                    value="{{ old('') }}" name="cost_consultant_num[]" id="ec_LeadfacilitatorNoc1" max="100"
-                                    readonly>
+                                    value="{{ old('') }}" name="cost_consultant_num[]" id="ec_LeadfacilitatorNoc1" max="100">
                             </td>
                             <td>
                                 <input type="text"
@@ -540,7 +538,7 @@
                             <td>
                                 <input type="number"
                                     class="text-center form-control input-table @error('') is-invalid @enderror"
-                                    value="{{ old('') }}" name="cost_nswh[]" id="ec_LeadfacilitatorNwh1" readonly>
+                                    value="{{ old('') }}" name="cost_nswh[]" id="ec_LeadfacilitatorNwh1">
                             </td>
                             <td class="total-td table-light">
                                 <h4 class="text-center lead" id="ec_LeadfacilitatorTotal">-</h4>
@@ -675,7 +673,7 @@
                             <td>
                                 <input type="number"
                                     class="text-center text-dark form-control input-table @error('') is-invalid @enderror"
-                                    value="{{ old('') }}" name="cost_nswh[]" id="ec_CofacilitatorNwh1" readonly>
+                                    value="{{ old('') }}" name="cost_nswh[]" id="ec_CofacilitatorNwh1">
                             </td>
                             <td class="total-td table-light">
                                 <h4 class="text-center lead" id="ec_CofacilitatorTotal">-</h4>
@@ -699,14 +697,13 @@
                     <tbody id="ec_TableModerator">
                         <tr class="table-warning">
                             <td class="title table-light">
-                                Moderator (&#8369;800, &#8369;1,100, &#8369;1,350)
+                                Moderator
                                 <input type="text" class="d-none" value="Moderator" name="cost_type[]" readonly>
                             </td>
                             <td>
                                 <input type="number"
                                     class="text-dark text-center form-control input-table @error('') is-invalid @enderror"
-                                    value="{{ old('') }}" name="cost_consultant_num[]" id="ec_ModeratorNoc1" max="100"
-                                    readonly>
+                                    value="{{ old('') }}" name="cost_consultant_num[]" id="ec_ModeratorNoc1" max="100">
                             </td>
                             <td>
                                 <fieldset>
@@ -748,7 +745,7 @@
                             <td>
                                 <input type="number"
                                     class="text-dark text-center form-control input-table @error('') is-invalid @enderror"
-                                    value="{{ old('') }}" name="cost_nswh[]" id="ec_ModeratorNwh1" readonly>
+                                    value="{{ old('') }}" name="cost_nswh[]" id="ec_ModeratorNwh1">
                             </td>
                             <td class="total-td table-light">
                                 <h4 class="text-center lead" id="ec_ModeratorTotal">-</h4>
@@ -778,7 +775,7 @@
                             <td>
                                 <input type="number"
                                     class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
-                                    value="{{ old('') }}" name="cost_consultant_num[]" id="ec_ProducerNoc1" readonly>
+                                    value="{{ old('') }}" name="cost_consultant_num[]" id="ec_ProducerNoc1">
                             </td>
                             <td>
                                 <input type="text"
@@ -793,7 +790,7 @@
                             <td>
                                 <input type="number"
                                     class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
-                                    value="{{ old('') }}" name="cost_nswh[]" id="ec_ProducerNwh1" readonly>
+                                    value="{{ old('') }}" name="cost_nswh[]" id="ec_ProducerNwh1">
                             </td>
                             <td class="total-td table-light">
                                 <h4 class="text-center lead" id="ec_ProducerTotal">-</h4>
@@ -852,8 +849,7 @@
                             <td>
                                 <input type="number"
                                     class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
-                                    value="{{ old('') }}" name="cost_consultant_num[]" id="ec_DocumentorNoc1" max="100"
-                                    readonly>
+                                    value="{{ old('') }}" name="cost_consultant_num[]" id="ec_DocumentorNoc1" max="100">
                             </td>
                             <td>
                                 <input type="text"
@@ -863,12 +859,12 @@
                             <td>
                                 <input type="number"
                                     class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
-                                    value="{{ old('') }}" name="cost_hour_num[]" id="ec_DocumentorNoh1" readonly>
+                                    value="{{ old('') }}" name="cost_hour_num[]" id="ec_DocumentorNoh1">
                             </td>
                             <td>
                                 <input type="number"
                                     class="text-center text-dark fw-bold form-control input-table @error('') is-invalid @enderror"
-                                    value="{{ old('') }}" name="cost_nswh[]" id="ec_DocumentorNwh1" readonly>
+                                    value="{{ old('') }}" name="cost_nswh[]" id="ec_DocumentorNwh1">
                             </td>
                             <td class="total-td table-light" style="background-color: rgba(146, 146, 146, 0.727">
                                 <h4 class="text-center" id="ec_DocumentorTotal">-</h4>
@@ -1007,14 +1003,6 @@
         </section>
     </div>
 <!------------ END OF FORM BODY ------------>
-<script>
-    document.addEventListener('keypress', function (e) {
-            if (e.keyCode === 13 || e.which === 13) {
-                e.preventDefault();
-                return false;
-            }
-            
-        });
-</script>
+
 <!------------ CE ENGAGEMENT COST SCRIPT ------------>
-@include('form.components.customized_engagement.script.ce_engagement_cost')
+@include('form.components.customized_engagement.add.script.ce_engagement_cost')

@@ -16,6 +16,7 @@ class Engagement_fee extends Model
         'hour_fee',
         'hour_num',
         'nswh',
+        'nswh_percent',
         'notes',
     ];
 }

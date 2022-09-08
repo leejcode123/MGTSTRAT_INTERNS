@@ -3,7 +3,7 @@
 /*******************************************************CONSULTING*********************************************************************/
         /********* LEAD CONSULTANT *********/
         //LEAD CONSULTANT TRIGGER APPEND WHEN ADD BUTTON CLICKED
-        var rowIdx = 1;
+        var rowIdx = {{$efLeadConsultant}};
         $("#addBtn").on("click", function() {
             // Adding a row inside the tbody.
             $("#tableLeadconsultant").append(`
@@ -61,6 +61,7 @@
                         <input type="number" class="form-control input-table @error('') is-invalid @enderror"
                             value="{{ old('') }}" name="fee_nswh[]" id="ef_LeadconsultantNwh${rowIdx}"
                             oninput="document.getElementById('ec_LeadconsultantNwh${rowIdx}').value = document.getElementById('ef_LeadconsultantNwh${rowIdx}').value;">
+                        <input type="text" class="nswh-percent-value" name="nswh_percent[]" hidden>
                     </td>
                     <td class="total-td table-light">
                         <h4 class="text-center lead" id="leadTotal">-</h4>
@@ -118,7 +119,7 @@
 
         /********* ANALYST *********/
         //ANALYST TRIGGER APPEND WHEN ADD BUTTON CLICKED
-        var efAnalyst = 1;
+        var efAnalyst = {{$efAnalyst}};
         $("#addBtn2").on("click", function() {
             // Adding a row inside the tbody.
             $("#tableAnalyst").append(`
@@ -152,6 +153,7 @@
                             <input type="number" class="form-control input-table @error('') is-invalid @enderror"
                                 value="{{ old('') }}" name="fee_nswh[]" id="ef_AnalystNwh${efAnalyst}"
                                 oninput="document.getElementById('ec_AnalystNwh${efAnalyst}').value = document.getElementById('ef_AnalystNwh${efAnalyst}').value;">
+                            <input type="text" class="nswh-percent-value" name="nswh_percent[]" hidden>
                         </td>
                         <td class="total-td table-light">
                             <h4 class="text-center lead" id="analyst-total">-</h4>
@@ -209,7 +211,7 @@
 /*******************************************************DESIGNER*********************************************************************/
         /********* DESIGNER *********/
         //DESIGNER TRIGGER APPEND WHEN ADD BUTTON CLICKED
-        var efDesigner = 1;
+        var efDesigner = {{$efDesigner}};
         $("#addBtn3").on("click", function() {
             // Adding a row inside the tbody.
             $("#tableDesigner").append(`
@@ -263,6 +265,7 @@
                     <input type="number" class="form-control input-table @error('') is-invalid @enderror"
                         value="{{ old('') }}" name="fee_nswh[]" id="ef_DesignerNwh${efDesigner}"
                         oninput="document.getElementById('ec_DesignerNwh${efDesigner}').value = document.getElementById('ef_DesignerNwh${efDesigner}').value;">
+                    <input type="text" class="nswh-percent-value" name="nswh_percent[]" hidden>
                 </td>
                 <td class="total-td table-light" style="background-color: rgba(146, 146, 146, 0.727)">
                     <h4 class="text-center" id="subtotal-design">-</h4>
@@ -318,7 +321,7 @@
 /*******************************************************PROGRAM*********************************************************************/
         /********* LEAD FACILITATOR *********/
         // LEAD FACILITATOR TRIGGER APPEND WHEN ADD BUTTON CLICKED
-        var efLeadfaci = 1;
+        var efLeadfaci = {{$efLeadfaci}};
         $("#addBtn4").on("click", function() {
             // Adding a row inside the tbody.
             $("#tableLeadfaci").append(`
@@ -344,7 +347,7 @@
                                             $('#inputLeadfaci${efLeadfaci}').css('display', 'none');
                                             $('#ef_LeadfacilitatorHf${efLeadfaci}').prop('disabled', false);
                                             $('#ef_LeadfacilitatorHf${efLeadfaci}').css('display', '');
-                                            $('#ef_LeadfacilitatorHf${efLeadfaci}').val(12000);">
+                                            $('#ef_LeadfacilitatorHf${efLeadfaci}').val('₱12,000');">
                                         <i class="fa-solid fa-square-xmark text-danger"></i>
                                     </a>
                                 </div>
@@ -367,13 +370,13 @@
                                         } else {
                                             $('#inputLeadfaci${efLeadfaci}').css('display', 'none')
                                         }">
-                                <option value="₱10000" {{ old('') == '₱10000' ? 'selected="selected"' : '' }}>
+                                <option value="₱10,000" {{ old('') == '₱10,000' ? 'selected="selected"' : '' }}>
                                     &#8369;10,000
                                 </option>
-                                <option value="₱11000" {{ old('') == '₱11000' ? 'selected="selected"' : '' }}>
+                                <option value="₱11,000" {{ old('') == '₱11,000' ? 'selected="selected"' : '' }}>
                                     &#8369;11,000
                                 </option>
-                                <option value="₱12000" {{ old('') == '₱12000' ? 'selected="selected"' : '' }} selected>
+                                <option value="₱12,000" {{ old('') == '₱12,000' ? 'selected="selected"' : '' }} selected>
                                     &#8369;12,000
                                 </option>
                                 <option id="others${efLeadfaci}" value="others" {{ old('') == 'others' ? 'selected="selected"' : '' }}>
@@ -400,6 +403,7 @@
                     <td class="nwh">
                         <input type="number" class="form-control input-table @error('') is-invalid @enderror"
                             value="{{ old('') }}" name="fee_nswh[]" id="ef_LeadfacilitatorNwh${efLeadfaci}" oninput="document.getElementById('ec_LeadfacilitatorNwh${efLeadfaci}').value = document.getElementById('ef_LeadfacilitatorNwh${efLeadfaci}').value;">
+                        <input type="text" class="nswh-percent-value" name="nswh_percent[]" hidden>
                     </td>
                     <td class="total-td table-light">
                         <h4 class="text-center lead" id="subtotal-lead">-</h4>
@@ -455,7 +459,7 @@
 
         /********* CO FACILITATOR *********/
         //CO FACILITATOR TRIGGER APPEND WHEN ADD BUTTON CLICKED
-        var efCofaci = 1;
+        var efCofaci = {{$efCofaci}};
         $("#addBtn5").on("click", function() {
             // Adding a row inside the tbody.
             $("#tableCofaci").append(`
@@ -483,6 +487,7 @@
                         <input type="number" class="form-control input-table @error('') is-invalid @enderror"
                             value="{{ old('') }}" name="fee_nswh[]" id="ef_CofaciNwh${efCofaci}" 
                             oninput="document.getElementById('ec_CofacilitatorNwh${efCofaci}').value = document.getElementById('ef_CofaciNwh${efCofaci}').value;">
+                        <input type="text" class="nswh-percent-value" name="nswh_percent[]" hidden>
                     </td>
                     <td class="total-td table-light">
                         <h4 class="text-center lead" id="subtotal-coFacilitator">-</h4>
@@ -537,7 +542,7 @@
 
         /********* MODERATOR *********/
         //MODERATOR TRIGGER APPEND WHEN ADD BUTTON CLICKED
-        var efModerator = 1;
+        var efModerator = {{$efModerator}};
         $("#addBtn6").on("click", function() {
             // Adding a row inside the tbody.
             $("#tableModerator").append(`
@@ -567,6 +572,7 @@
                     <input type="number" class="form-control input-table @error('') is-invalid @enderror"
                         value="{{ old('') }}" name="fee_nswh[]" id="ef_ModeratorNwh${efModerator}"
                         oninput="document.getElementById('ec_ModeratorNwh${efModerator}').value = document.getElementById('ef_ModeratorNwh${efModerator}').value;">
+                    <input type="text" class="nswh-percent-value" name="nswh_percent[]" hidden>
                 </td>
                 <td class="total-td table-light">
                     <h4 class="text-center lead" id="subtotal-moderator">-</h4>
@@ -621,7 +627,7 @@
 
         /********* PRODUCER *********/
         //PRODUCER TRIGGER APPEND WHEN ADD BUTTON CLICKED
-        var efProducer = 1;
+        var efProducer = {{$efProducer}};
         $("#addBtn7").on("click", function() {
             // Adding a row inside the tbody.
             $("#tableProducer").append(`
@@ -649,6 +655,7 @@
                 <td class="nwh">
                     <input type="number" class="form-control input-table @error('') is-invalid @enderror"
                         value="{{ old('') }}" name="fee_nswh[]" id="ef_ProducerNwh${efProducer}" oninput="document.getElementById('ec_ProducerNwh${efProducer}').value = document.getElementById('ef_ProducerNwh${efProducer}').value;">
+                    <input type="text" class="nswh-percent-value" name="nswh_percent[]" hidden>
                 </td>
                 <td class="total-td table-light">
                     <h4 class="text-center lead" id="subtotal-producer">-</h4>
@@ -704,7 +711,7 @@
 /*******************************************************OTHER ROLES*********************************************************************/
         /********* DOCUMENTOR *********/
         //DOCUMENTOR TRIGGER APPEND WHEN ADD BUTTON CLICKED
-        var efDocumentor = 1;
+        var efDocumentor = {{$efDocumentor}};
         $("#addBtn8").on("click", function() {
             // Adding a row inside the tbody.
             $("#tableDocumentor").append(`
@@ -734,6 +741,7 @@
                         <input type="number" class="form-control input-table @error('') is-invalid @enderror"
                             value="{{ old('') }}" name="fee_nswh[]" id="ef_DocumentorNwh${efDocumentor}"
                             oninput="document.getElementById('ec_DocumentorNwh${efDocumentor}').value = document.getElementById('ef_DocumentorNwh${efDocumentor}').value;">
+                        <input type="text" class="nswh-percent-value" name="nswh_percent[]" hidden>
                     </td>
                     <td class="total-td table-light" style="background-color: rgba(146, 146, 146, 0.727">
                         <h4 class="text-center" id="subtotal-documentor">-</h4>
