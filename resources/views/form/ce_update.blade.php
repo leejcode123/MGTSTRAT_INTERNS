@@ -60,6 +60,24 @@
             <div class="col-12 col-md-12 col-sm-12">
                 {{-- card --}}
                 <div class="card">
+
+                    {{-- testing tabs --}}
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item">
+                          <a class="nav-link active" aria-current="page" href="#">Batch 1</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Batch 2</a>
+                        </li>
+                        <li class="nav-item">
+                          {{-- <a class="nav-link" href="#">Batch 2</a> --}}
+                            {{-- <label class="fw-bold form-label invisible"></label> --}}
+                            <a href="javascript:void(0)" class="text-success nav-link font-18 px-0" title="Add" tabindex="-1"
+                            id=""><i class="fa fa-plus mt-1"></i></a> 
+                        </li>
+                      </ul>
+                    {{-- end testing tabs --}}
+
                     {{-- card content --}}
                     <div class="card-content">
                         {{-- card body --}}

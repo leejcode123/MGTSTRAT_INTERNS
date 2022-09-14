@@ -104,16 +104,18 @@
                 <div class="col-md-8">
                     <div class="form-group has-icon-left">
                         <div class="position-relative">
-                            <input type="text" class="form-control @error('') is-invalid @enderror" value="{{ old('') }}"
+                            <input type="text" class="form-control @error('client') is-invalid @enderror" value="{{ old('client') }}"
                                 name="client" id="fourth">
                             <div class="form-control-icon">
                                 <i class="fa-solid fa-user"></i>
                             </div>
-                            @error('')
+                            <div class="invalid-feedback">
+                            @error('client')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
+                        </div>
                         </div>
                     </div>
                 </div>
@@ -194,7 +196,7 @@
 
                     <div class="flex-column">
                         <div>
-                            <div class="row justify-content-center" id="dateRows">
+                            <fieldset class="row justify-content-center" id="dateRows">
                                 <div class="col-lg-1 col-md-1">
                                     <div class="px-0">
                                             <label class="fw-bold invisible mb-4">Add</label>
@@ -207,7 +209,7 @@
                                     <div class="form-group has-icon-left">
                                         <label class="fw-bold required">Date</label>
                                         <div class="position-relative">
-                                            <input type="text" class="form-control datepicker @error('doe') is-invalid @enderror"
+                                            <input type="text" class="form-control date datepicker @error('doe') is-invalid @enderror"
                                                 value="{{ old('doe') }}" placeholder="Enter Date" name="program_dates[]" id="datepicker"
                                                 size="30">
                                             <div class="form-control-icon">
@@ -226,7 +228,7 @@
                                     <div class="form-group has-icon-left">
                                         <label class="fw-bold required">Start Time</label>
                                         <div class="position-relative">
-                                            <input type="text" class="form-control timepicker @error('dot') is-invalid @enderror"
+                                            <input type="text" class="form-control start-time timepicker @error('dot') is-invalid @enderror"
                                                 value="{{ old('dot') }}" placeholder="Enter Time" id="program_start_time" name="program_start_time[]">
                                             <div class="form-control-icon">
                                                 <i class="bi bi-clock"></i>
@@ -244,7 +246,7 @@
                                     <div class="form-group has-icon-left">
                                         <label class="fw-bold required">End Time</label>
                                         <div class="position-relative">
-                                            <input type="text" class="form-control timepicker @error('dot') is-invalid @enderror"
+                                            <input type="text" class="form-control end-time timepicker @error('dot') is-invalid @enderror"
                                                 value="{{ old('dot') }}" placeholder="Enter Time" id="program_end_time" name="program_end_time[]">
                                             <div class="form-control-icon">
                                                 <i class="fa-solid fa-hourglass-end"></i>
@@ -260,7 +262,7 @@
 
                                 @include('form.components.reference.cluster')  
                                    
-                            </div>
+                            </fieldset>
                         </div>
 
                         {{-- <div>
@@ -281,7 +283,7 @@
         $("#addDates").on("click", function() {
             // Adding a row inside the tbody.
             $("#dcbe").append(`
-            <div class="d-flex justify-content-center mt-4" id="dateRows${++dates}">
+            <fieldset class="d-flex justify-content-center mt-4" id="dateRows${++dates}">
                 <div class="flex-column">
                     <div>
                         <div class="row justify-content-center">
@@ -297,7 +299,7 @@
                                 <div class="form-group has-icon-left">
                                     <label class="fw-bold required">Date</label>
                                     <div class="position-relative">
-                                        <input type="text" class="form-control datepicker @error('doe') is-invalid @enderror"
+                                        <input type="text" class="form-control date datepicker @error('doe') is-invalid @enderror"
                                             value="{{ old('doe') }}" placeholder="Enter Date" name="program_dates[]" id="datepicker${dates}"
                                             size="30">
                                         <div class="form-control-icon">
@@ -315,7 +317,7 @@
                                 <div class="form-group has-icon-left">
                                     <label class="fw-bold required">Start Time</label>
                                     <div class="position-relative">
-                                        <input type="text" class="form-control timepicker @error('dot') is-invalid @enderror"
+                                        <input type="text" class="form-control start-time timepicker @error('dot') is-invalid @enderror"
                                             value="{{ old('dot') }}" placeholder="Enter Time" id="program_start_time" name="program_start_time[]">
                                         <div class="form-control-icon">
                                             <i class="bi bi-clock"></i>
@@ -332,7 +334,7 @@
                                 <div class="form-group has-icon-left">
                                     <label class="fw-bold required">End Time</label>
                                     <div class="position-relative">
-                                        <input type="text" class="form-control timepicker @error('dot') is-invalid @enderror"
+                                        <input type="text" class="form-control end-time timepicker @error('dot') is-invalid @enderror"
                                             value="{{ old('dot') }}" placeholder="Enter Time" id="program_end_time" name="program_end_time[]">
                                         <div class="form-control-icon">
                                             <i class="fa-solid fa-hourglass-end"></i>
@@ -352,7 +354,7 @@
                 </div>
 
 
-            </div>`);
+            </fieldset>`);
             $('.timepicker').timepicker({
                 timeFormat: 'h:mm p',
                 interval: 30,

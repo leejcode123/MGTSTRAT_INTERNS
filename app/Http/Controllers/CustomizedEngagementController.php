@@ -38,13 +38,42 @@ class CustomizedEngagementController extends Controller
     }
 
     // view delete
-    public function viewDelete($id)
-    {
-        $delete = Customized_engagement_form::find($id);
-        $delete->delete();
+    // public function viewDelete($id)
+    // {
+    //     $delete = Customized_engagement_form::find($id);
+    //     $delete->delete();
         
-        Alert::success('Data deleted successfully :)','Success');
-        return redirect()->route('form/customizedEngagement/detail');
+    //     Alert::success('Data deleted successfully :)','Success');
+    //     return redirect()->route('form/customizedEngagement/detail');
+    // }
+
+    public function viewDelete(Request $request)
+    {
+        DB::beginTransaction();
+        try {
+
+        /* delete record table estimates_adds */
+        $engagement_fees = DB::table('engagement_fees')->where('cstmzd_eng_form_id',$request->cstmzd_eng_form_id)->get();
+        foreach ($engagement_fees as $key => $id_engagement_fees) {
+            DB::table('engagement_fees')->where('id', $id_engagement_fees->id)->delete();
+        }
+        $engagement_costs = DB::table('engagement_costs')->where('cstmzd_eng_form_id',$request->cstmzd_eng_form_id)->get();
+        foreach ($engagement_costs as $key => $id_engagement_cost) {
+            DB::table('engagement_costs')->where('id', $id_engagement_cost->id)->delete();
+        }
+
+        /* delete record table estimates */
+        Customized_engagement_form::destroy($request->id);
+
+        DB::commit();
+        Alert::success('Customized Engagement deleted successfully','Success');
+        return redirect()->back();
+            
+        } catch(\Exception $e) {
+            DB::rollback();
+            Alert::error('Customized Engagement deleted fail','Error');
+            return redirect()->back();
+        }
     }
 
     public function updateRecord($cstmzd_eng_form_id)
@@ -82,7 +111,7 @@ class CustomizedEngagementController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'client'   => 'required|string|max:255',
+            'client'   => 'required|string|min:3|max:255',
         ]);
             
         DB::beginTransaction();
@@ -146,19 +175,16 @@ class CustomizedEngagementController extends Controller
                 DB::rollback();
                 Toastr::error('cost'.$e->getMessage(), 'Error');
             }
-            
-
 
             DB::commit();
-            Toastr::success('Data added successfully','Success');
-            return redirect()->back();
-            // return redirect()->route('home');
+            Alert::success('Data added successfully','Success');
+            // return redirect()->back();
+            return redirect()->route('form/customizedEngagement/detail');
         } catch(\Exception $e){
             DB::rollback();
-            Toastr::error('Data added fail','Error');
+            Alert::error('Data added fail','Error');
             Toastr::error('test'.$e->getMessage(), 'Error');
             return redirect()->back();
-            // return redirect()->route('form/customizedEngagement/new');
         }
         
         // return redirect('form/customizedEngagement/save');
@@ -235,33 +261,13 @@ class CustomizedEngagementController extends Controller
         } 
     }
 
-    public function deleteRow(Request $request){
+    public function deleteRow(Request $request)
+    {
         $id = $request->id;
         Engagement_fee::where('id', $id)->delete();
         Engagement_cost::where('id', $id)->delete();
         // Toastr::success('Data deleted successfully','Success');
         // return response()->json(['status'=>'200']);
-      }
-
-    
-      /** delete record customized engagement add */
-    public function ceAddDeleteRecord(Request $request)
-    {
-        DB::beginTransaction();
-        try {
-
-            Engagement_fee::destroy($request->id);
-            Engagement_cost::destroy($request->id);
-
-            DB::commit();
-            Toastr::success('Deleted successfully','Success');
-            return redirect()->back();
-            
-        } catch(\Exception $e) {
-            DB::rollback();
-            Toastr::error('Deleted fail','Error');
-            return redirect()->back();
-        }
     }
 }
 

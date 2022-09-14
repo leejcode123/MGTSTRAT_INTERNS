@@ -5,10 +5,10 @@ use App\Http\Controllers\PhotosController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\ResetPasswordController;
-use App\Http\Controllers\FormController;
-use App\Http\Controllers\WebinarformController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserManagementController;
 use App\Http\Controllers\LockScreen;
+use App\Http\Controllers\CustomizedEngagementController;
 
 
 /*
@@ -41,58 +41,57 @@ Route::group(['middleware'=>'auth'],function()
 Auth::routes();
 
 // ----------------------------- home dashboard ------------------------------//
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 // -----------------------------login----------------------------------------//
-Route::get('/login', [App\Http\Controllers\Auth\LoginController::class, 'login'])->name('login');
-Route::post('/login', [App\Http\Controllers\Auth\LoginController::class, 'authenticate']);
-Route::get('/logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
+Route::get('/login', [LoginController::class, 'login'])->name('login');
+Route::post('/login', [LoginController::class, 'authenticate']);
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 // ----------------------------- lock screen --------------------------------//
-Route::get('lock_screen', [App\Http\Controllers\LockScreen::class, 'lockScreen'])->middleware('auth')->name('lock_screen');
-Route::post('unlock', [App\Http\Controllers\LockScreen::class, 'unlock'])->name('unlock');
+Route::get('lock_screen', [LockScreen::class, 'lockScreen'])->middleware('auth')->name('lock_screen');
+Route::post('unlock', [LockScreen::class, 'unlock'])->name('unlock');
 
 // ------------------------------ register ---------------------------------//
-Route::get('/register', [App\Http\Controllers\Auth\RegisterController::class, 'register'])->name('register');
-Route::post('/register', [App\Http\Controllers\Auth\RegisterController::class, 'storeUser'])->name('register');
+Route::get('/register', [Auth\RegisterController::class, 'register'])->name('register');
+Route::post('/register', [Auth\RegisterController::class, 'storeUser'])->name('register');
 
 // ----------------------------- forget password ----------------------------//
-Route::get('forget-password', [App\Http\Controllers\Auth\ForgotPasswordController::class, 'getEmail'])->name('forget-password');
-Route::post('forget-password', [App\Http\Controllers\Auth\ForgotPasswordController::class, 'postEmail'])->name('forget-password');
+Route::get('forget-password', [Auth\ForgotPasswordController::class, 'getEmail'])->name('forget-password');
+Route::post('forget-password', [Auth\ForgotPasswordController::class, 'postEmail'])->name('forget-password');
 
 // ----------------------------- reset password -----------------------------//
-Route::get('reset-password/{token}', [App\Http\Controllers\Auth\ResetPasswordController::class, 'getPassword']);
-Route::post('reset-password', [App\Http\Controllers\Auth\ResetPasswordController::class, 'updatePassword']);
+Route::get('reset-password/{token}', [Auth\ResetPasswordController::class, 'getPassword']);
+Route::post('reset-password', [Auth\ResetPasswordController::class, 'updatePassword']);
 
 // ----------------------------- user profile ------------------------------//
-Route::get('profile_user', [App\Http\Controllers\UserManagementController::class, 'profile'])->name('profile_user');
-Route::post('profile_user/store', [App\Http\Controllers\UserManagementController::class, 'profileStore'])->name('profile_user/store');
+Route::get('profile_user', [UserManagementController::class, 'profile'])->name('profile_user');
+Route::post('profile_user/store', [UserManagementController::class, 'profileStore'])->name('profile_user/store');
 
 // ----------------------------- user userManagement -----------------------//
-Route::get('userManagement', [App\Http\Controllers\UserManagementController::class, 'index'])->middleware('auth')->name('userManagement');
-Route::get('user/add/new', [App\Http\Controllers\UserManagementController::class, 'addNewUser'])->middleware('auth')->name('user/add/new');
-Route::post('user/add/save', [App\Http\Controllers\UserManagementController::class, 'addNewUserSave'])->name('user/add/save');
-Route::get('view/detail/{id}', [App\Http\Controllers\UserManagementController::class, 'viewDetail'])->middleware('auth');
-Route::post('update', [App\Http\Controllers\UserManagementController::class, 'update'])->name('update');
-Route::get('delete_user/{id}', [App\Http\Controllers\UserManagementController::class, 'delete'])->middleware('auth');
-Route::get('activity/log', [App\Http\Controllers\UserManagementController::class, 'activityLog'])->middleware('auth')->name('activity/log');
-Route::get('activity/login/logout', [App\Http\Controllers\UserManagementController::class, 'activityLogInLogOut'])->middleware('auth')->name('activity/login/logout');
+Route::get('userManagement', [UserManagementController::class, 'index'])->middleware('auth')->name('userManagement');
+Route::get('user/add/new', [UserManagementController::class, 'addNewUser'])->middleware('auth')->name('user/add/new');
+Route::post('user/add/save', [UserManagementController::class, 'addNewUserSave'])->name('user/add/save');
+Route::get('view/detail/{id}', [UserManagementController::class, 'viewDetail'])->middleware('auth');
+Route::post('update', [UserManagementController::class, 'update'])->name('update');
+Route::get('delete_user/{id}', [UserManagementController::class, 'delete'])->middleware('auth');
+Route::get('activity/log', [UserManagementController::class, 'activityLog'])->middleware('auth')->name('activity/log');
+Route::get('activity/login/logout', [UserManagementController::class, 'activityLogInLogOut'])->middleware('auth')->name('activity/login/logout');
 
-Route::get('change/password', [App\Http\Controllers\UserManagementController::class, 'changePasswordView'])->middleware('auth')->name('change/password');
-Route::post('change/password/db', [App\Http\Controllers\UserManagementController::class, 'changePasswordDB'])->name('change/password/db');
+Route::get('change/password', [UserManagementController::class, 'changePasswordView'])->middleware('auth')->name('change/password');
+Route::post('change/password/db', [UserManagementController::class, 'changePasswordDB'])->name('change/password/db');
 
 // ----------------------------- Customized engagement form ------------------------------//
 Route::controller(CustomizedEngagementController::class)->group(function () {
-Route::get('form/customizedEngagement/new', [App\Http\Controllers\CustomizedEngagementController::class, 'index'])->middleware('auth')->name('form/customizedEngagement/new');
-Route::get('form/customizedEngagement/detail', [App\Http\Controllers\CustomizedEngagementController::class, 'viewRecord'])->middleware('auth')->name('form/customizedEngagement/detail');
-Route::get('form/customizedEngagement/detail/{cstmzd_eng_form_id}', [App\Http\Controllers\CustomizedEngagementController::class, 'updateRecord'])->middleware('auth');
-Route::get('delete/{id}', [App\Http\Controllers\CustomizedEngagementController::class, 'viewDelete'])->middleware('auth');
-// Route::get('form/customizedEngagement/update', [App\Http\Controllers\CustomizedEngagementController::class, 'updateRecord'])->middleware('auth')->name('form/customizedEngagement/update'); 
+Route::get('form/customizedEngagement/new', [CustomizedEngagementController::class, 'index'])->middleware('auth')->name('form/customizedEngagement/new');
+Route::get('form/customizedEngagement/detail', [CustomizedEngagementController::class, 'viewRecord'])->middleware('auth')->name('form/customizedEngagement/detail');
+Route::get('form/customizedEngagement/detail/{cstmzd_eng_form_id}', [CustomizedEngagementController::class, 'updateRecord'])->middleware('auth');
+// Route::get('delete/{id}', [CustomizedEngagementController::class, 'viewDelete'])->middleware('auth');
 
-Route::post('save', [App\Http\Controllers\CustomizedEngagementController::class, 'store'])->name('save');
-Route::post('update', [App\Http\Controllers\CustomizedEngagementController::class, 'ceUpdateRecord','ceAddDeleteRecord'])->middleware('auth')->name('update');
-// Route::post('delete', [App\Http\Controllers\CustomizedEngagementController::class, 'deleteRow'])->middleware('auth')->name('delete');
-Route::post('delete',[App\Http\Controllers\CustomizedEngagementController::class, 'deleteRow'])->name('delete');
+Route::post('save', [CustomizedEngagementController::class, 'store'])->name('save');
+Route::post('update', [CustomizedEngagementController::class, 'ceUpdateRecord','ceAddDeleteRecord'])->middleware('auth')->name('update');
+Route::post('deleteRecord', [CustomizedEngagementController::class, 'viewDelete'])->middleware('auth')->name('deleteRecord');
+Route::post('delete',[CustomizedEngagementController::class, 'deleteRow'])->name('delete');
 });
 // ----------------------------- F2F engagement form ------------------------------//
 Route::get('form/f2f_engagement/new', [App\Http\Controllers\F2fEngagementController::class, 'index'])->middleware('auth')->name('form/f2f_engagement/new');

@@ -103,7 +103,7 @@
                                         </div>
                                         <div class="col-md-8">
                                             <h5 class="text-muted font-semibold">Saved Record</h5>
-                                            <h5 class="font-extrabold mb-0">{{ $webinarforms }}</h5>
+                                            <h5 class="font-extrabold mb-0">{{ $BudgetForm }}</h5>
                                         </div>
                                     </div>
                                 </div>

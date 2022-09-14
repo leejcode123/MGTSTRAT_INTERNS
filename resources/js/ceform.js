@@ -970,7 +970,12 @@ $(document).on(
 
         //Profit margin
         sumProfitmargin = (sumNetprofit / $("#ef_Totalpackage").val().replace(/\₱|,/g, "")) * 100;
-        $("#ProfitMargin").html(Math.floor(sumProfitmargin) + "%");
+        if (isNaN(sumProfitmargin) || sumProfitmargin === Number.NEGATIVE_INFINITY){
+            $("#ProfitMargin").html("0");
+        } 
+        else {
+            $("#ProfitMargin").html(Math.floor(sumProfitmargin) + "%");
+        }
     
 }); //end of engagement fees
 
@@ -1059,11 +1064,18 @@ $(document).on(
 document.getElementById("dcbeCheck").addEventListener("click", myFunction);
 function myFunction() {
     var checkBox = document.getElementById("dcbeCheck");
-    var DatesCoveredByEngagement = document.getElementById("dcbe");
+    var DatesCoveredByEngagement = $("#dcbe");
+    var DateRows = $("#dateRows");
+    // $("#dcacl").children().attr("disabled","disabled");
     if (checkBox.checked == false) {
-        DatesCoveredByEngagement.style.visibility = "";
+        DatesCoveredByEngagement.show();
+        DateRows.removeAttr("disabled","disabled");
     } else {
-        DatesCoveredByEngagement.style.visibility = "hidden";
+        DatesCoveredByEngagement.hide();
+        DateRows.attr("disabled","disabled");
+        $(".date").val("");
+        $(".start-time").val("");
+        $(".end-time").val("");
     }
 };
 
