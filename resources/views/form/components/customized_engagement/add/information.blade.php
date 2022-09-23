@@ -34,6 +34,29 @@
                     </select>
                 </div>
             </div>
+            <div class="form-group row">
+                <div class="col-md-2">
+                    <label class="fw-bold required">Batch Number: </label>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group has-icon-left">
+                        <div class="position-relative">
+                            <input type="text" class="form-control @error('batch_number') is-invalid @enderror" value="{{ old('batch_number') }}"
+                                name="batch_number" id="batchNumber">
+                            <div class="form-control-icon">
+                                <i class="fa-solid fa-file-lines"></i>
+                            </div>
+                            <div class="invalid-feedback">
+                            @error('batch_number')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         <!------------ CUSTOMIZED TYPE ------------>
             <div class="form-group row">
@@ -97,15 +120,19 @@
             </div>
 
         <!------------ CLIENT NAME ------------>
-            <div class="form-group row">
+            {{-- <div class="form-group row">
                 <div class="col-md-2">
                     <label class="fw-bold required">Client: </label>
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-6">
                     <div class="form-group has-icon-left">
                         <div class="position-relative">
-                            <input type="text" class="form-control @error('client') is-invalid @enderror" value="{{ old('client') }}"
-                                name="client" id="fourth">
+                            <select class="select select2s-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true" id="client" name="client">
+                                <option value="Select">-- Select --</option>
+                                @foreach ($companyList as $key=>$clients )
+                                    <option value="{{ $clients->company_name }}" data-first_eng={{ $clients->first_eng }}>{{ $clients->company_name }}</option>
+                                @endforeach
+                            </select>
                             <div class="form-control-icon">
                                 <i class="fa-solid fa-user"></i>
                             </div>
@@ -119,8 +146,33 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
 
+            <div class="form-group row">
+                <div class="col-md-2">
+                    <label class="fw-bold required">Client: </label>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group has-icon-left">
+                        <div class="position-relative">
+                            <select class="select select2s-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true" id="client" name="client">
+                                <option value="Select">-- Select --</option>
+                                @foreach ($companyList as $key=>$clients )
+                                    <option value="{{ $clients->company_name }}" data-first_eng={{ $clients->first_eng }}>{{ $clients->company_name }}</option>
+                                @endforeach
+                            </select>
+                            <div class="form-control-icon">
+                                <i class="fa-solid fa-clients"></i>
+                            </div>
+                            @error('')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                    </div>
+                </div>
+            </div>
         <!------------ ENGAGEMENT TITLE AND NUMBER OF PAX ------------>
             <div class="form-group row">
                 <div class="col-md-2">
@@ -276,7 +328,15 @@
             </div>
     </div>
 <!------------ END OF FORM BODY ------------>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <script>
+    $(document).ready(function() {
+        $('.select2s-hidden-accessible').select2({
+            // closeOnSelect: false
+            placeholder: 'Enter Client',
+            tags: true,
+        });
+    });
     $('document').ready(function() {
         //DATE OF ENGAGEMENT
         var dates = 1;

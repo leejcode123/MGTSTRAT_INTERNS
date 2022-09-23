@@ -62,75 +62,84 @@
                 <div class="card">
 
                     {{-- testing tabs --}}
-                    <ul class="nav nav-tabs">
-                        <li class="nav-item">
-                          <a class="nav-link active" aria-current="page" href="#">Batch 1</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Batch 2</a>
-                        </li>
-                        <li class="nav-item">
-                          {{-- <a class="nav-link" href="#">Batch 2</a> --}}
-                            {{-- <label class="fw-bold form-label invisible"></label> --}}
-                            <a href="javascript:void(0)" class="text-success nav-link font-18 px-0" title="Add" tabindex="-1"
-                            id=""><i class="fa fa-plus mt-1"></i></a> 
-                        </li>
-                      </ul>
+                    {{-- <div class="d-flex flex-row">
+                        <ul class="nav nav-tabs" id="ceTabs" role="tablist">
+
+                            <li class="nav-item js-btn-next">
+                            <a class="nav-link active" id="batch1" data-bs-toggle="tab" href="#batches1" role="tab"  aria-controls="batches1" aria-selected="true">Batch 1</a>
+                            </li>
+
+                        </ul>
+                        <ul class="nav nav-tabs">
+                            <li class="nav-item">
+                                <a href="javascript:void(0)" class="text-success nav-link font-18 px-3" title="Add" tabindex="-1"
+                                id="AddTabs"><i class="fa fa-plus mt-1"></i></a> 
+                            </li>
+                        </ul>
+                    </div> --}}
                     {{-- end testing tabs --}}
 
                     {{-- card content --}}
-                    <div class="card-content">
-                        {{-- card body --}}
-                        <div class="card-body">
+                    {{-- <div class="tab-content"> --}}
+                        {{-- <div class="card-content tab-pane fade show active" id="batches1" role="tabpanel" aria-labelledby="batch1"> --}}
+                            {{-- card body --}}
+                            <div class="card-body">
 
-                            <!------------ BUDGET FORM ------------>
-                                <form class="form form-horizontal multisteps-form__form" action="{{ route('update') }}"
-                                    method="POST" autocomplete="off">
-                                    @csrf
+                                <!------------ BUDGET FORM ------------>
+                                    <form class="form form-horizontal multisteps-form__form" action="{{ route('update') }}"
+                                        method="POST" autocomplete="off">
+                                        @csrf
 
-                                    <input class="form-control" type="hidden" id="id" name="id" value="{{$data->id}}">
-                                    <input class="form-control" type="hidden" id="cstmzd_eng_form_id" name="cstmzd_eng_form_id" value="{{$data->cstmzd_eng_form_id}}">
-                                    <!------------ INFORMATION ------------>
-                                        <div class="multisteps-form__panel js-active" data-animation="slideHorz">
-                                            @include('form.components.customized_engagement.update.ce_update_information')
-                                            {{-- next button --}}
-                                            <div class="col-12 d-flex justify-content-center mt-3">
-                                                <button class="btn btn-primary ml-auto js-btn-next" type="button" title="Next">Next</button>
+                                        <input class="form-control" type="hidden" id="id" name="id" value="{{$data->id}}">
+                                        <input class="form-control" type="hidden" id="cstmzd_eng_form_id" name="cstmzd_eng_form_id" value="{{$data->cstmzd_eng_form_id}}">
+                                        <!------------ INFORMATION ------------>
+                                            <div class="multisteps-form__panel js-active" data-animation="slideHorz">
+                                                @include('form.components.customized_engagement.update.ce_update_information')
+                                                {{-- next button --}}
+                                                <div class="col-12 d-flex justify-content-center mt-3">
+                                                    <button class="btn btn-primary ml-auto js-btn-next" type="button" title="Next">Next</button>
+                                                </div>
                                             </div>
-                                        </div>
 
-                                    <!------------ ENGAGEMENT FEES ------------>
-                                        <div class="multisteps-form__panel" data-animation="slideHorz">
-                                            @include('form.components.customized_engagement.update.ce_update_engagementFees')
-                                            {{-- next and prev button --}}
-                                            <div class="button-row d-flex justify-content-center mt-3">
-                                                <button class="btn btn-secondary mx-2 js-btn-prev" type="button" title="Prev">Prev</button>
-                                                <button class="btn btn-primary mx-2 js-btn-next" type="button" title="Next">Next</button>
+                                        <!------------ ENGAGEMENT FEES ------------>
+                                            <div class="multisteps-form__panel" data-animation="slideHorz">
+                                                @include('form.components.customized_engagement.update.ce_update_engagementFees')
+                                                {{-- next and prev button --}}
+                                                <div class="button-row d-flex justify-content-center mt-3">
+                                                    <button class="btn btn-secondary mx-2 js-btn-prev" type="button" title="Prev">Prev</button>
+                                                    <button class="btn btn-primary mx-2 js-btn-next" type="button" title="Next">Next</button>
+                                                </div>
                                             </div>
-                                        </div>
 
-                                    <!------------ ENGAGEMENT COST ------------>
-                                        <div class="multisteps-form__panel" data-animation="slideHorz">
-                                            @include('form.components.customized_engagement.update.ce_update_engagementCost')
-                                            {{-- next and prev button --}}
-                                            <div class="col-12 d-flex justify-content-center mt-3">
-                                                <button class="btn btn-secondary mx-2 js-btn-prev" type="button" title="Prev">Prev</button>
-                                                <button class="btn btn-primary mx-2 js-btn-next" type="button" title="Next">Next</button>
+                                        <!------------ ENGAGEMENT COST ------------>
+                                            <div class="multisteps-form__panel" data-animation="slideHorz">
+                                                @include('form.components.customized_engagement.update.ce_update_engagementCost')
+                                                {{-- next and prev button --}}
+                                                <div class="col-12 d-flex justify-content-center mt-3">
+                                                    <button class="btn btn-secondary mx-2 js-btn-prev" type="button" title="Prev">Prev</button>
+                                                    <button class="btn btn-primary mx-2 js-btn-next" type="button" title="Next">Next</button>
+                                                </div>
                                             </div>
-                                        </div>
 
-                                    <!------------ PROFIT FORECAST ------------>
-                                        <div class="multisteps-form__panel" data-animation="slideHorz">
-                                            @include('form.components.customized_engagement.update.ce_update_profitForecast')
-                                            {{-- prev and submit button --}}
-                                            <div class="col-12 d-flex justify-content-center mt-3">
-                                                <button class="btn btn-secondary mx-2 js-btn-prev" type="button" title="Prev">Prev</button>
-                                                <button class="btn btn-success mx-2 js-btn-next" type="submit" title="Submit">Submit</button>
+                                        <!------------ PROFIT FORECAST ------------>
+                                            <div class="multisteps-form__panel" data-animation="slideHorz">
+                                                @include('form.components.customized_engagement.update.ce_update_profitForecast')
+                                                {{-- prev and submit button --}}
+                                                <div class="col-12 d-flex justify-content-center mt-3">
+                                                    <button class="btn btn-secondary mx-2 js-btn-prev" type="button" title="Prev">Prev</button>
+                                                    <button class="btn btn-success mx-2 js-btn-next" type="submit" title="Submit">Submit</button>
+                                                </div>
                                             </div>
-                                        </div>
-                                </form>
+                                    </form>
+                            </div>
                         </div>
-                    </div>
+
+                        {{-- <div class="card-content tab-pane fade" id="batches2" role="tabpanel" aria-labelledby="batch2">
+                            <div class="card-body">
+                                <h1>hello batch 2</h1>
+                            </div>
+                        </div> --}}
+                    {{-- </div> --}}
                 </div>
             </div>
         <!------------ END OF CARD BODY ------------>
@@ -163,6 +172,26 @@
             }
         });
     });
+
+    // $('document').ready(function() {
+    //     var tabs = 1;
+    //     $("#AddTabs").on("click", function() {
+    //         // Adding a row inside the tbody.
+    //         $("#ceTabs").append(`
+    //             <li class="nav-item">
+    //                 <a class="nav-link" 
+    //                 href="#batches${++tabs}" 
+    //                 id="batch${tabs}"
+    //                 data-bs-toggle="tab"
+    //                 role="tab" 
+    //                 aria-controls="batches${tabs}" 
+    //                 aria-selected="false">
+    //                     Batch ${tabs}
+    //                 </a>
+    //             </li>
+    //         `);
+    //     });
+    // });
     </script>
 
     <script type="text/javascript" src="/js/ceform.js"></script>

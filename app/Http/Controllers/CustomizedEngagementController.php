@@ -18,7 +18,8 @@ class CustomizedEngagementController extends Controller
         // $cluster = DB::table('reference')->get();
         // return view('form.customized_engagement',compact('cluster'));
         
-        return view('form.customized_engagement');
+        $companyList = DB::table('clients')->get();
+        return view('form.customized_engagement', compact('companyList'));
     }
 
     // view record
@@ -119,6 +120,7 @@ class CustomizedEngagementController extends Controller
             
             $ce_form = new Customized_engagement_form();
             $ce_form->status                = $request->status;
+            $ce_form->batch_number          = $request->batch_number;
             $ce_form->customized_type       = $request->customized_type;
             $ce_form->ga_percent            = $request->ga_percent;
             $ce_form->client                = $request->client;

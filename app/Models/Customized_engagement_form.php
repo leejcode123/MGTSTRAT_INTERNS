@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Customized_engagement_form extends Model
 {
     use HasFactory;
-    // public $timestamps = false;
     protected $table = 'customized_engagement_forms';
     protected $primaryKey = 'id';
     protected $casts = [

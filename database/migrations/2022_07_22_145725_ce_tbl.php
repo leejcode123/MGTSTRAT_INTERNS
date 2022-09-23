@@ -17,6 +17,7 @@ class CeTbl extends Migration
             $table->id();
             $table->string('cstmzd_eng_form_id', 15);
             $table->string('status', 15)->nullable();
+            $table->string('batch_number', 100)->nullable();
             $table->string('customized_type', 50)->nullable();
             $table->string('ga_percent', 4)->nullable();
             $table->string('client', 50)->nullable();

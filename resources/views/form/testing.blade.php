@@ -4,5 +4,8 @@
     @extends('sidebar.form_staff')
 @endsection
 @section('content')
-    <h1>hello world</h1>
+    <div id="main">
+        @include('headers.header')
+
+        {{-- <h1>hello world</h1> --}}
 @endsection

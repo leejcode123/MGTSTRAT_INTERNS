@@ -79,6 +79,13 @@
                     </a>
                 </li>
 
+                <li class="sidebar-item">
+                    <a href="{{ route('form/clients/new') }}" class='sidebar-link'>
+                        <i class="bi bi-building"></i>
+                        <span>Clients</span>
+                    </a>
+                </li>
+
                 <li class="sidebar-title">Forms &amp; Tables</li>
                 <li class="sidebar-item  has-sub active">
                     <a href="#" class='sidebar-link'>
