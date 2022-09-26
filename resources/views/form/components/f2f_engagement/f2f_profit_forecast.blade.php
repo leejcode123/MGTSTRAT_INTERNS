@@ -41,10 +41,10 @@
                                 <select class="input js-mytooltip form-select @error('') is-invalid @enderror" name="" id="LessCTO_NOC"
                                     data-mytooltip-content="<i>
                                         35% Standard, <br>
-                                        15% for NGO's 
+                                        15% for NGO's
                                         </i>"
                                     data-mytooltip-theme="dark"
-                                    data-mytooltip-action="focus" 
+                                    data-mytooltip-action="focus"
                                     data-mytooltip-direction="right"
                                     style="background-color:#ffcccc; color:red;">
                                     <option value="35" {{ old('') == '35' ? 'selected="selected"' : '' }} >
@@ -104,9 +104,9 @@
 </div>
 
 <script>
-$('input[type="number"]').on('input', function () {
-    this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null
-});
+// $('input[type="number"]').on('input', function () {
+//     this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null
+// });
 
-$('input[type="number"]').attr('min', '0');
+// $('input[type="number"]').attr('min', '0');
 </script>

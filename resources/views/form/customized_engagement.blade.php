@@ -1,5 +1,5 @@
 @section('title', 'Customized Engagement Form')
-<link rel="shortcut icon" type="image/png" href="{{ URL::to('assets/images/logo/logo.png') }}">
+{{-- <link rel="shortcut icon" type="image/png" href="{{ URL::to('assets/images/logo/logo.png') }}"> --}}
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
 <link rel="stylesheet" href="{{ URL::asset('css/custom.css') }}">
 @extends('layouts.master')
@@ -119,7 +119,7 @@
             </footer>
         <!------------ END OF FOOTER ------------>
     </div>
-    
+
     {{-- CUSTOMIZED ENGAGEMENT SCRIPT --}}
     <script type="text/javascript" src="/js/ceform.js"></script>
     <script type="text/javascript" src="/js/ceFormAdd.js"></script>

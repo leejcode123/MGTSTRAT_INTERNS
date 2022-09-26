@@ -10,11 +10,11 @@
             <div class="form-group row mb-4">
                 <div class="col-md-2">
                     <label class="fw-bold required">Status: </label>
-                </div> 
+                </div>
 
                 <div class="col-md-2" id="">
                     <select class="input js-mytooltip form-select @error('') is-invalid @enderror"
-                        name="status" id="status" value="{{ old('') }}" data-mytooltip-content="<i>Please Choose Status</i>" 
+                        name="status" id="status" value="{{ old('') }}" data-mytooltip-content="<i>Please Choose Status</i>"
                         data-mytooltip-theme="dark" data-mytooltip-action="focus" data-mytooltip-direction="right">
                         <option value="Trial" {{ old('') == 'Trial' ? 'selected="selected"' : '' }}>
                             Trial
@@ -120,34 +120,6 @@
             </div>
 
         <!------------ CLIENT NAME ------------>
-            {{-- <div class="form-group row">
-                <div class="col-md-2">
-                    <label class="fw-bold required">Client: </label>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group has-icon-left">
-                        <div class="position-relative">
-                            <select class="select select2s-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true" id="client" name="client">
-                                <option value="Select">-- Select --</option>
-                                @foreach ($companyList as $key=>$clients )
-                                    <option value="{{ $clients->company_name }}" data-first_eng={{ $clients->first_eng }}>{{ $clients->company_name }}</option>
-                                @endforeach
-                            </select>
-                            <div class="form-control-icon">
-                                <i class="fa-solid fa-user"></i>
-                            </div>
-                            <div class="invalid-feedback">
-                            @error('client')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
-                        </div>
-                    </div>
-                </div>
-            </div> --}}
-
             <div class="form-group row">
                 <div class="col-md-2">
                     <label class="fw-bold required">Client: </label>
@@ -201,7 +173,7 @@
                     </div>
                 </div>
             </div>
-        
+
             <div class="form-group row">
                 <div class="col-md-2">
                     <label class="fw-bold required">Number of pax </label>
@@ -312,15 +284,15 @@
                                     </div>
                                 </div>
 
-                                @include('form.components.reference.cluster')  
-                                   
+                                @include('form.components.reference.cluster')
+
                             </fieldset>
                         </div>
 
                         {{-- <div>
-                            @include('form.components.reference.cluster')     
+                            @include('form.components.reference.cluster')
                         </div> --}}
-            
+
                     </div>
 
                 </div>
@@ -337,6 +309,7 @@
             tags: true,
         });
     });
+
     $('document').ready(function() {
         //DATE OF ENGAGEMENT
         var dates = 1;
@@ -407,10 +380,10 @@
                                     </div>
                                 </div>
                             </div>
-                            @include('form.components.reference.append_cluster') 
+                            @include('form.components.reference.append_cluster')
                         </div>
                     </div>
-        
+
                 </div>
 
 

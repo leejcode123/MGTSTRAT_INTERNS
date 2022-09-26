@@ -83,7 +83,7 @@ $(document).on(
         efConsultingSum = 0;
         ecConsultingSum = 0;
         nswh = $("#nswh").val();
-        
+
         $("#tableLeadconsultant > tr").each(function () {
 
             rowIdx++;
@@ -212,7 +212,7 @@ $(document).on(
             sum += +sum14;
         });
 
-        $("#ec_tableAnalyst > tr").each(function () { 
+        $("#ec_tableAnalyst > tr").each(function () {
             ecAnalyst++;
 
             // Getting the value of engagement fees of analyst to pass the value
@@ -543,7 +543,7 @@ $(document).on(
             sum += +sum22;
         });
 
-        $("#ec_TableCofaci > tr").each(function () { 
+        $("#ec_TableCofaci > tr").each(function () {
             // Getting the value of engagement fees of Moderator to pass the value
             // into the engagement cost Moderator
             // $("#ec_CofacilitatorNoc1").val($("#ef_CofaciNoc1").val());
@@ -796,7 +796,7 @@ $(document).on(
             // document.getElementById("ec_DocumentorNoc1").defaultValue = $("#ef_DocumentorNoc1").val();
             // document.getElementById("ec_DocumentorNoh1").defaultValue = $("#ef_DocumentorNoh1").val();
             // document.getElementById("ec_DocumentorNwh1").defaultValue = $("#ef_DocumentorNwh1").val();
-            
+
             ecDocumentor++;
 
             //Documentor engagement cost auto sum
@@ -972,11 +972,11 @@ $(document).on(
         sumProfitmargin = (sumNetprofit / $("#ef_Totalpackage").val().replace(/\₱|,/g, "")) * 100;
         if (isNaN(sumProfitmargin) || sumProfitmargin === Number.NEGATIVE_INFINITY){
             $("#ProfitMargin").html("0");
-        } 
+        }
         else {
             $("#ProfitMargin").html(Math.floor(sumProfitmargin) + "%");
         }
-    
+
 }); //end of engagement fees
 
 //*************************************** APPEND NUMBER FORMAT ********************************************************//

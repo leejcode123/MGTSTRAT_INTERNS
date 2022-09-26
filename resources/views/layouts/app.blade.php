@@ -55,7 +55,6 @@
         padding: 10px;
         min-width: 40px;
     }
-
 </style>
 
 <body>
