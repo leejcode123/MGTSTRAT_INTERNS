@@ -22,13 +22,21 @@
                     </a>
                 </li>
 
-                <li class="sidebar-item has-sub">
+                <li class="sidebar-item has-sub {{ 'sales-report' ||
+                'people-and-culture' ||
+                'cash-position-report' ||
+                'consultant-revenue-report' ||
+                'peer-dope-report' == request()->path() ? 'active' : '' }}">
                     <a href="#" class='sidebar-link'>
                         <i class="bi bi-file-earmark-medical-fill"></i>
                         <span>Dashboard Report</span>
                     </a>
 
-                    <ul class="submenu">
+                    <ul class="submenu {{ 'sales-report' ||
+                        'people-and-culture' ||
+                        'cash-position-report' ||
+                        'consultant-revenue-report' ||
+                        'peer-dope-report' == request()->path() ? 'active' : '' }}">
                         <li class="submenu-item {{ 'sales-report' == request()->path() ? 'active' : '' }}">
                             <a href="{{ route('sales-report') }}">
                                 <span>Sales</span>

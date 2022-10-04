@@ -16,7 +16,7 @@
                                 <th class="title-middle" scope="col" style="font-size: 0.9rem;">NUMBER OF CONSULTANTS</th>
                                 <th class="title-middle px-4" width=15% scope="col">HOURLY FEES</th>
                                 <th class="title-middle" scope="col" style="font-size: 0.9rem;">NUMBER OF HOURS</th>
-                                <th class="title-middle" scope="col" style="font-size: 0.9rem;" width=10%>    
+                                <th class="title-middle" scope="col" style="font-size: 0.9rem;" width=10%>
                                     <label for="Night Shift, Weekends and Holidays">NSWH</label>
                                     <input type="hidden" value="Night Shift, Weekends and Holidays" name="fee_type[]">
                                     <input type="hidden" value="" name="fee_consultant_num[]">
@@ -409,7 +409,7 @@
                             <td>
                                 <input type="number" class="form-control input-table @error('') is-invalid @enderror"
                                     value="{{ old('') }}" name="fee_nswh[]" id="ef_ModeratorNwh1">
-                                <input type="text" class="nswh-percent-value" name="nswh_percent[]" hidden> 
+                                <input type="text" class="nswh-percent-value" name="nswh_percent[]" hidden>
                             </td>
                             <td class="table-light total-td">
                                 <h4 class="text-center lead" id="subtotal-moderator">-</h4>

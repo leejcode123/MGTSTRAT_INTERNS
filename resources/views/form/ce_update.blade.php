@@ -73,7 +73,7 @@
                         <ul class="nav nav-tabs">
                             <li class="nav-item">
                                 <a href="javascript:void(0)" class="text-success nav-link font-18 px-3" title="Add" tabindex="-1"
-                                id="AddTabs"><i class="fa fa-plus mt-1"></i></a> 
+                                id="AddTabs"><i class="fa fa-plus mt-1"></i></a>
                             </li>
                         </ul>
                     </div> --}}
@@ -89,6 +89,7 @@
                                     <form class="form form-horizontal multisteps-form__form" action="{{ route('update') }}"
                                         method="POST" autocomplete="off">
                                         @csrf
+                                        @method('PUT')
 
                                         <input class="form-control" type="hidden" id="id" name="id" value="{{$data->id}}">
                                         <input class="form-control" type="hidden" id="cstmzd_eng_form_id" name="cstmzd_eng_form_id" value="{{$data->cstmzd_eng_form_id}}">
@@ -163,7 +164,7 @@
     <script>
     $(".remove").on("click", function(e){
         var id = $(this).attr("data-id");
-        $.ajax({ 
+        $.ajax({
             url: "{{ route('delete') }}",
             data: {"id": id,"_token": "{{ csrf_token() }}"},
             type: 'post',
@@ -179,12 +180,12 @@
     //         // Adding a row inside the tbody.
     //         $("#ceTabs").append(`
     //             <li class="nav-item">
-    //                 <a class="nav-link" 
-    //                 href="#batches${++tabs}" 
+    //                 <a class="nav-link"
+    //                 href="#batches${++tabs}"
     //                 id="batch${tabs}"
     //                 data-bs-toggle="tab"
-    //                 role="tab" 
-    //                 aria-controls="batches${tabs}" 
+    //                 role="tab"
+    //                 aria-controls="batches${tabs}"
     //                 aria-selected="false">
     //                     Batch ${tabs}
     //                 </a>

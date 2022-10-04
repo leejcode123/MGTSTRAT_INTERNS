@@ -60,7 +60,7 @@ $('document').ready(function() {
     document.getElementById("status").addEventListener("change", status);
 
     //EVENT OF STATUS
-    function status() { 
+    function status() {
         var status = document.getElementById("status").value;
         if(status == "Confirmed"){
             $('#status').css('background-color', '#007bff')
@@ -164,5 +164,13 @@ document.addEventListener('keypress', function (e) {
         e.preventDefault();
         return false;
     }
-    
+
 });
+
+// $(document).ready(function(){
+//     $('#client_id').on('change',function(){
+//         $value = $(this).val();
+//         // $('#BatchNumber').val($value);
+//         $('#ce_client_id').val($value);
+//     })
+// });

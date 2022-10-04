@@ -25,7 +25,7 @@
                     </div>
                 </div>
             </div>
-            
+
             {{-- message --}}
             {!! Toastr::message() !!}
 
@@ -54,12 +54,11 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                {{-- {{ $companyList->company_name }} --}}
                                 @foreach ($data as $key => $item)
                                     <tr>
                                         <td hidden class="ids">{{ $item->id }}</td>
-                                        <td hidden class="estimate_number">{{ $item->cstmzd_eng_form_id }}</td>
-                                        {{-- <input type="hidden" name="id" data-id="{{ $item->id }}">
-                                        <input type="hidden" name="cstmzd_eng_form_id" cstmzd-id="{{ $item->cstmzd_eng_form_id }}"> --}}
+                                        <td hidden class="budget_number">{{ $item->cstmzd_eng_form_id }}</td>
                                         <td class="id text-center text-uppercase fw-bold">{{ $item->batch_number }}</td>
                                         <td class="text-center">
                                             <span id="status" class="badge">{{ $item->status }}</span>
@@ -67,30 +66,44 @@
                                             <script>
                                                 $( ".badge" ).each(function() {
                                                     if($(this).html() === 'Trial'){
-                                                        $(this).addClass( "bg-info" );                                                    
+                                                        $(this).addClass( "bg-info" );
                                                     }
                                                     else if($(this).html() === 'Confirmed'){
-                                                        $(this).addClass( "bg-primary" );                                                    
+                                                        $(this).addClass( "bg-primary" );
                                                     }
                                                     else if($(this).html() === 'In-progress'){
-                                                        $(this).addClass( "bg-warning" );                                                    
+                                                        $(this).addClass( "bg-warning" );
                                                     }
                                                     else if($(this).html() === 'Completed'){
-                                                        $(this).addClass( "bg-success" );                                                    
+                                                        $(this).addClass( "bg-success" );
                                                     }
                                                     else if($(this).html() === 'Lost'){
-                                                        $(this).addClass( "bg-danger" );                                                    
+                                                        $(this).addClass( "bg-danger" );
                                                     }
                                                 });
                                             </script>
                                         </td>
-                                        <td class="name text-center fw-bold">{{ $item->client }}</td>
+                                        {{-- <td class="name text-center fw-bold">{{ $item->clients_id }}</td> --}}
+                                        <td class="name text-center fw-bold">{{ $item->client->company_name }}</td>
                                         <td class="name text-center fw-bold">{{ $item->customized_type }}</td>
                                         <td class="email text-center fw-bold">{{ $item->engagement_title }}</td>
                                         <td class="fw-bold text-center">{{ $item->pax_number }}</td>
-                                        <td class="fw-bold text-center">{{ Str::limit(str_replace (array('[', '"', ']'), ' ' , $item->program_dates),'14') }}</td>
-                                        <td class="fw-bold text-center">{{ Str::limit(str_replace (array('[', '"', ']'), ' ' , $item->program_start_time),'10') }}</td>
-                                        {{-- <td class="fw-bold">{{ \Carbon\Carbon::parse($item->created_at)->format('d/m/Y')}}</td> --}}
+                                        {{-- <td class="fw-bold text-center">{{ Str::limit(str_replace (array('[', '"', ']'), ' ' , $item->program_dates),'14') }}</td>
+                                        <td class="fw-bold text-center">{{ Str::limit(str_replace (array('[', '"', ']'), ' ' , $item->program_start_time),'10') }}</td> --}}
+                                        <td class="fw-bold text-center">
+                                            @if($item->program_dates)
+                                                @foreach($item->program_dates as $dates)
+                                                    {{$dates.', '}}
+                                                @endforeach
+                                            @endif
+                                        </td>
+                                        <td class="fw-bold text-center">
+                                            @if($item->program_start_time)
+                                                @foreach($item->program_start_time as $time)
+                                                    {{$time}}
+                                                @endforeach
+                                            @endif
+                                        </td>
                                         <td class="fw-bold text-center">{{ \Carbon\Carbon::parse($item->created_at)->toFormattedDateString()}}</td>
                                         <td class="text-center fw-bold text-center">
                                             <a href="">
@@ -115,22 +128,24 @@
                                         <div class="modal-dialog modal-dialog-centered">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h3 class="mb-3 text-center">Delete Customized Engagement</h3>
+                                                    <h3 class="mb-2 text-center">Delete Customized Engagement</h3>
                                                 </div>
                                                 <div class="modal-body">
                                                     <div class="form-header">
-                                                        <h5 class="text-center mx-5">Are you sure want to delete <br><b>{{$item->client}}</b>?</h5>
+                                                        <h5 class="text-center mx-5">Are you sure want to delete <br>
+                                                            <b>{{$item->batch_number}}</b> of <b>{{$item->client->company_name}}</b>?</h5>
                                                     </div>
                                                     <form action="{{ route('deleteRecord') }}" method="POST">
                                                         @csrf
                                                         <input type="hidden" name="id" class="e_id" value="">
-                                                        <input type="hidden" name="cstmzd_eng_form_id" class="estimate_number" value="">
-                                                        <div class="row modal-footer">
-                                                            <div class="col-2">
-                                                                <button type="submit" class="btn btn-primary continue-btn submit-btn">Delete</button>    
+                                                        <input type="hidden" name="cstmzd_eng_form_id" class="budget_number" value="">
+                                                        <div class="modal-footer">
+                                                            <div class="">
+                                                                <button type="submit" class="btn btn-primary continue-btn submit-btn">Delete</button>
                                                             </div>
-                                                            <div class="col-2">
-                                                                <a href="javascript:void(0);" data-dismiss="modal" class="btn btn-secondary cancel-btn">Cancel</a>    
+                                                            {{-- <div class=""></div> --}}
+                                                            <div class="">
+                                                                <a href="javascript:void(0);" data-dismiss="modal" class="btn btn-secondary cancel-btn">Cancel</a>
                                                             </div>
                                                         </div>
                                                     </form>
@@ -165,7 +180,7 @@
     {
         var _this = $(this).parents('tr');
         $('.e_id').val(_this.find('.ids').text());
-        $('.estimate_number').val(_this.find('.estimate_number').text());
+        $('.budget_number').val(_this.find('.budget_number').text());
     });
 </script>
 

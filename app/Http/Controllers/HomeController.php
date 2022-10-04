@@ -31,4 +31,9 @@ class HomeController extends Controller
         $activity_logs = DB::table('activity_logs')->count();
         return view('home',compact('BudgetForm','users','user_activity_logs','activity_logs','data'));
     }
+
+    public function SalesReport()
+    {
+        return view('SalesReport');
+    }
 }

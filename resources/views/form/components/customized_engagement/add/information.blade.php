@@ -34,15 +34,15 @@
                     </select>
                 </div>
             </div>
-            <div class="form-group row">
+
+            <div class="form-group row d-none">
                 <div class="col-md-2">
                     <label class="fw-bold required">Batch Number: </label>
                 </div>
                 <div class="col-md-3">
                     <div class="form-group has-icon-left">
                         <div class="position-relative">
-                            <input type="text" class="form-control @error('batch_number') is-invalid @enderror" value="{{ old('batch_number') }}"
-                                name="batch_number" id="batchNumber">
+                            <input type="text" class="form-control @error('batch_number') is-invalid @enderror" value="" name="batch_number" id="BatchNumber" readonly>
                             <div class="form-control-icon">
                                 <i class="fa-solid fa-file-lines"></i>
                             </div>
@@ -120,6 +120,7 @@
             </div>
 
         <!------------ CLIENT NAME ------------>
+            {{-- @if(isset($companyList)) --}}
             <div class="form-group row">
                 <div class="col-md-2">
                     <label class="fw-bold required">Client: </label>
@@ -127,16 +128,24 @@
                 <div class="col-md-6">
                     <div class="form-group has-icon-left">
                         <div class="position-relative">
-                            <select class="select select2s-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true" id="client" name="client">
+                            <select class="select select2s-hidden-accessible @error('client_id') is-invalid @enderror"
+                            id="client_id"
+                            name="client_id"
+                            style="width: 100%;"
+                            tabindex="-1"
+                            aria-hidden="true">
                                 <option value="Select">-- Select --</option>
-                                @foreach ($companyList as $key=>$clients )
-                                    <option value="{{ $clients->company_name }}" data-first_eng={{ $clients->first_eng }}>{{ $clients->company_name }}</option>
+                                @foreach ($companyList as $key=>$client)
+                                    <option value="{{ $client->id }}"
+                                        data-first_eng={{ $client->first_eng }}>
+                                        {{ $client->company_name }}
+                                    </option>
                                 @endforeach
                             </select>
                             <div class="form-control-icon">
                                 <i class="fa-solid fa-clients"></i>
                             </div>
-                            @error('')
+                            @error('client_id')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
@@ -145,6 +154,7 @@
                     </div>
                 </div>
             </div>
+            {{-- @endif --}}
         <!------------ ENGAGEMENT TITLE AND NUMBER OF PAX ------------>
             <div class="form-group row">
                 <div class="col-md-2">
@@ -153,12 +163,12 @@
                 <div class="col-md-6">
                     <div class="form-group has-icon-left">
                         <div class="position-relative">
-                            <input type="text" class="form-control @error('') is-invalid @enderror" value="{{ old('') }}"
-                                name="engagement_title" id="">
+                            <input type="text" class="form-control @error('engagement_title') is-invalid @enderror" value="{{ old('') }}"
+                                name="engagement_title" id="engagement_title">
                             <div class="form-control-icon">
                                 <i class="fa-solid fa-t"></i>
                             </div>
-                            @error('')
+                            @error('engagement_title')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>

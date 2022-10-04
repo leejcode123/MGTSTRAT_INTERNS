@@ -30,7 +30,19 @@ class ClientSeeder extends Seeder
                 'latest_eng' => '08/10/2022',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
-            ]
+            ],
+            // [
+            //     'company_name' => 'DATAHYV',
+            //     'cstmzd_eng_form_id' => $idClnt,
+            //     'status' => 'ACTIVE',
+            //     'sales_person' => 'Erick',
+            //     'industry' => 'Data Analytics',
+            //     'old_new' => 'NEW',
+            //     'first_eng' => '09/28/2022',
+            //     'latest_eng' => '09/28/2022',
+            //     'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            //     'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            // ]
         ]);
     }
 }

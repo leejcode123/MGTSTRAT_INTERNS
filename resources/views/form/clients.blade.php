@@ -23,7 +23,7 @@
                 </div>
             </div>
         </div>
-        
+
 @include('form.components.clients_register.modal')
 
         {{-- message --}}
@@ -47,7 +47,7 @@
                                 <th>Sales Person</th>
                                 <th>Industry</th>
                                 <th>Old/ New</th>
-                                <th>First Engagement</th>
+                                <th>Total Contract</th>
                                 <th>Latest Engagement</th>
                                 <th class="text-center">Modify</th>
                             </tr>
@@ -85,7 +85,8 @@
                                     <td class="status">{{$client->sales_person}}</td>
                                     <td class="status">{{$client->industry}}</td>
                                     <td class="status">{{$client->old_new}}</td>
-                                    <td class="status">{{$client->first_eng}}</td>
+                                    <td class="status">{{ DB::table('customized_engagement_forms')->where('client_id', $client->id)->count() }}</td>
+                                    {{-- <td class="status">{{$client->first_eng}}</td> --}}
                                     <td class="status">{{$client->latest_eng}}</td>
                                     <td class="text-center">
                                         <a href="{{ url('form/view/detail/' . $client->id) }}" >

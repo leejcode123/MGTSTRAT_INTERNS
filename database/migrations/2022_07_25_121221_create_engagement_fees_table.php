@@ -19,6 +19,7 @@ class CreateEngagementFeesTable extends Migration
         // });
         Schema::create('engagement_fees', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('client_id')->nullable()->constrained()->onDelete('cascade');
             $table->string('cstmzd_eng_form_id', 15);
             $table->string('type', 50)->nullable();
             $table->integer('consultant_num')->nullable();

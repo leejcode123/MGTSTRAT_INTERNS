@@ -43,6 +43,11 @@ Auth::routes();
 
 // ----------------------------- home dashboard ------------------------------//
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/sales-report', [HomeController::class, 'SalesReport'])->name('sales-report');
+Route::get('/people-and-culture', [HomeController::class, 'SalesReport'])->name('people-and-culture');
+Route::get('/cash-position-report', [HomeController::class, 'SalesReport'])->name('cash-position-report');
+Route::get('/consultant-revenue-report', [HomeController::class, 'SalesReport'])->name('consultant-revenue-report');
+Route::get('/peer-dope-report', [HomeController::class, 'SalesReport'])->name('peer-dope-report');
 
 // -----------------------------login----------------------------------------//
 Route::get('/login', [LoginController::class, 'login'])->name('login');
@@ -88,9 +93,10 @@ Route::get('form/customizedEngagement/new', [CustomizedEngagementController::cla
 Route::get('form/customizedEngagement/detail', [CustomizedEngagementController::class, 'viewRecord'])->middleware('auth')->name('form/customizedEngagement/detail');
 Route::get('form/customizedEngagement/detail/{cstmzd_eng_form_id}', [CustomizedEngagementController::class, 'updateRecord'])->middleware('auth');
 // Route::get('delete/{id}', [CustomizedEngagementController::class, 'viewDelete'])->middleware('auth');
+// Route::get("new",[CustomizedEngagementController::class,'index']);
 
 Route::post('save', [CustomizedEngagementController::class, 'store'])->name('save');
-Route::post('update', [CustomizedEngagementController::class, 'ceUpdateRecord','ceAddDeleteRecord'])->middleware('auth')->name('update');
+Route::put('update', [CustomizedEngagementController::class, 'ceUpdateRecord','ceAddDeleteRecord'])->middleware('auth')->name('update');
 Route::post('deleteRecord', [CustomizedEngagementController::class, 'viewDelete'])->middleware('auth')->name('deleteRecord');
 Route::post('delete',[CustomizedEngagementController::class, 'deleteRow'])->name('delete');
 });

@@ -12,11 +12,11 @@
         <div class="form-group row mb-4">
             <div class="col-md-2">
                 <label class="fw-bold required">Status: </label>
-            </div> 
+            </div>
 
             <div class="col-md-2" id="">
                 <select class="input js-mytooltip form-select @error('') is-invalid @enderror"
-                    name="status" id="status" data-mytooltip-content="<i>Please Choose Status</i>" 
+                    name="status" id="status" data-mytooltip-content="<i>Please Choose Status</i>"
                     data-mytooltip-theme="dark" data-mytooltip-action="focus" data-mytooltip-direction="right">
                     <option value="Trial" {{ $data->status == 'Trial' ? 'selected="selected"' : '' }}>
                         Trial
@@ -37,6 +37,29 @@
             </div>
         </div>
 
+        <div class="form-group row">
+            <div class="col-md-2">
+                <label class="fw-bold required">Batch Number: </label>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group has-icon-left">
+                    <div class="position-relative">
+                        <input type="text" class="form-control @error('batch_number') is-invalid @enderror" value="{{ $data->batch_number }}" name="batch_number" id="BatchNumber" readonly>
+                        <div class="form-control-icon">
+                            <i class="fa-solid fa-file-lines"></i>
+                        </div>
+                        <div class="invalid-feedback">
+                        @error('batch_number')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     <!------------ CUSTOMIZED TYPE ------------>
         <div class="form-group row">
             <div class="col-md-2">
@@ -46,8 +69,8 @@
                 <div class="form-group has-icon-left">
                     <div class="position-relative">
                         <select class="input js-mytooltip form-select customized-type @error('') is-invalid @enderror"
-                            name="customized_type" id="" data-mytooltip-content="<i> Please Choose </i>" 
-                            data-mytooltip-theme="dark" 
+                            name="customized_type" id="" data-mytooltip-content="<i> Please Choose </i>"
+                            data-mytooltip-theme="dark"
                             data-mytooltip-action="focus"
                             data-mytooltip-direction="right">
                             <option value="Hybrid" {{ $data->customized_type == 'Hybrid' ? 'selected="selected"' : '' }}>
@@ -105,15 +128,28 @@
             <div class="col-md-2">
                 <label class="fw-bold required">Client: </label>
             </div>
-            <div class="col-md-8">
+            <div class="col-md-5">
                 <div class="form-group has-icon-left">
                     <div class="position-relative">
-                        <input type="text" class="form-control @error('') is-invalid @enderror" value="{{ $data->client }}"
-                            name="client" id="fourth">
-                        <div class="form-control-icon">
+                        {{-- <input type="number" class="form-control @error('') is-invalid @enderror" value="{{ $data->client_id }}"
+                            name="client_id" id="client_id"> --}}
+                        <select class="select select2s-hidden-accessible @error('client_id') is-invalid @enderror"
+                        id="client_id"
+                        name="client_id"
+                        style="width: 100%;"
+                        tabindex="-1"
+                        aria-hidden="true">
+                            <option value="Select">-- Select --</option>
+                            @foreach ($data2 as $client)
+                                <option @if ($client->id === (int)$data->client_id) selected @endif value="{{ $client->id }}">
+                                    {{ $client->company_name }}
+                                </option>
+                            @endforeach
+                        </select>
+                        {{-- <div class="form-control-icon">
                             <i class="fa-solid fa-user"></i>
-                        </div>
-                        @error('')
+                        </div> --}}
+                        @error('client_id')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
@@ -151,7 +187,7 @@
                 </div>
             </div>
         </div>
-    
+
         <div class="form-group row">
             <div class="col-md-2">
                 <label class="fw-bold required">Number of pax </label>
@@ -269,7 +305,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                @include('form.components.customized_engagement.update.ce_update_cluster')     
+                                @include('form.components.customized_engagement.update.ce_update_cluster')
                             </div>
                         </div>
                     </div>
@@ -350,10 +386,10 @@
                                         </div>
                                     </div>
                                 </div>
-                                @include('form.components.reference.append_cluster') 
+                                @include('form.components.reference.append_cluster')
                             </div>
                         </div>
-            
+
                     </div>
 
 
@@ -425,6 +461,6 @@
                 document.getElementById('dropdown-ga').style.visibility = 'hidden'
                 $("#ga-only-dropdown").val('0');
             }
-            
+
     });
 </script>

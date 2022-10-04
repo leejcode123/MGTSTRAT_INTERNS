@@ -24,7 +24,7 @@ class ClientsController extends Controller
 
     public function addViewClient()
     {
-        
+
     }
 
      // save new user
@@ -54,11 +54,11 @@ class ClientsController extends Controller
             $old_new = $request->old_new;
             $first_eng = $request->first_eng;
             $latest_eng = $request->latest_eng;
-            
+
             $config = ['table'=>'clients', 'length'=>10, 'field'=>'cstmzd_eng_form_id', 'prefix'=>'CLNT-'];
             $idClnt = IdGenerator::generate($config);
             // $id = IdGenerator::generate(['table' => 'products','field'=>'pid', 'length' => 6, 'prefix' =>date('P')]);
-            
+
             $clnt = new Client();
             $clnt -> company_name = $company_name;
             $clnt -> cstmzd_eng_form_id = $idClnt;
@@ -68,7 +68,7 @@ class ClientsController extends Controller
             $clnt -> old_new = $old_new;
             $clnt -> first_eng = $first_eng;
             $clnt -> latest_eng = $latest_eng;
-            
+
             $clnt->save();
 
             Toastr::success('Client successfully Added','success');
@@ -141,12 +141,13 @@ class ClientsController extends Controller
         return redirect()->route('form/clients/new');
     }
     }
-    
+
     // view delete
     public function deleteClient($id)
     {
-        $deleteClients = Client::find($id);
-        $deleteClients->delete();
+        $deleteClients = Client::find($id)->delete();
+        // $deleteClients = Client::find($id);
+        // $deleteClients->delete();
         Alert::success('Data deleted successfully :)','Success');
         return redirect()->route('form/clients/new');
     }
