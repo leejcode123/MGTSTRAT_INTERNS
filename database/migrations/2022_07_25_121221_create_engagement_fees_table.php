@@ -14,9 +14,9 @@ class CreateEngagementFeesTable extends Migration
     public function up()
     {
         // Schema::create('engagement_fees', function (Blueprint $table) {
-        //     $table->id();
-        //     $table->timestamps();
-        // });
+        //      $table->id();
+        //      $table->timestamps();
+        //  });
         Schema::create('engagement_fees', function (Blueprint $table) {
             $table->id();
             $table->string('cstmzd_eng_form_id', 15);
