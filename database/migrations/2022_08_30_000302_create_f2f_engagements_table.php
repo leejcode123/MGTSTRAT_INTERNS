@@ -29,8 +29,8 @@ class CreateF2fEngagementsTable extends Migration
             $table->integer('number_of_days_1')->nullable($value = true);
             $table->integer('additional_travel_days_1')->nullable($value = true);
             $table->string('out_of_town_weekends_holidays_1', 50)->nullable($value = true);
-            $table->integer('total_fee_1')->nullable($value = true);
-            $table->string('notes', 50)->nullable($value = true);
+            $table->string('total_fee_1')->nullable($value = true);
+            $table->string('notes')->nullable($value = true);
 
             //ENGAGEMENT COST
             $table->string('engagement_cost', 50)->nullable($value = true);
@@ -39,8 +39,8 @@ class CreateF2fEngagementsTable extends Migration
             $table->integer('number_of_days_2')->nullable($value = true);
             $table->integer('additional_travel_days_2')->nullable($value = true);
             $table->string('out_of_town_weekends_holidays_2', 50)->nullable($value = true);
-            $table->integer('total_fee_2')->nullable($value = true);
-            $table->string('roster', 50)->nullable($value = true);
+            $table->string('total_fee_2')->nullable($value = true);
+            $table->string('roster')->nullable($value = true);
             
         });
     }

@@ -23,23 +23,23 @@ class CreateSummaryTable extends Migration
             
         //MANAGEMENT TEAM SUPPORT PAYMENT SUMMARY
             $table->id();
-            $table->string('2022', 50)->nullable($value = true);
+            $table->string('year_2022', 50)->nullable($value = true);
             $table->string('role', 50)->nullable($value = true);
-            $table->integer('jan')->nullable($value = true);
-            $table->integer('feb')->nullable($value = true);
-            $table->integer('mar')->nullable($value = true);
-            $table->integer('apr')->nullable($value = true);
-            $table->integer('may')->nullable($value = true);
-            $table->integer('june')->nullable($value = true);
-            $table->integer('july')->nullable($value = true);
-            $table->integer('august')->nullable($value = true);
-            $table->integer('september')->nullable($value = true);
-            $table->integer('october')->nullable($value = true);
-            $table->integer('november')->nullable($value = true);
-            $table->integer('december')->nullable($value = true);
-            $table->integer('total_gross')->nullable($value = true);
-            $table->integer('ewt')->nullable($value = true);
-            $table->integer('net')->nullable($value = true);
+            $table->string('jan')->nullable($value = true);
+            $table->string('feb')->nullable($value = true);
+            $table->string('mar')->nullable($value = true);
+            $table->string('apr')->nullable($value = true);
+            $table->string('may')->nullable($value = true);
+            $table->string('june')->nullable($value = true);
+            $table->string('july')->nullable($value = true);
+            $table->string('august')->nullable($value = true);
+            $table->string('september')->nullable($value = true);
+            $table->string('october')->nullable($value = true);
+            $table->string('november')->nullable($value = true);
+            $table->string('december')->nullable($value = true);
+            $table->string('total_gross')->nullable($value = true);
+            $table->string('ewt')->nullable($value = true);
+            $table->string('net')->nullable($value = true);
         });
     }
 

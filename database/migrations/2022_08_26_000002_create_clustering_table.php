@@ -22,9 +22,9 @@ class CreateClusteringTable extends Migration
         Schema::create('clustering', function (Blueprint $table) {
             $table->id();
             $table->string('program_titles', 50)->nullable($value = true);
-            $table->string('primary_cluster', 50)->nullable($value = true);
-            $table->string('secondary_cluster', 50)->nullable($value = true);
-            $table->string('msu_custom', 50)->nullable($value = true);
+            $table->string('primary_cluster_gcal_tag_1', 50)->nullable($value = true);
+            $table->string('secondary_cluster_gcal_tag_2', 50)->nullable($value = true);
+            $table->string('msu_custom_gcal_tag_3', 50)->nullable($value = true);
             $table->string('primary_core_area', 50)->nullable($value = true);
             $table->string('secondary_core_area', 50)->nullable($value = true);
             $table->string('intelligence_mgtstrat_u_only', 50)->nullable($value = true);

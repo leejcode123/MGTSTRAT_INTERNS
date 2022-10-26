@@ -22,12 +22,12 @@ class CreateAlforqueElmoTable extends Migration
         Schema::create('alforque_elmo', function (Blueprint $table) {
             $table->id();
             $table->string('payment_date', 50)->nullable($value = true);
-            $table->string('engagement', 50)->nullable($value = true);
-            $table->integer('contract_fee')->nullable($value = true);
-            $table->integer('ewt')->nullable($value = true);
-            $table->integer('total_amount_deposited')->nullable($value = true);
+            $table->string('engagement', 200)->nullable($value = true);
+            $table->string('contract_fee')->nullable($value = true);
+            $table->string('ewt')->nullable($value = true);
+            $table->string('total_amount_deposited')->nullable($value = true);
             $table->string('remarks', 20)->nullable($value = true);
-            $table->string('paid', 20)->nullable($value = true);
+            $table->boolean('paid')->nullable($value = true);
             
         });
     }

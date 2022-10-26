@@ -31,7 +31,8 @@ class CreateRepublicCementTable extends Migration
             $table->float('moderator_questions_2')->nullable($value = true);
             $table->float('moderator_questions_3')->nullable($value = true);
             $table->float('converted_score_2')->nullable($value = true);
-            $table->string('comments_and_suggestions', 50)->nullable($value = true);
+            $table->string('would_you_recommend_this_training_to_other_colleagues')->nullable($value = true);
+            $table->string('how_can_we_improve_the_program_further')->nullable($value = true);
 
              
         });

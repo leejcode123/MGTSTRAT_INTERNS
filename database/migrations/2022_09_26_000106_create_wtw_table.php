@@ -24,16 +24,16 @@ class CreateWtwTable extends Migration
             $table->string('dates', 50)->nullable($value = true);
             $table->string('program_title', 50)->nullable($value = true);
             $table->float('lead_facilitator_questions_1')->nullable($value = true);
-            $table->float('facilitator_questions_2')->nullable($value = true);
-            $table->float('facilitator_questions_3')->nullable($value = true);
-            $table->float('facilitator_questions_4')->nullable($value = true);
-            $table->float('facilitator_questions_5')->nullable($value = true);
+            $table->float('lead_facilitator_questions_2')->nullable($value = true);
+            $table->float('lead_facilitator_questions_3')->nullable($value = true);
+            $table->float('lead_facilitator_questions_4')->nullable($value = true);
+            $table->float('lead_facilitator_questions_5')->nullable($value = true);
             $table->float('moderator_questions_1')->nullable($value = true);
             $table->float('moderator_questions_2')->nullable($value = true);
             $table->float('moderator_questions_3')->nullable($value = true);
             $table->float('moderator_questions_4')->nullable($value = true);
             $table->float('moderator_questions_5')->nullable($value = true);
-            $table->string('comments_and_suggestions', 50)->nullable($value = true);
+            $table->string('would_you_recommend_this_training_to_other_colleagues')->nullable($value = true);
 
              
         });

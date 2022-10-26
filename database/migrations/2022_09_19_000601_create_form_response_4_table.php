@@ -23,7 +23,7 @@ class CreateFormResponse4Table extends Migration
             $table->id();
             $table->string('timestamp', 50)->nullable($value = true);
             $table->string('name', 50)->nullable($value = true);
-            $table->string('management_strategies_engagement_manager', 50)->nullable($value = true);
+            $table->string('management_strategies_engagement_manager')->nullable($value = true);
             $table->integer('strategic_management_1')->nullable($value = true);
             $table->integer('strategic_management_2')->nullable($value = true);
             $table->integer('strategic_management_3')->nullable($value = true);
@@ -37,14 +37,14 @@ class CreateFormResponse4Table extends Migration
             $table->integer('implementation_management_1')->nullable($value = true);
             $table->integer('implementation_management_2')->nullable($value = true);
             $table->integer('implementation_management_3')->nullable($value = true);
-            $table->string('top_1_strength', 50)->nullable($value = true);
-            $table->string('top_1_development_area', 50)->nullable($value = true);
-            $table->string('other_items_behaviors_you_are_looking_for_in_an_em', 50)->nullable($value = true);
-            $table->string('clients_that_you_and_the_em_worked_with', 50)->nullable($value = true);
-            $table->string('top_2_strength', 50)->nullable($value = true);
-            $table->string('top_3_strength', 50)->nullable($value = true);
-            $table->string('top_2_development_area', 50)->nullable($value = true);
-            $table->string('top_3_development_area', 50)->nullable($value = true);
+            $table->string('top_1_strength')->nullable($value = true);
+            $table->string('top_1_development_area')->nullable($value = true);
+            $table->string('other_items_behaviors_you_are_looking_for_in_an_em')->nullable($value = true);
+            $table->string('clients_that_you_and_the_em_worked_with', 500)->nullable($value = true);
+            $table->string('top_2_strength')->nullable($value = true);
+            $table->string('top_3_strength')->nullable($value = true);
+            $table->string('top_2_development_area')->nullable($value = true);
+            $table->string('top_3_development_area')->nullable($value = true);
             
             
         });

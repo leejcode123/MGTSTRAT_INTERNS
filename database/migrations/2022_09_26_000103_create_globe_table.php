@@ -34,7 +34,7 @@ class CreateGlobeTable extends Migration
             $table->float('lead_facilitator_questions_9')->nullable($value = true);
             $table->float('lead_facilitator_questions_10')->nullable($value = true);
             $table->float('converted_score_1')->nullable($value = true);
-            $table->float('lead_facilitator_questions_12')->nullable($value = true);
+            $table->float('lead_facilitator_questions_11')->nullable($value = true);
             $table->float('moderator_questions_1')->nullable($value = true);
             $table->float('moderator_questions_2')->nullable($value = true);
             $table->float('moderator_questions_3')->nullable($value = true);
@@ -46,8 +46,8 @@ class CreateGlobeTable extends Migration
             $table->float('moderator_questions_9')->nullable($value = true);
             $table->float('moderator_questions_10')->nullable($value = true);
             $table->float('converted_score_2')->nullable($value = true);
-            $table->float('moderator_questions_12')->nullable($value = true);
-            $table->string('comments_and_suggestions', 50)->nullable($value = true);
+            $table->float('moderator_questions_11')->nullable($value = true);
+            $table->string('comments_and_suggestions')->nullable($value = true);
 
              
         });

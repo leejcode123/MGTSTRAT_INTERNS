@@ -30,8 +30,8 @@ class CreateZaballeroMiggyTable extends Migration
             $table->integer('how_well_did_i_manage_the_learning_of_our_participants')->nullable($value = true);
             $table->integer('how_effectively_did_i_build_relationships_with_the_participants')->nullable($value = true);
             $table->integer('how_did_you_find_my_virtual_presence')->nullable($value = true);
-            $table->string('what_are_2_3_things_that_i_did_well_as_your_lead', 500)->nullable($value = true);
-            $table->string('what_are_2_3_things_i_can_do_better_as_a_lead_facilitator', 500)->nullable($value = true);
+            $table->string('what_are_2_3_things_that_i_did_well_as_your_lead')->nullable($value = true);
+            $table->string('what_are_2_3_things_i_can_do_better_as_a_lead_facilitator')->nullable($value = true);
             
             
         });

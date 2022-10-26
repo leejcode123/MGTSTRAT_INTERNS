@@ -28,15 +28,15 @@ class CreateMgtstratUWebinarsTable extends Migration
             $table->integer('number_of_sessions')->nullable($value = true);
             $table->string('night_shift_weekends_holidays_1')->nullable($value = true);
             $table->integer('total_fee_1')->nullable($value = true);
-            $table->string('notes', 50)->nullable($value = true);
+            $table->string('notes')->nullable($value = true);
 
             //ENGAGEMENT COST
             $table->string('engagement_cost', 50)->nullable($value = true);
             $table->integer('hourly_fees')->nullable($value = true);
             $table->integer('number_of_hours')->nullable($value = true);
             $table->string('night_shift_weekends_holidays_2')->nullable($value = true);
-            $table->integer('total_fee_2')->nullable($value = true);
-            $table->string('roster', 50)->nullable($value = true);
+            $table->string('total_fee_2')->nullable($value = true);
+            $table->string('roster')->nullable($value = true);
             
         });
     }

@@ -22,12 +22,12 @@ class CreateMay1013Table extends Migration
         Schema::create('may_10_13_table', function (Blueprint $table) {
             $table->id();
             $table->string('projected_collections_based_on_invoices', 50)->nullable($value = true);
-            $table->string('program', 50)->nullable($value = true);
-            $table->string('due_payable', 50)->nullable($value = true);
-            $table->integer('total_1')->nullable($value = true);
+            $table->string('program')->nullable($value = true);
+            $table->string('due_payable')->nullable($value = true);
+            $table->string('total_1')->nullable($value = true);
             $table->integer('term')->nullable($value = true);
-            $table->integer('days_OverDue')->nullable($value = true);
-            $table->string('total_2', 50)->nullable($value = true);
+            $table->string('days_OverDue')->nullable($value = true);
+            $table->string('total_2')->nullable($value = true);
            
             
         });

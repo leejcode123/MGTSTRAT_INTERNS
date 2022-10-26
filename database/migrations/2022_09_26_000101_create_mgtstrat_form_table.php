@@ -33,7 +33,7 @@ class CreateMgtstratFormTable extends Migration
             $table->float('moderator_questions_2')->nullable($value = true);
             $table->float('moderator_questions_3')->nullable($value = true);
             $table->float('moderator_questions_4')->nullable($value = true);
-            $table->string('comments_and_suggestions', 50)->nullable($value = true);
+            $table->string('comments_and_suggestions')->nullable($value = true);
 
              
         });

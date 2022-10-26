@@ -23,18 +23,18 @@ class CreateAgorillaYeyeTable extends Migration
             $table->id();
         
             $table->string('payment_date', 50)->nullable($value = true);
-            $table->integer('or_no')->nullable($value = true);
-            $table->string('engagement', 50)->nullable($value = true);
-            $table->integer('contract_fee')->nullable($value = true);
-            $table->integer('ewt')->nullable($value = true);
-            $table->integer('total_amount_deposited')->nullable($value = true);
-            $table->string('role_1', 20)->nullable($value = true);
-            $table->string('role_2', 20)->nullable($value = true);
-            $table->string('role_3', 20)->nullable($value = true);
-            $table->string('role_4', 20)->nullable($value = true);
+            $table->string('or_no')->nullable($value = true);
+            $table->string('engagement', 200)->nullable($value = true);
+            $table->string('contract_fee')->nullable($value = true);
+            $table->string('ewt')->nullable($value = true);
+            $table->string('total_amount_deposited')->nullable($value = true);
+            $table->string('role_1')->nullable($value = true);
+            $table->string('role_2')->nullable($value = true);
+            $table->string('role_3')->nullable($value = true);
+            $table->string('role_4')->nullable($value = true);
             $table->string('role_5')->nullable($value = true);
             $table->string('remarks', 20)->nullable($value = true);
-            $table->integer('or')->nullable($value = true);
+            $table->string('or')->nullable($value = true);
             
         });
     }

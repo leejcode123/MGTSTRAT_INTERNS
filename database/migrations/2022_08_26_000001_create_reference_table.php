@@ -32,6 +32,7 @@ class CreateReferenceTable extends Migration
             $table->string('customized', 50)->nullable($value = true);
             $table->string('mgtstrat_u', 50)->nullable($value = true);
             $table->string('coaching', 50)->nullable($value = true);
+            //$table->timestamps();
         });
     }
 

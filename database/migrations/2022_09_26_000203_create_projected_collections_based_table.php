@@ -22,13 +22,13 @@ class CreateProjectedCollectionsBasedTable extends Migration
         Schema::create('projected_collections_based', function (Blueprint $table) {
             $table->id();
             $table->string('projected_collections_based_on_invoices', 50)->nullable($value = true);
-            $table->string('program', 50)->nullable($value = true);
-            $table->string('due_payable', 50)->nullable($value = true);
-            $table->integer('total')->nullable($value = true);
+            $table->string('program')->nullable($value = true);
+            $table->string('due_payable')->nullable($value = true);
+            $table->string('total')->nullable($value = true);
             $table->integer('term')->nullable($value = true);
-            $table->integer('days_OverDue')->nullable($value = true);
-            $table->string('remarks', 50)->nullable($value = true);
-            $table->string('projected_expenses', 50)->nullable($value = true);
+            $table->string('days_OverDue')->nullable($value = true);
+            $table->string('remarks')->nullable($value = true);
+            $table->string('projected_expenses')->nullable($value = true);
            
             
         });

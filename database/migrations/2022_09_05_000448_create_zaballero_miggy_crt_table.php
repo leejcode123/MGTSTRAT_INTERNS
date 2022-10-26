@@ -23,16 +23,17 @@ class CreateZaballeroMiggyCrtTable extends Migration
             $table->id();
         
             $table->string('engagement_date', 50)->nullable($value = true);
-            $table->integer('or_no')->nullable($value = true);
-            $table->string('engagement', 50)->nullable($value = true);
-            $table->integer('contract_fee')->nullable($value = true);
-            $table->integer('tax_withheld')->nullable($value = true);
-            $table->integer('total_amount_deposited')->nullable($value = true);
-            $table->integer('date_deposited')->nullable($value = true);
-            $table->string('role_1', 20)->nullable($value = true);
-            $table->string('role_2', 20)->nullable($value = true);
-            $table->string('role_3', 20)->nullable($value = true);
-            $table->string('others', 20)->nullable($value = true);
+            $table->string('or_no')->nullable($value = true);
+            $table->string('engagement')->nullable($value = true);
+            $table->string('contract_fee')->nullable($value = true);
+            $table->string('tax_withheld')->nullable($value = true);
+            $table->string('total_amount_deposited')->nullable($value = true);
+            $table->string('date_deposited')->nullable($value = true);
+            $table->string('role_1', 50)->nullable($value = true);
+            $table->string('role_2', 50)->nullable($value = true);
+            $table->string('role_3', 50)->nullable($value = true);
+            $table->string('others', 50)->nullable($value = true);
+            $table->string('undifined_column')->nullable($value = true);
  
         });
     }
